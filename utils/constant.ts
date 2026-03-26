@@ -2,6 +2,8 @@ import {
   DEVICES_SECTION_DATA_PROPS,
   FUTURE_WORK_CARD_PROPS,
   INDUSTRY_CHIP_PROPS,
+  TOOLS_LEFT_SECTION_PROPS,
+  TOOLS_RIGHT_SECTION_PROPS,
   WORKFORCE_CARD_PROPS,
 } from "./types";
 import increase from "@/images/banner/homePage/workforce/increase-productivity.png";
@@ -49,6 +51,75 @@ export const HEADER_LINKS = [
     url: "/contact-us",
   },
 ];
+
+export const SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/company/108440043/admin/dashboard/",
+  facebook: "https://www.facebook.com/profile.php?id=61588581069475",
+  instagram: "https://www.instagram.com/unfoldxr/",
+  x: "https://x.com/unfoldxr",
+  youtube: "https://youtube.com/@unfoldxr?si=AmM-Q5y7uRqEU7zH",
+};
+
+export const NAV_ITEMS = [
+  "Home",
+  "Solutions",
+  "Industry",
+  "Product",
+  "Resources",
+  "About Us",
+  "Contact Us",
+];
+
+export const FOOTER_COLUMNS: { title: string; links: string[] }[] = [
+  { title: "Home", links: [] },
+  {
+    title: "Solutions",
+    links: ["Repair & Maintenance", "Inspection", "Field Service"],
+  },
+  {
+    title: "Industry",
+    links: [
+      "Automotive",
+      "Manufacturing",
+      "Oil & Gas",
+      "Aviation",
+      "Insurance",
+      "Marine",
+      "Logistics & Supply Chain",
+      "Retail",
+      "HealthCare",
+    ],
+  },
+  {
+    title: "Product",
+    links: ["Augment", "Empower", "Edge", "Meet AVA"],
+  },
+  {
+    title: "Resources",
+    links: [
+      "Case Studies",
+      "Blog / Insights",
+      "Product Videos",
+      "Brochure",
+      "Feature List",
+      "XR Industry Reports",
+    ],
+  },
+  {
+    title: "About Us",
+    links: [
+      "Mission",
+      "Vision",
+      "Leadership",
+      "Brand DNA",
+      "Partners",
+      "Careers",
+    ],
+  },
+  { title: "Contact Us", links: [] },
+  { title: "Book a Demo", links: [] },
+];
+
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
@@ -157,3 +228,33 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
     gridSize: 7,
   },
 ];
+
+
+//  Tools Section Data
+
+export const toolsLeftData: TOOLS_LEFT_SECTION_PROPS = {
+  heading: "THE WORK OF MANY TOOLS...",
+  ctaText: "Book a Demo",
+  note: "*note - this place will have cursor animation",
+  avatars: [
+    { id: 1, name: "Noah", image: "/avatars/1.png" },
+  ],
+};
+
+export const toolsRightData:TOOLS_RIGHT_SECTION_PROPS = {
+  subHeading: "Augmenting Human Productivity.",
+  cards: [
+    {
+      type: "image",
+      title: "From Many Tools...",
+      image: "/tools/tools-team.png",
+      bg: "gradient",
+    },
+    {
+      type: "dark",
+      title: "Augmenting Human Productivity...",
+      description: "Streamlining operations...",
+      image: "/tools/augmenting.png",
+    },
+  ],
+};

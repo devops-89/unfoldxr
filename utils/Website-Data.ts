@@ -1,6 +1,8 @@
 import {
   AI_INDUSTRY_DATA,
   DEVICES_SECTION_DATA,
+  toolsLeftData,
+  toolsRightData,
   WORKFORCE_CARD_DATA,
 } from "./constant";
 import ava from "@/images/banner/homePage/avapng.png";
@@ -109,6 +111,7 @@ export const homePage = {
   tools: {
     heading: "THE WORK OF MANY TOOLS. ONE  AR-ENABLED PLATFORM",
     subHeading: "Augmenting human productivity.",
-    cta: "Book a Demo",
+    leftSection: toolsLeftData,
+    rightSection: toolsRightData
   },
 };
