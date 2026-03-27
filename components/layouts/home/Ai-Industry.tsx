@@ -1,6 +1,6 @@
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import IndustryChip from "./components/Industry-Chip";
 
@@ -9,12 +9,11 @@ const AiIndustry = () => {
     <Box>
       <Box
         sx={{
-          height: { xs: "auto", md: "100vh" }, // 👈 fix mobile height
-          minHeight: { xs: "auto", md: "unset" },
+          height: { xs: "auto", md: "100vh" },
           display: "flex",
-          alignItems: { xs: "flex-start", md: "center" }, // 👈 better flow
+          alignItems: { xs: "flex-start", md: "center" },
           justifyContent: "center",
-          py: { xs: 6, md: 0 }, // 👈 add vertical spacing on mobile
+          py: { xs: 6, md: 0 },
         }}
       >
         <Container maxWidth="lg">
@@ -24,7 +23,7 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 32, md: 64 }, // 👈 responsive
+              fontSize: { xs: 32, md: 64 },
               textTransform: "uppercase",
               fontWeight: 900,
             }}
@@ -37,7 +36,7 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 16, md: 25 }, // 👈 responsive
+              fontSize: { xs: 16, md: 25 },
               fontWeight: 400,
               mt: 2,
             }}
@@ -46,19 +45,29 @@ const AiIndustry = () => {
           </Typography>
 
           {/* Chips */}
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={{ xs: 1.5, md: 3 }} // 👈 tighter on mobile
-            flexWrap="wrap"
-            sx={{ mt: { xs: 4, md: 10 } }} // 👈 reduce gap
-            rowGap={{ xs: 1.5, md: 2 }}
+          <Grid
+            container
+            spacing={2}
             justifyContent="center"
+            sx={{ mt: { xs: 4, md: 10 } }}
           >
             {homePage.Ai_industry.ai_industry_data.map((val, i) => (
-              <IndustryChip img={val.img} label={val.label} key={i} />
+              <Grid
+                key={i}
+                
+                size={{
+    xs: i === 2 ? 12 : 6,
+    sm: i === 2 ? 12 : 6,
+    md: "auto",
+  }}
+               
+              >
+                <Box display="flex" justifyContent="center">
+                  <IndustryChip img={val.img} label={val.label} />
+                </Box>
+              </Grid>
             ))}
-          </Stack>
+          </Grid>
 
         </Container>
       </Box>
