@@ -317,16 +317,16 @@ export const partnersWhyPartnerData: PARTNERS_WHY_PARTNER_CARD_PROPS[] = [
   {
     title: "Increase product stickiness",
     description:
-      "UnfoldXR embeds augmented reality directly into daily operations, increasing adoption and long-term reliance.",
+      "UnfoldXR embeds augmented reality directly into daily operations, increasing platform dependency and long-term adoption.",
   },
   {
     title: "Accelerate revenue growth",
     description:
-      "Achieve high conversion rates and reduced churn with AR-enabled immersive experiences.",
+      "Achieve higher conversions and increase average deal size with AR-enabled execution capabilities.",
   },
   {
     title: "Strengthen strategic positioning",
     description:
-      "Move from optional provider to mission-critical infrastructure partner.",
+      "Move from system provider to innovation-led transformation partner with predictable, high-margin recurring revenue.",
   },
 ];

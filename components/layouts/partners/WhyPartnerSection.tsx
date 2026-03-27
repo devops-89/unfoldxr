@@ -18,7 +18,7 @@ const WhyPartnerSection = () => {
           {partnersPage.whyPartnerSection.heading}
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           {partnersPage.whyPartnerSection.why_partner_card_data.map((card, i) => (
             <Grid size={{xs:12,md:4}} key={i}>
               <WhyPartnerCard {...card} />
