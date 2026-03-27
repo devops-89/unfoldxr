@@ -21,6 +21,16 @@ export const homePage = {
       "Most AI is built for people at desks. But 80% of the global workforce is deskless. That’s 2.8 billion people. UnfoldXR is built for them. AI and augmented reality delivered at the moment of work where decisions are made, assets are maintained, and operations move forward.",
     data: WORKFORCE_CARD_DATA,
   },
+  aboutUnfoldxr: {
+    heading: "About UnfoldXR",
+    paragraphs: [
+      "Frontline work runs the world. Yet most frontline teams still operate without real-time technological support. We are here to change that.",
+      "UnfoldXR is a human productivity augmentation platform built to bring AI and Extended Reality into real-world operations. We deliver moment-of-work support that guides teams before, during, and after execution as one continuous system.",
+      "We exist to augment, not replace, human capability. Our platform is built human-first to strengthen judgment, precision, and confidence where decisions are made.",
+    ],
+    highlight:
+      "Built for enterprises, UnfoldXR delivers measurable productivity, not experimental technology.",
+  },
   Ai_industry: {
     heading: "ONE AI PLATFORM, ANY INDUSTRY",
     description:

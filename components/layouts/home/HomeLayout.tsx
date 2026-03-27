@@ -9,6 +9,7 @@ import Meetava from "./Meet-Ava";
 import Outcome from "./Outcome";
 import DevicesSection from "./Devices-Section";
 import Tools from "./Tools";
+import AboutUnfoldxr from "./About-Unfoldxr";
 
 const HomeLayout = () => {
   return (
@@ -30,6 +31,8 @@ const HomeLayout = () => {
 </Box>
       
        <AiIndustry />
+
+      <AboutUnfoldxr />
        
       <FutureWork />
       
