@@ -11,7 +11,7 @@ export const helvetica = localFont({
       weight: "700",
     },
     {
-      path: "../public/fonts/helvetica/Helvetica_Light.ttf",
+      path: "../public/fonts/helvetica/helvetica_light.ttf",
       weight: "400",
     },
   ],
