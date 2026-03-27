@@ -273,9 +273,8 @@ export default function Footer() {
                 mt: { xs: 2, sm: 0 },
               }}
             >
-              <Link href="#" passHref legacyBehavior>
+              <Link href="#" style={{ textDecoration: "none" }}>
                 <Button
-                  component="a"
                   variant="text"
                   sx={{
                     color: "#efefef",

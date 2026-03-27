@@ -36,7 +36,7 @@ export const HEADER_LINKS = [
   },
   {
     label: "Solutions",
-    url: "/solutions",
+    url: "/usecases/training",
   },
   {
     label: "Industries",
@@ -44,7 +44,7 @@ export const HEADER_LINKS = [
   },
   {
     label: "Product",
-    url: "/product",
+    url: "/Product",
   },
   {
     label: "Resources",
