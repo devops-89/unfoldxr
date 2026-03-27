@@ -3,6 +3,7 @@ import HeroSection from "./HeroSection";
 import { COLORS } from "@/utils/enum";
 import MetricsSection from "./MetricsSection";
 import WhyPartnerSection from "./WhyPartnerSection";
+import EcosystemSection from "./EcosystemSection";
 
 const PartnersLayout = () => {
   return (
@@ -10,6 +11,7 @@ const PartnersLayout = () => {
     <HeroSection />
     <MetricsSection />
     <WhyPartnerSection />
+    <EcosystemSection />
     </Box>
   );
 };

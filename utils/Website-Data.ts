@@ -1,6 +1,7 @@
 import {
   AI_INDUSTRY_DATA,
   DEVICES_SECTION_DATA,
+  partnersEcosystemData,
   partnersMetricsData,
   partnersWhyPartnerData,
   toolsLeftData,
@@ -134,6 +135,13 @@ export const partnersPage={
   whyPartnerSection:{
     heading:"WHY PARTNER WITH UNFOLDXR?",
     why_partner_card_data:partnersWhyPartnerData
+  },
+  ecosystemSystem:{
+     heading: "WHO WE PARTNER WITH BUILT FOR ECOSYSTEM COLLABORATION",
+  tag: "ERP and CMMS partners",
+  leftItems: partnersEcosystemData,
+  rightText:
+    "Extend ERP modules into hands-free execution. Reduce errors and improve first-time fix rates. Create real-time feedback loops into maintenance systems.",
   }
 
 }

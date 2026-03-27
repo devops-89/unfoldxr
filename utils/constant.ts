@@ -2,6 +2,7 @@ import {
   DEVICES_SECTION_DATA_PROPS,
   FUTURE_WORK_CARD_PROPS,
   INDUSTRY_CHIP_PROPS,
+  PARTNERS_ECOSYSTEM_CARD_PROPS,
   PARTNERS_METRICS_CARD_PROPS,
   PARTNERS_WHY_PARTNER_CARD_PROPS,
   TOOLS_LEFT_SECTION_PROPS,
@@ -330,3 +331,11 @@ export const partnersWhyPartnerData: PARTNERS_WHY_PARTNER_CARD_PROPS[] = [
       "Move from system provider to innovation-led transformation partner with predictable, high-margin recurring revenue.",
   },
 ];
+
+export const partnersEcosystemData: PARTNERS_ECOSYSTEM_CARD_PROPS[]=[
+  { label: "PSM platforms" },
+    { label: "IoT & digital twin companies" },
+    { label: "LMS & training platforms" },
+    { label: "Staffing partners" },
+    { label: "Automation & robotics partners" },
+]

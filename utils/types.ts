@@ -84,3 +84,8 @@ export interface PARTNERS_WHY_PARTNER_CARD_PROPS{
   description:string;
 
 }
+
+
+export interface PARTNERS_ECOSYSTEM_CARD_PROPS{
+  label:string;
+}
