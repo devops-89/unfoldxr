@@ -66,3 +66,21 @@ export interface TOOLS_RIGHT_SECTION_PROPS {
   subHeading: string;
   cards: TOOL_CARD_PROPS[];
 }
+
+// Partners Page Types ================================================================
+
+export interface PARTNERS_METRICS_CARD_PROPS{
+  title: string;
+  description: string;
+  gridSize: {
+    xs: number;
+    sm?: number;
+    md?: number;
+  };
+}
+
+export interface PARTNERS_WHY_PARTNER_CARD_PROPS{
+  title:string;
+  description:string;
+
+}

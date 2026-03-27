@@ -1,6 +1,8 @@
 import {
   AI_INDUSTRY_DATA,
   DEVICES_SECTION_DATA,
+  partnersMetricsData,
+  partnersWhyPartnerData,
   toolsLeftData,
   toolsRightData,
   WORKFORCE_CARD_DATA,
@@ -115,3 +117,23 @@ export const homePage = {
     rightSection: toolsRightData
   },
 };
+
+export const partnersPage={
+  herosection: {
+    heading1: "Unfold Profit and Potential with our Channel Partnership.",
+    description: "Achieve more revenue and steady growth with UnfoldXR.",
+    cta1: "Become a Partner",
+    
+  },
+  metricsSection:{
+    heading:"Why Partner with an AI-AR Platform?",
+    description:"AI and augmented reality are rapidly becoming core to how enterprises operate and scale. l Partnering early means aligning with a high-growth market and delivering measurable value to your customers.",
+    metrics_card_data:partnersMetricsData
+
+  },
+  whyPartnerSection:{
+    heading:"WHY PARTNER WITH UNFOLDXR?",
+    why_partner_card_data:partnersWhyPartnerData
+  }
+
+}

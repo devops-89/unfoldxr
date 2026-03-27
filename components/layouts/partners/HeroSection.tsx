@@ -1,9 +1,10 @@
 import React from "react";
-import banner from "@/images/banner/homePage/hero.png";
+
+import partnersHeroBg from "@/images/banner/partners/partners-hero-bg.png";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { din } from "@/utils/fonts";
-import { homePage } from "@/utils/Website-Data";
+import { partnersPage } from "@/utils/Website-Data";
 import ContainedButton from "@/components/widgets/ContainedButton";
 import OutlinedButton from "@/components/widgets/OutlinedButton";
 
@@ -12,38 +13,24 @@ const HeroSection = () => {
     <Box>
       <Box
         sx={{
-          backgroundImage: `url(${banner.src})`,
+          backgroundImage: `url(${partnersHeroBg.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          height: { xs: "auto", md: "100vh" },
-          minHeight: { xs: "100vh", md: "auto" },
+          height: { xs: "auto", md: "100vh" }, 
+          minHeight: { xs: "100vh", md: "auto" }, 
           position: "relative",
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          py: { xs: 6, md: 0 },
+          py: { xs: 6, md: 0 }, 
         }}
       >
         <Container maxWidth="lg">
           <Grid container>
-            <Grid size={{ xs: 12, md: 8 }}>
-              {/* Heading 1 */}
-              <Typography
-                sx={{
-                  fontSize: { xs: 32, md: 64 },
-                  textTransform: "uppercase",
-                  WebkitTextStroke: { xs: "2px", md: "4px" },
-                  WebkitTextStrokeColor: COLORS.WHITE,
-                  color: { xs: COLORS.WHITE, md: COLORS.TRANSPARENT }, 
-                  fontFamily: din.style.fontFamily,
-                  fontWeight: 900,
-                }}
-              >
-                {homePage.herosection.heading1}
-              </Typography>
+            <Grid size={{ xs: 12, md: 8 }}> 
 
-              {/* Heading 2 */}
+              {/* Heading 1 */}
               <Typography
                 sx={{
                   fontSize: { xs: 32, md: 64 },
@@ -54,7 +41,7 @@ const HeroSection = () => {
                   my: 2,
                 }}
               >
-                {homePage.herosection.heading2}
+                {partnersPage.herosection.heading1}
               </Typography>
 
               {/* Description */}
@@ -62,11 +49,11 @@ const HeroSection = () => {
                 sx={{
                   fontFamily: din.style.fontFamily,
                   color: COLORS.WHITE,
-                  fontSize: { xs: 16, md: 28 }, // 👈 readable mobile
+                  fontSize: { xs: 16, md: 28 }, // 
                   fontWeight: 400,
                 }}
               >
-                {homePage.herosection.description}
+                {partnersPage.herosection.description}
               </Typography>
 
               {/* Buttons */}
@@ -77,13 +64,11 @@ const HeroSection = () => {
                 sx={{ mt: 3 }}
               >
                 <ContainedButton sx={{ width: { xs: "100%", md: "auto" } }}>
-                  {homePage.herosection.cta1}
+                  {partnersPage.herosection.cta1}
                 </ContainedButton>
 
-                <OutlinedButton sx={{ width: { xs: "100%", md: "auto" } }}>
-                  {homePage.herosection.cta2}
-                </OutlinedButton>
               </Stack>
+
             </Grid>
           </Grid>
         </Container>

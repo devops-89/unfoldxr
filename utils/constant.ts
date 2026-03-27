@@ -2,6 +2,8 @@ import {
   DEVICES_SECTION_DATA_PROPS,
   FUTURE_WORK_CARD_PROPS,
   INDUSTRY_CHIP_PROPS,
+  PARTNERS_METRICS_CARD_PROPS,
+  PARTNERS_WHY_PARTNER_CARD_PROPS,
   TOOLS_LEFT_SECTION_PROPS,
   TOOLS_RIGHT_SECTION_PROPS,
   WORKFORCE_CARD_PROPS,
@@ -128,7 +130,6 @@ export const FOOTER_COLUMNS: { title: string; links: string[] }[] = [
   { title: "Book a Demo", links: [] },
 ];
 
-
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
     img: increase,
@@ -217,7 +218,6 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
     gridSize: 7,
   },
   {
-   
     heading: "Works Across All Devices",
     description:
       "Mobile phones, tablets, basic smart glasses, screenless helmets, and advanced AR wearables.",
@@ -237,46 +237,96 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
   },
 ];
 
-
 //  Tools Section Data
 
 export const toolsLeftData: TOOLS_LEFT_SECTION_PROPS = {
   ctaText: "Book a Demo",
   note: "*note - this place will have cursor animation",
-  image:leftSectionBg
+  image: leftSectionBg,
 };
 
-export const toolsRightData:TOOLS_RIGHT_SECTION_PROPS = {
+export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
   subHeading: "Augmenting Human Productivity.",
   cards: [
     {
       type: "image",
       title: "From Many Tools to One Intelligent Platform ",
       image: humanizeChatbot,
-      gridSize:5
-      
+      gridSize: 5,
     },
     {
       type: "image",
       title: "Augmenting Human Productivity with AR & AI",
-      description: "Streamlining operations with smart automation and immersive technology.",
+      description:
+        "Streamlining operations with smart automation and immersive technology.",
       image: augmentingHuman,
-      gridSize:7
+      gridSize: 7,
     },
     {
-      type:"image",
-      title:"The Future Of Work: AI-Powered, AR-Enabled",
-      description:"Smarter Collaboration with next-gen tech.",
-      image:smsChatBg,
+      type: "image",
+      title: "The Future Of Work: AI-Powered, AR-Enabled",
+      description: "Smarter Collaboration with next-gen tech.",
+      image: smsChatBg,
       titleColor: "#000000",
-     descriptionColor: "#51555c",
-      gridSize:7
+      descriptionColor: "#51555c",
+      gridSize: 7,
     },
     {
-      type:"icon",
-      title:"Smarter Support, Better Outcomes",
-      icons:[bell,clock,calender],
-      gridSize:5
-    }
+      type: "icon",
+      title: "Smarter Support, Better Outcomes",
+      icons: [bell, clock, calender],
+      gridSize: 5,
+    },
   ],
 };
+
+// Partners Page Data ===========================================================================================
+
+export const partnersMetricsData: PARTNERS_METRICS_CARD_PROPS[] = [
+  {
+    title: "51.8% CAGR",
+    description: "projected growth in the AR/VR market between 2024 and 2029",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "$446.5B",
+    description: "market size expected for AI-powered AR by 2033",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "32%",
+    description:
+      "productivity boost reported by organizations adopting AR and VR (IBM)",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "46%",
+    description:
+      "reduction in task completion time achieved through AR/VR adoption (IBM)",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "70%",
+    description:
+      "of Fortune 500 companies expected to implement augmented connected worker initiatives by 2027 (Gartner)",
+    gridSize: { xs: 12 },
+  },
+];
+
+export const partnersWhyPartnerData: PARTNERS_WHY_PARTNER_CARD_PROPS[] = [
+  {
+    title: "Increase product stickiness",
+    description:
+      "UnfoldXR embeds augmented reality directly into daily operations, increasing adoption and long-term reliance.",
+  },
+  {
+    title: "Accelerate revenue growth",
+    description:
+      "Achieve high conversion rates and reduced churn with AR-enabled immersive experiences.",
+  },
+  {
+    title: "Strengthen strategic positioning",
+    description:
+      "Move from optional provider to mission-critical infrastructure partner.",
+  },
+];
