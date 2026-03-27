@@ -13,25 +13,34 @@ import Tools from "./Tools";
 const HomeLayout = () => {
   return (
     <Box>
-      <HeroSection />
-      <Box
-        sx={{
-          backgroundColor: COLORS.BLACK,
-          height: "100vh",
-          p: 4,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <WorkForce />
-      </Box>
-      <AiIndustry />
+     <HeroSection />
+
+<Box
+  sx={{
+    backgroundColor: COLORS.BLACK,
+    height: { xs: "auto", md: "100vh" }, 
+    minHeight: { xs: "auto", md: "unset" },
+    p: { xs: 2, md: 4 }, 
+    display: "flex",
+    alignItems: { xs: "flex-start", md: "center" }, 
+    justifyContent: "center",
+  }}
+>
+  <WorkForce />
+</Box>
+      
+       <AiIndustry />
+       
       <FutureWork />
+      
       <Metrics />
+      
       <Meetava />
+      
       <Outcome />
+      
       <DevicesSection />
+      
       <Tools />
     </Box>
   );

@@ -217,7 +217,7 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
     gridSize: 7,
   },
   {
-    img: devicesAcross,
+   
     heading: "Works Across All Devices",
     description:
       "Mobile phones, tablets, basic smart glasses, screenless helmets, and advanced AR wearables.",

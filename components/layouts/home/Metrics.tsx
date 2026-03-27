@@ -12,17 +12,19 @@ const Metrics = () => {
             backgroundColor: "#eee",
             borderRadius: "45px",
             height: "100%",
-            mt: 10,
+            mt: { xs: 4, md: 10 },
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            py: 10,
+            py: { xs: 6, md: 10 }, 
           }}
         >
           <Container maxWidth="lg">
+            
+            
             <Typography
               sx={{
-                fontSize: 50,
+                fontSize: { xs: 28, md: 50 },
                 fontFamily: din.style.fontFamily,
                 fontWeight: 800,
                 textAlign: "center",
@@ -30,42 +32,57 @@ const Metrics = () => {
             >
               {homePage.metrics.heading}
             </Typography>
+
+            
             <Typography
-              sx={{ fontSize: 30, fontFamily: helvetica.style.fontFamily }}
+              sx={{
+                fontSize: { xs: 16, md: 30 },
+                fontFamily: helvetica.style.fontFamily,
+                textAlign: { xs: "center", md: "left" },
+              }}
             >
               {homePage.metrics.leftSection.heading}
             </Typography>
-            <Grid container alignItems={"center"}>
-              <Grid size={6}>
+
+            <Grid container alignItems="center" spacing={{ xs: 3, md: 0 }}>
+              
+              
+              <Grid size={{ xs: 12, md: 6 }}>
                 <Typography
                   sx={{
-                    fontSize: 300,
+                    fontSize: { xs: 80, md: 300 }, 
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
+                    textAlign: { xs: "center", md: "left" },
                   }}
                 >
                   {homePage.metrics.leftSection.number}
                 </Typography>
               </Grid>
-              <Grid size={6}>
-                <Stack spacing={10} justifyContent={"flex-end"}>
+
+              {/* RIGHT LIST */}
+              <Grid size={{ xs: 12, md: 6 }}>
+                <Stack
+                  spacing={{ xs: 3, md: 10 }} 
+                  justifyContent="flex-end"
+                >
                   {homePage.metrics.rightSection.map((val, i) => (
                     <Typography
+                      key={i}
                       sx={{
-                        textAlign: "right",
+                        textAlign: { xs: "center", md: "right" },
                         fontFamily: din.style.fontFamily,
-                        fontSize: 30,
+                        fontSize: { xs: 18, md: 30 },
                         fontWeight: 900,
                         textTransform: "capitalize",
                       }}
                     >
                       {val.label}{" "}
                       <Typography
-                        component={"span"}
+                        component="span"
                         sx={{
-                          textAlign: "right",
                           fontFamily: din.style.fontFamily,
-                          fontSize: 30,
+                          fontSize: { xs: 18, md: 30 },
                           fontWeight: 500,
                           textTransform: "capitalize",
                         }}
@@ -76,6 +93,7 @@ const Metrics = () => {
                   ))}
                 </Stack>
               </Grid>
+
             </Grid>
           </Container>
         </Box>

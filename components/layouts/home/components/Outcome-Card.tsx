@@ -10,30 +10,35 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
       <Box
         sx={{
           backgroundColor: "#272829",
-          padding: "50px",
+          padding: { xs: "20px", md: "50px" }, 
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: 4,
+          gap: { xs: 2, md: 4 }, 
           borderRadius: "20px",
+          flexDirection: { xs: "column", md: "row" }, 
+          textAlign: { xs: "center", md: "left" },
         }}
       >
+        {/* Number */}
         <Typography
           sx={{
             color: "rgba(182, 236, 26, 0.50)",
             fontFamily: din.style.fontFamily,
-            fontSize: 50,
+            fontSize: { xs: 32, md: 50 },
             fontWeight: 900,
           }}
         >
           {number}
         </Typography>
+
+        {/* Label */}
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: 25,
+            fontSize: { xs: 16, md: 25 },
             fontWeight: 400,
-            lineHeight: "39px",
+            lineHeight: { xs: "24px", md: "39px" },
             color: COLORS.WHITE,
           }}
         >

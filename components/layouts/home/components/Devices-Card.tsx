@@ -3,7 +3,6 @@ import { din } from "@/utils/fonts";
 import { DEVICES_SECTION_DATA_PROPS } from "@/utils/types";
 import { Circle } from "@mui/icons-material";
 import { Box, Divider, Stack, Typography } from "@mui/material";
-import Image from "next/image";
 import React from "react";
 
 const DevicesCard = ({
@@ -21,40 +20,47 @@ const DevicesCard = ({
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            height: "300px",
+            height: { xs: "220px", md: "300px" },
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
             borderRadius: "20px",
-            px: 5,
+            px: { xs: 2, md: 5 }, 
           }}
         >
           <Box>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: 30,
+                fontSize: { xs: 18, md: 30 },
                 fontWeight: 900,
                 color: COLORS.WHITE,
                 textTransform: "uppercase",
-                width: "60%",
+                width: { xs: "100%", md: "60%" },
               }}
             >
               {heading}
             </Typography>
-            <Stack direction={"row"} alignItems={"center"} spacing={2}>
+
+            <Stack direction="row" alignItems="center" spacing={2}>
               <Divider
                 sx={{
                   backgroundColor: COLORS.WHITE,
                   borderWidth: "3px",
-                  width: "100px",
+                  width: { xs: "60px", md: "100px" },
                   borderRadius: "30px",
                 }}
               />
               <Circle sx={{ color: COLORS.WHITE, fontSize: 10 }} />
             </Stack>
+
             <Typography
-              sx={{ color: COLORS.WHITE, fontSize: 20, fontWeight: 400, mt: 2 }}
+              sx={{
+                color: COLORS.WHITE,
+                fontSize: { xs: 14, md: 20 },
+                fontWeight: 400,
+                mt: 2,
+              }}
             >
               {description}
             </Typography>
@@ -68,19 +74,20 @@ const DevicesCard = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
-            height: "300px",
-            px: 5,
+            height: { xs: "220px", md: "300px" },
+            px: { xs: 2, md: 5 },
             overflow: "hidden",
             backgroundImage: `url(${img.src})`,
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "right",
+            backgroundPosition: { xs: "right bottom", md: "right" }, 
+            backgroundSize: { xs: "120px", md: "auto" }, 
           }}
         >
-          <Box sx={{ width: 220 }}>
+          <Box sx={{ width: { xs: "100%", md: 220 } }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: 25,
+                fontSize: { xs: 18, md: 25 },
                 fontWeight: 900,
                 color: COLORS.BLACK,
                 textTransform: "uppercase",
@@ -88,19 +95,26 @@ const DevicesCard = ({
             >
               {heading}
             </Typography>
-            <Stack direction={"row"} alignItems={"center"} spacing={2}>
+
+            <Stack direction="row" alignItems="center" spacing={2}>
               <Divider
                 sx={{
                   backgroundColor: COLORS.BLACK,
                   borderWidth: "3px",
-                  width: "100px",
+                  width: { xs: "60px", md: "100px" },
                   borderRadius: "30px",
                 }}
               />
               <Circle sx={{ color: COLORS.BLACK, fontSize: 10 }} />
             </Stack>
+
             <Typography
-              sx={{ color: COLORS.BLACK, fontSize: 16, fontWeight: 400, mt: 2 }}
+              sx={{
+                color: COLORS.BLACK,
+                fontSize: { xs: 14, md: 16 },
+                fontWeight: 400,
+                mt: 2,
+              }}
             >
               {description}
             </Typography>
@@ -114,16 +128,16 @@ const DevicesCard = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
-            height: "300px",
-            px: 5,
+            height: { xs: "220px", md: "300px" },
+            px: { xs: 2, md: 5 },
             overflow: "hidden",
           }}
         >
-          <Box sx={{ width: 250 }}>
+          <Box sx={{ width: { xs: "100%", md: 250 } }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: 25,
+                fontSize: { xs: 18, md: 25 },
                 fontWeight: 900,
                 color: COLORS.BLACK,
                 textTransform: "uppercase",
@@ -131,19 +145,26 @@ const DevicesCard = ({
             >
               {heading}
             </Typography>
-            <Stack direction={"row"} alignItems={"center"} spacing={2}>
+
+            <Stack direction="row" alignItems="center" spacing={2}>
               <Divider
                 sx={{
                   backgroundColor: COLORS.BLACK,
                   borderWidth: "3px",
-                  width: "100px",
+                  width: { xs: "60px", md: "100px" },
                   borderRadius: "30px",
                 }}
               />
               <Circle sx={{ color: COLORS.BLACK, fontSize: 10 }} />
             </Stack>
+
             <Typography
-              sx={{ color: COLORS.BLACK, fontSize: 16, fontWeight: 400, mt: 2 }}
+              sx={{
+                color: COLORS.BLACK,
+                fontSize: { xs: 14, md: 16 },
+                fontWeight: 400,
+                mt: 2,
+              }}
             >
               {description}
             </Typography>

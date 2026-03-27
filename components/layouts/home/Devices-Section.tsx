@@ -1,6 +1,5 @@
 import { din } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
-import { GridOff } from "@mui/icons-material";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import DevicesCard from "./components/Devices-Card";
@@ -9,26 +8,33 @@ const DevicesSection = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: { xs: "auto", md: "100vh" }, 
         display: "flex",
-        alignItems: "center",
+        alignItems: { xs: "flex-start", md: "center" },
         justifyContent: "center",
+        py: { xs: 6, md: 10 }, 
       }}
     >
       <Container maxWidth="lg">
+        
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: 64,
+            fontSize: { xs: 32, md: 64 }, 
             fontWeight: 900,
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           {homePage.devicesSection.heading}
         </Typography>
 
-        <Grid container spacing={2}>
+        {/* Grid */}
+        <Grid container spacing={{ xs: 2, md: 2 }}>
           {homePage.devicesSection.data.map((val, i) => (
-            <Grid size={val.gridSize}>
+            <Grid
+              key={i}
+              size={{ xs: 12, md: val.gridSize }} 
+            >
               <DevicesCard
                 bgImg={val.bgImg}
                 img={val.img}
@@ -39,6 +45,7 @@ const DevicesSection = () => {
             </Grid>
           ))}
         </Grid>
+
       </Container>
     </Box>
   );

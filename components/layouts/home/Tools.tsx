@@ -24,78 +24,83 @@ import support from "@/images/banner/homePage/tools/support.png";
 
 const Tools = () => {
   return (
-    <Box>
-      <Box
-        sx={{
-          backgroundColor: COLORS.BLACK,
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          py:20
-        }}
-      >
-        <Box sx={{ py: 10, bgcolor: COLORS.WHITE, borderRadius: 4 }}>
-          <Container maxWidth="lg">
-            <Grid container alignItems={"flex-end"}>
-              <Grid size={7}>
-                <Typography
-                  sx={{
-                    fontFamily: din.style.fontFamily,
-                    fontSize: 50,
-                    fontWeight: 900,
-                    textTransform: "uppercase",
-                    lineHeight: 1.1,
-                    color: COLORS.BLACK,
-                  }}
-                >
-                  {homePage.tools.heading}
-                </Typography>
-              </Grid>
-              <Grid size={5}>
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  spacing={2}
-                  sx={{ mt: 3, mb: 5 }}
-                  justifyContent={"flex-end"}
-                >
-                  <Divider
-                    sx={{
-                      width: 100,
-                      borderBottomWidth: 2,
-                      borderColor: COLORS.BLACK,
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                      fontSize: 18,
-                      color: COLORS.BLACK,
-                      textAlign: "right",
-                      width: 200,
-                    }}
-                  >
-                    {homePage.tools.subHeading}
-                  </Typography>
-                </Stack>
-              </Grid>
-            </Grid>
+    <Box
+  sx={{
+    backgroundColor: COLORS.BLACK,
+    height: { xs: "auto", md: "100vh" }, // ✅ fix overflow
+    display: "flex",
+    alignItems: { xs: "flex-start", md: "center" },
+    justifyContent: "center",
+    py: { xs: 6, md: 20 }, // ✅ reduce mobile padding
+  }}
+>
+  <Box sx={{ py: { xs: 4, md: 10 }, bgcolor: COLORS.WHITE, borderRadius: 4, width:{xs:"90%",md:"auto"} }}>
+    <Container maxWidth="lg">
 
-            {/* bottom section */}
-            <Grid container spacing={4} sx={{mt:6}} >
-              <Grid size={6}>
-                <ToolsLeftSection {...homePage.tools.leftSection} />
-              </Grid>
+      {/* TOP SECTION */}
+      <Grid container alignItems="flex-end" spacing={{ xs: 2, md: 0 }}>
+        
+        <Grid size={{ xs: 12, md: 7 }}>
+          <Typography
+            sx={{
+              fontFamily: din.style.fontFamily,
+              fontSize: { xs: 28, md: 50 }, // ✅ responsive
+              fontWeight: 900,
+              textTransform: "uppercase",
+              lineHeight: 1.1,
+              color: COLORS.BLACK,
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
+            {homePage.tools.heading}
+          </Typography>
+        </Grid>
 
-              <Grid size={6}>
-                <ToolsRightSection {...homePage.tools.rightSection} />
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
-      </Box>
-    </Box>
+        <Grid size={{ xs: 12, md: 5 }}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            spacing={2}
+            sx={{ mt: 3, mb: 5 }}
+            justifyContent={{ xs: "center", md: "flex-end" }}
+          >
+            <Divider
+              sx={{
+                width: { xs: 60, md: 100 },
+                borderBottomWidth: 2,
+                borderColor: COLORS.BLACK,
+              }}
+            />
+            <Typography
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: 14, md: 18 },
+                color: COLORS.BLACK,
+                textAlign: { xs: "center", md: "right" },
+                width: { xs: "auto", md: 200 },
+              }}
+            >
+              {homePage.tools.subHeading}
+            </Typography>
+          </Stack>
+        </Grid>
+      </Grid>
+
+      {/* BOTTOM SECTION */}
+      <Grid container spacing={{ xs: 3, md: 4 }} sx={{ mt: {xs:0,md:6},mb:6  }}>
+        
+        <Grid size={{ xs: 12, md: 6 }}>
+          <ToolsLeftSection {...homePage.tools.leftSection} />
+        </Grid>
+
+        <Grid size={{ xs: 12, md: 6 }}>
+          <ToolsRightSection {...homePage.tools.rightSection} />
+        </Grid>
+
+      </Grid>
+    </Container>
+  </Box>
+</Box>
   );
 };
 
