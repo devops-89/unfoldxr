@@ -2,6 +2,8 @@ import {
   DEVICES_SECTION_DATA_PROPS,
   FUTURE_WORK_CARD_PROPS,
   INDUSTRY_CHIP_PROPS,
+  TOOLS_LEFT_SECTION_PROPS,
+  TOOLS_RIGHT_SECTION_PROPS,
   WORKFORCE_CARD_PROPS,
 } from "./types";
 import increase from "@/images/banner/homePage/workforce/increase-productivity.png";
@@ -19,6 +21,14 @@ import hospitality from "@/images/banner/homePage/ai-industry/hospitality.png";
 import devicesImpact from "@/images/banner/homePage/devices/impact.png";
 import devicesAcross from "@/images/banner/homePage/devices/work.png";
 import built from "@/images/banner/homePage/devices/built.png";
+import bell from "@/images/homepage/tools/bell.svg";
+import calender from "@/images/homepage/tools/calender.svg";
+import clock from "@/images/homepage/tools/clock.svg";
+import augmentingHuman from "@/images/homepage/tools/augmenting-human.svg";
+import smsChatBg from "@/images/homepage/tools/sms-chat-bg.svg";
+import humanizeChatbot from "@/images/homepage/tools/humanize-chatbot.svg";
+import leftSectionBg from "@/images/homepage/tools/left-section-bg.svg";
+
 export const HEADER_LINKS = [
   {
     label: "Home",
@@ -49,6 +59,75 @@ export const HEADER_LINKS = [
     url: "/contact-us",
   },
 ];
+
+export const SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/company/108440043/admin/dashboard/",
+  facebook: "https://www.facebook.com/profile.php?id=61588581069475",
+  instagram: "https://www.instagram.com/unfoldxr/",
+  x: "https://x.com/unfoldxr",
+  youtube: "https://youtube.com/@unfoldxr?si=AmM-Q5y7uRqEU7zH",
+};
+
+export const NAV_ITEMS = [
+  "Home",
+  "Solutions",
+  "Industry",
+  "Product",
+  "Resources",
+  "About Us",
+  "Contact Us",
+];
+
+export const FOOTER_COLUMNS: { title: string; links: string[] }[] = [
+  { title: "Home", links: [] },
+  {
+    title: "Solutions",
+    links: ["Repair & Maintenance", "Inspection", "Field Service"],
+  },
+  {
+    title: "Industry",
+    links: [
+      "Automotive",
+      "Manufacturing",
+      "Oil & Gas",
+      "Aviation",
+      "Insurance",
+      "Marine",
+      "Logistics & Supply Chain",
+      "Retail",
+      "HealthCare",
+    ],
+  },
+  {
+    title: "Product",
+    links: ["Augment", "Empower", "Edge", "Meet AVA"],
+  },
+  {
+    title: "Resources",
+    links: [
+      "Case Studies",
+      "Blog / Insights",
+      "Product Videos",
+      "Brochure",
+      "Feature List",
+      "XR Industry Reports",
+    ],
+  },
+  {
+    title: "About Us",
+    links: [
+      "Mission",
+      "Vision",
+      "Leadership",
+      "Brand DNA",
+      "Partners",
+      "Careers",
+    ],
+  },
+  { title: "Contact Us", links: [] },
+  { title: "Book a Demo", links: [] },
+];
+
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
@@ -157,3 +236,47 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
     gridSize: 7,
   },
 ];
+
+
+//  Tools Section Data
+
+export const toolsLeftData: TOOLS_LEFT_SECTION_PROPS = {
+  ctaText: "Book a Demo",
+  note: "*note - this place will have cursor animation",
+  image:leftSectionBg
+};
+
+export const toolsRightData:TOOLS_RIGHT_SECTION_PROPS = {
+  subHeading: "Augmenting Human Productivity.",
+  cards: [
+    {
+      type: "image",
+      title: "From Many Tools to One Intelligent Platform ",
+      image: humanizeChatbot,
+      gridSize:5
+      
+    },
+    {
+      type: "image",
+      title: "Augmenting Human Productivity with AR & AI",
+      description: "Streamlining operations with smart automation and immersive technology.",
+      image: augmentingHuman,
+      gridSize:7
+    },
+    {
+      type:"image",
+      title:"The Future Of Work: AI-Powered, AR-Enabled",
+      description:"Smarter Collaboration with next-gen tech.",
+      image:smsChatBg,
+      titleColor: "#000000",
+     descriptionColor: "#51555c",
+      gridSize:7
+    },
+    {
+      type:"icon",
+      title:"Smarter Support, Better Outcomes",
+      icons:[bell,clock,calender],
+      gridSize:5
+    }
+  ],
+};

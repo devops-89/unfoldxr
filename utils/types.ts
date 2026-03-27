@@ -29,3 +29,40 @@ export interface DEVICES_SECTION_DATA_PROPS {
   description: string;
   gridSize: number;
 }
+
+
+// Tools section typings
+
+
+export interface TOOLS_CARD_BASE{
+  
+  title:string;
+  gridSize:number;
+  type:"image" | "icon"
+}
+
+export interface IMAGE_CARD_PROPS extends TOOLS_CARD_BASE{
+  type:"image";
+  image: StaticImageData;
+  description?:string;
+  titleColor?: string;       
+  descriptionColor?: string;  
+}
+
+export interface ICON_CARD_PROPS extends TOOLS_CARD_BASE{
+  type:"icon";
+  icons:string[];
+}
+
+export type TOOL_CARD_PROPS=IMAGE_CARD_PROPS | ICON_CARD_PROPS;
+
+export interface TOOLS_LEFT_SECTION_PROPS {
+  ctaText: string;
+  note: string;
+  image:StaticImageData
+}
+
+export interface TOOLS_RIGHT_SECTION_PROPS {
+  subHeading: string;
+  cards: TOOL_CARD_PROPS[];
+}
