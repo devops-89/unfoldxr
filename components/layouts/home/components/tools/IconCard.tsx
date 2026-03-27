@@ -2,6 +2,7 @@
 
 import { Box, Stack, Typography } from "@mui/material";
 import { ICON_CARD_PROPS } from "@/utils/types";
+import Image from "next/image";
 
 const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
   return (
@@ -19,17 +20,29 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
       </Typography>
 
       <Stack direction="row" spacing={2}>
-        {card.icons.map((_, i) => (
-          <Box
-            key={i}
-            sx={{
-              width: 40,
-              height: 40,
-              borderRadius: "50%",
-              backgroundColor: "#1F1F1F",
-            }}
-          />
-        ))}
+       
+
+{card.icons.map((icon, i) => (
+  <Box
+    key={i}
+    sx={{
+      width: 40,
+      height: 40,
+      borderRadius: "50%",
+      backgroundColor: "#1F1F1F",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Image
+      src={icon}
+      alt="icon"
+      width={20}
+      height={20}
+    />
+  </Box>
+))}
       </Stack>
     </Box>
   );

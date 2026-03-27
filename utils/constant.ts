@@ -21,6 +21,14 @@ import hospitality from "@/images/banner/homePage/ai-industry/hospitality.png";
 import devicesImpact from "@/images/banner/homePage/devices/impact.png";
 import devicesAcross from "@/images/banner/homePage/devices/work.png";
 import built from "@/images/banner/homePage/devices/built.png";
+import bell from "@/images/homepage/tools/bell.svg";
+import calender from "@/images/homepage/tools/calender.svg";
+import clock from "@/images/homepage/tools/clock.svg";
+import augmentingHuman from "@/images/homepage/tools/augmenting-human.svg";
+import smsChatBg from "@/images/homepage/tools/sms-chat-bg.svg";
+import humanizeChatbot from "@/images/homepage/tools/humanize-chatbot.svg";
+import leftSectionBg from "@/images/homepage/tools/left-section-bg.svg";
+
 export const HEADER_LINKS = [
   {
     label: "Home",
@@ -233,12 +241,9 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
 //  Tools Section Data
 
 export const toolsLeftData: TOOLS_LEFT_SECTION_PROPS = {
-  heading: "THE WORK OF MANY TOOLS...",
   ctaText: "Book a Demo",
   note: "*note - this place will have cursor animation",
-  avatars: [
-    { id: 1, name: "Noah", image: "/avatars/1.png" },
-  ],
+  image:leftSectionBg
 };
 
 export const toolsRightData:TOOLS_RIGHT_SECTION_PROPS = {
@@ -246,15 +251,32 @@ export const toolsRightData:TOOLS_RIGHT_SECTION_PROPS = {
   cards: [
     {
       type: "image",
-      title: "From Many Tools...",
-      image: "/tools/tools-team.png",
-      bg: "gradient",
+      title: "From Many Tools to One Intelligent Platform ",
+      image: humanizeChatbot,
+      gridSize:5
+      
     },
     {
-      type: "dark",
-      title: "Augmenting Human Productivity...",
-      description: "Streamlining operations...",
-      image: "/tools/augmenting.png",
+      type: "image",
+      title: "Augmenting Human Productivity with AR & AI",
+      description: "Streamlining operations with smart automation and immersive technology.",
+      image: augmentingHuman,
+      gridSize:7
     },
+    {
+      type:"image",
+      title:"The Future Of Work: AI-Powered, AR-Enabled",
+      description:"Smarter Collaboration with next-gen tech.",
+      image:smsChatBg,
+      titleColor: "#000000",
+     descriptionColor: "#51555c",
+      gridSize:7
+    },
+    {
+      type:"icon",
+      title:"Smarter Support, Better Outcomes",
+      icons:[bell,clock,calender],
+      gridSize:5
+    }
   ],
 };

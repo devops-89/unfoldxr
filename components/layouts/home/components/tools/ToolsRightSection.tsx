@@ -8,7 +8,7 @@ const ToolsRightSection = ({ cards }: TOOLS_RIGHT_SECTION_PROPS) => {
   return (
     <Grid container spacing={2}>
       {cards.map((card, index) => (
-        <Grid size={6} key={index}>
+        <Grid size={card.gridSize} key={index}>
           <ToolsCard card={card} />
         </Grid>
       ))}

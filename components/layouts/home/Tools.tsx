@@ -32,6 +32,7 @@ const Tools = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          py:20
         }}
       >
         <Box sx={{ py: 10, bgcolor: COLORS.WHITE, borderRadius: 4 }}>
@@ -82,7 +83,7 @@ const Tools = () => {
             </Grid>
 
             {/* bottom section */}
-            <Grid container spacing={4}>
+            <Grid container spacing={4} sx={{mt:6}} >
               <Grid size={6}>
                 <ToolsLeftSection {...homePage.tools.leftSection} />
               </Grid>
