@@ -1,4 +1,5 @@
 import {
+  CONTACT_FORM_DATA,
   DEVICES_SECTION_DATA_PROPS,
   FUTURE_WORK_CARD_PROPS,
   INDUSTRY_CHIP_PROPS,
@@ -410,3 +411,42 @@ export const partnersExistingPartnersData: PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS
     image: existingPartner5,
   },
 ];
+
+// Contact Form section ================================
+export const contactFormData:CONTACT_FORM_DATA={
+  formFields:[
+      {
+        name: "name",
+        label: "Name *",
+        required: true,
+      },
+      {
+        name: "organization",
+        label: "Organisation *",
+        required: true,
+      },
+      {
+        name: "designation",
+        label: "Designation *",
+        required: true,
+      },
+      {
+        name: "contactNo",
+        label: "Contact No *",
+        required: true,
+      },
+      {
+        name: "email",
+        label: "Email *",
+        required: true,
+      },
+      {
+        name: "message",
+        label: "Message",
+        multiline: true,
+        rows: 4,
+      },
+    ],
+    buttonText:"Submit Button"
+}
+

@@ -1,5 +1,6 @@
 import {
   AI_INDUSTRY_DATA,
+  contactFormData,
   DEVICES_SECTION_DATA,
   partnersClientBusinessData,
   partnersEcosystemData,
@@ -156,4 +157,19 @@ export const partnersPage={
     existing_partners_chip_data:partnersExistingPartnersData
   }
    
+}
+
+export const contactPage={
+   herosection: {
+    heading1: "Ready to watch the future of work unfold? ",
+    description: "Contact an UnfoldXR Expert.",
+    
+    
+  },
+  contactFormSection:{
+   heading:"Let’s augment human productivity together.",
+   note:"Note: By submitting this form, you will receive the information requested as well as sales and/or marketing communication on resources, news, and events related to UnfoldXR. You can unsubscribe anytime. For further details about your rights and how we process your personal information, see our Privacy Policy.",
+   contactFormData:contactFormData
+  
+ }
 }

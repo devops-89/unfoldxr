@@ -100,3 +100,20 @@ export interface PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS{
   image:StaticImageData
 }
 
+// Contact Section Types =========================================================
+
+export interface CONTACTFORMFIELD {
+  name: string;
+  label: string;
+  required?: boolean;
+  multiline?: boolean;
+  rows?: number;
+}
+
+export interface CONTACT_FORM_DATA{
+  formFields:CONTACTFORMFIELD[];
+  buttonText:string;
+}
+
+
+
