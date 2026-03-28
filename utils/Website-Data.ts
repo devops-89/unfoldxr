@@ -1,7 +1,9 @@
 import {
   AI_INDUSTRY_DATA,
   DEVICES_SECTION_DATA,
+  partnersClientBusinessData,
   partnersEcosystemData,
+  partnersExistingPartnersData,
   partnersMetricsData,
   partnersWhyPartnerData,
   toolsLeftData,
@@ -9,6 +11,7 @@ import {
   WORKFORCE_CARD_DATA,
 } from "./constant";
 import ava from "@/images/banner/homePage/avapng.png";
+import partnersClientBusiness from "@/images/banner/partners/client-business-section.png";
 import tools from "@/images/banner/homePage/tools/tools-team.png";
 export const homePage = {
   herosection: {
@@ -142,6 +145,15 @@ export const partnersPage={
   leftItems: partnersEcosystemData,
   rightText:
     "Extend ERP modules into hands-free execution. Reduce errors and improve first-time fix rates. Create real-time feedback loops into maintenance systems.",
+  },
+  clientBusinessSection:{
+    title:"DON'T JUST ADD VALUE, AUGMENT YOUR CLIENT'S BUSINESS.",
+    image:partnersClientBusiness,
+    client_business_card_data:partnersClientBusinessData
+  },
+  existingPartnersSection:{
+    heading:"Our Existing Partners",
+    existing_partners_chip_data:partnersExistingPartnersData
   }
-
+   
 }

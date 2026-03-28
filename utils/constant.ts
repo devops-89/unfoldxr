@@ -2,7 +2,9 @@ import {
   DEVICES_SECTION_DATA_PROPS,
   FUTURE_WORK_CARD_PROPS,
   INDUSTRY_CHIP_PROPS,
+  PARTNERS_CLIENT_BUSINESS_CARD_PROPS,
   PARTNERS_ECOSYSTEM_CARD_PROPS,
+  PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS,
   PARTNERS_METRICS_CARD_PROPS,
   PARTNERS_WHY_PARTNER_CARD_PROPS,
   TOOLS_LEFT_SECTION_PROPS,
@@ -31,6 +33,12 @@ import augmentingHuman from "@/images/homepage/tools/augmenting-human.svg";
 import smsChatBg from "@/images/homepage/tools/sms-chat-bg.svg";
 import humanizeChatbot from "@/images/homepage/tools/humanize-chatbot.svg";
 import leftSectionBg from "@/images/homepage/tools/left-section-bg.svg";
+import existingPartner1 from "@/images/banner/partners/existing-partners/partner1.svg";
+import existingPartner2 from "@/images/banner/partners/existing-partners/partner2.svg";
+import existingPartner3 from "@/images/banner/partners/existing-partners/partner3.svg";
+import existingPartner4 from "@/images/banner/partners/existing-partners/partner4.svg";
+import existingPartner5 from "@/images/banner/partners/existing-partners/partner5.svg";
+import existingPartner6 from "@/images/banner/partners/existing-partners/partner6.svg";
 
 export const HEADER_LINKS = [
   {
@@ -339,3 +347,66 @@ export const partnersEcosystemData: PARTNERS_ECOSYSTEM_CARD_PROPS[]=[
     { label: "Staffing partners" },
     { label: "Automation & robotics partners" },
 ]
+
+export const partnersClientBusinessData: PARTNERS_CLIENT_BUSINESS_CARD_PROPS[]=[
+  {
+    id: 1,
+    title: "EMBEDDED PRODUCT",
+    description:
+      "Refer your clients and prospects to earn a commission on sales.",
+  },
+  {
+    id: 2,
+    title: "REFERRAL PARTNER",
+    description:
+      "Refer your clients and prospects to us to earn a commission on sales.",
+  },
+  {
+    id: 3,
+    title: "RESELLER PARTNER",
+    description:
+      "Distribute UnfoldX’s AI-AR platform in your core market.",
+  },
+  {
+    id: 4,
+    title: "LICENSING AND IMPLEMENTATION PARTNER",
+    description:
+      "Sell and implement UnfoldXR SaaS platform to establish an augmented revenue stream.",
+  },
+]
+
+export const partnersExistingPartnersData: PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS[]=[
+  {
+    image: existingPartner1,
+  },
+  {
+    image: existingPartner2,
+  },
+  {
+    image: existingPartner3,
+  },
+  {
+    image: existingPartner4,
+  },
+   {
+    image: existingPartner5,
+  },
+   {
+    image: existingPartner6,
+  },
+   {
+    image: existingPartner1,
+  },
+   {
+    image: existingPartner2,
+  },
+   {
+    image: existingPartner3,
+  },
+   {
+    image: existingPartner4,
+  },
+   {
+    image: existingPartner5,
+  },
+];

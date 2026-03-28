@@ -4,7 +4,8 @@ import { COLORS } from "@/utils/enum";
 import MetricsSection from "./MetricsSection";
 import WhyPartnerSection from "./WhyPartnerSection";
 import EcosystemSection from "./EcosystemSection";
-
+import ClientBusinessSection from "./ClientBusinessSection";
+import ExistingPartnersSection from "./ExistingPartnersSection";
 const PartnersLayout = () => {
   return (
     <Box>
@@ -12,6 +13,8 @@ const PartnersLayout = () => {
     <MetricsSection />
     <WhyPartnerSection />
     <EcosystemSection />
+    <ClientBusinessSection />
+    <ExistingPartnersSection />
     </Box>
   );
 };

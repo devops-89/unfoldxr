@@ -89,3 +89,14 @@ export interface PARTNERS_WHY_PARTNER_CARD_PROPS{
 export interface PARTNERS_ECOSYSTEM_CARD_PROPS{
   label:string;
 }
+
+export interface PARTNERS_CLIENT_BUSINESS_CARD_PROPS{
+  id:number;
+  title:string;
+  description:string;
+}
+
+export interface PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS{
+  image:StaticImageData
+}
+
