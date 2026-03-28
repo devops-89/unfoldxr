@@ -63,6 +63,10 @@ export const HEADER_LINKS = [
     url: "/resources",
   },
   {
+    label:"Partners",
+    url:"/partners"
+  },
+  {
     label: "About Us",
     url: "/about-us",
   },
