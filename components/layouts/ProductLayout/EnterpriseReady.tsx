@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import IntegrationInstructionsRoundedIcon from "@mui/icons-material/IntegrationInstructionsRounded";
 import AccountTreeRoundedIcon from "@mui/icons-material/AccountTreeRounded";
 import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
@@ -11,35 +11,44 @@ const PROFILE_IMG =
 
 const points = [
   {
-    title: "Seamless System Integration",
-    desc: "Integrates with internal systems like CMMS, analytics, BI and IAM for user provisioning, data sync, and secure access control.",
-    icon: <IntegrationInstructionsRoundedIcon />,
+    title: "Seamless system integration",
+    desc: "Integrates with internal systems like core enterprise systems, CMMS, analytics & BI, IAM etc for user provisioning, data sync, and secure access control.",
+    icon: <IntegrationInstructionsRoundedIcon sx={{ fontSize: 24 }} />,
   },
   {
-    title: "Structured Governance Setup",
+    title: "Structured governance setup",
     desc: "Role-based permissions and organization-level controls ensure compliant, scalable deployment.",
-    icon: <AccountTreeRoundedIcon />,
+    icon: <AccountTreeRoundedIcon sx={{ fontSize: 24 }} />,
   },
   {
-    title: "Rapid Configuration",
-    desc: "No-code workflow builder with centralized master setup for assets, processes and task flows.",
-    icon: <SettingsSuggestRoundedIcon />,
+    title: "Rapid configuration",
+    desc: "No-code workflow builder with centralized master setup for assets, processes, and task flows.",
+    icon: <SettingsSuggestRoundedIcon sx={{ fontSize: 24 }} />,
   },
   {
-    title: "Multi-Device Deployment",
-    desc: "Native mobile, tablet, web and smart glasses support ready for immediate rollout across teams.",
-    icon: <DevicesRoundedIcon />,
+    title: "Multi-device deployment",
+    desc: "Native mobile, tablet, web, and smart glasses support — ready for immediate rollout across teams.",
+    icon: <DevicesRoundedIcon sx={{ fontSize: 24 }} />,
   },
   {
-    title: "Device Procurement Support",
-    desc: "As authorized resellers for major brands, we support hardware procurement for seamless deployments.",
-    icon: <HandymanRoundedIcon />,
+    title: "Device procurement support",
+    desc: "As authorized resellers for all major brands, we also handle hardware and device procurement ensuring a seamless and fully compatible deployment experience.",
+    icon: <HandymanRoundedIcon sx={{ fontSize: 24 }} />,
   },
 ];
 
 const EnterpriseReady = () => {
   return (
-    <Box sx={{ backgroundColor: "#000", color: "#fff", py: { xs: 8, md: 14 }, position: "relative", overflow: "hidden" }}>
+    <Box
+      sx={{
+        backgroundColor: "#000",
+        color: "#fff",
+        py: { xs: 8, md: 16 },
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* VR Woman Image - Bleeding off left edge */}
       <Box
         component="img"
         src={PROFILE_IMG}
@@ -47,61 +56,75 @@ const EnterpriseReady = () => {
         sx={{
           position: "absolute",
           left: 0,
-          top: { xs: 0, md: 120 },
+          top: { xs: 0, md: 100 },
           width: { xs: "100%", md: "35%" },
-          height: { xs: 260, md: "72%" },
+          height: { xs: 260, md: "75%" },
           objectFit: "cover",
           opacity: { xs: 0.26, md: 0.9 },
           pointerEvents: "none",
         }}
       />
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
-        <Typography
-          sx={{
-            ml: { md: "38%" },
-            fontFamily: din.style.fontFamily,
-            fontWeight: 900,
-            textTransform: "uppercase",
-            fontSize: { xs: 32, md: 64 },
-            lineHeight: { xs: "42px", md: "92px" },
-            maxWidth: 950,
-          }}
-        >
-          Enterprise-ready. Operational from day one.
-        </Typography>
-        <Grid container spacing={{ xs: 3, md: 4 }} sx={{ mt: 5, ml: { md: "38%" } }}>
-          {points.map((point) => (
-            <Grid key={point.title} size={{ xs: 12, md: 6 }}>
-              <Box sx={{ display: "flex", gap: 1.5 }}>
-                <Box sx={{ mt: 0.2, color: "#b6ec1a" }}>{point.icon}</Box>
-                <Box>
-                  <Typography
-                    sx={{
-                      fontFamily: din.style.fontFamily,
-                      fontWeight: 700,
-                      fontSize: { xs: 23, md: 32 },
-                      lineHeight: { xs: "31px", md: "37px" },
-                    }}
-                  >
-                    {point.title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      mt: 1,
-                      fontFamily: helvetica.style.fontFamily,
-                      color: "#eaeaea",
-                      fontSize: { xs: 17, md: 24 },
-                      lineHeight: { xs: "29px", md: "36px" },
-                    }}
-                  >
-                    {point.desc}
-                  </Typography>
-                </Box>
-              </Box>
+
+      <Box
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          position: "relative",
+          zIndex: 2,
+        }}
+      >
+        <Grid container justifyContent="flex-end">
+          <Grid size={{ xs: 12, md: 7.5, lg: 7 }}>
+            <Typography
+              sx={{
+                fontFamily: din.style.fontFamily,
+                fontWeight: 900,
+                textTransform: "uppercase",
+                fontSize: { xs: 32, md: 48, lg: 52 },
+                lineHeight: 1.1,
+                mb: { xs: 6, md: 8 },
+              }}
+            >
+              Enterprise-ready.
+              <Box component="br" />
+              Operational from day one.
+            </Typography>
+
+            <Grid container spacing={{ xs: 4, md: 6 }}>
+              {points.map((point) => (
+                <Grid key={point.title} size={{ xs: 12, sm: 6 }}>
+                  <Box sx={{ display: "flex", gap: 2 }}>
+                    <Box sx={{ color: "#ccf919", mt: 0.5 }}>{point.icon}</Box>
+                    <Box>
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          fontWeight: 700,
+                          fontSize: { xs: 18, md: 20 },
+                          lineHeight: 1.2,
+                          mb: 1.5,
+                        }}
+                      >
+                        {point.title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          color: "#99a1af",
+                          fontSize: { xs: 14, md: 16 },
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {point.desc}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              ))}
             </Grid>
-          ))}
+          </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };

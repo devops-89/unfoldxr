@@ -1,34 +1,77 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
+import { UseCaseData } from "./data";
 
-const KnowledgeSection = () => {
+interface Props {
+  data: UseCaseData["knowledge"];
+}
+
+const KnowledgeSection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: "#000", color: "#fff", py: { xs: 8, md: 12 } }}>
-      <Container maxWidth="lg">
-        <Grid container spacing={4}>
+    <Box sx={{ bgcolor: "#000", color: "#fff", py: { xs: 8, md: 20 } }}>
+      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
+        <Grid container spacing={{ xs: 4, md: 10 }}>
+          {/* Left Side: Title */}
           <Grid size={{ xs: 12, md: 5 }}>
-            <Typography sx={{ fontFamily: din.style.fontFamily, fontWeight: 900, textTransform: "uppercase", fontSize: { xs: 32, md: 56 }, lineHeight: 1.12 }}>
-              With UnfoldXR, turn expertise into scalable knowledge
+            <Typography
+              sx={{
+                fontFamily: din.style.fontFamily,
+                fontWeight: 900,
+                textTransform: "uppercase",
+                fontSize: { xs: 30, md: 44, lg: 48 },
+                lineHeight: 1.1,
+                maxWidth: 400,
+              }}
+            >
+              {data.title}
             </Typography>
           </Grid>
+
+          {/* Right Side: Bullet Points */}
           <Grid size={{ xs: 12, md: 7 }}>
-            <Box component="ul" sx={{ m: 0, pl: 3 }}>
-              <Typography component="li" sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 18, md: 30 }, mb: 1.5 }}>
-                Loss of expertise, and rework in training and onboarding drive up costs and time
-              </Typography>
-              <Typography component="li" sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 18, md: 30 }, mb: 1.5 }}>
-                Learning through manuals, shadowing, and disconnected content slows skill development
-              </Typography>
-              <Typography component="li" sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 18, md: 30 } }}>
-                Knowledge tied to individuals leads to gaps when experienced workers leave
-              </Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+              {data.items.map((item, index) => (
+                <Box key={index} sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
+                  <Box
+                    sx={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: "50%",
+                      bgcolor: "#fff",
+                      mt: { xs: 1, md: 1.3 },
+                      flexShrink: 0,
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontFamily: helvetica.style.fontFamily,
+                      fontSize: { xs: 17, md: 22, lg: 24 },
+                      lineHeight: 1.4,
+                      color: "#fff",
+                    }}
+                  >
+                    {item}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
           </Grid>
         </Grid>
-        <Typography sx={{ mt: 4, fontFamily: helvetica.style.fontFamily, fontSize: { xs: 18, md: 27 }, lineHeight: { xs: "32px", md: "44px" } }}>
-          Resulting in inconsistent performance, longer training cycles, and repeated errors. UnfoldXR unifies the lifecycle - capture, structure, and apply knowledge, delivering faster learning, consistent execution, and scalable expertise.
+
+        {/* Footer Text */}
+        <Typography
+          sx={{
+            mt: { xs: 8, md: 12 },
+            fontFamily: helvetica.style.fontFamily,
+            fontSize: { xs: 16, md: 24, lg: 26 },
+            lineHeight: 1.6,
+            color: "#fff",
+            maxWidth: "100%",
+          }}
+        >
+          {data.footerText}
         </Typography>
-      </Container>
+      </Box>
     </Box>
   );
 };

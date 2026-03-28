@@ -1,28 +1,88 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { helvetica, inter, din } from "@/utils/fonts";
-import { results } from "./data";
+import { UseCaseData } from "./data";
 
-const BusinessResultsSection = () => {
+interface Props {
+  data: UseCaseData["businessResults"];
+}
+const BusinessResultsSection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: "#fff", py: { xs: 8, md: 12 } }}>
-      <Container maxWidth="lg">
-        <Typography sx={{ fontFamily: din.style.fontFamily, fontWeight: 900, textTransform: "uppercase", fontSize: { xs: 32, md: 64 }, maxWidth: 760 }}>
-          Business Results You Can Measure
+    <Box sx={{ bgcolor: "#fff", py: { xs: 8, md: 15 } }}>
+      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
+        <Typography
+          sx={{
+            fontFamily: din.style.fontFamily,
+            fontWeight: 900,
+            textTransform: "uppercase",
+            fontSize: { xs: 28, md: 36, lg: 44 },
+            lineHeight: 1.1,
+            mb: { xs: 6, md: 8 },
+          }}
+        >
+          Business Results You <br /> Can Measure
         </Typography>
-        <Grid container spacing={3} sx={{ mt: 3 }}>
-          {results.map((item) => (
-            <Grid key={item} size={{ xs: 12, md: 4 }}>
-              <Box sx={{ bgcolor: "#272829", color: "#fff", borderRadius: "20px", p: 3, minHeight: 360, display: "flex", flexDirection: "column" }}>
-                <Typography sx={{ fontFamily: inter.style.fontFamily, fontWeight: 700, fontSize: { xs: 22, md: 32 }, lineHeight: 1.2 }}>{item}</Typography>
-                <Typography sx={{ mt: 2, color: "#d3d3d3", fontFamily: helvetica.style.fontFamily }}>
-                  Operational outcomes improve with structured workflow execution, contextual guidance, and measurable performance tracking.
+
+        <Grid container rowSpacing={12} columnSpacing={3}>
+          {data.items.map((item, index) => (
+            <Grid key={index} size={{ xs: 12, md: 4 }}>
+              <Box
+                sx={{
+                  bgcolor: "#1E1F21",
+                  color: "#fff",
+                  borderRadius: "28px",
+                  p: { xs: 4, md: 5 },
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: "transform 0.3s ease",
+                  "&:hover": { transform: "translateY(-5px)" },
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: inter.style.fontFamily,
+                    fontWeight: 800,
+                    fontSize: { xs: 20, md: 25 },
+                    lineHeight: 1.1,
+                    mb: 2.5,
+                  }}
+                >
+                  {item.title}
                 </Typography>
-                <Button sx={{ mt: "auto", bgcolor: "#b6ec1a", color: "#000", borderRadius: 99, alignSelf: "flex-start", textTransform: "none" }}>Learn More</Button>
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: { xs: 14, md: 16 },
+                    lineHeight: 1.5,
+                    color: "rgba(255,255,255,0.8)",
+                    mb: 5,
+                  }}
+                >
+                  {item.description}
+                </Typography>
+                <Box sx={{ mt: "auto" }}>
+                  <Button
+                    sx={{
+                      bgcolor: "#ccf919",
+                      color: "#000",
+                      borderRadius: 99,
+                      px: 3.5,
+                      py: 1.2,
+                      fontSize: 14,
+                      fontWeight: 900,
+                      fontFamily: inter.style.fontFamily,
+                      textTransform: "none",
+                      "&:hover": { bgcolor: "#b6ec1a" },
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </Box>
               </Box>
             </Grid>
           ))}
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };

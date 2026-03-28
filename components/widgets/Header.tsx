@@ -84,14 +84,17 @@ const Header = () => {
                   backgroundColor: COLORS.PRIMARY_GREEN,
                   borderRadius: "23px",
                   border: "1px solid #E3E3E3",
-                  width: "186px",
+                  width: "max-content",
+                  px: 3,
                   height: "46px",
                   fontFamily: inter.style.fontFamily,
                   color: COLORS.BLACK,
-                  fontSize: 16,
+                  fontSize: 14,
+                  fontWeight: 900,
+                  textTransform: "uppercase",
                 }}
               >
-                Book a Demo
+                CONTACT US
               </Button>
             </Stack>
 
@@ -167,9 +170,11 @@ const Header = () => {
           fontFamily: inter.style.fontFamily,
           color: COLORS.BLACK,
           fontSize: 16,
+          fontWeight: 900,
+          textTransform: "uppercase",
         }}
       >
-        Book a Demo
+        CONTACT US
       </Button>
     </Stack>
   </Box>

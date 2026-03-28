@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import DirectionsCarFilledRoundedIcon from "@mui/icons-material/DirectionsCarFilledRounded";
 import LocalHospitalRoundedIcon from "@mui/icons-material/LocalHospitalRounded";
 import ConstructionRoundedIcon from "@mui/icons-material/ConstructionRounded";
@@ -10,27 +10,27 @@ import HotelRoundedIcon from "@mui/icons-material/HotelRounded";
 import { din, helvetica } from "@/utils/fonts";
 
 const industries = [
-  { label: "Automotive", icon: <DirectionsCarFilledRoundedIcon /> },
-  { label: "Healthcare", icon: <LocalHospitalRoundedIcon /> },
-  { label: "Construction", icon: <ConstructionRoundedIcon /> },
-  { label: "Logistics", icon: <LocalGasStationRoundedIcon /> },
-  { label: "Oil & Gas", icon: <LocalGasStationRoundedIcon /> },
-  { label: "Aviation", icon: <FlightRoundedIcon /> },
-  { label: "Field Service Support", icon: <SupportAgentRoundedIcon /> },
-  { label: "Insurance", icon: <SecurityRoundedIcon /> },
-  { label: "Hospitality", icon: <HotelRoundedIcon /> },
+  { label: "Automotive", icon: <DirectionsCarFilledRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Healthcare", icon: <LocalHospitalRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Construction", icon: <ConstructionRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Logistics", icon: <LocalGasStationRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Oil & Gas", icon: <LocalGasStationRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Aviation", icon: <FlightRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Field Service Support", icon: <SupportAgentRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Insurance", icon: <SecurityRoundedIcon sx={{ fontSize: 18 }} /> },
+  { label: "Hospitality", icon: <HotelRoundedIcon sx={{ fontSize: 18 }} /> },
 ];
 
 const OneAiPlatform = () => {
   return (
-    <Box sx={{ backgroundColor: "#000", py: { xs: 8, md: 12 } }}>
-      <Container maxWidth="lg">
+    <Box sx={{ backgroundColor: "#000", py: { xs: 8, md: 10 } }}>
+      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 1, md: 0 } }}>
         <Box
           sx={{
             backgroundColor: "#fff",
-            borderRadius: { xs: 2, md: "15px" },
-            px: { xs: 2.5, md: 7 },
-            py: { xs: 5, md: 9 },
+            borderRadius: { xs: 3, md: "24px" },
+            px: { xs: 3, md: 8 },
+            py: { xs: 6, md: 10 },
           }}
         >
           <Typography
@@ -39,8 +39,9 @@ const OneAiPlatform = () => {
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               textTransform: "uppercase",
-              fontSize: { xs: 34, md: 64 },
-              lineHeight: { xs: "42px", md: "70px" },
+              fontSize: { xs: 32, md: 48, lg: 52 },
+              lineHeight: 1.1,
+              color: "#000",
             }}
           >
             One AI platform, any industry
@@ -48,60 +49,76 @@ const OneAiPlatform = () => {
           <Typography
             sx={{
               textAlign: "center",
-              mt: 2.5,
+              mt: 2,
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 17, md: 28 },
-              lineHeight: { xs: "30px", md: "46px" },
+              fontSize: { xs: 16, md: 18, lg: 20 },
+              lineHeight: 1.5,
+              color: "#000",
+              maxWidth: 800,
+              mx: "auto",
             }}
           >
-            UnfoldXR enhances skilled operations, on-ground executions and real-time
-            decision making.
+            UnfoldXR enhances skiller operations, on ground executions & real-time
+            decision making
           </Typography>
 
-          <Grid container spacing={2} sx={{ mt: { xs: 3, md: 5 } }}>
+          {/* Centered Flex Container for Industry Pills */}
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: { xs: 1.5, md: 2.5 },
+              mt: { xs: 5, md: 7 },
+              px: { xs: 0, lg: 8 },
+            }}
+          >
             {industries.map((item) => (
-              <Grid key={item.label} size={{ xs: 12, sm: 6, md: 4 }}>
+              <Box
+                key={item.label}
+                sx={{
+                  border: "1px solid #e5e7eb",
+                  borderRadius: "99px",
+                  p: "6px",
+                  pr: { xs: 3, md: 4 },
+                  display: "flex",
+                  alignItems: "center",
+                  gap: { xs: 1.5, md: 2 },
+                  whiteSpace: "nowrap",
+                }}
+              >
                 <Box
                   sx={{
-                    border: "1px solid #d0d0d0",
-                    borderRadius: "39px",
-                    p: 1,
+                    width: { xs: 32, md: 36 },
+                    height: { xs: 32, md: 36 },
+                    bgcolor: "#000",
+                    borderRadius: "50%",
+                    color: "#fff",
                     display: "flex",
                     alignItems: "center",
-                    gap: 1.5,
-                    minHeight: 78,
+                    justifyContent: "center",
                   }}
                 >
-                  <Box
-                    sx={{
-                      width: 56,
-                      height: 56,
-                      bgcolor: "#000",
-                      borderRadius: "50%",
-                      color: "#fff",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {item.icon}
-                  </Box>
-                  <Typography
-                    sx={{
-                      fontFamily: helvetica.style.fontFamily,
-                      fontWeight: 700,
-                      textTransform: "uppercase",
-                      fontSize: { xs: 15, md: 22 },
-                    }}
-                  >
-                    {item.label}
-                  </Typography>
+                  {item.icon}
                 </Box>
-              </Grid>
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    fontSize: { xs: 13, md: 15 },
+                    color: "#000",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {item.label}
+                </Typography>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

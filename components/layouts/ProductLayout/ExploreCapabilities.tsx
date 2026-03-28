@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 
 const capabilities = [
@@ -31,76 +31,103 @@ const capabilities = [
 
 const ExploreCapabilities = () => {
   return (
-    <Box sx={{ backgroundColor: "#fff", color: "#000", py: { xs: 8, md: 14 } }}>
-      <Container maxWidth="lg">
+    <Box sx={{ backgroundColor: "#fff", color: "#000", py: { xs: 8, md: 16 } }}>
+      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 34, md: 64 },
-            lineHeight: { xs: "42px", md: "92px" },
+            fontSize: { xs: 32, md: 48, lg: 52 },
+            lineHeight: 1.1,
+            mb: { xs: 6, md: 10 },
           }}
         >
           Explore capabilities by mode
         </Typography>
-        <Grid container spacing={{ xs: 4, md: 7 }} sx={{ mt: 3 }}>
-          <Grid size={{ xs: 12, md: 5 }}>
-            {capabilities.map((item) => (
-              <Box key={item.title} sx={{ mb: 2.5 }}>
-                <Typography
+
+        <Grid container spacing={{ xs: 4, md: 0 }}>
+          {/* Left Side: Capabilities Menu */}
+          <Grid size={{ xs: 12, md: 5.5 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 3.5 }}>
+              {capabilities.map((item) => (
+                <Box
+                  key={item.title}
                   sx={{
-                    display: "inline-block",
-                    border: item.active ? "3px solid #b6ec1a" : "none",
-                    borderRadius: item.active ? "63px" : 0,
-                    px: item.active ? 2 : 0,
-                    py: item.active ? 1 : 0,
-                    fontFamily: din.style.fontFamily,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    color: item.active ? "#b6ec1a" : "#000",
-                    bgcolor: item.active ? "#000" : "transparent",
-                    fontSize: { xs: 24, md: 34 },
-                    lineHeight: { xs: "35px", md: "46px" },
+                    border: item.active ? "2px solid #b6ec1a" : "2px solid transparent",
+                    borderRadius: "32px",
+                    p: item.active ? 2.5 : 0,
+                    pl: item.active ? 3 : 0,
+                    cursor: "pointer",
+                    width: "fit-content",
+                    transition: "all 0.2s ease",
                   }}
                 >
-                  {item.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    mt: 0.5,
-                    fontFamily: din.style.fontFamily,
-                    textTransform: "capitalize",
-                    fontSize: { xs: 20, md: 34 },
-                    lineHeight: { xs: "34px", md: "46px" },
-                  }}
-                >
-                  {item.subtitle}
-                </Typography>
-              </Box>
-            ))}
+                  <Typography
+                    sx={{
+                      fontFamily: din.style.fontFamily,
+                      fontWeight: 700,
+                      textTransform: "uppercase",
+                      color: item.active ? "#b6ec1a" : "#000",
+                      fontSize: { xs: 20, md: 24 },
+                      lineHeight: 1.2,
+                      letterSpacing: "0.02em",
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      mt: 0.5,
+                      fontFamily: din.style.fontFamily,
+                      fontSize: { xs: 16, md: 18 },
+                      color: item.active ? "#b6ec1a" : "#000",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {item.subtitle}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 7 }}>
-            <Typography
-              sx={{
-                fontFamily: helvetica.style.fontFamily,
-                letterSpacing: "0.04em",
-                textAlign: "justify",
-                fontSize: { xs: 18, md: 28 },
-                lineHeight: { xs: "34px", md: "49px" },
-              }}
-            >
-              UnfoldXR guides teams through tasks step by step, aligned to the
-              exact asset, location, and requirement. Manuals, SOPs, safety checks,
-              diagnostics, reporting, and remote collaboration are built into a
-              single workflow.
-              <br />
-              <br />
-              Work becomes consistent, compliant, and faster to complete.
-            </Typography>
+
+          {/* Center Vertical Separator */}
+          <Grid size={{ xs: 0, md: 0.5 }} sx={{ display: { xs: "none", md: "flex" }, justifyContent: "center" }}>
+            <Box sx={{ width: "2px", height: "100%", bgcolor: "#000", opacity: 1 }} />
+          </Grid>
+
+          {/* Right Side: Description */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box sx={{ pl: { xs: 0, md: 6 }, pt: { xs: 0, md: 2 } }}>
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 18, md: 22 },
+                  lineHeight: 1.6,
+                  color: "#000",
+                  mb: 4,
+                }}
+              >
+                UnfoldXR guides teams through tasks step by step, aligned to the
+                exact asset, location, and requirement. Manuals, SOPs, safety
+                checks, diagnostics, reporting, and remote collaboration are built
+                into a single workflow.
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 18, md: 22 },
+                  lineHeight: 1.6,
+                  color: "#000",
+                }}
+              >
+                Work becomes consistent, compliant, and faster to complete.
+              </Typography>
+            </Box>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };

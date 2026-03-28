@@ -39,7 +39,7 @@ export const HEADER_LINKS = [
     url: "/usecases/training",
   },
   {
-    label: "Industries",
+    label: "Industry",
     url: "/industries",
   },
   {
@@ -55,8 +55,8 @@ export const HEADER_LINKS = [
     url: "/about-us",
   },
   {
-    label: "Contact Us",
-    url: "/contact-us",
+    label: "Book a Demo",
+    url: "/book-a-demo",
   },
 ];
 
@@ -75,7 +75,7 @@ export const NAV_ITEMS = [
   "Product",
   "Resources",
   "About Us",
-  "Contact Us",
+  "Book a Demo",
 ];
 
 export const FOOTER_COLUMNS: { title: string; links: string[] }[] = [
