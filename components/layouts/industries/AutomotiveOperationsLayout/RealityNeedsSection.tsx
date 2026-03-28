@@ -1,24 +1,25 @@
 import { din, helvetica } from "@/utils/fonts";
 import { Box, Button, Card, CardContent, Container, Grid, Typography } from "@mui/material";
-import { AUTOMOTIVE_NEEDS, AUTOMOTIVE_REALITIES } from "./constants";
+import { industriesPage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
 
 const RealityNeedsSection = () => {
+  const { realityNeedsSection: data } = industriesPage.automotive;
   return (
-    <Box sx={{ bgcolor: "#fff", py: { xs: 8, md: 12 } }}>
+    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
       <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 6 } }}>
-        <Typography sx={{ fontFamily: din.style.fontFamily, fontSize: { xs: 34, md: 58 }, lineHeight: 1.08, textTransform: "uppercase", fontWeight: 900, color: "#000", maxWidth: 1650 }}>
-          We Understand Automotive Operations and What It Takes to Run Them at Scale
+        <Typography sx={{ fontFamily: din.style.fontFamily, fontSize: { xs: 32, md: 54 }, lineHeight: 1.1, textTransform: "uppercase", fontWeight: 900, color: COLORS.BLACK, maxWidth: 1400 }}>
+          {data.title}
         </Typography>
-
-        <Grid container spacing={2.5} sx={{ mt: 4 }}>
+        <Grid container spacing={3} sx={{ mt: 5 }}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Card sx={{ bgcolor: "#272829", color: "#fff", borderRadius: 2.5, boxShadow: "0 4px 10px rgba(182,236,26,0.25)" }}>
-              <CardContent sx={{ p: 3.5 }}>
-                <Typography sx={{ fontFamily: din.style.fontFamily, textTransform: "uppercase", fontSize: { xs: 26, md: 34 }, color: "#B6EC1A", mb: 1.5 }}>
+            <Card sx={{ bgcolor: COLORS.CARD_BG_DARK, color: COLORS.WHITE, borderRadius: 4, height: "100%" }}>
+              <CardContent sx={{ p: 4 }}>
+                <Typography sx={{ fontFamily: din.style.fontFamily, textTransform: "uppercase", fontSize: { xs: 24, md: 32 }, color: COLORS.PRIMARY_GREEN, mb: 3 }}>
                   Automotive Realities
                 </Typography>
-                {AUTOMOTIVE_REALITIES.map((item) => (
-                  <Typography key={item} sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 17, md: 25 }, lineHeight: 1.45, mb: 1.4 }}>
+                {data.realities.map((item) => (
+                  <Typography key={item} sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 16, md: 22 }, lineHeight: 1.5, mb: 1.5 }}>
                     - {item}
                   </Typography>
                 ))}
@@ -26,13 +27,13 @@ const RealityNeedsSection = () => {
             </Card>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Card sx={{ bgcolor: "#272829", color: "#fff", borderRadius: 2.5, boxShadow: "0 4px 10px rgba(182,236,26,0.25)" }}>
-              <CardContent sx={{ p: 3.5 }}>
-                <Typography sx={{ fontFamily: din.style.fontFamily, textTransform: "uppercase", fontSize: { xs: 26, md: 34 }, color: "#B6EC1A", mb: 1.5 }}>
+            <Card sx={{ bgcolor: COLORS.CARD_BG_DARK, color: COLORS.WHITE, borderRadius: 4, height: "100%" }}>
+              <CardContent sx={{ p: 4 }}>
+                <Typography sx={{ fontFamily: din.style.fontFamily, textTransform: "uppercase", fontSize: { xs: 24, md: 32 }, color: COLORS.PRIMARY_GREEN, mb: 3 }}>
                   What It Needs
                 </Typography>
-                {AUTOMOTIVE_NEEDS.map((item) => (
-                  <Typography key={item} sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 17, md: 25 }, lineHeight: 1.45, mb: 1.4 }}>
+                {data.needs.map((item) => (
+                  <Typography key={item} sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 16, md: 22 }, lineHeight: 1.5, mb: 1.5 }}>
                     - {item}
                   </Typography>
                 ))}
@@ -40,16 +41,12 @@ const RealityNeedsSection = () => {
             </Card>
           </Grid>
         </Grid>
-
-        <Typography sx={{ textAlign: "center", fontFamily: helvetica.style.fontFamily, fontSize: { xs: 18, md: 34 }, mt: 4 }}>
-          UnfoldXR is designed specifically for these realities.
-          <br />
-          We bring intelligence into execution, without adding complexity.
+        <Typography sx={{ textAlign: "center", fontFamily: helvetica.style.fontFamily, fontSize: { xs: 18, md: 28 }, mt: 8, maxWidth: 1200, mx: "auto", color: COLORS.BLACK, fontWeight: 500 }}>
+          {data.bottomText}
         </Typography>
-
-        <Box sx={{ textAlign: "center", mt: 3 }}>
-          <Button variant="contained" sx={{ bgcolor: "#B6EC1A", color: "#000", px: 4, py: 1.2, borderRadius: "999px", fontFamily: din.style.fontFamily, fontSize: { xs: 16, md: 20 }, "&:hover": { bgcolor: "#a8da18" } }}>
-            Watch How UnfoldXR Augments Automotive Operations
+        <Box sx={{ textAlign: "center", mt: 4 }}>
+          <Button variant="contained" sx={{ bgcolor: COLORS.PRIMARY_GREEN, color: COLORS.BLACK, px: 5, py: 1.5, borderRadius: "999px", fontFamily: din.style.fontFamily, fontSize: { xs: 16, md: 20 }, textTransform: "uppercase", "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 } }}>
+            {data.ctaText}
           </Button>
         </Box>
       </Container>

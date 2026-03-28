@@ -1,4 +1,4 @@
-import MeetAvaPageLayout from "@/components/layouts/meet-ava/MeetAvaPageLayout";
+import MeetAvaPageLayout from "@/components/layouts/MeetAvaPageLayout";
 import { Box } from "@mui/material";
 import type { Metadata } from "next";
 

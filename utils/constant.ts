@@ -47,6 +47,10 @@ export const HEADER_LINKS = [
     url: "/product",
   },
   {
+    label: "Meet AVA",
+    url: "/meet-ava",
+  },
+  {
     label: "Resources",
     url: "/resources",
   },
@@ -73,6 +77,7 @@ export const NAV_ITEMS = [
   "Solutions",
   "Industry",
   "Product",
+  "Meet AVA",
   "Resources",
   "About Us",
   "Contact Us",

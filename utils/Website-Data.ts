@@ -7,6 +7,19 @@ import {
 } from "./constant";
 import ava from "@/images/banner/homePage/avapng.png";
 import tools from "@/images/banner/homePage/tools/tools-team.png";
+import ankushImg from "@/images/about-us/about-leadership.png";
+import riteshImg from "@/images/about-us/about-leadership2.png";
+import differentiatorImg from "@/images/about-us/about-differentiator.png";
+import icon1 from "@/images/about-us/icons/icon1.png";
+import icon2 from "@/images/about-us/icons/icon2.png";
+import icon3 from "@/images/about-us/icons/icon3.png";
+import heroRing from "@/images/meet-ava/herosection-image.png";
+import introImage from "@/images/meet-ava/meet-ava.png";
+import phonePlaceholder from "@/images/meet-ava/ask-ava.png";
+import automotiveHero from "@/images/automotive-operation/hero.png";
+import automotiveOutcomes from "@/images/automotive-operation/driving-measureoutcomes.png";
+import automotiveIcon from "@/images/automotive-operation/Icon.svg";
+import { INDUSTRY_PAGE_PROPS } from "./types";
 export const homePage = {
   herosection: {
     heading1: "Augmenting",
@@ -123,5 +136,253 @@ export const homePage = {
     subHeading: "Augmenting human productivity.",
     leftSection: toolsLeftData,
     rightSection: toolsRightData
+  },
+};
+
+export const aboutPage = {
+  herosection: {
+    heading: "AN INTELLIGENT WORK PLATFORM BUILT FOR THE FRONTLINE.",
+    cta: "Schedule a Demo",
+  },
+  introSection: {
+    heading: "ABOUT UNFOLDXR",
+    paragraphs: [
+      "Frontline work runs the world. Yet most frontline teams still operate without real-time technological support. We are here to change that.",
+      "UnfoldXR is a human productivity augmentation platform built to bring AI and extended reality into real-world operations. We deliver moment-of-work support that guides teams before, during, and after execution, creating one continuous system. We turn physical environments into intelligent workspaces. Knowledge appears when needed. Diagnostics happen in real time. Collaboration is instant. Documentation is automatic.",
+      "We exist to augment, not replace, human capability. Our platform is built human-first designed to strengthen judgment, precision, and confidence at the exact moment decisions are made.",
+    ],
+    highlight: "Built for enterprises, UnfoldXR delivers measurable productivity, not experimental technology."
+  },
+  missionVisionSection: {
+    title: "Mission & Vision",
+    heading: "THE 1 MILLION PRODUCTIVITY LEAP",
+    subHeading: "At UnfoldXR we aim to enable 1 million frontline workers to perform better with confidence and safety by 2030.",
+    description: "To bring AI and augmented reality to the 2.8 billion deskless workers who keep the world running. From hospital floors to construction sites, from factories to field service, UnfoldXR exists to put intelligent support directly at the moment they work, not just behind a desk. We envision a world where technology integrates seamlessly with human intelligence, acting as an extension of competence, not a layer of complexity. We are building the future of work where the gap between human potential and technological support is reduced, empowering 80% of the global workforce that operates beyond desks and screens.",
+    brandDnaTitle: "Brand DNA",
+    brandDna: [
+      {
+        title: "Curious",
+        description: "We push the edge of what's possible, forging a new era of human, machine and AI partnership.",
+      },
+      {
+        title: "Engineered Strong",
+        description: "Curiosity drives us, precision defines us. We deliver certainty, not trial-and-error. Confidently unfolding what's next.",
+      },
+      {
+        title: "Human first AI",
+        description: "Human at the core. Intelligence around it. Tuned for impact, always.",
+      },
+    ],
+  },
+  leadershipSection: {
+    title: "Leadership",
+    members: [
+      {
+        name: "ANKUSH JAGGA",
+        role: "CEO & CO-FOUNDER",
+        image: ankushImg.src,
+        bio: "Ankush Jagga is a visionary entrepreneur on a mission to bring AI to the world's 2.8 billion deskless workers. As CEO & Co-founder of UnfoldXR, he is reimagining the future of work, creating human-first AI tools that empower, enhance, and amplify human capability. With 23+ years of enterprise tech experience, Ankush is a results-driven leader who turns bold ideas into measurable impact.\n\nat Tenneo, he scaled a 4-million-user platform, led a strategic rebrand, executed a merger with a US tech conglomerate, expanded global operations, and delivered a 5x return to shareholders in just 3 years. A serial entrepreneur, he co-founded Hush, a food-tech venture, and exited successfully in 2021. He has also played founding roles across sectors, including Dhyan Chand Field Hockey Society (a grassroots sports non-profit), Smart School Smart Parents (a digital K12 platform), and Catchafilm.com (an online movie ticketing portal).\n\nRecognized as ET Business Leader 2023 and a 40 Under 40 entrepreneur, Ankush builds with long-term vision and a strong belief in human-first AI. At UnfoldXR, his bold vision is simple: unlock human potential at scale, make AI accessible."
+      },
+      {
+        name: "RITESH GANGNANI",
+        role: "CO-FOUNDER & HEAD ARCHITECT",
+        image: riteshImg.src,
+        bio: "Ritesh Gangnani is the Co-founder & Head Architect at UnfoldXR, where he leads the AI and technology strategy powering next-generation smart glasses for the deskless workforce. Deep expertise in AI, ML, and computer vision, Ritesh has a track record of building production-grade AI systems from the ground up. As Head of AI at Segmind, he helped shape a leading generative AI platform — contributing to open-source breakthroughs like Segmoe (mixture of diffusion experts) and building scalable AI infrastructure used by thousands of developers worldwide.\n\na passionate open-source contributor, Ritesh is the creator of VoltaML, a popular GPU-accelerated inference library known in the ML community for making model deployment faster and more accessible. He is also the founder of Pixl Studio, an AI-powered creative studio for image generation, video, and virtual try-on. His expertise spans computer vision, deep learning, generative AI, and edge deployment with published research and a Master's degree from South Asian University grounding his work in both theory and application.\n\nat UnfoldXR, Ritesh is architecting the AI backbone that brings hands-free intelligence to frontline workers through smart glasses — turning complex AI into seamless, human-first experiences at the edge. At UnfoldXR, he builds with one belief: the best AI is the one that works for you, not the other way around."
+      }
+    ]
+  },
+  differentiatorsSection: {
+    heading: "WHAT MAKES UNFOLDXR DIFFERENT?",
+    image: differentiatorImg.src,
+    items: [
+      {
+        title: "BUILT FOR THE 80% WORKFORCE",
+        description: "Designed for frontline teams, not desk users. Intelligence delivered where real work happens.",
+        icon: icon1.src
+      },
+      {
+        title: "BUILT FOR EVERY STAGE OF WORK",
+        description: "From planning to execution to reporting. One connected, continuous workflow.",
+        icon: icon2.src
+      },
+      {
+        title: "CREATING THE FUTURE OF WORK",
+        description: "Innovation is a continuous process and we are determined to change how the future of work looks. Human expertise, augmented by tech.",
+        icon: icon3.src
+      }
+    ]
+  },
+  newsSection: {
+    title: "IN NEWS",
+    description: "For press inquiries, media coverage, speaking engagements, and industry insights, please connect with us."
+  },
+  careersSection: {
+    title: "CAREERS",
+    description: "At UnfoldXR, you will work at the intersection of AI, XR, enterprise systems, and human productivity. But more importantly, you will build tools that empower millions of frontline workers.\n\nWe value:",
+    values: [
+      "CURIOSITY AND PRINCIPLED THINKING",
+      "ENGINEERING DEPTH WITH HUMAN EMPATHY",
+      "CALM EXECUTION UNDER PRESSURE",
+      "LONG-TERM OWNERSHIP"
+    ],
+    bottomText: "If you believe technology should augment human potential, we would like to hear from you."
+  },
+  finalCtaSection: {
+    heading: "UNFOLDXR — AUGMENTING THE FUTURE OF WORK."
+  }
+};
+
+export const meetAvaPage = {
+  heroSection: {
+    title: "AVA — The Agentic Intelligence Behind UnfoldXR.",
+    heading: "BUILT WITH HEART. POWERED BY AI",
+    subHeading: "AVA stands for AI Virtual Assistant. But the story behind the name runs deeper.",
+    image: heroRing.src
+  },
+  introSection: {
+    heading: "Meet AVA,",
+    paragraphs: [
+      "Named after our co-founder Ankush Jagga's daughter, AVA is more than an acronym. When you build something that carries the name of someone you love, you build it with care, responsibility, and a long-term vision.",
+      "AVA is not just an assistant. It is an agentic AI, designed to understand context, make decisions, and move work forward. Built into UnfoldXR, AVA stands beside frontline teams when work feels complex or uncertain. It diagnoses intelligently, guides thoughtfully, and adapts in real time.",
+      "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen it - helping every worker perform with clarity, confidence, and growth."
+    ],
+    image: introImage.src
+  },
+  supportSection: {
+    heading: "How AVA Supports at Every Step",
+    description: "Designed to support your workforce throughout the lifecycle of work, across all three versions of UnfoldXR Augment, Empower, and Edge; AVA adapts to your organisation's stage of operational maturity. Each version unlocks deeper intelligence and broader capability. As you scale, AVA scales with you.",
+    features: [
+      {
+        label: "Guided Execution",
+        description: "Delivers step-by-step digital instructions aligned to the specific asset, location, and task",
+      },
+      {
+        label: "Smart Rostering",
+        description: "Optimises who does what and when, so the right skills meet the right work at the right time.",
+      },
+      {
+        label: "Plan my Day",
+        description: "Surfaces priorities and sequences work so frontline teams start each shift with clarity.",
+      },
+      {
+        label: "Contextual Pro Tips",
+        description: "Surfaces relevant guidance in context so workers never hunt for answers mid-task.",
+      },
+      {
+        label: "Process Capture",
+        description: "Records how work is actually done so expertise becomes repeatable, searchable knowledge.",
+      },
+      {
+        label: "Workflow Creation",
+        description: "Builds and adapts workflows without heavy IT lift, keeping operations agile.",
+      },
+      {
+        label: "Automated Reporting",
+        description: "Generates structured reports from execution data so compliance and handoffs stay effortless.",
+      },
+      {
+        label: "Performance Tracking",
+        description: "Measures outcomes and trends so leaders can coach teams and improve operations continuously.",
+      },
+      {
+        label: "Continuously Learning",
+        description: "Improves with every task so AVA gets sharper as your organisation scales.",
+      },
+    ]
+  },
+  placeholderSection: {
+    heading: "Placeholder heading",
+    description: "*content will be given by team UnfoldXR",
+    image: phonePlaceholder.src
+  },
+  evolvesCtaSection: {
+    heading: "Evolves with your business needs.",
+    cta: "Request a Demo"
+  }
+};
+
+export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
+  automotive: {
+    heroSection: {
+      title: "Built for Automotive Operations Where Precision Is Non-Negotiable",
+      description: "UnfoldXR is an AI-powered augmented reality platform for automotive manufacturing and service that combines real-time intelligence, guided execution, and scalable expertise for complex, high-precision operations.",
+      image: automotiveHero.src,
+    },
+    realityNeedsSection: {
+      title: "We Understand Automotive Operations and What It Takes to Run Them at Scale",
+      realities: [
+        "High-volume production lines with tight cycle times.",
+        "Complex assemblies requiring precision and consistency.",
+        "Strict quality and safety standards across every stage.",
+        "Knowledge distributed across engineers, technicians, and suppliers.",
+      ],
+      needs: [
+        "Consistent execution across shifts and plants.",
+        "Faster diagnosis of production and maintenance issues.",
+        "Reduced defects, recalls, and rework.",
+        "Shorter training cycles for technicians and operators.",
+        "Scalable expertise across global operations.",
+      ],
+      bottomText: "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without adding complexity.",
+      ctaText: "Watch How UnfoldXR Augments Automotive Operations",
+    },
+    operationFlowSection: {
+      title: "Intelligence Across the Entire Automotive Operation",
+      phases: [
+        {
+          phase: "Before Work",
+          items: [
+            "SOP-driven task planning for assembly, inspection, and maintenance",
+            "Access to equipment history, maintenance records, and service logs",
+            "AI-assisted preparation before work begins on the shop floor",
+          ],
+        },
+        {
+          phase: "During Work",
+          items: [
+            "Hands-free AR guidance on phones, tablets, or smart glasses",
+            "Intelligent scan for real-time diagnostics and component identification",
+            "Live collaboration with engineers and experts through voice, video, and visuals",
+            "Standardize processes across sites and teams",
+          ],
+        },
+        {
+          phase: "After Work",
+          items: [
+            "Automatic capture of inspection and maintenance evidence",
+            "Instant service and production reports without manual paperwork",
+            "AI-driven knowledge management to improve future production and training",
+          ],
+        },
+      ],
+    },
+    useCasesSection: {
+      title: "Key Use Cases Across Automotive Industry",
+      items: [
+        "Repair, Maintenance, Asset Management",
+        "Field Service, Troubleshooting & Remote Collaboration",
+        "Inspection, Compliance & Quality Assurance",
+        "Training, Onboarding & Knowledge Capture",
+      ],
+      ctaText: "Know More",
+    },
+    outcomesSection: {
+      title: "Driving Measurable Outcomes in Automotive Operations",
+      image: automotiveOutcomes.src,
+      metrics: [
+        { value: "25%", text: "reduction in assembly time, improving line throughput." },
+        { value: "20%", text: "reduction in defect escape rate, ensuring issues are caught before dispatch." },
+        { value: "30%", text: "reduction in warranty diagnosis time, enabling quicker fault isolation." },
+        { value: "40%", text: "reduction in technician ramp-up time, accelerating new model readiness." },
+        { value: "15%", text: "improvement in first-time fix rate, reducing repeat visits." },
+        { value: "50%", text: "reduction in expert travel, with more issues resolved remotely." },
+      ],
+    },
+    finalCtaSection: {
+      heading: "Bring intelligence to your manufacturing floor",
+      description: "See how UnfoldXR improves execution, reduces downtime, and scales expertise across your operations.",
+      ctaText: "Talk to Us",
+      ctaIcon: automotiveIcon.src,
+    },
   },
 };

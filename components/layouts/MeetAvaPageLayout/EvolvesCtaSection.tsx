@@ -1,19 +1,23 @@
 import { COLORS } from "@/utils/enum";
 import { din } from "@/utils/fonts";
-import { Box, Button, Card, CardContent, Container, Typography } from "@mui/material";
-import { MEET_AVA_IMAGES } from "./constants";
+import { Box, Card, CardContent, Container, Typography } from "@mui/material";
+import { meetAvaPage } from "@/utils/Website-Data";
+import ContainedButton from "@/components/widgets/ContainedButton";
 
 const EvolvesCtaSection = () => {
+  const { evolvesCtaSection: data } = meetAvaPage;
+
   return (
-    <Box sx={{ bgcolor: "#000", pb: { xs: 8, md: 12 } }}>
-      <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
+    <Box sx={{ bgcolor: COLORS.BLACK, pb: { xs: 8, md: 10 } }}>
+      <Container maxWidth={false} sx={{ maxWidth: 1440, px: { xs: 2.5, md: 5 } }}>
         <Card
           sx={{
             borderRadius: 3,
             overflow: "hidden",
-            border: "1px solid rgba(182,255,46,0.15)",
+            border: "1px solid rgba(182, 255, 46, 0.15)",
             boxShadow: "none",
             position: "relative",
+            bgcolor: COLORS.WHITE
           }}
         >
           <Box
@@ -34,32 +38,25 @@ const EvolvesCtaSection = () => {
                 fontSize: { xs: 28, md: 64 },
                 fontWeight: 900,
                 textTransform: "uppercase",
-                color: "#000",
+                color: COLORS.BLACK,
                 lineHeight: 1.15,
                 maxWidth: 1100,
                 mx: "auto",
               }}
             >
-              Evolves with your business needs.
+              {data.heading}
             </Typography>
-            <Button
-              variant="contained"
+            <ContainedButton
               sx={{
                 mt: 4,
-                px: 3,
+                px: { xs: 4, md: 6 },
                 py: 1.5,
-                borderRadius: "999px",
-                bgcolor: COLORS.PRIMARY_GREEN,
-                color: "#000",
-                fontWeight: 600,
-                fontSize: 16,
-                boxShadow: "0 0 30px rgba(182,255,46,0.4)",
-                "&:hover": { bgcolor: "#a8db18" },
+                fontSize: { xs: 18, md: 23 },
+                fontWeight: 700
               }}
-              endIcon={<Box component="img" src={MEET_AVA_IMAGES.ctaIcon} alt="" sx={{ width: 20, height: 20 }} />}
             >
-              Request a Demo
-            </Button>
+              {data.cta} &rarr;
+            </ContainedButton>
           </CardContent>
         </Card>
       </Container>

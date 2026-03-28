@@ -16,8 +16,8 @@ const AboutUsLayout = () => {
       <MissionVisionSection />
       <LeadershipSection />
       <DifferentiatorsSection />
-      <CareersSection />
       <NewsSection />
+      <CareersSection />
       <FinalCtaSection />
     </Box>
   );

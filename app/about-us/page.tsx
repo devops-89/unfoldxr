@@ -1,4 +1,4 @@
-import AboutUsLayout from "@/components/layouts/about/AboutUsLayout";
+import AboutUsLayout from "@/components/layouts/AboutUsLayout";
 import { Box } from "@mui/material";
 
 const AboutUsPage = () => {

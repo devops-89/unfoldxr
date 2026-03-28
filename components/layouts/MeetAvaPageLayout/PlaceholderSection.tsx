@@ -1,11 +1,14 @@
 import { din, helvetica } from "@/utils/fonts";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { MEET_AVA_IMAGES } from "./constants";
+import { meetAvaPage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
 
 const PlaceholderSection = () => {
+  const { placeholderSection: data } = meetAvaPage;
+
   return (
-    <Box sx={{ bgcolor: "#000", color: "#fff", pb: { xs: 8, md: 12 } }}>
-      <Container maxWidth="xl" sx={{ px: { xs: 2, md: 3 } }}>
+    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, pb: { xs: 8, md: 12 } }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 5 } }}>
         <Grid container spacing={4} alignItems="center">
           <Grid size={{ xs: 12, md: 5 }}>
             <Typography
@@ -17,7 +20,7 @@ const PlaceholderSection = () => {
                 mb: 2,
               }}
             >
-              Placeholder heading
+              {data.heading}
             </Typography>
             <Typography
               sx={{
@@ -27,13 +30,13 @@ const PlaceholderSection = () => {
                 color: "rgba(255,255,255,0.85)",
               }}
             >
-              *content will be given by team UnfoldXR
+              {data.description}
             </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 7 }} sx={{ textAlign: "center" }}>
             <Box
               component="img"
-              src={MEET_AVA_IMAGES.phonePlaceholder}
+              src={data.image}
               alt=""
               sx={{
                 maxWidth: "100%",

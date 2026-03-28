@@ -1,26 +1,42 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Container, Grid, Typography } from "@mui/material";
-import { AUTOMOTIVE_IMAGES, AUTOMOTIVE_OUTCOMES } from "./constants";
+import { Box, Container, Grid, Typography, Stack } from "@mui/material";
+import { industriesPage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
 
 const OutcomesSection = () => {
+  const { outcomesSection: data } = industriesPage.automotive;
   return (
-    <Box sx={{ position: "relative", minHeight: { xs: 800, md: 1080 }, color: "#fff", overflow: "hidden" }}>
-      <Box component="img" src={AUTOMOTIVE_IMAGES.outcomesBg} alt="" sx={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-      <Box sx={{ position: "absolute", inset: 0, bgcolor: "rgba(0,0,0,0.69)" }} />
-      <Container maxWidth="xl" sx={{ position: "relative", px: { xs: 2.5, md: 6 }, py: { xs: 7, md: 8 } }}>
-        <Typography sx={{ fontFamily: din.style.fontFamily, fontSize: { xs: 34, md: 64 }, lineHeight: 1.05, textTransform: "uppercase", fontWeight: 900, mb: 4 }}>
-          Driving Measurable Outcomes in Automotive Operations
-        </Typography>
-        <Grid container spacing={3}>
-          {AUTOMOTIVE_OUTCOMES.map((metric) => (
-            <Grid key={metric.value + metric.text} size={{ xs: 12, md: 6 }}>
-              <Box sx={{ border: "2px solid #1FFF0F", borderRadius: 2.5, p: 2.5 }}>
-                <Typography sx={{ fontFamily: din.style.fontFamily, color: "#B6EC1A", fontSize: { xs: 36, md: 56 }, fontWeight: 900 }}>{metric.value}</Typography>
-                <Typography sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 16, md: 25 }, lineHeight: 1.45 }}>{metric.text}</Typography>
-              </Box>
+    <Box sx={{ position: "relative", minHeight: { xs: 800, md: 950 }, color: COLORS.WHITE, display: "flex", alignItems: "center", overflow: "hidden" }}>
+      <Box component="img" src={data.image} alt="" sx={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      <Box sx={{ position: "absolute", inset: 0, bgcolor: COLORS.BLACK_OVERLAY_DARK }} />
+      
+      <Container maxWidth="xl" sx={{ position: "relative", px: { xs: 2, md: 6 }, py: { xs: 8, md: 10 } }}>
+        <Box sx={{ border: `1.5px solid ${COLORS.PRIMARY_GREEN}`, borderRadius: 4, p: { xs: 3, md: 8 }, pt: { xs: 6, md: 8 }, position: "relative" }}>
+          
+          <Grid container spacing={6} alignItems="flex-start">
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Typography sx={{ fontFamily: din.style.fontFamily, fontSize: { xs: 32, md: 64 }, lineHeight: 1.1, textTransform: "uppercase", fontWeight: 900, maxWidth: 500 }}>
+                {data.title}
+              </Typography>
             </Grid>
-          ))}
-        </Grid>
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Grid container spacing={{ xs: 4, md: 6 }}>
+                {data.metrics.map((metric, i) => (
+                  <Grid key={i} size={{ xs: 12, sm: 6 }}>
+                    <Stack spacing={1}>
+                      <Typography sx={{ fontFamily: din.style.fontFamily, color: COLORS.PRIMARY_GREEN, fontSize: { xs: 40, md: 64 }, fontWeight: 900, lineHeight: 1 }}>
+                        {metric.value}
+                      </Typography>
+                      <Typography sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 16, md: 24 }, lineHeight: 1.4, color: COLORS.WHITE }}>
+                        {metric.text}
+                      </Typography>
+                    </Stack>
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        </Box>
       </Container>
     </Box>
   );
