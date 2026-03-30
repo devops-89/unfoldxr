@@ -21,8 +21,12 @@ import youtube from "@/images/social_icons/youtube.svg";
 import facebook from "@/images/social_icons/facebook.svg";
 import x from "@/images/social_icons/twitter.svg";
 import instagram from "@/images/social_icons/insta.svg";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/" || pathname === "/Home";
+
   const socialIcons = [
     {
       src: linkedin,
@@ -181,21 +185,41 @@ export default function Footer() {
                 alignItems={{ xs: "center", md: "flex-end" }}
                 sx={{ textAlign: { xs: "center", md: "right" } }}
               >
-                <Box
-                  sx={{
-                    height: { xs: 32, md: 30 },
-                    width: { xs: "200px", sm: "250px", md: "250px" },
-                    position: "relative",
-                  }}
-                >
-                  <Image
-                    src={logoWhite}
-                    alt="UnfoldXR"
-                    fill
-                    style={{ objectFit: "contain" }}
-                    unoptimized
-                  />
-                </Box>
+                {isHome ? (
+                  <Box
+                    sx={{
+                      height: { xs: 32, md: 30 },
+                      width: { xs: "200px", sm: "250px", md: "250px" },
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      src={logoWhite}
+                      alt="UnfoldXR"
+                      fill
+                      style={{ objectFit: "contain" }}
+                      unoptimized
+                    />
+                  </Box>
+                ) : (
+                  <Link href="/" style={{ display: "block", textDecoration: "none", cursor: "pointer" }}>
+                    <Box
+                      sx={{
+                        height: { xs: 32, md: 30 },
+                        width: { xs: "200px", sm: "250px", md: "250px" },
+                        position: "relative",
+                      }}
+                    >
+                      <Image
+                        src={logoWhite}
+                        alt="UnfoldXR"
+                        fill
+                        style={{ objectFit: "contain" }}
+                        unoptimized
+                      />
+                    </Box>
+                  </Link>
+                )}
                  <Typography
                   component="a"
                   href="mailto:info@unfoldxr.com"
@@ -266,11 +290,13 @@ export default function Footer() {
             >
               Copyright ©2026 All rights reserved
             </Typography>
-            <Box
+            <Stack
+              direction="row"
+              spacing={3}
               sx={{
                 position: { sm: "absolute" },
                 right: { sm: 0 },
-                mt: { xs: 2, sm: 0 },
+                mt: { xs: 3, sm: 0 },
               }}
             >
               <Link href="#" style={{ textDecoration: "none" }}>
@@ -286,10 +312,26 @@ export default function Footer() {
                     "&:hover": { opacity: 1, bgcolor: "transparent" },
                   }}
                 >
-                  Terms & Condition
+                  Terms & Conditions
                 </Button>
               </Link>
-            </Box>
+              <Link href="/privacy-policy" style={{ textDecoration: "none" }}>
+                <Button
+                  variant="text"
+                  sx={{
+                    color: "#efefef",
+                    opacity: 0.6,
+                    textTransform: "none",
+                    fontSize: 14,
+                    padding: 0,
+                    minWidth: 0,
+                    "&:hover": { opacity: 1, bgcolor: "transparent" },
+                  }}
+                >
+                  Privacy Policy
+                </Button>
+              </Link>
+            </Stack>
           </Box>
         </Container>
       </Box>

@@ -20,13 +20,17 @@ const WorkForce = () => {
           justifyContent: "center",
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           {/* Heading */}
           <Typography
             sx={{
+              color: "#000",
               fontFamily: din.style.fontFamily,
+              fontSize: { xs: 32, md: 64 },
+              fontStyle: "normal",
               fontWeight: 900,
-              fontSize: { xs: 32, md: 60 }, // 👈 responsive text
+              lineHeight: "normal",
+              textTransform: "uppercase",
               textAlign: { xs: "center", md: "left" },
             }}
           >
@@ -36,10 +40,13 @@ const WorkForce = () => {
           {/* Description */}
           <Typography
             sx={{
+              color: "#000",
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 16, md: 25 },
+              fontSize: { xs: 16, md: 28 },
+              fontStyle: "normal",
               fontWeight: 400,
-              mt: 2,
+              lineHeight: { xs: 1.5, md: "46px" },
+              mt: { xs: 2, md: 3 },
               textAlign: { xs: "center", md: "left" },
             }}
           >

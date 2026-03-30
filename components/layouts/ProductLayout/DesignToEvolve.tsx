@@ -1,10 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import VerticalStepper from "@/components/widgets/VerticalStepper";
 
 const DesignToEvolve = () => {
   const data = homePage.productPage.designToEvolve;
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <Box
       sx={{
@@ -68,26 +74,27 @@ const DesignToEvolve = () => {
                 gap: { xs: 2, md: 4 },
               }}
             >
-              {data.variants.map((item) => (
+              {data.variants.map((item, index) => (
                 <Box
                   key={item.title}
+                  onClick={() => setActiveIndex(index)}
                   sx={{
                     fontFamily: din.style.fontFamily,
-                    border: item.active
+                    border: activeIndex === index
                       ? `2px solid ${COLORS.PRIMARY_HOVER}`
                       : "2px solid transparent",
                     borderRadius: "99px",
                     display: "inline-block",
                     px: { xs: 2, md: 3 },
                     py: 1,
-                    color: item.active ? COLORS.PRIMARY_HOVER : COLORS.WHITE,
+                    color: activeIndex === index ? COLORS.PRIMARY_HOVER : COLORS.WHITE,
                     textTransform: "uppercase",
                     letterSpacing: "0.04em",
                     fontSize: { xs: 16, md: 22 },
                     fontWeight: 700,
                     width: "fit-content",
                     cursor: "pointer",
-                    ml: item.active ? 0 : { xs: 2, md: 3 },
+                    transition: "all 0.3s ease",
                   }}
                 >
                   {item.title}
@@ -96,52 +103,50 @@ const DesignToEvolve = () => {
             </Box>
           </Grid>
 
-          {/* Right Description Column with Vertical Separator */}
+          {/* Right Description Column with Vertical Stepper */}
           <Grid size={{ xs: 12, md: 8 }} sx={{ position: "relative" }}>
-            {/* Lime green vertical separator line (visible only on desktop) */}
-            <Box
+            <VerticalStepper 
+              itemsCount={data.variants.length} 
+              activeIndex={activeIndex} 
               sx={{
                 display: { xs: "none", md: "block" },
                 position: "absolute",
                 top: 0,
-                bottom: "5%",
+                bottom: 0,
                 left: 0,
-                width: "2px",
-                bgcolor: COLORS.PRIMARY_HOVER,
+
               }}
             />
 
             <Box sx={{ pl: { xs: 0, md: 6 } }}>
-              {data.variants
-                .filter((v) => v.active)
-                .map((activeVariant, idx) => (
-                  <Box key={idx}>
-                    <Typography
-                      sx={{
-                        fontFamily: helvetica.style.fontFamily,
-                        fontWeight: 700,
-                        fontSize: { xs: 20, md: 24 },
-                        color: COLORS.WHITE,
-                        mb: 2,
-                      }}
-                    >
-                      {activeVariant.title.includes("Augment")
-                        ? "Enhance productivity for frontline work"
-                        : activeVariant.title}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontFamily: helvetica.style.fontFamily,
-                        fontSize: { xs: 16, md: 18 },
-                        lineHeight: 1.6,
-                        color: COLORS.TEXT_MUTED,
-                        maxWidth: 650,
-                      }}
-                    >
-                      {activeVariant.description}
-                    </Typography>
-                  </Box>
-                ))}
+              <Box>
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontWeight: 700,
+                    fontSize: { xs: 18, md: 24 },
+                    color: COLORS.WHITE,
+                    mb: 2,
+                    transition: "all 0.3s ease",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {data.variants[activeIndex].subHeading || data.variants[activeIndex].title}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: { xs: 16, md: 18 },
+                    lineHeight: 1.6,
+                    color: COLORS.TEXT_MUTED,
+                    maxWidth: 650,
+                    transition: "all 0.3s ease",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {data.variants[activeIndex].description}
+                </Typography>
+              </Box>
             </Box>
           </Grid>
         </Grid>

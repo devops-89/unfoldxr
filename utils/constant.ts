@@ -67,8 +67,8 @@ export const HEADER_LINKS = [
     url: "/resources",
   },
   {
-    label:"Partners",
-    url:"/partners"
+    label: "Partners",
+    url: "/partners",
   },
   {
     label: "About Us",
@@ -350,112 +350,112 @@ export const partnersWhyPartnerData: PARTNERS_WHY_PARTNER_CARD_PROPS[] = [
   },
 ];
 
-export const partnersEcosystemData: PARTNERS_ECOSYSTEM_CARD_PROPS[]=[
+export const partnersEcosystemData: PARTNERS_ECOSYSTEM_CARD_PROPS[] = [
   { label: "PSM platforms" },
-    { label: "IoT & digital twin companies" },
-    { label: "LMS & training platforms" },
-    { label: "Staffing partners" },
-    { label: "Automation & robotics partners" },
-]
-
-export const partnersClientBusinessData: PARTNERS_CLIENT_BUSINESS_CARD_PROPS[]=[
-  {
-    id: 1,
-    title: "EMBEDDED PRODUCT",
-    description:
-      "Refer your clients and prospects to earn a commission on sales.",
-  },
-  {
-    id: 2,
-    title: "REFERRAL PARTNER",
-    description:
-      "Refer your clients and prospects to us to earn a commission on sales.",
-  },
-  {
-    id: 3,
-    title: "RESELLER PARTNER",
-    description:
-      "Distribute UnfoldX’s AI-AR platform in your core market.",
-  },
-  {
-    id: 4,
-    title: "LICENSING AND IMPLEMENTATION PARTNER",
-    description:
-      "Sell and implement UnfoldXR SaaS platform to establish an augmented revenue stream.",
-  },
-]
-
-export const partnersExistingPartnersData: PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS[]=[
-  {
-    image: existingPartner1,
-  },
-  {
-    image: existingPartner2,
-  },
-  {
-    image: existingPartner3,
-  },
-  {
-    image: existingPartner4,
-  },
-   {
-    image: existingPartner5,
-  },
-   {
-    image: existingPartner6,
-  },
-   {
-    image: existingPartner1,
-  },
-   {
-    image: existingPartner2,
-  },
-   {
-    image: existingPartner3,
-  },
-   {
-    image: existingPartner4,
-  },
-   {
-    image: existingPartner5,
-  },
+  { label: "IoT & digital twin companies" },
+  { label: "LMS & training platforms" },
+  { label: "Staffing partners" },
+  { label: "Automation & robotics partners" },
 ];
 
-// Contact Form section ================================
-export const contactFormData:CONTACT_FORM_DATA={
-  formFields:[
-      {
-        name: "name",
-        label: "Name *",
-        required: true,
-      },
-      {
-        name: "organization",
-        label: "Organisation *",
-        required: true,
-      },
-      {
-        name: "designation",
-        label: "Designation *",
-        required: true,
-      },
-      {
-        name: "contactNo",
-        label: "Contact No *",
-        required: true,
-      },
-      {
-        name: "email",
-        label: "Email *",
-        required: true,
-      },
-      {
-        name: "message",
-        label: "Message",
-        multiline: true,
-        rows: 4,
-      },
-    ],
-    buttonText:"Submit Button"
-}
+export const partnersClientBusinessData: PARTNERS_CLIENT_BUSINESS_CARD_PROPS[] =
+  [
+    {
+      id: 1,
+      title: "EMBEDDED PRODUCT",
+      description:
+        "Refer your clients and prospects to earn a commission on sales.",
+    },
+    {
+      id: 2,
+      title: "REFERRAL PARTNER",
+      description:
+        "Refer your clients and prospects to us to earn a commission on sales.",
+    },
+    {
+      id: 3,
+      title: "RESELLER PARTNER",
+      description: "Distribute UnfoldX’s AI-AR platform in your core market.",
+    },
+    {
+      id: 4,
+      title: "LICENSING AND IMPLEMENTATION PARTNER",
+      description:
+        "Sell and implement UnfoldXR SaaS platform to establish an augmented revenue stream.",
+    },
+  ];
 
+export const partnersExistingPartnersData: PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS[] =
+  [
+    {
+      image: existingPartner1,
+    },
+    {
+      image: existingPartner2,
+    },
+    {
+      image: existingPartner3,
+    },
+    {
+      image: existingPartner4,
+    },
+    {
+      image: existingPartner5,
+    },
+    {
+      image: existingPartner6,
+    },
+    {
+      image: existingPartner1,
+    },
+    {
+      image: existingPartner2,
+    },
+    {
+      image: existingPartner3,
+    },
+    {
+      image: existingPartner4,
+    },
+    {
+      image: existingPartner5,
+    },
+  ];
+
+// Contact Form section ================================
+export const contactFormData: CONTACT_FORM_DATA = {
+  formFields: [
+    {
+      name: "name",
+      label: "Name *",
+      required: true,
+    },
+    {
+      name: "organization",
+      label: "Organisation *",
+      required: true,
+    },
+    {
+      name: "designation",
+      label: "Designation *",
+      required: true,
+    },
+    {
+      name: "contactNo",
+      label: "Contact No *",
+      required: true,
+    },
+    {
+      name: "email",
+      label: "Email *",
+      required: true,
+    },
+    {
+      name: "message",
+      label: "Message",
+      multiline: true,
+      rows: 4,
+    },
+  ],
+  buttonText: "Submit Button",
+};

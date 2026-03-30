@@ -175,20 +175,23 @@ export const homePage = {
       variants: [
         {
           title: "UnfoldXR Augment",
+          subHeading: "Enhance productivity for frontline work",
           description:
-            "It enhances how your technicians already work making every task faster, smarter, and more consistent without disrupting existing workflows.",
+            "It enhances how your technicians already work  making every task faster, smarter, and more consistent without disrupting existing workflows.  ",
           active: true,
         },
         {
           title: "UnfoldXR Empower",
+          subHeading: "Enhance intelligent decision-making and scale",
           description:
-            "Empower adds intelligence to execution with AI-guided diagnostics and contextual assistance.",
+            "UnfoldXR Empower builds on Augment with advanced knowledge management, offline support, intelligent scan, Creator Mode and more. AVA, the AI Agent becomes more dynamic.",
           active: false,
         },
         {
           title: "UnfoldXR Edge",
+          subHeading: "Define the modern workflow with advanced AI-AR tech and performance intelligence",
           description:
-            "Edge provides advanced AI-AR capabilities and performance intelligence for enterprise-level scaling.",
+            "UnfoldXR Edge is the ultimate evolution of the platform. Built for large, distributed enterprises, Edge is not only a tool upgrade. It is a new way of working.",
           active: false,
         },
       ],
@@ -209,45 +212,45 @@ export const homePage = {
       title: "Explore capabilities by mode",
       modes: [
         {
-          title: "Agent mode",
-          subtitle: "Structured execution at the moment of work",
+          title: "Agent Mode",
+          subtitle: "Structured Execution at the Moment of Work",
           description:
             "UnfoldXR guides teams through tasks step by step, aligned to the exact asset, location, and requirement. Manuals, SOPs, safety checks, diagnostics, reporting, and remote collaboration are built into a single workflow. Work becomes consistent, compliant, and faster to complete.",
           active: true,
         },
         {
-          title: "Creator mode",
-          subtitle: "Knowledge to standardised workflows",
+          title: "Creator Mode",
+          subtitle: "Knowledge to Standardised Workflows",
           description:
-            "Turn expert knowledge into structured, interactive digital guides in minutes.",
+            "UnfoldXR captures expert processes and converts them into structured digital SOPs. Existing videos, demonstrations, and field practices can be transformed into reusable workflows. Knowledge becomes scalable. Training becomes faster. Execution stays uniform across sites.",
           active: false,
         },
         {
-          title: "Smart scan mode",
+          title: "Smart Scan Mode",
           subtitle: "Identify. Diagnose. Resolve.",
           description:
-            "Use AI-powered computer vision to instantly identify components and diagnose issues.",
+            "With QR or visual recognition, UnfoldXR identifies assets instantly and launches contextual diagnostics. Step validation, guided troubleshooting, and contextual insights reduce errors and improve first-time fix rates. From scan to solution — streamlined.",
           active: false,
         },
         {
-          title: "Smart rostering mode",
+          title: "Smart Rostering Mode",
           subtitle: "Right Skill. Right Time.",
           description:
-            "Optimize team deployment based on real-time skill verification and availability.",
+            "UnfoldXR intelligently aligns work orders based on skill, availability, priority, and location. Automated scheduling and task alignment improve utilisation and reduce downtime. Planning becomes proactive, not reactive.",
           active: false,
         },
         {
-          title: "Expert mode",
-          subtitle: "Complete operational visibility",
+          title: "Expert Mode",
+          subtitle: "Remote Assistance, Reimagined",
           description:
-            "Real-time visibility into every task, team, and asset across your entire operation.",
+            "UnfoldXR connects field teams with experts through live, immersive collaboration. Join audio or video sessions, annotate in real time with 2D and 3D overlays, and resolve issues faster with AI-assisted support. Start sessions instantly or schedule ahead, include multiple experts, and securely share files via chat. Expertise is not limited by location anymore.",
           active: false,
         },
         {
-          title: "Intelligence & analytics mode",
-          subtitle: "Continuous operational improvement",
+          title: "Intelligence & Analytics Mode",
+          subtitle: "Continuous Operational Improvement",
           description:
-            "Data-driven insights to optimize processes and drive measurable productivity gains.",
+            "UnfoldXR converts field activity into measurable insights. Track performance, detect compliance gaps, analyse execution quality, and surface improvement opportunities. Every task strengthens the system.",
           active: false,
         },
       ],

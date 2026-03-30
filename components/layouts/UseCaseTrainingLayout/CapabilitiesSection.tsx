@@ -6,6 +6,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
+import VerticalStepper from "@/components/widgets/VerticalStepper";
 
 interface Props {
   data: UseCaseData["capabilities"];
@@ -34,7 +35,6 @@ const CapabilitiesSection = ({ data }: Props) => {
           height: "100%",
           opacity: 0.2,
           pointerEvents: "none",
-          // backgroundImage: `url("https://www.figma.com/api/mcp/asset/434f40f0-c521-4683-93ba-f29e240f95b3")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: 0,
@@ -98,8 +98,8 @@ const CapabilitiesSection = ({ data }: Props) => {
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
               {data.items.map((item, index) => (
                 <Box
-                  key={item}
-                  onMouseEnter={() => setActiveItem(index)}
+                  key={item.title}
+                  onClick={() => setActiveItem(index)}
                   sx={{
                     border:
                       activeItem === index
@@ -126,14 +126,14 @@ const CapabilitiesSection = ({ data }: Props) => {
                       letterSpacing: "0.02em",
                     }}
                   >
-                    {item}
+                    {item.title}
                   </Typography>
                 </Box>
               ))}
             </Box>
           </Grid>
 
-          {/* Vertical Separator Line on Desktop */}
+          {/* Vertical Separator Line with Stepper on Desktop */}
           <Grid
             size={{ md: 1 }}
             sx={{
@@ -141,12 +141,9 @@ const CapabilitiesSection = ({ data }: Props) => {
               justifyContent: "center",
             }}
           >
-            <Box
-              sx={{
-                width: "2px",
-                height: "100%",
-                bgcolor: COLORS.WHITE_ALPHA_40,
-              }}
+            <VerticalStepper
+              itemsCount={data.items.length}
+              activeIndex={activeItem}
             />
           </Grid>
 
@@ -161,9 +158,10 @@ const CapabilitiesSection = ({ data }: Props) => {
                   color: COLORS.WHITE,
                   fontWeight: 500,
                   transition: "opacity 0.3s ease",
+                  textTransform: "capitalize",
                 }}
               >
-                {data.description}
+                {data.items[activeItem].description}
               </Typography>
             </Box>
           </Grid>

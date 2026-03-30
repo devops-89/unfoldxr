@@ -14,22 +14,34 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
         {formData.formFields.map((field) => (
           <Grid
            size={{
-            xs:12,
-            sm:field.name === "message" ? 12 : 6
-        }}
-            
-            key={field.name}
+            xs: 12,
+            sm: field.name === "message" ? 12 : 6
+           }}
+           key={field.name}
           >
             <TextField
               fullWidth
-              label={field.label}
+              label={field.label.replace(" *", "")}
               required={field.required}
               multiline={field.multiline}
               rows={field.rows || 1}
               variant="outlined"
-              sx={{
-                backgroundColor: "#ffffff",
-                borderRadius: "6px",
+              InputLabelProps={{
+                sx: {
+                  fontWeight: 700,
+                  fontSize: 14,
+                  color: "#666",
+                  "& .MuiFormLabel-asterisk": { color: "red" }
+                }
+              }}
+              InputProps={{
+                sx: {
+                  backgroundColor: "#ffffff",
+                  borderRadius: "8px",
+                  "& fieldset": { borderColor: "transparent" },
+                  "&:hover fieldset": { borderColor: "transparent" },
+                  "&.Mui-focused fieldset": { borderColor: "#ccc" },
+                }
               }}
             />
           </Grid>
@@ -39,9 +51,10 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
       {/* Note */}
       <Typography
         variant="body2"
-        mt={3}
+        mt={4}
         fontSize={14}
-        color="black"
+        color="#333"
+        sx={{ fontWeight: 500, lineHeight: 1.6 }}
       >
         {note}
       </Typography>
@@ -50,15 +63,20 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
       <Button
         variant="contained"
         sx={{
-          mt: 3,
-          backgroundColor: "#B6FF00",
+          mt: 4,
+          backgroundColor: "#b6ec1a", 
           color: "#000",
-          fontWeight: 600,
-          borderRadius: "30px",
-          px: 4,
-          py: 1,
+          fontFamily: "Inter, sans-serif",
+          fontWeight: 700,
+          fontSize: 16,
+          borderRadius: "50px",
+          textTransform: "none",
+          px: 5,
+          py: 1.5,
+          boxShadow: "none",
           "&:hover": {
-            backgroundColor: "#a3e600",
+            backgroundColor: "#a5d915",
+            boxShadow: "none",
           },
         }}
       >

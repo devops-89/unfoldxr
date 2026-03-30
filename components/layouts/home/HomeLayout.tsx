@@ -14,36 +14,34 @@ import AboutUnfoldxr from "./About-Unfoldxr";
 const HomeLayout = () => {
   return (
     <Box>
-     <HeroSection />
+      <HeroSection />
 
-<Box
-  sx={{
-    backgroundColor: COLORS.BLACK,
-    height: { xs: "auto", md: "100vh" }, 
-    minHeight: { xs: "auto", md: "unset" },
-    p: { xs: 2, md: 4 }, 
-    display: "flex",
-    alignItems: { xs: "flex-start", md: "center" }, 
-    justifyContent: "center",
-  }}
->
-  <WorkForce />
-</Box>
-      
-       <AiIndustry />
+      <Box
+        sx={{
+          backgroundColor: COLORS.BLACK,
+          height: { xs: "auto", md: "100vh" },
+          minHeight: { xs: "auto", md: "unset" },
+          p: { xs: 2, md: 4 },
+          display: "flex",
+          alignItems: { xs: "flex-start", md: "center" },
+          justifyContent: "center",
+        }}
+      >
+        <WorkForce />
+      </Box>
 
-      <AboutUnfoldxr />
-       
+      <AiIndustry />
+
       <FutureWork />
-      
+
       <Metrics />
-      
+
       <Meetava />
-      
+
       <Outcome />
-      
+
       <DevicesSection />
-      
+
       <Tools />
     </Box>
   );

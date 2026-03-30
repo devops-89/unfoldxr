@@ -19,8 +19,7 @@ export interface UseCaseData {
   };
   capabilities: {
     title: string;
-    description: string;
-    items: string[];
+    items: { title: string; description: string }[];
   };
   businessResults: {
     title: string;
@@ -78,18 +77,43 @@ export const useCasesData: Record<string, UseCaseData> = {
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER TRAINING, ONBOARDING & KNOWLEDGE CAPTURE",
-      description:
-        "Capture expert processes once and convert them into structured, step-by-step digital workflows for training and execution.",
       items: [
-        "DIGITAL SOP & WORKFLOW CREATION (CREATOR MODE)",
-        "VIDEO-TO-WORKFLOW CONVERSION",
-        "CONTEXT-AWARE LEARNING AT THE MOMENT OF WORK",
-        "AI-GUIDED ASSISTANCE (AVA)",
-        "SMART SCAN MODE",
-        "REMOTE EXPERT COLLABORATION",
-        "EVIDENCE-BASED SKILL VALIDATION",
-        "ADAPTIVE WORKFLOWS",
-        "DEVICE-AGNOSTIC DEPLOYMENT",
+        {
+          title: "DIGITAL SOP & WORKFLOW CREATION (CREATOR MODE)",
+          description: "Capture expert processes once and convert them into structured, step-by-step digital workflows for training and execution.",
+        },
+        {
+          title: "VIDEO-TO-WORKFLOW CONVERSION",
+          description: "Transform existing training videos into interactive, guided instructions.",
+        },
+        {
+          title: "CONTEXT-AWARE LEARNING AT THE MOMENT OF WORK",
+          description: "Deliver training guidance aligned to the specific asset, task, or environment.",
+        },
+        {
+          title: "AI-GUIDED ASSISTANCE (AVA)",
+          description: "Provide real-time support, explanations, and recommendations before, during, and after tasks.",
+        },
+        {
+          title: "SMART SCAN MODE",
+          description: "Scan assets or QR codes to instantly access relevant training, SOPs, and contextual guidance.",
+        },
+        {
+          title: "REMOTE EXPERT COLLABORATION",
+          description: "Enable trainees to connect with senior experts through live audio, video, and visual guidance.",
+        },
+        {
+          title: "EVIDENCE-BASED SKILL VALIDATION",
+          description: "Capture task completion data, photos, videos, and notes to verify competency and compliance.",
+        },
+        {
+          title: "ADAPTIVE WORKFLOWS",
+          description: "Ensure instructions adjust automatically across devices and environments for consistent learning outcomes.",
+        },
+        {
+          title: "DEVICE-AGNOSTIC DEPLOYMENT",
+          description: "Accessible on mobile phones, tablets, and smart glasses, supporting both classroom and field-based training.",
+        },
       ],
     },
     businessResults: {
