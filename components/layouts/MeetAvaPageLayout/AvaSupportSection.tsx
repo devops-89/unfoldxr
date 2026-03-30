@@ -1,5 +1,5 @@
 "use client";
-//
+// ava support page 
 import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
