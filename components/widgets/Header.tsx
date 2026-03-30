@@ -100,7 +100,11 @@ const Header = () => {
               }}
             >
               {HEADER_LINKS.map((val, i) => (
-                <Link href={val.url} key={i} style={{ textDecoration: "none" }}>
+                <Link
+                  href={val.url || "#"}
+                  key={i}
+                  style={{ textDecoration: "none" }}
+                >
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
@@ -189,7 +193,7 @@ const Header = () => {
           <Stack spacing={2}>
             {HEADER_LINKS.map((val, i) => (
               <Link
-                href={val.url}
+                href={val.url || "#¯¯¯"}
                 key={i}
                 style={{ textDecoration: "none" }}
                 onClick={() => setOpen(false)}
