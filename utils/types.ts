@@ -66,3 +66,54 @@ export interface TOOLS_RIGHT_SECTION_PROPS {
   subHeading: string;
   cards: TOOL_CARD_PROPS[];
 }
+
+// Partners Page Types ================================================================
+
+export interface PARTNERS_METRICS_CARD_PROPS{
+  title: string;
+  description: string;
+  gridSize: {
+    xs: number;
+    sm?: number;
+    md?: number;
+  };
+}
+
+export interface PARTNERS_WHY_PARTNER_CARD_PROPS{
+  title:string;
+  description:string;
+
+}
+
+
+export interface PARTNERS_ECOSYSTEM_CARD_PROPS{
+  label:string;
+}
+
+export interface PARTNERS_CLIENT_BUSINESS_CARD_PROPS{
+  id:number;
+  title:string;
+  description:string;
+}
+
+export interface PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS{
+  image:StaticImageData
+}
+
+// Contact Section Types =========================================================
+
+export interface CONTACTFORMFIELD {
+  name: string;
+  label: string;
+  required?: boolean;
+  multiline?: boolean;
+  rows?: number;
+}
+
+export interface CONTACT_FORM_DATA{
+  formFields:CONTACTFORMFIELD[];
+  buttonText:string;
+}
+
+
+

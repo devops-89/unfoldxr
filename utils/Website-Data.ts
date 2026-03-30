@@ -1,11 +1,18 @@
 import {
   AI_INDUSTRY_DATA,
+  contactFormData,
   DEVICES_SECTION_DATA,
+  partnersClientBusinessData,
+  partnersEcosystemData,
+  partnersExistingPartnersData,
+  partnersMetricsData,
+  partnersWhyPartnerData,
   toolsLeftData,
   toolsRightData,
   WORKFORCE_CARD_DATA,
 } from "./constant";
 import ava from "@/images/banner/homePage/avapng.png";
+import partnersClientBusiness from "@/images/banner/partners/client-business-section.png";
 import tools from "@/images/banner/homePage/tools/tools-team.png";
 export const homePage = {
   herosection: {
@@ -236,3 +243,54 @@ export const homePage = {
     },
   },
 };
+
+export const partnersPage={
+  herosection: {
+    heading1: "Unfold Profit and Potential with our Channel Partnership.",
+    description: "Achieve more revenue and steady growth with UnfoldXR.",
+    cta1: "Become a Partner",
+    
+  },
+  metricsSection:{
+    heading:"Why Partner with an AI-AR Platform?",
+    description:"AI and augmented reality are rapidly becoming core to how enterprises operate and scale. l Partnering early means aligning with a high-growth market and delivering measurable value to your customers.",
+    metrics_card_data:partnersMetricsData
+
+  },
+  whyPartnerSection:{
+    heading:"WHY PARTNER WITH UNFOLDXR?",
+    why_partner_card_data:partnersWhyPartnerData
+  },
+  ecosystemSystem:{
+     heading: "WHO WE PARTNER WITH BUILT FOR ECOSYSTEM COLLABORATION",
+  tag: "ERP and CMMS partners",
+  leftItems: partnersEcosystemData,
+  rightText:
+    "Extend ERP modules into hands-free execution. Reduce errors and improve first-time fix rates. Create real-time feedback loops into maintenance systems.",
+  },
+  clientBusinessSection:{
+    title:"DON'T JUST ADD VALUE, AUGMENT YOUR CLIENT'S BUSINESS.",
+    image:partnersClientBusiness,
+    client_business_card_data:partnersClientBusinessData
+  },
+  existingPartnersSection:{
+    heading:"Our Existing Partners",
+    existing_partners_chip_data:partnersExistingPartnersData
+  }
+   
+}
+
+export const contactPage={
+   herosection: {
+    heading1: "Ready to watch the future of work unfold? ",
+    description: "Contact an UnfoldXR Expert.",
+    
+    
+  },
+  contactFormSection:{
+   heading:"Let’s augment human productivity together.",
+   note:"Note: By submitting this form, you will receive the information requested as well as sales and/or marketing communication on resources, news, and events related to UnfoldXR. You can unsubscribe anytime. For further details about your rights and how we process your personal information, see our Privacy Policy.",
+   contactFormData:contactFormData
+  
+ }
+}
