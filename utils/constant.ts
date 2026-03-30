@@ -1,7 +1,13 @@
 import {
+  CONTACT_FORM_DATA,
   DEVICES_SECTION_DATA_PROPS,
   FUTURE_WORK_CARD_PROPS,
   INDUSTRY_CHIP_PROPS,
+  PARTNERS_CLIENT_BUSINESS_CARD_PROPS,
+  PARTNERS_ECOSYSTEM_CARD_PROPS,
+  PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS,
+  PARTNERS_METRICS_CARD_PROPS,
+  PARTNERS_WHY_PARTNER_CARD_PROPS,
   TOOLS_LEFT_SECTION_PROPS,
   TOOLS_RIGHT_SECTION_PROPS,
   WORKFORCE_CARD_PROPS,
@@ -28,6 +34,12 @@ import augmentingHuman from "@/images/homepage/tools/augmenting-human.svg";
 import smsChatBg from "@/images/homepage/tools/sms-chat-bg.svg";
 import humanizeChatbot from "@/images/homepage/tools/humanize-chatbot.svg";
 import leftSectionBg from "@/images/homepage/tools/left-section-bg.svg";
+import existingPartner1 from "@/images/banner/partners/existing-partners/partner1.svg";
+import existingPartner2 from "@/images/banner/partners/existing-partners/partner2.svg";
+import existingPartner3 from "@/images/banner/partners/existing-partners/partner3.svg";
+import existingPartner4 from "@/images/banner/partners/existing-partners/partner4.svg";
+import existingPartner5 from "@/images/banner/partners/existing-partners/partner5.svg";
+import existingPartner6 from "@/images/banner/partners/existing-partners/partner6.svg";
 
 export const HEADER_LINKS = [
   {
@@ -36,15 +48,15 @@ export const HEADER_LINKS = [
   },
   {
     label: "Solutions",
-    url: "/solutions",
+    url: "/usecases/training",
   },
   {
-    label: "Industries",
+    label: "Industry",
     url: "/industries",
   },
   {
     label: "Product",
-    url: "/product",
+    url: "/Product",
   },
   {
     label: "Meet AVA",
@@ -55,12 +67,16 @@ export const HEADER_LINKS = [
     url: "/resources",
   },
   {
+    label:"Partners",
+    url:"/partners"
+  },
+  {
     label: "About Us",
     url: "/about-us",
   },
   {
-    label: "Contact Us",
-    url: "/contact-us",
+    label: "Book a Demo",
+    url: "/book-a-demo",
   },
 ];
 
@@ -80,7 +96,7 @@ export const NAV_ITEMS = [
   "Meet AVA",
   "Resources",
   "About Us",
-  "Contact Us",
+  "Book a Demo",
 ];
 
 export const FOOTER_COLUMNS: { title: string; links: string[] }[] = [
@@ -132,7 +148,6 @@ export const FOOTER_COLUMNS: { title: string; links: string[] }[] = [
   { title: "Contact Us", links: [] },
   { title: "Book a Demo", links: [] },
 ];
-
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
@@ -222,7 +237,6 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
     gridSize: 7,
   },
   {
-   
     heading: "Works Across All Devices",
     description:
       "Mobile phones, tablets, basic smart glasses, screenless helmets, and advanced AR wearables.",
@@ -242,46 +256,206 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
   },
 ];
 
-
 //  Tools Section Data
 
 export const toolsLeftData: TOOLS_LEFT_SECTION_PROPS = {
   ctaText: "Book a Demo",
   note: "*note - this place will have cursor animation",
-  image:leftSectionBg
+  image: leftSectionBg,
 };
 
-export const toolsRightData:TOOLS_RIGHT_SECTION_PROPS = {
+export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
   subHeading: "Augmenting Human Productivity.",
   cards: [
     {
       type: "image",
       title: "From Many Tools to One Intelligent Platform ",
       image: humanizeChatbot,
-      gridSize:5
-      
+      gridSize: 5,
     },
     {
       type: "image",
       title: "Augmenting Human Productivity with AR & AI",
-      description: "Streamlining operations with smart automation and immersive technology.",
+      description:
+        "Streamlining operations with smart automation and immersive technology.",
       image: augmentingHuman,
-      gridSize:7
+      gridSize: 7,
     },
     {
-      type:"image",
-      title:"The Future Of Work: AI-Powered, AR-Enabled",
-      description:"Smarter Collaboration with next-gen tech.",
-      image:smsChatBg,
+      type: "image",
+      title: "The Future Of Work: AI-Powered, AR-Enabled",
+      description: "Smarter Collaboration with next-gen tech.",
+      image: smsChatBg,
       titleColor: "#000000",
-     descriptionColor: "#51555c",
-      gridSize:7
+      descriptionColor: "#51555c",
+      gridSize: 7,
     },
     {
-      type:"icon",
-      title:"Smarter Support, Better Outcomes",
-      icons:[bell,clock,calender],
-      gridSize:5
-    }
+      type: "icon",
+      title: "Smarter Support, Better Outcomes",
+      icons: [bell, clock, calender],
+      gridSize: 5,
+    },
   ],
 };
+
+// Partners Page Data ===========================================================================================
+
+export const partnersMetricsData: PARTNERS_METRICS_CARD_PROPS[] = [
+  {
+    title: "51.8% CAGR",
+    description: "projected growth in the AR/VR market between 2024 and 2029",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "$446.5B",
+    description: "market size expected for AI-powered AR by 2033",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "32%",
+    description:
+      "productivity boost reported by organizations adopting AR and VR (IBM)",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "46%",
+    description:
+      "reduction in task completion time achieved through AR/VR adoption (IBM)",
+    gridSize: { xs: 12, sm: 6 },
+  },
+  {
+    title: "70%",
+    description:
+      "of Fortune 500 companies expected to implement augmented connected worker initiatives by 2027 (Gartner)",
+    gridSize: { xs: 12 },
+  },
+];
+
+export const partnersWhyPartnerData: PARTNERS_WHY_PARTNER_CARD_PROPS[] = [
+  {
+    title: "Increase product stickiness",
+    description:
+      "UnfoldXR embeds augmented reality directly into daily operations, increasing platform dependency and long-term adoption.",
+  },
+  {
+    title: "Accelerate revenue growth",
+    description:
+      "Achieve higher conversions and increase average deal size with AR-enabled execution capabilities.",
+  },
+  {
+    title: "Strengthen strategic positioning",
+    description:
+      "Move from system provider to innovation-led transformation partner with predictable, high-margin recurring revenue.",
+  },
+];
+
+export const partnersEcosystemData: PARTNERS_ECOSYSTEM_CARD_PROPS[]=[
+  { label: "PSM platforms" },
+    { label: "IoT & digital twin companies" },
+    { label: "LMS & training platforms" },
+    { label: "Staffing partners" },
+    { label: "Automation & robotics partners" },
+]
+
+export const partnersClientBusinessData: PARTNERS_CLIENT_BUSINESS_CARD_PROPS[]=[
+  {
+    id: 1,
+    title: "EMBEDDED PRODUCT",
+    description:
+      "Refer your clients and prospects to earn a commission on sales.",
+  },
+  {
+    id: 2,
+    title: "REFERRAL PARTNER",
+    description:
+      "Refer your clients and prospects to us to earn a commission on sales.",
+  },
+  {
+    id: 3,
+    title: "RESELLER PARTNER",
+    description:
+      "Distribute UnfoldX’s AI-AR platform in your core market.",
+  },
+  {
+    id: 4,
+    title: "LICENSING AND IMPLEMENTATION PARTNER",
+    description:
+      "Sell and implement UnfoldXR SaaS platform to establish an augmented revenue stream.",
+  },
+]
+
+export const partnersExistingPartnersData: PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS[]=[
+  {
+    image: existingPartner1,
+  },
+  {
+    image: existingPartner2,
+  },
+  {
+    image: existingPartner3,
+  },
+  {
+    image: existingPartner4,
+  },
+   {
+    image: existingPartner5,
+  },
+   {
+    image: existingPartner6,
+  },
+   {
+    image: existingPartner1,
+  },
+   {
+    image: existingPartner2,
+  },
+   {
+    image: existingPartner3,
+  },
+   {
+    image: existingPartner4,
+  },
+   {
+    image: existingPartner5,
+  },
+];
+
+// Contact Form section ================================
+export const contactFormData:CONTACT_FORM_DATA={
+  formFields:[
+      {
+        name: "name",
+        label: "Name *",
+        required: true,
+      },
+      {
+        name: "organization",
+        label: "Organisation *",
+        required: true,
+      },
+      {
+        name: "designation",
+        label: "Designation *",
+        required: true,
+      },
+      {
+        name: "contactNo",
+        label: "Contact No *",
+        required: true,
+      },
+      {
+        name: "email",
+        label: "Email *",
+        required: true,
+      },
+      {
+        name: "message",
+        label: "Message",
+        multiline: true,
+        rows: 4,
+      },
+    ],
+    buttonText:"Submit Button"
+}
+
