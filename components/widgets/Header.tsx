@@ -35,7 +35,7 @@ const Header = () => {
         <Container maxWidth="lg">
           <Box
             sx={{
-              backgroundColor: COLORS.HRADER_BG,
+              backgroundColor: COLORS.HEADER_BG,
               borderRadius: "30px",
               border: "1px solid #E3E3E3",
               display: "flex",

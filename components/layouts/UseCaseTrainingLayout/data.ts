@@ -32,7 +32,7 @@ export interface UseCaseData {
   };
   deviceDeployment: {
     title: string;
-    deviceA: { image: string; title: string };
+    deviceA: {image: string; title: string };
     deviceB: { image: string; title: string };
     deviceC: { image: string; title: string };
   };
@@ -75,8 +75,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         "Teams learn by doing, follow standardised guidance, and access critical knowledge in real time through AI Assistant, AVA or remote experts.",
       description3:
         "With three versions designed for different stages of operational maturity UnfoldXR Augment, UnfoldXR Empower, and UnfoldXR Edge the platform scales with your organization. Start with structured digital guidance and grow into intelligent, AI-driven workforce enablement when you are ready.",
-      image:
-        "/images/usecase/UseCase/Style=Grey, Position=Horizontal.png",
+      image: "/images/usecase/TabImage.png",
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER TRAINING, ONBOARDING & KNOWLEDGE CAPTURE",
@@ -138,17 +137,17 @@ export const useCasesData: Record<string, UseCaseData> = {
       title: "Device & Deployment",
       deviceA: {
         image:
-          "https://www.figma.com/api/mcp/asset/4b9a507c-df12-4935-8328-4c69d18dde22",
+          "/images/usecase/MobilePhone.png",
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
         image:
-          "https://www.figma.com/api/mcp/asset/770e9131-1549-47e0-a5a6-b1369bdb967a",
+          "/images/usecase/FromSimple.png",
         title: "FROM SIMPLE HANDHELD DEVICES TO ADVANCED AR WEARABLES",
       },
       deviceC: {
         image:
-          "https://www.figma.com/api/mcp/asset/a09f3772-c644-4ea6-92ee-d8800c1bc6a7",
+          "/images/usecase/Scale.png",
         title: "SCALES WITH WORKFORCE SIZE, COMPLEXITY, AND BUDGET",
       },
     },

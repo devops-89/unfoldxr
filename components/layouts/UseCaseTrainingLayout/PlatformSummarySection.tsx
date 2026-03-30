@@ -1,6 +1,7 @@
 import { Box, Typography, Grid } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
+import { COLORS } from "@/utils/enum";
 
 interface Props {
   data: UseCaseData["platformSummary"];
@@ -8,12 +9,12 @@ interface Props {
 
 const PlatformSummarySection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: "#fff", py: { xs: 8, md: 15 } }}>
-      <Box 
-        sx={{ 
-          width: { xs: "95%", md: "80%" }, 
+    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
+      <Box
+        sx={{
+          width: { xs: "95%", md: "80%" },
           mx: "auto",
-          bgcolor: "#F2F2F2",
+          bgcolor: COLORS.BG_LIGHT,
           borderRadius: "40px",
           p: { xs: 5, md: 10 },
         }}
@@ -27,7 +28,7 @@ const PlatformSummarySection = ({ data }: Props) => {
                 textTransform: "uppercase",
                 fontSize: { xs: 32, md: 48, lg: 52 },
                 lineHeight: 1,
-                color: "#000",
+                color: COLORS.BLACK,
               }}
             >
               {data.title}
@@ -39,7 +40,7 @@ const PlatformSummarySection = ({ data }: Props) => {
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18, lg: 20 },
                 lineHeight: 1.6,
-                color: "rgba(0,0,0,0.7)",
+                color: COLORS.OVERLAY_07,
                 mb: 4,
               }}
             >
@@ -50,7 +51,7 @@ const PlatformSummarySection = ({ data }: Props) => {
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18, lg: 20 },
                 lineHeight: 1.6,
-                color: "rgba(0,0,0,0.7)",
+                color: COLORS.OVERLAY_07,
               }}
             >
               {data.description2}

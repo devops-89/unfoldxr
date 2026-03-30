@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { din } from "@/utils/fonts";
 import { UseCaseData } from "./data";
+import { COLORS } from "@/utils/enum";
 
 interface Props {
   data: UseCaseData["deviceDeployment"];
@@ -8,7 +9,7 @@ interface Props {
 
 const DeviceDeploymentSection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: "#fff", py: { xs: 8, md: 15 } }}>
+    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
       <Box
         sx={{
           width: { xs: "95%", md: "80%" },
@@ -49,7 +50,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  bgcolor: "rgba(0,0,0,0.5)",
+                  bgcolor: COLORS.OVERLAY_02,
                 }}
               />
               <Box
@@ -62,7 +63,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               >
                 <Typography
                   sx={{
-                    color: "#fff",
+                    color: COLORS.WHITE,
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
@@ -73,7 +74,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 >
                   {data.deviceA.title}
                 </Typography>
-                <Box sx={{ width: 80, height: 2, bgcolor: "#fff" }} />
+                <Box sx={{ width: 80, height: 2, bgcolor: COLORS.WHITE }} />
               </Box>
             </Box>
           </Grid>
@@ -94,15 +95,15 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 sx={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "200px",
+                  objectFit: "contain",
+                  objectPosition: "390px",
                 }}
               />
               <Box
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  bgcolor: "rgba(0,0,0,0.5)",
+                  bgcolor: COLORS.OVERLAY_04,
                 }}
               />
               <Box
@@ -115,7 +116,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               >
                 <Typography
                   sx={{
-                    color: "#fff",
+                    color: COLORS.WHITE,
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
@@ -126,7 +127,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 >
                   {data.deviceB.title}
                 </Typography>
-                <Box sx={{ width: 80, height: 2, bgcolor: "#fff" }} />
+                <Box sx={{ width: 80, height: 2, bgcolor: COLORS.WHITE }} />
               </Box>
             </Box>
           </Grid>
@@ -151,7 +152,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  bgcolor: "rgba(0,0,0,0.5)",
+                  bgcolor: COLORS.OVERLAY_02,
                 }}
               />
               <Box
@@ -164,7 +165,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               >
                 <Typography
                   sx={{
-                    color: "#fff",
+                    color: COLORS.WHITE,
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
@@ -175,7 +176,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 >
                   {data.deviceC.title}
                 </Typography>
-                <Box sx={{ width: 80, height: 2, bgcolor: "#fff" }} />
+                <Box sx={{ width: 80, height: 2, bgcolor: COLORS.WHITE }} />
               </Box>
             </Box>
           </Grid>

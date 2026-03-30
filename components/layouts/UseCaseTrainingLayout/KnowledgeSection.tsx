@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
+import { COLORS } from "@/utils/enum";
 
 interface Props {
   data: UseCaseData["knowledge"];
@@ -8,8 +9,10 @@ interface Props {
 
 const KnowledgeSection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: "#000", color: "#fff", py: { xs: 8, md: 20 } }}>
-      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
+    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 20 } }}>
+      <Box
+        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
+      >
         <Grid container spacing={{ xs: 4, md: 10 }}>
           {/* Left Side: Title */}
           <Grid size={{ xs: 12, md: 5 }}>
@@ -31,13 +34,16 @@ const KnowledgeSection = ({ data }: Props) => {
           <Grid size={{ xs: 12, md: 7 }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               {data.items.map((item, index) => (
-                <Box key={index} sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
+                <Box
+                  key={index}
+                  sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}
+                >
                   <Box
                     sx={{
                       width: 6,
                       height: 6,
                       borderRadius: "50%",
-                      bgcolor: "#fff",
+                      bgcolor: COLORS.WHITE,
                       mt: { xs: 1, md: 1.3 },
                       flexShrink: 0,
                     }}
@@ -47,7 +53,7 @@ const KnowledgeSection = ({ data }: Props) => {
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 17, md: 22, lg: 24 },
                       lineHeight: 1.4,
-                      color: "#fff",
+                      color: COLORS.WHITE,
                     }}
                   >
                     {item}
@@ -65,7 +71,7 @@ const KnowledgeSection = ({ data }: Props) => {
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 24, lg: 26 },
             lineHeight: 1.6,
-            color: "#fff",
+            color: COLORS.WHITE,
             maxWidth: "100%",
           }}
         >

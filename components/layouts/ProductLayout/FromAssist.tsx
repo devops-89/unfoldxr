@@ -1,21 +1,27 @@
 import { Box, Typography, Button } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { din, helvetica } from "@/utils/fonts";
+import { homePage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
 
 const FromAssist = () => {
+  const data = homePage.productPage.fromAssist;
+
   return (
-    <Box sx={{ backgroundColor: "#000", py: { xs: 8, md: 12 } }}>
-      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 1, md: 0 } }}>
+    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
+      <Box
+        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 1, md: 0 } }}
+      >
         <Box
           sx={{
-            backgroundColor: "#fff",
+            backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 4, md: "24px" },
             py: { xs: 8, md: 10 },
             px: { xs: 3, md: 8 },
             textAlign: "center",
             position: "relative",
             overflow: "hidden",
-            boxShadow: "0px 20px 40px rgba(0,0,0,0.1)",
+            boxShadow: `0px 20px 40px ${COLORS.BLACK_ALPHA_10}`,
           }}
         >
           {/* Neon Purple Decoration */}
@@ -26,7 +32,7 @@ const FromAssist = () => {
               top: -40,
               width: 200,
               height: 200,
-              background: "radial-gradient(circle, rgba(160,32,240,0.15) 0%, rgba(160,32,240,0) 70%)",
+              background: `radial-gradient(circle, ${COLORS.PURPLE_GLOW} 0%, ${COLORS.TRANSPARENT_PURPLE} 70%)`,
               zIndex: 0,
             }}
           />
@@ -39,14 +45,23 @@ const FromAssist = () => {
                 textTransform: "uppercase",
                 fontSize: { xs: 24, md: 44, lg: 48 },
                 lineHeight: 1.15,
-                color: "#000",
+                color: COLORS.BLACK,
                 maxWidth: 1100,
                 mx: "auto",
               }}
             >
-              From assistance to intelligence. From
-              <Box component="br" sx={{ display: { xs: "none", lg: "block" } }} />
-              field support to enterprise control.
+              {data.title.includes("From assistance") ? (
+                <>
+                  From assistance to intelligence. From
+                  <Box
+                    component="br"
+                    sx={{ display: { xs: "none", lg: "block" } }}
+                  />
+                  field support to enterprise control.
+                </>
+              ) : (
+                data.title
+              )}
             </Typography>
 
             <Typography
@@ -54,11 +69,11 @@ const FromAssist = () => {
                 mt: 3,
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 20, lg: 22 },
-                color: "#000",
+                color: COLORS.BLACK,
                 fontWeight: 500,
               }}
             >
-              Book a demo to see how UnfoldXR fits your operational stage.
+              {data.subtitle}
             </Typography>
 
             <Box
@@ -73,8 +88,8 @@ const FromAssist = () => {
             >
               <Button
                 sx={{
-                  bgcolor: "#ccf919",
-                  color: "#000",
+                  bgcolor: COLORS.PRIMARY_GREEN,
+                  color: COLORS.BLACK,
                   borderRadius: 99,
                   px: { xs: 4, md: 5 },
                   py: 1.8,
@@ -86,10 +101,10 @@ const FromAssist = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: 1.5,
-                  "&:hover": { bgcolor: "#b6ec1a", boxShadow: "none" },
+                  "&:hover": { bgcolor: COLORS.PRIMARY_HOVER, boxShadow: "none" },
                 }}
               >
-                Talk to the product specialist <ArrowForwardRoundedIcon />
+                {data.cta1} <ArrowForwardRoundedIcon />
               </Button>
               <Typography
                 sx={{
@@ -98,11 +113,11 @@ const FromAssist = () => {
                   textUnderlineOffset: "6px",
                   fontWeight: 700,
                   fontSize: 16,
-                  color: "#000",
+                  color: COLORS.BLACK,
                   cursor: "pointer",
                 }}
               >
-                Book a Demo
+                {data.cta2}
               </Typography>
             </Box>
           </Box>

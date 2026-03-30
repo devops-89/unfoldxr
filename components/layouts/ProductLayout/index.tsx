@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import HeroSection from "./HeroSection";
 import SupportYourOperations from "./SupportYourOperations";
 import DesignToEvolve from "./DesignToEvolve";
 import OneAiPlatform from "./OneAiPlatform";
@@ -10,6 +11,7 @@ import FromAssist from "./FromAssist";
 const ProductLayout = () => {
   return (
     <Box>
+      <HeroSection />
       <SupportYourOperations />
       <DesignToEvolve />
       <OneAiPlatform />

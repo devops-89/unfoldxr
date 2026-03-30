@@ -1,6 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
+import { COLORS } from "@/utils/enum";
 
 interface Props {
   data: UseCaseData["hero"];
@@ -12,7 +13,7 @@ const HeroSection = ({ data }: Props) => {
       sx={{
         minHeight: "100vh",
         position: "relative",
-        color: "#fff",
+        color: COLORS.WHITE,
         display: "flex",
         alignItems: "center",
       }}
@@ -29,9 +30,7 @@ const HeroSection = ({ data }: Props) => {
           objectFit: "cover",
         }}
       />
-      <Box
-        sx={{ position: "absolute", inset: 0, bgcolor: "rgba(0,0,0,0.60)" }}
-      />
+      <Box sx={{ position: "absolute", inset: 0, bgcolor: COLORS.OVERLAY_06 }} />
       <Box
         sx={{
           width: { xs: "95%", md: "80%" },
@@ -78,8 +77,8 @@ const HeroSection = ({ data }: Props) => {
         <Box sx={{ mt: 5, display: "flex", gap: 2.5, flexWrap: "wrap" }}>
           <Button
             sx={{
-              bgcolor: "#ccf919",
-              color: "#000",
+              bgcolor: COLORS.PRIMARY_GREEN,
+              color: COLORS.BLACK,
               borderRadius: 99,
               px: { xs: 3, md: 4.5 },
               py: 1.6,
@@ -87,7 +86,7 @@ const HeroSection = ({ data }: Props) => {
               fontWeight: 700,
               fontSize: { xs: 15, md: 18 },
               textTransform: "none",
-              "&:hover": { bgcolor: "#b6ec1a" },
+              "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
             }}
           >
             Watch in action
@@ -95,8 +94,8 @@ const HeroSection = ({ data }: Props) => {
           <Button
             variant="outlined"
             sx={{
-              borderColor: "#ccf919",
-              color: "#fff",
+              borderColor: COLORS.PRIMARY_GREEN,
+              color: COLORS.WHITE,
               borderRadius: 99,
               px: { xs: 3, md: 4.5 },
               py: 1.6,
@@ -104,7 +103,10 @@ const HeroSection = ({ data }: Props) => {
               fontWeight: 700,
               fontSize: { xs: 15, md: 18 },
               textTransform: "none",
-              "&:hover": { borderColor: "#b6ec1a", bgcolor: "rgba(204,249,25,0.05)" },
+              "&:hover": {
+                borderColor: COLORS.PRIMARY_HOVER,
+                bgcolor: COLORS.PRIMARY_LIGHT,
+              },
             }}
           >
             Request a Demo

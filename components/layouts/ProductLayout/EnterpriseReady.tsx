@@ -5,9 +5,8 @@ import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
 import SettingsSuggestRoundedIcon from "@mui/icons-material/SettingsSuggestRounded";
 import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import { din, helvetica } from "@/utils/fonts";
-
-const PROFILE_IMG =
-  "https://www.figma.com/api/mcp/asset/49b62e4c-e05f-4dc7-b6a4-13ccdb6e18d4";
+import { homePage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
 
 const points = [
   {
@@ -38,11 +37,13 @@ const points = [
 ];
 
 const EnterpriseReady = () => {
+  const data = homePage.productPage.enterpriseReady;
+
   return (
     <Box
       sx={{
-        backgroundColor: "#000",
-        color: "#fff",
+        backgroundColor: COLORS.BLACK,
+        color: COLORS.WHITE,
         py: { xs: 8, md: 16 },
         position: "relative",
         overflow: "hidden",
@@ -51,7 +52,7 @@ const EnterpriseReady = () => {
       {/* VR Woman Image - Bleeding off left edge */}
       <Box
         component="img"
-        src={PROFILE_IMG}
+        src={data.img}
         alt="Enterprise operations"
         sx={{
           position: "absolute",
@@ -85,16 +86,24 @@ const EnterpriseReady = () => {
                 mb: { xs: 6, md: 8 },
               }}
             >
-              Enterprise-ready.
-              <Box component="br" />
-              Operational from day one.
+              {data.title.includes("Enterprise-ready") ? (
+                <>
+                  Enterprise-ready.
+                  <Box component="br" />
+                  Operational from day one.
+                </>
+              ) : (
+                data.title
+              )}
             </Typography>
 
             <Grid container spacing={{ xs: 4, md: 6 }}>
               {points.map((point) => (
                 <Grid key={point.title} size={{ xs: 12, sm: 6 }}>
                   <Box sx={{ display: "flex", gap: 2 }}>
-                    <Box sx={{ color: "#ccf919", mt: 0.5 }}>{point.icon}</Box>
+                    <Box sx={{ color: COLORS.PRIMARY_GREEN, mt: 0.5 }}>
+                      {point.icon}
+                    </Box>
                     <Box>
                       <Typography
                         sx={{
@@ -110,7 +119,7 @@ const EnterpriseReady = () => {
                       <Typography
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
-                          color: "#99a1af",
+                          color: COLORS.TEXT_MUTED,
                           fontSize: { xs: 14, md: 16 },
                           lineHeight: 1.5,
                         }}

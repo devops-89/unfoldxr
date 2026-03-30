@@ -8,26 +8,50 @@ import SupportAgentRoundedIcon from "@mui/icons-material/SupportAgentRounded";
 import SecurityRoundedIcon from "@mui/icons-material/SecurityRounded";
 import HotelRoundedIcon from "@mui/icons-material/HotelRounded";
 import { din, helvetica } from "@/utils/fonts";
+import { homePage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
 
 const industries = [
-  { label: "Automotive", icon: <DirectionsCarFilledRoundedIcon sx={{ fontSize: 18 }} /> },
-  { label: "Healthcare", icon: <LocalHospitalRoundedIcon sx={{ fontSize: 18 }} /> },
-  { label: "Construction", icon: <ConstructionRoundedIcon sx={{ fontSize: 18 }} /> },
-  { label: "Logistics", icon: <LocalGasStationRoundedIcon sx={{ fontSize: 18 }} /> },
-  { label: "Oil & Gas", icon: <LocalGasStationRoundedIcon sx={{ fontSize: 18 }} /> },
+  {
+    label: "Automotive",
+    icon: <DirectionsCarFilledRoundedIcon sx={{ fontSize: 18 }} />,
+  },
+  {
+    label: "Healthcare",
+    icon: <LocalHospitalRoundedIcon sx={{ fontSize: 18 }} />,
+  },
+  {
+    label: "Construction",
+    icon: <ConstructionRoundedIcon sx={{ fontSize: 18 }} />,
+  },
+  {
+    label: "Logistics",
+    icon: <LocalGasStationRoundedIcon sx={{ fontSize: 18 }} />,
+  },
+  {
+    label: "Oil & Gas",
+    icon: <LocalGasStationRoundedIcon sx={{ fontSize: 18 }} />,
+  },
   { label: "Aviation", icon: <FlightRoundedIcon sx={{ fontSize: 18 }} /> },
-  { label: "Field Service Support", icon: <SupportAgentRoundedIcon sx={{ fontSize: 18 }} /> },
+  {
+    label: "Field Service Support",
+    icon: <SupportAgentRoundedIcon sx={{ fontSize: 18 }} />,
+  },
   { label: "Insurance", icon: <SecurityRoundedIcon sx={{ fontSize: 18 }} /> },
   { label: "Hospitality", icon: <HotelRoundedIcon sx={{ fontSize: 18 }} /> },
 ];
 
 const OneAiPlatform = () => {
+  const data = homePage.productPage.oneAiPlatform;
+
   return (
-    <Box sx={{ backgroundColor: "#000", py: { xs: 8, md: 10 } }}>
-      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 1, md: 0 } }}>
+    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
+      <Box
+        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 1, md: 0 } }}
+      >
         <Box
           sx={{
-            backgroundColor: "#fff",
+            backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 3, md: "24px" },
             px: { xs: 3, md: 8 },
             py: { xs: 6, md: 10 },
@@ -41,10 +65,10 @@ const OneAiPlatform = () => {
               textTransform: "uppercase",
               fontSize: { xs: 32, md: 48, lg: 52 },
               lineHeight: 1.1,
-              color: "#000",
+              color: COLORS.BLACK,
             }}
           >
-            One AI platform, any industry
+            {data.title}
           </Typography>
           <Typography
             sx={{
@@ -53,13 +77,12 @@ const OneAiPlatform = () => {
               fontFamily: helvetica.style.fontFamily,
               fontSize: { xs: 16, md: 18, lg: 20 },
               lineHeight: 1.5,
-              color: "#000",
+              color: COLORS.BLACK,
               maxWidth: 800,
               mx: "auto",
             }}
           >
-            UnfoldXR enhances skiller operations, on ground executions & real-time
-            decision making
+            {data.description}
           </Typography>
 
           {/* Centered Flex Container for Industry Pills */}
@@ -78,7 +101,7 @@ const OneAiPlatform = () => {
               <Box
                 key={item.label}
                 sx={{
-                  border: "1px solid #e5e7eb",
+                  border: `1px solid ${COLORS.BORDER_LIGHT}`,
                   borderRadius: "99px",
                   p: "6px",
                   pr: { xs: 3, md: 4 },
@@ -92,9 +115,9 @@ const OneAiPlatform = () => {
                   sx={{
                     width: { xs: 32, md: 36 },
                     height: { xs: 32, md: 36 },
-                    bgcolor: "#000",
+                    bgcolor: COLORS.BLACK,
                     borderRadius: "50%",
-                    color: "#fff",
+                    color: COLORS.WHITE,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -108,7 +131,7 @@ const OneAiPlatform = () => {
                     fontWeight: 700,
                     textTransform: "uppercase",
                     fontSize: { xs: 13, md: 15 },
-                    color: "#000",
+                    color: COLORS.BLACK,
                     letterSpacing: "0.02em",
                   }}
                 >

@@ -1,15 +1,16 @@
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
-
-const AVA_IMAGE =
-  "https://www.figma.com/api/mcp/asset/aa6f5ea7-949f-4458-83ae-173ca2e9da82";
+import { homePage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
 
 const MeetAva = () => {
+  const data = homePage.productPage.meetAva;
+
   return (
     <Box
       sx={{
-        backgroundColor: "#000",
-        color: "#fff",
+        backgroundColor: COLORS.BLACK,
+        color: COLORS.WHITE,
         pt: { xs: 8, md: 16 },
         pb: { xs: 12, md: 24 },
         overflow: "hidden",
@@ -34,17 +35,9 @@ const MeetAva = () => {
                 maxWidth: 800,
               }}
             >
-              Meet AVA
-              <Box
-                component="br"
-                sx={{ display: { xs: "none", md: "block" } }}
-              />
-              Your ‘AI Virtual Assistant’
-              <Box
-                component="br"
-                sx={{ display: { xs: "none", md: "block" } }}
-              />
-              For everything work.
+              {data.title.split("AVA")[0]}
+              AVA
+              {data.title.split("AVA")[1]}
             </Typography>
             <Typography
               sx={{
@@ -52,21 +45,18 @@ const MeetAva = () => {
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18, lg: 20 },
                 lineHeight: 1.5,
-                color: "#e0e0e0",
+                color: COLORS.TEXT_GRAY,
                 maxWidth: 720,
                 letterSpacing: "0.02em",
               }}
             >
-              AVA supports your workforce across all three versions of the
-              platform. It works alongside your teams as an intelligent
-              assistant, a sharp analyser, and a reliable task partner. The
-              perfect work buddy.
+              {data.description}
             </Typography>
             <Box sx={{ mt: 6 }}>
               <Button
                 sx={{
-                  bgcolor: "#ccf919",
-                  color: "#000",
+                  bgcolor: COLORS.PRIMARY_GREEN,
+                  color: COLORS.BLACK,
                   borderRadius: 99,
                   px: { xs: 4, md: 5 },
                   py: 1.5,
@@ -75,10 +65,10 @@ const MeetAva = () => {
                   fontSize: 16,
                   textTransform: "none",
                   boxShadow: "none",
-                  "&:hover": { bgcolor: "#b6ec1a", boxShadow: "none" },
+                  "&:hover": { bgcolor: COLORS.PRIMARY_HOVER, boxShadow: "none" },
                 }}
               >
-                Visit AVA
+                {data.cta}
               </Button>
             </Box>
           </Grid>
@@ -88,7 +78,7 @@ const MeetAva = () => {
           >
             <Box
               component="img"
-              src={AVA_IMAGE}
+              src={data.img}
               alt="AVA visual"
               sx={{
                 width: { xs: "100%", md: "600px", lg: "560px" },
@@ -96,11 +86,11 @@ const MeetAva = () => {
                 display: "block",
                 position: { xs: "relative", md: "absolute" },
                 top: { xs: "auto", md: "50%" },
-                right: { xs: "auto", md: "-80px", lg: "-360px" },
+                right: { xs: "auto", md: "-80px", lg: "-190px" },
                 transform: {
                   xs: "none",
                   md: "translateY(-50%)",
-                  lg: "translateY(-50%) rotate(-50deg)",
+                  lg: "translateY(-50%)",
                 },
 
                 zIndex: 0,

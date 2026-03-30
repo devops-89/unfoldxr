@@ -9,6 +9,7 @@ import DeviceDeploymentSection from "./DeviceDeploymentSection";
 import PlatformSummarySection from "./PlatformSummarySection";
 import FinalCTASection from "./FinalCTASection";
 import { useCasesData } from "./data";
+import { COLORS } from "@/utils/enum";
 
 interface UseCaseTrainingLayoutProps {
   slug?: string;
@@ -20,7 +21,7 @@ const UseCaseTrainingLayout = ({ slug }: UseCaseTrainingLayoutProps) => {
   if (!data) return null;
 
   return (
-    <Box sx={{ bgcolor: "#fff" }}>
+    <Box sx={{ bgcolor: COLORS.WHITE }}>
       <HeroSection data={data.hero} />
       <KnowledgeSection data={data.knowledge} />
       <InterventionSection data={data.intervention} />

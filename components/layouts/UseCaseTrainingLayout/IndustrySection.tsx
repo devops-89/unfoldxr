@@ -3,6 +3,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { AI_INDUSTRY_DATA } from "@/utils/constant";
 import Image from "next/image";
+import { COLORS } from "@/utils/enum";
 
 interface Props {
   data: UseCaseData["industry"];
@@ -10,8 +11,10 @@ interface Props {
 
 const IndustrySection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: "#fff", py: { xs: 10, md: 15 } }}>
-      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
+    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 10, md: 15 } }}>
+      <Box
+        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
+      >
         <Typography
           sx={{
             textAlign: "center",
@@ -29,7 +32,7 @@ const IndustrySection = ({ data }: Props) => {
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 18, lg: 20 },
-            color: "rgba(0,0,0,0.6)",
+            color: COLORS.OVERLAY_06,
             maxWidth: 800,
             mx: "auto",
             mb: { xs: 6, md: 10 },
@@ -56,8 +59,8 @@ const IndustrySection = ({ data }: Props) => {
                 display: "flex",
                 alignItems: "center",
                 gap: 1.5,
-                bgcolor: "#fff",
-                border: "1px solid #000",
+                bgcolor: COLORS.WHITE,
+                border: `1px solid ${COLORS.BLACK}`,
                 borderRadius: 99,
                 pl: 1,
                 pr: 3,
@@ -68,7 +71,7 @@ const IndustrySection = ({ data }: Props) => {
                 sx={{
                   width: 36,
                   height: 36,
-                  bgcolor: "#000",
+                  bgcolor: COLORS.BLACK,
                   borderRadius: "50%",
                   display: "flex",
                   alignItems: "center",
@@ -92,7 +95,7 @@ const IndustrySection = ({ data }: Props) => {
                   fontSize: 14,
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  color: "#000",
+                  color: COLORS.BLACK,
                   letterSpacing: "0.02em",
                 }}
               >

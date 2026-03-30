@@ -1,14 +1,28 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
+import { COLORS } from "@/utils/enum";
 
 interface Props {
   data: UseCaseData["intervention"];
 }
 const InterventionSection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: "#fff", color: "#000", pt: { xs: 8, md: 20 }, pb: 0 }}>
-      <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
+    <Box
+      sx={{
+        bgcolor: COLORS.WHITE,
+        color: COLORS.BLACK,
+        pt: { xs: 8, md: 20 },
+        pb: 0,
+      }}
+    >
+      <Box
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          px: { xs: 2, md: 0 },
+        }}
+      >
         <Grid container spacing={{ xs: 5, md: 10 }}>
           {/* Left Side: Title */}
           <Grid size={{ xs: 12, md: 5 }}>
@@ -19,7 +33,7 @@ const InterventionSection = ({ data }: Props) => {
                 textTransform: "uppercase",
                 fontSize: { xs: 32, md: 48, lg: 52 },
                 lineHeight: 1,
-                color: "#000",
+                color: COLORS.BLACK,
               }}
             >
               {data.title}
@@ -34,7 +48,7 @@ const InterventionSection = ({ data }: Props) => {
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18, lg: 20 },
                   lineHeight: 1.5,
-                  color: "#000",
+                  color: COLORS.BLACK,
                 }}
               >
                 {data.description1}
@@ -44,7 +58,7 @@ const InterventionSection = ({ data }: Props) => {
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18, lg: 20 },
                   lineHeight: 1.5,
-                  color: "#000",
+                  color: COLORS.BLACK,
                 }}
               >
                 {data.description2}
@@ -60,7 +74,7 @@ const InterventionSection = ({ data }: Props) => {
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 18, lg: 20 },
             lineHeight: 1.5,
-            color: "#000",
+            color: COLORS.BLACK,
             maxWidth: "100%",
           }}
         >
@@ -78,7 +92,7 @@ const InterventionSection = ({ data }: Props) => {
             left: 0,
             right: 0,
             height: "50%",
-            bgcolor: "#fff",
+            bgcolor: COLORS.WHITE,
           }}
         />
         <Box
@@ -88,7 +102,7 @@ const InterventionSection = ({ data }: Props) => {
             left: 0,
             right: 0,
             height: "50%",
-            bgcolor: "#000",
+            bgcolor: COLORS.BLACK,
           }}
         />
 
@@ -113,7 +127,7 @@ const InterventionSection = ({ data }: Props) => {
               height: "auto",
               display: "block",
               borderRadius: { xs: 4, md: "24px" },
-              filter: "drop-shadow(0px 30px 60px rgba(0,0,0,0.3))",
+              filter: `drop-shadow(0px 30px 60px ${COLORS.BLACK_ALPHA_30})`,
             }}
           />
         </Box>
