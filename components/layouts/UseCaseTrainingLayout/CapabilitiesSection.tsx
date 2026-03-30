@@ -34,7 +34,7 @@ const CapabilitiesSection = ({ data }: Props) => {
           height: "100%",
           opacity: 0.2,
           pointerEvents: "none",
-          backgroundImage: `url("https://www.figma.com/api/mcp/asset/434f40f0-c521-4683-93ba-f29e240f95b3")`,
+          // backgroundImage: `url("https://www.figma.com/api/mcp/asset/434f40f0-c521-4683-93ba-f29e240f95b3")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: 0,

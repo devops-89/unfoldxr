@@ -12,7 +12,7 @@ export enum COLORS {
   OVERLAY_04 = "rgba(0, 0, 0, 0.4)",
   PURPLE_GLOW = "rgba(160, 32, 240, 0.15)",
   BORDER_LIGHT = "#e5e7eb",
-  OVERLAY_06 = "rgba(0, 0, 0, 0.6)",
+  OVERLAY_06 = "rgba(0, 0, 0, 0.2)",
   OVERLAY_07 = "rgba(0, 0, 0, 0.7)",
   CHARCOAL = "#1E1F21",
   WHITE_ALPHA_40 = "rgba(255, 255, 255, 0.4)",

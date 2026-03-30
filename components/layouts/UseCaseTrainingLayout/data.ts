@@ -54,8 +54,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       subtitle: "The Strongest Teams Learn In The Flow Of Work.",
       description:
         "UnfoldXR brings AI- and augmented reality-powered intelligence into learning and capability building and makes it available right at the moment of work.",
-      image:
-        "https://www.figma.com/api/mcp/asset/46f42cac-73de-4fe6-b820-13b4e1198b56",
+      image: "/images/usecase/HeroSection.png",
     },
     knowledge: {
       title: "WITH UNFOLDXR, TURN EXPERTISE INTO SCALABLE KNOWLEDGE",
