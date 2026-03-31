@@ -1,65 +1,91 @@
-import { COLORS } from "@/utils/enum";
+import { Box, Button, Typography } from "@mui/material";
 import { din } from "@/utils/fonts";
-import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { meetAvaPage } from "@/utils/Website-Data";
-import ContainedButton from "@/components/widgets/ContainedButton";
+import { COLORS } from "@/utils/enum";
 
 const EvolvesCtaSection = () => {
   const { evolvesCtaSection: data } = meetAvaPage;
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, pb: { xs: 8, md: 10 } }}>
-      <Container maxWidth={false} sx={{ maxWidth: 1440, px: { xs: 2.5, md: 5 } }}>
-        <Card
+    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 15 } }}>
+      <Box
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          px: { xs: 1, md: 0 },
+        }}
+      >
+        <Box
           sx={{
-            borderRadius: 3,
-            overflow: "hidden",
-            border: "1px solid rgba(182, 255, 46, 0.15)",
-            boxShadow: "none",
+            backgroundColor: COLORS.WHITE,
+            borderRadius: { xs: 4, md: "24px" },
+            py: { xs: 8, md: 10 },
+            px: { xs: 3, md: 8 },
+            textAlign: "center",
             position: "relative",
-            bgcolor: COLORS.WHITE
+            overflow: "hidden",
+            boxShadow: `0px 20px 40px ${COLORS.BLACK_ALPHA_10}`,
           }}
         >
+          {/* Neon Purple Decoration */}
           <Box
             sx={{
               position: "absolute",
-              top: 0,
-              left: 0,
-              width: 128,
-              height: 128,
-              opacity: 0.2,
-              background: "radial-gradient(circle at top left, rgba(160,32,240,0.9) 0%, rgba(0,0,0,0) 70%)",
+              left: -40,
+              top: -40,
+              width: 250,
+              height: 250,
+              background: `radial-gradient(circle, ${COLORS.PURPLE_GLOW} 0%, rgba(160,32,240,0) 70%)`,
+              zIndex: 0,
             }}
           />
-          <CardContent sx={{ py: { xs: 6, md: 10 }, px: { xs: 2, md: 4 }, textAlign: "center" }}>
+
+          <Box
+            sx={{
+              position: "relative",
+              zIndex: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 64 },
-                fontWeight: 900,
-                textTransform: "uppercase",
+                fontWeight: 700,
+                fontSize: { xs: 28, md: 52, lg: 64 },
+                lineHeight: "normal",
+                letterSpacing: "-0.051px",
                 color: COLORS.BLACK,
-                lineHeight: 1.15,
+                textAlign: "center",
+                textTransform: "uppercase",
                 maxWidth: 1100,
                 mx: "auto",
               }}
             >
               {data.heading}
             </Typography>
-            <ContainedButton
+
+            <Button
               sx={{
-                mt: 4,
+                mt: 6,
+                bgcolor: COLORS.PRIMARY_GREEN,
+                color: COLORS.BLACK,
+                borderRadius: 99,
                 px: { xs: 4, md: 6 },
-                py: 1.5,
-                fontSize: { xs: 18, md: 23 },
-                fontWeight: 700
+                py: 2,
+                fontFamily: din.style.fontFamily,
+                fontWeight: 900,
+                fontSize: { xs: 14, md: 16 },
+                textTransform: "uppercase",
+                "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}
             >
-              {data.cta} &rarr;
-            </ContainedButton>
-          </CardContent>
-        </Card>
-      </Container>
+              {data.cta}
+            </Button>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };

@@ -1,12 +1,29 @@
-import { Box, Card, CardContent, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 const AboutIntroSection = () => (
-  <Box sx={{ bgcolor: COLORS.BLACK, pt: { xs: 6, md: 15 }, pb: 0 }}>
-    <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 5 }  }}>
-      <Card sx={{ borderRadius: { xs: 3, md: "45px" }, boxShadow: "none", bgcolor: COLORS.WHITE }}>
-        <CardContent sx={{ p: { xs: 3, md: 6 } }}>
+  <Box
+    sx={{ bgcolor: COLORS.BLACK, pt: { xs: 8, md: 20 }, pb: { xs: 8, md: 25 } }}
+  >
+    <Container maxWidth={false} sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
+      <Card
+        sx={{
+          borderRadius: { xs: 3, md: "40px" },
+          boxShadow: "none",
+          bgcolor: COLORS.WHITE,
+          pb: { xs: 6, md: 6, lg: 8 }
+        }}
+      >
+        <CardContent sx={{ px: { xs: 4, md: 10 }, py: { xs: 4, md: 10, lg: 15 } }}>
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
@@ -23,17 +40,17 @@ const AboutIntroSection = () => (
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 7 }}>
-              <Stack spacing={3}>
+              <Stack spacing={4}>
                 {aboutPage.introSection.paragraphs.map((text, idx) => (
                   <Typography
                     key={idx}
                     sx={{
-                      fontSize: { xs: 18, md: 22 },
-                      lineHeight: { xs: 1.55, md: "43px" },
+                      fontSize: { xs: 18, md: 20 },
+                      lineHeight: 1.6,
                       fontWeight: 400,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
-                      textAlign: "justify",
+                      textAlign: "left",
                     }}
                   >
                     {text}
@@ -41,13 +58,13 @@ const AboutIntroSection = () => (
                 ))}
                 <Typography
                   sx={{
-                    fontSize: { xs: 24, md: 30 },
-                    lineHeight: { xs: 1.2, md: "48px" },
+                    fontSize: { xs: 24, md: 28 },
+                    lineHeight: 1.4,
                     fontWeight: 700,
                     fontFamily: helvetica.style.fontFamily,
                     color: COLORS.BLACK,
-                    textAlign: "justify",
-                    mt: { xs: 2, md: 4 }, 
+                    textAlign: "left",
+                    mt: { xs: 2, md: 2 },
                   }}
                 >
                   {aboutPage.introSection.highlight}

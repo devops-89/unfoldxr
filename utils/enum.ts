@@ -21,6 +21,7 @@ export enum COLORS {
   WHITE_ALPHA_80 = "rgba(255, 255, 255, 0.8)",
   BLACK_ALPHA_10 = "rgba(0, 0, 0, 0.1)",
   BLACK_ALPHA_30 = "rgba(0, 0, 0, 0.3)",
+  BLACK_ALPHA_60 = "rgba(0, 0, 0, 0.6)",
   TRANSPARENT_PURPLE = "rgba(160, 32, 240, 0)",
   PRIMARY_LIGHT = "rgba(204, 249, 25, 0.05)",
   WHITE_GRADIENT = "linear-gradient(0deg, #ffffff 0%, #ffffff 100%)",

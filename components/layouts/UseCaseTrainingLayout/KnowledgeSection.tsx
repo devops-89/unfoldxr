@@ -8,6 +8,73 @@ interface Props {
 }
 
 const KnowledgeSection = ({ data }: Props) => {
+  const isStacked = data.layout === "stacked";
+
+  if (isStacked) {
+    return (
+      <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 20 } }}>
+        <Box
+          sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
+        >
+          <Grid container spacing={{ xs: 4, md: 6 }} justifyContent="flex-end">
+            {/* Left Side: Title */}
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Typography
+                sx={{
+                  fontFamily: din.style.fontFamily,
+                  fontWeight: 900,
+                  textTransform: "uppercase",
+                  fontSize: { xs: 30, md: 44, lg: 48 },
+                  lineHeight: 1.1,
+                  maxWidth: 800,
+                  mb: { xs: 2, md: 4 },
+                }}
+              >
+                {data.title}
+              </Typography>
+            </Grid>
+
+            {/* Right Side: Items (Paragraphs) */}
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                {data.items.map((item, index) => (
+                  <Typography
+                    key={index}
+                    sx={{
+                      fontFamily: helvetica.style.fontFamily,
+                      fontSize: { xs: 17, md: 22, lg: 24 },
+                      lineHeight: 1.5,
+                      color: COLORS.WHITE,
+                    }}
+                  >
+                    {item}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Footer Text */}
+          {data.footerText && (
+            <Typography
+              sx={{
+                mt: { xs: 8, md: 12 },
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: { xs: 16, md: 24, lg: 26 },
+                lineHeight: 1.6,
+                color: COLORS.WHITE,
+                maxWidth: "100%",
+                textAlign: "right",
+              }}
+            >
+              {data.footerText}
+            </Typography>
+          )}
+        </Box>
+      </Box>
+    );
+  }
+
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 20 } }}>
       <Box

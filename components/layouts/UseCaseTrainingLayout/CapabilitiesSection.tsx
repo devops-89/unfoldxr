@@ -14,6 +14,141 @@ interface Props {
 
 const CapabilitiesSection = ({ data }: Props) => {
   const [activeItem, setActiveItem] = useState(0);
+  const isGrid = data.layout === "grid";
+
+  if (isGrid) {
+    return (
+      <Box
+        sx={{
+          bgcolor: COLORS.BLACK,
+          color: COLORS.WHITE,
+          py: { xs: 8, md: 20 },
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background Pattern - Wavy Net */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            opacity: 0.1,
+            pointerEvents: "none",
+            backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 100%)",
+            backgroundSize: "20px 20px",
+            zIndex: 0,
+          }}
+        />
+
+        <Box
+          sx={{
+            width: { xs: "95%", md: "80%" },
+            mx: "auto",
+            px: { xs: 2, md: 0 },
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: din.style.fontFamily,
+              fontWeight: 900,
+              textTransform: "uppercase",
+              fontSize: { xs: 28, md: 44, lg: 48 },
+              lineHeight: 1.1,
+              mb: { xs: 8, md: 12 },
+              maxWidth: 1000,
+            }}
+          >
+            {data.title}
+          </Typography>
+
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
+              },
+              gap: 3,
+            }}
+          >
+            {data.items.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  p: 4,
+                  bgcolor: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    bgcolor: "rgba(255, 255, 255, 0.05)",
+                    borderColor: COLORS.PRIMARY_GREEN,
+                  },
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: din.style.fontFamily,
+                    fontWeight: 900,
+                    textTransform: "uppercase",
+                    fontSize: { xs: 18, md: 22 },
+                    color: COLORS.PRIMARY_GREEN,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {item.title}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: { xs: 15, md: 17 },
+                    lineHeight: 1.5,
+                    color: COLORS.TEXT_GREY,
+                  }}
+                >
+                  {item.description}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+
+          {/* Footer CTA */}
+          <Box
+            sx={{ mt: { xs: 10, md: 12 }, display: "flex", justifyContent: "center" }}
+          >
+            <Button
+              sx={{
+                bgcolor: COLORS.PRIMARY_GREEN,
+                color: COLORS.BLACK,
+                borderRadius: 99,
+                px: { xs: 4, md: 6 },
+                py: 2,
+                fontFamily: din.style.fontFamily,
+                fontWeight: 900,
+                fontSize: { xs: 14, md: 16 },
+                textTransform: "uppercase",
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+                "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
+              }}
+            >
+              Download the Full UnfoldXR Feature List <ArrowForwardRoundedIcon />
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    );
+  }
 
   return (
     <Box

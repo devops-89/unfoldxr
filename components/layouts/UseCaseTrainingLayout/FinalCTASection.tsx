@@ -50,12 +50,14 @@ const FinalCTASection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontWeight: 900,
-                textTransform: "uppercase",
-                fontSize: { xs: 24, md: 44, lg: 52 },
-                lineHeight: 1.1,
+                fontWeight: 700,
+                fontSize: { xs: 28, md: 52, lg: 64 },
+                lineHeight: "normal",
+                letterSpacing: "-0.051px",
                 color: COLORS.BLACK,
-                maxWidth: 900,
+                textAlign: "center",
+                textTransform: "capitalize",
+                maxWidth: 1000,
                 mx: "auto",
               }}
             >

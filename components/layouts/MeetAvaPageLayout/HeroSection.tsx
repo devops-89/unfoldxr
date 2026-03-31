@@ -1,39 +1,97 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { meetAvaPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+
 const HeroSection = () => {
   const { heroSection: data } = meetAvaPage;
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, pt: { xs: 14, md: 18 }, pb: { xs: 4, md: 6 } }}>
-      <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 5 } }}>
+    <Box
+      sx={{
+        bgcolor: COLORS.BLACK,
+        minHeight: { md: "90vh" },
+        display: "flex",
+        alignItems: "center",
+        pt: { xs: 14, md: 12 },
+        pb: { xs: 4, md: 6 },
+      }}
+    >
+      <Box
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          px: { xs: 2, md: 0 },
+        }}
+      >
+        <Typography
+          sx={{
+            fontFamily: helvetica.style.fontFamily,
+            fontSize: { xs: 12, md: 14 },
+            color: COLORS.WHITE,
+            textAlign: "right",
+            mb: 2,
+            px: 2,
+          }}
+        >
+          {/* *note - it was never animated, but we'll get this into motion by creative team */}
+        </Typography>
         <Box
           sx={{
             position: "relative",
             bgcolor: COLORS.CARD_BG_DARK,
-            borderRadius: { xs: 3, md: "40px" },
+            borderRadius: { xs: 4, md: "40px" },
             overflow: "hidden",
-            minHeight: { xs: 520, md: 620 },
+            minHeight: { xs: 520, md: 550 },
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "stretch",
           }}
         >
-          <Grid container>
-            <Grid size={{ xs: 12, md: 6 }} sx={{ p: { xs: 3, md: 5 }, zIndex: 1 }}>
-              <Typography sx={{ fontFamily: din.style.fontFamily, fontSize: { xs: 22, md: 36 }, fontWeight: 700, color: COLORS.WHITE, mb: 10, mt: { xs: 2, md: 4 } }}>
+          <Grid container sx={{ width: "100%" }}>
+            <Grid
+              size={{ xs: 12, md: 6 }}
+              sx={{
+                p: { xs: 4, md: 8, lg: 10 },
+
+                zIndex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 18, md: 20, lg: 24 },
+                  fontWeight: 700,
+                  color: COLORS.WHITE,
+                  mb: 4,
+                }}
+              >
                 {data.title}
               </Typography>
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 64 },
+                  fontSize: { xs: 36, md: 56, lg: 64 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   color: COLORS.WHITE,
-                  lineHeight: 1.05,
+                  lineHeight: 1.1,
+                  mb: 4,
                 }}
               >
                 {data.heading}
               </Typography>
-              <Typography sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 16, md: 28 }, color: COLORS.WHITE, lineHeight: 1.55, mt: 3, maxWidth: 620 }}>
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 16, md: 18, lg: 20 },
+                  color: COLORS.WHITE,
+                  lineHeight: 1.5,
+                  maxWidth: "90%",
+                }}
+              >
                 {data.subHeading}
               </Typography>
             </Grid>
@@ -41,30 +99,32 @@ const HeroSection = () => {
               size={{ xs: 12, md: 6 }}
               sx={{
                 position: "relative",
-                minHeight: { xs: 280, md: 600 },
                 display: "flex",
                 alignItems: "flex-end",
-                justifyContent: "center",
+                justifyContent: { xs: "center", md: "flex-end" },
+                minHeight: { xs: 300, md: "100%" },
+                overflow: "hidden",
               }}
             >
               <Box
                 component="img"
                 src={data.image}
-                alt=""
+                alt="Meet AVA"
                 sx={{
-                  width: { xs: "90%", md: "110%" },
-                  maxWidth: { md: 620 },
-                  height: "auto",
+                  width: { xs: "100%", md: "auto" },
+                  height: { xs: "auto", md: "130%" },
                   objectFit: "contain",
                   display: "block",
-                  mr: { md:-15 },
-                  mb: { md: -2 },
+                  position: { md: "absolute" },
+                  top: { md: "50%" },
+                  right: { md: "-15%" },
+                  transform: { md: "translateY(-50%)" },
                 }}
               />
             </Grid>
           </Grid>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

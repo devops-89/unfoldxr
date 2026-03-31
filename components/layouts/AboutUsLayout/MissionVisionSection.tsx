@@ -6,7 +6,7 @@ const MissionVisionSection = () => {
   const { missionVisionSection: data } = aboutPage;
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
-      <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 5 } }}>
+      <Container maxWidth={false} sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
         <Typography
           sx={{
             fontSize: { xs: 24, md: 32 },

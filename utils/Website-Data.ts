@@ -23,9 +23,9 @@ import icon3 from "@/images/about-us/icons/icon3.png";
 import heroRing from "@/images/meet-ava/herosection-image.png";
 import introImage from "@/images/meet-ava/meet-ava.png";
 import phonePlaceholder from "@/images/meet-ava/ask-ava.png";
-import automotiveHero from "@/images/automotive-operation/hero.png";
-import automotiveOutcomes from "@/images/automotive-operation/driving-measureoutcomes.png";
-import automotiveIcon from "@/images/automotive-operation/Icon.svg";
+import automotiveHero from "@/images/Industries/hero.png";
+import automotiveOutcomes from "@/images/Industries/Driving.png";
+import automotiveIcon from "@/images/Industries/Icon.svg";
 import { INDUSTRY_PAGE_PROPS } from "./types";
 export const homePage = {
   herosection: {
@@ -426,7 +426,7 @@ export const meetAvaPage = {
     paragraphs: [
       "Named after our co-founder Ankush Jagga's daughter, AVA is more than an acronym. When you build something that carries the name of someone you love, you build it with care, responsibility, and a long-term vision.",
       "AVA is not just an assistant. It is an agentic AI, designed to understand context, make decisions, and move work forward. Built into UnfoldXR, AVA stands beside frontline teams when work feels complex or uncertain. It diagnoses intelligently, guides thoughtfully, and adapts in real time.",
-      "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen it - helping every worker perform with clarity, confidence, and growth."
+      "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen It helping every worker perform with clarity, confidence, and growth."
     ],
     image: introImage.src
   },
@@ -473,8 +473,8 @@ export const meetAvaPage = {
     ]
   },
   placeholderSection: {
-    heading: "Placeholder heading",
-    description: "*content will be given by team UnfoldXR",
+    heading: "BEYOND ASSISTANCE. INTO ACTION.",
+    description: "Traditional systems are reactive and input-driven.\nAVA operates as an agentic AI layer with goal-oriented execution while orchestrating workflows. It maintains task continuity with minimal manual intervention, bringing speed and accuracy across the system.",
     image: phonePlaceholder.src
   },
   evolvesCtaSection: {

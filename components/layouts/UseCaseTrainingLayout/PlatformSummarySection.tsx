@@ -19,7 +19,7 @@ const PlatformSummarySection = ({ data }: Props) => {
           p: { xs: 5, md: 10 },
         }}
       >
-        <Grid container spacing={{ xs: 5, md: 10 }} alignItems="center">
+        <Grid container spacing={{ xs: 5, md: 10 }} alignItems="flex-start">
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography
               sx={{

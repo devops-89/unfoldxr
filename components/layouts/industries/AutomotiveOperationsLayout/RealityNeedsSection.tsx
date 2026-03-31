@@ -6,50 +6,167 @@ import { COLORS } from "@/utils/enum";
 const RealityNeedsSection = () => {
   const { realityNeedsSection: data } = industriesPage.automotive;
   return (
-    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
-      <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 6 } }}>
-        <Typography sx={{ fontFamily: din.style.fontFamily, fontSize: { xs: 32, md: 54 }, lineHeight: 1.1, textTransform: "uppercase", fontWeight: 900, color: COLORS.BLACK, maxWidth: 1400 }}>
+    <Box
+      sx={{
+        bgcolor: COLORS.WHITE,
+        minHeight: { md: "85vh" },
+        display: "flex",
+        alignItems: "center",
+        py: { xs: 8, md: 10 },
+      }}
+    >
+      <Box
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          px: { xs: 2.1, md: 0 },
+        }}
+      >
+        <Typography
+          sx={{
+            fontFamily: din.style.fontFamily,
+            fontSize: { xs: 32, md: 48, lg: 54 },
+            lineHeight: 1.1,
+            textTransform: "uppercase",
+            fontWeight: 900,
+            color: COLORS.BLACK,
+            mb: 8,
+          }}
+        >
           {data.title}
         </Typography>
-        <Grid container spacing={3} sx={{ mt: 5 }}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card sx={{ bgcolor: COLORS.CARD_BG_DARK, color: COLORS.WHITE, borderRadius: 4, height: "100%" }}>
-              <CardContent sx={{ p: 4 }}>
-                <Typography sx={{ fontFamily: din.style.fontFamily, textTransform: "uppercase", fontSize: { xs: 24, md: 32 }, color: COLORS.PRIMARY_GREEN, mb: 3 }}>
-                  Automotive Realities
-                </Typography>
+
+        <Grid container spacing={6}>
+          <Grid size={{ xs: 12, md: 4, lg: 6 }}>
+            <Box
+              sx={{
+                bgcolor: COLORS.CARD_BG_DARK,
+                color: COLORS.WHITE,
+                borderRadius: 4,
+                p: { xs: 3.2, md: 4, lg: 5 },
+                height: "100%",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: din.style.fontFamily,
+                  textTransform: "uppercase",
+                  fontSize: { xs: 20, md: 24, lg: 28 },
+                  color: COLORS.PRIMARY_GREEN,
+                  fontWeight: 700,
+                  mb: 3,
+                }}
+              >
+                AUTOMOTIVE REALITIES:
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
                 {data.realities.map((item) => (
-                  <Typography key={item} sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 16, md: 22 }, lineHeight: 1.5, mb: 1.5 }}>
-                    - {item}
+                  <Typography
+                    key={item}
+                    sx={{
+                      fontFamily: helvetica.style.fontFamily,
+                      fontSize: { xs: 15, md: 18, lg: 20 },
+                      lineHeight: 1.4,
+                      display: "flex",
+                      gap: 1.5,
+                      "&::before": {
+                        content: '"•"',
+                        color: COLORS.WHITE,
+                      },
+                    }}
+                  >
+                    {item}
                   </Typography>
                 ))}
-              </CardContent>
-            </Card>
+              </Box>
+            </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card sx={{ bgcolor: COLORS.CARD_BG_DARK, color: COLORS.WHITE, borderRadius: 4, height: "100%" }}>
-              <CardContent sx={{ p: 4 }}>
-                <Typography sx={{ fontFamily: din.style.fontFamily, textTransform: "uppercase", fontSize: { xs: 24, md: 32 }, color: COLORS.PRIMARY_GREEN, mb: 3 }}>
-                  What It Needs
-                </Typography>
+          <Grid size={{ xs: 12, md: 4, lg: 6 }}>
+            <Box
+              sx={{
+                bgcolor: COLORS.CARD_BG_DARK,
+                color: COLORS.WHITE,
+                borderRadius: 4,
+                p: { xs: 3.2, md: 4, lg: 5 },
+                height: "100%",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: din.style.fontFamily,
+                  textTransform: "uppercase",
+                  fontSize: { xs: 20, md: 24, lg: 28 },
+                  color: COLORS.PRIMARY_GREEN,
+                  fontWeight: 700,
+                  mb: 3,
+                }}
+              >
+                WHAT IT NEEDS:
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
                 {data.needs.map((item) => (
-                  <Typography key={item} sx={{ fontFamily: helvetica.style.fontFamily, fontSize: { xs: 16, md: 22 }, lineHeight: 1.5, mb: 1.5 }}>
-                    - {item}
+                  <Typography
+                    key={item}
+                    sx={{
+                      fontFamily: helvetica.style.fontFamily,
+                      fontSize: { xs: 15, md: 18, lg: 20 },
+                      lineHeight: 1.4,
+                      display: "flex",
+                      gap: 1.5,
+                      "&::before": {
+                        content: '"•"',
+                        color: COLORS.WHITE,
+                      },
+                    }}
+                  >
+                    {item}
                   </Typography>
                 ))}
-              </CardContent>
-            </Card>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
-        <Typography sx={{ textAlign: "center", fontFamily: helvetica.style.fontFamily, fontSize: { xs: 18, md: 28 }, mt: 8, maxWidth: 1200, mx: "auto", color: COLORS.BLACK, fontWeight: 500 }}>
+
+        <Typography
+          sx={{
+            textAlign: "center",
+            fontFamily: helvetica.style.fontFamily,
+            fontSize: { xs: 18, md: 26, lg: 32 },
+            mt: 16,
+            maxWidth: 1100,
+            mx: "auto",
+            color: COLORS.BLACK,
+            fontWeight: 700,
+            lineHeight: 1.3,
+          }}
+        >
           {data.bottomText}
         </Typography>
-        <Box sx={{ textAlign: "center", mt: 4 }}>
-          <Button variant="contained" sx={{ bgcolor: COLORS.PRIMARY_GREEN, color: COLORS.BLACK, px: 5, py: 1.5, borderRadius: "999px", fontFamily: din.style.fontFamily, fontSize: { xs: 16, md: 20 }, textTransform: "uppercase", "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 } }}>
+
+        <Box sx={{ textAlign: "center", mt: 5 }}>
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: COLORS.PRIMARY_GREEN,
+              color: COLORS.BLACK,
+              px: { xs: 4, md: 6 },
+              py: 1.5,
+              borderRadius: "99px",
+              fontFamily: din.style.fontFamily,
+              fontSize: { xs: 14, md: 16, lg: 18 },
+              fontWeight: 700,
+              textTransform: "capitalize",
+              boxShadow: "none",
+              "&:hover": {
+                bgcolor: COLORS.PRIMARY_HOVER,
+                boxShadow: "none",
+              },
+            }}
+          >
             {data.ctaText}
           </Button>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

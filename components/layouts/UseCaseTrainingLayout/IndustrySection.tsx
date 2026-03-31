@@ -52,7 +52,7 @@ const IndustrySection = ({ data }: Props) => {
             mx: "auto",
           }}
         >
-          {AI_INDUSTRY_DATA.map((industry, index) => (
+          {(data.customIndustries || AI_INDUSTRY_DATA).map((industry, index) => (
             <Box
               key={index}
               sx={{

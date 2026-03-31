@@ -4,8 +4,8 @@ interface PageProps {
   params: { slug: string };
 }
 
-export default function DynamicPage({ params }: PageProps) {
-  const { slug } = params;
+export default async function DynamicPage({ params }: PageProps) {
+  const { slug } = await params;
 
   return (
     <UseCaseTrainingLayout slug={slug} />

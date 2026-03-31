@@ -7,6 +7,7 @@ const HeroSection = () => {
     <PageHeroSection
       image={banner.src}
       title={aboutPage.herosection.heading}
+      overlayOpacity={0.7}
       primaryBtn={{ label: aboutPage.herosection.cta }}
     />
   );

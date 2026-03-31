@@ -7,10 +7,18 @@ const PlaceholderSection = () => {
   const { placeholderSection: data } = meetAvaPage;
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, pb: { xs: 8, md: 12 } }}>
-      <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 5 } }}>
+    <Box
+      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, pb: { xs: 8, md: 12 } }}
+    >
+      <Box
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          px: { xs: 2, md: 0 },
+        }}
+      >
         <Grid container spacing={4} alignItems="center">
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
@@ -25,15 +33,16 @@ const PlaceholderSection = () => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 28 },
-                lineHeight: 1.4,
+                fontSize: { xs: 16, md: 20 },
+                lineHeight: 1.6,
                 color: "rgba(255,255,255,0.85)",
+                whiteSpace: "pre-line",
               }}
             >
               {data.description}
             </Typography>
           </Grid>
-          <Grid size={{ xs: 12, md: 7 }} sx={{ textAlign: "center" }}>
+          <Grid size={{ xs: 12, md: 5 }} sx={{ textAlign: { xs: "center", md: "right" } }}>
             <Box
               component="img"
               src={data.image}
@@ -48,7 +57,7 @@ const PlaceholderSection = () => {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };

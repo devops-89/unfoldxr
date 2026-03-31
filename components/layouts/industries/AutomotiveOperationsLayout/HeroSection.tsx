@@ -9,7 +9,7 @@ const HeroSection = () => {
       image={data.image}
       title={data.title}
       description={data.description}
-      overlayOpacity={0.65}
+      // overlayOpacity={0}
       primaryBtn={{ label: "Request a Demo" }}
     />
   );

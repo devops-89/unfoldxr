@@ -7,57 +7,73 @@ const DifferentiatorsSection = () => {
   const { differentiatorsSection: data } = aboutPage;
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, pt: 0, pb: { xs: 8, md: 15 }, overflow: "hidden" }}>
-      <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 5 } }}>
+    <Box
+      sx={{
+        bgcolor: COLORS.BLACK,
+        color: COLORS.WHITE,
+        pt: 0,
+        pb: { xs: 8, md: 15 },
+        overflow: "hidden",
+      }}
+    >
+      <Container
+        maxWidth={false}
+        sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
+      >
         <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 6.5 }}>
-            <Typography 
-              sx={{ 
-                fontSize: { xs: 36, md: 64 }, 
-                fontWeight: 900, 
-                textTransform: "uppercase", 
-                lineHeight: { xs: 1.1, md: "92px" }, 
+          <Grid size={{ xs: 12, md: 7 }}>
+            <Typography
+              sx={{
+                fontSize: { xs: 36, md: 64 },
+                fontWeight: 900,
+                textTransform: "uppercase",
+                lineHeight: { xs: 1.1, md: "92px" },
                 mb: 6,
-                fontFamily: din.style.fontFamily 
+                fontFamily: din.style.fontFamily,
               }}
             >
               {data.heading}
             </Typography>
             <Stack spacing={5}>
               {data.items.map((item, idx) => (
-                <Stack key={idx} direction="row" spacing={3} alignItems="flex-start">
-                  <Box 
+                <Stack
+                  key={idx}
+                  direction="row"
+                  spacing={3}
+                  alignItems="flex-start"
+                >
+                  <Box
                     component="img"
                     src={item.icon}
                     alt={item.title}
-                    sx={{ 
+                    sx={{
                       width: 48,
                       height: 48,
                       objectFit: "contain",
-                      mt: 0.5 
+                      mt: 0.5,
                     }}
                   />
                   <Box>
-                    <Typography 
-                      sx={{ 
-                        fontSize: { xs: 22, md: 28 }, 
-                        fontWeight: 700, 
+                    <Typography
+                      sx={{
+                        fontSize: { xs: 22, md: 28 },
+                        fontWeight: 700,
                         lineHeight: 1.2,
                         mb: 1,
                         textTransform: "uppercase",
-                        fontFamily: din.style.fontFamily 
+                        fontFamily: din.style.fontFamily,
                       }}
                     >
                       {item.title}
                     </Typography>
-                    <Typography 
-                      sx={{ 
-                        fontSize: { xs: 17, md: 20 }, 
-                        lineHeight: 1.55, 
+                    <Typography
+                      sx={{
+                        fontSize: { xs: 17, md: 20 },
+                        lineHeight: 1.55,
                         color: COLORS.WHITE,
                         fontFamily: helvetica.style.fontFamily,
-                        textAlign: "justify",
-                        fontWeight: 400
+                        textAlign: "left",
+                        fontWeight: 400,
                       }}
                     >
                       {item.description}
@@ -67,21 +83,21 @@ const DifferentiatorsSection = () => {
               ))}
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 5.5 }}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <Box
               component="img"
               src={data.image}
               alt="Differentiator"
               sx={{
-                width: "100%",
+                width: { xs: "100%", md: "85%" },
+                ml: "285px",
                 height: "auto",
                 objectFit: "cover",
                 borderRadius: "20px",
-                display: "block"
+                display: "block",
               }}
             />
           </Grid>
-
         </Grid>
       </Container>
     </Box>
@@ -89,4 +105,3 @@ const DifferentiatorsSection = () => {
 };
 
 export default DifferentiatorsSection;
-

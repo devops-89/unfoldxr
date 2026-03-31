@@ -52,7 +52,7 @@ export const HEADER_LINKS = [
   },
   {
     label: "Industry",
-    url: "#",
+    url: "/industries",
   },
   {
     label: "Product",
@@ -60,7 +60,7 @@ export const HEADER_LINKS = [
   },
   {
     label: "Meet AVA",
-    url: "#",
+    url: "/meet-ava",
   },
   {
     label: "Resources",
@@ -72,11 +72,11 @@ export const HEADER_LINKS = [
   },
   {
     label: "About Us",
-    url: "#",
+    url: "/about-us",
   },
   {
     label: "Book a Demo",
-    //url: "#",
+    url: "#",
   },
 ];
 

@@ -9,7 +9,7 @@ const NewsSection = () => {
 
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
-      <Container maxWidth="xl" sx={{ px: { xs: 2.5, md: 5 } }}>
+      <Container maxWidth={false} sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
         <Card 
           sx={{ 
             borderRadius: { xs: 3, md: "45px" }, 
