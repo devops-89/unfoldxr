@@ -9,93 +9,101 @@ const Metrics = () => {
       <Container maxWidth="xl">
         <Box
           sx={{
-            backgroundColor: "#eee",
+            backgroundColor: "#EDEDED",
             borderRadius: "45px",
-            height: "100%",
-            mt: { xs: 4, md: 10 },
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            py: { xs: 6, md: 10 }, 
+            mt: { xs: 4, md: 20 },
+            px: { xs: 4, sm: 6, md: 10 },
+            pt: { xs: 5, md: 20 },
+            pb: { xs: 6, md: 20 },
           }}
         >
-          <Container maxWidth="lg">
-            
-            
-            <Typography
-              sx={{
-                fontSize: { xs: 28, md: 50 },
-                fontFamily: din.style.fontFamily,
-                fontWeight: 800,
-                textAlign: "center",
-              }}
-            >
-              {homePage.metrics.heading}
-            </Typography>
+          {/* Heading — full width, centered, uppercase bold */}
+          <Typography
+            sx={{
+              fontFamily: din.style.fontFamily,
+              fontSize: { xs: 22, sm: 36, md: "52px" },
+              fontWeight: 900,
+              textTransform: "uppercase",
+              textAlign: "center",
+              color: "#000",
+              mb: { xs: 4, md: 5 },
+            }}
+          >
+            {homePage.metrics.heading}
+          </Typography>
 
-            
-            <Typography
-              sx={{
-                fontSize: { xs: 16, md: 30 },
-                fontFamily: helvetica.style.fontFamily,
-                textAlign: { xs: "center", md: "left" },
-              }}
-            >
-              {homePage.metrics.leftSection.heading}
-            </Typography>
-
-            <Grid container alignItems="center" spacing={{ xs: 3, md: 0 }}>
-              
-              
-              <Grid size={{ xs: 12, md: 6 }}>
+          {/* Content: left big number | right metrics */}
+          <Grid container alignItems="center">
+            {/* LEFT */}
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Stack alignItems={{ xs: "center", md: "flex-start" }} spacing={0}>
+                {/* "We commit atleast" */}
                 <Typography
                   sx={{
-                    fontSize: { xs: 80, md: 300 }, 
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: { xs: 18, md: "22px", lg: "32px" },
+                    fontWeight: 700,
+                    color: "#000",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {homePage.metrics.leftSection.heading}
+                </Typography>
+
+                {/* 30% */}
+                <Typography
+                  sx={{
                     fontFamily: din.style.fontFamily,
+                    fontSize: { xs: "120px", sm: "180px", md: "330px" },
                     fontWeight: 900,
-                    textAlign: { xs: "center", md: "left" },
+                    color: "#1C1C1C",
+                    lineHeight: 0.85,
+                    letterSpacing: "-4px",
                   }}
                 >
                   {homePage.metrics.leftSection.number}
                 </Typography>
-              </Grid>
+              </Stack>
+            </Grid>
 
-              {/* RIGHT LIST */}
-              <Grid size={{ xs: 12, md: 6 }}>
-                <Stack
-                  spacing={{ xs: 3, md: 10 }} 
-                  justifyContent="flex-end"
-                >
-                  {homePage.metrics.rightSection.map((val, i) => (
+            {/* RIGHT */}
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Stack
+                spacing={0}
+                alignItems={{ xs: "center", md: "flex-end" }}
+                justifyContent="center"
+              >
+                {homePage.metrics.rightSection.map((val, i) => (
+                  <Typography
+                    key={i}
+                    sx={{
+                      fontFamily: din.style.fontFamily,
+                      fontSize: { xs: 20, sm: 28, md: "37px" },
+                      fontWeight: 400,
+                      lineHeight: { xs: "40px", md: "96px" },
+                      color: "#000",
+                      textAlign: { xs: "center", md: "right" },
+                      textTransform: "capitalize",
+                    }}
+                  >
                     <Typography
-                      key={i}
+                      component="span"
                       sx={{
-                        textAlign: { xs: "center", md: "right" },
                         fontFamily: din.style.fontFamily,
-                        fontSize: { xs: 18, md: 30 },
+                        fontSize: { xs: 20, sm: 28, md: "45px" },
                         fontWeight: 900,
+                        color: "#000",
                         textTransform: "capitalize",
                       }}
                     >
                       {val.label}{" "}
-                      <Typography
-                        component="span"
-                        sx={{
-                          fontFamily: din.style.fontFamily,
-                          fontSize: { xs: 18, md: 30 },
-                          fontWeight: 500,
-                          textTransform: "capitalize",
-                        }}
-                      >
-                        {val.value}
-                      </Typography>
                     </Typography>
-                  ))}
-                </Stack>
-              </Grid>
-
+                    {val.value}
+                  </Typography>
+                ))}
+              </Stack>
             </Grid>
-          </Container>
+          </Grid>
         </Box>
       </Container>
     </Box>

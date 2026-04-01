@@ -1,106 +1,110 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Divider, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { COLORS } from "@/utils/enum";
-import { din } from "@/utils/fonts";
+import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import ToolsLeftSection from "./components/tools/ToolsLeftSection";
 import ToolsRightSection from "./components/tools/ToolsRightSection";
 
-// Assets
-import toolsTeam from "@/images/banner/homePage/tools/tools-team.png";
-import aiPowered from "@/images/banner/homePage/tools/ai-powered.png";
-import augmenting from "@/images/banner/homePage/tools/augmenting.png";
-import futureWork from "@/images/banner/homePage/tools/future-work.png";
-import support from "@/images/banner/homePage/tools/support.png";
-
 const Tools = () => {
   return (
     <Box
-  sx={{
-    backgroundColor: COLORS.BLACK,
-    height: { xs: "auto", md: "100vh" }, // ✅ fix overflow
-    display: "flex",
-    alignItems: { xs: "flex-start", md: "center" },
-    justifyContent: "center",
-    py: { xs: 6, md: 20 }, // ✅ reduce mobile padding
-  }}
->
-  <Box sx={{ py: { xs: 4, md: 10 }, bgcolor: COLORS.WHITE, borderRadius: 4, width:{xs:"90%",md:"auto"} }}>
-    <Container maxWidth="lg">
-
-      {/* TOP SECTION */}
-      <Grid container alignItems="flex-end" spacing={{ xs: 2, md: 0 }}>
-        
-        <Grid size={{ xs: 12, md: 7 }}>
+      sx={{
+        backgroundColor: COLORS.BLACK,
+        height: { xs: "auto", md: "110vh" },
+        minHeight: "800px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        py: { xs: 8, md: 10 },
+      }}
+    >
+      <Box sx={{ py: { xs: 4, md: 10 }, px: { xs: 2, md: 4 }, bgcolor: COLORS.WHITE, borderRadius: 4, width: { xs: "90%", md: "96%" }, maxWidth: "1300px" }}>
+        <Container maxWidth="lg" disableGutters>
+          {/* TOP SECTION */}
+        <Box sx={{ mb: { xs: 4, md: 6 } }}>
+          {/* Top Line of Heading */}
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 28, md: 50 }, // ✅ responsive
+              fontSize: { xs: 32, md: 56 },
               fontWeight: 900,
               textTransform: "uppercase",
               lineHeight: 1.1,
               color: COLORS.BLACK,
               textAlign: { xs: "center", md: "left" },
+              display: "block",
             }}
           >
-            {homePage.tools.heading}
+            THE WORK OF MANY TOOLS.
           </Typography>
-        </Grid>
 
-        <Grid size={{ xs: 12, md: 5 }}>
+          {/* Bottom Line of Heading + Stretching Divider + Subheading */}
           <Stack
-            direction="row"
-            alignItems="center"
-            spacing={2}
-            sx={{ mt: 3, mb: 5 }}
-            justifyContent={{ xs: "center", md: "flex-end" }}
+            direction={{ xs: "column", md: "row" }}
+            alignItems={{ xs: "center", md: "flex-end" }}
+            spacing={{ xs: 2, md: 3 }}
+            sx={{ width: "100%", mt: { xs: 1, md: 0 } }}
           >
-            <Divider
-              sx={{
-                width: { xs: 60, md: 100 },
-                borderBottomWidth: 2,
-                borderColor: COLORS.BLACK,
-              }}
-            />
             <Typography
               sx={{
-                fontWeight: 600,
-                fontSize: { xs: 14, md: 18 },
+                fontFamily: din.style.fontFamily,
+                fontSize: { xs: 32, md: 56 },
+                fontWeight: 900,
+                textTransform: "uppercase",
+                lineHeight: 1.1,
                 color: COLORS.BLACK,
-                textAlign: { xs: "center", md: "right" },
-                width: { xs: "auto", md: 200 },
+                textAlign: { xs: "center", md: "left" },
+                whiteSpace: "nowrap",
               }}
             >
-              {homePage.tools.subHeading}
+              ONE AR-ENABLED PLATFORM
+            </Typography>
+
+            {/* Stretching Divider - only visible horizontally on desktop */}
+            <Box
+              sx={{
+                flexGrow: 1,
+                borderBottom: `2px solid ${COLORS.BLACK}`,
+                minWidth: "50px",
+                display: { xs: "none", md: "block" },
+                position: "relative",
+                top: "-12px", // align with the text baseline optically
+              }}
+            />
+
+            <Typography
+              sx={{
+                fontFamily: helvetica.style.fontFamily,
+                fontWeight: 700,
+                fontSize: { xs: 16, md: 24 },
+                lineHeight: { xs: "24px", md: "28px" },
+                color: COLORS.BLACK,
+                textAlign: { xs: "center", md: "right" },
+                whiteSpace: "pre-line",
+                minWidth: "max-content", 
+                pb: { xs: 0, md: "8px" }, // Aligns it properly vertically
+              }}
+            >
+              Augmenting {"\n"}Human Productivity.
             </Typography>
           </Stack>
-        </Grid>
-      </Grid>
+        </Box>
 
-      {/* BOTTOM SECTION */}
-      <Grid container spacing={{ xs: 3, md: 4 }} sx={{ mt: {xs:0,md:6},mb:6  }}>
-        
-        <Grid size={{ xs: 12, md: 6 }}>
-          <ToolsLeftSection {...homePage.tools.leftSection} />
-        </Grid>
+        {/* BOTTOM SECTION */}
+        <Grid container spacing={{ xs: 3, md: 6 }} sx={{ mt: { xs: 4, md: 8 } }}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <ToolsLeftSection {...homePage.tools.leftSection} />
+          </Grid>
 
-        <Grid size={{ xs: 12, md: 6 }}>
-          <ToolsRightSection {...homePage.tools.rightSection} />
+          <Grid size={{ xs: 12, md: 6 }}>
+            <ToolsRightSection {...homePage.tools.rightSection} />
+          </Grid>
         </Grid>
-
-      </Grid>
-    </Container>
-  </Box>
-</Box>
+      </Container>
+      </Box>
+    </Box>
   );
 };
 

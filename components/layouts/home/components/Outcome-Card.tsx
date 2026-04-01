@@ -1,50 +1,52 @@
 import { COLORS } from "@/utils/enum";
-import { din, helvetica } from "@/utils/fonts";
+import { din } from "@/utils/fonts";
 import { OUTCOME_CARD_PROPS } from "@/utils/types";
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 
 const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
   return (
-    <Box>
-      <Box
+    <Box
+      sx={{
+        backgroundColor: "#272829",
+        px: { xs: 3, md: 5 },
+        py: { xs: 3, md: 4 },
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        gap: { xs: 2, md: 3 },
+        borderRadius: "16px",
+        minHeight: { xs: "auto", md: "140px" },
+      }}
+    >
+      {/* Number */}
+      <Typography
         sx={{
-          backgroundColor: "#272829",
-          padding: { xs: "20px", md: "50px" }, 
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: { xs: 2, md: 4 }, 
-          borderRadius: "20px",
-          flexDirection: { xs: "column", md: "row" }, 
-          textAlign: { xs: "center", md: "left" },
+          color: "rgba(182, 236, 26, 0.60)",
+          fontFamily: din.style.fontFamily,
+          fontSize: { xs: 40, md: 72 },
+          fontWeight: 900,
+          lineHeight: 1,
+          flexShrink: 0,
+          minWidth: { xs: 50, md: 90 },
         }}
       >
-        {/* Number */}
-        <Typography
-          sx={{
-            color: "rgba(182, 236, 26, 0.50)",
-            fontFamily: din.style.fontFamily,
-            fontSize: { xs: 32, md: 50 },
-            fontWeight: 900,
-          }}
-        >
-          {number}
-        </Typography>
+        {number}
+      </Typography>
 
-        {/* Label */}
-        <Typography
-          sx={{
-            fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 25 },
-            fontWeight: 400,
-            lineHeight: { xs: "24px", md: "39px" },
-            color: COLORS.WHITE,
-          }}
-        >
-          {label}
-        </Typography>
-      </Box>
+      {/* Label */}
+      <Typography
+        sx={{
+          fontFamily: din.style.fontFamily,
+          fontSize: { xs: 16, md: 26 },
+          fontWeight: 900,
+          lineHeight: { xs: "24px", md: "36px" },
+          color: COLORS.WHITE,
+          textTransform: "uppercase",
+        }}
+      >
+        {label}
+      </Typography>
     </Box>
   );
 };

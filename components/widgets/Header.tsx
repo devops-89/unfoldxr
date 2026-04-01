@@ -33,9 +33,9 @@ const Header = () => {
       {/* Navbar Wrapper */}
       <Box
         sx={{
-          display: {
-            xs: open ? "none" : "block",
-            ["@media (min-width: 1340px)" as any]: "block",
+          display: open ? "none" : "block",
+          "@media (min-width: 1340px)": {
+            display: "block",
           },
         }}
       >

@@ -108,7 +108,7 @@ export const homePage = {
       cta: "Book a demo now",
     },
     rightSection: {
-      img: ava,
+      img: "/images/homepage/MeetAva.png",
     },
   },
   outcome: {

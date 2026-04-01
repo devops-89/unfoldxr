@@ -1,13 +1,40 @@
+"use client";
+
 import ContainedButton from "@/components/widgets/ContainedButton";
 import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import FutureWorkCard from "./components/Future-Work-Card";
 import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
 
 const FutureWork = () => {
+  const [expandedSteps, setExpandedSteps] = useState([0]);
+
+  const handleToggle = (index: number) => {
+    if (expandedSteps.includes(index)) {
+      setExpandedSteps(expandedSteps.filter((i) => i !== index));
+    } else {
+      let nextArray = [...expandedSteps, index].sort();
+      if (nextArray.length > 2) {
+        // If we opened the 3rd (Edge), close the 1st (Augment)
+        if (index === 2) {
+          nextArray = nextArray.filter((i) => i !== 0);
+        } 
+        // If we opened the 1st (Augment), close the 3rd (Edge)
+        else if (index === 0) {
+          nextArray = nextArray.filter((i) => i !== 2);
+        }
+        // Fallback for clicking the middle one (index 1)
+        else {
+          nextArray = nextArray.slice(0, 2);
+        }
+      }
+      setExpandedSteps(nextArray);
+    }
+  };
+
   return (
     <Box>
       <Container maxWidth="xl">
@@ -19,12 +46,11 @@ const FutureWork = () => {
             alignItems: "center",
             justifyContent: "center",
             borderRadius: "39px",
-            py: { xs: 6, md: 10 }, // 👈 responsive padding
+            py: { xs: 6, md: 10 },
           }}
         >
           <Container maxWidth="lg">
             <Grid container spacing={{ xs: 4, md: 8 }}>
-              
               {/* LEFT SECTION */}
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography
@@ -82,42 +108,21 @@ const FutureWork = () => {
                 </ContainedButton>
               </Grid>
 
-              {/* RIGHT SECTION */}
+              {/* RIGHT SECTION - INTERACTIVE STEPPER */}
               <Grid size={{ xs: 12, md: 6 }}>
-                <Stack
-                  spacing={3}
-                  sx={{
-                    maxHeight: { xs: "none", md: "100vh" }, // 👈 remove scroll on mobile
-                    overflowY: { xs: "visible", md: "auto" },
-                    direction: "rtl",
-                    pl: { xs: 0, md: 2 },
-                    "& > *": {
-                      direction: "ltr",
-                    },
-                    "&::-webkit-scrollbar": {
-                      width: "4px",
-                    },
-                    "&::-webkit-scrollbar-track": {
-                      background: COLORS.WHITE,
-                      borderRadius: "10px",
-                    },
-                    "&::-webkit-scrollbar-thumb": {
-                      background: COLORS.PRIMARY_GREEN,
-                      borderRadius: "10px",
-                    },
-                  }}
-                >
+                <Stack spacing={4} sx={{ width: "100%" }}>
                   {FUTURE_WORK_CARD_DATA.map((val, i) => (
                     <FutureWorkCard
                       label={val.label}
                       value={val.value}
                       description={val.description}
+                      isActive={expandedSteps.includes(i)}
+                      onClick={() => handleToggle(i)}
                       key={i}
                     />
                   ))}
                 </Stack>
               </Grid>
-
             </Grid>
           </Container>
         </Box>

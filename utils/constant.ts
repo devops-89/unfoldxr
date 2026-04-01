@@ -85,7 +85,7 @@ export const HEADER_LINKS = [
     label: "About Us",
     url: "#",
     subLinks: [
-      { label: "About UnfoldXR (mission, vision, leadership, brand DNA)", url: "/about-us" },
+      { label: "About UnfoldXR (Mission, Vision, Leadership, Brand DNA)", url: "/about-us" },
       { label: "Partners", url: "/partners" },
       { label: "Careers", url: "#" },
     ],
@@ -114,54 +114,59 @@ export const NAV_ITEMS = [
   "Book a Demo",
 ];
 
-export const FOOTER_COLUMNS: { title: string; links: string[] }[] = [
-  { title: "Home", links: [] },
+export const FOOTER_COLUMNS: { title: string; links: { label: string; url: string }[] }[] = [
+  { title: "Home", links: [{ label: "Home", url: "/" }] },
   {
     title: "Solutions",
-    links: ["Repair & Maintenance", "Inspection", "Field Service"],
+    links: [
+      { label: "Repair & Maintenance", url: "/training/repair-maintenance" },
+      { label: "Inspection", url: "/training/inspection-compliance" },
+      { label: "Field Service", url: "/training/field-inspection" },
+    ],
   },
   {
     title: "Industry",
     links: [
-      "Automotive",
-      "Manufacturing",
-      "Oil & Gas",
-      "Aviation",
-      "Insurance",
-      "Marine",
-      "Logistics & Supply Chain",
-      "Retail",
-      "HealthCare",
+      { label: "Automotive", url: "/industries/automotive-operation" },
+      { label: "Manufacturing", url: "/industries/manufacturing-industry" },
+      { label: "Oil & Gas", url: "/industries/oil-gas-industry" },
+      { label: "Aviation", url: "/industries/aviation-industry" },
+      { label: "Insurance", url: "/industries/insurance-industry" },
+      { label: "Marine", url: "/industries/marine-industry" },
+      { label: "Retail & Logistics", url: "/industries/retail-logistics-industry" },
+      { label: "HealthCare", url: "/industries/healthcare-industry" },
     ],
   },
   {
     title: "Product",
-    links: ["Augment", "Empower", "Edge", "Meet AVA"],
+    links: [
+      { label: "Augment", url: "/Product" },
+      { label: "Empower", url: "/Product" },
+      { label: "Edge", url: "/Product" },
+      { label: "Meet AVA", url: "/meet-ava" },
+    ],
   },
   {
     title: "Resources",
     links: [
-      "Case Studies",
-      "Blog / Insights",
-      "Product Videos",
-      "Brochure",
-      "Feature List",
-      "XR Industry Reports",
+      { label: "Case Studies", url: "#" },
+      { label: "Blog / Insights", url: "#" },
+      { label: "Product Videos", url: "#" },
+      { label: "Brochure", url: "#" },
+      { label: "Feature List", url: "#" },
     ],
   },
   {
     title: "About Us",
     links: [
-      "Mission",
-      "Vision",
-      "Leadership",
-      "Brand DNA",
-      "Partners",
-      "Careers",
+      { label: "Mission, Vision, Leadership", url: "/about-us" },
+      { label: "Brand DNA", url: "/about-us" },
+      { label: "Partners", url: "/partners" },
+      { label: "Careers", url: "#" },
     ],
   },
-  { title: "Contact Us", links: [] },
-  { title: "Book a Demo", links: [] },
+  { title: "Contact Us", links: [{ label: "Contact Us", url: "/contact-us" }] },
+  { title: "Book a Demo", links: [{ label: "Book a Demo", url: "/contact-us" }] },
 ];
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [

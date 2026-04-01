@@ -6,41 +6,33 @@ import DevicesCard from "./components/Devices-Card";
 
 const DevicesSection = () => {
   return (
-    <Box
-      sx={{
-        height: { xs: "auto", md: "100vh" }, 
-        display: "flex",
-        alignItems: { xs: "flex-start", md: "center" },
-        justifyContent: "center",
-        py: { xs: 6, md: 10 }, 
-      }}
-    >
+    <Box sx={{ py: { xs: 8, md: 12 }, minHeight: "85vh", display: "flex", alignItems: "center" }}>
       <Container maxWidth="lg">
-        
+
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 32, md: 64 }, 
+            fontSize: { xs: 30, md: 56 },
             fontWeight: 900,
+            textTransform: "uppercase",
             textAlign: { xs: "center", md: "left" },
+            mb: { xs: 3, md: 5 },
           }}
         >
           {homePage.devicesSection.heading}
         </Typography>
 
-        {/* Grid */}
+        {/* 2x2 Grid */}
         <Grid container spacing={{ xs: 2, md: 2 }}>
           {homePage.devicesSection.data.map((val, i) => (
-            <Grid
-              key={i}
-              size={{ xs: 12, md: val.gridSize }} 
-            >
+            <Grid key={i} size={{ xs: 12, md: val.gridSize }}>
               <DevicesCard
                 bgImg={val.bgImg}
                 img={val.img}
                 heading={val.heading}
                 description={val.description}
                 gridSize={val.gridSize}
+                isFirst={i === 0}
               />
             </Grid>
           ))}

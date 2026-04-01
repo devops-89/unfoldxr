@@ -1,25 +1,15 @@
 import ContainedButton from "@/components/widgets/ContainedButton";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 const Meetava = () => {
   return (
-    <Box
-      sx={{
-        mt: { xs: 4, md: 10 }, 
-        height: { xs: "auto", md: "100vh" }, 
-        display: "flex",
-        alignItems: { xs: "flex-start", md: "center" },
-        justifyContent: "center",
-        py: { xs: 6, md: 0 }, 
-      }}
-    >
+    <Box sx={{ mt: { xs: 8, md: 24 }, mb: { xs: 8, md: 24 } }}>
       <Container maxWidth="lg">
-        
-        {/* Heading */}
+        {/* Full-width Heading */}
         <Typography
           sx={{
             fontSize: { xs: 28, md: 50 },
@@ -27,57 +17,67 @@ const Meetava = () => {
             fontWeight: 900,
             textTransform: "uppercase",
             textAlign: { xs: "center", md: "left" },
+            lineHeight: { xs: "38px", md: "64px" },
+            mb: { xs: 3, md: 4 },
           }}
         >
           {homePage.meetAva.heading}
         </Typography>
 
-        <Grid container alignItems="center" spacing={{ xs: 4, md: 0 }}>
-          
-          {/* LEFT TEXT */}
-          <Grid size={{ xs: 12, md: 6 }}>
-            {homePage.meetAva.leftSection.description.map((val, i) => (
-              <Typography
-                key={i}
-                sx={{
-                  mt: 2,
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 14, md: 20 },
-                  fontWeight: 400,
-                  lineHeight: { xs: "22px", md: "30px" },
-                  textAlign: { xs: "center", md: "left" },
-                }}
-              >
-                {val.label}
-              </Typography>
-            ))}
+        <Grid container alignItems="center" spacing={{ xs: 4, md: 6 }}>
+          {/* LEFT: description + CTA */}
+          <Grid size={{ xs: 12, md: 7 }}>
+            <Stack spacing={2}>
+              {homePage.meetAva.leftSection.description.map((val, i) => (
+                <Typography
+                  key={i}
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: { xs: 14, md: 18 },
+                    fontWeight: 400,
+                    lineHeight: { xs: "22px", md: "28px" },
+                    color: "#000",
+                    textAlign: { xs: "center", md: "left" },
+                  }}
+                >
+                  {val.label}
+                </Typography>
+              ))}
+            </Stack>
 
-            <ContainedButton
-              sx={{
-                mt: 3,
-                width: { xs: "100%", md: "auto" }, 
-              }}
-            >
-              Book a demo now
+            <ContainedButton sx={{ mt: 3, width: { xs: "100%", md: "auto" } }}>
+              Book a Demo Now
             </ContainedButton>
           </Grid>
 
-          
-          <Grid
-            size={{ xs: 12, md: 6 }}
-            sx={{ textAlign: "center" }}
-          >
-            <Image
-              src={homePage.meetAva.rightSection.img}
-              alt=""
-              style={{
-                width: "100%", 
-                height: "auto",
-                maxWidth: "400px", 
-              }}
-            />
+          {/* RIGHT: placeholder note + image */}
+          <Grid size={{ xs: 12, md: 5 }}>
+            <Stack alignItems={{ xs: "center", md: "flex-end" }} spacing={1}>
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 12, md: 14 },
+                  fontStyle: "italic",
+                  color: "#888",
+                  textAlign: "right",
+                }}
+              >
+                {/* *note - this is placeholder for ava */}
+              </Typography>
+              <Image
+                src={homePage.meetAva.rightSection.img}
+                alt="Meet AVA"
+                width={400}
+                height={400}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxWidth: "360px",
+                  borderRadius: "50%",
+                }}
+              />
+            </Stack>
           </Grid>
-
         </Grid>
       </Container>
     </Box>

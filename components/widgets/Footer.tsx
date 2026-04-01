@@ -11,6 +11,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { COLORS } from "@/utils/enum";
 
 import { FOOTER_COLUMNS, SOCIAL_LINKS } from "@/utils/constant";
 import glowingBall from "@/images/homepage/globe.gif";
@@ -79,18 +80,29 @@ export default function Footer() {
                 >
                   {column.title}
                 </Typography>
-                {column.links.map((link) => (
-                  <Typography
-                    key={link}
-                    variant="body2"
-                    sx={{
-                      color: "#efefef",
-                      mb: 0.5,
-                      fontSize: 14,
-                    }}
+                {column.links.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.url}
+                    style={{ textDecoration: "none", display: "block" }}
                   >
-                    {link}
-                  </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "#efefef",
+                        mb: 0.5,
+                        fontSize: 14,
+                        opacity: 0.8,
+                        transition: "0.2s",
+                        "&:hover": {
+                          color: COLORS.PRIMARY_GREEN,
+                          opacity: 1,
+                        },
+                      }}
+                    >
+                      {link.label}
+                    </Typography>
+                  </Link>
                 ))}
               </Grid>
             ))}

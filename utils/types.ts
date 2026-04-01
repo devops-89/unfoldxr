@@ -12,6 +12,8 @@ export interface FUTURE_WORK_CARD_PROPS {
   label: string;
   value: string;
   description: string;
+  isActive?: boolean;
+  onClick?: () => void;
 }
 
 export interface OUTCOME_CARD_PROPS {
