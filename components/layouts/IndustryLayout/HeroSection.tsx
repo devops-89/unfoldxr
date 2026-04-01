@@ -1,15 +1,16 @@
 import PageHeroSection from "@/components/widgets/PageHeroSection";
-import { industriesPage } from "@/utils/Website-Data";
+import { IndustryData } from "./data";
 
-const HeroSection = () => {
-  const { heroSection: data } = industriesPage.automotive;
+interface Props {
+  data: IndustryData["hero"];
+}
 
+const HeroSection = ({ data }: Props) => {
   return (
     <PageHeroSection
       image={data.image}
       title={data.title}
       description={data.description}
-      // overlayOpacity={0}
       primaryBtn={{ label: "Request a Demo" }}
     />
   );

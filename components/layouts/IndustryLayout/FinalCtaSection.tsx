@@ -7,11 +7,14 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import { industriesPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { IndustryData } from "./data";
 
-const FinalCtaSection = () => {
-  const { finalCtaSection: data } = industriesPage.automotive;
+interface Props {
+  data: IndustryData["finalCta"];
+}
+
+const FinalCtaSection = ({ data }: Props) => {
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Container maxWidth={false} sx={{ maxWidth: 1440, px: { xs: 2, md: 4 } }}>
@@ -35,7 +38,7 @@ const FinalCtaSection = () => {
                 lineHeight: 1.1,
               }}
             >
-              {data.heading}
+              {data.title}
             </Typography>
             <Typography
               sx={{

@@ -43,6 +43,34 @@ const CapabilitiesSection = ({ data }: Props) => {
           }}
         />
 
+        {/* Intersect Patterns */}
+        <Box
+          component="img"
+          src="/images/usecase/Intersect.png"
+          sx={{
+            position: "absolute",
+            top: "0%",
+            left: 0,
+            width: { xs: "200px", md: "650px" },
+            opacity: 0.5,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <Box
+          component="img"
+          src="/images/usecase/Intersect1.png"
+          sx={{
+            position: "absolute",
+            bottom: "3%",
+            right: 0,
+            width: { xs: "200px", md: "650px" },
+            opacity: 0.5,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+
         <Box
           sx={{
             width: { xs: "95%", md: "80%" },

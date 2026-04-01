@@ -48,31 +48,47 @@ export const HEADER_LINKS = [
   },
   {
     label: "Solutions",
-    url: "/usecases/training",
+    url: "#",
+    subLinks: [
+      { label: "Inspection & Compliance", url: "/training/inspection-compliance" },
+      { label: "Repair & Maintenance", url: "/training/repair-maintenance" },
+      { label: "Field Inspection", url: "/training/field-inspection" },
+    ],
   },
   {
     label: "Industry",
-    url: "/industries",
+    url: "#",
+    subLinks: [
+      { label: "Automotive", url: "/industries/automotive-operation" },
+      { label: "Oil & Gas", url: "/industries/oil-gas-industry" },
+      { label: "Manufacturing", url: "/industries/manufacturing-industry" },
+      { label: "Retail & Logistics", url: "/industries/retail-logistics-industry" },
+      { label: "Marine", url: "/industries/marine-industry" },
+      { label: "Insurance", url: "/industries/insurance-industry" },
+      { label: "Aviation", url: "/industries/aviation-industry" },
+      { label: "Healthcare", url: "/industries/healthcare-industry" },
+    ],
   },
   {
     label: "Product",
-    url: "/Product",
-  },
-  {
-    label: "Meet AVA",
-    url: "/meet-ava",
+    url: "#",
+    subLinks: [
+      { label: "Platform – Augment, Empower, Edge", url: "/Product" },
+      { label: "Meet AVA – The Perfect AI Human Collaboration", url: "/meet-ava" },
+    ],
   },
   {
     label: "Resources",
     url: "#",
   },
   {
-    label: "Partners",
-    url: "#",
-  },
-  {
     label: "About Us",
-    url: "/about-us",
+    url: "#",
+    subLinks: [
+      { label: "About UnfoldXR (mission, vision, leadership, brand DNA)", url: "/about-us" },
+      { label: "Partners", url: "/partners" },
+      { label: "Careers", url: "#" },
+    ],
   },
   {
     label: "Book a Demo",
@@ -93,7 +109,6 @@ export const NAV_ITEMS = [
   "Solutions",
   "Industry",
   "Product",
-  "Meet AVA",
   "Resources",
   "About Us",
   "Book a Demo",

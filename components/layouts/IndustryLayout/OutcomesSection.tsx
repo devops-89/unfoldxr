@@ -1,10 +1,13 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Container, Grid, Typography, Stack } from "@mui/material";
-import { industriesPage } from "@/utils/Website-Data";
+import { Box, Grid, Typography, Stack } from "@mui/material";
 import { COLORS } from "@/utils/enum";
+import { IndustryData } from "./data";
 
-const OutcomesSection = () => {
-  const { outcomesSection: data } = industriesPage.automotive;
+interface Props {
+  data: IndustryData["outcomes"];
+}
+
+const OutcomesSection = ({ data }: Props) => {
   return (
     <Box
       sx={{
@@ -19,7 +22,7 @@ const OutcomesSection = () => {
     >
       <Box
         component="img"
-        src="/images/Industries/Driving.png"
+        src={data.image}
         alt=""
         sx={{
           position: "absolute",
@@ -29,9 +32,7 @@ const OutcomesSection = () => {
           objectFit: "cover",
         }}
       />
-      <Box
-        sx={{ position: "absolute", inset: 0, bgcolor: "rgba(0,0,0,0.8)" }}
-      />
+      <Box sx={{ position: "absolute", inset: 0, bgcolor: "rgba(0,0,0,0.8)" }} />
 
       <Box
         sx={{
@@ -44,9 +45,9 @@ const OutcomesSection = () => {
         {/* Border Frame */}
         <Box
           sx={{
-            border: "2px solid rgba(197, 255, 46, 0.4)", 
+            border: "2px solid rgba(197, 255, 46, 0.4)",
             borderRadius: "24px",
-            boxShadow: "0 0 40px rgba(0,0,0,0.9)", 
+            boxShadow: "0 0 40px rgba(0,0,0,0.9)",
             p: { xs: 4, md: 8 },
             pt: { xs: 10, md: 10 },
             position: "relative",
@@ -60,43 +61,38 @@ const OutcomesSection = () => {
             alignItems="flex-start"
             sx={{ position: "relative" }}
           >
-            {/* Left Side: Headline with Highlight - Slight overlap (just a letter or two) */}
+            {/* Left Side: Headline with Highlight */}
             <Grid
               size={{ xs: 12, md: 8.5 }}
               sx={{ ml: { md: -5.5, lg: -11.2 }, zIndex: 2 }}
             >
-            
-                <Typography
-                  sx={{
-                    fontFamily: din.style.fontFamily,
-                    fontSize: { xs: 36, md: 54, lg: 64 },
-                    lineHeight: 1,
-                    textTransform: "uppercase",
-                    fontWeight: 900,
-                    maxWidth: "none",
-                    color: COLORS.WHITE,
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  <Box component="span" sx={{ display: "block", whiteSpace: "nowrap" }}>
-                    Driving
+              <Typography
+                sx={{
+                  fontFamily: din.style.fontFamily,
+                  fontSize: { xs: 36, md: 54, lg: 64 },
+                  lineHeight: 1,
+                  textTransform: "uppercase",
+                  fontWeight: 900,
+                  maxWidth: "none",
+                  color: COLORS.WHITE,
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              >
+                {data.titleLines.map((line, idx) => (
+                  <Box
+                    key={idx}
+                    component="span"
+                    sx={{ display: "block", whiteSpace: "nowrap" }}
+                  >
+                    {line}
                   </Box>
-                  <Box component="span" sx={{ display: "block", whiteSpace: "nowrap" }}>
-                    Measurable Outcomes
-                  </Box>
-                  <Box component="span" sx={{ display: "block", whiteSpace: "nowrap" }}>
-                    In
-                  </Box>
-                  <Box component="span" sx={{ display: "block", whiteSpace: "nowrap" }}>
-                    Automotive Operations
-                  </Box>
-                </Typography>
-             
+                ))}
+              </Typography>
             </Grid>
 
-            {/* Right Side: Stats Grid - Right column stats overlap slightly on the right */}
-            <Grid size={{ xs: 12, md: 4  ,lg: 4.2 }}>
+            {/* Right Side: Stats Grid */}
+            <Grid size={{ xs: 12, md: 4, lg: 4.2 }}>
               <Grid
                 container
                 spacing={{ xs: 2, md: 4 }}

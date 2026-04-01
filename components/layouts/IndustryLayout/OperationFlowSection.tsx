@@ -1,10 +1,15 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Button, Card, CardContent, Grid, Typography } from "@mui/material";
-import { industriesPage } from "@/utils/Website-Data";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
+import { IndustryData } from "./data";
 
-const OperationFlowSection = () => {
-  const { operationFlowSection: data, finalCtaSection: ctaData } = industriesPage.automotive;
+interface Props {
+  data: IndustryData["operationFlow"];
+  ctaIcon?: string;
+  ctaText?: string;
+}
+
+const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 10, md: 15 } }}>
       <Box
@@ -61,25 +66,27 @@ const OperationFlowSection = () => {
                   >
                     {block.phase}
                   </Typography>
-                  <Box
-                    sx={{
-                      width: 32,
-                      height: 32,
-                      bgcolor: "#F5E6FF",
-                      borderRadius: "8px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      p: 0.8,
-                    }}
-                  >
+                  {ctaIcon && (
                     <Box
-                      component="img"
-                      src={ctaData.ctaIcon}
-                      alt=""
-                      sx={{ width: "100%", height: "100%", objectFit: "contain" }}
-                    />
-                  </Box>
+                      sx={{
+                        width: 32,
+                        height: 32,
+                        bgcolor: "#F5E6FF",
+                        borderRadius: "8px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        p: 0.8,
+                      }}
+                    >
+                      <Box
+                        component="img"
+                        src={ctaIcon}
+                        alt=""
+                        sx={{ width: "100%", height: "100%", objectFit: "contain" }}
+                      />
+                    </Box>
+                  )}
                 </Box>
 
                 <Box
@@ -126,7 +133,7 @@ const OperationFlowSection = () => {
           ))}
         </Grid>
 
-        <Box sx={{ textAlign: "center", mt: 16}}>
+        <Box sx={{ textAlign: "center", mt: 16 }}>
           <Button
             variant="contained"
             sx={{
@@ -146,7 +153,7 @@ const OperationFlowSection = () => {
               },
             }}
           >
-            {ctaData.ctaText || "Book a Demo"}
+            {ctaText || "Book a Demo"}
           </Button>
         </Box>
       </Box>

@@ -324,11 +324,11 @@ export const useCasesData: Record<string, UseCaseData> = {
         { label: "CONSTRUCTION", img: "/images/banner/homePage/ai-industry/construction.png" },
         { label: "LOGISTICS", img: "/images/banner/homePage/ai-industry/logistics.png" },
         { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
-        { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" }, // Placeholder
+        { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" }, 
         { label: "AVIATION", img: "/images/banner/homePage/ai-industry/aviation.png" },
-        { label: "FOOD & BEVERAGE", img: "/images/banner/homePage/ai-industry/logistics.png" }, // Placeholder
-        { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" }, // Placeholder
-        { label: "PHARMACEUTICALS", img: "/images/banner/homePage/ai-industry/healthcare.png" }, // Placeholder
+        { label: "FOOD & BEVERAGE", img: "/images/banner/homePage/ai-industry/logistics.png" }, 
+        { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" }, 
+        { label: "PHARMACEUTICALS", img: "/images/banner/homePage/ai-industry/healthcare.png" }, 
       ],
     },
     deviceDeployment: {
@@ -361,201 +361,319 @@ export const useCasesData: Record<string, UseCaseData> = {
   "repair-maintenance": {
     hero: {
       title: "REPAIR, MAINTENANCE & ASSET MANAGEMENT",
-      subtitle: "AI-Powered Maintenance for Peak Asset Performance.",
+      subtitle: "The Costliest Downtime Is The One You Didn't Prevent.",
       description:
-        "UnfoldXR transforms maintenance workflows with AR-guided assistance and AI-driven insights to minimize downtime and maximize asset life.",
-      image: "/images/usecase/HeroSection.png",
+        "UnfoldXR brings AI- and augmented reality–powered intelligence directly into maintenance operations, reducing downtime and increasing profit.",
+      image: "/images/usecase/Maintenance/HeroSection.png",
     },
     knowledge: {
       title: "CHOOSE SMART MAINTENANCE, FROM PLANNING TO EXECUTION",
+      layout: "stacked",
       items: [
-        "Maintenance is the backbone of reliability. It ensures asset longevity, avoids costly failures, and reduces operational overhead.",
-        "Yet organizations still struggle with under-prepared workflows, tribal knowledge gaps, and complex asset dependencies.",
-        "Unlike tools that only manage work orders, UnfoldXR integrates real-time intelligence into the maintenance lifecycle.",
+        "Repair and maintenance are fundamental, recurring activities that keep operations running every day. They consume significant time across planning, assigning, tracking, and ensuring tasks are completed on schedule.",
+        "The quality and consistency of maintenance directly determine how many faults can be prevented which impacts downtime, productivity, and overall operational cost.",
+        "In many industries, these processes still rely on manual coordination, scattered records, and inconsistent execution.",
+        "Unlike most platforms, we don't deal with one particular issue. We address the whole process by bringing a comprehensive, end-to-end layer of intelligence to the maintenance lifecycle, making execution faster, more accurate, and consistently SOP-driven.",
       ],
-      footerText:
-        "From intelligent planning to AR-guided repair and automated performance analytics, the result is faster, more consistent, and traceable asset management at scale.",
+      footerText: "",
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
+      layout: "side-by-side",
       description1:
-        "MAINTENANCE ANALYTICS: Analyze asset performance data to predict failures and plan maintenance activities more effectively.",
-      description2:
-        "AR-GUIDED REPAIR: Provide technicians with real-time visual instructions and expert support to resolve issues faster.",
+        "With UnfoldXR, AI and augmented reality touches the 80% workforce at the frontlines who are still not receiving the technological support they need to augment their productivity.",
+      description2: "",
       description3:
-        "ASSET LIFECYCLE MANAGEMENT: Track every asset from deployment to retirement with a complete, digital history of all activities.",
-      image: "/images/usecase/TabImage.png",
+        "Coordination becomes simpler. Tasks are executed with higher accuracy. Work stays consistent and reliable across sites, shifts, and teams. With three versions designed for different stages of operational maturity -",
+      description4:
+        "we scale with your requirements. Start where you are today, knowing the platform is ready to grow with you from day one.",
+      cards: [
+        {
+          label: "UNFOLDXR AUGMENT",
+          image: "/images/usecase/Inspection/Intervention/Augment1.png",
+        },
+        {
+          label: "UNFOLDXR EMPOWER",
+          image: "/images/usecase/Inspection/Intervention/Empower.png",
+        },
+        {
+          label: "UNFOLDXR EDGE",
+          image: "/images/usecase/Inspection/Intervention/Edge.png",
+        },
+      ],
     },
     capabilities: {
-      title: "CAPABILITIES THAT POWER REPAIR & MAINTENANCE",
+      title: "CAPABILITIES THAT POWER REPAIR, MAINTENANCE AND ASSET MANAGEMENT",
+      layout: "grid",
       items: [
         {
-          title: "PREVENTIVE MAINTENANCE",
-          description: "Schedule and execute regular maintenance tasks to prevent unexpected failures and extend asset life.",
+          title: "INTELLIGENT TASK PLANNING & ROSTERING",
+          description: "Automatically assign and schedule work based on skills, location, priority, and asset criticality.",
         },
         {
-          title: "ASSET TRACKING",
-          description: "Maintain a real-time inventory of all critical assets and their current operational status.",
+          title: "CONTEXT-AWARE TASK EXECUTION",
+          description: "Guided SOPs and instructions aligned to the specific asset, location, and task.",
         },
         {
-          title: "WORK ORDER MANAGEMENT",
-          description: "Streamline the creation, assignment, and execution of maintenance work orders.",
+          title: "ASSET HISTORY AT THE MOMENT OF WORK",
+          description: "Instant access to past maintenance records, fault logs, and service history on site.",
         },
         {
-          title: "SPARE PARTS INVENTORY",
-          description: "Manage and track spare parts to ensure they are available when needed for repairs.",
-        },
-      ],
-    },
-    businessResults: {
-      title: "Business Results You Can Measure",
-      items: [
-        {
-          title: "Reduced Downtime",
-          description: "Faster repairs and preventive maintenance significantly decrease the time assets are out of service.",
+          title: "INTELLIGENT DIAGNOSTICS (SCAN MODE)",
+          description: "Real-time issue identification with recommended actions during maintenance and repair.",
         },
         {
-          title: "Extended Asset Life",
-          description: "Consistent and thorough maintenance helps maximize the operational lifespan of critical equipment.",
-        },
-        {
-          title: "Improved Productivity",
-          description: "Guided workflows and expert support enable technicians to complete repairs more efficiently.",
-        },
-      ],
-    },
-    industry: {
-      title: "One AI Platform, Any Industry",
-      subtitle:
-        "MANUFACTURING, ENERGY, UTILITIES, LOGISTICS, MINING, INFRASTRUCTURE, FACILITIES MANAGEMENT, TRANSPORTATION.",
-    },
-    deviceDeployment: {
-      title: "Device & Deployment",
-      deviceA: {
-        image: "/images/usecase/MobilePhone.png",
-        title: "ROBUST MOBILE DEVICES AND TABLETS",
-      },
-      deviceB: {
-        image: "/images/usecase/FromSimple.png",
-        title: "INDUSTRIAL HAND-HELD SCANNERS",
-      },
-      deviceC: {
-        image: "/images/usecase/Scale.png",
-        title: "HANDS-FREE AR HEADSETS AND SMART GLASSES",
-      },
-    },
-    platformSummary: {
-      title: "THE FUTURE OF MAINTENANCE",
-      description1:
-        "UnfoldXR unifies task execution, knowledge, collaboration, and documentation into one platform. By embedding Augmented Reality and AI into everyday work, it augments human capability at the moment of execution.",
-      description2:
-        "This is faster, more consistent, and less dependent on where experts are physically located.",
-    },
-    finalCTA: {
-      title: "KEEP YOUR CRITICAL ASSETS RUNNING WITH CLARITY.",
-      subtitle: "Schedule a demo and transform your maintenance operations.",
-    },
-  },
-  "field-service": {
-    hero: {
-      title: "FIELD SERVICE, TROUBLESHOOTING & REMOTE COLLABORATION",
-      subtitle: "Reduce Service Delays with Smarter Field Service.",
-      description:
-        "UnfoldXR connects field technicians with real-time expertise and AI-driven troubleshooting tools to resolve issues faster.",
-      image: "/images/usecase/HeroSection.png",
-    },
-    knowledge: {
-      title: "ELEVATE YOUR FIELD SERVICE EXCELLENCE",
-      items: [
-        "Field service is the front line of customer satisfaction. It requires speed, expertise, and consistent execution.",
-        "Technicians often face complex problems without immediate support, leading to service delays and repeat visits.",
-        "UnfoldXR empowers field teams with the knowledge and support they need exactly when they need it.",
-      ],
-      footerText:
-        "By bridging the gap between field technicians and remote experts, UnfoldXR ensures that every problem is resolved correctly the first time.",
-    },
-    intervention: {
-      title: "THE UNFOLDXR INTERVENTION",
-      description1:
-        "FIELD SERVICE ANALYTICS: Gain deep visibility into field team performance and service outcomes to drive continuous improvement.",
-      description2:
-        "REMOTE ASSISTANCE: Connect field technicians with senior experts via live AR collaboration for instant troubleshooting.",
-      description3:
-        "SMART TROUBLESHOOTING: Empower technicians with AI-driven diagnostic tools and step-by-step AR instructions.",
-      image: "/images/usecase/TabImage.png",
-    },
-    capabilities: {
-      title: "CAPABILITIES THAT POWER FIELD SERVICE",
-      items: [
-        {
-          title: "AR-GUIDED TROUBLESHOOTING",
-          description: "Use AR overlays to identify and resolve issues with complex equipment in real-world environments.",
+          title: "AI-GUIDED ASSISTANCE (AVA)",
+          description: "Moment-of-work AI-assisted recommendations and decision support that adapt as the task progresses.",
         },
         {
           title: "REMOTE EXPERT COLLABORATION",
-          description: "Enable 'see-what-I-see' support between field staff and remote specialists.",
+          description: "Connect with specialists via live audio, video, and visual guidance when escalation is needed.",
         },
         {
-          title: "REAL-TIME DIAGNOSTIC VISUALIZATION",
-          description: "Visualize data and diagnostics directly on the equipment for faster decision-making.",
+          title: "OFFLINE-READY EXECUTION",
+          description: "Continue guided work even in low or no-connectivity environments.",
         },
         {
-          title: "FIELD TASK DOCUMENTATION",
-          description: "Capture task completion data, service notes, and evidence directly from the field.",
+          title: "EVIDENCE CAPTURE & REPORTING",
+          description: "Capture photos, videos, and notes, with automatic maintenance reports generated at completion.",
+        },
+        {
+          title: "CONTINUOUS KNOWLEDGE BUILDING",
+          description: "Every completed task strengthens SOPs and improves future maintenance outcomes.",
+        },
+        {
+          title: "CREATOR MODE",
+          description: "Capture expert tasks once. UnfoldXR auto-creates SOPs and training workflows.",
+        },
+        {
+          title: "DEVICE-AGNOSTIC",
+          description: "Runs on mobiles, tablets, and smart glasses, from basic to advanced AR devices.",
         },
       ],
     },
     businessResults: {
-      title: "Business Results You Can Measure",
+      title: "BUSINESS RESULTS YOU CAN MEASURE",
       items: [
         {
-          title: "Lower MTTR",
-          description: "Reduce the average time to resolve issues with instant access to expertise and guided instructions.",
+          title: "Reduced Unplanned Downtime",
+          description: "Smart CMMS integration routes tickets with near 100% accuracy, while digital machine profiles and predictive alerts help prevent 25–30% of unplanned failures.",
         },
         {
-          title: "Higher First Time Fix Rate",
-          description: "Empower technicians to solve problems correctly on their first visit, reducing customer downtime.",
+          title: "Higher First-Time Fix Rates",
+          description: "AI-guided workflows reduce errors and rework by up to 50%, improving first-time-right maintenance outcomes.",
         },
         {
-          title: "Reduced Expert Travel Costs",
-          description: "Leverage remote collaboration to use your experts' time more efficiently without the need for travel.",
+          title: "Faster Maintenance Turnaround",
+          description: "Live AR expert support cuts troubleshooting time by 40–60%, accelerating issue resolution and restoring operations faster.",
         },
         {
-          title: "Higher Customer Satisfaction",
-          description: "Deliver faster, more reliable service that meets and exceeds customer expectations.",
+          title: "Lower Dependency On On-Site Experts",
+          description: "Remote collaboration and AI assistance reduce physical expert visits while maintaining high execution standards.",
+        },
+        {
+          title: "Improved Compliance And Audit Readiness",
+          description: "Automatic maintenance capture creates real-time, compliance-ready logs with 100% documentation accuracy.",
+        },
+        {
+          title: "Better Utilisation Of Skilled Technicians",
+          description: "AI productivity insights improve technician efficiency by 20–30%, ensuring the right skills are applied where they create the most value.",
         },
       ],
     },
     industry: {
-      title: "One AI Platform, Any Industry",
-      subtitle:
-        "TELECOM, IT SERVICES, UTILITIES, MEDICAL EQUIPMENT, HOME APPLIANCES, RENEWABLE ENERGY, INDUSTRIAL MACHINERY.",
+      title: "ONE AI PLATFORM, ANY INDUSTRY",
+      subtitle: "UNFOLDXR enhances maintenance operations & real-time asset management",
+      customIndustries: [
+        { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
+        { label: "AVIATION", img: "/images/banner/homePage/ai-industry/aviation.png" },
+      ],
     },
     deviceDeployment: {
-      title: "Device & Deployment",
+      title: "DEVICE & DEPLOYMENT",
       deviceA: {
         image: "/images/usecase/MobilePhone.png",
-        title: "SMARTPHONES AND FIELD-READY TABLETS",
+        title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
         image: "/images/usecase/FromSimple.png",
-        title: "AR WEARABLES FOR HANDS-FREE SUPPORT",
+        title: "FROM SIMPLE WEARABLES TO HIGH-END DEVICES",
       },
       deviceC: {
         image: "/images/usecase/Scale.png",
-        title: "RELIABLE DEPLOYMENT ACROSS DIVERSE FIELD ENVIRONMENTS",
+        title: "SCALES WITH TASK COMPLEXITY AND BUDGET",
       },
     },
     platformSummary: {
-      title: "ONE UNIFIED EXPERIENCE FOR FIELD TEAMS",
+      title: "ONE PLATFORM TO PLAN, REPAIR, AND MAINTAIN",
       description1:
-        "UnfoldXR transforms field service into a truly digital and collaborative experience. By providing knowledge at the point of need, it ensures technicians are never working alone.",
+        "UnfoldXR unifies task execution, knowledge, collaboration, and documentation into one platform. By embedding Augmented Reality and AI into everyday work, it augments human capability at the moment of execution.",
       description2:
-        "This is the future of service - intelligent, connected, and highly efficient.",
+        "This is the future of maintenance - faster, more consistent, and less dependent on where experts are physically located.",
     },
     finalCTA: {
-      title: "RESOLVE ISSUES THE FIRST TIME. EVERY TIME.",
-      subtitle: "Elevate your service quality today with UnfoldXR.",
+      title: "KEEP YOUR CRITICAL ASSETS RUNNING WITH CLARITY AND CONTROL.",
+      subtitle: "",
+    },
+  },
+  "field-inspection": {
+    hero: {
+      title: "FIELD SERVICE, TROUBLESHOOTING & REMOTE COLLABORATION",
+      subtitle: "The Perfect Human–AI Collaboration In The Field.",
+      description:
+        "UnfoldXR brings AI- and augmented reality powered intelligence directly to field service operations anytime, anywhere.",
+      image: "/images/usecase/Field_inspection/HeroSection.png",
+    },
+    knowledge: {
+      title: "REDUCE SERVICE DELAYS WITH SMARTER FIELD SERVICE",
+      layout: "stacked",
+      items: [
+        "Field service and troubleshooting time-critical functions. Delays, misdiagnosis, or incomplete fixes directly impact customer satisfaction, asset uptime, and operational cost.",
+        "Yet in most organizations, field teams still depend on phone calls, fragmented documentation, delayed escalations, and manual reporting. While the problems are distributed, expertise is centralized. The gap between the two creates downtime, repeat visits, and rising service costs.",
+        "Unlike traditional support tools that solve only one part of the problem, UnfoldXR brings intelligence across the entire service lifecycle — from ticket assignment and on-site diagnostics to expert escalation and automated reporting.",
+      ],
+      footerText: "",
+    },
+    intervention: {
+      title: "THE UNFOLDXR INTERVENTION",
+      layout: "side-by-side",
+      description1:
+        "UnfoldXR brings AI and augmented reality to the 80% deskless workforce operating in the field. Instead of relying on memory or delayed guidance, technicians receive structured, real-time support at the moment of troubleshooting.",
+      description2: "",
+      description3:
+        "From escalations to collaboration to execution - the whole process becomes seamless. Knowledge and expert advice becomes accessible at the moment of work. With three versions designed for different stages of operational maturity",
+      description4:
+        "organizations can start with guided digital workflows and scale into intelligent, AI-driven field operations as complexity grows.",
+      cards: [
+        {
+          label: "UNFOLDXR AUGMENT",
+          image: "/images/usecase/Inspection/Intervention/Augment1.png",
+        },
+        {
+          label: "UNFOLDXR EMPOWER",
+          image: "/images/usecase/Inspection/Intervention/Empower.png",
+        },
+        {
+          label: "UNFOLDXR EDGE",
+          image: "/images/usecase/Inspection/Intervention/Edge.png",
+        },
+      ],
+    },
+    capabilities: {
+      title: "CAPABILITIES THAT POWER TROUBLESHOOTING & FIELD SERVICE",
+      layout: "grid",
+      items: [
+        {
+          title: "INTELLIGENT TICKET ROUTING & ROSTERING",
+          description: "Automatically assign service tickets based on skills, availability, priority, and location.",
+        },
+        {
+          title: "CONTEXT-AWARE FIELD GUIDANCE",
+          description: "Deliver step-by-step SOPs aligned to the specific asset and fault condition on site.",
+        },
+        {
+          title: "SMART SCAN DIAGNOSTICS",
+          description: "Scan QR codes or assets to instantly access machine history, fault logs, and guided troubleshooting paths.",
+        },
+        {
+          title: "AI-GUIDED ASSISTANCE (AVA)",
+          description: "Provide adaptive recommendations and decision support as the technician works through the issue.",
+        },
+        {
+          title: "LIVE REMOTE EXPERT COLLABORATION",
+          description: "Enable one-tap connection to specialists via audio, video, screen sharing, and AR visual guidance.",
+        },
+        {
+          title: "FULL ASSET & SERVICE HISTORY ACCESS",
+          description: "Ensure technicians have real-time visibility into past repairs and maintenance data.",
+        },
+        {
+          title: "OFFLINE-READY EXECUTION",
+          description: "Continue guided diagnostics and documentation even in low-connectivity environments.",
+        },
+        {
+          title: "EVIDENCE CAPTURE & AUTOMATED REPORTING",
+          description: "Capture photos, videos, and notes with AI-generated service reports filed automatically.",
+        },
+        {
+          title: "CONTINUOUS KNOWLEDGE IMPROVEMENT",
+          description: "Every resolved case strengthens workflows and improves future troubleshooting accuracy.",
+        },
+        {
+          title: "DEVICE-AGNOSTIC DEPLOYMENT",
+          description: "Runs seamlessly on mobile devices, tablets, and smart glasses.",
+        },
+      ],
+    },
+    businessResults: {
+      title: "BUSINESS RESULTS YOU CAN MEASURE",
+      items: [
+        {
+          title: "Reduced Mean Time To Repair (MTTR)",
+          description: "AI-guided diagnostics and structured troubleshooting workflows accelerate fault identification and resolution. Technicians spend 30–50% less time searching through manuals and SOPs.",
+        },
+        {
+          title: "Higher First-Time Fix Rates",
+          description: "Guided service workflows and contextual assistance improve diagnostic accuracy, driving a 20–40% increase in first-time fix rates and reducing unnecessary repeat visits.",
+        },
+        {
+          title: "Lower Escalation & Rework Costs",
+          description: "Live AR-based expert collaboration minimizes the need for physical expert dispatch. Organizations report up to 50% fewer repeat visits and reworks, lowering travel and escalation costs.",
+        },
+        {
+          title: "Improved Technician Productivity",
+          description: "AI-assisted decision support and optimized scheduling improve field team efficiency by 20–30%, ensuring better workforce utilization and faster service cycles.",
+        },
+        {
+          title: "Reduced Downtime",
+          description: "Faster troubleshooting, intelligent workflows, and predictive insights reduce service delays and prevent up to 50% of common operational errors, minimizing overall disruption.",
+        },
+        {
+          title: "Higher Customer Satisfaction",
+          description: "Quicker, more accurate resolutions increase service reliability, resulting in 20–30% higher customer satisfaction due to faster turnaround and improved service quality.",
+        },
+      ],
+    },
+    industry: {
+      title: "ONE AI PLATFORM, ANY INDUSTRY",
+      subtitle: "UNFOLDXR enhances skilled operations, on-ground executions & real-time decision-making",
+      customIndustries: [
+        { label: "TELECOMMUNICATIONS", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
+        { label: "HEALTHCARE EQIPMENT", img: "/images/banner/homePage/ai-industry/healthcare.png" },
+        { label: "AUTOMOTIVE SERVICE NETWORKS", img: "/images/banner/homePage/ai-industry/automotive.png" },
+        { label: "LOGISTICS & WAREHOUSING", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "AVIATION", img: "/images/banner/homePage/ai-industry/aviation.png" },
+      ],
+    },
+    deviceDeployment: {
+      title: "DEVICE & DEPLOYMENT",
+      deviceA: {
+        image: "/images/usecase/MobilePhone.png",
+        title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
+      },
+      deviceB: {
+        image: "/images/usecase/FromSimple.png",
+        title: "FROM LIGHTWEIGHT FIELD-READY DEVICES TO ADVANCED AR SYSTEMS",
+      },
+      deviceC: {
+        image: "/images/usecase/Scale.png",
+        title: "SCALES ACROSS REGIONS, TECHNICIAN VOLUMES, AND SERVICE COMPLEXITY",
+      },
+    },
+    platformSummary: {
+      title: "ONE PLATFORM FROM TICKET TO RESOLUTION",
+      description1:
+        "UnfoldXR unifies diagnostics, expert collaboration, field execution, and reporting into one continuous system. By embedding AI and augmented reality into troubleshooting workflows, it removes delays between field teams and central expertise.",
+      description2:
+        "This is the future of field service faster resolution, smarter collaboration, and fewer repeat visits.",
+    },
+    finalCTA: {
+      title: "Resolve issues the first time. Every time.",
+      subtitle: "Empower your field teams with intelligence at the moment of service.",
     },
   },
 };

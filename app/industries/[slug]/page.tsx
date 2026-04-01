@@ -1,4 +1,5 @@
-import AutomotiveOperationsLayout from "@/components/layouts/industries/AutomotiveOperationsLayout";
+import IndustryLayout from "@/components/layouts/IndustryLayout";
+import { industriesData } from "@/components/layouts/IndustryLayout/data";
 import { Box } from "@mui/material";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -7,35 +8,41 @@ type IndustryPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-const SUPPORTED_SLUG = "automotive-operation";
-
 export async function generateStaticParams() {
-  return [{ slug: SUPPORTED_SLUG }];
+  return Object.keys(industriesData).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: IndustryPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: IndustryPageProps): Promise<Metadata> {
   const { slug } = await params;
-  if (slug !== SUPPORTED_SLUG) {
+  const data = industriesData[slug];
+
+  if (!data) {
     return {
       title: "Industry | UnfoldXR",
     };
   }
 
   return {
-    title: "Automotive Operation | UnfoldXR",
-    description: "UnfoldXR for automotive operations: guided execution, intelligence, and measurable outcomes at scale.",
+    title: `${data.hero.title} | UnfoldXR`,
+    description: data.hero.description,
   };
 }
 
-export default async function IndustryDynamicPage({ params }: IndustryPageProps) {
+export default async function IndustryDynamicPage({
+  params,
+}: IndustryPageProps) {
   const { slug } = await params;
-  if (slug !== SUPPORTED_SLUG) {
+  const data = industriesData[slug];
+
+  if (!data) {
     notFound();
   }
 
   return (
     <Box component="main">
-      <AutomotiveOperationsLayout />
+      <IndustryLayout data={data} />
     </Box>
   );
 }

@@ -1,10 +1,13 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Button, Card, CardContent, Container, Grid, Typography } from "@mui/material";
-import { industriesPage } from "@/utils/Website-Data";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
+import { IndustryData } from "./data";
 
-const RealityNeedsSection = () => {
-  const { realityNeedsSection: data } = industriesPage.automotive;
+interface Props {
+  data: IndustryData["realityNeeds"];
+}
+
+const RealityNeedsSection = ({ data }: Props) => {
   return (
     <Box
       sx={{
@@ -57,7 +60,7 @@ const RealityNeedsSection = () => {
                   mb: 3,
                 }}
               >
-                AUTOMOTIVE REALITIES:
+                {data.realitiesTitle}
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
                 {data.realities.map((item) => (
@@ -101,7 +104,7 @@ const RealityNeedsSection = () => {
                   mb: 3,
                 }}
               >
-                WHAT IT NEEDS:
+                {data.needsTitle}
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
                 {data.needs.map((item) => (
