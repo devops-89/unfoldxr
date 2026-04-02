@@ -12,16 +12,14 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-start", // 👈 better for text flow
+          justifyContent: "flex-start", 
           border: "1px solid #D0D0D0",
           borderRadius: "39px",
 
-          // ✅ responsive spacing
           px: { xs: 1.5, md: 2 },
           py: { xs: 0.7, md: 1 },
           gap: { xs: 1, md: 2 },
-
-          // ✅ prevent overflow
+          width: "fit-content",
           maxWidth: "100%",
         }}
       >
@@ -30,19 +28,19 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
           sx={{
             backgroundColor: COLORS.BLACK,
             borderRadius: "50%",
-            width: { xs: 28, md: 40 },   // 👈 smaller on mobile
+            width: { xs: 28, md: 40 }, 
             height: { xs: 28, md: 40 },
             border: "1px solid rgba(255, 255, 255, 0.16)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            flexShrink: 0, // 👈 prevents shrinking
+            flexShrink: 0, 
           }}
         >
           <Image
             src={img}
             alt=""
-            width={16}  // 👈 smaller icon mobile
+            width={16}  
             height={16}
           />
         </Box>
@@ -51,14 +49,13 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-
-            // ✅ responsive font
             fontSize: { xs: 13, md: 20 },
-            fontWeight: 400,
-
-            // ✅ handle long text properly
-            whiteSpace: "normal",     // allow wrap
-            lineHeight: 1.2,
+            fontWeight: 700, 
+            color: COLORS.BLACK,
+            whiteSpace: "normal",
+            lineHeight: 1.1, 
+            display: "flex",
+            alignItems: "center",
           }}
         >
           {label}

@@ -103,7 +103,14 @@ const FutureWork = () => {
                   {homePage.future_work.leftSection.endHeading}
                 </Typography>
 
-                <ContainedButton sx={{ mt: 3, width: { xs: "100%", md: "auto" } }}>
+                <ContainedButton
+                  sx={{
+                    mt: 3,
+                    width: { xs: "100%", md: "auto" },
+                    height: { xs: "45px", md: "62px" },
+                    fontSize: { xs: 16, md: 23 },
+                  }}
+                >
                   {homePage.future_work.leftSection.cta}
                 </ContainedButton>
               </Grid>

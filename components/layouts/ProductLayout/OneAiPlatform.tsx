@@ -47,7 +47,7 @@ const OneAiPlatform = () => {
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Box
-        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 1, md: 0 } }}
+        sx={{ width: { xs: "90%", md: "80%" }, mx: "auto", px: { xs: 0, md: 0 } }}
       >
         <Box
           sx={{

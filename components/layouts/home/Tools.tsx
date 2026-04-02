@@ -30,10 +30,10 @@ const Tools = () => {
       <Box
         sx={{
           py: { xs: 4, md: 10 },
-          px: { xs: 2, md: 4 },
+          px: { xs: 4, md: 4 },
           bgcolor: COLORS.WHITE,
           borderRadius: "15px",
-          width: { xs: "90%", md: "96%" },
+          width: { xs: "75%", md: "96%" },
           maxWidth: "1300px",
         }}
       >
@@ -72,7 +72,7 @@ const Tools = () => {
                   lineHeight: 1.1,
                   color: COLORS.BLACK,
                   textAlign: { xs: "center", md: "left" },
-                  whiteSpace: "nowrap",
+                  whiteSpace: { xs: "normal", md: "nowrap" },
                 }}
               >
                 ONE AR-ENABLED PLATFORM
@@ -99,7 +99,7 @@ const Tools = () => {
                   color: COLORS.BLACK,
                   textAlign: { xs: "center", md: "right" },
                   whiteSpace: "pre-line",
-                  minWidth: "max-content",
+                  minWidth: { xs: "unset", md: "max-content" },
                   pb: { xs: 0, md: "8px" },
                 }}
               >

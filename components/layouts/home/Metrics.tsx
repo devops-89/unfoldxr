@@ -51,41 +51,44 @@ const Metrics = () => {
                 </Typography>
 
                 {/* 30% */}
-                <Typography
-                  sx={{
-                    fontFamily: din.style.fontFamily,
-                    fontSize: { xs: "120px", sm: "180px", md: "330px" },
-                    fontWeight: 900,
-                    color: "#1C1C1C",
-                    lineHeight: 0.85,
-                    letterSpacing: "-4px",
-                  }}
-                >
-                  {homePage.metrics.leftSection.number}
-                </Typography>
-              </Stack>
-            </Grid>
-
-            {/* RIGHT */}
-            <Grid size={{ xs: 12, md: 7 }}>
-              <Stack
-                spacing={0}
-                alignItems={{ xs: "center", md: "flex-end" }}
-                justifyContent="center"
-              >
-                {homePage.metrics.rightSection.map((val, i) => (
                   <Typography
-                    key={i}
                     sx={{
                       fontFamily: din.style.fontFamily,
-                      fontSize: { xs: 20, sm: 28, md: "37px" },
-                      fontWeight: 400,
-                      lineHeight: { xs: "40px", md: "96px" },
-                      color: "#000",
-                      textAlign: { xs: "center", md: "right" },
-                      textTransform: "capitalize",
+                      fontSize: { xs: "100px", sm: "160px", md: "280px", lg: "330px" },
+                      fontWeight: 900,
+                      color: "#1C1C1C",
+                      lineHeight: 0.85,
+                      letterSpacing: { xs: "-1px", md: "-4px" },
+                      mt: { xs: 2, md: 0 },
                     }}
                   >
+                    {homePage.metrics.leftSection.number}
+                  </Typography>
+                </Stack>
+              </Grid>
+  
+              {/* RIGHT */}
+              <Grid size={{ xs: 12, md: 7 }}>
+                <Stack
+                  spacing={0}
+                  alignItems={{ xs: "center", md: "flex-end" }}
+                  justifyContent="center"
+                  sx={{ mt: { xs: 4, md: 0 } }}
+                >
+                  {homePage.metrics.rightSection.map((val, i) => (
+                    <Typography
+                      key={i}
+                      sx={{
+                        fontFamily: din.style.fontFamily,
+                        fontSize: { xs: 20, sm: 28, md: "37px" },
+                        fontWeight: 400,
+                        lineHeight: { xs: 1.4, md: "96px" },
+                        color: "#000",
+                        textAlign: { xs: "center", md: "right" },
+                        textTransform: "capitalize",
+                        mb: { xs: 2, md: 0 },
+                      }}
+                    >
                     <Typography
                       component="span"
                       sx={{

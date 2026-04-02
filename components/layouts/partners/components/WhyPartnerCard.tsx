@@ -12,6 +12,7 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
         height: "100%",
         display: "flex",
         flexDirection: "column",
+        textAlign: { xs: "center", md: "left" },
       }}
     >
       <Typography
@@ -31,6 +32,7 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
           width: "40%",
           my: 3,
           borderColor: "rgba(255, 255, 255, 0.8)",
+          mx: { xs: "auto", md: 0 },
         }}
       />
 

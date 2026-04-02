@@ -25,7 +25,7 @@ const MetricsSection = () => {
         <Grid container spacing={8} alignItems="flex-start">
 
           {/* LEFT SIDE */}
-          <Grid size={{xs:12,md:6}} >
+          <Grid size={{xs:12,md:6}} sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
               sx={{
                 fontSize: { xs: 32, md: 48 },
@@ -44,6 +44,8 @@ const MetricsSection = () => {
                 fontSize: { xs: 16, md: 18 },
                 color: COLORS.BLACK,
                 lineHeight: "26px",
+                maxWidth: { xs: "400px", md: "100%" },
+                mx: { xs: "auto", md: 0 },
               }}
             >
               {partnersPage.metricsSection.description}

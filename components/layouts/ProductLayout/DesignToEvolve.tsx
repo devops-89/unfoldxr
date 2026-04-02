@@ -21,9 +21,9 @@ const DesignToEvolve = () => {
     >
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "90%", md: "80%" },
           mx: "auto",
-          px: { xs: 2, md: 0 },
+          px: { xs: 0, md: 0 },
         }}
       >
         <Typography
@@ -72,6 +72,7 @@ const DesignToEvolve = () => {
                 display: "flex",
                 flexDirection: "column",
                 gap: { xs: 2, md: 4 },
+                alignItems: { xs: "center", md: "flex-start" },
               }}
             >
               {data.variants.map((item, index) => (
@@ -80,14 +81,16 @@ const DesignToEvolve = () => {
                   onClick={() => setActiveIndex(index)}
                   sx={{
                     fontFamily: din.style.fontFamily,
-                    border: activeIndex === index
-                      ? `2px solid ${COLORS.PRIMARY_HOVER}`
-                      : "2px solid transparent",
+                    border:
+                      activeIndex === index
+                        ? `2px solid ${COLORS.PRIMARY_HOVER}`
+                        : "2px solid transparent",
                     borderRadius: "99px",
                     display: "inline-block",
                     px: { xs: 2, md: 3 },
                     py: 1,
-                    color: activeIndex === index ? COLORS.PRIMARY_HOVER : COLORS.WHITE,
+                    color:
+                      activeIndex === index ? COLORS.PRIMARY_HOVER : COLORS.WHITE,
                     textTransform: "uppercase",
                     letterSpacing: "0.04em",
                     fontSize: { xs: 16, md: 22 },
@@ -105,20 +108,23 @@ const DesignToEvolve = () => {
 
           {/* Right Description Column with Vertical Stepper */}
           <Grid size={{ xs: 12, md: 8 }} sx={{ position: "relative" }}>
-            <VerticalStepper 
-              itemsCount={data.variants.length} 
-              activeIndex={activeIndex} 
+            <VerticalStepper
+              itemsCount={data.variants.length}
+              activeIndex={activeIndex}
               sx={{
                 display: { xs: "none", md: "block" },
                 position: "absolute",
                 top: 0,
                 bottom: 0,
                 left: 0,
-
               }}
             />
 
-            <Box sx={{ pl: { xs: 0, md: 6 } }}>
+            <Box
+              sx={{
+                pl: { xs: 0, md: 6 },
+              }}
+            >
               <Box>
                 <Typography
                   sx={{
@@ -131,7 +137,8 @@ const DesignToEvolve = () => {
                     textTransform: "capitalize",
                   }}
                 >
-                  {data.variants[activeIndex].subHeading || data.variants[activeIndex].title}
+                  {data.variants[activeIndex].subHeading ||
+                    data.variants[activeIndex].title}
                 </Typography>
                 <Typography
                   sx={{

@@ -29,10 +29,10 @@ const DevicesCard = ({
         backgroundRepeat: "no-repeat",
         backgroundColor: hasBg ? "transparent" : "#D3DEE4",
         borderRadius: "28px",
-        height: { xs: "260px", md: "210px" },
+        height: { xs: "240px", md: "210px" },
         display: "flex",
         flexDirection: "column",
-        justifyContent: isFirst ? "flex-end" : "flex-start",
+        justifyContent: "flex-start",
         alignItems: "flex-start",
         p: { xs: 3, md: 5 },
         overflow: "hidden",
@@ -53,7 +53,7 @@ const DevicesCard = ({
         />
       )}
 
-      <Box sx={{ position: "relative", zIndex: 1, maxWidth: gridSize === 5 ? "100%" : "60%" }}>
+      <Box sx={{ position: "relative", zIndex: 1, maxWidth: { xs: "100%", md: gridSize === 5 ? "100%" : "60%" } }}>
         {/* Heading */}
         <Typography
           sx={{

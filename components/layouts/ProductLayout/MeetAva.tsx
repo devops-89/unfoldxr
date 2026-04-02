@@ -18,9 +18,9 @@ const MeetAva = () => {
     >
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
-          px: { xs: 2, md: 0 },
+          px: { xs: 0, md: 0 },
         }}
       >
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
@@ -87,12 +87,12 @@ const MeetAva = () => {
                 position: { xs: "relative", md: "absolute" },
                 top: { xs: "auto", md: "50%" },
                 right: { xs: "auto", md: "-80px", lg: "-190px" },
+                mx: { xs: "auto", md: 0 },
                 transform: {
-                  xs: "none",
+                  xs: "translate(10%, -10%)",
                   md: "translateY(-50%)",
                   lg: "translateY(-50%)",
                 },
-
                 zIndex: 0,
               }}
             />

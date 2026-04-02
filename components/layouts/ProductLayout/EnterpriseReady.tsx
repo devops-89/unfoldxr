@@ -39,7 +39,7 @@ const EnterpriseReady = () => {
           left: 0,
           top: { xs: 0, md: 50 },
           width: { xs: "100%", md: "26%" },
-          height: { xs: 260, md: "85%" },
+          height: { xs: "50%", md: "85%" },
           objectFit: "cover",
           opacity: { xs: 0.26, md: 0.9 },
           pointerEvents: "none",
@@ -48,21 +48,21 @@ const EnterpriseReady = () => {
 
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "90%", md: "80%" },
           mx: "auto",
           position: "relative",
           zIndex: 2,
         }}
       >
-        <Grid container justifyContent="flex-end">
+        <Grid container justifyContent="flex-end" sx={{ pt: { xs: 60, md: 0 } }}>
           <Grid size={{ xs: 12, md: 7.5, lg: 7 }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 32, md: 48, lg: 52 },
                 lineHeight: 1.1,
+                fontSize: { xs: 32, md: 48, lg: 52 },
                 mb: { xs: 6, md: 8 },
               }}
             >

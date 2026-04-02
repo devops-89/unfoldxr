@@ -52,7 +52,13 @@ const Outcome = () => {
 
         {/* CTA */}
         <Box sx={{ mt: 6, textAlign: "center" }}>
-          <ContainedButton sx={{ width: { xs: "100%", md: "auto" } }}>
+          <ContainedButton
+            sx={{
+              width: { xs: "100%", md: "auto" },
+              height: { xs: "45px", md: "62px" },
+              fontSize: { xs: 16, md: 23 },
+            }}
+          >
             {homePage.outcome.cta}
           </ContainedButton>
         </Box>

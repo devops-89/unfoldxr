@@ -10,14 +10,22 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
   const formattedNumber = id.toString().padStart(2, "0");
 
   return (
-    <Box display="flex" gap={3} alignItems="center">
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        gap: 3,
+        alignItems: "center",
+        textAlign: { xs: "center", md: "left" },
+      }}
+    >
       {/* Number */}
       <Typography
         sx={{
           fontSize: { xs: 28, md: 40 },
           fontWeight: 900,
           color: COLORS.PRIMARY_HOVER,
-          minWidth: { xs: "50px", md: "70px" },
+          minWidth: { xs: "auto", md: "70px" },
           lineHeight: 1,
         }}
       >
@@ -33,13 +41,27 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
             color: "#fff",
           }}
         >
-          <Box component="span" sx={{ fontWeight: 800, textTransform: "uppercase" }}>
+          <Box
+            component="span"
+            sx={{ fontWeight: 800, textTransform: "uppercase" }}
+          >
             {title}
           </Box>
-          <Box component="span" sx={{ fontWeight: 400, mx: 1 }}>
+          <Box
+            component="span"
+            sx={{ fontWeight: 400, mx: 1, display: { xs: "none", md: "inline" } }}
+          >
             -
           </Box>
-          <Box component="span" sx={{ fontWeight: 400, opacity: 0.9 }}>
+          <Box
+            component="div"
+            sx={{
+              fontWeight: 400,
+              opacity: 0.9,
+              display: { xs: "block", md: "inline" },
+              mt: { xs: 1, md: 0 },
+            }}
+          >
             {description}
           </Box>
         </Typography>

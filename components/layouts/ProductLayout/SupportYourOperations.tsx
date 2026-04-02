@@ -15,10 +15,10 @@ const SupportYourOperations = () => {
       <Box sx={{ backgroundColor: COLORS.BLACK }}>
         <Box
           sx={{
-            width: { xs: "95%", md: "80%" },
+            width: { xs: "90%", md: "80%" },
             mx: "auto",
             pt: { xs: 8, md: 14 },
-            px: { xs: 2, md: 0 },
+            px: { xs: 0, md: 0 },
           }}
         >
           <Typography
@@ -27,7 +27,7 @@ const SupportYourOperations = () => {
               fontWeight: 900,
               textTransform: "uppercase",
               lineHeight: 1.15,
-              fontSize: { xs: 36, md: 48, lg: 52 },
+              fontSize: { xs: 32, md: 48, lg: 52 },
               maxWidth: 900,
             }}
           >
@@ -87,11 +87,11 @@ const SupportYourOperations = () => {
 
         <Box
           sx={{
-            width: { xs: "95%", md: "80%" },
+            width: { xs: "90%", md: "80%" },
             mx: "auto",
             position: "relative",
             zIndex: 1,
-            px: { xs: 2, md: 0 },
+            px: { xs: 0, md: 0 },
           }}
         >
           <Box
@@ -170,6 +170,7 @@ const SupportYourOperations = () => {
                   fontWeight: 700,
                   color: COLORS.WHITE,
                   mt: 0.2,
+                  whiteSpace: "nowrap",
                 }}
               >
                 {data.lifecycle.cta}
@@ -185,15 +186,18 @@ const SupportYourOperations = () => {
             <Typography
               sx={{
                 position: "absolute",
-                bottom: { xs: 60, md: 220 },
+                bottom: { xs: 30, md: 220 },
                 width: "100%",
                 textAlign: "center",
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 14, md: 24 },
+                fontSize: { xs: 10, md: 24 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.WHITE,
                 px: 2,
+                maxWidth: "90%",
+                left: "50%",
+                transform: "translateX(-50%)",
               }}
             >
               {data.lifecycle.placeholderText}

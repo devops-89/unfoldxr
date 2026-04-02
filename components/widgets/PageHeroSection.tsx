@@ -36,7 +36,7 @@ const PageHeroSection = ({
     <Box
       sx={{
         position: "relative",
-        minHeight: "100vh",
+        minHeight: { xs: "80vh", md: "100vh" },
         display: "flex",
         alignItems: "center",
         color: COLORS.WHITE,
@@ -73,11 +73,12 @@ const PageHeroSection = ({
         sx={{
           position: "relative",
           zIndex: 2,
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "100%", md: "80%" },
           mx: "auto",
-          pt: { xs: 14, md: 18 },
+          pt: { xs: 12, md: 18 },
           pb: { xs: 8, md: 12 },
           pl: { xs: 0, md: 2 },
+          px: { xs: 3, md: 0 },
         }}
       >
         {/* Outlined Title (optional — home page style) */}
@@ -85,10 +86,10 @@ const PageHeroSection = ({
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 36, md: 56, lg: 64 },
+              fontSize: { xs: 32, md: 56, lg: 64 },
               fontStyle: "normal",
               fontWeight: 900,
-              lineHeight: { xs: 1.2, md: "90px" },
+              lineHeight: { xs: "40px", md: "90px" },
               textTransform: "uppercase",
               WebkitTextStrokeWidth: { xs: "1px", md: "2px" },
               WebkitTextStrokeColor: "#FFF",
@@ -105,8 +106,8 @@ const PageHeroSection = ({
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 36, md: 56, lg: 64 },
-            lineHeight: { xs: 1.2, md: "92px" },
+            fontSize: { xs: 32, md: 56, lg: 64 },
+            lineHeight: { xs: "40px", md: "92px" },
             maxWidth: titleMaxWidth || 950,
           }}
         >

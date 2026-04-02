@@ -8,7 +8,7 @@ import WorkforceCard from "./components/WorkForce-Card";
 const WorkForce = () => {
   return (
     <Box>
-      <Container maxWidth="xl">
+      <Container maxWidth={false} disableGutters>
         <Box
           sx={{
             backgroundColor: COLORS.WHITE,
@@ -21,6 +21,8 @@ const WorkForce = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            width: { xs: "80%", md: "100%" },
+            mx: "auto",
           }}
         >
           <Box sx={{ width: "100%" }}>
@@ -59,15 +61,15 @@ const WorkForce = () => {
             {/* Cards */}
             <Grid
               container
-              sx={{ mt: { xs: 4, md: 10 } }} // 👈 reduce gap on mobile
+              sx={{ mt: { xs: 4, md: 10 } }} 
               spacing={4}
             >
               {homePage.workforce.data.map((val, i) => (
                 <Grid
-                  size={{ xs: 12, sm: 6, md: 4 }} // 👈 responsive grid
+                  size={{ xs: 12, sm: 6, md: 4 }} 
                   key={i}
                   sx={{
-                    mt: { xs: 0, md: i == 1 ? 3 : 0 }, // 👈 keep desktop offset
+                    mt: { xs: 0, md: i == 1 ? 3 : 0 }, 
                   }}
                 >
                   <WorkforceCard

@@ -4,7 +4,7 @@ import { COLORS } from "@/utils/enum";
 
 const MetricCard = ({ title, description }: PARTNERS_METRICS_CARD_PROPS) => {
   return (
-    <Box>
+    <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
       <Typography
         sx={{
           fontSize: { xs: 28, md: 44 },
@@ -24,6 +24,7 @@ const MetricCard = ({ title, description }: PARTNERS_METRICS_CARD_PROPS) => {
           lineHeight: "24px",
           fontWeight: 500,
           maxWidth: "280px",
+          mx: { xs: "auto", md: 0 },
         }}
       >
         {description}

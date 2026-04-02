@@ -29,19 +29,21 @@ const EcosystemSection = () => {
         <Box
           sx={{
             backgroundColor: "#fff",
-            borderRadius: "40px",
+            borderRadius: "20px",
             p: { xs: 4, md: 8 },
           }}
         >
           <Typography
             sx={{
               fontWeight: 900,
-              fontSize: { xs: 32, md: 48 },
+              fontSize: { xs: 26, md: 48 },
               mb: 6,
               color: "#000",
               lineHeight: 1.1,
               maxWidth: "800px",
               textTransform: "uppercase",
+              textAlign: { xs: "center", md: "left" },
+              mx: { xs: "auto", md: 0 },
             }}
           >
             {partnersPage.ecosystemSystem.heading}
@@ -53,7 +55,7 @@ const EcosystemSection = () => {
               size={{ xs: 12, md: 5 }}
             >
               <Box sx={{ display: "flex", height: "100%", position: "relative" }}>
-                <Stack spacing={3} alignItems="flex-start" sx={{ flex: 1 }}>
+                <Stack spacing={3} alignItems={{ xs: "center", md: "flex-start" }} sx={{ flex: 1 }}>
                   {data.map((item, i) => (
                     <Box
                       key={i}
@@ -106,6 +108,7 @@ const EcosystemSection = () => {
                 sx={{
                   pl: { md: 6 },
                   pt: { xs: 4, md: 0 },
+                  textAlign: { xs: "center", md: "left" },
                 }}
               >
                 <Typography
@@ -115,7 +118,8 @@ const EcosystemSection = () => {
                     lineHeight: "28px",
                     color: "#000",
                     fontWeight: 500,
-                    maxWidth: "500px",
+                    maxWidth: { xs: "100%", md: "500px" },
+                    mx: { xs: "auto", md: 0 },
                     animation: "fadeIn 0.5s ease-in-out",
                     "@keyframes fadeIn": {
                       from: { opacity: 0, transform: "translateY(10px)" },

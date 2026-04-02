@@ -45,7 +45,14 @@ const Meetava = () => {
               ))}
             </Stack>
 
-            <ContainedButton sx={{ mt: 3, width: { xs: "100%", md: "auto" } }}>
+            <ContainedButton
+              sx={{
+                mt: 3,
+                width: { xs: "100%", md: "auto" },
+                height: { xs: "45px", md: "62px" },
+                fontSize: { xs: 16, md: 23 },
+              }}
+            >
               Book a Demo Now
             </ContainedButton>
           </Grid>

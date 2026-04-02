@@ -68,44 +68,84 @@ export default function Footer() {
             justifyContent="space-between"
             sx={{ pb: { xs: 8, md: 10 }, borderBottom: "1px solid #222" }}
           >
-            {FOOTER_COLUMNS.map((column) => (
-              <Grid
-                key={column.title}
-                size={{ xs: 6, sm: 4, md: "auto" }}
-                sx={{ flex: 1, minWidth: { md: 0, xs: 120 } }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  sx={{ fontWeight: 700, mb: 1.5, color: "#ffffff" }}
+            {FOOTER_COLUMNS.map((column) => {
+              const isSingleLink =
+                column.links.length === 1 &&
+                column.links[0].label === column.title;
+
+              return (
+                <Grid
+                  key={column.title}
+                  size={{ xs: 6, sm: 4, md: "auto" }}
+                  sx={{
+                    flex: 1,
+                    minWidth: { md: 0, xs: 120 },
+                    textAlign: { xs: "center", md: "left" },
+                  }}
                 >
-                  {column.title}
-                </Typography>
-                {column.links.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    href={link.url}
-                    style={{ textDecoration: "none", display: "block" }}
-                  >
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "#efefef",
-                        mb: 0.5,
-                        fontSize: 14,
-                        opacity: 0.8,
-                        transition: "0.2s",
-                        "&:hover": {
-                          color: COLORS.PRIMARY_GREEN,
-                          opacity: 1,
-                        },
+                  {isSingleLink ? (
+                    <Link
+                      href={column.links[0].url}
+                      style={{
+                        textDecoration: "none",
+                        display: "block",
                       }}
                     >
-                      {link.label}
-                    </Typography>
-                  </Link>
-                ))}
-              </Grid>
-            ))}
+                      <Typography
+                        variant="subtitle1"
+                        sx={{
+                          fontWeight: 700,
+                          mb: 1.5,
+                          color: "#ffffff",
+                          transition: "0.2s",
+                          "&:hover": {
+                            color: COLORS.PRIMARY_GREEN,
+                          },
+                        }}
+                      >
+                        {column.title}
+                      </Typography>
+                    </Link>
+                  ) : (
+                    <>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ fontWeight: 700, mb: 1.5, color: "#ffffff" }}
+                      >
+                        {column.title}
+                      </Typography>
+                      {column.links.map((link, idx) => (
+                        <Link
+                          key={idx}
+                          href={link.url}
+                          style={{
+                            textDecoration: "none",
+                            display: "block",
+                          }}
+                        >
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: "#efefef",
+                              mb: 0.5,
+                              fontSize: 14,
+                              opacity: 0.8,
+                              transition: "0.2s",
+                              "&:hover": {
+                                color: COLORS.PRIMARY_GREEN,
+                                opacity: 1,
+                              },
+                            }}
+                          >
+                            {link.label}
+                          </Typography>
+                        </Link>
+                      ))}
+                    </>
+                  )}
+                </Grid>
+              );
+            })}
           </Grid>
 
           <Grid
@@ -115,13 +155,17 @@ export default function Footer() {
             justifyContent="space-between"
             sx={{ py: { xs: 4, md: 8 } }}
           >
-            {/* Left: Glowing Ball */}
+            {/* Left: Glowing Ball + Heading */}
             <Grid size={{ xs: 12, md: 8 }}>
-              <Stack direction="row" alignItems="center">
+              <Stack
+                direction={{ xs: "column", md: "row" }}
+                alignItems="center"
+                spacing={{ xs: 2, md: 4 }}
+              >
                 <Box
                   sx={{
-                    width: { xs: 180, sm: 240, md: 300 },
-                    height: { xs: 180, sm: 240, md: 300 },
+                    width: { xs: 280, sm: 300, md: 300 },
+                    height: { xs: 280, sm: 300, md: 300 },
                     position: "relative",
                     display: "block",
                     mx: { xs: "auto", md: 0 },
@@ -137,13 +181,13 @@ export default function Footer() {
                     unoptimized
                   />
                 </Box>
-               
+
                 <Stack
                   spacing={3}
-                  alignItems={{ xs: "center", md: "center" }}
-                  sx={{ textAlign: "center" }}
+                  alignItems={{ xs: "center", md: "flex-start" }}
+                  sx={{ textAlign: { xs: "center", md: "left" } }}
                 >
-                  <Stack spacing={1} sx={{textAlign:"left"}}>
+                  <Stack spacing={1}>
                     <Typography
                       variant="h4"
                       sx={{
@@ -171,7 +215,7 @@ export default function Footer() {
                     variant="contained"
                     sx={{
                       borderRadius: 52,
-                      alignSelf: "flex-start",
+                      alignSelf: { xs: "center", md: "flex-start" },
                       px: { lg: 6, xs: 4 },
                       py: 1.5,
                       bgcolor: "#b6ec1a",

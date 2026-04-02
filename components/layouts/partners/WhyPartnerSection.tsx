@@ -26,15 +26,16 @@ const WhyPartnerSection = () => {
             color: "#fff",
             fontSize: { xs: 32, md: 48 },
             fontWeight: 900,
-            mb: 8,
+            mb: { xs: 6, md: 8 },
             textTransform: "uppercase",
             lineHeight: 1.1,
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           {partnersPage.whyPartnerSection.heading}
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid container rowSpacing={{ xs: 12, md: 3 }} columnSpacing={3}>
           {partnersPage.whyPartnerSection.why_partner_card_data.map((card, i) => (
             <Grid size={{ xs: 12, md: 4 }} key={i}>
               <WhyPartnerCard {...card} />

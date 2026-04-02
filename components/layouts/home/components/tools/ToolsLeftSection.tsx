@@ -6,7 +6,7 @@ import { COLORS } from "@/utils/enum";
 
 const ToolsLeftSection = ({ ctaText, image }: TOOLS_LEFT_SECTION_PROPS) => {
   return (
-    <Stack spacing={{ xs: 4, md: 8 }} alignItems="flex-start">
+    <Stack spacing={{ xs: 4, md: 8 }} alignItems={{ xs: "center", md: "flex-start" }}>
       {/* CTA */}
       <ContainedButton
         sx={{

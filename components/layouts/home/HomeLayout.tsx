@@ -20,10 +20,11 @@ const HomeLayout = () => {
         sx={{
           backgroundColor: COLORS.BLACK,
           height: { xs: "auto", md: "100vh" },
-          minHeight: { xs: "auto", md: "unset" },
-          p: { xs: 2, md: 4 },
+          minHeight: { xs: "80vh", md: "unset" },
+          py: { xs: 8, md: 4 },
+          px: { xs: 2, md: 4 },
           display: "flex",
-          alignItems: { xs: "flex-start", md: "center" },
+          alignItems: "center",
           justifyContent: "center",
         }}
       >

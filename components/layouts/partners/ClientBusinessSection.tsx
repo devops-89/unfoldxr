@@ -35,6 +35,7 @@ const ClientBusinessSection = () => {
                   lineHeight: 1.1,
                   textTransform: "uppercase",
                   mb: 8,
+                  textAlign: { xs: "center", md: "left" },
                 }}
               >
                 {partnersPage.clientBusinessSection.title}

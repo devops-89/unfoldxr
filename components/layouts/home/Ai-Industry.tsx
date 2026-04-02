@@ -44,30 +44,21 @@ const AiIndustry = () => {
             {homePage.Ai_industry.description}
           </Typography>
 
-          {/* Chips */}
-          <Grid
-            container
-            spacing={2}
-            justifyContent="center"
-            sx={{ mt: { xs: 4, md: 10 } }}
+          {/* Chips - Fluid Layout */}
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: { xs: 1.5, md: 2 },
+              mt: { xs: 4, md: 10 },
+              maxWidth: "100%",
+            }}
           >
             {homePage.Ai_industry.ai_industry_data.map((val, i) => (
-              <Grid
-                key={i}
-                
-                size={{
-    xs: i === 2 ? 12 : 6,
-    sm: i === 2 ? 12 : 6,
-    md: "auto",
-  }}
-               
-              >
-                <Box display="flex" justifyContent="center">
-                  <IndustryChip img={val.img} label={val.label} />
-                </Box>
-              </Grid>
+              <IndustryChip key={i} img={val.img} label={val.label} />
             ))}
-          </Grid>
+          </Box>
 
         </Container>
       </Box>

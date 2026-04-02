@@ -31,6 +31,7 @@ const ExistingPartnersSection = () => {
             textTransform: "uppercase",
             color: "#000",
             mb: { xs: 6, md: 10 },
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           {partnersPage.existingPartnersSection.heading}
@@ -41,7 +42,7 @@ const ExistingPartnersSection = () => {
           container
           spacing={{ xs: 4, md: 8 }}
           alignItems="center"
-          justifyContent="flex-start"
+          justifyContent={{ xs: "center", md: "flex-start" }}
         >
           {partnersPage.existingPartnersSection.existing_partners_chip_data.map(
             (val, i) => (
@@ -54,7 +55,7 @@ const ExistingPartnersSection = () => {
                   lg: 2,
                 }}
               >
-                <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+                <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" } }}>
                   <ExistingPartnersChip image={val.image} />
                 </Box>
               </Grid>
