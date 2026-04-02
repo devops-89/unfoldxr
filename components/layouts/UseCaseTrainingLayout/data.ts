@@ -58,7 +58,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       title: "TRAINING, ONBOARDING & KNOWLEDGE CAPTURE",
       subtitle: "The Strongest Teams Learn In The Flow Of Work.",
       description:
-        "UnfoldXR brings AI- and augmented reality-powered intelligence into learning and capability building and makes it available right at the moment of work.",
+        "UnfoldXR brings AI- and augmented reality–powered intelligence into learning and capability building and makes it available right at the moment of work.",
       image: "/images/usecase/HeroSection.png",
     },
     knowledge: {
@@ -69,7 +69,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         "Knowledge tied to individuals leads to gaps when experienced workers leave",
       ],
       footerText:
-        "Resulting in inconsistent performance, longer training cycles, and repeated errors. UnfoldXR unifies the lifecycle - capture, structure, and apply knowledge, delivering faster learning, consistent execution, and scalable expertise.",
+        "Resulting in inconsistent performance, longer training cycles, and repeated errors. UnfoldXR unifies the lifecycle — capture, structure, and apply knowledge, delivering faster learning, consistent execution, and scalable expertise.",
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
@@ -78,7 +78,9 @@ export const useCasesData: Record<string, UseCaseData> = {
       description2:
         "Teams learn by doing, follow standardised guidance, and access critical knowledge in real time through AI Assistant, AVA or remote experts.",
       description3:
-        "With three versions designed for different stages of operational maturity UnfoldXR Augment, UnfoldXR Empower, and UnfoldXR Edge the platform scales with your organization. Start with structured digital guidance and grow into intelligent, AI-driven workforce enablement when you are ready.",
+        "With three versions designed for different stages of operational maturity — UnfoldXR Augment, UnfoldXR Empower, and UnfoldXR Edge — the platform scales with your organization.",
+      description4:
+        "Start with structured digital guidance and grow into intelligent, AI-driven workforce enablement when you are ready.",
       image: "/images/usecase/TabImage.png",
     },
     capabilities: {
@@ -123,44 +125,56 @@ export const useCasesData: Record<string, UseCaseData> = {
       ],
     },
     businessResults: {
-      title: "Business Results You Can Measure",
+      title: "BUSINESS RESULTS YOU CAN MEASURE",
       items: [
         {
-          title: "Accelerated time to productivity",
+          title: "Accelerated Time to Productivity",
           description:
-            "On-the-job AR-guided training and structured digital workflows reduce onboarding time by 40–60%, helping new hires become productive 30–50% faster than...",
+            "On-the-job AR-guided training and structured digital workflows reduce onboarding time by 40–60%, helping new hires become productive 30–50% faster than traditional methods.",
         },
         {
-          title: "Zero knowledge loss",
+          title: "Zero Knowledge Loss",
           description:
             "Digitizing expert processes ensures up to 100% of critical know-how is captured and retained within the organization, even as teams transition.",
         },
         {
-          title: "Consistent, Sop-aligned training",
+          title: "Consistent, SOP-Aligned Training",
           description:
-            "Standardized digital workflows maintain 100% alignment with operating procedures across sites and shifts increasing operational...",
+            "Standardized digital workflows maintain 100% alignment with operating procedures across sites and shifts increasing operational efficiency & reducing Turn-Around Time (TAT). With AVA’s (AI Virtual Assistance) support technician efficiency improves by 20–30%.",
         },
         {
-          title: "Greater skill confidence in the field",
+          title: "Greater Skill Confidence in the Field",
           description:
-            "AVA's (AI Virtual Assistant) assistance and live AR expert support at the moment of work, reduce troubleshooting time by 40–60%, enabling technicians...",
+            "AVA’s (AI Virtual Assistant) assistance and live AR expert support at the moment of work, reduce troubleshooting time by 40–60%, enabling technicians to perform accurately with less supervision.",
         },
         {
-          title: "Lower training & support costs",
+          title: "Lower Training & Support Costs",
           description:
-            "Remote collaboration and digital workflows reduce the need for repeated in-person sessions, while faster access to manuals and SOPs saves 30–50% of time.",
+            "Remote collaboration and digital workflows reduce the need for repeated in-person sessions, while faster access to manuals and SOPs saves 30–50% of time typically spent searching for information.",
         },
         {
-          title: "Measurable competency & audit readiness",
+          title: "Measurable Competency & Audit Readiness",
           description:
-            "Real-time performance tracking and evidence capture provide objective skill validation and compliance-ready documentation...",
+            "Real-time performance tracking and evidence capture provide objective skill validation and compliance-ready documentation.",
         },
       ],
     },
     industry: {
-      title: "One AI Platform, Any Industry",
+      title: "Built for Industries with Knowledge-Intensive Operations",
       subtitle:
-        "UnfoldXR enhances skilled operations, on-ground executions & real-time decision-making",
+        "UNFOLDXR enhances skilled operations, on-ground executions & real-time decision-making",
+      customIndustries: [
+        { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "AUTOMOTIVE", img: "/images/banner/homePage/ai-industry/automotive.png" },
+        { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
+        { label: "HEALTHCARE", img: "/images/banner/homePage/ai-industry/healthcare.png" },
+        { label: "AVIATION (MRO)", img: "/images/banner/homePage/ai-industry/aviation.png" },
+        { label: "LOGISTICS", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "CONSTRUCTION", img: "/images/banner/homePage/ai-industry/construction.png" },
+        { label: "HOSPITALITY", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "FIELD SERVICE", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" },
+      ],
     },
     deviceDeployment: {
       title: "Device & Deployment",
@@ -185,10 +199,10 @@ export const useCasesData: Record<string, UseCaseData> = {
       description1:
         "UnfoldXR unifies knowledge capture, training delivery, real-time guidance, and performance tracking into one continuous system. By embedding AI and augmented reality into everyday work, it transforms learning from a one-time event into an ongoing, measurable capability.",
       description2:
-        "This is the future of workforce development practical, embedded, and built for real operations.",
+        "This is the future of workforce development — practical, embedded, and built for real operations.",
     },
     finalCTA: {
-      title: "TURN EXPERTISE INTO SCALABLE CAPABILITY.",
+      title: "Turn expertise into scalable capability.",
       subtitle: "Train faster. Perform better. Retain knowledge.",
     },
   },
@@ -201,24 +215,25 @@ export const useCasesData: Record<string, UseCaseData> = {
       image: "/images/usecase/Inspection/Hero-section.png",
     },
     knowledge: {
-      title: "MAKE COMPLIANCE STRUCTURED AND AUDIT-READY",
+      title: "WITH UNFOLDXR, MAKE COMPLIANCE STRUCTURED AND AUDIT-READY",
       layout: "stacked",
       items: [
-        "Inspection and compliance are non-negotiable. They ensure safety, regulatory adherence, and safeguard operational reputation.",
-        "Yet across industries, inspections are still driven by manual checklists, paper-based records, disconnected systems, and documentation. This leads to inconsistent audits, missed defects, reactive compliance management, and financial penalties.",
-        "Unlike tools that only digitize forms, UnfoldXR embeds intelligence into the entire inspection lifecycle — from task assignment and AI-guided inspection to automated evidence capture and performance analytics. The result is structured, consistent, and traceable quality control at scale.",
+        "Delay in inspection or compliance failure create safety risk, regulatory challenges, and operational hazard",
+        "Manual processes like checklists, paper records, and disconnected systems slow inspections",
+        "Inconsistent execution leads to missed defects and reactive compliance",
       ],
-      footerText: "",
+      footerText:
+        "Resulting in audit gaps, penalties, and poor traceability. UnfoldXR unifies the entire lifecycle — assign, inspect, capture, and report, making compliance structured, traceable, and effortless.",
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
       layout: "side-by-side",
       description1:
-        "UnfoldXR enables organizations to run inspections with greater precision and lower risk.",
+        "UnfoldXR enables organizations to run inspections with greater precision and lower risk. AI and augmented reality guide frontline teams through structured, context-aware inspection workflows aligned to the asset, regulation, or quality standard.",
       description2:
-        "AI and augmented reality guide frontline teams through structured, context-aware inspection workflows aligned to the asset, regulation, or quality standard.",
+        "Evidence is captured in real time, reports are generated automatically, and deviations are identified instantly — helping teams stay compliant and audit-ready at all times.",
       description3:
-        "Evidence is captured in real time, reports are generated automatically, and deviations are identified instantly helping teams stay compliant and audit-ready at all times. With three versions designed for different stages of operational maturity",
+        "With three versions designed for different stages of operational maturity — UnfoldXR Augment, UnfoldXR Empower, and UnfoldXR Edge —",
       description4:
         "organizations can start with standardized digital inspections and scale into AI-driven predictive quality and compliance intelligence.",
       cards: [
@@ -242,47 +257,58 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "INTELLIGENT INSPECTION PLANNING & ROSTERING",
-          description: "Automatically assign inspections based on compliance schedules, asset criticality, skill levels, and location.",
+          description:
+            "Automatically assign inspections based on compliance schedules, asset criticality, skill levels, and location.",
         },
         {
           title: "CONTEXT-AWARE DIGITAL CHECKLISTS",
-          description: "Deliver guided, SOP-aligned inspection workflows specific to assets, regulations, and quality standards and enable hands-free inspection.",
+          description:
+            "Deliver guided, SOP-aligned inspection workflows specific to assets, regulations, and quality standards and enable hands-free inspection.",
         },
         {
           title: "SMART SCAN & ASSET RECOGNITION",
-          description: "Instantly identify equipment through QR or visual recognition to access inspection history and compliance records.",
+          description:
+            "Instantly identify equipment through QR or visual recognition to access inspection history and compliance records.",
         },
         {
           title: "AI-GUIDED VALIDATION (AVA)",
-          description: "Provide real-time recommendations, flag anomalies, and assist decision-making during inspections.",
+          description:
+            "Provide real-time recommendations, flag anomalies, and assist decision-making during inspections.",
         },
         {
           title: "EVIDENCE CAPTURE & AUTO-DOCUMENTATION",
-          description: "Capture photos, videos, annotations, and notes with automatic generation of compliance-ready reports.",
+          description:
+            "Capture photos, videos, annotations, and notes with automatic generation of compliance-ready reports.",
         },
         {
           title: "GEO-TAGGED & TIME-STAMPED VERIFICATION",
-          description: "Ensure inspections are completed at the correct location with verifiable digital audit trails.",
+          description:
+            "Ensure inspections are completed at the correct location with verifiable digital audit trails.",
         },
         {
           title: "AR-BASED MEASUREMENT & VISUAL GUIDANCE",
-          description: "Enable precise measurements and overlay-based inspection assistance to reduce manual errors.",
+          description:
+            "Enable precise measurements and overlay-based inspection assistance to reduce manual errors.",
         },
         {
           title: "DEVIATION REPORTING & ESCALATION",
-          description: "Instantly report faults or compliance gaps to trigger corrective workflows.",
+          description:
+            "Instantly report faults or compliance gaps to trigger corrective workflows.",
         },
         {
           title: "OFFLINE-READY EXECUTION",
-          description: "Conduct inspections seamlessly in low or no-connectivity environments.",
+          description:
+            "Conduct inspections seamlessly in low or no-connectivity environments.",
         },
         {
           title: "CONTINUOUS QUALITY INTELLIGENCE",
-          description: "Every inspection strengthens future workflows, identifies patterns, and improves preventive controls.",
+          description:
+            "Every inspection strengthens future workflows, identifies patterns, and improves preventive controls.",
         },
         {
           title: "DEVICE-AGNOSTIC DEPLOYMENT",
-          description: "Accessible on mobile phones, tablets, and smart glasses, from simple devices to advanced AR wearables.",
+          description:
+            "Accessible on mobile phones, tablets, and smart glasses, from simple devices to advanced AR wearables.",
         },
       ],
     },
@@ -291,44 +317,50 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "Higher Compliance Accuracy",
-          description: "AI-guided checklists and built-in SOP validation reduce inspection errors by up to 50% and cut missed defects by 50-70%. Hands-free AR inspections also reduce inspection time by 25%.",
+          description:
+            "AI-guided checklists and built-in SOP validation reduce inspection errors by up to 50% and cut missed defects by 50-70%. Hands-free AR inspections also reduce inspection time by 30-50%.",
         },
         {
           title: "Audit-Ready Documentation",
-          description: "Real-time, geo-tagged evidence capture ensures 100% in-field compliance records. Automated reporting reduces documentation time from hours to minutes.",
+          description:
+            "Real-time, geo-tagged evidence capture ensures 100% in-field compliance records. Automated reporting reduces documentation time from hours to minutes.",
         },
         {
           title: "Reduced Inspection Time",
-          description: "Structured workflows and instant asset access reduce inspection duration by 30-40%. Quick Scan and digital records help inspectors find information up to 3x faster.",
+          description:
+            "Structured workflows and instant asset access reduce inspection duration by 30-40%. Quick Scan and digital records help inspectors find information up to 3x faster, cutting manual search time by 70%.",
         },
         {
           title: "Fewer Compliance Violations",
-          description: "Predictive insights and standardized inspection controls help prevent 25-30% of recurring non-conformities, reducing regulatory exposure and corrective costs.",
+          description:
+            "Predictive insights and standardized inspection controls help prevent 25-30% of recurring non-conformities, reducing regulatory exposure and corrective actions.",
         },
         {
           title: "Consistent Quality Across Locations",
-          description: "Digitally standardized inspection processes ensure uniform quality benchmarks across sites, shifts, and teams, eliminating variability in execution.",
+          description:
+            "Digitally standardized inspection processes ensure uniform quality benchmarks across sites, shifts, and teams, eliminating variability in execution.",
         },
         {
           title: "Lower Operational Risk",
-          description: "Real-time deviation alerts and proactive escalation workflows minimize regulatory penalties, safety risks, and operational disruptions before they escalate.",
+          description:
+            "Real-time deviation alerts and proactive escalation workflows minimize regulatory penalties, safety risks, and operational disruptions before they escalate.",
         },
       ],
     },
     industry: {
-      title: "ONE AI PLATFORM, ANY INDUSTRY",
+      title: "Built for Industries with High Compliance & Quality Standards",
       subtitle: "UNFOLDXR enhances skilled operations, on-ground executions & real-time decision-making",
       customIndustries: [
-        { label: "AUTOMOTIVE", img: "/images/banner/homePage/ai-industry/automotive.png" },
+        { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "PHARMACEUTICALS", img: "/images/banner/homePage/ai-industry/healthcare.png" },
         { label: "HEALTHCARE", img: "/images/banner/homePage/ai-industry/healthcare.png" },
-        { label: "CONSTRUCTION", img: "/images/banner/homePage/ai-industry/construction.png" },
-        { label: "LOGISTICS", img: "/images/banner/homePage/ai-industry/logistics.png" },
         { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
-        { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" }, 
-        { label: "AVIATION", img: "/images/banner/homePage/ai-industry/aviation.png" },
-        { label: "FOOD & BEVERAGE", img: "/images/banner/homePage/ai-industry/logistics.png" }, 
-        { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" }, 
-        { label: "PHARMACEUTICALS", img: "/images/banner/homePage/ai-industry/healthcare.png" }, 
+        { label: "AVIATION (MRO)", img: "/images/banner/homePage/ai-industry/aviation.png" },
+        { label: "CONSTRUCTION", img: "/images/banner/homePage/ai-industry/construction.png" },
+        { label: "ENERGY & UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "LOGISTICS", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "AUTOMOTIVE", img: "/images/banner/homePage/ai-industry/automotive.png" },
+        { label: "FOOD & BEVERAGE", img: "/images/banner/homePage/ai-industry/logistics.png" },
       ],
     },
     deviceDeployment: {
@@ -349,7 +381,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     platformSummary: {
       title: "ONE PLATFORM FOR INSPECTION TO COMPLIANCE",
       description1:
-        "This is the future of compliance and quality control where technology handles inspection and compliance intelligently, allowing humans to focus on higher-value work.",
+        "This is the future of compliance and quality control — where technology handles inspection and compliance intelligently, allowing humans to focus on higher-value work.",
       description2:
         "UnfoldXR unifies inspection workflows, compliance documentation, asset history, and quality analytics into one connected platform. By embedding AI and augmented reality into every verification step, quality becomes proactive, measurable, and built into daily operations.",
     },
@@ -367,26 +399,25 @@ export const useCasesData: Record<string, UseCaseData> = {
       image: "/images/usecase/Maintenance/HeroSection.png",
     },
     knowledge: {
-      title: "CHOOSE SMART MAINTENANCE, FROM PLANNING TO EXECUTION",
+      title: "WITH UNFOLDXR, CHOOSE SMARTER MAINTENANCE FROM PLANNING TO EXECUTION",
       layout: "stacked",
       items: [
-        "Repair and maintenance are fundamental, recurring activities that keep operations running every day. They consume significant time across planning, assigning, tracking, and ensuring tasks are completed on schedule.",
-        "The quality and consistency of maintenance directly determine how many faults can be prevented which impacts downtime, productivity, and overall operational cost.",
-        "In many industries, these processes still rely on manual coordination, scattered records, and inconsistent execution.",
-        "Unlike most platforms, we don't deal with one particular issue. We address the whole process by bringing a comprehensive, end-to-end layer of intelligence to the maintenance lifecycle, making execution faster, more accurate, and consistently SOP-driven.",
+        "Poor planning and execution in repair and maintenance increases downtime and costs",
+        "Manual coordination, scattered records, and disconnected systems slow planning and execution",
+        "Inconsistent processes lead to missed schedules, repeat issues, and reduced efficiency",
       ],
-      footerText: "",
+      footerText: "Resulting in downtime, higher costs, and unreliable maintenance outcomes. UnfoldXR unifies the entire lifecycle — plan, assign, execute, and track, delivering faster, more accurate, and consistently standardised maintenance.",
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
       layout: "side-by-side",
       description1:
         "With UnfoldXR, AI and augmented reality touches the 80% workforce at the frontlines who are still not receiving the technological support they need to augment their productivity.",
-      description2: "",
+      description2: "Coordination becomes simpler. Tasks are executed with higher accuracy. Work stays consistent and reliable across sites, shifts, and teams.",
       description3:
-        "Coordination becomes simpler. Tasks are executed with higher accuracy. Work stays consistent and reliable across sites, shifts, and teams. With three versions designed for different stages of operational maturity -",
+        "With three versions designed for different stages of operational maturity - UnfoldXR Augment, UnfoldXR Empower, UnfoldXR Edge - we scale with your requirements.",
       description4:
-        "we scale with your requirements. Start where you are today, knowing the platform is ready to grow with you from day one.",
+        "Start where you are today, knowing the platform is ready to grow with you from day one.",
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
@@ -457,11 +488,11 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "Reduced Unplanned Downtime",
-          description: "Smart CMMS integration routes tickets with near 100% accuracy, while digital machine profiles and predictive alerts help prevent 25–30% of unplanned failures.",
+          description: "Smart CMMS integration routes tickets with near 100% accuracy, while digital machine profiles and predictive alerts help prevent 25–30% of unexpected failures.",
         },
         {
           title: "Higher First-Time Fix Rates",
-          description: "AI-guided workflows reduce errors and rework by up to 50%, improving first-time-right maintenance outcomes.",
+          description: "AI-guided workflows reduce errors and rework by up to 50%, improving first-time-right performance across teams.",
         },
         {
           title: "Faster Maintenance Turnaround",
@@ -469,7 +500,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         },
         {
           title: "Lower Dependency On On-Site Experts",
-          description: "Remote collaboration and AI assistance reduce physical expert visits while maintaining high execution standards.",
+          description: "Remote collaboration and AI assistance reduce physical expert visits while maintaining high-quality outcomes.",
         },
         {
           title: "Improved Compliance And Audit Readiness",
@@ -482,13 +513,18 @@ export const useCasesData: Record<string, UseCaseData> = {
       ],
     },
     industry: {
-      title: "ONE AI PLATFORM, ANY INDUSTRY",
+      title: "Built for Industries with Asset-Intensive Operations",
       subtitle: "UNFOLDXR enhances maintenance operations & real-time asset management",
       customIndustries: [
-        { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" },
-        { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "AUTOMOTIVE", img: "/images/banner/homePage/ai-industry/automotive.png" },
         { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
-        { label: "AVIATION", img: "/images/banner/homePage/ai-industry/aviation.png" },
+        { label: "HEALTHCARE", img: "/images/banner/homePage/ai-industry/healthcare.png" },
+        { label: "FIELD SERVICE SUPPORT", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "AVIATION (MRO)", img: "/images/banner/homePage/ai-industry/aviation.png" },
+        { label: "CONSTRUCTION", img: "/images/banner/homePage/ai-industry/construction.png" },
+        { label: "HOSPITALITY", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "LOGISTICS", img: "/images/banner/homePage/ai-industry/logistics.png" },
+        { label: "INSURANCE", img: "/images/banner/homePage/ai-industry/logistics.png" },
       ],
     },
     deviceDeployment: {

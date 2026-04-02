@@ -45,7 +45,7 @@ const FutureWork = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            borderRadius: "39px",
+            borderRadius: "15px",
             py: { xs: 6, md: 10 },
           }}
         >

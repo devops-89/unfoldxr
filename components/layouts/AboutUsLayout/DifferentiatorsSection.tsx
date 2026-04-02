@@ -11,7 +11,7 @@ const DifferentiatorsSection = () => {
       sx={{
         bgcolor: COLORS.BLACK,
         color: COLORS.WHITE,
-        pt: 0,
+        pt: 10,
         pb: { xs: 8, md: 15 },
         overflow: "hidden",
       }}

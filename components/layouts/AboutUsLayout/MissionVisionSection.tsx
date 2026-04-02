@@ -1,18 +1,35 @@
-import { Card, CardContent, Container, Grid, Typography, Box } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Typography,
+  Box,
+} from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 const MissionVisionSection = () => {
   const { missionVisionSection: data } = aboutPage;
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
-      <Container maxWidth={false} sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
+    <Box
+      sx={{
+        bgcolor: COLORS.BLACK,
+        color: COLORS.WHITE,
+        pt: { xs: 8, md: 10 },
+        pb: { xs: 12, md: 24 },
+      }}
+    >
+      <Container
+        maxWidth={false}
+        sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
+      >
         <Typography
           sx={{
             fontSize: { xs: 24, md: 32 },
             fontWeight: 700,
             mb: 1.5,
-            fontFamily: din.style.fontFamily
+            fontFamily: din.style.fontFamily,
           }}
         >
           {data.title}
@@ -25,7 +42,7 @@ const MissionVisionSection = () => {
             color: COLORS.PRIMARY_GREEN,
             fontWeight: 900,
             maxWidth: 1488,
-            fontFamily: din.style.fontFamily
+            fontFamily: din.style.fontFamily,
           }}
         >
           {data.heading}
@@ -37,7 +54,7 @@ const MissionVisionSection = () => {
             fontSize: { xs: 20, md: 25 },
             lineHeight: { xs: 1.25, md: "1.4" },
             fontFamily: helvetica.style.fontFamily,
-            fontWeight: 400
+            fontWeight: 400,
           }}
         >
           {data.subHeading}
@@ -51,7 +68,7 @@ const MissionVisionSection = () => {
             maxWidth: 1661,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <Typography
@@ -61,7 +78,7 @@ const MissionVisionSection = () => {
               fontFamily: helvetica.style.fontFamily,
               color: COLORS.TEXT_GREY,
               textAlign: "justify",
-              fontWeight: 400
+              fontWeight: 400,
             }}
           >
             {data.description}
@@ -73,7 +90,7 @@ const MissionVisionSection = () => {
             fontWeight: 700,
             mt: 10,
             mb: 4,
-            fontFamily: din.style.fontFamily
+            fontFamily: din.style.fontFamily,
           }}
         >
           {data.brandDnaTitle}
@@ -92,7 +109,7 @@ const MissionVisionSection = () => {
                   flexDirection: "column",
                   minHeight: { md: 250 },
                   justifyContent: "space-between",
-                  gap: 2
+                  gap: 2,
                 }}
               >
                 <Typography
@@ -101,7 +118,7 @@ const MissionVisionSection = () => {
                     color: COLORS.TEXT_GREY,
                     lineHeight: { xs: 1.35, md: "28px" },
                     fontFamily: helvetica.style.fontFamily,
-                    textAlign: "justify"
+                    textAlign: "justify",
                   }}
                 >
                   {item.description}
@@ -112,7 +129,7 @@ const MissionVisionSection = () => {
                     fontWeight: 700,
                     lineHeight: 1,
                     fontFamily: din.style.fontFamily,
-                    textTransform: "uppercase"
+                    textTransform: "uppercase",
                   }}
                 >
                   {item.title}
@@ -127,4 +144,3 @@ const MissionVisionSection = () => {
 };
 
 export default MissionVisionSection;
-

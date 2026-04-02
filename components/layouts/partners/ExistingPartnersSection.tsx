@@ -6,59 +6,62 @@ import ExistingPartnersChip from "./components/ExistingPartnersChip";
 
 const ExistingPartnersSection = () => {
   return (
-    <Box>
-      <Box
+    <Box
+      sx={{
+        backgroundColor: "#fff",
+        minHeight: { md: "85vh" },
+        display: "flex",
+        alignItems: "center",
+        py: { xs: 8, md: 0 },
+      }}
+    >
+      <Container
+        maxWidth={false}
         sx={{
-          height: { xs: "auto", md: "70vh" },
-          display: "flex",
-          alignItems: { xs: "flex-start", md: "center" },
-          justifyContent: "center",
-          py: { xs: 6, md: 0 },
+          width: { xs: "95%", md: "90%", lg: "80%" },
+          mx: "auto",
         }}
       >
-        <Container maxWidth="lg">
-          
-          {/* Heading */}
-          <Typography
-            sx={{
-              fontFamily: din.style.fontFamily,
-              fontSize: { xs: 20, md: 40 },
-              textTransform: "uppercase",
-              fontWeight: 900,
-              color:"#000000"
-            }}
-          >
-            {partnersPage.existingPartnersSection.heading}
-          </Typography>
+        {/* Heading */}
+        <Typography
+          sx={{
+            fontWeight: 900,
+            fontSize: { xs: 32, md: 50 },
+            lineHeight: 1.1,
+            textTransform: "uppercase",
+            color: "#000",
+            mb: { xs: 6, md: 10 },
+          }}
+        >
+          {partnersPage.existingPartnersSection.heading}
+        </Typography>
 
-          
-          {/* Chips */}
-          <Grid
-            container
-            spacing={2}
-            justifyContent="center"
-            sx={{ mt: { xs: 2, md: 5 } }}
-          >
-            {partnersPage.existingPartnersSection.existing_partners_chip_data.map((val, i) => (
+        {/* Logos Grid */}
+        <Grid
+          container
+          spacing={{ xs: 4, md: 8 }}
+          alignItems="center"
+          justifyContent="flex-start"
+        >
+          {partnersPage.existingPartnersSection.existing_partners_chip_data.map(
+            (val, i) => (
               <Grid
                 key={i}
-                
                 size={{
-    xs: i === 2 ? 12 : 6,
-    sm: i === 2 ? 12 : 6,
-    md: "auto",
-  }}
-               
+                  xs: 6,
+                  sm: 4,
+                  md: 3,
+                  lg: 2,
+                }}
               >
-                <Box display="flex" justifyContent="center">
-                  <ExistingPartnersChip image={val.image}  />
+                <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+                  <ExistingPartnersChip image={val.image} />
                 </Box>
               </Grid>
-            ))}
-          </Grid>
-
-        </Container>
-      </Box>
+            )
+          )}
+        </Grid>
+      </Container>
     </Box>
   );
 };

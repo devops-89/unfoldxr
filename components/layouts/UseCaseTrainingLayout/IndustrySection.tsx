@@ -32,7 +32,7 @@ const IndustrySection = ({ data }: Props) => {
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 18, lg: 20 },
-            color: COLORS.OVERLAY_06,
+            color: COLORS.BLACK,
             maxWidth: 800,
             mx: "auto",
             mb: { xs: 6, md: 10 },

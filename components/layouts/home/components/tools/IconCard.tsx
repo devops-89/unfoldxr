@@ -32,19 +32,19 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
       <Box sx={{ position: "relative", width: "100%", height: "100%", mt: 2 }}>
         {card.icons.map((icon, i) => {
           const positions = [
-            { top: "30%", left: "50%", size: 56, bg: "transparent" }, 
-            { top: "65%", left: "20%", size: 56, bg: "transparent" }, 
-            { top: "70%", left: "80%", size: 56, bg: "transparent" }, 
+            { top: "30%", left: "50%", size: 100, bg: "transparent" }, 
+            { top: "65%", left: "20%", size: 100, bg: "transparent" }, 
+            { top: "70%", left: "80%", size: 100, bg: "transparent" }, 
           ];
           
-          const pos = positions[i] || { top: "50%", left: "50%", size: 56, bg: "transparent" };
+          const pos = positions[i] || { top: "50%", left: "50%", size: 100, bg: "transparent" };
 
           return (
             <Box
               key={i}
               sx={{
-                width: { xs: 44, md: pos.size },
-                height: { xs: 44, md: pos.size },
+                width: { xs: 70, md: pos.size },
+                height: { xs: 70, md: pos.size },
                 borderRadius: "50%",
                 backgroundColor: pos.bg,
                 display: "flex",
@@ -56,7 +56,10 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              <Image src={icon} alt="Tools layout icon" width={40} height={40} />
+              {/* Force image to fill its larger container */}
+              <Box sx={{ position: "relative", width: "80%", height: "80%" }}>
+                <Image src={icon} alt="Tools layout icon" fill style={{ objectFit: 'contain' }} />
+              </Box>
             </Box>
           );
         })}

@@ -8,33 +8,13 @@ import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 
-const points = [
-  {
-    title: "Seamless system integration",
-    desc: "Integrates with internal systems like core enterprise systems, CMMS, analytics & BI, IAM etc for user provisioning, data sync, and secure access control.",
-    icon: <IntegrationInstructionsRoundedIcon sx={{ fontSize: 24 }} />,
-  },
-  {
-    title: "Structured governance setup",
-    desc: "Role-based permissions and organization-level controls ensure compliant, scalable deployment.",
-    icon: <AccountTreeRoundedIcon sx={{ fontSize: 24 }} />,
-  },
-  {
-    title: "Rapid configuration",
-    desc: "No-code workflow builder with centralized master setup for assets, processes, and task flows.",
-    icon: <SettingsSuggestRoundedIcon sx={{ fontSize: 24 }} />,
-  },
-  {
-    title: "Multi-device deployment",
-    desc: "Native mobile, tablet, web, and smart glasses support — ready for immediate rollout across teams.",
-    icon: <DevicesRoundedIcon sx={{ fontSize: 24 }} />,
-  },
-  {
-    title: "Device procurement support",
-    desc: "As authorized resellers for all major brands, we also handle hardware and device procurement ensuring a seamless and fully compatible deployment experience.",
-    icon: <HandymanRoundedIcon sx={{ fontSize: 24 }} />,
-  },
-];
+const ICON_MAP: Record<string, React.ReactNode> = {
+  integration: <IntegrationInstructionsRoundedIcon sx={{ fontSize: 24 }} />,
+  governance: <AccountTreeRoundedIcon sx={{ fontSize: 24 }} />,
+  config: <SettingsSuggestRoundedIcon sx={{ fontSize: 24 }} />,
+  devices: <DevicesRoundedIcon sx={{ fontSize: 24 }} />,
+  procurement: <HandymanRoundedIcon sx={{ fontSize: 24 }} />,
+};
 
 const EnterpriseReady = () => {
   const data = homePage.productPage.enterpriseReady;
@@ -57,9 +37,9 @@ const EnterpriseReady = () => {
         sx={{
           position: "absolute",
           left: 0,
-          top: { xs: 0, md: 100 },
-          width: { xs: "100%", md: "35%" },
-          height: { xs: 260, md: "75%" },
+          top: { xs: 0, md: 50 },
+          width: { xs: "100%", md: "26%" },
+          height: { xs: 260, md: "85%" },
           objectFit: "cover",
           opacity: { xs: 0.26, md: 0.9 },
           pointerEvents: "none",
@@ -98,11 +78,11 @@ const EnterpriseReady = () => {
             </Typography>
 
             <Grid container spacing={{ xs: 4, md: 6 }}>
-              {points.map((point) => (
+              {(data.points as any[]).map((point) => (
                 <Grid key={point.title} size={{ xs: 12, sm: 6 }}>
                   <Box sx={{ display: "flex", gap: 2 }}>
                     <Box sx={{ color: COLORS.PRIMARY_GREEN, mt: 0.5 }}>
-                      {point.icon}
+                      {ICON_MAP[point.icon]}
                     </Box>
                     <Box>
                       <Typography

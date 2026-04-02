@@ -1,9 +1,9 @@
 import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { DEVICES_SECTION_DATA_PROPS } from "@/utils/types";
-import { Circle } from "@mui/icons-material";
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
+import StylizedDivider from "@/components/widgets/StylizedDivider";
 
 interface DevicesCardProps extends DEVICES_SECTION_DATA_PROPS {
   isFirst?: boolean;
@@ -69,17 +69,7 @@ const DevicesCard = ({
         </Typography>
 
         {/* Divider + dot */}
-        <Stack direction="row" alignItems="center" spacing={1} sx={{ my: 1.5 }}>
-          <Divider
-            sx={{
-              backgroundColor: accentColor,
-              borderWidth: "2px",
-              width: { xs: "50px", md: "60px" },
-              borderRadius: "30px",
-            }}
-          />
-          <Circle sx={{ color: accentColor, fontSize: 6 }} />
-        </Stack>
+        <StylizedDivider color={accentColor} />
 
         {/* Description */}
         <Typography

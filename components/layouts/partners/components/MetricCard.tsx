@@ -7,9 +7,10 @@ const MetricCard = ({ title, description }: PARTNERS_METRICS_CARD_PROPS) => {
     <Box>
       <Typography
         sx={{
-          fontSize: { xs: 22, md: 28 },
-          fontWeight: 800,
+          fontSize: { xs: 28, md: 44 },
+          fontWeight: 900,
           color: COLORS.PRIMARY_GREEN,
+          lineHeight: 1,
         }}
       >
         {title}
@@ -17,10 +18,12 @@ const MetricCard = ({ title, description }: PARTNERS_METRICS_CARD_PROPS) => {
 
       <Typography
         sx={{
-          fontSize: { xs: 14, md: 16 },
-          color: "#555",
-          mt: 1,
+          fontSize: { xs: 15, md: 17 },
+          color: COLORS.BLACK,
+          mt: 2,
           lineHeight: "24px",
+          fontWeight: 500,
+          maxWidth: "280px",
         }}
       >
         {description}

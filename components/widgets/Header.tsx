@@ -10,6 +10,7 @@ import {
   IconButton,
   Drawer,
   Collapse,
+  Popover,
 } from "@mui/material";
 import React, { useState } from "react";
 import logo from "@/images/logo/logo.png";
@@ -23,10 +24,21 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
   const pathname = usePathname();
+
+  const handleOpenPopover = (event: React.MouseEvent<HTMLElement>, label: string) => {
+    setAnchorEl(event.currentTarget);
+    setActiveMenu(label);
+  };
+
+  const handleClosePopover = () => {
+    setAnchorEl(null);
+    setActiveMenu(null);
+  };
 
   return (
     <Box>
@@ -83,8 +95,6 @@ const Header = () => {
               {HEADER_LINKS.map((val, i) => (
                 <Box
                   key={i}
-                  onMouseEnter={() => val.subLinks && setActiveMenu(val.label)}
-                  onMouseLeave={() => setActiveMenu(null)}
                   sx={{
                     height: "100%",
                     display: "flex",
@@ -95,11 +105,13 @@ const Header = () => {
                   {val.subLinks ? (
                     <Box sx={{ height: "100%", display: "flex", alignItems: "center" }}>
                       <Box
+                        onMouseEnter={(e) => handleOpenPopover(e, val.label)}
                         sx={{
                           display: "flex",
                           alignItems: "center",
                           cursor: "pointer",
                           gap: 0.5,
+                          py: 0.5, // Small padding for better UX but much less than full height
                         }}
                       >
                         <Typography
@@ -122,63 +134,75 @@ const Header = () => {
                         />
                       </Box>
 
-                      {/* Custom Dropdown Box (Attached with no gap) */}
-                      <Box
+                      {/* MUI Popover */}
+                      <Popover
+                        open={activeMenu === val.label}
+                        anchorEl={anchorEl}
+                        onClose={handleClosePopover}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "center",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "center",
+                        }}
+                        slotProps={{
+                          paper: {
+                            onMouseLeave: handleClosePopover,
+                            sx: {
+                              mt: 1.5,
+                              minWidth: 220,
+                              borderRadius: "24px",
+                              boxShadow: "0px 20px 40px rgba(0,0,0,0.1)",
+                              border: "none",
+                              bgcolor: "white",
+                              overflow: "hidden",
+                              p: 1.5,
+                            },
+                          },
+                        }}
+                        disableRestoreFocus
                         sx={{
-                          position: "absolute",
-                          top: "100%",
-                          left: "50%",
-                          transform: "translateX(-50%)",
-                          pt: 1,
-                          visibility: activeMenu === val.label ? "visible" : "hidden",
-                          opacity: activeMenu === val.label ? 1 : 0,
-                          transition: "all 0.2s ease-in-out",
-                          zIndex: 10000,
+                          pointerEvents: "none",
+                          "& .MuiPopover-paper": {
+                            pointerEvents: "auto",
+                          },
                         }}
                       >
-                        <Box
-                          sx={{
-                            minWidth: 220,
-                            borderRadius: "16px",
-                            boxShadow: "0px 8px 32px rgba(0,0,0,0.12)",
-                            border: "1px solid rgba(0,0,0,0.08)",
-                            bgcolor: "white",
-                            overflow: "hidden",
-                            p: 1,
-                          }}
-                        >
-                          {val.subLinks.map((sub, idx) => (
-                            <Link
-                              key={idx}
-                              href={sub.url}
-                              style={{ textDecoration: "none", display: "block" }}
+                        {val.subLinks.map((sub, idx) => (
+                          <Link
+                            key={idx}
+                            href={sub.url}
+                            style={{ textDecoration: "none", display: "block" }}
+                            onClick={handleClosePopover}
+                          >
+                            <Box
+                              sx={{
+                                py: 1.5,
+                                px: 2,
+                                borderRadius: "12px",
+                                transition: "0.2s",
+                                "&:hover": {
+                                  bgcolor: "rgba(197, 255, 46, 0.15)",
+                                },
+                              }}
                             >
-                              <Box
+                              <Typography
                                 sx={{
-                                  py: 1.2,
-                                  px: 2,
-                                  borderRadius: "8px",
-                                  transition: "0.2s",
-                                  "&:hover": {
-                                    bgcolor: "rgba(197, 255, 46, 0.15)",
-                                  },
+                                  fontFamily: helvetica.style.fontFamily,
+                                  color: COLORS.BLACK,
+                                  fontSize: 15,
+                                  fontWeight: 500,
+                                  whiteSpace: "nowrap",
                                 }}
                               >
-                                <Typography
-                                  sx={{
-                                    fontFamily: helvetica.style.fontFamily,
-                                    color: COLORS.BLACK,
-                                    fontSize: 14,
-                                    whiteSpace: "nowrap",
-                                  }}
-                                >
-                                  {sub.label}
-                                </Typography>
-                              </Box>
-                            </Link>
-                          ))}
-                        </Box>
-                      </Box>
+                                {sub.label}
+                              </Typography>
+                            </Box>
+                          </Link>
+                        ))}
+                      </Popover>
                     </Box>
                   ) : (
                     <Link href={val.url || "#"} style={{ textDecoration: "none" }}>

@@ -201,18 +201,7 @@ const InterventionSection = ({ data }: Props) => {
                       </Box>
                     ))}
                   </Box>
-                  <Typography
-                    sx={{
-                      mt: 2,
-                      fontFamily: helvetica.style.fontFamily,
-                      fontSize: 12,
-                      textAlign: "right",
-                      color: COLORS.BLACK_ALPHA_60,
-                    }}
-                  >
-                    *note - when you hover over this image, a button will appear
-                    for redirection.
-                  </Typography>
+
                 </Box>
               ) : (
                 <Box>
@@ -222,18 +211,7 @@ const InterventionSection = ({ data }: Props) => {
                     alt={data.title}
                     sx={{ width: "100%", height: "auto", borderRadius: "24px" }}
                   />
-                  <Typography
-                    sx={{
-                      mt: 2,
-                      fontFamily: helvetica.style.fontFamily,
-                      fontSize: 12,
-                      textAlign: "right",
-                      color: COLORS.BLACK_ALPHA_60,
-                    }}
-                  >
-                    *note - when you hover over this image, a button will appear
-                    for redirection.
-                  </Typography>
+
                 </Box>
               )}
             </Grid>

@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { din } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
+import StylizedDivider from "@/components/widgets/StylizedDivider";
 
 interface Props {
   data: UseCaseData["deviceDeployment"];
@@ -74,7 +75,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 >
                   {data.deviceA.title}
                 </Typography>
-                <Box sx={{ width: 80, height: 2, bgcolor: COLORS.WHITE }} />
+                <StylizedDivider />
+
               </Box>
             </Box>
           </Grid>
@@ -127,7 +129,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 >
                   {data.deviceB.title}
                 </Typography>
-                <Box sx={{ width: 80, height: 2, bgcolor: COLORS.WHITE }} />
+                <StylizedDivider />
+
               </Box>
             </Box>
           </Grid>
@@ -176,7 +179,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 >
                   {data.deviceC.title}
                 </Typography>
-                <Box sx={{ width: 80, height: 2, bgcolor: COLORS.WHITE }} />
+                <StylizedDivider />
+
               </Box>
             </Box>
           </Grid>

@@ -60,7 +60,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Scalable expertise across global operations.",
       ],
       bottomText: "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without adding complexity.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Automotive Operations",
     },
     operationFlow: {
       title: "Intelligence Across the Entire Automotive Operation",
@@ -146,7 +146,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster onboarding and upskilling of technicians and contract workforce",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into Oil & Gas Plants and Refinery operations, without adding complexity.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Oil & Gas Operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE REFINERY OPERATIONS LIFECYCLE",
@@ -230,7 +230,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Consistent performance across plants and teams",
       ],
       bottomText: "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without any complexity.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Manufacturing Operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE MANUFACTURING OPERATIONAL MODEL",
@@ -315,7 +315,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Reduced errors in picking, packing, dispatch, and shelf replenishment",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into retail and logistics operations from inbound inventory to last-mile execution.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Retail & Logistics Operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE RETAIL & LOGISTICS CHAIN",
@@ -401,7 +401,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster onboarding and skill alignment of rotating crew members",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into marine operations — without adding complexity.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Marine Operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE MARINE OPERATIONS LIFECYCLE",
@@ -484,7 +484,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Better visibility into field activities and compliance",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured guidance and real-time intelligence into inspection and assessment workflows.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Insurance Operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE INSPECTION AND ASSESSMENT PROCESS",
@@ -568,7 +568,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster training and certification for technicians",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into aviation operations, without adding operational complexity.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Aviation Operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE AVIATION OPERATION",
@@ -652,7 +652,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster training for healthcare staff and technicians",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into healthcare workflows, enabling teams to perform with clarity, confidence, and precision.",
-      ctaText: "Book a Demo",
+      ctaText: "Watch How UnfoldXR Augments Healthcare Operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE HEALTHCARE WORKFLOW",

@@ -50,9 +50,10 @@ export const HEADER_LINKS = [
     label: "Solutions",
     url: "#",
     subLinks: [
-      { label: "Inspection & Compliance", url: "/training/inspection-compliance" },
-      { label: "Repair & Maintenance", url: "/training/repair-maintenance" },
-      { label: "Field Inspection", url: "/training/field-inspection" },
+      { label: "Repair & Maintenance", url: "/usecases/repair-maintenance" },
+      { label: "Inspection", url: "/usecases/inspection-compliance" },
+      { label: "Field Service", url: "/usecases/field-inspection" },
+      { label: "Training", url: "/usecases/training" },
     ],
   },
   {
@@ -119,9 +120,10 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; url: strin
   {
     title: "Solutions",
     links: [
-      { label: "Repair & Maintenance", url: "/training/repair-maintenance" },
-      { label: "Inspection", url: "/training/inspection-compliance" },
-      { label: "Field Service", url: "/training/field-inspection" },
+      { label: "Repair & Maintenance", url: "/usecases/repair-maintenance" },
+      { label: "Inspection", url: "/usecases/inspection-compliance" },
+      { label: "Field Service", url: "/usecases/field-inspection" },
+      { label: "Training", url: "/usecases/training" },
     ],
   },
   {

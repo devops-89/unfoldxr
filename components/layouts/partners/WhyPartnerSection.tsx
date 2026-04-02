@@ -5,22 +5,38 @@ import { partnersPage } from "@/utils/Website-Data";
 
 const WhyPartnerSection = () => {
   return (
-    <Box sx={{ backgroundColor: "#000", py: 10 }}>
-      <Container maxWidth="lg">
+    <Box
+      sx={{
+        backgroundColor: "#000",
+        minHeight: { md: "90vh" },
+        display: "flex",
+        alignItems: "center",
+        py: { xs: 10, md: 0 },
+      }}
+    >
+      <Container
+        maxWidth={false}
+        sx={{
+          width: { xs: "95%", md: "90%", lg: "80%" },
+          mx: "auto",
+        }}
+      >
         <Typography
           sx={{
             color: "#fff",
-            fontSize: { xs: 24, md: 32 },
+            fontSize: { xs: 32, md: 48 },
             fontWeight: 900,
-            mb: 5,
+            mb: 8,
+            textTransform: "uppercase",
+            lineHeight: 1.1,
           }}
         >
           {partnersPage.whyPartnerSection.heading}
         </Typography>
 
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           {partnersPage.whyPartnerSection.why_partner_card_data.map((card, i) => (
-            <Grid size={{xs:12,md:4}} key={i}>
+            <Grid size={{ xs: 12, md: 4 }} key={i}>
               <WhyPartnerCard {...card} />
             </Grid>
           ))}

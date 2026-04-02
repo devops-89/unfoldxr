@@ -19,7 +19,6 @@ const IndustryLayout = ({ data }: Props) => {
       <OperationFlowSection 
         data={data.operationFlow} 
         ctaIcon={data.finalCta.ctaIcon}
-        ctaText={data.realityNeeds.ctaText} // Using the common CTA text pattern
       />
       <UseCasesSection data={data.useCases} />
       <OutcomesSection data={data.outcomes} />

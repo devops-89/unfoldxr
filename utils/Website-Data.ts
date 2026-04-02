@@ -258,6 +258,33 @@ export const homePage = {
     enterpriseReady: {
       title: "Enterprise-ready. Operational from day one.",
       img: "/images/Product/Enterprise.png",
+      points: [
+        {
+          title: "Seamless system integration",
+          desc: "Integrates with internal systems like core enterprise systems, CMMS, analytics & BI, IAM etc for user provisioning, data sync, and secure access control.",
+          icon: "integration",
+        },
+        {
+          title: "Structured governance setup",
+          desc: "Role-based permissions and organization-level controls ensure compliant, scalable deployment.",
+          icon: "governance",
+        },
+        {
+          title: "Rapid configuration",
+          desc: "No-code workflow builder with centralized master setup for assets, processes, and task flows.",
+          icon: "config",
+        },
+        {
+          title: "Multi-device deployment",
+          desc: "Native mobile, tablet, web, and smart glasses support — ready for immediate rollout across teams.",
+          icon: "devices",
+        },
+        {
+          title: "Device procurement support",
+          desc: "As authorized resellers for all major brands, we also handle hardware and device procurement ensuring a seamless and fully compatible deployment experience.",
+          icon: "procurement",
+        },
+      ],
     },
     fromAssist: {
       title:
@@ -278,10 +305,35 @@ export const partnersPage={
     
   },
   metricsSection:{
-    heading:"Why Partner with an AI-AR Platform?",
-    description:"AI and augmented reality are rapidly becoming core to how enterprises operate and scale. l Partnering early means aligning with a high-growth market and delivering measurable value to your customers.",
-    metrics_card_data:partnersMetricsData
-
+    heading: "WHY PARTNER WITH AN AI-AR PLATFORM?",
+    description: "Ai and augmented reality are rapidly becoming core to how enterprises operate and scale. I partnering early means aligning with a high-growth market and delivering measurable value to your customers.",
+    metrics_card_data: [
+      {
+        title: "51.8% CAGR",
+        description: "projected growth in the ar/vr market between 2024 and 2029",
+        gridSize: { xs: 12, md: 6 },
+      },
+      {
+        title: "$446.5B",
+        description: "market size expected for ai-powered ar by 2033",
+        gridSize: { xs: 12, md: 6 },
+      },
+      {
+        title: "32%",
+        description: "productivity boost reported by organizations adopting ar and vr (ibm)",
+        gridSize: { xs: 12, md: 6 },
+      },
+      {
+        title: "46%",
+        description: "reduction in task completion time achieved through ar/vr adoption (ibm)",
+        gridSize: { xs: 12, md: 6 },
+      },
+      {
+        title: "70%",
+        description: "of fortune 500 companies expected to implement augmented connected worker initiatives by 2027 (gartner)",
+        gridSize: { xs: 12 },
+      },
+    ]
   },
   whyPartnerSection:{
     heading:"WHY PARTNER WITH UNFOLDXR?",
@@ -289,10 +341,32 @@ export const partnersPage={
   },
   ecosystemSystem:{
      heading: "WHO WE PARTNER WITH BUILT FOR ECOSYSTEM COLLABORATION",
-  tag: "ERP and CMMS partners",
-  leftItems: partnersEcosystemData,
-  rightText:
-    "Extend ERP modules into hands-free execution. Reduce errors and improve first-time fix rates. Create real-time feedback loops into maintenance systems.",
+     data: [
+       {
+         label: "ERP and CMMS partners",
+         description: "Extend ERP modules into hands-free execution. Reduce errors and improve first-time fix rates. Create real-time feedback loops into maintenance systems.",
+       },
+       {
+         label: "PSM platforms",
+         description: "Integration with process safety management platforms ensures high compliance and audit-ready workflows for industrial operations.",
+       },
+       {
+         label: "IoT & digital twin companies",
+         description: "Bring live telemetry and real-time asset health data directly to the technician's view through augmented reality overlays.",
+       },
+       {
+         label: "LMS & training platforms",
+         description: "Turn training manuals into interactive, hands-on learning experiences that happen in the flow of work.",
+       },
+       {
+         label: "Staffing partners",
+         description: "Empower temporary and new staff with AI-guided tools that reduce ramp-up time and ensure consistent execution from day one.",
+       },
+       {
+         label: "Automation & robotics partners",
+         description: "Coordinate human-robot collaboration with intuitive AR interfaces for better efficiency and safety.",
+       },
+     ]
   },
   clientBusinessSection:{
     title:"DON'T JUST ADD VALUE, AUGMENT YOUR CLIENT'S BUSINESS.",

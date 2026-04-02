@@ -5,18 +5,34 @@ import { COLORS } from "@/utils/enum";
 
 const MetricsSection = () => {
   return (
-    <Box sx={{ backgroundColor: "#f3f3f3", py: { xs: 6, md: 10 } }}>
-      <Container maxWidth="lg">
-        <Grid container spacing={4}>
+    <Box
+      sx={{
+        backgroundColor: "#fff",
+        minHeight: { md: "90vh" },
+        display: "flex",
+        alignItems: "center",
+        py: { xs: 8, md: 0 },
+      }}
+    >
+      <Container
+        maxWidth={false}
+        sx={{
+          width: { xs: "95%", md: "90%", lg: "80%" },
+          mx: "auto",
+          px: { xs: 0, md: 3 }, 
+        }}
+      >
+        <Grid container spacing={8} alignItems="flex-start">
 
           {/* LEFT SIDE */}
-          <Grid size={{xs:12,md:5}} >
+          <Grid size={{xs:12,md:6}} >
             <Typography
               sx={{
-                fontSize: { xs: 28, md: 40 },
+                fontSize: { xs: 32, md: 48 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.BLACK,
+                lineHeight: 1.1,
               }}
             >
               {partnersPage.metricsSection.heading}
@@ -24,10 +40,10 @@ const MetricsSection = () => {
 
             <Typography
               sx={{
-                mt: 2,
-                fontSize: { xs: 14, md: 16 },
-                color: "#444",
-                lineHeight: "24px",
+                mt: 4,
+                fontSize: { xs: 16, md: 18 },
+                color: COLORS.BLACK,
+                lineHeight: "26px",
               }}
             >
               {partnersPage.metricsSection.description}
@@ -35,7 +51,7 @@ const MetricsSection = () => {
           </Grid>
 
           {/* RIGHT SIDE (CARDS) */}
-          <Grid size={{xs:12,md:7}} >
+          <Grid size={{xs:12,md:6}} >
             <Grid container spacing={6}>
               {partnersPage.metricsSection.metrics_card_data.map((card, index) => (
                 <Grid size={{...card.gridSize}} key={index}>
