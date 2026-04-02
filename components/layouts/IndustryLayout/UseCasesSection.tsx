@@ -26,9 +26,9 @@ const UseCasesSection = ({ data }: Props) => {
     >
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
-          px: { xs: 2, md: 0 },
+          px: 0,
         }}
       >
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="flex-start">

@@ -10,17 +10,17 @@ const EvolvesCtaSection = () => {
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 15 } }}>
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
-          px: { xs: 1, md: 0 },
+          px: { xs: 0, md: 0 },
         }}
       >
         <Box
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 4, md: "24px" },
-            py: { xs: 8, md: 10 },
-            px: { xs: 3, md: 8 },
+            py: { xs: 5, md: 10 },
+            px: { xs: 2, md: 8 },
             textAlign: "center",
             position: "relative",
             overflow: "hidden",
@@ -59,7 +59,7 @@ const EvolvesCtaSection = () => {
                 color: COLORS.BLACK,
                 textAlign: "center",
                 textTransform: "uppercase",
-                maxWidth: 1100,
+                maxWidth: { xs: 280, sm: 500, md: 1100 },
                 mx: "auto",
               }}
             >

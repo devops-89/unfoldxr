@@ -17,9 +17,9 @@ const AvaSupportSection = () => {
     >
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
-          px: { xs: 2, md: 0 },
+          px: { xs: 0, md: 0 },
           py: { xs: 2.5, md: 5 },
         }}
       >
@@ -124,7 +124,7 @@ const AvaSupportSection = () => {
                   width: { xs: 0, md: 60 },
                   display: { xs: "none", md: "flex" },
                   justifyContent: "center",
-                  py: 2.2, // Visual alignment with text centers
+                  py: 2.2, 
                 }}
               >
                 <VerticalStepper
@@ -153,7 +153,7 @@ const AvaSupportSection = () => {
                     fontWeight: 500,
                     lineHeight: 1.4,
                     color: COLORS.WHITE,
-                    maxWidth: 800,
+                    maxWidth: { xs: 260, sm: 500, md: 800 },
                     transition: "opacity 0.3s ease",
                   }}
                 >

@@ -20,9 +20,9 @@ const RealityNeedsSection = ({ data }: Props) => {
     >
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
-          px: { xs: 2.1, md: 0 },
+          px: 0,
         }}
       >
         <Typography
@@ -39,7 +39,7 @@ const RealityNeedsSection = ({ data }: Props) => {
           {data.title}
         </Typography>
 
-        <Grid container spacing={6}>
+        <Grid container columnSpacing={6} rowSpacing={{ xs: 10, md: 6 }}>
           <Grid size={{ xs: 12, md: 4, lg: 6 }}>
             <Box
               sx={{
@@ -92,6 +92,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                 borderRadius: 4,
                 p: { xs: 3.2, md: 4, lg: 5 },
                 height: "100%",
+                mb: { xs: 4, md: 0 },
               }}
             >
               <Typography

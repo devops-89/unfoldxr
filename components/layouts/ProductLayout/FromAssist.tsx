@@ -10,7 +10,7 @@ const FromAssist = () => {
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
       <Box
-        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 1, md: 0 } }}
+        sx={{ width: { xs: "80%", md: "80%" }, mx: "auto", px: { xs: 0, md: 0 } }}
       >
         <Box
           sx={{
@@ -46,7 +46,7 @@ const FromAssist = () => {
                 fontSize: { xs: 24, md: 44, lg: 48 },
                 lineHeight: 1.15,
                 color: COLORS.BLACK,
-                maxWidth: 1100,
+                maxWidth: { xs: 280, md: 1100 },
                 mx: "auto",
               }}
             >

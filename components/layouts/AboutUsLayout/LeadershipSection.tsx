@@ -45,10 +45,10 @@ const LeadershipSection = () => {
                 />
               </Grid>
               <Grid size={{ xs: 12, md: 7.5 }}>
-                <Box sx={{ textAlign: isEven ? "left" : "right" }}>
+                <Box sx={{ textAlign: { xs: "left", md: isEven ? "left" : "right" }, mt: { xs: 3, md: 0 } }}>
                   <Typography 
                     sx={{ 
-                      fontSize: { xs: 28, md: 52 }, 
+                      fontSize: { xs: 26, md: 52 }, 
                       fontWeight: 900, 
                       textTransform: "uppercase", 
                       fontFamily: din.style.fontFamily,

@@ -18,7 +18,7 @@ const DifferentiatorsSection = () => {
     >
       <Container
         maxWidth={false}
-        sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
+        sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
       >
         <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
           <Grid size={{ xs: 12, md: 7 }}>
@@ -90,7 +90,8 @@ const DifferentiatorsSection = () => {
               alt="Differentiator"
               sx={{
                 width: { xs: "100%", md: "85%" },
-                ml: "285px",
+                ml: { xs: 0, md: "285px" },
+                mt: { xs: 4, md: 0 },
                 height: "auto",
                 objectFit: "cover",
                 borderRadius: "20px",

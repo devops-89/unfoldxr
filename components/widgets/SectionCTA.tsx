@@ -36,7 +36,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
         maxWidth={isIndustry ? false : "xl"}
         sx={{
           maxWidth: isIndustry ? 1440 : undefined,
-          px: { xs: 2, md: isIndustry ? 4 : 5 },
+          px: { xs: 0, md: isIndustry ? 4 : 5 },
         }}
       >
         <Box
@@ -44,8 +44,10 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
             backgroundColor: COLORS.WHITE,
             borderRadius: "24px",
             border: isIndustry || isAbout ? "1px solid rgba(182, 255, 46, 0.15)" : "none",
-            py: { xs: 8, md: isAbout ? "80px" : 10 },
-            px: { xs: 3, md: 8 },
+            width: { xs: "80%", md: "100%" },
+            mx: "auto",
+            py: { xs: 4, md: isAbout ? "80px" : 10 },
+            px: { xs: 2, md: 8 },
             textAlign: "center",
             position: "relative",
             overflow: "hidden",
@@ -86,7 +88,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: 32, md: 64 },
+                fontSize: { xs: variant === "about" ? 24 : 26, md: 64 },
                 lineHeight: 1.1,
                 letterSpacing: variant === "default" ? "-0.051px" : "normal",
                 color: COLORS.BLACK,

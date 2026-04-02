@@ -36,7 +36,7 @@ const OutcomesSection = ({ data }: Props) => {
 
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
           position: "relative",
           zIndex: 1,
@@ -48,10 +48,10 @@ const OutcomesSection = ({ data }: Props) => {
             border: "2px solid rgba(197, 255, 46, 0.4)",
             borderRadius: "24px",
             boxShadow: "0 0 40px rgba(0,0,0,0.9)",
-            p: { xs: 4, md: 8 },
-            pt: { xs: 10, md: 10 },
+            p: { xs: 3, md: 8 },
+            pt: { xs: 8, md: 10 },
             position: "relative",
-            width: "95%",
+            width: "100%",
             mx: "auto",
           }}
         >
@@ -83,7 +83,7 @@ const OutcomesSection = ({ data }: Props) => {
                   <Box
                     key={idx}
                     component="span"
-                    sx={{ display: "block", whiteSpace: "nowrap" }}
+                    sx={{ display: "block", whiteSpace: { xs: "normal", md: "nowrap" } }}
                   >
                     {line}
                   </Box>

@@ -5,6 +5,7 @@ import {
   Grid,
   Typography,
   Box,
+  Stack,
 } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
@@ -22,7 +23,7 @@ const MissionVisionSection = () => {
     >
       <Container
         maxWidth={false}
-        sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
+        sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
       >
         <Typography
           sx={{
@@ -95,21 +96,22 @@ const MissionVisionSection = () => {
         >
           {data.brandDnaTitle}
         </Typography>
-        <Grid container spacing={3}>
+        <Stack direction={{ xs: "column", md: "row" }} spacing={{ xs: 4, md: 3 }} alignItems="stretch">
           {data.brandDna.map((item, idx) => (
-            <Grid key={idx} size={{ xs: 12, md: 4 }}>
+            <Box key={idx} sx={{ flex: 1 }}>
               <Box
                 sx={{
                   height: "100%",
                   bgcolor: COLORS.CARD_BG_DARK,
                   color: COLORS.WHITE,
                   borderRadius: "20px",
-                  p: { xs: 2.5, md: "25px 30px" },
+                  p: { xs: 4, md: "25px 30px" },
                   display: "flex",
                   flexDirection: "column",
-                  minHeight: { md: 250 },
+                  minHeight: { xs: 220, md: 250 },
                   justifyContent: "space-between",
-                  gap: 2,
+                  gap: { xs: 6, md: 2 },
+                  mb: { xs: 3, md: 0 },
                 }}
               >
                 <Typography
@@ -135,9 +137,9 @@ const MissionVisionSection = () => {
                   {item.title}
                 </Typography>
               </Box>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Stack>
       </Container>
     </Box>
   );

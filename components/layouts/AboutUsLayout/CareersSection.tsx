@@ -9,7 +9,7 @@ const CareersSection = () => {
 
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
-      <Container maxWidth={false} sx={{ width: { xs: "95%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
+      <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
         <Typography 
           sx={{ 
             fontSize: { xs: 32, md: 64 }, 

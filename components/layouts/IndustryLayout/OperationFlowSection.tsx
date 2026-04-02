@@ -14,9 +14,9 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
     <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 10, md: 15 } }}>
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
-          px: { xs: 2.1, md: 0 },
+          px: 0,
         }}
       >
         <Typography
@@ -33,7 +33,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
           {data.title}
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container columnSpacing={4} rowSpacing={{ xs: 10, md: 4 }}>
           {data.phases.map((block) => (
             <Grid key={block.phase} size={{ xs: 12, md: 4 }}>
               <Box
