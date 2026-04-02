@@ -12,22 +12,23 @@ const PlatformSummarySection = ({ data }: Props) => {
     <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "80%", md: "80%" },
           mx: "auto",
           bgcolor: COLORS.BG_LIGHT,
-          borderRadius: "40px",
-          p: { xs: 5, md: 10 },
+          borderRadius: { xs: "24px", md: "40px" },
+          p: { xs: 3.5, md: 10 },
+          overflow: "hidden",
         }}
       >
-        <Grid container spacing={{ xs: 5, md: 10 }} alignItems="flex-start">
+        <Grid container spacing={{ xs: 4, md: 10 }} alignItems="flex-start">
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 32, md: 48, lg: 52 },
-                lineHeight: 1,
+                fontSize: { xs: 28, md: 48, lg: 52 },
+                lineHeight: 1.1,
                 color: COLORS.BLACK,
               }}
             >

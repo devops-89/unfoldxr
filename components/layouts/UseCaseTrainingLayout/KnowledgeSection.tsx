@@ -14,7 +14,7 @@ const KnowledgeSection = ({ data }: Props) => {
     return (
       <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 20 } }}>
         <Box
-          sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
+          sx={{ width: { xs: "90%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
         >
           <Grid container spacing={{ xs: 4, md: 6 }} justifyContent="flex-end">
             {/* Left Side: Title */}
@@ -56,9 +56,9 @@ const KnowledgeSection = ({ data }: Props) => {
               {data.footerText && (
                 <Typography
                   sx={{
-                    mt: { xs: 4, md: 6 }, // Add spacing from the items above
+                    mt: { xs: 4, md: 6 }, 
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 17, md: 22, lg: 24 }, // Match item font sizes exactly
+                    fontSize: { xs: 17, md: 22, lg: 24 }, 
                     lineHeight: 1.5,
                     color: COLORS.WHITE,
                   }}
@@ -74,9 +74,9 @@ const KnowledgeSection = ({ data }: Props) => {
   }
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 20 } }}>
+    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 10, md: 20 } }}>
       <Box
-        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
+        sx={{ width: { xs: "90%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
       >
         <Grid container spacing={{ xs: 4, md: 10 }}>
           {/* Left Side: Title */}

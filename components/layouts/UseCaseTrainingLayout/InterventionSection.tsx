@@ -12,7 +12,7 @@ const InterventionSection = ({ data }: Props) => {
   if (isSideBySide) {
     return (
       <Box sx={{ bgcolor: COLORS.WHITE, color: COLORS.BLACK, py: { xs: 8, md: 15 } }}>
-        <Box sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
+        <Box sx={{ width: { xs: "90%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
           {/* Top Row: Title, Desc1, Desc2 */}
           <Box sx={{ maxWidth: { xs: "100%", md: "90%" }, mb: { xs: 5, md: 8 } }}>
             <Typography
@@ -232,7 +232,7 @@ const InterventionSection = ({ data }: Props) => {
     >
       <Box
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "90%", md: "80%" },
           mx: "auto",
           px: { xs: 2, md: 0 },
         }}
