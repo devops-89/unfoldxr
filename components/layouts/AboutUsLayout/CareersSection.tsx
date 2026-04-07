@@ -12,7 +12,7 @@ const CareersSection = () => {
       <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
         <Typography 
           sx={{ 
-            fontSize: { xs: 32, md: 64 }, 
+            fontSize: { xs: 32, md: 60 }, 
             fontWeight: 900, 
             textTransform: "uppercase", 
             mb: 4, 
@@ -93,8 +93,9 @@ const CareersSection = () => {
 
         <ContainedButton 
           sx={{ 
-            fontSize: { xs: 18, md: 23 }, 
-            px: { xs: 4, md: 6 },
+            px: { xs: 2.5, md: 4 },
+            py: 1.2,
+            fontSize: { xs: 14, md: 18, lg: 20 },
             fontWeight: 700
           }}
         >

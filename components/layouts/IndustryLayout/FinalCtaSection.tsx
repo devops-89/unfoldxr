@@ -12,6 +12,10 @@ const FinalCtaSection = ({ data }: Props) => {
       subtitle={data.description}
       btnText={data.ctaText}
       variant="industry"
+      innerSx={{
+        width: { xs: "85%", md: "90%", lg: "80%" },
+        mx: "auto",
+      }}
     />
   );
 };

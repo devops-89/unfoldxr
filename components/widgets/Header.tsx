@@ -11,6 +11,7 @@ import {
   Drawer,
   Collapse,
   Popover,
+  alpha,
 } from "@mui/material";
 import React, { useState } from "react";
 import logo from "@/images/logo/logo.png";
@@ -151,14 +152,14 @@ const Header = () => {
                           paper: {
                             onMouseLeave: handleClosePopover,
                             sx: {
-                              mt: 1.5,
-                              minWidth: 220,
-                              borderRadius: "24px",
-                              boxShadow: "0px 20px 40px rgba(0,0,0,0.1)",
-                              border: "none",
+                              mt: 2,
+                              minWidth: 200,
+                              borderRadius: "20px",
+                              boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",
+                              border: "1px solid #EDEDED",
                               bgcolor: "white",
                               overflow: "hidden",
-                              p: 1.5,
+                              p: 1,
                             },
                           },
                         }}
@@ -184,7 +185,7 @@ const Header = () => {
                                 borderRadius: "12px",
                                 transition: "0.2s",
                                 "&:hover": {
-                                  bgcolor: "rgba(197, 255, 46, 0.15)",
+                                  bgcolor: alpha(COLORS.PRIMARY_GREEN, 0.5),
                                 },
                               }}
                             >
@@ -192,9 +193,9 @@ const Header = () => {
                                 sx={{
                                   fontFamily: helvetica.style.fontFamily,
                                   color: COLORS.BLACK,
-                                  fontSize: 15,
+                                  fontSize: 14,
                                   fontWeight: 500,
-                                  whiteSpace: "nowrap",
+                                  lineHeight: 1.4,
                                 }}
                               >
                                 {sub.label}
@@ -221,7 +222,7 @@ const Header = () => {
                 </Box>
               ))}
 
-              <Link href="/contact-us" style={{ textDecoration: "none" }}>
+              <Link href="#" style={{ textDecoration: "none" }}>
                 <Button
                   sx={{
                     backgroundColor: COLORS.PRIMARY_GREEN,
@@ -237,7 +238,7 @@ const Header = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  CONTACT US
+                  BOOK A DEMO
                 </Button>
               </Link>
             </Stack>
@@ -325,7 +326,7 @@ const Header = () => {
               </Box>
             ))}
 
-            <Link href="/contact-us" style={{ textDecoration: "none" }} onClick={() => setOpen(false)}>
+            <Link href="#" style={{ textDecoration: "none" }} onClick={() => setOpen(false)}>
               <Button
                 sx={{
                   mt: 3,
@@ -341,7 +342,7 @@ const Header = () => {
                   textTransform: "uppercase",
                 }}
               >
-                CONTACT US
+                BOOK A DEMO
               </Button>
             </Link>
           </Stack>

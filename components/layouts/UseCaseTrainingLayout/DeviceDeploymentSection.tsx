@@ -23,7 +23,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 36, lg: 44 },
+            fontSize: { xs: 28, md: 32, lg: 44 },
             mb: { xs: 6, md: 8 },
           }}
         >
@@ -68,7 +68,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 36, lg: 32 },
+                    fontSize: { xs: 24, md: 32 },
                     lineHeight: 1.1,
                     mb: 2,
                   }}
@@ -98,7 +98,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                   width: "100%",
                   height: "100%",
                   objectFit: "contain",
-                  objectPosition: "390px",
+                  objectPosition: "right",
                 }}
               />
               <Box
@@ -172,7 +172,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 36, lg: 32 },
+                    fontSize: { xs: 24, md: 32 },
                     lineHeight: 1.1,
                     mb: 2,
                   }}

@@ -108,7 +108,7 @@ const ExploreCapabilities = () => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 18, md: 22 },
+                    fontSize: { xs: 18, md: 20 },
                     lineHeight: 1.6,
                     color: COLORS.BLACK,
                     textTransform: "capitalize",

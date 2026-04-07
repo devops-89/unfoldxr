@@ -93,7 +93,7 @@ const DesignToEvolve = () => {
                       activeIndex === index ? COLORS.PRIMARY_HOVER : COLORS.WHITE,
                     textTransform: "uppercase",
                     letterSpacing: "0.04em",
-                    fontSize: { xs: 16, md: 22 },
+                    fontSize: { xs: 16, md: 20 },
                     fontWeight: 700,
                     width: "fit-content",
                     cursor: "pointer",

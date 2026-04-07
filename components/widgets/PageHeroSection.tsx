@@ -86,7 +86,7 @@ const PageHeroSection = ({
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 32, md: 56, lg: 64 },
+              fontSize: { xs: 26, md: 50, lg: 60 },
               fontStyle: "normal",
               fontWeight: 900,
               lineHeight: { xs: "40px", md: "90px" },
@@ -106,7 +106,7 @@ const PageHeroSection = ({
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 32, md: 56, lg: 64 },
+            fontSize: { xs: 26, md: 50, lg: 60 },
             lineHeight: { xs: "40px", md: "92px" },
             maxWidth: titleMaxWidth || 950,
           }}
@@ -136,12 +136,12 @@ const PageHeroSection = ({
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 400,
-              fontSize: { xs: 20, md: 30, lg: 36 },
+              fontSize: { xs: 16, md: 26, lg: 32 },
               lineHeight: { xs: "normal", md: "44px" },
               letterSpacing: "2.52px",
               mt: { xs: 2, md: 3 },
               maxWidth: 1200,
-              textTransform: "capitalize",
+              textTransform: "none",
               color: COLORS.WHITE,
             }}
           >
@@ -167,11 +167,11 @@ const PageHeroSection = ({
                   bgcolor: COLORS.PRIMARY_GREEN,
                   color: COLORS.BLACK,
                   borderRadius: 99,
-                  px: { xs: 3, md: 4.5 },
-                  py: 1.5,
+                  px: { xs: 2.5, md: 4 },
+                  py: 1.2,
                   fontFamily: din.style.fontFamily,
                   fontWeight: 500,
-                  fontSize: { xs: 16, md: 20, lg: 23 },
+                  fontSize: { xs: 14, md: 18, lg: 20 },
                   textTransform: "none",
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
                 }}
@@ -188,11 +188,11 @@ const PageHeroSection = ({
                   borderColor: COLORS.PRIMARY_GREEN,
                   color: COLORS.WHITE,
                   borderRadius: 99,
-                  px: { xs: 3, md: 4.5 },
-                  py: 1.5,
+                  px: { xs: 2.5, md: 4 },
+                  py: 1.2,
                   fontFamily: din.style.fontFamily,
                   fontWeight: 500,
-                  fontSize: { xs: 16, md: 20, lg: 23 },
+                  fontSize: { xs: 14, md: 18, lg: 20 },
                   textTransform: "none",
                   "&:hover": {
                     borderColor: COLORS.PRIMARY_HOVER,

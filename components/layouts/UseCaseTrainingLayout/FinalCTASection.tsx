@@ -10,6 +10,10 @@ const FinalCTASection = ({ data }: Props) => {
     <SectionCTA
       title={data.title}
       subtitle={data.subtitle}
+      innerSx={{
+        width: { xs: "85%", md: "90%", lg: "80%" },
+        mx: "auto",
+      }}
     />
   );
 };

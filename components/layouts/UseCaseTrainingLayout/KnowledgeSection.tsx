@@ -42,7 +42,7 @@ const KnowledgeSection = ({ data }: Props) => {
                     key={index}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 17, md: 22, lg: 24 },
+                      fontSize: { xs: 17, md: 20, lg: 24 },
                       lineHeight: 1.5,
                       color: COLORS.WHITE,
                     }}
@@ -52,22 +52,22 @@ const KnowledgeSection = ({ data }: Props) => {
                 ))}
               </Box>
               
-              {/* Footer Text moved here to match items alignment */}
-              {data.footerText && (
-                <Typography
-                  sx={{
-                    mt: { xs: 4, md: 6 }, 
-                    fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 17, md: 22, lg: 24 }, 
-                    lineHeight: 1.5,
-                    color: COLORS.WHITE,
-                  }}
-                >
-                  {data.footerText}
-                </Typography>
-              )}
             </Grid>
           </Grid>
+          {/* Footer Text outside grid to align with total width */}
+          {data.footerText && (
+            <Typography
+              sx={{
+                mt: { xs: 4, md: 8 },
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: { xs: 17, md: 20, lg: 24 },
+                lineHeight: 1.5,
+                color: COLORS.WHITE,
+              }}
+            >
+              {data.footerText}
+            </Typography>
+          )}
         </Box>
       </Box>
     );
@@ -116,7 +116,7 @@ const KnowledgeSection = ({ data }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 17, md: 22, lg: 24 },
+                      fontSize: { xs: 17, md: 20, lg: 24 },
                       lineHeight: 1.4,
                       color: COLORS.WHITE,
                     }}
@@ -126,24 +126,24 @@ const KnowledgeSection = ({ data }: Props) => {
                 </Box>
               ))}
             </Box>
-            {/* Footer Text moved inside the grid to match bullet points */}
-            {data.footerText && (
-              <Typography
-                sx={{
-                  mt: { xs: 4, md: 6 }, // Add spacing from the items above
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 17, md: 22, lg: 24 }, // Match item font sizes exactly
-                  lineHeight: 1.4,
-                  color: COLORS.WHITE,
-                }}
-              >
-                {data.footerText}
-              </Typography>
-            )}
-            </Grid>
           </Grid>
-        </Box>
+        </Grid>
+        {/* Footer Text outside grid to align with total width */}
+        {data.footerText && (
+          <Typography
+            sx={{
+              mt: { xs: 6, md: 10 }, 
+              fontFamily: helvetica.style.fontFamily,
+              fontSize: { xs: 17, md: 20, lg: 24 }, 
+              lineHeight: 1.5,
+              color: COLORS.WHITE,
+            }}
+          >
+            {data.footerText}
+          </Typography>
+        )}
       </Box>
+    </Box>
   );
 };
 

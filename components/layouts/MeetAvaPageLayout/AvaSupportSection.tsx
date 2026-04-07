@@ -26,7 +26,7 @@ const AvaSupportSection = () => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 32, md: 64 },
+            fontSize: { xs: 32, md: 60 },
             fontWeight: 900,
             textTransform: "uppercase",
             lineHeight: 1.1,
@@ -149,7 +149,7 @@ const AvaSupportSection = () => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 18, md: 22, lg: 28 },
+                    fontSize: { xs: 18, md: 20, lg: 24 },
                     fontWeight: 500,
                     lineHeight: 1.4,
                     color: COLORS.WHITE,

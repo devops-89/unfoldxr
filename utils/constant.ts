@@ -74,8 +74,8 @@ export const HEADER_LINKS = [
     label: "Product",
     url: "#",
     subLinks: [
-      { label: "Platform – Augment, Empower, Edge", url: "/Product" },
-      { label: "Meet AVA – The Perfect AI Human Collaboration", url: "/meet-ava" },
+      { label: "Platform", url: "/Product" },
+      { label: "Meet AVA", url: "/meet-ava" },
     ],
   },
   {
@@ -86,14 +86,14 @@ export const HEADER_LINKS = [
     label: "About Us",
     url: "#",
     subLinks: [
-      { label: "About UnfoldXR (Mission, Vision, Leadership, Brand DNA)", url: "/about-us" },
+      { label: "About UnfoldXR", url: "/about-us" },
       { label: "Partners", url: "/partners" },
       { label: "Careers", url: "#" },
     ],
   },
   {
-    label: "Book a Demo",
-    url: "#",
+    label: "Contact Us",
+    url: "/contact-us",
   },
 ];
 

@@ -42,7 +42,7 @@ const SupportYourOperations = () => {
               fontFamily: helvetica.style.fontFamily,
               fontWeight: 700,
               textTransform: "none",
-              fontSize: { xs: 18, md: 22, lg: 24 },
+              fontSize: { xs: 18, md: 20, lg: 24 },
               lineHeight: 1.4,
             }}
           >

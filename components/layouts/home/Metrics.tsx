@@ -21,7 +21,7 @@ const Metrics = () => {
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 22, sm: 36, md: "52px" },
+              fontSize: { xs: 22, sm: 32, md: "52px" },
               fontWeight: 900,
               textTransform: "uppercase",
               textAlign: "center",
@@ -41,7 +41,7 @@ const Metrics = () => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 18, md: "22px", lg: "32px" },
+                    fontSize: { xs: 18, md: "20px", lg: "27px" },
                     fontWeight: 700,
                     color: "#000",
                     textTransform: "capitalize",
@@ -54,7 +54,7 @@ const Metrics = () => {
                   <Typography
                     sx={{
                       fontFamily: din.style.fontFamily,
-                      fontSize: { xs: "100px", sm: "160px", md: "280px", lg: "330px" },
+                      fontSize: { xs: "100px", sm: "160px", md: "280px", lg: "300px" },
                       fontWeight: 900,
                       color: "#1C1C1C",
                       lineHeight: 0.85,
@@ -80,7 +80,7 @@ const Metrics = () => {
                       key={i}
                       sx={{
                         fontFamily: din.style.fontFamily,
-                        fontSize: { xs: 20, sm: 28, md: "37px" },
+                        fontSize: { xs: 20, sm: 28, md: "33px" },
                         fontWeight: 400,
                         lineHeight: { xs: 1.4, md: "96px" },
                         color: "#000",
@@ -93,7 +93,7 @@ const Metrics = () => {
                       component="span"
                       sx={{
                         fontFamily: din.style.fontFamily,
-                        fontSize: { xs: 20, sm: 28, md: "45px" },
+                        fontSize: { xs: 20, sm: 28, md: "42px" },
                         fontWeight: 900,
                         color: "#000",
                         textTransform: "capitalize",

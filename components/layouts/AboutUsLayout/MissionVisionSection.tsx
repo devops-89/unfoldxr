@@ -37,7 +37,7 @@ const MissionVisionSection = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: 38, md: 64 },
+            fontSize: { xs: 38, md: 60 },
             lineHeight: { xs: 1.1, md: "70px" },
             textTransform: "uppercase",
             color: COLORS.PRIMARY_GREEN,

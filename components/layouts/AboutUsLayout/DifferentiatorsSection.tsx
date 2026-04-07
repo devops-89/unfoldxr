@@ -24,7 +24,7 @@ const DifferentiatorsSection = () => {
           <Grid size={{ xs: 12, md: 7 }}>
             <Typography
               sx={{
-                fontSize: { xs: 36, md: 64 },
+                fontSize: { xs: 36, md: 60 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: { xs: 1.1, md: "92px" },

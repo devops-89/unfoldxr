@@ -28,7 +28,7 @@ const AboutIntroSection = () => (
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 sx={{
-                  fontSize: { xs: 34, md: 64 },
+                  fontSize: { xs: 34, md: 60 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   lineHeight: 1.05,

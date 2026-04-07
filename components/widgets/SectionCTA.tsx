@@ -10,6 +10,7 @@ interface SectionCTAProps {
   onBtnClick?: () => void;
   variant?: "default" | "industry" | "about";
   sx?: SxProps<Theme>;
+  innerSx?: SxProps<Theme>;
 }
 
 const SectionCTA: React.FC<SectionCTAProps> = ({
@@ -19,6 +20,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
   onBtnClick,
   variant = "default",
   sx,
+  innerSx,
 }) => {
   const isIndustry = variant === "industry";
   const isAbout = variant === "about";
@@ -33,10 +35,10 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
       }}
     >
       <Container
-        maxWidth={isIndustry ? false : "xl"}
+        maxWidth={false}
         sx={{
-          maxWidth: isIndustry ? 1440 : undefined,
-          px: { xs: 0, md: isIndustry ? 4 : 5 },
+          px: 0,
+          mx: "auto",
         }}
       >
         <Box
@@ -44,7 +46,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
             backgroundColor: COLORS.WHITE,
             borderRadius: "24px",
             border: isIndustry || isAbout ? "1px solid rgba(182, 255, 46, 0.15)" : "none",
-            width: { xs: "80%", md: "100%" },
+            width: { xs: "95%", md: "90%", lg: "80%" },
             mx: "auto",
             py: { xs: 4, md: isAbout ? "80px" : 10 },
             px: { xs: 2, md: 8 },
@@ -58,6 +60,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            ...innerSx,
           }}
         >
           {variant === "default" && (
@@ -88,7 +91,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: variant === "about" ? 24 : 26, md: 64 },
+                fontSize: { xs: variant === "about" ? 24 : 26, md: 60 },
                 lineHeight: 1.1,
                 letterSpacing: variant === "default" ? "-0.051px" : "normal",
                 color: COLORS.BLACK,
@@ -107,7 +110,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 sx={{
                   mt: 3,
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: isIndustry ? 28 : 22 },
+                  fontSize: { xs: 16, md: isIndustry ? 24 : 20 },
                   color: COLORS.BLACK,
                   fontWeight: isIndustry ? 400 : 500,
                   lineHeight: 1.5,
@@ -126,11 +129,11 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 bgcolor: COLORS.PRIMARY_GREEN,
                 color: COLORS.BLACK,
                 borderRadius: 99,
-                px: { xs: 4, md: 6 },
-                py: 2,
+                px: { xs: 2.5, md: 4 },
+                py: 1.2,
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
-                fontSize: { xs: 14, md: isAbout ? 23 : 20 },
+                fontSize: { xs: 14, md: 18, lg: 20 },
                 textTransform: "uppercase",
                 "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 },
               }}

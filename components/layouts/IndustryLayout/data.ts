@@ -103,7 +103,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "Know More",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "In", "Automotive", "Operations"],
+      titleLines: ["Driving Measurable", "Outcomes In", "AutomotiveOperations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "25%", text: "reduction in assembly time, improving line throughput." },
@@ -188,7 +188,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "KNOW MORE",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "In", "Refinery", "Operations"],
+      titleLines: ["Driving Measurable", "Outcomes", "In Refinery", "Operations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "15%", text: "reduction in shutdown duration, enabling shorter turnarounds" },
@@ -272,7 +272,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "KNOW MORE",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "In", "Manufacturing"],
+      titleLines: ["Driving Measurable", "Outcomes", "In", "Manufacturing"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "15%", text: "reduction in mean time to repair, enabling faster fault recovery" },
@@ -357,7 +357,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "KNOW MORE",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "Across", "Retail & Logistics", "Operations"],
+      titleLines: ["Driving Measurable", "Outcomes", "Across Retail & Logistics", "Operations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "15%", text: "improvement in pick accuracy, reducing mis-picks" },
@@ -443,7 +443,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "KNOW MORE",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "In", "Marine", "Operations"],
+      titleLines: ["Driving Measurable", "Outcomes", "In Marine", "Operations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "20%", text: "reduction in engine overhaul time, reducing wrench time" },
@@ -526,7 +526,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "KNOW MORE",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "In", "Insurance", "Operations"],
+      titleLines: ["Driving Measurable", "Outcomes", "In Insurance", "Operations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "40%", text: "reduction in claim cycle time, enabling faster settlements" },
@@ -610,7 +610,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "KNOW MORE",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "In", "Aviation", "Operations"],
+      titleLines: ["Driving Measurable", "Outcomes", "In Aviation", "Operations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "25%", text: "reduction in task completion time, enabling faster turnarounds" },
@@ -694,7 +694,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "KNOW MORE",
     },
     outcomes: {
-      titleLines: ["Driving", "Measurable Outcomes", "In", "Healthcare", "Operations"],
+      titleLines: ["Driving Measurable", "Outcomes", "In Healthcare", "Operations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "20%", text: "reduction in equipment repair time, bringing modalities back faster" },

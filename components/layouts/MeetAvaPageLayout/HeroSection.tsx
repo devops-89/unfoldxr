@@ -73,7 +73,7 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 56, lg: 64 },
+                  fontSize: { xs: 36, md: 56, lg: 60 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   color: COLORS.WHITE,
@@ -112,7 +112,7 @@ const HeroSection = () => {
                 alt="Meet AVA"
                 sx={{
                   width: { xs: "100%", md: "auto" },
-                  height: { xs: "auto", md: "130%" },
+                  height: { xs: "auto", md: "100%" },
                   objectFit: "contain",
                   display: "block",
                   position: { md: "absolute" },

@@ -14,7 +14,7 @@ import {
 import { COLORS } from "@/utils/enum";
 
 import { FOOTER_COLUMNS, SOCIAL_LINKS } from "@/utils/constant";
-import glowingBall from "@/images/homepage/globe.gif";
+// import glowingBall from "@/images/homepage/globe.gif";
 
 import logoWhite from "@/images/logo/logo_white.png";
 import linkedin from "@/images/social_icons/linkedin.svg";
@@ -172,14 +172,20 @@ export default function Footer() {
                     opacity: 0.9,
                   }}
                 >
-                  <Image
-                    src={glowingBall}
-                    alt=""
-                    fill
-                    style={{ objectFit: "contain" }}
-                    priority
-                    unoptimized
-                  />
+                  <Box
+                    component="video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    sx={{
+                      width: { xs: "100%", md: "85%" },
+                      height: { xs: "100%", md: "90%" },
+                      objectFit: "contain",
+                    }}
+                  >
+                    <source src="/images/homepage/Globe.mp4" type="video/mp4" />
+                  </Box>
                 </Box>
 
                 <Stack

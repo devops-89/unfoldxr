@@ -12,16 +12,14 @@ const WorkForce = () => {
         <Box
           sx={{
             backgroundColor: COLORS.WHITE,
-            px: { xs: 4, sm: 6, md: 10 },
+            px: { xs: 2, sm: 6, md: 10 },
             pt: { xs: 5, md: 10 },
             pb: { xs: 6, md: 10 },
             borderRadius: "15px",
-            height: { xs: "auto", md: "72vh" },
-            minHeight: { xs: "auto", md: "unset" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            width: { xs: "80%", md: "100%" },
+            width: { xs: "85%", md: "90%", lg: "80%" },
             mx: "auto",
           }}
         >
@@ -31,26 +29,27 @@ const WorkForce = () => {
               sx={{
                 color: "#000",
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 32, md: 64 },
+                fontSize: { xs: 24, md: 60 },
                 fontStyle: "normal",
                 fontWeight: 900,
                 lineHeight: "normal",
                 textTransform: "uppercase",
                 textAlign: { xs: "center", md: "left" },
+                wordBreak: "break-word",
               }}
             >
               {homePage.workforce.heading}
             </Typography>
-
+ 
             {/* Description */}
             <Typography
               sx={{
                 color: "#000",
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 28 },
+                fontSize: { xs: 16, md: 24 },
                 fontStyle: "normal",
                 fontWeight: 400,
-                lineHeight: { xs: 1.5, md: "46px" },
+                lineHeight: { xs: 1.4, md: "46px" },
                 mt: { xs: 2, md: 3 },
                 textAlign: { xs: "center", md: "left" },
               }}

@@ -10,7 +10,7 @@ const LeadershipSection = () => {
     <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 15 } }}>
       <Typography 
         sx={{ 
-          fontSize: { xs: 30, md: 64 }, 
+          fontSize: { xs: 30, md: 60 }, 
           fontWeight: 900, 
           textTransform: "uppercase", 
           mb: 8, 

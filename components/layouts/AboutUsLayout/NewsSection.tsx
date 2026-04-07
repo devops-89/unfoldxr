@@ -28,7 +28,7 @@ const NewsSection = () => {
           >
             <Typography 
               sx={{ 
-                fontSize: { xs: 32, md: 64 }, 
+                fontSize: { xs: 32, md: 60 }, 
                 fontWeight: 900, 
                 textTransform: "uppercase", 
                 fontFamily: din.style.fontFamily,
@@ -52,8 +52,9 @@ const NewsSection = () => {
             </Typography>
             <ContainedButton 
               sx={{ 
-                fontSize: { xs: 18, md: 23 }, 
-                px: { xs: 4, md: 6 },
+                px: { xs: 2.5, md: 4 },
+                py: 1.2,
+                fontSize: { xs: 14, md: 18, lg: 20 },
                 fontWeight: 700
               }}
             >

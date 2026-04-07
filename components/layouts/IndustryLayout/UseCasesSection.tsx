@@ -37,7 +37,7 @@ const UseCasesSection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 36, md: 54, lg: 64 },
+                fontSize: { xs: 36, md: 54, lg: 60 },
                 lineHeight: 1.1,
                 textTransform: "uppercase",
                 fontWeight: 900,
@@ -54,11 +54,11 @@ const UseCasesSection = ({ data }: Props) => {
                 borderRadius: "99px",
                 bgcolor: COLORS.PRIMARY_GREEN,
                 color: COLORS.BLACK,
-                px: { xs: 4, md: 5 },
-                py: 1.5,
+                px: { xs: 2.5, md: 4 },
+                py: 1.2,
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
-                fontSize: { xs: 16, md: 20 },
+                fontSize: { xs: 14, md: 18, lg: 20 },
                 textTransform: "capitalize",
                 boxShadow: "none",
                 display: "flex",

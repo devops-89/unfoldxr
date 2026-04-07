@@ -19,13 +19,7 @@ const HomeLayout = () => {
       <Box
         sx={{
           backgroundColor: COLORS.BLACK,
-          height: { xs: "auto", md: "100vh" },
-          minHeight: { xs: "80vh", md: "unset" },
-          py: { xs: 8, md: 4 },
-          px: { xs: 2, md: 4 },
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          py: { xs: 8, md: 10 },
         }}
       >
         <WorkForce />

@@ -22,7 +22,7 @@ const AboutUnfoldxr = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 64 },
+                  fontSize: { xs: 36, md: 60 },
                   lineHeight: { xs: 1.05, md: "92px" },
                   textTransform: "uppercase",
                   fontWeight: 900,
@@ -51,7 +51,7 @@ const AboutUnfoldxr = () => {
                   key={paragraph}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 16, md: 28 },
+                    fontSize: { xs: 16, md: 24 },
                     lineHeight: { xs: 1.75, md: "43px" },
                     mb: { xs: 2, md: 3 },
                     textAlign: "justify",
@@ -64,7 +64,7 @@ const AboutUnfoldxr = () => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 20, md: 36 },
+                  fontSize: { xs: 20, md: 32 },
                   lineHeight: { xs: 1.5, md: "48px" },
                   fontWeight: 700,
                   mt: { xs: 2, md: 4 },

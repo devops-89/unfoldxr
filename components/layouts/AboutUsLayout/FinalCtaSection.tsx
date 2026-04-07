@@ -9,7 +9,11 @@ const FinalCtaSection = () => {
       title={data.heading}
       btnText="Talk to us"
       variant="about"
-      sx={{ pb: 0 }} // About us page has a different outer spacing requirement
+      sx={{ pb: 0 }}
+      innerSx={{
+        width: { xs: "85%", md: "90%", lg: "80%" },
+        mx: "auto",
+      }}
     />
   );
 };

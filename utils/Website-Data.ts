@@ -383,7 +383,7 @@ export const partnersPage={
 export const contactPage={
    herosection: {
     heading1: "Ready to watch the future of work unfold? ",
-    description: "Contact an UnfoldXR Expert.",
+    description: "Contact an UnfoldXR expert.",
     
     
   },

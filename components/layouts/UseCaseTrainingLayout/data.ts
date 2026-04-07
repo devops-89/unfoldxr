@@ -56,7 +56,7 @@ export const useCasesData: Record<string, UseCaseData> = {
   training: {
     hero: {
       title: "TRAINING, ONBOARDING & KNOWLEDGE CAPTURE",
-      subtitle: "The Strongest Teams Learn In The Flow Of Work.",
+      subtitle: "The strongest teams learn in the flow of work.",
       description:
         "UnfoldXR brings AI- and augmented reality–powered intelligence into learning and capability building and makes it available right at the moment of work.",
       image: "/images/usecase/HeroSection.png",
@@ -209,14 +209,13 @@ export const useCasesData: Record<string, UseCaseData> = {
   "inspection-compliance": {
     hero: {
       title: "INSPECTION, COMPLIANCE & QUALITY ASSURANCE",
-      subtitle: "The Best Incident Is The One That Never Happened.",
+      subtitle: "The best incident is the one that never happened.",
       description:
         "UnfoldXR brings AI- and augmented reality-powered intelligence directly into inspection and quality workflows. Stay audit-ready always.",
       image: "/images/usecase/Inspection/Hero-section.png",
     },
     knowledge: {
       title: "WITH UNFOLDXR, MAKE COMPLIANCE STRUCTURED AND AUDIT-READY",
-      layout: "stacked",
       items: [
         "Delay in inspection or compliance failure create safety risk, regulatory challenges, and operational hazard",
         "Manual processes like checklists, paper records, and disconnected systems slow inspections",
@@ -227,7 +226,6 @@ export const useCasesData: Record<string, UseCaseData> = {
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
-      layout: "side-by-side",
       description1:
         "UnfoldXR enables organizations to run inspections with greater precision and lower risk. AI and augmented reality guide frontline teams through structured, context-aware inspection workflows aligned to the asset, regulation, or quality standard.",
       description2:
@@ -250,10 +248,10 @@ export const useCasesData: Record<string, UseCaseData> = {
           image: "/images/usecase/Inspection/Intervention/Edge.png",
         },
       ],
+      image: "/images/Product/TabImage.png",
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER INSPECTION, COMPLIANCE & QUALITY ASSURANCE",
-      layout: "grid",
       items: [
         {
           title: "INTELLIGENT INSPECTION PLANNING & ROSTERING",
@@ -393,14 +391,13 @@ export const useCasesData: Record<string, UseCaseData> = {
   "repair-maintenance": {
     hero: {
       title: "REPAIR, MAINTENANCE & ASSET MANAGEMENT",
-      subtitle: "The Costliest Downtime Is The One You Didn't Prevent.",
+      subtitle: "The costliest downtime is the one you didn't prevent.",
       description:
         "UnfoldXR brings AI- and augmented reality–powered intelligence directly into maintenance operations, reducing downtime and increasing profit.",
       image: "/images/usecase/Maintenance/HeroSection.png",
     },
     knowledge: {
       title: "WITH UNFOLDXR, CHOOSE SMARTER MAINTENANCE FROM PLANNING TO EXECUTION",
-      layout: "stacked",
       items: [
         "Poor planning and execution in repair and maintenance increases downtime and costs",
         "Manual coordination, scattered records, and disconnected systems slow planning and execution",
@@ -410,7 +407,6 @@ export const useCasesData: Record<string, UseCaseData> = {
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
-      layout: "side-by-side",
       description1:
         "With UnfoldXR, AI and augmented reality touches the 80% workforce at the frontlines who are still not receiving the technological support they need to augment their productivity.",
       description2: "Coordination becomes simpler. Tasks are executed with higher accuracy. Work stays consistent and reliable across sites, shifts, and teams.",
@@ -432,10 +428,10 @@ export const useCasesData: Record<string, UseCaseData> = {
           image: "/images/usecase/Inspection/Intervention/Edge.png",
         },
       ],
+      image: "/images/usecase/Repair/Repair.png",
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER REPAIR, MAINTENANCE AND ASSET MANAGEMENT",
-      layout: "grid",
       items: [
         {
           title: "INTELLIGENT TASK PLANNING & ROSTERING",
@@ -557,14 +553,13 @@ export const useCasesData: Record<string, UseCaseData> = {
   "field-inspection": {
     hero: {
       title: "FIELD SERVICE, TROUBLESHOOTING & REMOTE COLLABORATION",
-      subtitle: "The Perfect Human–AI Collaboration In The Field.",
+      subtitle: "The perfect human–AI collaboration in the field.",
       description:
         "UnfoldXR brings AI- and augmented reality powered intelligence directly to field service operations anytime, anywhere.",
-      image: "/images/usecase/Field_inspection/HeroSection.png",
+      image: "/images/usecase/FieldInspection/HeroSection.png",
     },
     knowledge: {
       title: "REDUCE SERVICE DELAYS WITH SMARTER FIELD SERVICE",
-      layout: "stacked",
       items: [
         "Field service and troubleshooting time-critical functions. Delays, misdiagnosis, or incomplete fixes directly impact customer satisfaction, asset uptime, and operational cost.",
         "Yet in most organizations, field teams still depend on phone calls, fragmented documentation, delayed escalations, and manual reporting. While the problems are distributed, expertise is centralized. The gap between the two creates downtime, repeat visits, and rising service costs.",
@@ -574,7 +569,6 @@ export const useCasesData: Record<string, UseCaseData> = {
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
-      layout: "side-by-side",
       description1:
         "UnfoldXR brings AI and augmented reality to the 80% deskless workforce operating in the field. Instead of relying on memory or delayed guidance, technicians receive structured, real-time support at the moment of troubleshooting.",
       description2: "",
@@ -596,10 +590,10 @@ export const useCasesData: Record<string, UseCaseData> = {
           image: "/images/usecase/Inspection/Intervention/Edge.png",
         },
       ],
+      image: "/images/usecase/FieldInspection/field.png",
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER TROUBLESHOOTING & FIELD SERVICE",
-      layout: "grid",
       items: [
         {
           title: "INTELLIGENT TICKET ROUTING & ROSTERING",

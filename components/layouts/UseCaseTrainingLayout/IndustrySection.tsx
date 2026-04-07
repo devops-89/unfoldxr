@@ -21,7 +21,7 @@ const IndustrySection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 36, lg: 44 },
+            fontSize: { xs: 28, md: 32, lg: 44 },
             mb: 2,
           }}
         >
@@ -31,7 +31,7 @@ const IndustrySection = ({ data }: Props) => {
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 18, lg: 20 },
+            fontSize: { xs: 16, md: 24, lg: 24 },
             color: COLORS.BLACK,
             maxWidth: 800,
             mx: "auto",

@@ -16,6 +16,7 @@ const OutcomesSection = ({ data }: Props) => {
         color: COLORS.WHITE,
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         overflow: "hidden",
         py: { xs: 10, md: 15 },
       }}
@@ -32,7 +33,9 @@ const OutcomesSection = ({ data }: Props) => {
           objectFit: "cover",
         }}
       />
-      <Box sx={{ position: "absolute", inset: 0, bgcolor: "rgba(0,0,0,0.8)" }} />
+      <Box
+        sx={{ position: "absolute", inset: 0, bgcolor: "rgba(0,0,0,0.8)" }}
+      />
 
       <Box
         sx={{
@@ -45,6 +48,7 @@ const OutcomesSection = ({ data }: Props) => {
         {/* Border Frame */}
         <Box
           sx={{
+            ml: { xs: 0, md: -5.5, lg: -8.2 },
             border: "2px solid rgba(197, 255, 46, 0.4)",
             borderRadius: "24px",
             boxShadow: "0 0 40px rgba(0,0,0,0.9)",
@@ -63,13 +67,13 @@ const OutcomesSection = ({ data }: Props) => {
           >
             {/* Left Side: Headline with Highlight */}
             <Grid
-              size={{ xs: 12, md: 8.5 }}
+              size={{ xs: 12, md: 7.5 }}
               sx={{ ml: { md: -5.5, lg: -11.2 }, zIndex: 2 }}
             >
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 54, lg: 64 },
+                  fontSize: { xs: 36, md: 54, lg: 60 },
                   lineHeight: 1,
                   textTransform: "uppercase",
                   fontWeight: 900,
@@ -83,7 +87,10 @@ const OutcomesSection = ({ data }: Props) => {
                   <Box
                     key={idx}
                     component="span"
-                    sx={{ display: "block", whiteSpace: { xs: "normal", md: "nowrap" } }}
+                    sx={{
+                      display: "block",
+                      whiteSpace: { xs: "normal", md: "nowrap" },
+                    }}
                   >
                     {line}
                   </Box>
@@ -92,7 +99,7 @@ const OutcomesSection = ({ data }: Props) => {
             </Grid>
 
             {/* Right Side: Stats Grid */}
-            <Grid size={{ xs: 12, md: 4, lg: 4.2 }}>
+            <Grid size={{ xs: 12, md: 4.5 }}>
               <Grid
                 container
                 spacing={{ xs: 2, md: 4 }}
@@ -104,23 +111,13 @@ const OutcomesSection = ({ data }: Props) => {
                       spacing={0.5}
                       sx={{
                         position: "relative",
-                        // Make the right column (i = 1, 3, 5) overlap the border slightly
-                        mr: {
-                          md: i % 2 !== 0 ? -6 : 0,
-                          lg: i % 2 !== 0 ? -8 : 0,
-                        },
-                        // Overlap bottom border for the last two metrics
-                        mb: {
-                          md: i >= 4 ? -12 : 0,
-                          lg: i >= 4 ? -13 : 0,
-                        },
                       }}
                     >
                       <Typography
                         sx={{
                           fontFamily: din.style.fontFamily,
                           color: COLORS.PRIMARY_GREEN,
-                          fontSize: { xs: 48, md: 64 },
+                          fontSize: { xs: 48, md: 60 },
                           fontWeight: 900,
                           lineHeight: 1,
                           position: "relative",
@@ -136,15 +133,6 @@ const OutcomesSection = ({ data }: Props) => {
                           lineHeight: 1.4,
                           color: "rgba(255,255,255,0.9)",
                           fontWeight: 400,
-                          // Extra right overlap for 40% (index 3)
-                          mr: {
-                            md: i === 3 ? -12 : 0,
-                            lg: i === 3 ? -16 : 0,
-                          },
-                          maxWidth: {
-                            md: i === 3 ? 350 : "none",
-                            lg: i === 3 ? 400 : "none",
-                          },
                         }}
                       >
                         {metric.text}

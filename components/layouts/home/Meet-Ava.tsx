@@ -49,8 +49,10 @@ const Meetava = () => {
               sx={{
                 mt: 3,
                 width: { xs: "100%", md: "auto" },
-                height: { xs: "45px", md: "62px" },
-                fontSize: { xs: 16, md: 23 },
+                borderRadius: 99,
+                px: { xs: 2.5, md: 4 },
+                py: 1.2,
+                fontSize: { xs: 14, md: 18, lg: 20 },
               }}
             >
               Book a Demo Now

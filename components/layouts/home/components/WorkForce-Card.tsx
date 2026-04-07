@@ -14,11 +14,11 @@ const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
           color: "#000",
           fontFamily: din.style.fontFamily,
           fontWeight: 700,
-          fontSize: { xs: 20, md: 28 },
+          fontSize: { xs: 18, md: 28 },
           lineHeight: { xs: 1.2, md: "24.2px" },
           letterSpacing: "-0.22px",
           textTransform: "uppercase",
-          my: { xs: 2, md: 3 },
+          my: { xs: 1.5, md: 3 },
           textAlign: "center",
         }}
       >
@@ -29,8 +29,8 @@ const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
           color: "#000",
           fontFamily: helvetica.style.fontFamily,
           fontWeight: 400,
-          fontSize: { xs: 16, md: 28 },
-          lineHeight: { xs: 1.5, md: "46px" },
+          fontSize: { xs: 14, md: 24 },
+          lineHeight: { xs: 1.4, md: "46px" },
           textAlign: "center",
         }}
       >
