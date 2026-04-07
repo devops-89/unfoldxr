@@ -67,17 +67,16 @@ const OutcomesSection = ({ data }: Props) => {
           >
             {/* Left Side: Headline with Highlight */}
             <Grid
-              size={{ xs: 12, md: 7.5 }}
-              sx={{ ml: { md: -5.5, lg: -11.2 }, zIndex: 2 }}
+              size={{ xs: 12, md: 7}}
+              sx={{ zIndex: 2 }}
             >
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
                   fontSize: { xs: 33, md: 54, lg: 60 },
-                  lineHeight: 1,
+                  lineHeight: 1.1,
                   textTransform: "uppercase",
                   fontWeight: 900,
-                  maxWidth: "none",
                   color: COLORS.WHITE,
                   position: "relative",
                   zIndex: 1,
@@ -89,7 +88,6 @@ const OutcomesSection = ({ data }: Props) => {
                     component="span"
                     sx={{
                       display: "block",
-                      whiteSpace: { xs: "normal", md: "nowrap" },
                     }}
                   >
                     {line}
@@ -99,11 +97,11 @@ const OutcomesSection = ({ data }: Props) => {
             </Grid>
 
             {/* Right Side: Stats Grid */}
-            <Grid size={{ xs: 12, md: 4.5 }}>
+            <Grid size={{ xs: 12, md: 5 }}>
               <Grid
                 container
-                spacing={{ xs: 2, md: 4 }}
-                rowSpacing={{ xs: 6, md: 8 }}
+                spacing={{ xs: 3, md: 4 }}
+                rowSpacing={{ xs: 5, md: 6 }}
               >
                 {data.metrics.map((metric, i) => (
                   <Grid key={i} size={{ xs: 12, sm: 6 }}>
@@ -117,7 +115,7 @@ const OutcomesSection = ({ data }: Props) => {
                         sx={{
                           fontFamily: din.style.fontFamily,
                           color: COLORS.PRIMARY_GREEN,
-                          fontSize: { xs: 48, md: 60 },
+                          fontSize: { xs: 42, md: 54, lg: 60 },
                           fontWeight: 900,
                           lineHeight: 1,
                           position: "relative",
@@ -129,8 +127,8 @@ const OutcomesSection = ({ data }: Props) => {
                       <Typography
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
-                          fontSize: { xs: 16, md: 18, lg: 20 },
-                          lineHeight: 1.4,
+                          fontSize: { xs: 15, md: 16, lg: 18 },
+                          lineHeight: 1.3,
                           color: "rgba(255,255,255,0.9)",
                           fontWeight: 400,
                         }}

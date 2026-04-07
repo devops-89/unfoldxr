@@ -145,7 +145,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 16, md: 18 },
               fontWeight: 700,
-              textTransform: "capitalize",
+              textTransform: "none",
               boxShadow: "none",
               "&:hover": {
                 bgcolor: COLORS.PRIMARY_HOVER,
@@ -153,7 +153,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
               },
             }}
           >
-            {ctaText || "Book a Demo"}
+            {ctaText || "Book a demo"}
           </Button>
         </Box>
       </Box>

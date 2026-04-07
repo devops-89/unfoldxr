@@ -26,7 +26,7 @@ export const din = localFont({
   src: [
     {
       path: "../public/fonts/din/dinnextw1g_medium.otf",
-      weight: "600",
+      weight: "500",
     },
     {
       path: "../public/fonts/din/dinnextw1g.otf",

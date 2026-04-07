@@ -63,7 +63,7 @@ export const HEADER_LINKS = [
       { label: "Automotive", url: "/industries/automotive-operation" },
       { label: "Oil & Gas", url: "/industries/oil-gas-industry" },
       { label: "Manufacturing", url: "/industries/manufacturing-industry" },
-      { label: "Retail & Logistics", url: "/industries/retail-logistics-industry" },
+      { label: "Retail", url: "/industries/retail-logistics-industry" },
       { label: "Marine", url: "/industries/marine-industry" },
       { label: "Insurance", url: "/industries/insurance-industry" },
       { label: "Aviation", url: "/industries/aviation-industry" },
@@ -83,16 +83,15 @@ export const HEADER_LINKS = [
     url: "#",
   },
   {
-    label: "About Us",
+    label: "About us",
     url: "#",
     subLinks: [
       { label: "About UnfoldXR", url: "/about-us" },
       { label: "Partners", url: "/partners" },
-      { label: "Careers", url: "#" },
     ],
   },
   {
-    label: "Contact Us",
+    label: "Contact us",
     url: "/contact-us",
   },
 ];
@@ -111,8 +110,8 @@ export const NAV_ITEMS = [
   "Industry",
   "Product",
   "Resources",
-  "About Us",
-  "Book a Demo",
+  "About us",
+  "Book a demo",
 ];
 
 export const FOOTER_COLUMNS: { title: string; links: { label: string; url: string }[] }[] = [
@@ -135,7 +134,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; url: strin
       { label: "Aviation", url: "/industries/aviation-industry" },
       { label: "Insurance", url: "/industries/insurance-industry" },
       { label: "Marine", url: "/industries/marine-industry" },
-      { label: "Retail & Logistics", url: "/industries/retail-logistics-industry" },
+      { label: "Retail", url: "/industries/retail-logistics-industry" },
       { label: "HealthCare", url: "/industries/healthcare-industry" },
     ],
   },
@@ -159,16 +158,15 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; url: strin
     ],
   },
   {
-    title: "About Us",
+    title: "About us",
     links: [
       { label: "Mission, Vision, Leadership", url: "/about-us" },
       { label: "Brand DNA", url: "/about-us" },
       { label: "Partners", url: "/partners" },
-      { label: "Careers", url: "#" },
     ],
   },
   { title: "Contact Us", links: [{ label: "Contact Us", url: "/contact-us" }] },
-  { title: "Book a Demo", links: [{ label: "Book a Demo", url: "/contact-us" }] },
+  { title: "Book a demo", links: [{ label: "Book a demo", url: "/contact-us" }] },
 ];
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
@@ -281,7 +279,7 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
 //  Tools Section Data
 
 export const toolsLeftData: TOOLS_LEFT_SECTION_PROPS = {
-  ctaText: "Book a Demo",
+  ctaText: "Book a demo",
   note: "*note - this place will have cursor animation",
   image: leftSectionBg,
 };

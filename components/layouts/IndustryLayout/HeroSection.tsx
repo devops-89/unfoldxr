@@ -11,7 +11,7 @@ const HeroSection = ({ data }: Props) => {
       image={data.image}
       title={data.title}
       description={data.description}
-      primaryBtn={{ label: "Request a Demo" }}
+      primaryBtn={{ label: "Request a demo" }}
     />
   );
 };

@@ -65,7 +65,7 @@ export const homePage = {
       subDescription:
         "Built to evolve with your needs, our platform comes in three variants. ",
       endHeading: "Welcome to the Future of Work!",
-      cta: "Request a Demo",
+      cta: "Request a demo",
     },
   },
   metrics: {
@@ -132,7 +132,7 @@ export const homePage = {
         description: "Inspection, Compliance & Quality Assurance",
       },
     ],
-    cta: "Know More",
+    cta: "Know more",
   },
   devicesSection: {
     heading: "Built to Work Across Devices",
@@ -153,7 +153,7 @@ export const homePage = {
           "To train, guide, support & scale frontline workforce, remote teams and skilled technicians",
         description:
           "From real-time assistance to enterprise-wide operational intelligence, UnfoldXR adapts to your stage of growth.",
-        cta: "Request a Demo",
+        cta: "Request a demo",
       },
       lifecycle: {
         title: "UnfoldXR supports your operations across the complete lifecycle of work",
@@ -292,7 +292,7 @@ export const homePage = {
       subtitle:
         "Book a demo to see how UnfoldXR fits your operational stage.",
       cta1: "Talk to the product specialist",
-      cta2: "Book a Demo",
+      cta2: "Request a demo",
     },
   },
 };
@@ -398,7 +398,7 @@ export const contactPage={
 export const aboutPage = {
   herosection: {
     heading: "AN INTELLIGENT WORK PLATFORM BUILT FOR THE FRONTLINE.",
-    cta: "Schedule a Demo",
+    cta: "Schedule a demo",
   },
   introSection: {
     heading: "ABOUT UNFOLDXR",
@@ -553,7 +553,7 @@ export const meetAvaPage = {
   },
   evolvesCtaSection: {
     heading: "Evolves with your business needs.",
-    cta: "Request a Demo"
+    cta: "Request a demo"
   }
 };
 
@@ -580,7 +580,7 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
         "Scalable expertise across global operations.",
       ],
       bottomText: "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without adding complexity.",
-      ctaText: "Watch How UnfoldXR Augments Automotive Operations",
+      ctaText: "Watch how UnfoldXR augments automotive operations",
     },
     operationFlowSection: {
       title: "Intelligence Across the Entire Automotive Operation",
@@ -620,7 +620,7 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "Know More",
+      ctaText: "Know more",
     },
     outcomesSection: {
       title: "Driving Measurable Outcomes in Automotive Operations",
@@ -637,7 +637,7 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
     finalCtaSection: {
       heading: "Bring intelligence to your manufacturing floor",
       description: "See how UnfoldXR improves execution, reduces downtime, and scales expertise across your operations.",
-      ctaText: "Talk to Us",
+      ctaText: "Talk to us",
       ctaIcon: automotiveIcon.src,
     },
   },

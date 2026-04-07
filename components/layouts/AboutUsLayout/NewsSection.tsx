@@ -55,10 +55,10 @@ const NewsSection = () => {
                 px: { xs: 2.5, md: 4 },
                 py: 1.2,
                 fontSize: { xs: 14, md: 18, lg: 20 },
-                fontWeight: 700
+                fontWeight: 500
               }}
             >
-              Contact Us &rarr;
+              Contact us &rarr;
             </ContainedButton>
           </CardContent>
         </Card>
