@@ -238,10 +238,10 @@ const Header = () => {
                   color: COLORS.BLACK,
                   fontSize: { md: 12, lg: 14 },
                   fontWeight: 700,
-                  textTransform: "uppercase",
+                  textTransform: "none",
                 }}
               >
-                BOOK A DEMO
+                Book a demo
               </Button>
             </Stack>
 
@@ -344,10 +344,10 @@ const Header = () => {
                 color: COLORS.BLACK,
                 fontSize: 16,
                 fontWeight: 900,
-                textTransform: "uppercase",
+                textTransform: "none",
               }}
             >
-              BOOK A DEMO
+              Book a demo
             </Button>
           </Stack>
         </Box>

@@ -158,8 +158,8 @@ const RealityNeedsSection = ({ data }: Props) => {
               borderRadius: "99px",
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 14, md: 16, lg: 18 },
-              fontWeight: 700,
-              textTransform: "capitalize",
+              fontWeight: 500,
+              textTransform: "none",
               boxShadow: "none",
               "&:hover": {
                 bgcolor: COLORS.PRIMARY_HOVER,

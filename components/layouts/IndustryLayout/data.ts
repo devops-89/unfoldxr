@@ -60,7 +60,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Scalable expertise across global operations.",
       ],
       bottomText: "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without adding complexity.",
-      ctaText: "Watch How UnfoldXR Augments Automotive Operations",
+      ctaText: "Watch how UnfoldXR augments automotive operations",
     },
     operationFlow: {
       title: "Intelligence Across the Entire Automotive Operation",
@@ -100,7 +100,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "Know More",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes In", "Automotive", "Operations"],
@@ -117,7 +117,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to your automotive operations",
       description: "See how UnfoldXR improves execution, reduces downtime, and scales expertise across production and service environments.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },
@@ -146,7 +146,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster onboarding and upskilling of technicians and contract workforce",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into Oil & Gas Plants and Refinery operations, without adding complexity.",
-      ctaText: "Watch How UnfoldXR Augments Oil & Gas Operations",
+      ctaText: "Watch how UnfoldXR augments Oil & Gas operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE REFINERY OPERATIONS LIFECYCLE",
@@ -185,7 +185,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "KNOW MORE",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Refinery", "Operations"],
@@ -202,7 +202,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to your Oil & Gas Industry operations",
       description: "See how UnfoldXR improves maintenance execution, reduces downtime, and ensures safety and compliance across your plant operations.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },
@@ -230,7 +230,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Consistent performance across plants and teams",
       ],
       bottomText: "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without any complexity.",
-      ctaText: "Watch How UnfoldXR Augments Manufacturing Operations",
+      ctaText: "Watch how UnfoldXR augments manufacturing operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE MANUFACTURING OPERATIONAL MODEL",
@@ -269,7 +269,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "KNOW MORE",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In", "Manufacturing"],
@@ -286,7 +286,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to your manufacturing floor",
       description: "See how UnfoldXR improves execution, reduces downtime, and scales expertise across your operations.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },
@@ -315,7 +315,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Reduced errors in picking, packing, dispatch, and shelf replenishment",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into retail and logistics operations from inbound inventory to last-mile execution.",
-      ctaText: "Watch How UnfoldXR Augments Retail & Logistics Operations",
+      ctaText: "Watch how UnfoldXR augments retail & logistics operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE RETAIL & LOGISTICS CHAIN",
@@ -354,7 +354,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "KNOW MORE",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "Across Retail & Logistics", "Operations"],
@@ -371,7 +371,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to your retail and logistics operations",
       description: "See how UnfoldXR improves execution, accelerates onboarding, and drives consistency across your warehouse, logistics, and retail network.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },
@@ -401,7 +401,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster onboarding and skill alignment of rotating crew members",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into marine operations — without adding complexity.",
-      ctaText: "Watch How UnfoldXR Augments Marine Operations",
+      ctaText: "Watch how UnfoldXR augments marine operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE MARINE OPERATIONS LIFECYCLE",
@@ -440,7 +440,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "KNOW MORE",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Marine", "Operations"],
@@ -457,7 +457,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to your marine operations",
       description: "See how UnfoldXR improves maintenance, reduces downtime at sea, and ensures safety and compliance across your fleet.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },
@@ -484,7 +484,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Better visibility into field activities and compliance",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured guidance and real-time intelligence into inspection and assessment workflows.",
-      ctaText: "Watch How UnfoldXR Augments Insurance Operations",
+      ctaText: "Watch how UnfoldXR augments insurance operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE INSPECTION AND ASSESSMENT PROCESS",
@@ -523,7 +523,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "KNOW MORE",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Insurance", "Operations"],
@@ -540,7 +540,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to insurance inspections and assessments",
       description: "See how UnfoldXR improves inspection accuracy, accelerates reporting, and ensures compliance across insurance operations.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },
@@ -568,7 +568,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster training and certification for technicians",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into aviation operations, without adding operational complexity.",
-      ctaText: "Watch How UnfoldXR Augments Aviation Operations",
+      ctaText: "Watch how UnfoldXR augments aviation operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE AVIATION OPERATION",
@@ -607,7 +607,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "KNOW MORE",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Aviation", "Operations"],
@@ -624,7 +624,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to your aviation operations",
       description: "See how UnfoldXR improves maintenance execution, reduces aircraft downtime, and scales expertise across aviation teams.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },
@@ -652,7 +652,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Faster training for healthcare staff and technicians",
       ],
       bottomText: "UnfoldXR is designed for these realities. We bring structured intelligence into healthcare workflows, enabling teams to perform with clarity, confidence, and precision.",
-      ctaText: "Watch How UnfoldXR Augments Healthcare Operations",
+      ctaText: "Watch how UnfoldXR augments healthcare operations",
     },
     operationFlow: {
       title: "INTELLIGENCE ACROSS THE ENTIRE HEALTHCARE WORKFLOW",
@@ -691,7 +691,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Inspection, Compliance & Quality Assurance",
         "Training, Onboarding & Knowledge Capture",
       ],
-      ctaText: "KNOW MORE",
+      ctaText: "Know more",
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Healthcare", "Operations"],
@@ -708,7 +708,7 @@ export const industriesData: Record<string, IndustryData> = {
     finalCta: {
       title: "Bring intelligence to modern healthcare operations",
       description: "See how UnfoldXR helps healthcare teams work with precision, scale expertise, and support better patient outcomes.",
-      ctaText: "TALK TO US",
+      ctaText: "Talk to us",
       ctaIcon: "/images/Industries/Icon.svg",
     },
   },

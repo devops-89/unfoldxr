@@ -96,10 +96,10 @@ const CareersSection = () => {
             px: { xs: 2.5, md: 4 },
             py: 1.2,
             fontSize: { xs: 14, md: 18, lg: 20 },
-            fontWeight: 700
+            fontWeight: 500
           }}
         >
-          Explore Open Roles
+          Explore open roles
         </ContainedButton>
       </Container>
     </Box>

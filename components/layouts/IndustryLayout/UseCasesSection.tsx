@@ -59,7 +59,7 @@ const UseCasesSection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
                 fontSize: { xs: 14, md: 18, lg: 20 },
-                textTransform: "capitalize",
+                textTransform: "none",
                 boxShadow: "none",
                 display: "flex",
                 alignItems: "center",

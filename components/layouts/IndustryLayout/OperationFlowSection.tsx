@@ -1,7 +1,10 @@
+"use client";
+
 import { din, helvetica } from "@/utils/fonts";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 interface Props {
   data: IndustryData["operationFlow"];
@@ -10,6 +13,8 @@ interface Props {
 }
 
 const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
+  const { openModal } = useDemoModal();
+
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 10, md: 15 } }}>
       <Box
@@ -136,6 +141,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
         <Box sx={{ textAlign: "center", mt: 16 }}>
           <Button
             variant="contained"
+            onClick={openModal}
             sx={{
               bgcolor: COLORS.PRIMARY_GREEN,
               color: COLORS.BLACK,
@@ -145,7 +151,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 16, md: 18 },
               fontWeight: 700,
-              textTransform: "capitalize",
+              textTransform: "none",
               boxShadow: "none",
               "&:hover": {
                 bgcolor: COLORS.PRIMARY_HOVER,
@@ -153,7 +159,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
               },
             }}
           >
-            {ctaText || "Book a Demo"}
+            {ctaText || "Book a demo"}
           </Button>
         </Box>
       </Box>

@@ -110,7 +110,7 @@ const PageHeroSection = ({
             textTransform: "uppercase",
             fontSize: { xs: 26, md: 50, lg: 60 },
             lineHeight: { xs: "40px", md: "92px" },
-            maxWidth: titleMaxWidth || 950,
+            maxWidth: titleMaxWidth || 1050,
           }}
         >
           {title}

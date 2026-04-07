@@ -120,7 +120,7 @@ export default function Footer() {
                         <Box
                           key={idx}
                           onClick={(e) => {
-                            if (link.label === "Book a Demo") {
+                            if (link.label.toLowerCase().includes("demo")) {
                               e.preventDefault();
                               openModal();
                             }
