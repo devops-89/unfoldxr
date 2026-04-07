@@ -33,7 +33,7 @@ const IndustrySection = ({ data }: Props) => {
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 24, lg: 24 },
             color: COLORS.BLACK,
-            maxWidth: 800,
+            maxWidth: 1000,
             mx: "auto",
             mb: { xs: 6, md: 10 },
           }}

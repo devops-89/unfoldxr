@@ -134,7 +134,7 @@ const DesignToEvolve = () => {
                     color: COLORS.WHITE,
                     mb: 2,
                     transition: "all 0.3s ease",
-                    textTransform: "capitalize",
+                    textTransform: "none",
                   }}
                 >
                   {data.variants[activeIndex].subHeading ||
@@ -148,7 +148,7 @@ const DesignToEvolve = () => {
                     color: COLORS.TEXT_MUTED,
                     maxWidth: 650,
                     transition: "all 0.3s ease",
-                    textTransform: "capitalize",
+                    textTransform: "none",
                   }}
                 >
                   {data.variants[activeIndex].description}

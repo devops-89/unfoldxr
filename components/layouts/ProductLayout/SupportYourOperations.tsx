@@ -130,7 +130,7 @@ const SupportYourOperations = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                display: "flex",
+                display: "none",
                 alignItems: "center",
                 gap: 1.5,
                 border: `1px solid ${COLORS.WHITE_ALPHA_40}`,
@@ -200,7 +200,7 @@ const SupportYourOperations = () => {
                 transform: "translateX(-50%)",
               }}
             >
-              {data.lifecycle.placeholderText}
+              {/* {data.lifecycle.placeholderText} */}
             </Typography>
           </Box>
         </Box>

@@ -65,7 +65,7 @@ export const homePage = {
       subDescription:
         "Built to evolve with your needs, our platform comes in three variants. ",
       endHeading: "Welcome to the Future of Work!",
-      cta: "Request a Demo",
+      cta: "Request a demo",
     },
   },
   metrics: {
@@ -113,7 +113,7 @@ export const homePage = {
   },
   outcome: {
     heading: "DESIGNED FOR OUTCOME",
-    subHeading: "Fits Into Everyday Work Scenario",
+    subHeading: "Fits into everyday work scenario",
     data: [
       {
         number: "01",
@@ -132,7 +132,7 @@ export const homePage = {
         description: "Inspection, Compliance & Quality Assurance",
       },
     ],
-    cta: "Know More",
+    cta: "Know more",
   },
   devicesSection: {
     heading: "Built to Work Across Devices",
@@ -153,7 +153,7 @@ export const homePage = {
           "To train, guide, support & scale frontline workforce, remote teams and skilled technicians",
         description:
           "From real-time assistance to enterprise-wide operational intelligence, UnfoldXR adapts to your stage of growth.",
-        cta: "Request a Demo",
+        cta: "Request a  Demo",
       },
       lifecycle: {
         title: "UnfoldXR supports your operations across the complete lifecycle of work",
@@ -163,8 +163,8 @@ export const homePage = {
           "After completion.",
         ],
         bg: "/images/Product/SupportYourOperations.png",
-        cta: "View Case Study",
-        placeholderText: "*THIS IS A PLACEHOLDER IMAGE*, WILL BE REPLACED BY VID THUMBNAIL",
+        cta: "View case study",
+        // placeholderText: "*THIS IS A PLACEHOLDER IMAGE*, WILL BE REPLACED BY VID THUMBNAIL",
       },
     },
     designToEvolve: {
@@ -207,6 +207,7 @@ export const homePage = {
         "AVA supports your workforce across all three versions of the platform. It works alongside your teams as an intelligent assistant, a sharp analyser, and a reliable task partner. The perfect work buddy.",
       img: "/images/Product/MeetAva.png",
       cta: "Visit AVA",
+      ctaLink: "/meet-ava",
     },
     exploreCapabilities: {
       title: "Explore capabilities by mode",
@@ -292,7 +293,7 @@ export const homePage = {
       subtitle:
         "Book a demo to see how UnfoldXR fits your operational stage.",
       cta1: "Talk to the product specialist",
-      cta2: "Book a Demo",
+      cta2: "Book a demo",
     },
   },
 };
@@ -301,7 +302,7 @@ export const partnersPage={
   herosection: {
     heading1: "Unfold Profit and Potential with our Channel Partnership.",
     description: "Achieve more revenue and steady growth with UnfoldXR.",
-    cta1: "Become a Partner",
+    cta1: "Become a partner",
     
   },
   metricsSection:{
@@ -553,7 +554,7 @@ export const meetAvaPage = {
   },
   evolvesCtaSection: {
     heading: "Evolves with your business needs.",
-    cta: "Request a Demo"
+    cta: "Request a demo"
   }
 };
 

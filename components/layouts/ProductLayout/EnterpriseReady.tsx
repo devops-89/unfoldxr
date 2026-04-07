@@ -37,7 +37,7 @@ const EnterpriseReady = () => {
         sx={{
           position: "absolute",
           left: 0,
-          top: { xs: 0, md: 50 },
+          top: { xs: 0, md: 40 },
           width: { xs: "100%", md: "26%" },
           height: { xs: "50%", md: "85%" },
           objectFit: "cover",
@@ -90,6 +90,7 @@ const EnterpriseReady = () => {
                           fontFamily: helvetica.style.fontFamily,
                           fontWeight: 700,
                           fontSize: { xs: 18, md: 20 },
+                          textTransform: "uppercase",
                           lineHeight: 1.2,
                           mb: 1.5,
                         }}

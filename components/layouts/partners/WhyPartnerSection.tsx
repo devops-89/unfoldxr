@@ -2,7 +2,6 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import WhyPartnerCard from "./components/WhyPartnerCard";
 import { partnersPage } from "@/utils/Website-Data";
 
-
 const WhyPartnerSection = () => {
   return (
     <Box
@@ -36,11 +35,13 @@ const WhyPartnerSection = () => {
         </Typography>
 
         <Grid container rowSpacing={{ xs: 12, md: 3 }} columnSpacing={3}>
-          {partnersPage.whyPartnerSection.why_partner_card_data.map((card, i) => (
-            <Grid size={{ xs: 12, md: 4 }} key={i}>
-              <WhyPartnerCard {...card} />
-            </Grid>
-          ))}
+          {partnersPage.whyPartnerSection.why_partner_card_data.map(
+            (card, i) => (
+              <Grid size={{ xs: 12, md: 4 }} key={i}>
+                <WhyPartnerCard {...card} />
+              </Grid>
+            ),
+          )}
         </Grid>
       </Container>
     </Box>

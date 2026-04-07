@@ -16,7 +16,7 @@ interface SectionCTAProps {
 const SectionCTA: React.FC<SectionCTAProps> = ({
   title,
   subtitle,
-  btnText = "Request a Demo",
+  btnText = "Request a demo",
   onBtnClick,
   variant = "default",
   sx,
@@ -134,7 +134,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
                 fontSize: { xs: 14, md: 18, lg: 20 },
-                textTransform: "uppercase",
+                textTransform: "none",
                 "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 },
               }}
             >

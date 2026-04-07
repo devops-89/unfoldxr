@@ -78,7 +78,7 @@ const OneAiPlatform = () => {
               fontSize: { xs: 16, md: 18, lg: 20 },
               lineHeight: 1.5,
               color: COLORS.BLACK,
-              maxWidth: 800,
+              maxWidth: 900,
               mx: "auto",
             }}
           >

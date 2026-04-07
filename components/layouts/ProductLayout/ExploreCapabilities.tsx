@@ -73,6 +73,7 @@ const ExploreCapabilities = () => {
                       mt: 0.5,
                       fontFamily: din.style.fontFamily,
                       fontSize: { xs: 16, md: 18 },
+                      // textTransform: "none",
                       color: activeIndex === index ? COLORS.PRIMARY_HOVER : COLORS.BLACK,
                       lineHeight: 1.2,
                     }}
@@ -111,7 +112,7 @@ const ExploreCapabilities = () => {
                     fontSize: { xs: 18, md: 20 },
                     lineHeight: 1.6,
                     color: COLORS.BLACK,
-                    textTransform: "capitalize",
+                    textTransform: "none",
                     mb: data.modes[activeIndex].description.includes(" Work becomes")
                       ? 0
                       : 4,

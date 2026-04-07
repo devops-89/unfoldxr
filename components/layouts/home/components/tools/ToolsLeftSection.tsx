@@ -4,11 +4,12 @@ import Image from "next/image";
 import { TOOLS_LEFT_SECTION_PROPS } from "@/utils/types";
 import { COLORS } from "@/utils/enum";
 
-const ToolsLeftSection = ({ ctaText, image }: TOOLS_LEFT_SECTION_PROPS) => {
+const ToolsLeftSection = ({ ctaText, image, onCtaClick }: TOOLS_LEFT_SECTION_PROPS & { onCtaClick?: () => void }) => {
   return (
     <Stack spacing={{ xs: 4, md: 8 }} alignItems={{ xs: "center", md: "flex-start" }}>
       {/* CTA */}
       <ContainedButton
+        onClick={onCtaClick}
         sx={{
           height: { xs: "44px", md: "50px" },
           fontSize: { xs: 16, md: 18 },

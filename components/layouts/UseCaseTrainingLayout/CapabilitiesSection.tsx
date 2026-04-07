@@ -163,14 +163,14 @@ const CapabilitiesSection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 fontSize: { xs: 14, md: 18, lg: 20 },
-                textTransform: "uppercase",
+                textTransform: "none",
                 display: "flex",
                 alignItems: "center",
                 gap: 2,
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}
             >
-              Download the Full UnfoldXR Feature List <ArrowForwardRoundedIcon />
+              Download the full UnfoldXR feature list <ArrowForwardRoundedIcon />
             </Button>
           </Box>
         </Box>
@@ -321,7 +321,8 @@ const CapabilitiesSection = ({ data }: Props) => {
                   color: COLORS.WHITE,
                   fontWeight: 500,
                   transition: "opacity 0.3s ease",
-                  textTransform: "capitalize",
+                  textTransform: "none",
+
                 }}
               >
                 {data.items[activeItem].description}
@@ -344,14 +345,14 @@ const CapabilitiesSection = ({ data }: Props) => {
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               fontSize: { xs: 14, md: 18, lg: 20 },
-              textTransform: "uppercase",
+              textTransform: "none",
               display: "flex",
               alignItems: "center",
               gap: 2,
               "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
             }}
           >
-            Download the Full UnfoldXR Feature List <ArrowForwardRoundedIcon />
+            Download the full UnfoldXR feature list <ArrowForwardRoundedIcon />
           </Button>
         </Box>
       </Box>

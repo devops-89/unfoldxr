@@ -8,8 +8,10 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import FutureWorkCard from "./components/Future-Work-Card";
 import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const FutureWork = () => {
+  const { openModal } = useDemoModal();
   const [expandedSteps, setExpandedSteps] = useState([0]);
 
   const handleToggle = (index: number) => {
@@ -104,6 +106,7 @@ const FutureWork = () => {
                 </Typography>
 
                 <ContainedButton
+                  onClick={openModal}
                   sx={{
                     mt: 3,
                     width: { xs: "100%", md: "auto" },

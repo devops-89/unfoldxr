@@ -75,6 +75,7 @@ const EcosystemSection = () => {
                           color: activeTab === i ? COLORS.PRIMARY_HOVER : "#000",
                           fontWeight: 600,
                           whiteSpace: "nowrap",
+                          textTransform: "uppercase",
                         }}
                       >
                         {item.label}

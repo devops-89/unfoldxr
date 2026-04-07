@@ -112,7 +112,7 @@ export const NAV_ITEMS = [
   "Product",
   "Resources",
   "About Us",
-  "Book a Demo",
+  "Book a demo",
 ];
 
 export const FOOTER_COLUMNS: { title: string; links: { label: string; url: string }[] }[] = [
@@ -168,7 +168,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; url: strin
     ],
   },
   { title: "Contact Us", links: [{ label: "Contact Us", url: "/contact-us" }] },
-  { title: "Book a Demo", links: [{ label: "Book a Demo", url: "/contact-us" }] },
+  { title: "Book a demo", links: [{ label: "Book a demo", url: "/contact-us" }] },
 ];
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
@@ -281,7 +281,7 @@ export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
 //  Tools Section Data
 
 export const toolsLeftData: TOOLS_LEFT_SECTION_PROPS = {
-  ctaText: "Book a Demo",
+  ctaText: "Book a demo",
   note: "*note - this place will have cursor animation",
   image: leftSectionBg,
 };
@@ -356,17 +356,17 @@ export const partnersMetricsData: PARTNERS_METRICS_CARD_PROPS[] = [
 
 export const partnersWhyPartnerData: PARTNERS_WHY_PARTNER_CARD_PROPS[] = [
   {
-    title: "Increase product stickiness",
+    title: "INCREASE PRODUCT STICKINESS",
     description:
       "UnfoldXR embeds augmented reality directly into daily operations, increasing platform dependency and long-term adoption.",
   },
   {
-    title: "Accelerate revenue growth",
+    title: "ACCELERATE REVENUE GROWTH",
     description:
       "Achieve higher conversions and increase average deal size with AR-enabled execution capabilities.",
   },
   {
-    title: "Strengthen strategic positioning",
+    title: "STRENGTHEN STRATEGIC POSITIONING",
     description:
       "Move from system provider to innovation-led transformation partner with predictable, high-margin recurring revenue.",
   },

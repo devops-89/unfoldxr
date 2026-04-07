@@ -249,7 +249,7 @@ export default function Footer() {
                       },
                     }}
                   >
-                    Request a Demo
+                    Request a demo
                   </Button>
                 </Stack>
               </Stack>

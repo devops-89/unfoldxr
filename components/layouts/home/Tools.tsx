@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Box,
   Container,
@@ -6,15 +8,16 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React from "react";
 import Image from "next/image";
 import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import ToolsLeftSection from "./components/tools/ToolsLeftSection";
 import ToolsRightSection from "./components/tools/ToolsRightSection";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const Tools = () => {
+  const { openModal } = useDemoModal();
   return (
     <Box
       sx={{
@@ -103,7 +106,7 @@ const Tools = () => {
                   pb: { xs: 0, md: "8px" },
                 }}
               >
-                Augmenting {"\n"}Human Productivity.
+                Augmenting {"\n"}human productivity.
               </Typography>
             </Stack>
           </Box>
@@ -115,7 +118,7 @@ const Tools = () => {
             sx={{ mt: { xs: 4, md: 8 } }}
           >
             <Grid size={{ xs: 12, md: 6 }}>
-              <ToolsLeftSection {...homePage.tools.leftSection} />
+              <ToolsLeftSection {...homePage.tools.leftSection} onCtaClick={openModal} />
             </Grid>
 
             <Grid size={{ xs: 12, md: 6 } }>

@@ -113,9 +113,10 @@ const FromAssist = () => {
                 {data.cta1} <ArrowForwardRoundedIcon />
               </Button>
               <Typography
+                onClick={openModal}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  textDecoration: "underline",
+                  textDecoration: "none",
                   textUnderlineOffset: "6px",
                   fontWeight: 700,
                   fontSize: 16,

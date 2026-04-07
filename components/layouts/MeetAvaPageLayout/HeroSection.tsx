@@ -9,7 +9,7 @@ const HeroSection = () => {
     <Box
       sx={{
         bgcolor: COLORS.BLACK,
-        minHeight: { md: "90vh" },
+        minHeight: { md: "95vh" },
         display: "flex",
         alignItems: "center",
         pt: { xs: 14, md: 12 },
@@ -41,7 +41,7 @@ const HeroSection = () => {
             bgcolor: COLORS.CARD_BG_DARK,
             borderRadius: { xs: 4, md: "40px" },
             overflow: "hidden",
-            minHeight: { xs: 520, md: 550 },
+            minHeight: { xs: 520, md: 680 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             alignItems: "stretch",
@@ -51,7 +51,7 @@ const HeroSection = () => {
             <Grid
               size={{ xs: 12, md: 6 }}
               sx={{
-                p: { xs: 4, md: 8, lg: 10 },
+                p: { xs: 4, md: 8, lg: 8 },
 
                 zIndex: 1,
                 display: "flex",
@@ -65,6 +65,8 @@ const HeroSection = () => {
                   fontSize: { xs: 18, md: 20, lg: 24 },
                   fontWeight: 700,
                   color: COLORS.WHITE,
+                  maxWidth: "400px",
+                  lineHeight: 1.3,
                   mb: 4,
                 }}
               >

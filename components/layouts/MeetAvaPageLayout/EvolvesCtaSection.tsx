@@ -1,9 +1,13 @@
+"use client";
+
 import { Box, Button, Typography } from "@mui/material";
 import { din } from "@/utils/fonts";
 import { meetAvaPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const EvolvesCtaSection = () => {
+  const { openModal } = useDemoModal();
   const { evolvesCtaSection: data } = meetAvaPage;
 
   return (
@@ -67,6 +71,7 @@ const EvolvesCtaSection = () => {
             </Typography>
 
             <Button
+              onClick={openModal}
               sx={{
                 mt: 6,
                 bgcolor: COLORS.PRIMARY_GREEN,
@@ -77,7 +82,7 @@ const EvolvesCtaSection = () => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 fontSize: { xs: 14, md: 16 },
-                textTransform: "uppercase",
+                textTransform: "none",
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}
             >

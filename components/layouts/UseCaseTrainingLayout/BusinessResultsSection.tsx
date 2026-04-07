@@ -46,6 +46,7 @@ const BusinessResultsSection = ({ data }: Props) => {
                     fontFamily: inter.style.fontFamily,
                     fontWeight: 800,
                     fontSize: { xs: 20, md: 25 },
+                    textTransform: "uppercase",
                     lineHeight: 1.1,
                     mb: 2.5,
                   }}
@@ -72,13 +73,13 @@ const BusinessResultsSection = ({ data }: Props) => {
                       px: { xs: 2.5, md: 4 },
                       py: 1.2,
                       fontSize: { xs: 14, md: 18, lg: 20 },
-                      fontWeight: 900,
+                      fontWeight: 600,
                       fontFamily: inter.style.fontFamily,
                       textTransform: "none",
                       "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
                     }}
                   >
-                    Learn More
+                    Learn more
                   </Button>
                 </Box>
               </Box>

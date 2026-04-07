@@ -54,6 +54,7 @@ const MeetAva = () => {
             </Typography>
             <Box sx={{ mt: 6 }}>
               <Button
+                href={data.ctaLink}
                 sx={{
                   bgcolor: COLORS.PRIMARY_GREEN,
                   color: COLORS.BLACK,

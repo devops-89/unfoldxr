@@ -1,11 +1,14 @@
+"use client";
+
 import ContainedButton from "@/components/widgets/ContainedButton";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const Meetava = () => {
+  const { openModal } = useDemoModal();
   return (
     <Box sx={{ mt: { xs: 8, md: 24 }, mb: { xs: 8, md: 24 } }}>
       <Container maxWidth="lg">
@@ -46,6 +49,7 @@ const Meetava = () => {
             </Stack>
 
             <ContainedButton
+              onClick={openModal}
               sx={{
                 mt: 3,
                 width: { xs: "100%", md: "auto" },
@@ -55,7 +59,7 @@ const Meetava = () => {
                 fontSize: { xs: 14, md: 18, lg: 20 },
               }}
             >
-              Book a Demo Now
+              Book a demo now
             </ContainedButton>
           </Grid>
 

@@ -37,31 +37,51 @@ const ExistingPartnersSection = () => {
           {partnersPage.existingPartnersSection.heading}
         </Typography>
 
-        {/* Logos Grid */}
-        <Grid
-          container
-          spacing={{ xs: 4, md: 8 }}
-          alignItems="center"
-          justifyContent={{ xs: "center", md: "flex-start" }}
+        {/* Infinite Marquee */}
+        <Box
+          sx={{
+            display: "flex",
+            overflow: "hidden",
+            width: "100%",
+            position: "relative",
+            pt: 4,
+            pb: 4,
+            "&:hover .marquee-track": {
+              animationPlayState: "paused",
+            },
+          }}
         >
-          {partnersPage.existingPartnersSection.existing_partners_chip_data.map(
-            (val, i) => (
-              <Grid
-                key={i}
-                size={{
-                  xs: 6,
-                  sm: 4,
-                  md: 3,
-                  lg: 2,
-                }}
-              >
-                <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" } }}>
-                  <ExistingPartnersChip image={val.image} />
-                </Box>
-              </Grid>
-            )
-          )}
-        </Grid>
+          {/* We render TWO identical tracks that side-by-side animate to -100% */}
+          {[...Array(2)].map((_, trackIndex) => (
+            <Box
+              key={trackIndex}
+              className="marquee-track"
+              sx={{
+                display: "flex",
+                flexShrink: 0,
+                alignItems: "center",
+                justifyContent: "space-around",
+                minWidth: "100%",
+                gap: { xs: 4, md: 8 },
+                pr: { xs: 4, md: 8 },
+                animation: "marquee 20s linear infinite",
+                "@keyframes marquee": {
+                  "0%": { transform: "translateX(0%)" },
+                  "100%": { transform: "translateX(-100%)" },
+                },
+              }}
+              aria-hidden={trackIndex !== 0}
+            >
+              {partnersPage.existingPartnersSection.existing_partners_chip_data.map(
+                (val, i) => (
+                  <Box key={i} sx={{ display: "flex" }}>
+                    <ExistingPartnersChip image={val.image} />
+                  </Box>
+                )
+              )}
+            </Box>
+          ))}
+        </Box>
       </Container>
     </Box>
   );

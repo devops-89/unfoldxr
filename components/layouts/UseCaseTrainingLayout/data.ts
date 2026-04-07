@@ -58,7 +58,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       title: "TRAINING, ONBOARDING & KNOWLEDGE CAPTURE",
       subtitle: "The strongest teams learn in the flow of work.",
       description:
-        "UnfoldXR brings AI- and augmented reality–powered intelligence into learning and capability building and makes it available right at the moment of work.",
+        "UnfoldXR brings AI and augmented reality–powered intelligence into learning and capability building and makes it available right at the moment of work.",
       image: "/images/usecase/HeroSection.png",
     },
     knowledge: {
@@ -162,7 +162,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     industry: {
       title: "Built for Industries with Knowledge-Intensive Operations",
       subtitle:
-        "UNFOLDXR enhances skilled operations, on-ground executions & real-time decision-making",
+        "UnfoldXR enhances skilled operations, on-ground executions & real-time decision-making",
       customIndustries: [
         { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" },
         { label: "AUTOMOTIVE", img: "/images/banner/homePage/ai-industry/automotive.png" },
@@ -211,7 +211,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       title: "INSPECTION, COMPLIANCE & QUALITY ASSURANCE",
       subtitle: "The best incident is the one that never happened.",
       description:
-        "UnfoldXR brings AI- and augmented reality-powered intelligence directly into inspection and quality workflows. Stay audit-ready always.",
+        "UnfoldXR brings AI and augmented reality-powered intelligence directly into inspection and quality workflows. Stay audit-ready always.",
       image: "/images/usecase/Inspection/Hero-section.png",
     },
     knowledge: {
@@ -347,7 +347,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     },
     industry: {
       title: "Built for Industries with High Compliance & Quality Standards",
-      subtitle: "UNFOLDXR enhances skilled operations, on-ground executions & real-time decision-making",
+      subtitle: "UnfoldXR enhances skilled operations, on-ground executions & real-time decision-making",
       customIndustries: [
         { label: "MANUFACTURING", img: "/images/banner/homePage/ai-industry/logistics.png" },
         { label: "PHARMACEUTICALS", img: "/images/banner/homePage/ai-industry/healthcare.png" },
@@ -510,7 +510,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     },
     industry: {
       title: "Built for Industries with Asset-Intensive Operations",
-      subtitle: "UNFOLDXR enhances maintenance operations & real-time asset management",
+      subtitle: "UnfoldXR enhances maintenance operations & real-time asset management",
       customIndustries: [
         { label: "AUTOMOTIVE", img: "/images/banner/homePage/ai-industry/automotive.png" },
         { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
@@ -555,7 +555,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       title: "FIELD SERVICE, TROUBLESHOOTING & REMOTE COLLABORATION",
       subtitle: "The perfect human–AI collaboration in the field.",
       description:
-        "UnfoldXR brings AI- and augmented reality powered intelligence directly to field service operations anytime, anywhere.",
+        "UnfoldXR brings AI and augmented reality powered intelligence directly to field service operations anytime, anywhere.",
       image: "/images/usecase/FieldInspection/HeroSection.png",
     },
     knowledge: {
@@ -668,7 +668,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     },
     industry: {
       title: "ONE AI PLATFORM, ANY INDUSTRY",
-      subtitle: "UNFOLDXR enhances skilled operations, on-ground executions & real-time decision-making",
+      subtitle: "UnfoldXR enhances skilled operations, on-ground executions & real-time decision-making",
       customIndustries: [
         { label: "TELECOMMUNICATIONS", img: "/images/banner/homePage/ai-industry/logistics.png" },
         { label: "UTILITIES", img: "/images/banner/homePage/ai-industry/logistics.png" },
