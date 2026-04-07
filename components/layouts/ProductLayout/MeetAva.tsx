@@ -12,7 +12,7 @@ const MeetAva = () => {
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
         pt: { xs: 8, md: 16 },
-        pb: { xs: 1, md: 24 },
+        pb: { xs: 8, md: 24 },
         overflow: "hidden",
       }}
     >
@@ -29,7 +29,7 @@ const MeetAva = () => {
                 sx={{
                   fontFamily: din.style.fontFamily,
                   fontWeight: 900,
-                  textTransform: "none",
+                  textTransform: "uppercase",
                   fontSize: { xs: 32, md: 48, lg: 52 },
                   lineHeight: 1.15,
                   maxWidth: "100%",
@@ -79,7 +79,11 @@ const MeetAva = () => {
           </Grid>
           <Grid
             size={{ xs: 12, md: 5 }}
-            sx={{ position: "relative", minHeight: { md: 400 } }}
+            sx={{
+              position: "relative",
+              minHeight: { md: 400 },
+              display: { xs: "none", md: "block" },
+            }}
           >
             <Box
               component="img"
