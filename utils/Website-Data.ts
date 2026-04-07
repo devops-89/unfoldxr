@@ -501,7 +501,7 @@ export const meetAvaPage = {
     paragraphs: [
       "Named after our co-founder Ankush Jagga's daughter, AVA is more than an acronym. When you build something that carries the name of someone you love, you build it with care, responsibility, and a long-term vision.",
       "AVA is not just an assistant. It is an agentic AI, designed to understand context, make decisions, and move work forward. Built into UnfoldXR, AVA stands beside frontline teams when work feels complex or uncertain. It diagnoses intelligently, guides thoughtfully, and adapts in real time.",
-      "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen It helping every worker perform with clarity, confidence, and growth."
+      "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen It, helping every worker perform with clarity, confidence, and growth."
     ],
     image: introImage.src
   },
