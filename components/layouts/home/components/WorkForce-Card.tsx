@@ -8,7 +8,16 @@ import { WORKFORCE_CARD_PROPS } from "@/utils/types";
 const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
   return (
     <Box sx={{ textAlign: "center" }}>
-      <Image src={img} alt="" width={48} />
+      <Box
+        sx={{
+          height: { xs: 60, md: 80 },
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "center",
+        }}
+      >
+        <Image src={img} alt="" width={48} />
+      </Box>
       <Typography
         sx={{
           color: "#000",

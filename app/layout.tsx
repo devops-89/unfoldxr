@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/widgets/Header";
 import Footer from "@/components/widgets/Footer";
+import { DemoModalProvider } from "@/components/context/DemoModalContext";
+import DemoModal from "@/components/widgets/DemoModal";
 
 export const metadata: Metadata = {
   title: "UnfoldXR",
@@ -18,11 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body style={{ margin: 0, overflowX: "hidden" }}>
-        <Header />
-        {children}
-        <Footer />
+        <DemoModalProvider>
+          <Header />
+          {children}
+          <Footer />
+          <DemoModal />
+        </DemoModalProvider>
       </body>
     </html>
   );

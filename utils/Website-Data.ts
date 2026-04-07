@@ -54,7 +54,7 @@ export const homePage = {
   Ai_industry: {
     heading: "ONE AI PLATFORM, ANY INDUSTRY",
     description:
-      "UnfoldXR Enhances Skiller Operations, On Ground Executions & Real-Time Decision Making",
+      "UnfoldXR enhances skilled operations, on-ground executions & real-time decision making",
     ai_industry_data: AI_INDUSTRY_DATA,
   },
   future_work: {

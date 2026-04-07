@@ -103,7 +103,7 @@ export const industriesData: Record<string, IndustryData> = {
       ctaText: "Know More",
     },
     outcomes: {
-      titleLines: ["Driving Measurable", "Outcomes In", "AutomotiveOperations"],
+      titleLines: ["Driving Measurable", "Outcomes In", "Automotive", "Operations"],
       image: "/images/Industries/Driving.png",
       metrics: [
         { value: "25%", text: "reduction in assembly time, improving line throughput." },

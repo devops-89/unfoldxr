@@ -479,5 +479,5 @@ export const contactFormData: CONTACT_FORM_DATA = {
       rows: 4,
     },
   ],
-  buttonText: "Submit Button",
+  buttonText: "Submit",
 };

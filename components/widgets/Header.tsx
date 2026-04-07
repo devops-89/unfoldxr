@@ -22,12 +22,15 @@ import { helvetica, inter } from "@/utils/fonts";
 import MenuIcon from "@mui/icons-material/Menu";
 import { usePathname } from "next/navigation";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useDemoModal } from "../context/DemoModalContext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+
+  const { openModal } = useDemoModal();
 
   const pathname = usePathname();
 
@@ -68,7 +71,7 @@ const Header = () => {
               top: 10,
               left: "50%",
               transform: "translateX(-50%)",
-              zIndex: 9999,
+              zIndex: 100,
               backdropFilter: "blur(10px)",
               mt: { xs: 1, md: 3 },
               width: { xs: "95%", md: "90%", lg: "80%" },
@@ -222,25 +225,24 @@ const Header = () => {
                 </Box>
               ))}
 
-              <Link href="#" style={{ textDecoration: "none" }}>
-                <Button
-                  sx={{
-                    backgroundColor: COLORS.PRIMARY_GREEN,
-                    borderRadius: "23px",
-                    border: "1px solid #E3E3E3",
-                    width: "max-content",
-                    px: { md: 2, lg: 3 },
-                    height: "46px",
-                    fontFamily: inter.style.fontFamily,
-                    color: COLORS.BLACK,
-                    fontSize: { md: 12, lg: 14 },
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  BOOK A DEMO
-                </Button>
-              </Link>
+              <Button
+                onClick={openModal}
+                sx={{
+                  backgroundColor: COLORS.PRIMARY_GREEN,
+                  borderRadius: "23px",
+                  border: "1px solid #E3E3E3",
+                  width: "max-content",
+                  px: { md: 2, lg: 3 },
+                  height: "46px",
+                  fontFamily: inter.style.fontFamily,
+                  color: COLORS.BLACK,
+                  fontSize: { md: 12, lg: 14 },
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                }}
+              >
+                BOOK A DEMO
+              </Button>
             </Stack>
 
             {/* Mobile Menu Button */}
@@ -326,25 +328,27 @@ const Header = () => {
               </Box>
             ))}
 
-            <Link href="#" style={{ textDecoration: "none" }} onClick={() => setOpen(false)}>
-              <Button
-                sx={{
-                  mt: 3,
-                  backgroundColor: COLORS.PRIMARY_GREEN,
-                  borderRadius: "23px",
-                  border: "1px solid #E3E3E3",
-                  height: "46px",
-                  width: "100%",
-                  fontFamily: inter.style.fontFamily,
-                  color: COLORS.BLACK,
-                  fontSize: 16,
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                }}
-              >
-                BOOK A DEMO
-              </Button>
-            </Link>
+            <Button
+              onClick={() => {
+                setOpen(false);
+                openModal();
+              }}
+              sx={{
+                mt: 3,
+                backgroundColor: COLORS.PRIMARY_GREEN,
+                borderRadius: "23px",
+                border: "1px solid #E3E3E3",
+                height: "46px",
+                width: "100%",
+                fontFamily: inter.style.fontFamily,
+                color: COLORS.BLACK,
+                fontSize: 16,
+                fontWeight: 900,
+                textTransform: "uppercase",
+              }}
+            >
+              BOOK A DEMO
+            </Button>
           </Stack>
         </Box>
       </Drawer>

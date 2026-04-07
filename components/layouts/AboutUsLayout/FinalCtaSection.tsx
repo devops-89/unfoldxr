@@ -1,13 +1,18 @@
+"use client";
+
 import { aboutPage } from "@/utils/Website-Data";
 import SectionCTA from "@/components/widgets/SectionCTA";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const FinalCtaSection = () => {
   const { finalCtaSection: data } = aboutPage;
+  const { openModal } = useDemoModal();
 
   return (
     <SectionCTA
       title={data.heading}
       btnText="Talk to us"
+      onBtnClick={openModal}
       variant="about"
       sx={{ pb: 0 }}
       innerSx={{

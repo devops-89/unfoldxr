@@ -1,11 +1,16 @@
+"use client";
+
 import { Box, Typography, Button } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 
+import { useDemoModal } from "@/components/context/DemoModalContext";
+
 const FromAssist = () => {
   const data = homePage.productPage.fromAssist;
+  const { openModal } = useDemoModal();
 
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
@@ -87,6 +92,7 @@ const FromAssist = () => {
               }}
             >
               <Button
+                onClick={openModal}
                 sx={{
                   bgcolor: COLORS.PRIMARY_GREEN,
                   color: COLORS.BLACK,

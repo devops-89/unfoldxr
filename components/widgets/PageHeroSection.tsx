@@ -3,6 +3,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { din } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
+import { useDemoModal } from "../context/DemoModalContext";
 
 interface ButtonConfig {
   label: string;
@@ -32,6 +33,7 @@ const PageHeroSection = ({
   primaryBtn,
   secondaryBtn,
 }: PageHeroSectionProps) => {
+  const { openModal } = useDemoModal();
   return (
     <Box
       sx={{
@@ -162,7 +164,10 @@ const PageHeroSection = ({
             {primaryBtn && (
               <Button
                 href={primaryBtn.href}
-                onClick={primaryBtn.onClick}
+                onClick={
+                  primaryBtn.onClick ||
+                  (primaryBtn.label.toLowerCase().includes("demo") ? openModal : undefined)
+                }
                 sx={{
                   bgcolor: COLORS.PRIMARY_GREEN,
                   color: COLORS.BLACK,
@@ -183,7 +188,10 @@ const PageHeroSection = ({
               <Button
                 variant="outlined"
                 href={secondaryBtn.href}
-                onClick={secondaryBtn.onClick}
+                onClick={
+                  secondaryBtn.onClick ||
+                  (secondaryBtn.label.toLowerCase().includes("demo") ? openModal : undefined)
+                }
                 sx={{
                   borderColor: COLORS.PRIMARY_GREEN,
                   color: COLORS.WHITE,

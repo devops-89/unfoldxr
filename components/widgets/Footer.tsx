@@ -23,8 +23,10 @@ import facebook from "@/images/social_icons/facebook.svg";
 import x from "@/images/social_icons/twitter.svg";
 import instagram from "@/images/social_icons/insta.svg";
 import { usePathname } from "next/navigation";
+import { useDemoModal } from "../context/DemoModalContext";
 
 export default function Footer() {
+  const { openModal } = useDemoModal();
   const pathname = usePathname();
   const isHome = pathname === "/" || pathname === "/Home";
 
@@ -115,31 +117,42 @@ export default function Footer() {
                         {column.title}
                       </Typography>
                       {column.links.map((link, idx) => (
-                        <Link
+                        <Box
                           key={idx}
-                          href={link.url}
-                          style={{
-                            textDecoration: "none",
-                            display: "block",
+                          onClick={(e) => {
+                            if (link.label === "Book a Demo") {
+                              e.preventDefault();
+                              openModal();
+                            }
                           }}
+                          sx={{ display: "block", cursor: "pointer" }}
                         >
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: "#efefef",
-                              mb: 0.5,
-                              fontSize: 14,
-                              opacity: 0.8,
-                              transition: "0.2s",
-                              "&:hover": {
-                                color: COLORS.PRIMARY_GREEN,
-                                opacity: 1,
-                              },
+                          <Link
+                            href={link.url}
+                            style={{
+                              textDecoration: "none",
+                              display: "block",
+                              pointerEvents: link.label === "Book a Demo" ? "none" : "auto",
                             }}
                           >
-                            {link.label}
-                          </Typography>
-                        </Link>
+                            <Typography
+                              variant="body2"
+                              sx={{
+                                color: "#efefef",
+                                mb: 0.5,
+                                fontSize: 14,
+                                opacity: 0.8,
+                                transition: "0.2s",
+                                "&:hover": {
+                                  color: COLORS.PRIMARY_GREEN,
+                                  opacity: 1,
+                                },
+                              }}
+                            >
+                              {link.label}
+                            </Typography>
+                          </Link>
+                        </Box>
                       ))}
                     </>
                   )}
@@ -218,6 +231,7 @@ export default function Footer() {
                     </Typography>
                   </Stack>
                   <Button
+                    onClick={openModal}
                     variant="contained"
                     sx={{
                       borderRadius: 52,

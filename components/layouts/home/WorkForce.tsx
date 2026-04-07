@@ -68,7 +68,7 @@ const WorkForce = () => {
                   size={{ xs: 12, sm: 6, md: 4 }} 
                   key={i}
                   sx={{
-                    mt: { xs: 0, md: i == 1 ? 3 : 0 }, 
+                    mt: { xs: 0, md: 0 }, 
                   }}
                 >
                   <WorkforceCard

@@ -73,7 +73,7 @@ const OutcomesSection = ({ data }: Props) => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 54, lg: 60 },
+                  fontSize: { xs: 33, md: 54, lg: 60 },
                   lineHeight: 1,
                   textTransform: "uppercase",
                   fontWeight: 900,
