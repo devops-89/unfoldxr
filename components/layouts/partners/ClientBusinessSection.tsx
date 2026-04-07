@@ -19,6 +19,7 @@ const ClientBusinessSection = () => {
       <Container
         maxWidth={false}
         sx={{
+          mt: 12,
           width: { xs: "95%", md: "90%", lg: "80%" },
           mx: "auto",
           zIndex: 1,
@@ -71,6 +72,7 @@ const ClientBusinessSection = () => {
           objectFit: "contain",
           display: { xs: "none", md: "block" },
           pointerEvents: "none",
+          // objectPosition: "right",
         }}
       />
     </Box>

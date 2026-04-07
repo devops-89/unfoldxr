@@ -12,7 +12,7 @@ const MeetAva = () => {
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
         pt: { xs: 8, md: 16 },
-        pb: { xs: 12, md: 24 },
+        pb: { xs: 1, md: 24 },
         overflow: "hidden",
       }}
     >

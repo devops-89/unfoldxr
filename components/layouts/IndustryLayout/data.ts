@@ -189,7 +189,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Refinery", "Operations"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/OilGas/4.jpg",
       metrics: [
         { value: "15%", text: "reduction in shutdown duration, enabling shorter turnarounds" },
         { value: "20%", text: "reduction in HSE incidents, improving safety in task execution" },
@@ -273,7 +273,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In", "Manufacturing"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/Manufacturing/5.png",
       metrics: [
         { value: "15%", text: "reduction in mean time to repair, enabling faster fault recovery" },
         { value: "15%", text: "reduction in unplanned downtime, improving machine availability" },
@@ -358,7 +358,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "Across Retail & Logistics", "Operations"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/Retail/21.png",
       metrics: [
         { value: "15%", text: "improvement in pick accuracy, reducing mis-picks" },
         { value: "25%", text: "increase in pick rate, enabling more units per hour" },
@@ -527,7 +527,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Insurance", "Operations"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/Insurance/20.png",
       metrics: [
         { value: "40%", text: "reduction in claim cycle time, enabling faster settlements" },
         { value: "60%", text: "reduction in on-site visits, allowing remote damage assessment" },
@@ -611,7 +611,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Aviation", "Operations"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/Aviation/6.jpg",
       metrics: [
         { value: "25%", text: "reduction in task completion time, enabling faster turnarounds" },
         { value: "40%", text: "reduction in human errors, minimising procedural deviations" },
@@ -695,7 +695,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Healthcare", "Operations"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/Healthcare/19.png",
       metrics: [
         { value: "20%", text: "reduction in equipment repair time, bringing modalities back faster" },
         { value: "15%", text: "improvement in first-time fix rate, reducing repeat callouts" },
