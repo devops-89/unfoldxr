@@ -26,7 +26,7 @@ const MeetAvaIntroSection = () => {
         <Grid container spacing={{ xs: 4, md: 8 }} alignItems="center">
           <Grid size={{ xs: 12, md: 5 }}>
             <Box
-              component="img"
+              component="video"
               src={data.image}
               alt="Meet AVA"
               sx={{

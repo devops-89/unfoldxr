@@ -18,7 +18,7 @@ const Meetava = () => {
             fontSize: { xs: 28, md: 50 },
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
-            textTransform: "none",
+            textTransform: "uppercase",
             textAlign: { xs: "center", md: "left" },
             lineHeight: { xs: "38px", md: "64px" },
             mb: { xs: 3, md: 4 },
@@ -77,18 +77,23 @@ const Meetava = () => {
               >
                 {/* *note - this is placeholder for ava */}
               </Typography>
-              <Image
-                src={homePage.meetAva.rightSection.img}
-                alt="Meet AVA"
-                width={400}
-                height={400}
-                style={{
+              <Box
+                component="video"
+                autoPlay
+                loop
+                muted
+                playsInline
+                sx={{
                   width: "100%",
                   height: "auto",
-                  maxWidth: "360px",
+                  maxWidth: { xs: "320px", md: "400px" },
                   borderRadius: "50%",
+                  display: "block",
+                  objectFit: "cover",
                 }}
-              />
+              >
+                <source src="/images/homepage/White-globe.mp4" type="video/mp4" />
+              </Box>
             </Stack>
           </Grid>
         </Grid>
