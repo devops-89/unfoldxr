@@ -24,20 +24,6 @@ const MeetAvaIntroSection = () => {
         }}
       >
         <Grid container spacing={{ xs: 4, md: 8 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Box
-              component="video"
-              src={data.image}
-              alt="Meet AVA"
-              sx={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: { xs: 3, md: "45px" },
-                display: "block",
-              }}
-            />
-          </Grid>
           <Grid size={{ xs: 12, md: 7 }}>
             <Typography
               sx={{
@@ -66,6 +52,20 @@ const MeetAvaIntroSection = () => {
                 {para}
               </Typography>
             ))}
+          </Grid>
+          <Grid size={{ xs: 12, md: 5 }}>
+            <Box
+              component="img"
+              src={data.image}
+              alt="Meet AVA"
+              sx={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+                borderRadius: { xs: 3, md: "45px" },
+                display: "block",
+              }}
+            />
           </Grid>
         </Grid>
       </Box>
