@@ -37,8 +37,8 @@ const EnterpriseReady = () => {
         sx={{
           position: "absolute",
           left: 0,
-          top: { xs: 0, md: 40 },
-          width: { xs: "100%", md: "26%" },
+          top: { xs: 0, md: 35 },
+          width: { xs: "100%", md: "28%" },
           height: { xs: "50%", md: "85%" },
           objectFit: "cover",
           opacity: { xs: 0.26, md: 0.9 },

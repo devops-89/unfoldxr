@@ -25,20 +25,21 @@ const MeetAva = () => {
       >
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
           <Grid size={{ xs: 12, md: 7 }}>
-            <Typography
-              sx={{
-                fontFamily: din.style.fontFamily,
-                fontWeight: 900,
-                textTransform: "uppercase",
-                fontSize: { xs: 32, md: 48, lg: 52 },
-                lineHeight: 1.15,
-                maxWidth: 800,
-              }}
-            >
-              {data.title.split("AVA")[0]}
-              AVA
-              {data.title.split("AVA")[1]}
-            </Typography>
+              <Typography
+                sx={{
+                  fontFamily: din.style.fontFamily,
+                  fontWeight: 900,
+                  textTransform: "none",
+                  fontSize: { xs: 32, md: 48, lg: 52 },
+                  lineHeight: 1.15,
+                  maxWidth: "100%",
+                  whiteSpace: { md: "nowrap" },
+                }}
+              >
+                Meet AVA Your ‘AI VIRTUAL ASSISTANT’
+                <Box component="br" sx={{ display: { xs: "none", md: "block" } }} />
+                For everything work.
+              </Typography>
             <Typography
               sx={{
                 mt: 4,
@@ -50,7 +51,10 @@ const MeetAva = () => {
                 letterSpacing: "0.02em",
               }}
             >
-              {data.description}
+              {data.description.replace("The perfect work buddy.", "")}
+              <Box component="span" sx={{ fontWeight: "bold", color: COLORS.WHITE }}>
+                The perfect work buddy.
+              </Box>
             </Typography>
             <Box sx={{ mt: 6 }}>
               <Button

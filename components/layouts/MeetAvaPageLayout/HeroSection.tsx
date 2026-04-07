@@ -65,12 +65,14 @@ const HeroSection = () => {
                   fontSize: { xs: 18, md: 20, lg: 24 },
                   fontWeight: 700,
                   color: COLORS.WHITE,
-                  maxWidth: "400px",
+                  maxWidth: "100%",
                   lineHeight: 1.3,
                   mb: 4,
                 }}
               >
-                {data.title}
+                {data.title.split("The Agentic")[0]}
+                <br />
+                The Agentic{data.title.split("The Agentic")[1]}
               </Typography>
               <Typography
                 sx={{

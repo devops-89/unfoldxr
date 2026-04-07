@@ -46,6 +46,7 @@ const Outcome = () => {
           {homePage.outcome.data.map((val, i) => (
             <Grid size={{ xs: 12, md: 6 }} key={i}>
               <OutcomeCard number={val.number} label={val.description} />
+              
             </Grid>
           ))}
         </Grid>

@@ -38,9 +38,9 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
       <Typography
         sx={{
           fontFamily: din.style.fontFamily,
-          fontSize: { xs: 16, md: 26 },
+          fontSize: { xs: 14, md: 20 },
           fontWeight: 900,
-          lineHeight: { xs: "24px", md: "36px" },
+          lineHeight: { xs: "20px", md: "26px" },
           color: COLORS.WHITE,
           textTransform: "uppercase",
         }}

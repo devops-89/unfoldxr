@@ -90,7 +90,7 @@ export const homePage = {
     ],
   },
   meetAva: {
-    heading: "Meet AVA - The AI Virtual Assistant Built for Frontline Work",
+    heading: "Meet AVA - The AI VIRTUAL ASSISTANT Built for Frontline Work",
     leftSection: {
       description: [
         {
@@ -202,7 +202,7 @@ export const homePage = {
         "UnfoldXR enhances skiller operations, on ground executions & real-time decision making",
     },
     meetAva: {
-      title: "Meet AVA Your ‘AI Virtual Assistant’ For everything work.",
+      title: "Meet AVA Your ‘AI Virtual Assistant’ For Everything Work.",
       description:
         "AVA supports your workforce across all three versions of the platform. It works alongside your teams as an intelligent assistant, a sharp analyser, and a reliable task partner. The perfect work buddy.",
       img: "/images/Product/MeetAva.png",
@@ -475,7 +475,7 @@ export const aboutPage = {
   },
   careersSection: {
     title: "CAREERS",
-    description: "At UnfoldXR, you will work at the intersection of AI, XR, enterprise systems, and human productivity. But more importantly, you will build tools that empower millions of frontline workers.\n\nWe value:",
+    description: "At UnfoldXR, you will work at the intersection of AI, XR, enterprise systems, and human productivity. But more importantly, you will build tools that empower millions of frontline workers.",
     values: [
       "CURIOSITY AND PRINCIPLED THINKING",
       "ENGINEERING DEPTH WITH HUMAN EMPATHY",
@@ -491,8 +491,8 @@ export const aboutPage = {
 
 export const meetAvaPage = {
   heroSection: {
-    title: "AVA — The Agentic Intelligence Behind UnfoldXR.",
-    heading: "BUILT WITH HEART. POWERED BY AI",
+    title: "AVA The Agentic Intelligence Behind UnfoldXR.",
+    heading: "BUILT WITH HEART. POWERED BY AI.",
     subHeading: "AVA stands for AI Virtual Assistant. But the story behind the name runs deeper.",
     image: heroRing.src
   },
@@ -511,7 +511,7 @@ export const meetAvaPage = {
     features: [
       {
         label: "Guided Execution",
-        description: "Delivers step-by-step digital instructions aligned to the specific asset, location, and task",
+        description: "Delivers step-by-step digital instructions aligned to the specific asset, location, and task.",
       },
       {
         label: "Smart Rostering",

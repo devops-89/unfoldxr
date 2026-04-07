@@ -45,7 +45,6 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
           />
         </Box>
 
-        {/* Label */}
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
@@ -56,6 +55,7 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
             lineHeight: 1.1, 
             display: "flex",
             alignItems: "center",
+            textTransform: "uppercase",
           }}
         >
           {label}

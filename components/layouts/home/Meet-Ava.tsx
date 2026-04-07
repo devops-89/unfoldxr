@@ -18,7 +18,7 @@ const Meetava = () => {
             fontSize: { xs: 28, md: 50 },
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
-            textTransform: "uppercase",
+            textTransform: "none",
             textAlign: { xs: "center", md: "left" },
             lineHeight: { xs: "38px", md: "64px" },
             mb: { xs: 3, md: 4 },
