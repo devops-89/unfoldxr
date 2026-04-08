@@ -136,7 +136,7 @@ const OneAiPlatform = () => {
                     lineHeight: "27px",
                     color: COLORS.BLACK,
                     letterSpacing: "0.52px",
-                    whiteSpace: "nowrap", // Changed to nowrap
+                    whiteSpace: "nowrap", 
                   }}
                 >
                   {item.label}

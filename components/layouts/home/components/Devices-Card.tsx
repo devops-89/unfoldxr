@@ -29,7 +29,7 @@ const DevicesCard = ({
         backgroundRepeat: "no-repeat",
         backgroundColor: hasBg ? "transparent" : "#D3DEE4",
         borderRadius: "28px",
-        height: { xs: "240px", md: "210px" },
+        height: { xs: "240px", md: "270px" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
@@ -58,11 +58,12 @@ const DevicesCard = ({
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 18, md: 30 },
+            fontSize: { xs: 18, md: 22 },
             fontWeight: 900,
             color: textColor,
             textTransform: "uppercase",
-            lineHeight: { xs: "26px", md: "38px" },
+            lineHeight: { xs: "26px", md: "30px" },
+            letterSpacing:"0.52px",
           }}
         >
           {heading}
@@ -78,7 +79,8 @@ const DevicesCard = ({
             color: textColor,
             fontSize: { xs: 13, md: 18 },
             fontWeight: 400,
-            lineHeight: { xs: "20px", md: "26px" },
+            lineHeight: { xs: "20px", md: "30px" },
+            letterSpacing:"0.52px",
           }}
         >
           {description}

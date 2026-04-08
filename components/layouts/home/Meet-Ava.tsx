@@ -16,12 +16,12 @@ const Meetava = () => {
           {/* Full-width Heading */}
           <Typography
             sx={{
-              fontSize: { xs: 28, md: 54 },
+              fontSize: { xs: 28, md: 48 },
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               textTransform: "uppercase",
               textAlign: { xs: "center", md: "left" },
-              lineHeight: { xs: "38px", md: "64px" },
+              lineHeight: { xs: "38px", md: "52px" },
               mb: { xs: 3, md: 4 },
             }}
           >
@@ -37,11 +37,12 @@ const Meetava = () => {
                     key={i}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 14, md: 22 },
+                      fontSize: { xs: 14, md:22 },
                       fontWeight: 400,
-                      lineHeight: { xs: "22px", md: "28px" },
+                      lineHeight: { xs: "22px", md: "30px" },
                       color: "#000",
                       textAlign: { xs: "center", md: "justify" },
+                      letterSpacing: "0.52px",
 
                     }}
                   >
@@ -58,7 +59,7 @@ const Meetava = () => {
                   borderRadius: 99,
                   px: { xs: 2.5, md: 4 },
                   py: 1.2,
-                  fontSize: { xs: 14, md: 18, lg: 20 },
+                  fontSize: { xs: 14, md: 18, lg: 18 },
                 }}
               >
                 Book a demo now

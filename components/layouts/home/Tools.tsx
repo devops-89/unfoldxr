@@ -22,12 +22,11 @@ const Tools = () => {
     <Box
       sx={{
         backgroundColor: COLORS.BLACK,
-        height: { xs: "auto", md: "110vh" },
-        minHeight: "800px",
+        height: "auto",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        py: { xs: 8, md: 10 },
+        py: { xs: 8, md: 12 },
       }}
     >
       <Container maxWidth="xl">
@@ -45,10 +44,10 @@ const Tools = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 54 },
+                fontSize: { xs: 28, md: 48 },
                 fontWeight: 900,
                 textTransform: "uppercase",
-                lineHeight: 1.1,
+                lineHeight: {xs:"38px", md:"52px"},
                 color: COLORS.BLACK,
                 textAlign: { xs: "center", md: "left" },
                 display: "block",
@@ -67,10 +66,10 @@ const Tools = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 28, md: 54 },
+                  fontSize: { xs: 28, md: 48 },
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  lineHeight: 1.1,
+                  lineHeight: {xs:"38px", md:"52px"},
                   color: COLORS.BLACK,
                   textAlign: { xs: "center", md: "left" },
                   whiteSpace: { xs: "normal", md: "nowrap" },
@@ -95,8 +94,9 @@ const Tools = () => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontWeight: 700,
-                  fontSize: { xs: 16, md: 24 },
-                  lineHeight: { xs: "24px", md: "28px" },
+                  fontSize: { xs: 16, md: 22 },
+                  lineHeight: { xs: "24px", md: "30px" },
+                  letterSpacing:"0.52px",
                   color: COLORS.BLACK,
                   textAlign: { xs: "center", md: "right" },
                   whiteSpace: "pre-line",

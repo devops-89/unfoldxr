@@ -14,7 +14,7 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        gap: { xs: 2, md: 3 },
+        gap: { xs: 2, md: 1 },
         borderRadius: "16px",
         minHeight: { xs: "auto", md: "140px" },
       }}
@@ -24,9 +24,9 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
         sx={{
           color: "rgba(182, 236, 26, 0.60)",
           fontFamily: din.style.fontFamily,
-          fontSize: { xs: 40, md: 72 },
+          fontSize: { xs: 40, md: 48 },
           fontWeight: 900,
-          lineHeight: 1,
+          lineHeight:"52px",
           flexShrink: 0,
           minWidth: { xs: 50, md: 90 },
         }}
@@ -38,11 +38,12 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
       <Typography
         sx={{
           fontFamily: din.style.fontFamily,
-          fontSize: { xs: 14, md: 20 },
+          fontSize: { xs: 14, md: 22 },
           fontWeight: 900,
-          lineHeight: { xs: "20px", md: "26px" },
+          lineHeight: { xs: "20px", md: "30px" },
           color: COLORS.WHITE,
           textTransform: "uppercase",
+          letterSpacing:"0.52px",
         }}
       >
         {label}

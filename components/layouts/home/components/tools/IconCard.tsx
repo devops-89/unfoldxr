@@ -21,9 +21,10 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
         sx={{
           fontFamily: helvetica.style.fontFamily,
           fontWeight: 700,
-          fontSize: { xs: 16, md: 18 },
-          lineHeight: 1.3,
+          fontSize: { xs: 18, md: 22 },
+          lineHeight: {xs:"24px", md:"30px"},
           mb: 1,
+          letterSpacing:"0.52px",
         }}
       >
         {card.title}

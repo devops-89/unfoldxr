@@ -9,9 +9,9 @@ const DevicesSection = () => {
     <Box
       sx={{
         py: { xs: 8, md: 12 },
-        minHeight: "85vh",
-        display: "flex",
-        alignItems: "center",
+        //minHeight: "85vh",
+        //display: "flex",
+        //alignItems: "center",
       }}
     >
       <Container maxWidth="xl">
@@ -19,11 +19,12 @@ const DevicesSection = () => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 30, md: 54 },
+            fontSize: { xs: 30, md: 48 },
             fontWeight: 900,
             textTransform: "uppercase",
             textAlign: { xs: "center", md: "left" },
             mb: { xs: 3, md: 5 },
+            lineHeight:{xs:"38px", md:"52px"},
           }}
         >
           {homePage.devicesSection.heading}

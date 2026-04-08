@@ -17,11 +17,11 @@ const Outcome = () => {
           sx={{
             textAlign: "left",
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 28, md: 54 },
+            fontSize: { xs: 28, md: 48 },
             color: COLORS.WHITE,
             fontWeight: 900,
             textTransform: "uppercase",
-            lineHeight: 1.1,
+            lineHeight: {xs:"38px", md:"52px"},
           }}
         >
           {homePage.outcome.heading}
@@ -34,6 +34,8 @@ const Outcome = () => {
             fontSize: { xs: 14, md: 22 },
             color: COLORS.WHITE,
             fontWeight: 400,
+            lineHeight:{xs:"22px", md:"30px"},
+            letterSpacing:"0.52px",
             mt: 1,
             mb: 5,
             opacity: 0.8,
@@ -58,7 +60,8 @@ const Outcome = () => {
             sx={{
               width: { xs: "100%", md: "auto" },
               height: { xs: "45px", md: "62px" },
-              fontSize: { xs: 16, md: 23 },
+              fontSize: { xs: 16, md: 18 },
+              lineHeight:"30px",
             }}
           >
             {homePage.outcome.cta}

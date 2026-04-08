@@ -181,7 +181,7 @@ export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
     img: increase,
     heading: "INCREASE PRODUCTIVITY",
-    description: "40% reduction in technician training time & error diagnosis",
+    description: "40% reduction in technician training \n time   & error diagnosis",
   },
   {
     img: reduce,
