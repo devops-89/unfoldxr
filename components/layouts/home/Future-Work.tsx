@@ -58,11 +58,11 @@ const FutureWork = () => {
                 <Typography
                   sx={{
                     fontFamily: din.style.fontFamily,
-                    fontSize: { xs: 20, md: 54 },
+                    fontSize: { xs: 20, md: 48 },
                     fontWeight: 900,
                     textTransform: "uppercase",
                     color: COLORS.WHITE,
-                    lineHeight: { xs: "36px", md: "60px" },
+                    lineHeight: { xs: "36px", md: "52px" },
                   }}
                 >
                   {homePage.future_work.leftSection.heading}
@@ -71,9 +71,11 @@ const FutureWork = () => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 12, md: 20 },
+                    fontSize: { xs: 12, md: 18},
                     color: COLORS.WHITE,
                     fontWeight: 400,
+                    lineHeight:"30px",
+                    letterSpacing:"0.52px",
                     my: 2,
                   }}
                 >
@@ -82,10 +84,12 @@ const FutureWork = () => {
 
                 <Typography
                   sx={{
-                    fontSize: { xs: 12, md: 20 },
+                    fontSize: { xs: 12, md: 18 },
                     fontWeight: 700,
                     color: COLORS.WHITE,
                     fontFamily: helvetica.style.fontFamily,
+                    lineHeight:"30px",
+                    letterSpacing:"0.52px",
                   }}
                 >
                   {homePage.future_work.leftSection.subDescription}
@@ -93,11 +97,11 @@ const FutureWork = () => {
 
                 <Typography
                   sx={{
-                    fontSize: { xs: 28, md: 54 },
+                    fontSize: { xs: 28, md: 48 },
                     fontWeight: 900,
                     textTransform: "uppercase",
                     color: COLORS.PRIMARY_GREEN,
-                    lineHeight: { xs: "40px", md: "60px" },
+                    lineHeight: { xs: "40px", md: "52px" },
                     fontFamily: din.style.fontFamily,
                     mt: 4,
                   }}
@@ -111,7 +115,7 @@ const FutureWork = () => {
                     mt: 3,
                     width: { xs: "100%", md: "auto" },
                     height: { xs: "45px", md: "62px" },
-                    fontSize: { xs: 16, md: 23 },
+                    fontSize: { xs: 16, md: 18 },
                   }}
                 >
                   {homePage.future_work.leftSection.cta}

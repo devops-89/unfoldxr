@@ -24,7 +24,7 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
         sx={{
           color: "rgba(182, 236, 26, 0.60)",
           fontFamily: din.style.fontFamily,
-          fontSize: { xs: 40, md: 72 },
+          fontSize: { xs: 40, md: 70 },
           fontWeight: 900,
           lineHeight: 1,
           flexShrink: 0,
@@ -38,11 +38,12 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
       <Typography
         sx={{
           fontFamily: din.style.fontFamily,
-          fontSize: { xs: 14, md: 20 },
+          fontSize: { xs: 14, md: 18 },
           fontWeight: 900,
-          lineHeight: { xs: "20px", md: "26px" },
+          lineHeight: { xs: "20px", md: "30px" },
           color: COLORS.WHITE,
           textTransform: "uppercase",
+          letterSpacing:"0.52px",
         }}
       >
         {label}

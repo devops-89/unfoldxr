@@ -23,9 +23,11 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 28, md: 54 },
+              fontSize: { xs: 28, md: 48 },
               textTransform: "uppercase",
               fontWeight: 900,
+              lineHeight:"52px",
+
             }}
           >
             {homePage.Ai_industry.heading}
@@ -36,7 +38,9 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 16, md: 22 },
+              fontSize: { xs: 16, md: 18 },
+              letterSpacing:"0.52px",
+              lineHeight:"30px",
               fontWeight: 400,
               mt: 1,
             }}

@@ -14,6 +14,7 @@ const ToolsLeftSection = ({ ctaText, image, onCtaClick }: TOOLS_LEFT_SECTION_PRO
           height: { xs: "44px", md: "50px" },
           fontSize: { xs: 16, md: 18 },
           fontWeight: 700,
+          
           px: 6,
           backgroundColor: "#C4FF1A", 
           color: COLORS.BLACK,

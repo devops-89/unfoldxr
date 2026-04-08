@@ -29,10 +29,10 @@ const WorkForce = () => {
               sx={{
                 color: "#000",
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 24, md: 54 },
+                fontSize: { xs: 24, md: 48 },
                 fontStyle: "normal",
                 fontWeight: 900,
-                lineHeight: "normal",
+                lineHeight: "52px",
                 textTransform: "uppercase",
                 textAlign: { xs: "center", md: "left" },
                 wordBreak: "break-word",
@@ -46,10 +46,11 @@ const WorkForce = () => {
               sx={{
                 color: "#000",
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 22 },
+                fontSize: { xs: 16, md: 18 },
                 fontStyle: "normal",
                 fontWeight: 400,
-                lineHeight: { xs: 1.4, md: "46px" },
+                lineHeight: { xs: 1.4, md: "30px" },
+                letterSpacing:"0.52px",
                 mt: { xs: 2, md: 3 },
                 textAlign: { xs: "center", md: "left" },
               }}

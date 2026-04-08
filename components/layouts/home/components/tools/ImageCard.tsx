@@ -40,10 +40,11 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
           sx={{
             fontFamily: helvetica.style.fontFamily,
             fontWeight: 700,
-            fontSize: { xs: 16, md: 18 },
+            fontSize: { xs: 18, md: 22 },
             color: card.titleColor || COLORS.WHITE,
-            lineHeight: 1.3,
+            lineHeight: {xs:"24px", md:"30px"},
             mb: 1,
+            letterSpacing:"0.52px",
           }}
         >
           {card.title}
@@ -54,9 +55,10 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
             sx={{
               fontFamily: helvetica.style.fontFamily,
               fontWeight: 400,
-              fontSize: { xs: 12, md: 14 },
+              fontSize: { xs: 14, md: 18 },
               color: card.descriptionColor || "rgba(255, 255, 255, 0.8)",
-              lineHeight: 1.4,
+              lineHeight: { xs: "24px", md: "30px" },
+              letterSpacing: "0.52px",
             }}
           >
             {card.description}

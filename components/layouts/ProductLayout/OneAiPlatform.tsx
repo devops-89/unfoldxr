@@ -136,8 +136,7 @@ const OneAiPlatform = () => {
                     lineHeight: 1.1,
                     color: COLORS.BLACK,
                     letterSpacing: "0.02em",
-                    whiteSpace: "normal",
-                    maxWidth: { xs: 80, md: 140 },
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {item.label}

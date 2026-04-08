@@ -48,15 +48,15 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 10, md: 15 },
+            fontSize: { xs: 10, md: 18 },
             fontWeight: 700, 
             color: COLORS.BLACK,
-            whiteSpace: "normal",
-            lineHeight: 1.1, 
+            whiteSpace: "nowrap",
+            lineHeight: "30px", 
+            letterSpacing:"0.52px",
             display: "flex",
             alignItems: "center",
             textTransform: "uppercase",
-            maxWidth: { xs: 80, md: 140 },
           }}
         >
           {label}

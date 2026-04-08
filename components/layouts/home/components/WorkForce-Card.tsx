@@ -23,9 +23,9 @@ const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
           color: "#000",
           fontFamily: din.style.fontFamily,
           fontWeight: 700,
-          fontSize: { xs: 18, md: 28 },
-          lineHeight: { xs: 1.2, md: "24.2px" },
-          letterSpacing: "-0.22px",
+          fontSize: { xs: 16, md: 22 },
+          lineHeight: { xs: 1.2, md: "30px" },
+          letterSpacing: "0.52px",
           textTransform: "uppercase",
           my: { xs: 1.5, md: 3 },
           textAlign: "center",
@@ -38,10 +38,11 @@ const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
           color: "#000",
           fontFamily: helvetica.style.fontFamily,
           fontWeight: 400,
-          fontSize: { xs: 14, md: 22 },
-          lineHeight: { xs: 1.4, md: "46px" },
+          fontSize: { xs: 14, md: 18 },
+          lineHeight: { xs: 1.4, md: "30px" },
           textAlign: "center",
-        }}
+          letterSpacing:"0.52px",
+        whiteSpace:"pre-line",      }}
       >
         {description}
       </Typography>
