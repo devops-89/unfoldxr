@@ -27,7 +27,7 @@ const AboutIntroSection = () => (
         }}
       >
         <CardContent
-          sx={{ px: { xs: 4, md: 10 }, py: { xs: 4, md: 10, lg: 15 } }}
+          sx={{ px: { xs: 3, md: 10 }, py: { xs: 4, md: 10, lg: 15 } }}
         >
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 5 }}>

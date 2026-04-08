@@ -10,7 +10,7 @@ const WhyPartnerSection = () => {
         minHeight: { md: "90vh" },
         display: "flex",
         alignItems: "center",
-        py: { xs: 10, md: 0 },
+        py: { xs: 8, md: 0 },
       }}
     >
       <Container
@@ -34,7 +34,7 @@ const WhyPartnerSection = () => {
           {partnersPage.whyPartnerSection.heading}
         </Typography>
 
-        <Grid container rowSpacing={{ xs: 12, md: 3 }} columnSpacing={3}>
+        <Grid container rowSpacing={{ xs: 6, md: 3 }} columnSpacing={3}>
           {partnersPage.whyPartnerSection.why_partner_card_data.map(
             (card, i) => (
               <Grid size={{ xs: 12, md: 4 }} key={i}>

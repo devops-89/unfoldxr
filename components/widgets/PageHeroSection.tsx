@@ -89,10 +89,10 @@ const PageHeroSection = ({
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 26, md: 50, lg: 54 },
+              fontSize: { xs: 26, md: 50, lg: 48 },
               fontStyle: "normal",
               fontWeight: 900,
-              lineHeight: { xs: "40px", md: "64px" },
+              lineHeight: { xs: "40px", md: "52px" },
               textTransform: "uppercase",
               WebkitTextStrokeWidth: { xs: "1px", md: "2px" },
               WebkitTextStrokeColor: "#FFF",
@@ -109,8 +109,8 @@ const PageHeroSection = ({
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 26, md: 50, lg: 54 },
-            lineHeight: { xs: "40px", md: "64px" },
+            fontSize: { xs: 26, md: 50, lg: 48 },
+            lineHeight: { xs: "40px", md: "52px" },
             maxWidth: titleMaxWidth || 1050,
             whiteSpace: "pre-line",
           }}
@@ -124,9 +124,9 @@ const PageHeroSection = ({
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 700,
-              fontSize: { xs: 20, md: 28, lg: 28 },
+              fontSize: { xs: 20, md: 28, lg: 22 },
               lineHeight: 1.1,
-              mt: 2,
+              mt: 3,
               maxWidth: 800,
             }}
           >
@@ -140,11 +140,11 @@ const PageHeroSection = ({
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 400,
-              fontSize: { xs: 16, md: 26, lg: 28 },
-              lineHeight: { xs: "normal", md: "35px" },
-              letterSpacing: "2.52px",
-              mt: { xs: 2, md: 3 },
-              maxWidth: 1200,
+              fontSize: { xs: 16, md: 26, lg: 22 },
+              lineHeight: { xs: "normal", md: "30px" },
+              letterSpacing: "0.52px",
+              mt: { xs: 2, md: 1 },
+              maxWidth: 1000,
               textTransform: "none",
               color: COLORS.WHITE,
             }}
@@ -198,11 +198,11 @@ const PageHeroSection = ({
                   borderColor: COLORS.PRIMARY_GREEN,
                   color: COLORS.WHITE,
                   borderRadius: 99,
-                  px: { xs: 2.5, md: 4 },
-                  py: 1.2,
+                  px: { xs: 2.5, md: 3 },
+                  py: 1,
                   fontFamily: din.style.fontFamily,
                   fontWeight: 500,
-                  fontSize: { xs: 14, md: 18, lg: 20 },
+                  fontSize: { xs: 14, md: 16, lg: 18 },
                   textTransform: "none",
                   "&:hover": {
                     borderColor: COLORS.PRIMARY_HOVER,

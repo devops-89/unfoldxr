@@ -209,10 +209,10 @@ export const AI_INDUSTRY_DATA: INDUSTRY_CHIP_PROPS[] = [
     img: construction,
     label: "Construction",
   },
-  {
-    img: logistics,
-    label: "Logistics",
-  },
+  // {
+  //   img: logistics,
+  //   label: "Logistics",
+  // },
   {
     img: oil,
     label: "Oil & Gas",
