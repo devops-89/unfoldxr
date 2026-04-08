@@ -95,7 +95,7 @@ const EnterpriseReady = () => {
                           fontWeight: 700,
                           fontSize: { xs: 18, md: 22 },
                           textTransform: "uppercase",
-                          lineHeight: "28px",
+                          lineHeight: "30px",
                           mb: 1.5,
                         }}
                       >
@@ -106,7 +106,7 @@ const EnterpriseReady = () => {
                           fontFamily: helvetica.style.fontFamily,
                           color: COLORS.TEXT_MUTED,
                           fontSize: { xs: 14, md: 18 },
-                          lineHeight: "24px",
+                          lineHeight: "30px",
                         }}
                       >
                         {point.desc}

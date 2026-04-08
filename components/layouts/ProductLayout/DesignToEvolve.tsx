@@ -201,7 +201,7 @@ const DesignToEvolve = () => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
-                    lineHeight: "27px",
+                    lineHeight: "30px",
                     color: COLORS.TEXT_GRAY,
                     maxWidth: 650,
                     transition: "all 0.3s ease",

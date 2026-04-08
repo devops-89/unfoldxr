@@ -28,12 +28,13 @@ const NewsSection = () => {
           >
             <Typography 
               sx={{ 
-                fontSize: { xs: 28, md: 54 }, 
+                fontSize: { xs: 28, md: 48 }, 
                 fontWeight: 900, 
                 textTransform: "uppercase", 
                 fontFamily: din.style.fontFamily,
                 color: COLORS.BLACK,
-                mb: 2
+                mb: 2,
+                lineHeight: "52px",
               }}
             >
               {data.title}
@@ -44,7 +45,7 @@ const NewsSection = () => {
                 fontFamily: helvetica.style.fontFamily,
                 color: COLORS.BLACK,
                 maxWidth: 800,
-                lineHeight: 1.4,
+                lineHeight: "30px",
                 mb: 6
               }}
             >
@@ -54,7 +55,7 @@ const NewsSection = () => {
               sx={{ 
                 px: { xs: 2.5, md: 4 },
                 py: 1.2,
-                fontSize: { xs: 14, md: 18, lg: 20 },
+                fontSize: { xs: 14, md: 18, lg: 18 },
                 fontWeight: 500
               }}
             >

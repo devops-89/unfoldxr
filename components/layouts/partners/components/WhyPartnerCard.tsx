@@ -19,8 +19,8 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
         sx={{
           color: "#ffffff",
           fontWeight: 800,
-          fontSize: { xs: 22, md: 26 },
-          lineHeight: 1.2,
+          fontSize: { xs: 22, md: 22 },
+          lineHeight: "30px",
         }}
       >
         {title}
@@ -39,8 +39,8 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
       <Typography
         sx={{
           color: "#BDBDBD",
-          fontSize: 16,
-          lineHeight: "24px",
+          fontSize: 18,
+          lineHeight: "30px",
           fontWeight: 400,
         }}
       >

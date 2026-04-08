@@ -26,8 +26,8 @@ const ExistingPartnersSection = () => {
         <Typography
           sx={{
             fontWeight: 900,
-            fontSize: { xs: 28, md: 54 },
-            lineHeight: 1.1,
+            fontSize: { xs: 28, md: 48 },
+            lineHeight: "52px",
             textTransform: "uppercase",
             color: "#000",
             mb: { xs: 6, md: 10 },

@@ -103,7 +103,7 @@ const ExploreCapabilities = () => {
                                 ? COLORS.PRIMARY_HOVER
                                 : COLORS.BLACK,
                             fontSize: { xs: 18, md: 22 },
-                            lineHeight: "28px",
+                            lineHeight: "30px",
                             letterSpacing: "0.52px",
                           }}
                         >
@@ -118,7 +118,7 @@ const ExploreCapabilities = () => {
                               activeIndex === index
                                 ? COLORS.PRIMARY_HOVER
                                 : COLORS.BLACK,
-                            lineHeight: 1.2,
+                            lineHeight: "30px",
                           }}
                         >
                           {item.subtitle}

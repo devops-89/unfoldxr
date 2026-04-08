@@ -23,11 +23,11 @@ const WhyPartnerSection = () => {
         <Typography
           sx={{
             color: "#fff",
-            fontSize: { xs: 28, md: 54 },
+            fontSize: { xs: 28, md: 48 },
             fontWeight: 900,
             mb: { xs: 6, md: 8 },
             textTransform: "uppercase",
-            lineHeight: 1.1,
+            lineHeight: "52px",
             textAlign: { xs: "center", md: "left" },
           }}
         >

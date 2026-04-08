@@ -10,12 +10,13 @@ const LeadershipSection = () => {
     <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 15 } }}>
       <Typography 
         sx={{ 
-          fontSize: { xs: 30, md: 54 }, 
+          fontSize: { xs: 30, md: 48 }, 
           fontWeight: 900, 
           textTransform: "uppercase", 
           mb: 8, 
           fontFamily: din.style.fontFamily,
-          color: COLORS.BLACK
+          color: COLORS.BLACK,
+          lineHeight: "52px",
         }}
       >
         {data.title}
@@ -48,25 +49,26 @@ const LeadershipSection = () => {
                 <Box sx={{ textAlign: { xs: "left", md: isEven ? "left" : "right" }, mt: { xs: 3, md: 0 } }}>
                   <Typography 
                     sx={{ 
-                      fontSize: { xs: 26, md: 54 }, 
+                      fontSize: { xs: 26, md: 48 }, 
                       fontWeight: 900, 
                       textTransform: "uppercase", 
                       fontFamily: din.style.fontFamily,
                       color: COLORS.BLACK,
-                      lineHeight: 1.1
+                      lineHeight: "52px"
                     }}
                   >
                     {member.name}
                   </Typography>
                   <Typography 
                     sx={{ 
-                      fontSize: { xs: 20, md: 28 }, 
-                      fontWeight: 400,
+                      fontSize: { xs: 20, md: 22 }, 
+                      fontWeight: 600,
                       textTransform: "uppercase",
                       mt: 1,
                       mb: 4, 
                       fontFamily: helvetica.style.fontFamily,
-                      color: COLORS.BLACK
+                      color: COLORS.BLACK,
+                      lineHeight: "30px",
                     }}
                   >
                     {member.role}
@@ -74,7 +76,7 @@ const LeadershipSection = () => {
                   <Typography 
                     sx={{ 
                       fontSize: { xs: 18, md: 22 }, 
-                      lineHeight: 1.55, 
+                      lineHeight: "30px",
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
                       textAlign: "justify",

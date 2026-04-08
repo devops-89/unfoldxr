@@ -12,7 +12,7 @@ import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 const AboutIntroSection = () => (
   <Box
-    sx={{ bgcolor: COLORS.BLACK, pt: { xs: 8, md: 20 }, pb: { xs: 8, md: 25 } }}
+    sx={{ bgcolor: COLORS.BLACK, pt: { xs: 8, md: 20 }, pb: { xs: 8, md: 20 } }}
   >
     <Container
       maxWidth={false}
@@ -33,10 +33,10 @@ const AboutIntroSection = () => (
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 sx={{
-                  fontSize: { xs: 34, md: 54 },
+                  fontSize: { xs: 34, md: 48 },
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  lineHeight: 1.05,
+                  lineHeight: "52px",
                   fontFamily: din.style.fontFamily,
                   color: COLORS.BLACK,
                 }}
@@ -51,7 +51,7 @@ const AboutIntroSection = () => (
                     key={idx}
                     sx={{
                       fontSize: { xs: 18, md: 22 },
-                      lineHeight: 1.6,
+                      lineHeight: "30px",
                       fontWeight: 400,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
@@ -64,7 +64,7 @@ const AboutIntroSection = () => (
                 <Typography
                   sx={{
                     fontSize: { xs: 24, md: 22 },
-                    lineHeight: 1.4,
+                    lineHeight: "30px",
                     fontWeight: 700,
                     fontFamily: helvetica.style.fontFamily,
                     color: COLORS.BLACK,

@@ -27,8 +27,9 @@ const MissionVisionSection = () => {
       >
         <Typography
           sx={{
-            fontSize: { xs: 24, md: 28 },
+            fontSize: { xs: 24, md: 22 },
             fontWeight: 700,
+            lineHeight: "30px",
             mb: 1.5,
             fontFamily: din.style.fontFamily,
           }}
@@ -37,8 +38,8 @@ const MissionVisionSection = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: 38, md: 54 },
-            lineHeight: { xs: 1.1, md: "70px" },
+            fontSize: { xs: 38, md: 48 },
+            lineHeight: { xs: 1.1, md: "52px" },
             textTransform: "uppercase",
             color: COLORS.PRIMARY_GREEN,
             fontWeight: 900,
@@ -53,7 +54,7 @@ const MissionVisionSection = () => {
             mt: 2.5,
             maxWidth: 920,
             fontSize: { xs: 20, md: 22 },
-            lineHeight: { xs: 1.25, md: "1.4" },
+            lineHeight: { xs: 1.25, md: "30px" },
             fontFamily: helvetica.style.fontFamily,
             fontWeight: 400,
           }}
@@ -65,7 +66,7 @@ const MissionVisionSection = () => {
             mt: 6,
             bgcolor: COLORS.CARD_BG_DARK,
             borderRadius: "20px",
-            p: { xs: 3, md: "48px 47px 48px 46px" },
+            p: { xs: 3, md: 4 },
             maxWidth: 1661,
             display: "flex",
             alignItems: "center",
@@ -75,7 +76,7 @@ const MissionVisionSection = () => {
           <Typography
             sx={{
               fontSize: { xs: 18, md: 22 },
-              lineHeight: { xs: 1.45, md: "43px" },
+              lineHeight: { xs: 1.45, md: "30px" },
               fontFamily: helvetica.style.fontFamily,
               color: COLORS.TEXT_GREY,
               textAlign: "justify",
@@ -87,8 +88,9 @@ const MissionVisionSection = () => {
         </Box>
         <Typography
           sx={{
-            fontSize: { xs: 28, md: 54 },
+            fontSize: { xs: 28, md: 48 },
             fontWeight: 700,
+            lineHeight: "52px",
             mt: 10,
             mb: 4,
             fontFamily: din.style.fontFamily,
@@ -122,7 +124,7 @@ const MissionVisionSection = () => {
                   sx={{
                     fontSize: { xs: 16, md: 22 },
                     color: COLORS.TEXT_GREY,
-                    lineHeight: { xs: 1.35, md: "28px" },
+                    lineHeight: { xs: 1.35, md: "30px" },
                     fontFamily: helvetica.style.fontFamily,
                     // textAlign: "justify",
                   }}
@@ -131,9 +133,9 @@ const MissionVisionSection = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: 24, md: 36 },
+                    fontSize: { xs: 24, md: 32 },
                     fontWeight: 700,
-                    lineHeight: 1,
+                    lineHeight: "36px",
                     fontFamily: din.style.fontFamily,
                     textTransform: "uppercase",
                   }}

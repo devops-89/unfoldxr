@@ -3,6 +3,7 @@ export interface IndustryData {
     title: string;
     description: string;
     image: string;
+    overlayOpacity?: number;
   };
   realityNeeds: {
     title: string;
@@ -125,7 +126,8 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       title: "Built for Oil & Gas Industry \nWhere Downtime and \nNon-Compliance Are Not an Option",
       description: "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to maintenance, inspection, and turnaround operations across refineries and processing plants.",
-      image: "/images/usecase/HeroSection.png",
+      image: "/images/Industries/OilGas/HeroSection.png",
+      overlayOpacity: 0.8,
     },
     realityNeeds: {
       title: "We understand refinery operations and what it takes to keep them running safely",
@@ -210,7 +212,8 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       title: "Built for Manufacturing Floors \nThat Can’t Afford Mistakes",
       description: "UnfoldXR is an AI-powered augmented reality platform for manufacturing that combines real-time intelligence, guided execution, and scalable expertise for high-precision, safety-critical operations.",
-      image: "/images/usecase/HeroSection.png",
+      image: "/images/Industries/Manufacturing/HeroSection.png",
+      overlayOpacity: 0.8,
     },
     realityNeeds: {
       title: "We understand manufacturing and what it takes to run it well",
@@ -294,7 +297,8 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       title: "Built for Retail & Logistics Operations Where Consistency Drives Performance",
       description: "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time knowledge, and operational intelligence to warehouse, logistics, and store teams — across locations, shifts, and supply chains.",
-      image: "/images/usecase/HeroSection.png",
+      image: "/images/Industries/Retail/HeroSection.png",
+      overlayOpacity: 0.8,
     },
     realityNeeds: {
       title: "We understand modern retail and logistics and the complexity of running them at scale",
@@ -379,7 +383,8 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       title: "Built for Marine Operations \nWhere Downtime at Sea \nIs Not an Option",
       description: "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to vessel maintenance, inspections, and offshore operations across sea, port, and shore.",
-      image: "/images/usecase/HeroSection.png",
+      image: "/images/Industries/Marine/HeroSection.png",
+      overlayOpacity: 0.8,
     },
     realityNeeds: {
       title: "We understand marine operations and what it takes to keep fleets running safely",
@@ -465,7 +470,8 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       title: "Built for Insurance Operations Where Accuracy and \nCompliance Matter",
       description: "UnfoldXR is an AI-powered augmented reality platform that brings guided inspections, real-time intelligence, and structured documentation to insurance assessments, compliance checks, and risk evaluations.",
-      image: "/images/usecase/HeroSection.png",
+      image: "/images/Industries/Insurance/HeroSection.png",
+      overlayOpacity: 0.8,
     },
     realityNeeds: {
       title: "We understand insurance operations and what it takes to assess risk accurately",
@@ -548,7 +554,8 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       title: "Built for Aviation Operations \nWhere Precision and \nSafety Are Critical",
       description: "UnfoldXR is an AI-powered augmented reality platform for aviation that brings real-time guidance, expert collaboration, and operational intelligence to aircraft maintenance, inspection, and ground operations.",
-      image: "/images/usecase/HeroSection.png",
+      image: "/images/Industries/Aviation/HeroSection.png",
+      overlayOpacity: 0.8,
     },
     realityNeeds: {
       title: "We understand aviation operations and what it takes to keep them running safely",
@@ -632,7 +639,8 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       title: "Built for Healthcare Operations \nWhere Precision and \nSpeed Save Lives",
       description: "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to modern healthcare operations.",
-      image: "/images/usecase/HeroSection.png",
+      image: "/images/Industries/Healthcare/HeroSection.png",
+      overlayOpacity: 0.8,
     },
     realityNeeds: {
       title: "We understand healthcare operations and what it takes to keep them running safely",

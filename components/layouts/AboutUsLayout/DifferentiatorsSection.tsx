@@ -24,10 +24,10 @@ const DifferentiatorsSection = () => {
           <Grid size={{ xs: 12, md: 7 }}>
             <Typography
               sx={{
-                fontSize: { xs: 36, md: 54 },
+                fontSize: { xs: 36, md: 48 },
                 fontWeight: 900,
                 textTransform: "uppercase",
-                lineHeight: { xs: 1.1, md: "92px" },
+                lineHeight: { xs: 1.1, md: "52px" },
                 mb: 6,
                 fontFamily: din.style.fontFamily,
               }}
@@ -56,9 +56,9 @@ const DifferentiatorsSection = () => {
                   <Box>
                     <Typography
                       sx={{
-                        fontSize: { xs: 22, md: 28 },
+                        fontSize: { xs: 22, md: 22},
                         fontWeight: 700,
-                        lineHeight: 1.2,
+                        lineHeight: "30px",
                         mb: 1,
                         textTransform: "uppercase",
                         fontFamily: din.style.fontFamily,
@@ -68,8 +68,8 @@ const DifferentiatorsSection = () => {
                     </Typography>
                     <Typography
                       sx={{
-                        fontSize: { xs: 17, md: 22 },
-                        lineHeight: 1.55,
+                        fontSize: { xs: 17, md: 18 },
+                        lineHeight: "30px",
                         color: COLORS.WHITE,
                         fontFamily: helvetica.style.fontFamily,
                         textAlign: "left",

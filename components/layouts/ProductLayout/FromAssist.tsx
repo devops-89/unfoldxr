@@ -76,7 +76,7 @@ const FromAssist = () => {
                 fontSize: { xs: 16, md: 20, lg: 22 },
                 color: COLORS.BLACK,
                 fontWeight: 500,
-                lineHeight: "28px",
+                lineHeight: "30px",
               }}
             >
               {data.subtitle}
@@ -121,7 +121,7 @@ const FromAssist = () => {
                   textDecoration: "none",
                   textUnderlineOffset: "6px",
                   fontWeight: 700,
-                  lineHeight: "28px",
+                  lineHeight: "30px",
                   fontSize: 18,
                   color: COLORS.BLACK,
                   cursor: "pointer",

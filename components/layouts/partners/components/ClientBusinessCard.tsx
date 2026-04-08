@@ -22,11 +22,11 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
       {/* Number */}
       <Typography
         sx={{
-          fontSize: { xs: 28, md: 40 },
+          fontSize: { xs: 28, md: 48 },
           fontWeight: 900,
           color: COLORS.PRIMARY_HOVER,
           minWidth: { xs: "auto", md: "70px" },
-          lineHeight: 1,
+          lineHeight: "52px",
         }}
       >
         {formattedNumber}
@@ -36,8 +36,8 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
       <Box>
         <Typography
           sx={{
-            fontSize: { xs: 14, md: 20 },
-            lineHeight: 1.4,
+            fontSize: { xs: 14, md: 22 },
+            lineHeight: "30px",
             color: "#fff",
           }}
         >

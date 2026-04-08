@@ -33,8 +33,8 @@ const ClientBusinessSection = () => {
               <Typography
                 sx={{
                   fontWeight: 900,
-                  fontSize: { xs: 28, md: 54 },
-                  lineHeight: 1.1,
+                  fontSize: { xs: 28, md: 48 },
+                  lineHeight: "52px",
                   textTransform: "uppercase",
                   mb: 8,
                   textAlign: { xs: "center", md: "left" },

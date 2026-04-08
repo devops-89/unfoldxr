@@ -12,6 +12,7 @@ const HeroSection = ({ data }: Props) => {
       title={data.title}
       description={data.description}
       primaryBtn={{ label: "Request a demo" }}
+      overlayOpacity={data.overlayOpacity}
     />
   );
 };
