@@ -23,7 +23,7 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 32, md: 60 },
+              fontSize: { xs: 28, md: 54 },
               textTransform: "uppercase",
               fontWeight: 900,
             }}
@@ -36,9 +36,9 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 16, md: 24 },
+              fontSize: { xs: 16, md: 22 },
               fontWeight: 400,
-              mt: 2,
+              mt: 1,
             }}
           >
             {homePage.Ai_industry.description}
@@ -51,7 +51,7 @@ const AiIndustry = () => {
               flexWrap: "wrap",
               justifyContent: "center",
               gap: { xs: 1.5, md: 2 },
-              mt: { xs: 4, md: 10 },
+              mt: { xs: 4, md: 6 },
               maxWidth: "100%",
             }}
           >

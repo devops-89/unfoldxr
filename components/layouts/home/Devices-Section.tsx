@@ -6,13 +6,20 @@ import DevicesCard from "./components/Devices-Card";
 
 const DevicesSection = () => {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, minHeight: "85vh", display: "flex", alignItems: "center" }}>
-      <Container maxWidth="lg">
-
+    <Box
+      sx={{
+        py: { xs: 8, md: 12 },
+        minHeight: "85vh",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <Container maxWidth="xl">
+        <Box sx={{ px: { xs: 0, sm: 2, md: 8 } }}>
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 30, md: 56 },
+            fontSize: { xs: 30, md: 54 },
             fontWeight: 900,
             textTransform: "uppercase",
             textAlign: { xs: "center", md: "left" },
@@ -37,7 +44,7 @@ const DevicesSection = () => {
             </Grid>
           ))}
         </Grid>
-
+        </Box>
       </Container>
     </Box>
   );

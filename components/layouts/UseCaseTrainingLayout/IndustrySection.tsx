@@ -13,7 +13,11 @@ const IndustrySection = ({ data }: Props) => {
   return (
     <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 10, md: 15 } }}>
       <Box
-        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          px: { xs: 2, md: 0 },
+        }}
       >
         <Typography
           sx={{
@@ -21,7 +25,7 @@ const IndustrySection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 32, lg: 44 },
+            fontSize: { xs: 28, md: 54 },
             mb: 2,
           }}
         >
@@ -31,11 +35,11 @@ const IndustrySection = ({ data }: Props) => {
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 24, lg: 24 },
+            fontSize: { xs: 16, md: 22 },
             color: COLORS.BLACK,
             maxWidth: 1000,
             mx: "auto",
-            mb: { xs: 6, md: 10 },
+            mb: { xs: 6, md: 8 },
           }}
         >
           {data.subtitle}
@@ -52,57 +56,59 @@ const IndustrySection = ({ data }: Props) => {
             mx: "auto",
           }}
         >
-          {(data.customIndustries || AI_INDUSTRY_DATA).map((industry, index) => (
-            <Box
-              key={index}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1.5,
-                bgcolor: COLORS.WHITE,
-                border: `1px solid ${COLORS.BLACK}`,
-                borderRadius: 99,
-                pl: 1,
-                pr: 3,
-                py: 1,
-              }}
-            >
+          {(data.customIndustries || AI_INDUSTRY_DATA).map(
+            (industry, index) => (
               <Box
+                key={index}
                 sx={{
-                  width: 36,
-                  height: 36,
-                  bgcolor: COLORS.BLACK,
-                  borderRadius: "50%",
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
+                  gap: 1.5,
+                  bgcolor: COLORS.WHITE,
+                  border: `1px solid ${COLORS.BLACK}`,
+                  borderRadius: 99,
+                  pl: 1,
+                  pr: 3,
+                  py: 1,
                 }}
               >
-                <Image
-                  src={industry.img}
-                  alt={industry.label}
-                  width={20}
-                  height={20}
-                  style={{
-                    objectFit: "contain",
-                    filter: "brightness(0) invert(1)",
+                <Box
+                  sx={{
+                    width: 36,
+                    height: 36,
+                    bgcolor: COLORS.BLACK,
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                />
+                >
+                  <Image
+                    src={industry.img}
+                    alt={industry.label}
+                    width={20}
+                    height={20}
+                    style={{
+                      objectFit: "contain",
+                      filter: "brightness(0) invert(1)",
+                    }}
+                  />
+                </Box>
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: 14,
+                    fontWeight: 900,
+                    textTransform: "uppercase",
+                    color: COLORS.BLACK,
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {industry.label}
+                </Typography>
               </Box>
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: 14,
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  color: COLORS.BLACK,
-                  letterSpacing: "0.02em",
-                }}
-              >
-                {industry.label}
-              </Typography>
-            </Box>
-          ))}
+            ),
+          )}
         </Box>
       </Box>
     </Box>

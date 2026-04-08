@@ -58,7 +58,7 @@ const FutureWork = () => {
                 <Typography
                   sx={{
                     fontFamily: din.style.fontFamily,
-                    fontSize: { xs: 20, md: 45 },
+                    fontSize: { xs: 20, md: 54 },
                     fontWeight: 900,
                     textTransform: "uppercase",
                     color: COLORS.WHITE,
@@ -93,7 +93,7 @@ const FutureWork = () => {
 
                 <Typography
                   sx={{
-                    fontSize: { xs: 28, md: 50 },
+                    fontSize: { xs: 28, md: 54 },
                     fontWeight: 900,
                     textTransform: "uppercase",
                     color: COLORS.PRIMARY_GREEN,

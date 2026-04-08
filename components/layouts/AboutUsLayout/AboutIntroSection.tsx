@@ -14,21 +14,26 @@ const AboutIntroSection = () => (
   <Box
     sx={{ bgcolor: COLORS.BLACK, pt: { xs: 8, md: 20 }, pb: { xs: 8, md: 25 } }}
   >
-    <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
+    <Container
+      maxWidth={false}
+      sx={{ width: { xs: "90%", md: "90%", lg: "85%" }, mx: "auto", px: 0 }}
+    >
       <Card
         sx={{
           borderRadius: { xs: 3, md: "40px" },
           boxShadow: "none",
           bgcolor: COLORS.WHITE,
-          pb: { xs: 6, md: 6, lg: 8 }
+          pb: { xs: 6, md: 6, lg: 8 },
         }}
       >
-        <CardContent sx={{ px: { xs: 4, md: 10 }, py: { xs: 4, md: 10, lg: 15 } }}>
+        <CardContent
+          sx={{ px: { xs: 4, md: 10 }, py: { xs: 4, md: 10, lg: 15 } }}
+        >
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 sx={{
-                  fontSize: { xs: 34, md: 60 },
+                  fontSize: { xs: 34, md: 54 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   lineHeight: 1.05,
@@ -45,7 +50,7 @@ const AboutIntroSection = () => (
                   <Typography
                     key={idx}
                     sx={{
-                      fontSize: { xs: 18, md: 20 },
+                      fontSize: { xs: 18, md: 22 },
                       lineHeight: 1.6,
                       fontWeight: 400,
                       fontFamily: helvetica.style.fontFamily,
@@ -58,7 +63,7 @@ const AboutIntroSection = () => (
                 ))}
                 <Typography
                   sx={{
-                    fontSize: { xs: 24, md: 28 },
+                    fontSize: { xs: 24, md: 22 },
                     lineHeight: 1.4,
                     fontWeight: 700,
                     fontFamily: helvetica.style.fontFamily,

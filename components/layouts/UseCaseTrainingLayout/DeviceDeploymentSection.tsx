@@ -23,7 +23,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 32, lg: 44 },
+            fontSize: { xs: 28, md: 54 },
             mb: { xs: 6, md: 8 },
           }}
         >
@@ -68,7 +68,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 32 },
+                    fontSize: { xs: 24, md: 28 },
                     lineHeight: 1.1,
                     mb: 2,
                   }}
@@ -76,7 +76,6 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                   {data.deviceA.title}
                 </Typography>
                 <StylizedDivider />
-
               </Box>
             </Box>
           </Grid>
@@ -122,7 +121,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 32 },
+                    fontSize: { xs: 24, md: 28 },
                     lineHeight: 1.1,
                     mb: 2,
                   }}
@@ -130,7 +129,6 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                   {data.deviceB.title}
                 </Typography>
                 <StylizedDivider />
-
               </Box>
             </Box>
           </Grid>
@@ -149,13 +147,13 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 component="img"
                 src={data.deviceC.image}
                 alt={data.deviceC.title}
-                sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                sx={{ width: "100%", height: "130%", objectFit: "cover" }}
               />
               <Box
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  bgcolor: COLORS.OVERLAY_02,
+                  bgcolor: COLORS.BLACK_ALPHA_60,
                 }}
               />
               <Box
@@ -172,7 +170,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 32 },
+                    fontSize: { xs: 24, md: 28 },
                     lineHeight: 1.1,
                     mb: 2,
                   }}
@@ -180,7 +178,6 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                   {data.deviceC.title}
                 </Typography>
                 <StylizedDivider />
-
               </Box>
             </Box>
           </Grid>

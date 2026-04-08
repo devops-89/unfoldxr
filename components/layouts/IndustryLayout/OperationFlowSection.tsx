@@ -27,7 +27,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 32, md: 48, lg: 54 },
+            fontSize: { xs: 28, md: 48, lg: 54 },
             lineHeight: 1.1,
             textTransform: "uppercase",
             fontWeight: 900,

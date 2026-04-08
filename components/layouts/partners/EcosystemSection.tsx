@@ -36,7 +36,7 @@ const EcosystemSection = () => {
           <Typography
             sx={{
               fontWeight: 900,
-              fontSize: { xs: 26, md: 48 },
+              fontSize: { xs: 26, md: 54 },
               mb: 6,
               color: "#000",
               lineHeight: 1.1,
@@ -55,31 +55,63 @@ const EcosystemSection = () => {
               size={{ xs: 12, md: 5 }}
             >
               <Box sx={{ display: "flex", height: "100%", position: "relative" }}>
-                <Stack spacing={3} alignItems={{ xs: "center", md: "flex-start" }} sx={{ flex: 1 }}>
+                <Stack spacing={3} alignItems="flex-start" sx={{ flex: 1 }}>
                   {data.map((item, i) => (
-                    <Box
-                      key={i}
-                      onClick={() => setActiveTab(i)}
-                      sx={{
-                        cursor: "pointer",
-                        border: activeTab === i ? `1.5px solid ${COLORS.PRIMARY_HOVER}` : "1.5px solid transparent",
-                        borderRadius: "50px",
-                        px: activeTab === i ? 3 : 2,
-                        py: activeTab === i ? 1 : 0.5,
-                        transition: "all 0.3s ease",
-                      }}
-                    >
-                      <Typography
+                    <Box key={i}>
+                      {/* Heading Pill (bordered, clickable) */}
+                      <Box
+                        onClick={() => setActiveTab(i)}
                         sx={{
-                          fontSize: { xs: 16, md: 20 },
-                          color: activeTab === i ? COLORS.PRIMARY_HOVER : "#000",
-                          fontWeight: 600,
-                          whiteSpace: "nowrap",
-                          textTransform: "uppercase",
+                          cursor: "pointer",
+                          border: activeTab === i ? `1.5px solid ${COLORS.PRIMARY_HOVER}` : "1.5px solid transparent",
+                          borderRadius: "50px",
+                          px: activeTab === i ? 3 : 2,
+                          py: activeTab === i ? 1 : 0.5,
+                          transition: "all 0.3s ease",
+                          width: "fit-content",
+                          "&:hover": {
+                            bgcolor: activeTab === i ? "transparent" : "rgba(0, 0, 0, 0.03)",
+                            borderColor: activeTab === i ? COLORS.PRIMARY_HOVER : "rgba(0, 0, 0, 0.1)",
+                          },
                         }}
                       >
-                        {item.label}
-                      </Typography>
+                        <Typography
+                          sx={{
+                            fontSize: { xs: 16, md: 22 },
+                            color: activeTab === i ? COLORS.PRIMARY_HOVER : "#000",
+                            fontWeight: 600,
+                            whiteSpace: "normal",
+                            textTransform: "uppercase",
+                            maxWidth: { xs: "85vw", md: "100%" },
+                          }}
+                        >
+                          {item.label}
+                        </Typography>
+                      </Box>
+                      {/* Mobile Description: Outside border, slides in smoothly */}
+                      {activeTab === i && (
+                        <Typography
+                          sx={{
+                            display: { xs: "block", md: "none" },
+                            mt: 1.5,
+                            mb: 1,
+                            px: 1,
+                            fontSize: { xs: 15, md: 17 },
+                            lineHeight: 1.5,
+                            color: COLORS.BLACK,
+                            fontWeight: 500,
+                            textTransform: "none",
+                            whiteSpace: "normal",
+                            animation: "slideDown 0.3s ease",
+                            "@keyframes slideDown": {
+                              from: { opacity: 0, transform: "translateY(-8px)" },
+                              to: { opacity: 1, transform: "translateY(0)" },
+                            },
+                          }}
+                        >
+                          {item.description}
+                        </Typography>
+                      )}
                     </Box>
                   ))}
                 </Stack>
@@ -103,8 +135,8 @@ const EcosystemSection = () => {
               </Box>
             </Grid>
 
-            {/* RIGHT */}
-            <Grid size={{ xs: 12, md: 7 }}>
+            {/* RIGHT (Desktop only) */}
+            <Grid size={{ xs: 12, md: 7 }} sx={{ display: { xs: "none", md: "block" } }}>
               <Box
                 sx={{
                   pl: { md: 6 },
@@ -115,7 +147,7 @@ const EcosystemSection = () => {
                 <Typography
                   key={activeTab} // Smooth fade trigger
                   sx={{
-                    fontSize: { xs: 16, md: 20 },
+                    fontSize: { xs: 16, md: 22 },
                     lineHeight: "28px",
                     color: "#000",
                     fontWeight: 500,

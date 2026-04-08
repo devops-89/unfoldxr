@@ -27,8 +27,8 @@ const SupportYourOperations = () => {
               fontWeight: 900,
               textTransform: "uppercase",
               lineHeight: 1.15,
-              fontSize: { xs: 32, md: 48, lg: 52 },
-              maxWidth: 900,
+              fontSize: { xs: 28, md: 48, lg: 54 },
+              maxWidth: 1000,
             }}
           >
             {data.lifecycle.title.split("lifecycle")[0]}
@@ -42,7 +42,7 @@ const SupportYourOperations = () => {
               fontFamily: helvetica.style.fontFamily,
               fontWeight: 700,
               textTransform: "none",
-              fontSize: { xs: 18, md: 20, lg: 24 },
+              fontSize: { xs: 18, md: 20, lg: 22 },
               lineHeight: 1.4,
             }}
           >

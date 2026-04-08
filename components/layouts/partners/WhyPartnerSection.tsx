@@ -23,7 +23,7 @@ const WhyPartnerSection = () => {
         <Typography
           sx={{
             color: "#fff",
-            fontSize: { xs: 32, md: 48 },
+            fontSize: { xs: 28, md: 54 },
             fontWeight: 900,
             mb: { xs: 6, md: 8 },
             textTransform: "uppercase",

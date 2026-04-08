@@ -36,7 +36,7 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
       <Box>
         <Typography
           sx={{
-            fontSize: { xs: 14, md: 18 },
+            fontSize: { xs: 14, md: 20 },
             lineHeight: 1.4,
             color: "#fff",
           }}

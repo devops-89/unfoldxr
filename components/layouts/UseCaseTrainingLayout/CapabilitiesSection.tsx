@@ -85,7 +85,7 @@ const CapabilitiesSection = ({ data }: Props) => {
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               textTransform: "uppercase",
-              fontSize: { xs: 28, md: 44, lg: 48 },
+              fontSize: { xs: 28, md: 54 },
               lineHeight: 1.1,
               mb: { xs: 8, md: 12 },
               maxWidth: 1000,
@@ -128,7 +128,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 18, md: 20 },
+                    fontSize: { xs: 18, md: 22 },
                     color: COLORS.PRIMARY_GREEN,
                     lineHeight: 1.2,
                   }}
@@ -138,7 +138,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 15, md: 17 },
+                    fontSize: { xs: 15, md: 16 },
                     lineHeight: 1.5,
                     color: COLORS.TEXT_GREY,
                   }}
@@ -246,7 +246,7 @@ const CapabilitiesSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 32, lg: 44 },
+            fontSize: { xs: 28, md: 54 },
             lineHeight: 1.1,
             mb: { xs: 8, md: 15 },
             maxWidth: 1000,
@@ -260,37 +260,66 @@ const CapabilitiesSection = ({ data }: Props) => {
           <Grid size={{ xs: 12, md: 5 }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
               {data.items.map((item, index) => (
-                <Box
-                  key={item.title}
-                  onClick={() => setActiveItem(index)}
-                  sx={{
-                    border:
-                      activeItem === index
-                        ? `1px solid ${COLORS.PRIMARY_GREEN}`
-                        : "1px solid transparent",
-                    borderRadius: 99,
-                    px: { xs: 3, md: 4 },
-                    py: 1.8,
-                    width: "fit-content",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  <Typography
+                <Box key={item.title}>
+                  {/* Heading Pill (clickable) */}
+                  <Box
+                    onClick={() => setActiveItem(index)}
                     sx={{
-                      color:
+                      border:
                         activeItem === index
-                          ? COLORS.PRIMARY_GREEN
-                          : COLORS.WHITE,
-                      textTransform: "uppercase",
-                      fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 15, md: 17, lg: 19 },
-                      fontWeight: 900,
-                      letterSpacing: "0.02em",
+                          ? `1px solid ${COLORS.PRIMARY_GREEN}`
+                          : "1px solid transparent",
+                      borderRadius: 99,
+                      px: { xs: 3, md: 4 },
+                      py: 1.8,
+                      width: "fit-content",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        bgcolor: activeItem === index ? "transparent" : "rgba(255, 255, 255, 0.05)",
+                        borderColor: activeItem === index ? COLORS.PRIMARY_GREEN : "rgba(255, 255, 255, 0.2)",
+                      },
                     }}
                   >
-                    {item.title}
-                  </Typography>
+                    <Typography
+                      sx={{
+                        color:
+                          activeItem === index
+                            ? COLORS.PRIMARY_GREEN
+                            : COLORS.WHITE,
+                        textTransform: "uppercase",
+                        fontFamily: helvetica.style.fontFamily,
+                        fontSize: { xs: 15, md: 22 },
+                        fontWeight: 900,
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Box>
+                  {/* Mobile Description: Outside border, slides in smoothly */}
+                  {activeItem === index && (
+                    <Typography
+                      sx={{
+                        display: { xs: "block", md: "none" },
+                        mt: 1.5,
+                        px: 2,
+                        fontFamily: helvetica.style.fontFamily,
+                        fontSize: { xs: 15, md: 17 },
+                        lineHeight: 1.5,
+                        color: COLORS.WHITE,
+                        fontWeight: 500,
+                        textTransform: "none",
+                        animation: "slideDown 0.3s ease",
+                        "@keyframes slideDown": {
+                          from: { opacity: 0, transform: "translateY(-8px)" },
+                          to: { opacity: 1, transform: "translateY(0)" },
+                        },
+                      }}
+                    >
+                      {item.description}
+                    </Typography>
+                  )}
                 </Box>
               ))}
             </Box>
@@ -310,19 +339,18 @@ const CapabilitiesSection = ({ data }: Props) => {
             />
           </Grid>
 
-          {/* Right Side: Dynamic Description */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          {/* Right Side: Dynamic Description (Desktop only) */}
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: "none", md: "block" } }}>
             <Box sx={{ pt: { xs: 0, md: 2 } }}>
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 18, md: 20, lg: 26 },
+                  fontSize: { xs: 18, md: 22 },
                   lineHeight: 1.4,
                   color: COLORS.WHITE,
                   fontWeight: 500,
                   transition: "opacity 0.3s ease",
                   textTransform: "none",
-
                 }}
               >
                 {data.items[activeItem].description}

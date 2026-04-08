@@ -212,7 +212,7 @@ export default function Footer() {
                       sx={{
                         fontWeight: 800,
                         color: "#ffffff",
-                        fontSize: { xs: 24, md: 32 },
+                        fontSize: { xs: 24, md: 28 },
                         lineHeight: 1.2,
                       }}
                     >

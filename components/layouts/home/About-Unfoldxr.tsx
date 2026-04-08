@@ -22,7 +22,7 @@ const AboutUnfoldxr = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 60 },
+                  fontSize: { xs: 36, md: 54 },
                   lineHeight: { xs: 1.05, md: "92px" },
                   textTransform: "uppercase",
                   fontWeight: 900,
@@ -64,7 +64,7 @@ const AboutUnfoldxr = () => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 20, md: 32 },
+                  fontSize: { xs: 20, md: 28 },
                   lineHeight: { xs: 1.5, md: "48px" },
                   fontWeight: 700,
                   mt: { xs: 2, md: 4 },

@@ -28,7 +28,7 @@ const RealityNeedsSection = ({ data }: Props) => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 32, md: 48, lg: 54 },
+            fontSize: { xs: 28, md: 48, lg: 54 },
             lineHeight: 1.1,
             textTransform: "uppercase",
             fontWeight: 900,
@@ -68,7 +68,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                     key={item}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 15, md: 18, lg: 20 },
+                      fontSize: { xs: 15, md: 18, lg: 22 },
                       lineHeight: 1.4,
                       display: "flex",
                       gap: 1.5,
@@ -103,6 +103,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                   color: COLORS.PRIMARY_GREEN,
                   fontWeight: 700,
                   mb: 3,
+                  whiteSpace: "pre-line",
                 }}
               >
                 {data.needsTitle}
@@ -113,7 +114,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                     key={item}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 15, md: 18, lg: 20 },
+                      fontSize: { xs: 15, md: 18, lg: 22 },
                       lineHeight: 1.4,
                       display: "flex",
                       gap: 1.5,
@@ -135,13 +136,14 @@ const RealityNeedsSection = ({ data }: Props) => {
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 18, md: 26, lg: 32 },
+            fontSize: { xs: 18, md: 26, lg: 28 },
             mt: 16,
             maxWidth: 1100,
             mx: "auto",
             color: COLORS.BLACK,
             fontWeight: 700,
             lineHeight: 1.3,
+            whiteSpace: "pre-line",
           }}
         >
           {data.bottomText}

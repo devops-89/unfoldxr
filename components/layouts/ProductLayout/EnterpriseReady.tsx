@@ -62,7 +62,7 @@ const EnterpriseReady = () => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: 1.1,
-                fontSize: { xs: 32, md: 48, lg: 52 },
+                fontSize: { xs: 28, md: 48, lg: 54 },
                 mb: { xs: 6, md: 8 },
               }}
             >
@@ -89,7 +89,7 @@ const EnterpriseReady = () => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           fontWeight: 700,
-                          fontSize: { xs: 18, md: 20 },
+                          fontSize: { xs: 18, md: 22 },
                           textTransform: "uppercase",
                           lineHeight: 1.2,
                           mb: 1.5,

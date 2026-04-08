@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Button, Container, Typography, SxProps, Theme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  SxProps,
+  Theme,
+} from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 
@@ -45,7 +52,10 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: "24px",
-            border: isIndustry || isAbout ? "1px solid rgba(182, 255, 46, 0.15)" : "none",
+            border:
+              isIndustry || isAbout
+                ? "1px solid rgba(182, 255, 46, 0.15)"
+                : "none",
             width: { xs: "95%", md: "90%", lg: "80%" },
             mx: "auto",
             py: { xs: 4, md: isAbout ? "80px" : 10 },
@@ -91,7 +101,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: variant === "about" ? 24 : 26, md: 60 },
+                fontSize: { xs: variant === "about" ? 24 : 26, md: 54 },
                 lineHeight: 1.1,
                 letterSpacing: variant === "default" ? "-0.051px" : "normal",
                 color: COLORS.BLACK,
@@ -110,7 +120,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 sx={{
                   mt: 3,
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: isIndustry ? 24 : 20 },
+                  fontSize: { xs: 16, md: isIndustry ? 22 : 20 },
                   color: COLORS.BLACK,
                   fontWeight: isIndustry ? 400 : 500,
                   lineHeight: 1.5,
@@ -138,7 +148,12 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 },
               }}
             >
-              {btnText} {isAbout && <Box component="span" sx={{ ml: 1 }}>&rarr;</Box>}
+              {btnText}{" "}
+              {isAbout && (
+                <Box component="span" sx={{ ml: 1 }}>
+                  &rarr;
+                </Box>
+              )}
             </Button>
           </Box>
         </Box>

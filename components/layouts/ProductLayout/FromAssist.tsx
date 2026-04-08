@@ -48,7 +48,7 @@ const FromAssist = () => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 24, md: 44, lg: 48 },
+                fontSize: { xs: 24, md: 44, lg: 54 },
                 lineHeight: 1.15,
                 color: COLORS.BLACK,
                 maxWidth: { xs: 280, md: 1100 },

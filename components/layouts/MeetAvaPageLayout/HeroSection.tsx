@@ -77,7 +77,7 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 56, lg: 60 },
+                  fontSize: { xs: 36, md: 56, lg: 54 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   color: COLORS.WHITE,

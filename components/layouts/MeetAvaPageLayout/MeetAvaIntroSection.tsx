@@ -24,11 +24,11 @@ const MeetAvaIntroSection = () => {
         }}
       >
         <Grid container spacing={{ xs: 4, md: 8 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, md: 7 }} sx={{ order: { xs: 1, md: 2 } }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 48, lg: 60 },
+                fontSize: { xs: 28, md: 48, lg: 54 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.BLACK,
@@ -42,7 +42,7 @@ const MeetAvaIntroSection = () => {
                 key={index}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 15, md: 20 },
+                  fontSize: { xs: 15, md: 22 },
                   color: COLORS.BLACK,
                   lineHeight: 1.6,
                   textAlign: "justify",
@@ -53,7 +53,7 @@ const MeetAvaIntroSection = () => {
               </Typography>
             ))}
           </Grid>
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 5 }} sx={{ order: { xs: 2, md: 1 } }}>
             <Box
               component="img"
               src={data.image}

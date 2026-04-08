@@ -27,7 +27,7 @@ const PlatformSummarySection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 28, md: 48, lg: 52 },
+                fontSize: { xs: 28, md: 54 },
                 lineHeight: 1.1,
                 color: COLORS.BLACK,
               }}
@@ -39,7 +39,7 @@ const PlatformSummarySection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 18, lg: 20 },
+                fontSize: { xs: 16, md: 22 },
                 lineHeight: 1.6,
                 color: COLORS.OVERLAY_07,
                 mb: 4,
@@ -50,7 +50,7 @@ const PlatformSummarySection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 18, lg: 20 },
+                fontSize: { xs: 16, md: 22 },
                 lineHeight: 1.6,
                 color: COLORS.OVERLAY_07,
               }}

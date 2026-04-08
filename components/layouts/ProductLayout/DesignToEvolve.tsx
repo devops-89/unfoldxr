@@ -31,7 +31,7 @@ const DesignToEvolve = () => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 32, md: 48, lg: 52 },
+            fontSize: { xs: 28, md: 48, lg: 54 },
             lineHeight: 1.1,
             maxWidth: 900,
           }}
@@ -54,7 +54,7 @@ const DesignToEvolve = () => {
           sx={{
             mt: 3,
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 18, lg: 20 },
+            fontSize: { xs: 16, md: 18, lg: 22 },
             lineHeight: 1.5,
             color: COLORS.TEXT_GRAY,
             maxWidth: 1000,
@@ -72,90 +72,123 @@ const DesignToEvolve = () => {
                 display: "flex",
                 flexDirection: "column",
                 gap: { xs: 2, md: 4 },
-                alignItems: { xs: "center", md: "flex-start" },
+                alignItems: "flex-start",
               }}
             >
               {data.variants.map((item, index) => (
-                <Box
-                  key={item.title}
-                  onClick={() => setActiveIndex(index)}
-                  sx={{
-                    fontFamily: din.style.fontFamily,
-                    border:
-                      activeIndex === index
-                        ? `2px solid ${COLORS.PRIMARY_HOVER}`
-                        : "2px solid transparent",
-                    borderRadius: "99px",
-                    display: "inline-block",
-                    px: { xs: 2, md: 3 },
-                    py: 1,
-                    color:
-                      activeIndex === index ? COLORS.PRIMARY_HOVER : COLORS.WHITE,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.04em",
-                    fontSize: { xs: 16, md: 20 },
-                    fontWeight: 700,
-                    width: "fit-content",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  {item.title}
+                <Box key={item.title}>
+                  <Box
+                    onClick={() => setActiveIndex(index)}
+                    sx={{
+                      fontFamily: din.style.fontFamily,
+                      border:
+                        activeIndex === index
+                          ? `2px solid ${COLORS.PRIMARY_HOVER}`
+                          : "2px solid transparent",
+                      borderRadius: "99px",
+                      display: "inline-block",
+                      px: { xs: 2, md: 3 },
+                      py: 1,
+                      color:
+                        activeIndex === index ? COLORS.PRIMARY_HOVER : COLORS.WHITE,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.04em",
+                      fontSize: { xs: 16, md: 22 },
+                      fontWeight: 700,
+                      width: "fit-content",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        bgcolor: activeIndex === index ? "transparent" : "rgba(255, 255, 255, 0.05)",
+                        borderColor: activeIndex === index ? COLORS.PRIMARY_HOVER : "rgba(255, 255, 255, 0.2)",
+                      },
+                    }}
+                  >
+                    {item.title}
+                  </Box>
+                  {/* Mobile Description: Show only if active and on mobile */}
+                  {activeIndex === index && (
+                    <Box sx={{ display: { xs: "block", md: "none" }, mt: 2, mb: 4, px: 2 }}>
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          fontWeight: 700,
+                          fontSize: { xs: 18, md: 24 },
+                          color: COLORS.WHITE,
+                          mb: 1.5,
+                          textTransform: "none",
+                        }}
+                      >
+                        {item.subHeading || item.title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          fontSize: { xs: 16, md: 18 },
+                          lineHeight: 1.5,
+                          color: COLORS.TEXT_GRAY,
+                          textTransform: "none",
+                        }}
+                      >
+                        {item.description}
+                      </Typography>
+                    </Box>
+                  )}
                 </Box>
               ))}
             </Box>
           </Grid>
 
-          {/* Right Description Column with Vertical Stepper */}
-          <Grid size={{ xs: 12, md: 8 }} sx={{ position: "relative" }}>
-            <VerticalStepper
-              itemsCount={data.variants.length}
-              activeIndex={activeIndex}
-              sx={{
-                display: { xs: "none", md: "block" },
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                left: 0,
-              }}
-            />
+        {/* Right Description Column with Vertical Stepper (Desktop only) */}
+        <Grid size={{ xs: 12, md: 8 }} sx={{ position: "relative", display: { xs: "none", md: "block" } }}>
+          <VerticalStepper
+            itemsCount={data.variants.length}
+            activeIndex={activeIndex}
+            sx={{
+              display: { xs: "none", md: "block" },
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: 0,
+            }}
+          />
 
-            <Box
-              sx={{
-                pl: { xs: 0, md: 6 },
-              }}
-            >
-              <Box>
-                <Typography
-                  sx={{
-                    fontFamily: helvetica.style.fontFamily,
-                    fontWeight: 700,
-                    fontSize: { xs: 18, md: 24 },
-                    color: COLORS.WHITE,
-                    mb: 2,
-                    transition: "all 0.3s ease",
-                    textTransform: "none",
-                  }}
-                >
-                  {data.variants[activeIndex].subHeading ||
-                    data.variants[activeIndex].title}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 16, md: 18 },
-                    lineHeight: 1.6,
-                    color: COLORS.TEXT_MUTED,
-                    maxWidth: 650,
-                    transition: "all 0.3s ease",
-                    textTransform: "none",
-                  }}
-                >
-                  {data.variants[activeIndex].description}
-                </Typography>
-              </Box>
+          <Box
+            sx={{
+              pl: { xs: 0, md: 6 },
+            }}
+          >
+            <Box>
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontWeight: 700,
+                  fontSize: { xs: 18, md: 22 },
+                  color: COLORS.WHITE,
+                  mb: 2,
+                  transition: "all 0.3s ease",
+                  textTransform: "none",
+                }}
+              >
+                {data.variants[activeIndex].subHeading ||
+                  data.variants[activeIndex].title}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 16, md: 18 },
+                  lineHeight: 1.6,
+                  color: COLORS.TEXT_GRAY,
+                  maxWidth: 650,
+                  transition: "all 0.3s ease",
+                  textTransform: "none",
+                }}
+              >
+                {data.variants[activeIndex].description}
+              </Typography>
             </Box>
-          </Grid>
+          </Box>
+        </Grid>
         </Grid>
 
         {/* Device Image */}

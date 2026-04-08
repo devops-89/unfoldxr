@@ -30,21 +30,19 @@ const MeetAva = () => {
                   fontFamily: din.style.fontFamily,
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  fontSize: { xs: 32, md: 48, lg: 52 },
+                  fontSize: { xs: 28, md: 48, lg: 54 },
                   lineHeight: 1.15,
                   maxWidth: "100%",
-                  whiteSpace: { md: "nowrap" },
+                  whiteSpace: "pre-line",
                 }}
               >
-                Meet AVA Your ‘AI VIRTUAL ASSISTANT’
-                <Box component="br" sx={{ display: { xs: "none", md: "block" } }} />
-                For everything work.
+                {data.title}
               </Typography>
             <Typography
               sx={{
                 mt: 4,
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 18, lg: 20 },
+                fontSize: { xs: 16, md: 18, lg: 22 },
                 lineHeight: 1.5,
                 color: COLORS.TEXT_GRAY,
                 maxWidth: 720,

@@ -10,7 +10,7 @@ const LeadershipSection = () => {
     <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 15 } }}>
       <Typography 
         sx={{ 
-          fontSize: { xs: 30, md: 60 }, 
+          fontSize: { xs: 30, md: 54 }, 
           fontWeight: 900, 
           textTransform: "uppercase", 
           mb: 8, 
@@ -48,7 +48,7 @@ const LeadershipSection = () => {
                 <Box sx={{ textAlign: { xs: "left", md: isEven ? "left" : "right" }, mt: { xs: 3, md: 0 } }}>
                   <Typography 
                     sx={{ 
-                      fontSize: { xs: 26, md: 52 }, 
+                      fontSize: { xs: 26, md: 54 }, 
                       fontWeight: 900, 
                       textTransform: "uppercase", 
                       fontFamily: din.style.fontFamily,
@@ -73,7 +73,7 @@ const LeadershipSection = () => {
                   </Typography>
                   <Typography 
                     sx={{ 
-                      fontSize: { xs: 18, md: 20 }, 
+                      fontSize: { xs: 18, md: 22 }, 
                       lineHeight: 1.55, 
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,

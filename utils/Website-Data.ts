@@ -12,7 +12,7 @@ import {
   WORKFORCE_CARD_DATA,
 } from "./constant";
 import ava from "@/images/banner/homePage/avapng.png";
-import partnersClientBusiness from "@/images/banner/partners/client-business-section.png";
+import partnersClientBusiness from "@/public/images/about-us/partner/client-business.png";
 import tools from "@/images/banner/homePage/tools/tools-team.png";
 import ankushImg from "@/images/about-us/about-leadership.png";
 import riteshImg from "@/images/about-us/about-leadership2.png";
@@ -30,7 +30,7 @@ import { INDUSTRY_PAGE_PROPS } from "./types";
 export const homePage = {
   herosection: {
     heading1: "Augmenting",
-    heading2: "Human Capability for the future of work.",
+    heading2: "Human Capability\nfor the future of work.",
     description: "AI-powered augmented reality platform for deskless humans",
     cta1: "Watch UnfoldXR in action",
     cta2: "Book a demo",
@@ -202,7 +202,7 @@ export const homePage = {
         "UnfoldXR enhances skiller operations, on ground executions & real-time decision making",
     },
     meetAva: {
-      title: "Meet AVA Your ‘AI Virtual Assistant’ For Everything Work.",
+      title: "Meet AVA Your \n‘AI Virtual Assistant’ \nFor Everything Work.",
       description:
         "AVA supports your workforce across all three versions of the platform. It works alongside your teams as an intelligent assistant, a sharp analyser, and a reliable task partner. The perfect work buddy.",
       img: "/images/Product/MeetAva.png",
@@ -300,7 +300,7 @@ export const homePage = {
 
 export const partnersPage={
   herosection: {
-    heading1: "Unfold Profit and Potential with our Channel Partnership.",
+    heading1: "Unfold Profit and Potential \nwith our Channel\n Partnership.",
     description: "Achieve more revenue and steady growth with UnfoldXR.",
     cta1: "Become a partner",
     
@@ -398,7 +398,7 @@ export const contactPage={
 
 export const aboutPage = {
   herosection: {
-    heading: "AN INTELLIGENT WORK PLATFORM BUILT FOR THE FRONTLINE.",
+    heading: "AN INTELLIGENT WORK \nPLATFORM BUILT FOR THE \nFRONTLINE.",
     cta: "Schedule a demo",
   },
   introSection: {

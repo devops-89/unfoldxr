@@ -55,7 +55,7 @@ export interface UseCaseData {
 export const useCasesData: Record<string, UseCaseData> = {
   training: {
     hero: {
-      title: "TRAINING, ONBOARDING & KNOWLEDGE CAPTURE",
+      title: "TRAINING, ONBOARDING & \nKNOWLEDGE CAPTURE",
       subtitle: "The strongest teams learn in the flow of work.",
       description:
         "UnfoldXR brings AI and augmented reality–powered intelligence into learning and capability building and makes it available right at the moment of work.",
@@ -208,7 +208,7 @@ export const useCasesData: Record<string, UseCaseData> = {
   },
   "inspection-compliance": {
     hero: {
-      title: "INSPECTION, COMPLIANCE & QUALITY ASSURANCE",
+      title: "INSPECTION, COMPLIANCE & \nQUALITY ASSURANCE",
       subtitle: "The best incident is the one that never happened.",
       description:
         "UnfoldXR brings AI and augmented reality-powered intelligence directly into inspection and quality workflows. Stay audit-ready always.",
@@ -390,7 +390,7 @@ export const useCasesData: Record<string, UseCaseData> = {
   },
   "repair-maintenance": {
     hero: {
-      title: "REPAIR, MAINTENANCE & ASSET MANAGEMENT",
+      title: "REPAIR, MAINTENANCE & \nASSET MANAGEMENT",
       subtitle: "The costliest downtime is the one you didn't prevent.",
       description:
         "UnfoldXR brings AI and augmented reality–powered intelligence directly into maintenance operations, reducing downtime and increasing profit.",

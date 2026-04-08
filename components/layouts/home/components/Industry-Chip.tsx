@@ -11,11 +11,11 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: "row",
           alignItems: "center",
-          justifyContent: "flex-start", 
+          justifyContent: "flex-start",
           border: "1px solid #D0D0D0",
           borderRadius: "39px",
-
           px: { xs: 1.5, md: 2 },
           py: { xs: 0.7, md: 1 },
           gap: { xs: 1, md: 2 },
@@ -48,7 +48,7 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 13, md: 20 },
+            fontSize: { xs: 10, md: 15 },
             fontWeight: 700, 
             color: COLORS.BLACK,
             whiteSpace: "normal",
@@ -56,6 +56,7 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
             display: "flex",
             alignItems: "center",
             textTransform: "uppercase",
+            maxWidth: { xs: 80, md: 140 },
           }}
         >
           {label}

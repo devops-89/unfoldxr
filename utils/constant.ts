@@ -114,7 +114,10 @@ export const NAV_ITEMS = [
   "Book a demo",
 ];
 
-export const FOOTER_COLUMNS: { title: string; links: { label: string; url: string }[] }[] = [
+export const FOOTER_COLUMNS: {
+  title: string;
+  links: { label: string; url: string }[];
+}[] = [
   { title: "Home", links: [{ label: "Home", url: "/" }] },
   {
     title: "Solutions",
@@ -141,9 +144,10 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; url: strin
   {
     title: "Product",
     links: [
-      { label: "Augment", url: "/Product" },
-      { label: "Empower", url: "/Product" },
-      { label: "Edge", url: "/Product" },
+      // { label: "Augment", url: "/Product" },
+      // { label: "Empower", url: "/Product" },
+      // { label: "Edge", url: "/Product" },
+      { label: "Platform", url: "/Product" },
       { label: "Meet AVA", url: "/meet-ava" },
     ],
   },
@@ -160,13 +164,17 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; url: strin
   {
     title: "About us",
     links: [
-      { label: "Mission, Vision, Leadership", url: "/about-us" },
-      { label: "Brand DNA", url: "/about-us" },
+      // { label: "Mission, Vision, Leadership", url: "/about-us" },
+      // { label: "Brand DNA", url: "/about-us" },
+      { label: "About UnfoldXR", url: "/about-us" },
       { label: "Partners", url: "/partners" },
     ],
   },
   { title: "Contact Us", links: [{ label: "Contact Us", url: "/contact-us" }] },
-  { title: "Book a demo", links: [{ label: "Book a demo", url: "/contact-us" }] },
+  {
+    title: "Book a demo",
+    links: [{ label: "Book a demo", url: "/contact-us" }],
+  },
 ];
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [

@@ -10,14 +10,18 @@ const BusinessResultsSection = ({ data }: Props) => {
   return (
     <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
       <Box
-        sx={{ width: { xs: "95%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}
+        sx={{
+          width: { xs: "95%", md: "80%" },
+          mx: "auto",
+          px: { xs: 2, md: 0 },
+        }}
       >
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 32, lg: 44 },
+            fontSize: { xs: 28, md: 54 },
             lineHeight: 1.1,
             mb: { xs: 6, md: 8 },
           }}

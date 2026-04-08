@@ -27,7 +27,7 @@ const MissionVisionSection = () => {
       >
         <Typography
           sx={{
-            fontSize: { xs: 24, md: 32 },
+            fontSize: { xs: 24, md: 28 },
             fontWeight: 700,
             mb: 1.5,
             fontFamily: din.style.fontFamily,
@@ -37,7 +37,7 @@ const MissionVisionSection = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: 38, md: 60 },
+            fontSize: { xs: 38, md: 54 },
             lineHeight: { xs: 1.1, md: "70px" },
             textTransform: "uppercase",
             color: COLORS.PRIMARY_GREEN,
@@ -52,7 +52,7 @@ const MissionVisionSection = () => {
           sx={{
             mt: 2.5,
             maxWidth: 920,
-            fontSize: { xs: 20, md: 25 },
+            fontSize: { xs: 20, md: 22 },
             lineHeight: { xs: 1.25, md: "1.4" },
             fontFamily: helvetica.style.fontFamily,
             fontWeight: 400,
@@ -74,7 +74,7 @@ const MissionVisionSection = () => {
         >
           <Typography
             sx={{
-              fontSize: { xs: 18, md: 25 },
+              fontSize: { xs: 18, md: 22 },
               lineHeight: { xs: 1.45, md: "43px" },
               fontFamily: helvetica.style.fontFamily,
               color: COLORS.TEXT_GREY,
@@ -87,7 +87,7 @@ const MissionVisionSection = () => {
         </Box>
         <Typography
           sx={{
-            fontSize: { xs: 28, md: 46 },
+            fontSize: { xs: 28, md: 54 },
             fontWeight: 700,
             mt: 10,
             mb: 4,
@@ -96,7 +96,11 @@ const MissionVisionSection = () => {
         >
           {data.brandDnaTitle}
         </Typography>
-        <Stack direction={{ xs: "column", md: "row" }} spacing={{ xs: 4, md: 3 }} alignItems="stretch">
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={{ xs: 4, md: 3 }}
+          alignItems="stretch"
+        >
           {data.brandDna.map((item, idx) => (
             <Box key={idx} sx={{ flex: 1 }}>
               <Box
@@ -116,18 +120,18 @@ const MissionVisionSection = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: { xs: 16, md: 20 },
+                    fontSize: { xs: 16, md: 22 },
                     color: COLORS.TEXT_GREY,
                     lineHeight: { xs: 1.35, md: "28px" },
                     fontFamily: helvetica.style.fontFamily,
-                    textAlign: "justify",
+                    // textAlign: "justify",
                   }}
                 >
                   {item.description}
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: 24, md: 40 },
+                    fontSize: { xs: 24, md: 36 },
                     fontWeight: 700,
                     lineHeight: 1,
                     fontFamily: din.style.fontFamily,

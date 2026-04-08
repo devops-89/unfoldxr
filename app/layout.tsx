@@ -1,14 +1,20 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/widgets/Header";
 import Footer from "@/components/widgets/Footer";
 import { DemoModalProvider } from "@/components/context/DemoModalContext";
 import DemoModal from "@/components/widgets/DemoModal";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export const metadata: Metadata = {
   title: "UnfoldXR",
   description: "UnfoldXR",
-  viewport: "width=device-width, initial-scale=1", 
   icons: {
     icon: "/Fav-icon.svg",
   },

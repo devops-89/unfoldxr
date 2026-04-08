@@ -28,7 +28,7 @@ const NewsSection = () => {
           >
             <Typography 
               sx={{ 
-                fontSize: { xs: 32, md: 60 }, 
+                fontSize: { xs: 28, md: 54 }, 
                 fontWeight: 900, 
                 textTransform: "uppercase", 
                 fontFamily: din.style.fontFamily,
@@ -40,7 +40,7 @@ const NewsSection = () => {
             </Typography>
             <Typography 
               sx={{ 
-                fontSize: { xs: 18, md: 24 }, 
+                fontSize: { xs: 18, md: 22 }, 
                 fontFamily: helvetica.style.fontFamily,
                 color: COLORS.BLACK,
                 maxWidth: 800,

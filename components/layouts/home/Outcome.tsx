@@ -9,14 +9,15 @@ import ContainedButton from "@/components/widgets/ContainedButton";
 const Outcome = () => {
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 12 }, minHeight: "85vh", display: "flex", alignItems: "center" }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
+        <Box sx={{ px: { xs: 0, sm: 2, md: 8 } }}>
 
         {/* Heading */}
         <Typography
           sx={{
             textAlign: "left",
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 32, md: 56 },
+            fontSize: { xs: 28, md: 54 },
             color: COLORS.WHITE,
             fontWeight: 900,
             textTransform: "uppercase",
@@ -30,7 +31,7 @@ const Outcome = () => {
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 14, md: 24 },
+            fontSize: { xs: 14, md: 22 },
             color: COLORS.WHITE,
             fontWeight: 400,
             mt: 1,
@@ -46,7 +47,7 @@ const Outcome = () => {
           {homePage.outcome.data.map((val, i) => (
             <Grid size={{ xs: 12, md: 6 }} key={i}>
               <OutcomeCard number={val.number} label={val.description} />
-              
+
             </Grid>
           ))}
         </Grid>
@@ -64,6 +65,7 @@ const Outcome = () => {
           </ContainedButton>
         </Box>
 
+        </Box>
       </Container>
     </Box>
   );

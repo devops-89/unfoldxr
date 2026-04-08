@@ -63,7 +63,7 @@ const OneAiPlatform = () => {
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               textTransform: "uppercase",
-              fontSize: { xs: 32, md: 48, lg: 52 },
+              fontSize: { xs: 28, md: 48, lg: 54 },
               lineHeight: 1.1,
               color: COLORS.BLACK,
             }}
@@ -75,7 +75,7 @@ const OneAiPlatform = () => {
               textAlign: "center",
               mt: 2,
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 16, md: 18, lg: 20 },
+              fontSize: { xs: 16, md: 18, lg: 22 },
               lineHeight: 1.5,
               color: COLORS.BLACK,
               maxWidth: 900,
@@ -108,7 +108,8 @@ const OneAiPlatform = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: { xs: 1.5, md: 2 },
-                  whiteSpace: "nowrap",
+                  minWidth: "fit-content",
+                  maxWidth: "100%",
                 }}
               >
                 <Box
@@ -121,6 +122,7 @@ const OneAiPlatform = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    flexShrink: 0,
                   }}
                 >
                   {item.icon}
@@ -130,9 +132,12 @@ const OneAiPlatform = () => {
                     fontFamily: helvetica.style.fontFamily,
                     fontWeight: 700,
                     textTransform: "uppercase",
-                    fontSize: { xs: 13, md: 15 },
+                    fontSize: { xs: 10, md: 15 },
+                    lineHeight: 1.1,
                     color: COLORS.BLACK,
                     letterSpacing: "0.02em",
+                    whiteSpace: "normal",
+                    maxWidth: { xs: 80, md: 140 },
                   }}
                 >
                   {item.label}

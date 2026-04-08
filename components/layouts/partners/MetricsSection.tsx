@@ -28,7 +28,7 @@ const MetricsSection = () => {
           <Grid size={{xs:12,md:6}} sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
               sx={{
-                fontSize: { xs: 32, md: 48 },
+                fontSize: { xs: 28, md: 54 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.BLACK,
@@ -41,7 +41,7 @@ const MetricsSection = () => {
             <Typography
               sx={{
                 mt: 4,
-                fontSize: { xs: 16, md: 18 },
+                fontSize: { xs: 16, md: 22 },
                 color: COLORS.BLACK,
                 lineHeight: "26px",
                 maxWidth: { xs: "400px", md: "100%" },

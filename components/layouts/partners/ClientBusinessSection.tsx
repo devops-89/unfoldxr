@@ -13,7 +13,7 @@ const ClientBusinessSection = () => {
         display: "flex",
         alignItems: "center",
         py: { xs: 8, md: 0 },
-        overflow: "visible", 
+        overflow: "visible",
       }}
     >
       <Container
@@ -23,6 +23,7 @@ const ClientBusinessSection = () => {
           width: { xs: "95%", md: "90%", lg: "80%" },
           mx: "auto",
           zIndex: 1,
+          mb: 10,
         }}
       >
         <Grid container spacing={4} alignItems="center">
@@ -32,7 +33,7 @@ const ClientBusinessSection = () => {
               <Typography
                 sx={{
                   fontWeight: 900,
-                  fontSize: { xs: 32, md: 50 },
+                  fontSize: { xs: 28, md: 54 },
                   lineHeight: 1.1,
                   textTransform: "uppercase",
                   mb: 8,
@@ -46,7 +47,7 @@ const ClientBusinessSection = () => {
                 {partnersPage.clientBusinessSection.client_business_card_data.map(
                   (item) => (
                     <ClientBusinessCard key={item.id} {...item} />
-                  )
+                  ),
                 )}
               </Stack>
             </Box>

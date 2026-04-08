@@ -19,7 +19,7 @@ const WorkForce = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            width: { xs: "85%", md: "90%", lg: "80%" },
+            width: { xs: "90%", md: "90%", lg: "80%" },
             mx: "auto",
           }}
         >
@@ -29,7 +29,7 @@ const WorkForce = () => {
               sx={{
                 color: "#000",
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 24, md: 60 },
+                fontSize: { xs: 24, md: 54 },
                 fontStyle: "normal",
                 fontWeight: 900,
                 lineHeight: "normal",
@@ -46,7 +46,7 @@ const WorkForce = () => {
               sx={{
                 color: "#000",
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 24 },
+                fontSize: { xs: 16, md: 22 },
                 fontStyle: "normal",
                 fontWeight: 400,
                 lineHeight: { xs: 1.4, md: "46px" },

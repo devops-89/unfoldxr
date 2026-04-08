@@ -38,7 +38,7 @@ const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
           color: "#000",
           fontFamily: helvetica.style.fontFamily,
           fontWeight: 400,
-          fontSize: { xs: 14, md: 24 },
+          fontSize: { xs: 14, md: 22 },
           lineHeight: { xs: 1.4, md: "46px" },
           textAlign: "center",
         }}

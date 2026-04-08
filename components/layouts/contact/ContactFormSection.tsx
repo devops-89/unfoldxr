@@ -19,10 +19,10 @@ const ContactFormSection = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 48, lg: 52 },
+                  fontSize: { xs: 36, md: 48, lg: 54 },
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  lineHeight: 1.3,
+                  lineHeight: 1.1,
                 }}
               >
                 {contactPage.contactFormSection.heading}

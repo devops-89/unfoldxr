@@ -12,7 +12,7 @@ const CareersSection = () => {
       <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
         <Typography 
           sx={{ 
-            fontSize: { xs: 32, md: 60 }, 
+            fontSize: { xs: 28, md: 54 }, 
             fontWeight: 900, 
             textTransform: "uppercase", 
             mb: 4, 
@@ -24,7 +24,7 @@ const CareersSection = () => {
         
         <Typography 
           sx={{ 
-            fontSize: { xs: 18, md: 24 }, 
+            fontSize: { xs: 18, md: 22 }, 
             lineHeight: 1.45, 
             maxWidth: 1200, 
             mb: 8, 
@@ -83,7 +83,7 @@ const CareersSection = () => {
           sx={{ 
             mt: 10, 
             mb: 6, 
-            fontSize: { xs: 18, md: 24 }, 
+            fontSize: { xs: 18, md: 22 }, 
             fontFamily: helvetica.style.fontFamily,
             maxWidth: 1000
           }}

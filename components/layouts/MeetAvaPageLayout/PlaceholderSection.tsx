@@ -22,7 +22,7 @@ const PlaceholderSection = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 32, md: 60 },
+                fontSize: { xs: 28, md: 54 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 mb: 2,
@@ -33,7 +33,7 @@ const PlaceholderSection = () => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 20 },
+                fontSize: { xs: 16, md: 22 },
                 lineHeight: 1.6,
                 color: "rgba(255,255,255,0.85)",
                 whiteSpace: "pre-line",

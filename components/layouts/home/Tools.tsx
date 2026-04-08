@@ -30,24 +30,22 @@ const Tools = () => {
         py: { xs: 8, md: 10 },
       }}
     >
-      <Box
-        sx={{
-          py: { xs: 4, md: 10 },
-          px: { xs: 4, md: 4 },
-          bgcolor: COLORS.WHITE,
-          borderRadius: "15px",
-          width: { xs: "75%", md: "96%" },
-          maxWidth: "1300px",
-        }}
-      >
-        <Container maxWidth="lg" disableGutters>
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            py: { xs: 4, md: 10 },
+            px: { xs: 4, sm: 6, md: 8 },
+            bgcolor: COLORS.WHITE,
+            borderRadius: "45px",
+          }}
+        >
           {/* TOP SECTION */}
           <Box sx={{ mb: { xs: 4, md: 6 } }}>
             {/* Top Line of Heading */}
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 32, md: 56 },
+                fontSize: { xs: 28, md: 54 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: 1.1,
@@ -69,7 +67,7 @@ const Tools = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 32, md: 56 },
+                  fontSize: { xs: 28, md: 54 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -125,8 +123,8 @@ const Tools = () => {
               <ToolsRightSection {...homePage.tools.rightSection}  />
             </Grid>
           </Grid>
-        </Container>
-      </Box>
+        </Box>
+      </Container>
     </Box>
   );
 };

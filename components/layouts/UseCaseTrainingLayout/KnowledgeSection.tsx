@@ -24,7 +24,7 @@ const KnowledgeSection = ({ data }: Props) => {
                   fontFamily: din.style.fontFamily,
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  fontSize: { xs: 30, md: 44, lg: 48 },
+                  fontSize: { xs: 30, md: 54 },
                   lineHeight: 1.1,
                   maxWidth: 800,
                   mb: { xs: 2, md: 4 },
@@ -42,7 +42,7 @@ const KnowledgeSection = ({ data }: Props) => {
                     key={index}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 17, md: 20, lg: 24 },
+                      fontSize: { xs: 17, md: 22 },
                       lineHeight: 1.5,
                       color: COLORS.WHITE,
                     }}
@@ -60,7 +60,7 @@ const KnowledgeSection = ({ data }: Props) => {
               sx={{
                 mt: { xs: 4, md: 8 },
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 17, md: 20, lg: 24 },
+                fontSize: { xs: 17, md: 22 },
                 lineHeight: 1.5,
                 color: COLORS.WHITE,
               }}
@@ -80,15 +80,15 @@ const KnowledgeSection = ({ data }: Props) => {
       >
         <Grid container spacing={{ xs: 4, md: 10 }}>
           {/* Left Side: Title */}
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 30, md: 44, lg: 48 },
+                fontSize: { xs: 30, md: 54 },
                 lineHeight: 1.1,
-                maxWidth: 400,
+                maxWidth: 600,
               }}
             >
               {data.title}
@@ -96,7 +96,7 @@ const KnowledgeSection = ({ data }: Props) => {
           </Grid>
 
           {/* Right Side: Bullet Points */}
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               {data.items.map((item, index) => (
                 <Box
@@ -116,7 +116,7 @@ const KnowledgeSection = ({ data }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 17, md: 20, lg: 24 },
+                      fontSize: { xs: 17, md: 22 },
                       lineHeight: 1.4,
                       color: COLORS.WHITE,
                     }}
@@ -134,7 +134,7 @@ const KnowledgeSection = ({ data }: Props) => {
             sx={{
               mt: { xs: 6, md: 10 }, 
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 17, md: 20, lg: 24 }, 
+              fontSize: { xs: 17, md: 22 }, 
               lineHeight: 1.5,
               color: COLORS.WHITE,
             }}

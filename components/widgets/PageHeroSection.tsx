@@ -38,7 +38,7 @@ const PageHeroSection = ({
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "80vh", md: "100vh" },
+        minHeight: { xs: "80svh", md: "100vh" },
         display: "flex",
         alignItems: "center",
         color: COLORS.WHITE,
@@ -76,6 +76,7 @@ const PageHeroSection = ({
           position: "relative",
           zIndex: 2,
           width: { xs: "100%", md: "80%" },
+          boxSizing: "border-box",
           mx: "auto",
           pt: { xs: 12, md: 18 },
           pb: { xs: 8, md: 12 },
@@ -88,10 +89,10 @@ const PageHeroSection = ({
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 26, md: 50, lg: 60 },
+              fontSize: { xs: 26, md: 50, lg: 54 },
               fontStyle: "normal",
               fontWeight: 900,
-              lineHeight: { xs: "40px", md: "90px" },
+              lineHeight: { xs: "40px", md: "64px" },
               textTransform: "uppercase",
               WebkitTextStrokeWidth: { xs: "1px", md: "2px" },
               WebkitTextStrokeColor: "#FFF",
@@ -108,9 +109,10 @@ const PageHeroSection = ({
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 26, md: 50, lg: 60 },
-            lineHeight: { xs: "40px", md: "92px" },
+            fontSize: { xs: 26, md: 50, lg: 54 },
+            lineHeight: { xs: "40px", md: "64px" },
             maxWidth: titleMaxWidth || 1050,
+            whiteSpace: "pre-line",
           }}
         >
           {title}
@@ -122,8 +124,8 @@ const PageHeroSection = ({
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 700,
-              fontSize: { xs: 20, md: 28, lg: 32 },
-              lineHeight: 1.3,
+              fontSize: { xs: 20, md: 28, lg: 28 },
+              lineHeight: 1.1,
               mt: 2,
               maxWidth: 800,
             }}
@@ -138,8 +140,8 @@ const PageHeroSection = ({
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 400,
-              fontSize: { xs: 16, md: 26, lg: 32 },
-              lineHeight: { xs: "normal", md: "44px" },
+              fontSize: { xs: 16, md: 26, lg: 28 },
+              lineHeight: { xs: "normal", md: "35px" },
               letterSpacing: "2.52px",
               mt: { xs: 2, md: 3 },
               maxWidth: 1200,

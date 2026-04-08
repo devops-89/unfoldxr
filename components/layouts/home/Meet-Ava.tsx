@@ -11,92 +11,95 @@ const Meetava = () => {
   const { openModal } = useDemoModal();
   return (
     <Box sx={{ mt: { xs: 8, md: 24 }, mb: { xs: 8, md: 24 } }}>
-      <Container maxWidth="lg">
-        {/* Full-width Heading */}
-        <Typography
-          sx={{
-            fontSize: { xs: 28, md: 50 },
-            fontFamily: din.style.fontFamily,
-            fontWeight: 900,
-            textTransform: "uppercase",
-            textAlign: { xs: "center", md: "left" },
-            lineHeight: { xs: "38px", md: "64px" },
-            mb: { xs: 3, md: 4 },
-          }}
-        >
-          {homePage.meetAva.heading}
-        </Typography>
+      <Container maxWidth="xl">
+        <Box sx={{ px: { xs: 0, sm: 2, md: 8 } }}>
+          {/* Full-width Heading */}
+          <Typography
+            sx={{
+              fontSize: { xs: 28, md: 54 },
+              fontFamily: din.style.fontFamily,
+              fontWeight: 900,
+              textTransform: "uppercase",
+              textAlign: { xs: "center", md: "left" },
+              lineHeight: { xs: "38px", md: "64px" },
+              mb: { xs: 3, md: 4 },
+            }}
+          >
+            {homePage.meetAva.heading}
+          </Typography>
 
-        <Grid container alignItems="center" spacing={{ xs: 4, md: 6 }}>
-          {/* LEFT: description + CTA */}
-          <Grid size={{ xs: 12, md: 7 }}>
-            <Stack spacing={2}>
-              {homePage.meetAva.leftSection.description.map((val, i) => (
+          <Grid container alignItems="center" spacing={{ xs: 4, md: 6 }}>
+            {/* LEFT: description + CTA */}
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Stack spacing={2}>
+                {homePage.meetAva.leftSection.description.map((val, i) => (
+                  <Typography
+                    key={i}
+                    sx={{
+                      fontFamily: helvetica.style.fontFamily,
+                      fontSize: { xs: 14, md: 22 },
+                      fontWeight: 400,
+                      lineHeight: { xs: "22px", md: "28px" },
+                      color: "#000",
+                      textAlign: { xs: "center", md: "justify" },
+
+                    }}
+                  >
+                    {val.label}
+                  </Typography>
+                ))}
+              </Stack>
+
+              <ContainedButton
+                onClick={openModal}
+                sx={{
+                  mt: 3,
+                  width: { xs: "100%", md: "auto" },
+                  borderRadius: 99,
+                  px: { xs: 2.5, md: 4 },
+                  py: 1.2,
+                  fontSize: { xs: 14, md: 18, lg: 20 },
+                }}
+              >
+                Book a demo now
+              </ContainedButton>
+            </Grid>
+
+            {/* RIGHT: placeholder note + image */}
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Stack alignItems={{ xs: "center", md: "flex-end" }} spacing={1}>
                 <Typography
-                  key={i}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 14, md: 18 },
-                    fontWeight: 400,
-                    lineHeight: { xs: "22px", md: "28px" },
-                    color: "#000",
-                    textAlign: { xs: "center", md: "left" },
+                    fontSize: { xs: 12, md: 14 },
+                    fontStyle: "italic",
+                    color: "#888",
+                    textAlign: "right",
                   }}
                 >
-                  {val.label}
+                  {/* *note - this is placeholder for ava */}
                 </Typography>
-              ))}
-            </Stack>
-
-            <ContainedButton
-              onClick={openModal}
-              sx={{
-                mt: 3,
-                width: { xs: "100%", md: "auto" },
-                borderRadius: 99,
-                px: { xs: 2.5, md: 4 },
-                py: 1.2,
-                fontSize: { xs: 14, md: 18, lg: 20 },
-              }}
-            >
-              Book a demo now
-            </ContainedButton>
+                <Box
+                  component="video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  sx={{
+                    width: "100%",
+                    height: "auto",
+                    maxWidth: { xs: "320px", md: "400px" },
+                    borderRadius: "50%",
+                    display: "block",
+                    objectFit: "cover",
+                  }}
+                >
+                  <source src="/images/homepage/White-globe.mp4" type="video/mp4" />
+                </Box>
+              </Stack>
+            </Grid>
           </Grid>
-
-          {/* RIGHT: placeholder note + image */}
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Stack alignItems={{ xs: "center", md: "flex-end" }} spacing={1}>
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 12, md: 14 },
-                  fontStyle: "italic",
-                  color: "#888",
-                  textAlign: "right",
-                }}
-              >
-                {/* *note - this is placeholder for ava */}
-              </Typography>
-              <Box
-                component="video"
-                autoPlay
-                loop
-                muted
-                playsInline
-                sx={{
-                  width: "100%",
-                  height: "auto",
-                  maxWidth: { xs: "320px", md: "400px" },
-                  borderRadius: "50%",
-                  display: "block",
-                  objectFit: "cover",
-                }}
-              >
-                <source src="/images/homepage/White-globe.mp4" type="video/mp4" />
-              </Box>
-            </Stack>
-          </Grid>
-        </Grid>
+        </Box>
       </Container>
     </Box>
   );
