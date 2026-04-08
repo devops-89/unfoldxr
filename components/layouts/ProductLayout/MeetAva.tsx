@@ -11,8 +11,8 @@ const MeetAva = () => {
       sx={{
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
-        pt: { xs: 8, md: 16 },
-        pb: { xs: 8, md: 24 },
+        pt: { xs: 8, md: 2 },
+        pb: { xs: 8, md: 8 },
         overflow: "hidden",
       }}
     >
@@ -30,8 +30,8 @@ const MeetAva = () => {
                   fontFamily: din.style.fontFamily,
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  fontSize: { xs: 28, md: 48, lg: 54 },
-                  lineHeight: 1.15,
+                  fontSize: { xs: 28, md: 48, lg: 48 },
+                  lineHeight: "52px",
                   maxWidth: "100%",
                   whiteSpace: "pre-line",
                 }}
@@ -43,10 +43,10 @@ const MeetAva = () => {
                 mt: 4,
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18, lg: 22 },
-                lineHeight: 1.5,
+                lineHeight: "30px",
                 color: COLORS.TEXT_GRAY,
                 maxWidth: 720,
-                letterSpacing: "0.02em",
+                letterSpacing: "0.52px",
               }}
             >
               {data.description.replace("The perfect work buddy.", "")}
@@ -65,7 +65,7 @@ const MeetAva = () => {
                   py: 1.5,
                   fontFamily: helvetica.style.fontFamily,
                   fontWeight: 700,
-                  fontSize: 16,
+                  fontSize: 18,
                   textTransform: "none",
                   boxShadow: "none",
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER, boxShadow: "none" },
@@ -88,18 +88,18 @@ const MeetAva = () => {
               src={data.img}
               alt="AVA visual"
               sx={{
-                width: { xs: "100%", md: "600px", lg: "560px" },
+                width: { xs: "100%", md: "750px", lg: 700 },
                 maxWidth: "none",
                 display: "block",
-                position: { xs: "relative", md: "absolute" },
-                top: { xs: "auto", md: "50%" },
-                right: { xs: "auto", md: "-80px", lg: "-190px" },
+                position: { xs: "relative", md: "absolute", lg: "relative" },
+                // top: { xs: "auto", md: "0%" },
+                // right: { xs: "auto", md: "-200px", lg: "-250px" },
                 mx: { xs: "auto", md: 0 },
-                transform: {
-                  xs: "translate(10%, -10%)",
-                  md: "translateY(-50%)",
-                  lg: "translateY(-50%)",
-                },
+                // transform: {
+                //   xs: "translate(10%, -10%)",
+                //   md: "translateY(-50%)",
+                //   lg: "translateY(-50%)",
+                // },
                 zIndex: 0,
               }}
             />

@@ -25,7 +25,8 @@ const IndustrySection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 54 },
+            fontSize: { xs: 28, md: 48 },
+            lineHeight: "52px",
             mb: 2,
           }}
         >
@@ -38,6 +39,8 @@ const IndustrySection = ({ data }: Props) => {
             fontSize: { xs: 16, md: 22 },
             color: COLORS.BLACK,
             maxWidth: 1000,
+            letterSpacing: "0.52px",
+            lineHeight: "30px",
             mx: "auto",
             mb: { xs: 6, md: 8 },
           }}
@@ -97,11 +100,12 @@ const IndustrySection = ({ data }: Props) => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 10, md: 14 },
+                    fontSize: { xs: 10, md: 18 },
                     fontWeight: { xs: 700, md: 900 },
                     textTransform: "uppercase",
                     color: COLORS.BLACK,
-                    letterSpacing: "0.02em",
+                    letterSpacing: "0.52px",
+                    lineHeight: "30px",
                   }}
                 >
                   {industry.label}

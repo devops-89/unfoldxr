@@ -57,8 +57,8 @@ const EvolvesCtaSection = () => {
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
-                fontSize: { xs: 28, md: 52, lg: 54 },
-                lineHeight: "normal",
+                fontSize: { xs: 28, md: 52, lg: 48 },
+                lineHeight: "52px",
                 letterSpacing: "-0.051px",
                 color: COLORS.BLACK,
                 textAlign: "center",
@@ -81,7 +81,7 @@ const EvolvesCtaSection = () => {
                 py: 2,
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: 14, md: 16 },
+                fontSize: { xs: 14, md: 18 },
                 textTransform: "none",
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}

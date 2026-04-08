@@ -12,7 +12,7 @@ const OutcomesSection = ({ data }: Props) => {
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: 900, md: "85vh" },
+        minHeight: { xs: 900, md: "100vh" },
         color: COLORS.WHITE,
         display: "flex",
         alignItems: "center",
@@ -39,7 +39,7 @@ const OutcomesSection = ({ data }: Props) => {
 
       <Box
         sx={{
-          width: { xs: "85%", md: "80%" },
+          width: { xs: "85%", md: "85%" },
           mx: "auto",
           position: "relative",
           zIndex: 1,
@@ -48,10 +48,7 @@ const OutcomesSection = ({ data }: Props) => {
         {/* Border Frame */}
         <Box
           sx={{
-            ml: { xs: 0, md: -5.5, lg: -8.2 },
-            border: "2px solid rgba(197, 255, 46, 0.4)",
-            borderRadius: "24px",
-            boxShadow: "0 0 40px rgba(0,0,0,0.9)",
+            ml: { xs: 0, md: -5.5, lg: 1 },
             p: { xs: 3, md: 8 },
             pt: { xs: 8, md: 10 },
             position: "relative",
@@ -61,7 +58,7 @@ const OutcomesSection = ({ data }: Props) => {
         >
           <Grid
             container
-            spacing={4}
+            spacing={6}
             alignItems="flex-start"
             sx={{ position: "relative" }}
           >
@@ -73,8 +70,8 @@ const OutcomesSection = ({ data }: Props) => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 33, md: 54, lg: 54 },
-                  lineHeight: 1.1,
+                  fontSize: { xs: 33, md: 48, lg: 48 },
+                  lineHeight: "52px",
                   textTransform: "uppercase",
                   fontWeight: 900,
                   color: COLORS.WHITE,
@@ -100,7 +97,7 @@ const OutcomesSection = ({ data }: Props) => {
             <Grid size={{ xs: 12, md: 5 }}>
               <Grid
                 container
-                spacing={{ xs: 3, md: 4 }}
+                spacing={{ xs: 3, md: 5 }}
                 rowSpacing={{ xs: 5, md: 6 }}
               >
                 {data.metrics.map((metric, i) => (
@@ -115,9 +112,9 @@ const OutcomesSection = ({ data }: Props) => {
                         sx={{
                           fontFamily: din.style.fontFamily,
                           color: COLORS.PRIMARY_GREEN,
-                          fontSize: { xs: 42, md: 54, lg: 54 },
+                          fontSize: { xs: 42, md: 48, lg: 48 },
                           fontWeight: 900,
-                          lineHeight: 1,
+                          lineHeight: "52px",
                           position: "relative",
                           zIndex: 1,
                         }}
@@ -128,7 +125,8 @@ const OutcomesSection = ({ data }: Props) => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           fontSize: { xs: 15, md: 16, lg: 18 },
-                          lineHeight: 1.3,
+                          lineHeight: "23px",
+                          letterSpacing: "0.52px",
                           color: "rgba(255,255,255,0.9)",
                           fontWeight: 400,
                         }}

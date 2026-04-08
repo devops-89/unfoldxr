@@ -26,8 +26,8 @@ const SupportYourOperations = () => {
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               textTransform: "uppercase",
-              lineHeight: 1.15,
-              fontSize: { xs: 28, md: 48, lg: 54 },
+              lineHeight: "52px",
+              fontSize: { xs: 28, md: 48, lg: 48 },
               maxWidth: 1000,
             }}
           >
@@ -43,7 +43,7 @@ const SupportYourOperations = () => {
               fontWeight: 700,
               textTransform: "none",
               fontSize: { xs: 18, md: 20, lg: 22 },
-              lineHeight: 1.4,
+              lineHeight: "30px",
             }}
           >
             {data.lifecycle.stages.map((stage, i) => (

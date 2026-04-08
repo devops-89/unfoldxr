@@ -178,7 +178,7 @@ const PageHeroSection = ({
                   py: 1.2,
                   fontFamily: din.style.fontFamily,
                   fontWeight: 500,
-                  fontSize: { xs: 14, md: 18, lg: 20 },
+                  fontSize: { xs: 14, md: 18, lg: 18 },
                   textTransform: "none",
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
                 }}

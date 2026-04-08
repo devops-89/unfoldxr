@@ -54,15 +54,19 @@ const EnterpriseReady = () => {
           zIndex: 2,
         }}
       >
-        <Grid container justifyContent="flex-end" sx={{ pt: { xs: 100, md: 0 } }}>
+        <Grid
+          container
+          justifyContent="flex-end"
+          sx={{ pt: { xs: 100, md: 0 } }}
+        >
           <Grid size={{ xs: 12, md: 7.5, lg: 7 }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                lineHeight: 1.1,
-                fontSize: { xs: 28, md: 48, lg: 54 },
+                lineHeight: "52px",
+                fontSize: { xs: 28, md: 48, lg: 48 },
                 mb: { xs: 6, md: 8 },
               }}
             >
@@ -91,7 +95,7 @@ const EnterpriseReady = () => {
                           fontWeight: 700,
                           fontSize: { xs: 18, md: 22 },
                           textTransform: "uppercase",
-                          lineHeight: 1.2,
+                          lineHeight: "28px",
                           mb: 1.5,
                         }}
                       >
@@ -101,8 +105,8 @@ const EnterpriseReady = () => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           color: COLORS.TEXT_MUTED,
-                          fontSize: { xs: 14, md: 16 },
-                          lineHeight: 1.5,
+                          fontSize: { xs: 14, md: 18 },
+                          lineHeight: "24px",
                         }}
                       >
                         {point.desc}

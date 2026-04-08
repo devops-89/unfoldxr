@@ -37,7 +37,8 @@ const CapabilitiesSection = ({ data }: Props) => {
             height: "100%",
             opacity: 0.1,
             pointerEvents: "none",
-            backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 100%)",
+            backgroundImage:
+              "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 100%)",
             backgroundSize: "20px 20px",
             zIndex: 0,
           }}
@@ -151,7 +152,11 @@ const CapabilitiesSection = ({ data }: Props) => {
 
           {/* Footer CTA */}
           <Box
-            sx={{ mt: { xs: 10, md: 12 }, display: "flex", justifyContent: "center" }}
+            sx={{
+              mt: { xs: 10, md: 12 },
+              display: "flex",
+              justifyContent: "center",
+            }}
           >
             <Button
               sx={{
@@ -170,7 +175,8 @@ const CapabilitiesSection = ({ data }: Props) => {
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}
             >
-              Download the full UnfoldXR feature list <ArrowForwardRoundedIcon />
+              Download the full UnfoldXR feature list{" "}
+              <ArrowForwardRoundedIcon />
             </Button>
           </Box>
         </Box>
@@ -246,8 +252,8 @@ const CapabilitiesSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 54 },
-            lineHeight: 1.1,
+            fontSize: { xs: 28, md: 48 },
+            lineHeight: "52px",
             mb: { xs: 8, md: 15 },
             maxWidth: 1000,
           }}
@@ -256,97 +262,176 @@ const CapabilitiesSection = ({ data }: Props) => {
         </Typography>
 
         <Grid container spacing={{ xs: 5, md: 0 }}>
-          {/* Left Side: Capabilities List */}
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
+          {/* Left & Middle Combined: Capabilities List + Stepper Dots (Shared alignment) */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: { xs: 2.5, md: 1 },
+                position: "relative",
+              }}
+            >
               {data.items.map((item, index) => (
-                <Box key={item.title}>
-                  {/* Heading Pill (clickable) */}
-                  <Box
-                    onClick={() => setActiveItem(index)}
-                    sx={{
-                      border:
-                        activeItem === index
-                          ? `1px solid ${COLORS.PRIMARY_GREEN}`
-                          : "1px solid transparent",
-                      borderRadius: 99,
-                      px: { xs: 3, md: 4 },
-                      py: 1.8,
-                      width: "fit-content",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        bgcolor: activeItem === index ? "transparent" : "rgba(255, 255, 255, 0.05)",
-                        borderColor: activeItem === index ? COLORS.PRIMARY_GREEN : "rgba(255, 255, 255, 0.2)",
-                      },
-                    }}
-                  >
-                    <Typography
+                <Box
+                  key={item.title}
+                  sx={{
+                    display: "flex",
+                    alignItems: "stretch", // Ensure col heights match for continuous line
+                    justifyContent: "space-between",
+                  }}
+                >
+                  {/* Header Pill Column */}
+                  <Box sx={{ flex: 1, py: activeItem === index ? 1.5 : 0.8 }}>
+                    <Box
+                      onClick={() => setActiveItem(index)}
                       sx={{
-                        color:
+                        border:
                           activeItem === index
-                            ? COLORS.PRIMARY_GREEN
-                            : COLORS.WHITE,
-                        textTransform: "uppercase",
-                        fontFamily: helvetica.style.fontFamily,
-                        fontSize: { xs: 15, md: 22 },
-                        fontWeight: 900,
-                        letterSpacing: "0.02em",
-                      }}
-                    >
-                      {item.title}
-                    </Typography>
-                  </Box>
-                  {/* Mobile Description: Outside border, slides in smoothly */}
-                  {activeItem === index && (
-                    <Typography
-                      sx={{
-                        display: { xs: "block", md: "none" },
-                        mt: 1.5,
-                        px: 2,
-                        fontFamily: helvetica.style.fontFamily,
-                        fontSize: { xs: 15, md: 17 },
-                        lineHeight: 1.5,
-                        color: COLORS.WHITE,
-                        fontWeight: 500,
-                        textTransform: "none",
-                        animation: "slideDown 0.3s ease",
-                        "@keyframes slideDown": {
-                          from: { opacity: 0, transform: "translateY(-8px)" },
-                          to: { opacity: 1, transform: "translateY(0)" },
+                            ? `1px solid ${COLORS.PRIMARY_GREEN}`
+                            : "1px solid transparent",
+                        borderRadius: 99,
+                        px: { xs: 3, md: 4 },
+                        py: activeItem === index ? 1.8 : 0.8,
+                        width: "fit-content",
+                        cursor: "pointer",
+                        opacity: activeItem === index ? 1 : 0.5,
+                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                        "&:hover": {
+                          bgcolor: "rgba(255, 255, 255, 0.05)",
+                          borderColor:
+                            activeItem === index
+                              ? COLORS.PRIMARY_GREEN
+                              : "rgba(255, 255, 255, 0.2)",
                         },
                       }}
                     >
-                      {item.description}
-                    </Typography>
-                  )}
+                      <Typography
+                        sx={{
+                          color:
+                            activeItem === index
+                              ? COLORS.PRIMARY_GREEN
+                              : COLORS.WHITE,
+                          textTransform: "uppercase",
+                          fontFamily: helvetica.style.fontFamily,
+                          fontSize: { xs: 15, md: 18 },
+                          fontWeight: 900,
+                          lineHeight: "30px",
+                          letterSpacing: "0.02em",
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+                    </Box>
+
+                    {/* Mobile Description */}
+                    {activeItem === index && (
+                      <Typography
+                        sx={{
+                          display: { xs: "block", md: "none" },
+                          mt: 1.5,
+                          px: 2,
+                          fontFamily: helvetica.style.fontFamily,
+                          fontSize: { xs: 15 },
+                          lineHeight: 1.5,
+                          color: COLORS.WHITE,
+                          fontWeight: 500,
+                          textTransform: "none",
+                          animation: "slideDown 0.3s ease",
+                          "@keyframes slideDown": {
+                            from: { opacity: 0, transform: "translateY(-8px)" },
+                            to: { opacity: 1, transform: "translateY(0)" },
+                          },
+                        }}
+                      >
+                        {item.description}
+                      </Typography>
+                    )}
+                  </Box>
+
+                  {/* Desktop Stepper Column עם Continuous Dynamic Line */}
+                  <Box
+                    sx={{
+                      display: { xs: "none", md: "flex" },
+                      width: "80px", // Fixed width for dot column
+                      justifyContent: "center",
+                      alignItems: "center",
+                      position: "relative",
+                    }}
+                  >
+                    {/* Line Segment: Top Half */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        bottom: "50%",
+                        width: "1.5px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        bgcolor:
+                          index <= activeItem
+                            ? COLORS.PRIMARY_GREEN
+                            : "rgba(255, 255, 255, 0.1)",
+                        zIndex: 0,
+                        // First item doesn't need top line
+                        opacity: index === 0 ? 0 : 1,
+                      }}
+                    />
+                    {/* Line Segment: Bottom Half */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "50%",
+                        bottom: 0,
+                        width: "1.5px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        bgcolor:
+                          index < activeItem
+                            ? COLORS.PRIMARY_GREEN
+                            : "rgba(255, 255, 255, 0.1)",
+                        zIndex: 0,
+                        // Last item doesn't need bottom line
+                        opacity: index === data.items.length - 1 ? 0 : 1,
+                      }}
+                    />
+
+                    {/* The Dot */}
+                    <Box
+                      sx={{
+                        width: activeItem === index ? "12px" : "8px",
+                        height: activeItem === index ? "12px" : "8px",
+                        bgcolor:
+                          activeItem >= index
+                            ? COLORS.PRIMARY_GREEN
+                            : "rgba(255, 255, 255, 0.3)",
+                        borderRadius: "50%",
+                        transition: "all 0.4s ease",
+                        zIndex: 1,
+                        boxShadow:
+                          activeItem === index
+                            ? `0 0 10px ${COLORS.PRIMARY_GREEN}`
+                            : "none",
+                      }}
+                    />
+                  </Box>
                 </Box>
               ))}
             </Box>
           </Grid>
 
-          {/* Vertical Separator Line with Stepper on Desktop */}
-          <Grid
-            size={{ md: 1 }}
-            sx={{
-              display: { xs: "none", md: "flex" },
-              justifyContent: "center",
-            }}
-          >
-            <VerticalStepper
-              itemsCount={data.items.length}
-              activeIndex={activeItem}
-            />
-          </Grid>
-
           {/* Right Side: Dynamic Description (Desktop only) */}
-          <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: "none", md: "block" } }}>
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            sx={{ display: { xs: "none", md: "block" } }}
+          >
             <Box sx={{ pt: { xs: 0, md: 2 } }}>
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 18, md: 22 },
-                  lineHeight: 1.4,
+                  lineHeight: "30px",
+                  letterSpacing: "0.52px",
                   color: COLORS.WHITE,
                   fontWeight: 500,
                   transition: "opacity 0.3s ease",
@@ -361,7 +446,11 @@ const CapabilitiesSection = ({ data }: Props) => {
 
         {/* Footer CTA */}
         <Box
-          sx={{ mt: { xs: 10, md: 15 }, display: "flex", justifyContent: "center" }}
+          sx={{
+            mt: { xs: 10, md: 15 },
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Button
             sx={{
@@ -372,7 +461,7 @@ const CapabilitiesSection = ({ data }: Props) => {
               py: 1.2,
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
-              fontSize: { xs: 14, md: 18, lg: 20 },
+              fontSize: { xs: 14, md: 18, lg: 18 },
               textTransform: "none",
               display: "flex",
               alignItems: "center",

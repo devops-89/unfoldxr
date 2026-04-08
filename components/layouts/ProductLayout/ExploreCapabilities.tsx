@@ -5,7 +5,6 @@ import { Box, Typography, Grid } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
-import VerticalStepper from "@/components/widgets/VerticalStepper";
 
 const ExploreCapabilities = () => {
   const data = homePage.productPage.exploreCapabilities;
@@ -31,8 +30,8 @@ const ExploreCapabilities = () => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 48, lg: 54 },
-            lineHeight: 1.1,
+            fontSize: { xs: 28, md: 48, lg: 48 },
+            lineHeight: "52px",
             mb: { xs: 6, md: 10 },
           }}
         >
@@ -40,131 +39,200 @@ const ExploreCapabilities = () => {
         </Typography>
 
         <Grid container spacing={{ xs: 4, md: 0 }}>
-          {/* Left Side: Capabilities Menu */}
-          <Grid size={{ xs: 12, md: 5.5 }}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 3.5 }}>
+          {/* Left Side: Capabilities Menu + Stepper Column */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+              }}
+            >
               {data.modes.map((item, index) => (
-                <Box key={item.title}>
-                  {/* Heading Pill (bordered, clickable) */}
+                <Box
+                  key={item.title}
+                  sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
+                    alignItems: "stretch",
+                    position: "relative",
+                  }}
+                >
+                  <Box sx={{ display: "flex", flex: 1, alignItems: "stretch" }}>
+                    {/* Header Pill Wrapper to ensure Stepper alignment */}
+                    <Box
+                      sx={{
+                        flex: 1,
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* The Header Pill */}
+                      <Box
+                        onClick={() => setActiveIndex(index)}
+                        sx={{
+                          border:
+                            activeIndex === index
+                              ? `2px solid ${COLORS.PRIMARY_HOVER}`
+                              : "2px solid transparent",
+                          borderRadius: "32px",
+                          px: { xs: 2.3, md: 3 },
+                          py: activeIndex === index ? 2.5 : 1.2,
+                          opacity: activeIndex === index ? 1 : 0.5,
+                          cursor: "pointer",
+                          width: "fit-content",
+                          transition: "all 0.3s ease",
+                          mb: 2.5,
+                          "&:hover": {
+                            bgcolor: "rgba(0, 0, 0, 0.03)",
+                            borderColor:
+                              activeIndex === index
+                                ? COLORS.PRIMARY_HOVER
+                                : "rgba(0, 0, 0, 0.1)",
+                            opacity: 1,
+                          },
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: din.style.fontFamily,
+                            fontWeight: 700,
+                            textTransform: "uppercase",
+                            color:
+                              activeIndex === index
+                                ? COLORS.PRIMARY_HOVER
+                                : COLORS.BLACK,
+                            fontSize: { xs: 18, md: 22 },
+                            lineHeight: "28px",
+                            letterSpacing: "0.52px",
+                          }}
+                        >
+                          {item.title}
+                        </Typography>
+                        <Typography
+                          sx={{
+                            mt: 0.8,
+                            fontFamily: din.style.fontFamily,
+                            fontSize: { xs: 16, md: 18 },
+                            color:
+                              activeIndex === index
+                                ? COLORS.PRIMARY_HOVER
+                                : COLORS.BLACK,
+                            lineHeight: 1.2,
+                          }}
+                        >
+                          {item.subtitle}
+                        </Typography>
+                      </Box>
+                    </Box>
+
+                    {/* Vertical Stepper Dot (Desktop only) */}
+                    <Box
+                      sx={{
+                        display: { xs: "none", md: "flex" },
+                        flexDirection: "column",
+                        alignItems: "center",
+                        width: 60,
+                        position: "relative",
+                        alignSelf: "stretch",
+                        mb: 2.5,
+                      }}
+                    >
+                      {/* Continuous Grey Background Segment */}
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: index === 0 ? "50%" : -12.5,
+                          bottom: index === data.modes.length - 1 ? "50%" : -12.5,
+                          width: "2px",
+                          bgcolor: "#E0E0E0",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          zIndex: 0,
+                        }}
+                      />
+
+                      {/* Top Progress Segment (Black) */}
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: -12.5,
+                          bottom: "50%",
+                          width: "2px",
+                          bgcolor:
+                            index <= activeIndex && index > 0
+                              ? COLORS.BLACK
+                              : "transparent",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          zIndex: 1,
+                        }}
+                      />
+                      {/* Bottom Progress Segment (Black) */}
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: "50%",
+                          bottom: -12.5,
+                          width: "2px",
+                          bgcolor:
+                            index < activeIndex ? COLORS.BLACK : "transparent",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          display:
+                            index === data.modes.length - 1 ? "none" : "block",
+                          zIndex: 1,
+                        }}
+                      />
+                      {/* The Dot */}
+                      <Box
+                        sx={{
+                          width: 8,
+                          height: 8,
+                          bgcolor:
+                            index <= activeIndex
+                              ? COLORS.BLACK
+                              : "#BDBDBD",
+                          borderRadius: "50%",
+                          position: "relative",
+                          zIndex: 2,
+                          mt: "auto",
+                          mb: "auto",
+                          transition: "all 0.3s ease",
+                          transform:
+                            activeIndex === index ? "scale(1.2)" : "scale(1)",
+                        }}
+                      />
+                    </Box>
+                  </Box>
+
+                  {/* Mobile Description Integration */}
                   <Box
-                    onClick={() => setActiveIndex(index)}
                     sx={{
-                      border:
-                        activeIndex === index
-                          ? `2px solid ${COLORS.PRIMARY_HOVER}`
-                          : "2px solid transparent",
-                      borderRadius: "32px",
-                      p: 2.5,
-                      pl: 3,
-                      cursor: "pointer",
-                      width: "fit-content",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        bgcolor:
-                          activeIndex === index
-                            ? "transparent"
-                            : "rgba(0, 0, 0, 0.03)",
-                        borderColor:
-                          activeIndex === index
-                            ? COLORS.PRIMARY_HOVER
-                            : "rgba(0, 0, 0, 0.1)",
+                      display: {
+                        xs: activeIndex === index ? "block" : "none",
+                        md: "none",
                       },
+                      px: 2,
+                      pb: 4,
+                      mt: -1,
+                      animation: "fadeIn 0.3s ease",
                     }}
                   >
                     <Typography
                       sx={{
-                        fontFamily: din.style.fontFamily,
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        color:
-                          activeIndex === index
-                            ? COLORS.PRIMARY_HOVER
-                            : COLORS.BLACK,
-                        fontSize: { xs: 20, md: 24 },
-                        lineHeight: 1.2,
-                        letterSpacing: "0.02em",
+                        fontFamily: helvetica.style.fontFamily,
+                        fontSize: 15,
+                        lineHeight: 1.6,
+                        color: "rgba(0,0,0,0.8)",
                       }}
                     >
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        mt: 0.5,
-                        fontFamily: din.style.fontFamily,
-                        fontSize: { xs: 16, md: 18 },
-                        color:
-                          activeIndex === index
-                            ? COLORS.PRIMARY_HOVER
-                            : COLORS.BLACK,
-                        lineHeight: 1.2,
-                      }}
-                    >
-                      {item.subtitle}
+                      {item.description}
                     </Typography>
                   </Box>
-
-                  {/* Mobile Description: Outside border, slides in smoothly */}
-                  {activeIndex === index && (
-                    <Box
-                      sx={{
-                        display: { xs: "block", md: "none" },
-                        mt: 1.5,
-                        pl: 3,
-                        animation: "slideDown 0.3s ease",
-                        "@keyframes slideDown": {
-                          from: { opacity: 0, transform: "translateY(-8px)" },
-                          to: { opacity: 1, transform: "translateY(0)" },
-                        },
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontFamily: helvetica.style.fontFamily,
-                          fontSize: { xs: 15, md: 18 },
-                          lineHeight: 1.5,
-                          color: COLORS.BLACK,
-                          textTransform: "none",
-                        }}
-                      >
-                        {item.description.split(" Work becomes")[0]}
-                      </Typography>
-                      {item.description.includes(" Work becomes") && (
-                        <Typography
-                          sx={{
-                            fontFamily: helvetica.style.fontFamily,
-                            fontSize: { xs: 15, md: 20 },
-                            lineHeight: 1.5,
-                            color: COLORS.BLACK,
-                            textTransform: "capitalize",
-                            mt: 2,
-                          }}
-                        >
-                          Work becomes
-                          {item.description.split(" Work becomes")[1]}
-                        </Typography>
-                      )}
-                    </Box>
-                  )}
                 </Box>
               ))}
             </Box>
-          </Grid>
-
-          {/* Center Vertical Stepper */}
-          <Grid
-            size={{ xs: 0, md: 0.5 }}
-            sx={{
-              display: { xs: "none", md: "flex" },
-              justifyContent: "center",
-              position: "relative",
-            }}
-          >
-            <VerticalStepper
-              itemsCount={data.modes.length}
-              activeIndex={activeIndex}
-              baseColor="rgba(0, 0, 0, 0.1)"
-              activeColor={COLORS.BLACK}
-            />
           </Grid>
 
           {/* Right Side: Description (Desktop only) */}
@@ -172,50 +240,27 @@ const ExploreCapabilities = () => {
             size={{ xs: 12, md: 6 }}
             sx={{ display: { xs: "none", md: "block" } }}
           >
-            <Box sx={{ pl: { xs: 0, md: 6 }, pt: { xs: 0, md: 2 } }}>
-              <Box>
-                <Typography
-                  sx={{
-                    fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 18, md: 22 },
-                    lineHeight: 1.6,
-                    color: COLORS.BLACK,
-                    textTransform: "none",
-                    mb: data.modes[activeIndex].description.includes(
-                      " Work becomes",
-                    )
-                      ? 0
-                      : 4,
-                  }}
-                >
-                  {
-                    data.modes[activeIndex].description.split(
-                      " Work becomes",
-                    )[0]
-                  }
-                </Typography>
-                {data.modes[activeIndex].description.includes(
-                  " Work becomes",
-                ) && (
-                  <Typography
-                    sx={{
-                      fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 18, md: 22 },
-                      lineHeight: 1.6,
-                      color: COLORS.BLACK,
-                      textTransform: "capitalize",
-                      mt: 4,
-                    }}
-                  >
-                    Work becomes
-                    {
-                      data.modes[activeIndex].description.split(
-                        " Work becomes",
-                      )[1]
-                    }
-                  </Typography>
-                )}
-              </Box>
+            <Box
+              sx={{
+                pl: { xs: 0, md: 4 },
+                pt: { xs: 0, md: 1 },
+                position: "sticky",
+                top: 40,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 18, md: 22 },
+                  lineHeight: "30px",
+                  letterSpacing: "0.52px",
+                  color: COLORS.BLACK,
+                  textTransform: "none",
+                  animation: "fadeIn 0.4s ease",
+                }}
+              >
+                {data.modes[activeIndex].description}
+              </Typography>
             </Box>
           </Grid>
         </Grid>

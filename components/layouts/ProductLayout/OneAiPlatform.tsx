@@ -63,8 +63,8 @@ const OneAiPlatform = () => {
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               textTransform: "uppercase",
-              fontSize: { xs: 28, md: 48, lg: 54 },
-              lineHeight: 1.1,
+              fontSize: { xs: 28, md: 48, lg: 48 },
+              lineHeight: "52px",
               color: COLORS.BLACK,
             }}
           >
@@ -76,7 +76,7 @@ const OneAiPlatform = () => {
               mt: 2,
               fontFamily: helvetica.style.fontFamily,
               fontSize: { xs: 16, md: 18, lg: 22 },
-              lineHeight: 1.5,
+              lineHeight: "30px",
               color: COLORS.BLACK,
               maxWidth: 900,
               mx: "auto",
@@ -132,12 +132,11 @@ const OneAiPlatform = () => {
                     fontFamily: helvetica.style.fontFamily,
                     fontWeight: 700,
                     textTransform: "uppercase",
-                    fontSize: { xs: 10, md: 15 },
-                    lineHeight: 1.1,
+                    fontSize: { xs: 10, md: 18 },
+                    lineHeight: "27px",
                     color: COLORS.BLACK,
-                    letterSpacing: "0.02em",
-                    whiteSpace: "normal",
-                    maxWidth: { xs: 80, md: 140 },
+                    letterSpacing: "0.52px",
+                    whiteSpace: "nowrap", // Changed to nowrap
                   }}
                 >
                   {item.label}

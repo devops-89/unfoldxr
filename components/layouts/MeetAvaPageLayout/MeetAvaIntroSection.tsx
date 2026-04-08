@@ -28,10 +28,11 @@ const MeetAvaIntroSection = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 48, lg: 54 },
+                fontSize: { xs: 28, md: 48, lg: 48 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.BLACK,
+                lineHeight: "52px",
                 mb: 3,
               }}
             >
@@ -44,7 +45,7 @@ const MeetAvaIntroSection = () => {
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 15, md: 22 },
                   color: COLORS.BLACK,
-                  lineHeight: 1.6,
+                  lineHeight: "30px",
                   textAlign: "justify",
                   mb: 2,
                 }}

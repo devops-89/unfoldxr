@@ -9,7 +9,7 @@ interface Props {
 
 const PlatformSummarySection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
+    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
       <Box
         sx={{
           width: { xs: "85%", md: "80%" },
@@ -27,8 +27,8 @@ const PlatformSummarySection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 28, md: 54 },
-                lineHeight: 1.1,
+                fontSize: { xs: 28, md: 48 },
+                lineHeight: "52px",
                 color: COLORS.BLACK,
               }}
             >
@@ -40,10 +40,10 @@ const PlatformSummarySection = ({ data }: Props) => {
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 22 },
-                lineHeight: 1.6,
+                lineHeight: "30px",
+                letterSpacing: "0.52px",
                 color: COLORS.OVERLAY_07,
                 mb: 4,
-              
               }}
             >
               {data.description1}

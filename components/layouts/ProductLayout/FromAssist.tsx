@@ -48,8 +48,8 @@ const FromAssist = () => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 24, md: 44, lg: 54 },
-                lineHeight: 1.15,
+                fontSize: { xs: 24, md: 44, lg: 48 },
+                lineHeight: "52px",
                 color: COLORS.BLACK,
                 maxWidth: { xs: 280, md: 1100 },
                 mx: "auto",
@@ -76,6 +76,7 @@ const FromAssist = () => {
                 fontSize: { xs: 16, md: 20, lg: 22 },
                 color: COLORS.BLACK,
                 fontWeight: 500,
+                lineHeight: "28px",
               }}
             >
               {data.subtitle}
@@ -101,9 +102,10 @@ const FromAssist = () => {
                   py: 1.8,
                   fontFamily: helvetica.style.fontFamily,
                   fontWeight: 700,
-                  fontSize: 16,
+                  fontSize: 18,
                   textTransform: "none",
                   boxShadow: "none",
+                  lineHeight: "28px",
                   display: "flex",
                   alignItems: "center",
                   gap: 1.5,
@@ -119,7 +121,8 @@ const FromAssist = () => {
                   textDecoration: "none",
                   textUnderlineOffset: "6px",
                   fontWeight: 700,
-                  fontSize: 16,
+                  lineHeight: "28px",
+                  fontSize: 18,
                   color: COLORS.BLACK,
                   cursor: "pointer",
                 }}

@@ -21,15 +21,16 @@ const BusinessResultsSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 54 },
-            lineHeight: 1.1,
+            fontSize: { xs: 28, md: 48 },
+            lineHeight: "52px",
             mb: { xs: 6, md: 8 },
+            maxWidth: 900,
           }}
         >
-          Business Results You <br /> Can Measure
+          Business Results You Can Measure
         </Typography>
 
-        <Grid container rowSpacing={{ xs: 4, md: 12 }} columnSpacing={3}>
+        <Grid container rowSpacing={{ xs: 4, md:3 }} columnSpacing={3}>
           {data.items.map((item, index) => (
             <Grid key={index} size={{ xs: 12, md: 4 }}>
               <Box
@@ -49,9 +50,10 @@ const BusinessResultsSection = ({ data }: Props) => {
                   sx={{
                     fontFamily: inter.style.fontFamily,
                     fontWeight: 800,
-                    fontSize: { xs: 20, md: 25 },
+                    fontSize: { xs: 20, md: 22 },
                     textTransform: "uppercase",
-                    lineHeight: 1.1,
+                    lineHeight: "30px",
+                    letterSpacing: "0.52px",
                     mb: 2.5,
                   }}
                 >
@@ -60,9 +62,10 @@ const BusinessResultsSection = ({ data }: Props) => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 14, md: 16 },
-                    lineHeight: 1.5,
+                    fontSize: { xs: 14, md: 18 },
+                    // lineHeight: 1.5,
                     color: COLORS.WHITE_ALPHA_80,
+                    letterSpacing: "0.52px",
                     mb: 5,
                   }}
                 >
@@ -74,9 +77,9 @@ const BusinessResultsSection = ({ data }: Props) => {
                       bgcolor: COLORS.PRIMARY_GREEN,
                       color: COLORS.BLACK,
                       borderRadius: 99,
-                      px: { xs: 2.5, md: 4 },
+                      px: { xs: 2.5, md: 3 },
                       py: 1.2,
-                      fontSize: { xs: 14, md: 18, lg: 20 },
+                      fontSize: { xs: 14, md: 18, lg: 18 },
                       fontWeight: 600,
                       fontFamily: inter.style.fontFamily,
                       textTransform: "none",

@@ -13,7 +13,7 @@ const AvaSupportSection = () => {
 
   return (
     <Box
-      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 12 } }}
+      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 10 } }}
     >
       <Box
         sx={{
@@ -26,10 +26,10 @@ const AvaSupportSection = () => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 28, md: 54 },
+            fontSize: { xs: 28, md: 48 },
             fontWeight: 900,
             textTransform: "uppercase",
-            lineHeight: 1.1,
+            lineHeight: "52px",
             mb: 2,
           }}
         >
@@ -39,10 +39,10 @@ const AvaSupportSection = () => {
           sx={{
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 22 },
-            lineHeight: 1.55,
-            letterSpacing: { md: "0.08em" },
+            lineHeight: "30px",
+            letterSpacing: "0.52px",
             maxWidth: 1660,
-            mb: { xs: 4, md: 8, lg: 12   },
+            mb: { xs: 4, md: 8, lg: 10   },
           }}
         >
           {data.description}
@@ -54,24 +54,32 @@ const AvaSupportSection = () => {
             <Box
               sx={{
                 display: "flex",
-                height: "fit-content",
+                flexDirection: "column",
                 position: "relative",
               }}
             >
-              {/* Feature List */}
-              <Box sx={{ flex: 1 }}>
-                <Stack spacing={0}>
-                  {data.features.map((feature, i) => (
-                    <Box key={feature.label}>
-                      {/* Heading Pill (bordered, clickable) */}
+              {data.features.map((feature, i) => (
+                <Box
+                  key={feature.label}
+                  sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
+                    alignItems: "stretch",
+                    position: "relative",
+                  }}
+                >
+                  <Box sx={{ display: "flex", flex: 1, alignItems: "stretch" }}>
+                    {/* Header Pill Wrapper to ensure Stepper alignment */}
+                    <Box
+                      sx={{
+                        flex: 1,
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* The Header Pill */}
                       <Box
                         onClick={() => setActiveFeature(i)}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ")
-                            setActiveFeature(i);
-                        }}
-                        role="button"
-                        tabIndex={0}
                         sx={{
                           cursor: "pointer",
                           width: "fit-content",
@@ -81,20 +89,24 @@ const AvaSupportSection = () => {
                               : "2px solid transparent",
                           borderRadius: "78px",
                           px: { xs: 3, md: 4 },
-                          py: { xs: 1, md: 1.2 },
-                          mb: 1.2,
+                          py: activeFeature === i ? 2.5 : 1.2,
+                          mb: 2.5,
+                          opacity: activeFeature === i ? 1 : 0.5,
                           transition: "all 0.3s ease",
                           bgcolor:
                             activeFeature === i
-                              ? "rgba(46, 213, 115, 0.05)"
+                              ? "rgba(182, 236, 26, 0.05)"
                               : "transparent",
-                          pl:
-                            activeFeature === i
-                              ? { xs: 3, md: 4 }
-                              : { xs: 3.25, md: 4.25 },
                           "&:hover": {
-                            bgcolor: activeFeature === i ? "rgba(46, 213, 115, 0.05)" : "rgba(255, 255, 255, 0.05)",
-                            borderColor: activeFeature === i ? COLORS.PRIMARY_GREEN : "rgba(255, 255, 255, 0.2)",
+                            bgcolor:
+                              activeFeature === i
+                                ? "rgba(182, 236, 26, 0.1)"
+                                : "rgba(255, 255, 255, 0.05)",
+                            borderColor:
+                              activeFeature === i
+                                ? COLORS.PRIMARY_GREEN
+                                : "rgba(255, 255, 255, 0.2)",
+                            opacity: 1,
                           },
                         }}
                       >
@@ -102,63 +114,131 @@ const AvaSupportSection = () => {
                           sx={{
                             fontFamily: helvetica.style.fontFamily,
                             fontWeight: 900,
-                            fontSize: { xs: 15, md: 17, lg: 22 },
+                            fontSize: { xs: 15, md: 17, lg: 18 },
                             textTransform: "uppercase",
-                            letterSpacing: "0.02em",
+                            letterSpacing: "0.52px",
                             color:
                               activeFeature === i
                                 ? COLORS.PRIMARY_GREEN
                                 : COLORS.WHITE,
-                            lineHeight: 1.2,
+                            lineHeight: "30px",
                             transition: "color 0.3s ease",
                           }}
                         >
                           {feature.label}
                         </Typography>
                       </Box>
-                      {/* Mobile Description: Outside border, slides in smoothly */}
-                      {activeFeature === i && (
-                        <Typography
-                          sx={{
-                            display: { xs: "block", md: "none" },
-                            mt: 1.2,
-                            mb: 1,
-                            px: 2,
-                            fontFamily: helvetica.style.fontFamily,
-                            fontSize: { xs: 15, md: 17 },
-                            lineHeight: 1.5,
-                            color: COLORS.WHITE,
-                            fontWeight: 500,
-                            textTransform: "none",
-                            animation: "slideDown 0.3s ease",
-                            "@keyframes slideDown": {
-                              from: { opacity: 0, transform: "translateY(-8px)" },
-                              to: { opacity: 1, transform: "translateY(0)" },
-                            },
-                          }}
-                        >
-                          {feature.description}
-                        </Typography>
-                      )}
                     </Box>
-                  ))}
-                </Stack>
-              </Box>
 
-              {/* Stepper column inside the same Box */}
-              <Box
-                sx={{
-                  width: { xs: 0, md: 60 },
-                  display: { xs: "none", md: "flex" },
-                  justifyContent: "center",
-                  py: 2.2, 
-                }}
-              >
-                <VerticalStepper
-                  itemsCount={data.features.length}
-                  activeIndex={activeFeature}
-                />
-              </Box>
+                    {/* Vertical Stepper Dot (Integrated) */}
+                    <Box
+                      sx={{
+                        display: { xs: "none", md: "flex" },
+                        flexDirection: "column",
+                        alignItems: "center",
+                        width: 60,
+                        position: "relative",
+                        alignSelf: "stretch",
+                        mb: 2.5,
+                      }}
+                    >
+                      {/* Continuous Background Line Segment */}
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: i === 0 ? "50%" : -12.5,
+                          bottom: i === data.features.length - 1 ? "50%" : -12.5,
+                          width: "2px",
+                          bgcolor: "#333333",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          zIndex: 0,
+                        }}
+                      />
+
+                      {/* Top Progress Segment */}
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: -12.5,
+                          bottom: "50%",
+                          width: "2px",
+                          bgcolor:
+                            i <= activeFeature && i > 0
+                              ? COLORS.PRIMARY_GREEN
+                              : "transparent",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          zIndex: 1,
+                        }}
+                      />
+                      {/* Bottom Progress Segment */}
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: "50%",
+                          bottom: -12.5,
+                          width: "2px",
+                          bgcolor:
+                            i < activeFeature
+                              ? COLORS.PRIMARY_GREEN
+                              : "transparent",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          display:
+                            i === data.features.length - 1 ? "none" : "block",
+                          zIndex: 1,
+                        }}
+                      />
+
+                      {/* The Dot */}
+                      <Box
+                        sx={{
+                          width: 8,
+                          height: 8,
+                          bgcolor:
+                            i <= activeFeature
+                              ? COLORS.PRIMARY_GREEN
+                              : "rgba(255, 255, 255, 0.4)",
+                          borderRadius: "50%",
+                          position: "relative",
+                          zIndex: 2,
+                          mt: "auto",
+                          mb: "auto",
+                          transition: "all 0.3s ease",
+                          transform:
+                            activeFeature === i ? "scale(1.2)" : "scale(1)",
+                        }}
+                      />
+                    </Box>
+                  </Box>
+
+                  {/* Mobile Description: Integrated into flow */}
+                  <Box
+                    sx={{
+                      display: {
+                        xs: activeFeature === i ? "block" : "none",
+                        md: "none",
+                      },
+                      px: 2,
+                      pb: 4,
+                      mt: -1,
+                      animation: "fadeIn 0.3s ease",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: helvetica.style.fontFamily,
+                        fontSize: 15,
+                        lineHeight: 1.6,
+                        color: "rgba(255,255,255,0.8)",
+                      }}
+                    >
+                      {feature.description}
+                    </Typography>
+                  </Box>
+                </Box>
+              ))}
             </Box>
           </Grid>
 
@@ -178,7 +258,7 @@ const AvaSupportSection = () => {
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 18, md: 20, lg: 22 },
                     fontWeight: 500,
-                    lineHeight: 1.4,
+                    lineHeight: "30px",
                     color: COLORS.WHITE,
                     maxWidth: { xs: 260, sm: 500, md: 800 },
                     transition: "opacity 0.3s ease",

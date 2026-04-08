@@ -27,8 +27,8 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 28, md: 48, lg: 54 },
-            lineHeight: 1.1,
+            fontSize: { xs: 28, md: 48, lg: 48 },
+            lineHeight: "52px",
             textTransform: "uppercase",
             fontWeight: 900,
             maxWidth: 1000,
@@ -63,8 +63,10 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: din.style.fontFamily,
-                      fontSize: { xs: 22, md: 26 },
+                      fontSize: { xs: 22, md: 22 },
                       fontWeight: 700,
+                      lineHeight: "30px",
+                      letterSpacing: "0.52px",
                       textTransform: "uppercase",
                       color: COLORS.WHITE,
                     }}
@@ -115,7 +117,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                           color: COLORS.PRIMARY_GREEN,
                           fontSize: 18,
                           fontWeight: 700,
-                          lineHeight: 1.3,
+                          lineHeight: 1.6,
                         }}
                       >
                         ✓
@@ -124,8 +126,9 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           color: "rgba(255,255,255,0.8)",
-                          fontSize: { xs: 15, md: 17 },
-                          lineHeight: 1.4,
+                          fontSize: { xs: 15, md: 18 },
+                          // lineHeight: "2px",
+                          letterSpacing: "0.52px",
                         }}
                       >
                         {item}

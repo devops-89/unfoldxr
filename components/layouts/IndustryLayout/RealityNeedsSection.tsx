@@ -28,8 +28,8 @@ const RealityNeedsSection = ({ data }: Props) => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 28, md: 48, lg: 54 },
-            lineHeight: 1.1,
+            fontSize: { xs: 28, md: 48, lg: 48 },
+            lineHeight: "52px",
             textTransform: "uppercase",
             fontWeight: 900,
             color: COLORS.BLACK,
@@ -54,9 +54,11 @@ const RealityNeedsSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: din.style.fontFamily,
                   textTransform: "uppercase",
-                  fontSize: { xs: 20, md: 24, lg: 28 },
+                  fontSize: { xs: 20, md: 24, lg: 22 },
                   color: COLORS.PRIMARY_GREEN,
                   fontWeight: 700,
+                  lineHeight: "30px",
+                  letterSpacing: "0.52px",
                   mb: 3,
                 }}
               >
@@ -68,8 +70,9 @@ const RealityNeedsSection = ({ data }: Props) => {
                     key={item}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 15, md: 18, lg: 22 },
-                      lineHeight: 1.4,
+                      fontSize: { xs: 15, md: 18, lg: 18 },
+                      lineHeight: "27px",
+                      letterSpacing: "0.52px",
                       display: "flex",
                       gap: 1.5,
                       "&::before": {
@@ -99,9 +102,11 @@ const RealityNeedsSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: din.style.fontFamily,
                   textTransform: "uppercase",
-                  fontSize: { xs: 20, md: 24, lg: 28 },
+                  fontSize: { xs: 20, md: 24, lg: 22 },
                   color: COLORS.PRIMARY_GREEN,
                   fontWeight: 700,
+                  lineHeight: "30px",
+                  letterSpacing: "0.52px",
                   mb: 3,
                   whiteSpace: "pre-line",
                 }}
@@ -114,8 +119,9 @@ const RealityNeedsSection = ({ data }: Props) => {
                     key={item}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 15, md: 18, lg: 22 },
-                      lineHeight: 1.4,
+                      fontSize: { xs: 15, md: 18, lg: 18 },
+                      lineHeight: "27px",
+                      letterSpacing: "0.52px",
                       display: "flex",
                       gap: 1.5,
                       "&::before": {
@@ -136,13 +142,14 @@ const RealityNeedsSection = ({ data }: Props) => {
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 18, md: 26, lg: 28 },
-            mt: { xs: 8, md: 16 },
+            fontSize: { xs: 18, md: 26, lg: 22 },
+            mt: { xs: 8, md: 10 },
             maxWidth: 1100,
             mx: "auto",
             color: COLORS.BLACK,
             fontWeight: 700,
-            lineHeight: 1.3,
+            lineHeight: "30px",
+            letterSpacing: "0.52px",
             whiteSpace: "pre-line",
           }}
         >

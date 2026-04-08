@@ -8,9 +8,8 @@ interface Props {
 }
 
 const UseCasesSection = ({ data }: Props) => {
-  // Staggered margin for items on the right
   const getMarginLeft = (index: number) => {
-    const margins = [0, 8, 4, 0]; // 01: 0, 02: right, 03: mid, 04: 0
+    const margins = [0, 8, 4, 0]; 
     return { md: margins[index] || 0 };
   };
 
@@ -37,8 +36,8 @@ const UseCasesSection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 36, md: 54, lg: 54 },
-                lineHeight: 1.1,
+                fontSize: { xs: 36, md: 48, lg: 48 },
+                lineHeight: "52px",
                 textTransform: "uppercase",
                 fontWeight: 900,
                 color: COLORS.BLACK,
@@ -58,7 +57,7 @@ const UseCasesSection = ({ data }: Props) => {
                 py: 1.2,
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
-                fontSize: { xs: 14, md: 18, lg: 20 },
+                fontSize: { xs: 14, md: 18, lg: 18 },
                 textTransform: "none",
                 boxShadow: "none",
                 display: "flex",
@@ -76,7 +75,7 @@ const UseCasesSection = ({ data }: Props) => {
 
           {/* Right Side: Staggered Pills */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Stack spacing={3} alignItems="flex-start">
+            <Stack spacing={3} alignItems="stretch">
               {data.items.map((label, i) => (
                 <Box
                   key={label}
@@ -92,6 +91,7 @@ const UseCasesSection = ({ data }: Props) => {
                     bgcolor: COLORS.WHITE,
                     ml: getMarginLeft(i),
                     boxShadow: "0px 4px 12px rgba(0,0,0,0.03)",
+                    width: "100%", 
                     "&:hover": {
                       borderColor: COLORS.PRIMARY_GREEN,
                       bgcolor: "rgba(197, 255, 46, 0.05)",
@@ -120,9 +120,10 @@ const UseCasesSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontWeight: 700,
-                      fontSize: { xs: 16, md: 24, lg: 28 },
+                      fontSize: { xs: 16, md: 24, lg: 22 },
                       color: COLORS.BLACK,
-                      lineHeight: 1.2,
+                      lineHeight: "30px",
+                      letterSpacing: "0.52px",
                     }}
                   >
                     {label}

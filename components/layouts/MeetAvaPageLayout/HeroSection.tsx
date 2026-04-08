@@ -62,11 +62,11 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 18, md: 20, lg: 24 },
+                  fontSize: { xs: 18, md: 20, lg: 22 },
                   fontWeight: 700,
                   color: COLORS.WHITE,
                   maxWidth: "100%",
-                  lineHeight: 1.3,
+                  lineHeight: "30px",
                   mb: 4,
                 }}
               >
@@ -77,12 +77,12 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 56, lg: 54 },
+                  fontSize: { xs: 36, md: 56, lg: 48 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   color: COLORS.WHITE,
-                  lineHeight: 1.1,
-                  mb: 4,
+                  lineHeight: "52px",
+                  mb: 2,
                 }}
               >
                 {data.heading}
@@ -90,9 +90,9 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 18, lg: 20 },
+                  fontSize: { xs: 16, md: 18, lg: 22 },
                   color: COLORS.WHITE,
-                  lineHeight: 1.5,
+                  lineHeight: "30px",
                   maxWidth: "90%",
                 }}
               >

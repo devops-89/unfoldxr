@@ -22,9 +22,10 @@ const PlaceholderSection = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 54 },
+                fontSize: { xs: 28, md: 48 },
                 fontWeight: 900,
                 textTransform: "uppercase",
+                lineHeight: "52px",
                 mb: 2,
               }}
             >
@@ -34,7 +35,7 @@ const PlaceholderSection = () => {
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 22 },
-                lineHeight: 1.6,
+                lineHeight: "30px",
                 color: "rgba(255,255,255,0.85)",
                 whiteSpace: "pre-line",
               }}
@@ -49,7 +50,7 @@ const PlaceholderSection = () => {
               alt=""
               sx={{
                 maxWidth: "100%",
-                width: { xs: 280, md: 420 },
+                width: { xs: 280, md: 400 },
                 height: "auto",
                 transform: "rotate(9deg)",
                 mx: "auto",

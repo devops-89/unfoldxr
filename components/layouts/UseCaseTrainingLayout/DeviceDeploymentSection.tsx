@@ -23,7 +23,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 54 },
+            fontSize: { xs: 28, md: 48 },
+            lineHeight: "52px",
             mb: { xs: 6, md: 8 },
           }}
         >
@@ -38,7 +39,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
-                height: { xs: 300, md: 320 },
+                height: { xs: 300, md: 280 },
               }}
             >
               <Box
@@ -68,8 +69,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 28 },
-                    lineHeight: 1.1,
+                    fontSize: { xs: 24, md: 22 },
+                    lineHeight: "30px",
                     mb: 2,
                   }}
                 >
@@ -86,7 +87,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
-                height: { xs: 300, md: 320 },
+                height: { xs: 300, md: 280 },
               }}
             >
               <Box
@@ -121,8 +122,9 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 28 },
-                    lineHeight: 1.1,
+                    fontSize: { xs: 24, md: 22 },
+                    lineHeight: "30px",
+                    width: 340,
                     mb: 2,
                   }}
                 >
@@ -140,7 +142,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
-                height: { xs: 300, md: 360 },
+                height: { xs: 300, md: 280 },
               }}
             >
               <Box
@@ -170,8 +172,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 24, md: 28 },
-                    lineHeight: 1.1,
+                    fontSize: { xs: 24, md: 22 },
+                    lineHeight: "30px",
                     mb: 2,
                   }}
                 >
