@@ -15,7 +15,7 @@ const FromAssist = () => {
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
       <Box
-        sx={{ width: { xs: "80%", md: "80%" }, mx: "auto", px: { xs: 0, md: 0 } }}
+        sx={{ width: { xs: "85%", md: "80%" }, mx: "auto", px: { xs: 0, md: 0 } }}
       >
         <Box
           sx={{

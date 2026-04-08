@@ -20,7 +20,7 @@ const HeroSection = () => {
         sx={{
           width: { xs: "95%", md: "80%" },
           mx: "auto",
-          px: { xs: 2, md: 0 },
+          px: { xs: 0, md: 0 },
         }}
       >
         <Typography

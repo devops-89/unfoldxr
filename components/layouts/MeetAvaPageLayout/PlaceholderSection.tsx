@@ -14,7 +14,7 @@ const PlaceholderSection = () => {
         sx={{
           width: { xs: "85%", md: "80%" },
           mx: "auto",
-          px: { xs: 2, md: 0 },
+          px: { xs: 0, md: 0 },
         }}
       >
         <Grid container spacing={4} alignItems="center">

@@ -54,7 +54,7 @@ const EnterpriseReady = () => {
           zIndex: 2,
         }}
       >
-        <Grid container justifyContent="flex-end" sx={{ pt: { xs: 60, md: 0 } }}>
+        <Grid container justifyContent="flex-end" sx={{ pt: { xs: 100, md: 0 } }}>
           <Grid size={{ xs: 12, md: 7.5, lg: 7 }}>
             <Typography
               sx={{
