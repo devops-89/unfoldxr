@@ -29,7 +29,7 @@ const BusinessResultsSection = ({ data }: Props) => {
           Business Results You <br /> Can Measure
         </Typography>
 
-        <Grid container rowSpacing={12} columnSpacing={3}>
+        <Grid container rowSpacing={{ xs: 4, md: 12 }} columnSpacing={3}>
           {data.items.map((item, index) => (
             <Grid key={index} size={{ xs: 12, md: 4 }}>
               <Box

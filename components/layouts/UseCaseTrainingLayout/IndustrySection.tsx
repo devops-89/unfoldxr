@@ -63,19 +63,19 @@ const IndustrySection = ({ data }: Props) => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 1.5,
+                  gap: { xs: 1, md: 1.5 },
                   bgcolor: COLORS.WHITE,
                   border: `1px solid ${COLORS.BLACK}`,
                   borderRadius: 99,
                   pl: 1,
-                  pr: 3,
-                  py: 1,
+                  pr: { xs: 2, md: 3 },
+                  py: { xs: 0.6, md: 1 },
                 }}
               >
                 <Box
                   sx={{
-                    width: 36,
-                    height: 36,
+                    width: { xs: 26, md: 36 },
+                    height: { xs: 26, md: 36 },
                     bgcolor: COLORS.BLACK,
                     borderRadius: "50%",
                     display: "flex",
@@ -86,8 +86,8 @@ const IndustrySection = ({ data }: Props) => {
                   <Image
                     src={industry.img}
                     alt={industry.label}
-                    width={20}
-                    height={20}
+                    width={16}
+                    height={16}
                     style={{
                       objectFit: "contain",
                       filter: "brightness(0) invert(1)",
@@ -97,8 +97,8 @@ const IndustrySection = ({ data }: Props) => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: 14,
-                    fontWeight: 900,
+                    fontSize: { xs: 10, md: 14 },
+                    fontWeight: { xs: 700, md: 900 },
                     textTransform: "uppercase",
                     color: COLORS.BLACK,
                     letterSpacing: "0.02em",

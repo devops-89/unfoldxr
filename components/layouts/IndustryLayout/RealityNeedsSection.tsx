@@ -39,7 +39,7 @@ const RealityNeedsSection = ({ data }: Props) => {
           {data.title}
         </Typography>
 
-        <Grid container columnSpacing={6} rowSpacing={{ xs: 10, md: 6 }}>
+        <Grid container columnSpacing={6} rowSpacing={{ xs: 6, md: 6 }}>
           <Grid size={{ xs: 12, md: 4, lg: 6 }}>
             <Box
               sx={{
@@ -92,7 +92,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                 borderRadius: 4,
                 p: { xs: 3.2, md: 4, lg: 5 },
                 height: "100%",
-                mb: { xs: 4, md: 0 },
+                mb: { xs: 3, md: 0 },
               }}
             >
               <Typography
@@ -137,7 +137,7 @@ const RealityNeedsSection = ({ data }: Props) => {
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 18, md: 26, lg: 28 },
-            mt: 16,
+            mt: { xs: 8, md: 16 },
             maxWidth: 1100,
             mx: "auto",
             color: COLORS.BLACK,

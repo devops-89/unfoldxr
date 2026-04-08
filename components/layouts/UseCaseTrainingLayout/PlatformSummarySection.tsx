@@ -12,7 +12,7 @@ const PlatformSummarySection = ({ data }: Props) => {
     <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
       <Box
         sx={{
-          width: { xs: "80%", md: "80%" },
+          width: { xs: "85%", md: "80%" },
           mx: "auto",
           bgcolor: COLORS.BG_LIGHT,
           borderRadius: { xs: "24px", md: "40px" },
@@ -43,6 +43,7 @@ const PlatformSummarySection = ({ data }: Props) => {
                 lineHeight: 1.6,
                 color: COLORS.OVERLAY_07,
                 mb: 4,
+              
               }}
             >
               {data.description1}

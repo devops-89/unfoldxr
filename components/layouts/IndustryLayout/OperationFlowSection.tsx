@@ -38,7 +38,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
           {data.title}
         </Typography>
 
-        <Grid container columnSpacing={4} rowSpacing={{ xs: 10, md: 4 }}>
+        <Grid container columnSpacing={4} rowSpacing={{ xs: 8, md: 4 }}>
           {data.phases.map((block) => (
             <Grid key={block.phase} size={{ xs: 12, md: 4 }}>
               <Box
@@ -138,7 +138,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
           ))}
         </Grid>
 
-        <Box sx={{ textAlign: "center", mt: 16 }}>
+        <Box sx={{ textAlign: "center", mt: { xs: 8, md: 16 } }}>
           <Button
             variant="contained"
             onClick={openModal}
