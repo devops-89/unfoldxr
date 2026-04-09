@@ -36,7 +36,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
               }}
               InputProps={{
                 sx: {
-                  backgroundColor: "#ffffff",
+                  backgroundColor: "#FFFFFF",
                   borderRadius: "8px",
                   "& fieldset": { borderColor: "transparent" },
                   "&:hover fieldset": { borderColor: "transparent" },
