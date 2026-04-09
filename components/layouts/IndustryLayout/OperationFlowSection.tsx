@@ -12,11 +12,21 @@ interface Props {
   ctaText?: string;
 }
 
+import EventNoteIcon from "@mui/icons-material/EventNote";
+import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
+import FactCheckIcon from "@mui/icons-material/FactCheck";
+
+const phaseIcons = [
+  <EventNoteIcon key="0" sx={{ fontSize: 20, color: "#000" }} />,
+  <PrecisionManufacturingIcon key="1" sx={{ fontSize: 20, color: "#000" }} />,
+  <FactCheckIcon key="2" sx={{ fontSize: 20, color: "#000" }} />
+];
+
 const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
   const { openModal } = useDemoModal();
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 10, md: 15 } }}>
+    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 6, md: 13 } }}>
       <Box
         sx={{
           width: { xs: "85%", md: "80%" },
@@ -32,21 +42,21 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
             textTransform: "uppercase",
             fontWeight: 900,
             maxWidth: 1000,
-            mb: 8,
+            mb: 7,
           }}
         >
           {data.title}
         </Typography>
 
-        <Grid container columnSpacing={4} rowSpacing={{ xs: 8, md: 4 }}>
-          {data.phases.map((block) => (
+        <Grid container columnSpacing={4} rowSpacing={{ xs: 4, md: 4 }}>
+          {data.phases.map((block, index) => (
             <Grid key={block.phase} size={{ xs: 12, md: 4 }}>
               <Box
                 sx={{
                   bgcolor: "transparent",
                   borderRadius: "16px",
                   border: `1.5px solid ${COLORS.PRIMARY_GREEN}`,
-                  p: { xs: 3, md: 4 },
+                  p: { xs: 3, md: 3 },
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
@@ -63,7 +73,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: din.style.fontFamily,
-                      fontSize: { xs: 22, md: 22 },
+                      fontSize: { xs: 20, md: 22 },
                       fontWeight: 700,
                       lineHeight: "30px",
                       letterSpacing: "0.52px",
@@ -73,27 +83,19 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                   >
                     {block.phase}
                   </Typography>
-                  {ctaIcon && (
-                    <Box
-                      sx={{
-                        width: 32,
-                        height: 32,
-                        bgcolor: "#F5E6FF",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        p: 0.8,
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={ctaIcon}
-                        alt=""
-                        sx={{ width: "100%", height: "100%", objectFit: "contain" }}
-                      />
-                    </Box>
-                  )}
+                  <Box
+                    sx={{
+                      width: 36,
+                      height: 36,
+                      bgcolor: COLORS.PRIMARY_GREEN,
+                      borderRadius: "8px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {phaseIcons[index] || phaseIcons[0]}
+                  </Box>
                 </Box>
 
                 <Box
@@ -102,11 +104,11 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                     height: "1px",
                     bgcolor: "rgba(255,255,255,0.15)",
                     my: 1,
-                    mb: 5,
+                    mb: 4,
                   }}
                 />
 
-                <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   {block.items.map((item) => (
                     <Box
                       key={item}
@@ -117,7 +119,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                           color: COLORS.PRIMARY_GREEN,
                           fontSize: 18,
                           fontWeight: 700,
-                          lineHeight: 1.6,
+                          lineHeight: 1.4,
                         }}
                       >
                         ✓
@@ -126,8 +128,8 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           color: "rgba(255,255,255,0.8)",
-                          fontSize: { xs: 15, md: 18 },
-                          // lineHeight: "2px",
+                          fontSize: { xs: 14, md: 16 },
+                          lineHeight: 1.4,
                           letterSpacing: "0.52px",
                         }}
                       >
@@ -141,7 +143,8 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
           ))}
         </Grid>
 
-        <Box sx={{ textAlign: "center", mt: { xs: 8, md: 16 } }}>
+        <Box sx={{ textAlign: "center", mt: { xs: 6, md: 8 } }}>
+
           <Button
             variant="contained"
             onClick={openModal}
