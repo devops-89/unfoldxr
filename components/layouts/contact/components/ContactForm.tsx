@@ -10,7 +10,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
   return (
     <Box>
       {/* Fields */}
-      <Grid container spacing={2}>
+      <Grid container spacing={1.5}>
         {formData.formFields.map((field) => (
           <Grid
            size={{
@@ -21,6 +21,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
           >
             <TextField
               fullWidth
+              size="small"
               label={field.label.replace(" *", "")}
               required={field.required}
               multiline={field.multiline}
@@ -29,7 +30,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
               InputLabelProps={{
                 sx: {
                   fontWeight: 700,
-                  fontSize: 14,
+                  fontSize: 13,
                   color: "#666",
                   "& .MuiFormLabel-asterisk": { color: "red" }
                 }
@@ -38,6 +39,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
                 sx: {
                   backgroundColor: "#FFFFFF",
                   borderRadius: "8px",
+                  fontSize: 14,
                   "& fieldset": { borderColor: "transparent" },
                   "&:hover fieldset": { borderColor: "transparent" },
                   "&.Mui-focused fieldset": { borderColor: "#ccc" },
@@ -47,32 +49,32 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
           </Grid>
         ))}
       </Grid>
-
+ 
       {/* Note */}
       <Typography
         variant="body2"
-        mt={4}
-        fontSize={14}
+        mt={2.5}
+        fontSize={13}
         color="#333"
-        sx={{ fontWeight: 500, lineHeight: 1.6 }}
+        sx={{ fontWeight: 500, lineHeight: 1.5, opacity: 0.9 }}
       >
         {note}
       </Typography>
-
+ 
       {/* Button */}
       <Button
         variant="contained"
         sx={{
-          mt: 4,
+          mt: 3,
           backgroundColor: "#b6ec1a", 
           color: "#000",
           fontFamily: "Inter, sans-serif",
           fontWeight: 700,
-          fontSize: 16,
+          fontSize: 14,
           borderRadius: "50px",
           textTransform: "none",
-          px: 5,
-          py: 1.5,
+          px: 4,
+          py: 1.2,
           boxShadow: "none",
           "&:hover": {
             backgroundColor: "#a5d915",

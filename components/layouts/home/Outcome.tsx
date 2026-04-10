@@ -11,8 +11,8 @@ const Outcome = () => {
     <Box
       sx={{
         backgroundColor: COLORS.BLACK,
-        py: { xs: 8, md: 12 },
-        minHeight: "85vh",
+        py: { xs: 8, md: 8 },
+        // minHeight: "75vh",
         display: "flex",
         alignItems: "center",
       }}
@@ -30,7 +30,7 @@ const Outcome = () => {
             sx={{
               textAlign: "left",
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 28, md: 48 },
+              fontSize: { xs: 28, md: 36 },
               color: COLORS.WHITE,
               fontWeight: 900,
               textTransform: "uppercase",
@@ -44,13 +44,13 @@ const Outcome = () => {
           <Typography
             sx={{
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 14, md: 22 },
+              fontSize: { xs: 14, md: 18 },
               color: COLORS.WHITE,
               fontWeight: 400,
               lineHeight: { xs: "22px", md: "30px" },
               letterSpacing: "0.52px",
               mt: 1,
-              mb: 5,
+              mb: 2,
               opacity: 0.8,
             }}
           >
@@ -71,8 +71,8 @@ const Outcome = () => {
             <ContainedButton
               sx={{
                 width: { xs: "100%", md: "auto" },
-                height: { xs: "45px", md: "62px" },
-                fontSize: { xs: 16, md: 18 },
+                height: { xs: "45px", md: "60px" },
+                fontSize: { xs: 16, md: 16 },
                 lineHeight: "30px",
               }}
             >

@@ -1,11 +1,14 @@
 import { StaticImageData } from "next/image";
+import React from "react";
 export interface WORKFORCE_CARD_PROPS {
-  img: StaticImageData;
+  img?: StaticImageData;
+  icon?: any;
   heading: string;
   description: string;
 }
 export interface INDUSTRY_CHIP_PROPS {
-  img: StaticImageData;
+  img?: StaticImageData;
+  icon?: any;
   label: string;
 }
 export interface FUTURE_WORK_CARD_PROPS {

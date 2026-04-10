@@ -5,7 +5,7 @@ import React from "react";
 import { helvetica } from "@/utils/fonts";
 import { INDUSTRY_CHIP_PROPS } from "@/utils/types";
 
-const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
+const IndustryChip = ({ img, icon, label }: INDUSTRY_CHIP_PROPS) => {
   return (
     <Box>
       <Box
@@ -28,8 +28,8 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
           sx={{
             backgroundColor: COLORS.BLACK,
             borderRadius: "50%",
-            width: { xs: 28, md: 40 }, 
-            height: { xs: 28, md: 40 },
+            width: { xs: 24, md: 30 }, 
+            height: { xs: 24, md: 30 },
             border: "1px solid rgba(255, 255, 255, 0.16)",
             display: "flex",
             alignItems: "center",
@@ -37,18 +37,24 @@ const IndustryChip = ({ img, label }: INDUSTRY_CHIP_PROPS) => {
             flexShrink: 0, 
           }}
         >
-          <Image
-            src={img}
-            alt=""
-            width={16}  
-            height={16}
-          />
+          {img ? (
+            <Image
+              src={img}
+              alt=""
+              width={16}  
+              height={16}
+            />
+          ) : icon ? (
+            React.createElement(icon, {
+              sx: { color: COLORS.WHITE, fontSize: { xs: 14, md: 16 } },
+            })
+          ) : null}
         </Box>
 
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 10, md: 18 },
+            fontSize: { xs: 10, md: 14 },
             fontWeight: 700, 
             color: COLORS.BLACK,
             whiteSpace: "nowrap",

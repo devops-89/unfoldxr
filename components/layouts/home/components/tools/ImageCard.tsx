@@ -9,7 +9,7 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
       sx={{
         p: { xs: 2.5, md: 3 },
         borderRadius: "16px",
-        height: { xs: "200px", md: "240px" },
+        height: { xs: "180px", md: "210px" },
         position: "relative",
         overflow: "hidden",
         backgroundImage: `url(${card.image.src})`,
@@ -24,12 +24,22 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
         backgroundColor: card.titleColor === "#000000" ? "#F5F5F5" : "transparent",
       }}
     >
-      {card.titleColor !== "#000000" && (
+      {/* Overlay for better text readability */}
+      {card.titleColor !== "#000000" ? (
         <Box
           sx={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 60%)",
+            background: "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, transparent 100%)",
+            zIndex: 0,
+          }}
+        />
+      ) : (
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%)",
             zIndex: 0,
           }}
         />
@@ -39,12 +49,12 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 18, md: 22 },
+            fontSize: { xs: 16, md: 16 },
             fontWeight: 700,
             color: card.titleColor || COLORS.WHITE,
             mb: 1,
-            textTransform: "uppercase",
-            lineHeight: "30px",
+            textTransform: "none",
+            lineHeight: "20px",
             letterSpacing: "0.52px",
           }}
         >
@@ -55,9 +65,9 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
           <Typography
             sx={{
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 14, md: 18 },
+              fontSize: { xs: 13, md: 15 },
               fontWeight: 400,
-              lineHeight: "26px",
+              lineHeight: "20px",
               color: card.descriptionColor || "rgba(255, 255, 255, 0.8)",
             }}
           >

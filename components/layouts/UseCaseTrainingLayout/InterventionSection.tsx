@@ -245,8 +245,8 @@ const InterventionSection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 28, md: 48 },
-                lineHeight: "52px",
+                fontSize: { xs: 28, md: 54 },
+                lineHeight: 1,
                 color: COLORS.BLACK,
               }}
             >
@@ -261,8 +261,7 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 22 },
-                  lineHeight: "30px",
-                  letterSpacing: "0.52px",
+                  lineHeight: 1.5,
                   color: COLORS.BLACK,
                 }}
               >

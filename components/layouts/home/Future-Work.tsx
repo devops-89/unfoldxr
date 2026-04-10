@@ -38,14 +38,14 @@ const FutureWork = () => {
   };
 
   return (
-    <Box sx={{ py: { xs: 4, md: 8 }, width: "100%", overflow: "hidden" }}>
+    <Box sx={{ py: { xs: 4, md: 0 }, width: "100%", overflow: "hidden" }}>
       <Box
         sx={{
           backgroundColor: COLORS.BLACK,
           borderRadius: "24px",
           width: { xs: "95%", md: "95%", lg: "90%" },
           mx: "auto",
-          py: { xs: 6, md: 10 },
+          py: { xs: 6, md: 6 },
           px: { xs: 3, md: 6, xl: 10 },
           display: "flex",
           alignItems: "center",
@@ -58,7 +58,7 @@ const FutureWork = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 20, md: 48 },
+                fontSize: { xs: 20, md: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.WHITE,
@@ -71,7 +71,7 @@ const FutureWork = () => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 12, md: 22 },
+                fontSize: { xs: 12, md: 18 },
                 color: COLORS.WHITE,
                 fontWeight: 400,
                 lineHeight: "30px",
@@ -84,7 +84,7 @@ const FutureWork = () => {
 
             <Typography
               sx={{
-                fontSize: { xs: 12, md: 22 },
+                fontSize: { xs: 12, md: 18 },
                 fontWeight: 700,
                 color: COLORS.WHITE,
                 fontFamily: helvetica.style.fontFamily,
@@ -97,7 +97,7 @@ const FutureWork = () => {
 
             <Typography
               sx={{
-                fontSize: { xs: 28, md: 48 },
+                fontSize: { xs: 28, md: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.PRIMARY_GREEN,
@@ -114,8 +114,8 @@ const FutureWork = () => {
               sx={{
                 mt: 3,
                 width: { xs: "100%", md: "auto" },
-                height: { xs: "45px", md: "62px" },
-                fontSize: { xs: 16, md: 18 },
+                height: { xs: "45px", md: "60px" },
+                fontSize: { xs: 16, md: 16 },
               }}
             >
               {homePage.future_work.leftSection.cta}

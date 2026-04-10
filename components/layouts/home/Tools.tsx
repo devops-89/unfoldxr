@@ -26,7 +26,7 @@ const Tools = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        py: { xs: 8, md: 12 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Box
@@ -38,7 +38,7 @@ const Tools = () => {
       >
         <Box
           sx={{
-            py: { xs: 4, md: 10 },
+            py: { xs: 4, md: 4 },
             px: { xs: 4, sm: 6, md: 10 },
             bgcolor: COLORS.WHITE,
             borderRadius: "45px",
@@ -50,10 +50,10 @@ const Tools = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 48 },
+                fontSize: { xs: 28, md: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
-                lineHeight: { xs: "38px", md: "52px" },
+                lineHeight: { xs: "38px", md: "48px" },
                 color: COLORS.BLACK,
                 textAlign: { xs: "center", md: "left" },
                 display: "block",
@@ -72,7 +72,7 @@ const Tools = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 28, md: 48 },
+                  fontSize: { xs: 28, md: 36 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   lineHeight: { xs: "38px", md: "52px" },
@@ -92,7 +92,7 @@ const Tools = () => {
                   minWidth: "50px",
                   display: { xs: "none", md: "block" },
                   position: "relative",
-                  top: "-12px",
+                  top: "-16px",
                 }}
               />
 
@@ -100,8 +100,8 @@ const Tools = () => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontWeight: 700,
-                  fontSize: { xs: 16, md: 22 },
-                  lineHeight: { xs: "24px", md: "30px" },
+                  fontSize: { xs: 16, md: 18 },
+                  lineHeight: { xs: "24px", md: "28px" },
                   letterSpacing: "0.52px",
                   color: COLORS.BLACK,
                   textAlign: { xs: "center", md: "right" },
@@ -118,8 +118,8 @@ const Tools = () => {
           {/* BOTTOM SECTION */}
           <Grid
             container
-            spacing={{ xs: 3, md: 6 }}
-            sx={{ mt: { xs: 4, md: 8 } }}
+            spacing={{ xs: 3, md: 8 }}
+            sx={{ mt: { xs: 4, md: 4 } }}
           >
             <Grid size={{ xs: 12, md: 6 }}>
               <ToolsLeftSection

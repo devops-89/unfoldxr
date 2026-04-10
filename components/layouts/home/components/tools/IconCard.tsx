@@ -12,7 +12,7 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
         borderRadius: "16px",
         backgroundColor: "#0A0A0A", 
         color: "white",
-        height: { xs: "200px", md: "240px" },
+        height: { xs: "180px", md: "210px" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -20,7 +20,10 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
     >
       <Typography
         sx={{
-          fontSize: { xs: 18, md: 22 },
+          fontSize: { xs: 16, md: 16 },
+          fontFamily: helvetica.style.fontFamily,
+          fontWeight: 700,
+          textTransform: "none",
         }}
       >
         {card.title}
@@ -29,19 +32,19 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
       <Box sx={{ position: "relative", width: "100%", height: "100%", mt: 2 }}>
         {card.icons.map((icon, i) => {
           const positions = [
-            { top: "30%", left: "50%", size: 100, bg: "transparent" }, 
-            { top: "65%", left: "20%", size: 100, bg: "transparent" }, 
-            { top: "70%", left: "80%", size: 100, bg: "transparent" }, 
+            { top: "30%", left: "50%", size: 80, bg: "transparent" }, 
+            { top: "65%", left: "20%", size: 80, bg: "transparent" }, 
+            { top: "70%", left: "80%", size: 80, bg: "transparent" }, 
           ];
           
-          const pos = positions[i] || { top: "50%", left: "50%", size: 100, bg: "transparent" };
+          const pos = positions[i] || { top: "50%", left: "50%", size: 80, bg: "transparent" };
 
           return (
             <Box
               key={i}
               sx={{
-                width: { xs: 70, md: pos.size },
-                height: { xs: 70, md: pos.size },
+                width: { xs: 60, md: pos.size },
+                height: { xs: 60, md: pos.size },
                 borderRadius: "50%",
                 backgroundColor: pos.bg,
                 display: "flex",

@@ -15,7 +15,7 @@ const HeroSection = ({ data }: Props) => {
       image={data.image}
       title={data.title}
       subtitle={data.subtitle}
-      description={data.description}
+      description={data.description }
       primaryBtn={{ label: "Watch in action" }}
       secondaryBtn={{ label: "Request a demo", onClick: openModal }}
     />

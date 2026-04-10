@@ -177,20 +177,25 @@ export const FOOTER_COLUMNS: {
   },
 ];
 
+import WhatshotIcon from "@mui/icons-material/Whatshot";
+import TimelineIcon from "@mui/icons-material/Timeline";
+import PaidIcon from "@mui/icons-material/Paid";
+import DirectionsBoatOutlinedIcon from "@mui/icons-material/DirectionsBoatOutlined";
+
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
-    img: increase,
+    icon: WhatshotIcon,
     heading: "INCREASE PRODUCTIVITY",
     description: "40% reduction in technician training \n time   & error diagnosis",
   },
   {
-    img: reduce,
+    icon: TimelineIcon,
     heading: "REDUCE DOWNTIME",
     description:
       "Errors and rework reduced by 50%, 40% increase in first-time fix rate",
   },
   {
-    img: operational,
+    icon: PaidIcon,
     heading: "Lower Operational Costs",
     description: "50% less onsite visit and increased remote collaboration",
   },
@@ -221,13 +226,17 @@ export const AI_INDUSTRY_DATA: INDUSTRY_CHIP_PROPS[] = [
     img: aviation,
     label: "Aviation",
   },
-  {
-    img: field_service_support,
-    label: "Field Service Support",
-  },
+  // {
+  //   img: field_service_support,
+  //   label: "Field Service Support",
+  // },
   {
     img: insurance,
     label: "Insurance",
+  },
+  {
+    icon: DirectionsBoatOutlinedIcon,
+    label: "Marine",
   },
   {
     img: hospitality,
@@ -297,13 +306,13 @@ export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
   cards: [
     {
       type: "image",
-      title: "From Many Tools to One Intelligent Platform ",
+      title: "From many tools to one intelligent platform ",
       image: humanizeChatbot,
       gridSize: 5,
     },
     {
       type: "image",
-      title: "Augmenting Human Productivity with AR & AI",
+      title: "Augmenting human productivity with AR & AI",
       description:
         "Streamlining operations with smart automation and immersive technology.",
       image: augmentingHuman,
@@ -311,8 +320,8 @@ export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
     },
     {
       type: "image",
-      title: "The Future Of Work: AI-Powered, AR-Enabled",
-      description: "Smarter Collaboration with next-gen tech.",
+      title: "The future of work: AI-powered, AR-enabled",
+      description: "Smarter collaboration with next-gen tech.",
       image: smsChatBg,
       titleColor: "#000000",
       descriptionColor: "#51555c",
@@ -320,7 +329,7 @@ export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
     },
     {
       type: "icon",
-      title: "Smarter Support, Better Outcomes",
+      title: "Smarter support, better outcomes",
       icons: [bell, clock, calender],
       gridSize: 5,
     },

@@ -13,8 +13,8 @@ const WorkForce = () => {
           sx={{
             backgroundColor: COLORS.WHITE,
             px: { xs: 2, sm: 6, md: 10 },
-            pt: { xs: 5, md: 10 },
-            pb: { xs: 6, md: 10 },
+            pt: { xs: 5, md: 6 },
+            pb: { xs: 6, md: 6 },
             borderRadius: "15px",
             display: "flex",
             flexDirection: "column",
@@ -29,7 +29,7 @@ const WorkForce = () => {
               sx={{
                 color: "#000",
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 24, md: 48 },
+                fontSize: { xs: 24, md: 36 },
                 fontStyle: "normal",
                 fontWeight: 900,
                 lineHeight: "52px",
@@ -46,12 +46,12 @@ const WorkForce = () => {
               sx={{
                 color: "#000",
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 22 },
+                fontSize: { xs: 16, md: 18 },
                 fontStyle: "normal",
                 fontWeight: 400,
                 lineHeight: { xs: 1.4, md: "30px" },
                 letterSpacing: "0.52px",
-                mt: { xs: 2, md: 3 },
+                mt: { xs: 2, md: 2 },
                 textAlign: { xs: "center", md: "left" },
               }}
             >
@@ -70,6 +70,7 @@ const WorkForce = () => {
                 >
                   <WorkforceCard
                     img={val.img}
+                    icon={val.icon}
                     heading={val.heading}
                     description={val.description}
                   />

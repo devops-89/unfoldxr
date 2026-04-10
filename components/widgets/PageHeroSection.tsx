@@ -89,10 +89,10 @@ const PageHeroSection = ({
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 26, md: 50, lg: 48 },
+              fontSize: { xs: 26, md: 50, lg: 36 },
               fontStyle: "normal",
               fontWeight: 900,
-              lineHeight: { xs: "40px", md: "52px" },
+              lineHeight: { xs: "40px", md: "42px" },
               textTransform: "uppercase",
               WebkitTextStrokeWidth: { xs: "1px", md: "2px" },
               WebkitTextStrokeColor: "#FFF",
@@ -109,8 +109,8 @@ const PageHeroSection = ({
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 26, md: 50, lg: 48 },
-            lineHeight: { xs: "40px", md: "52px" },
+            fontSize: { xs: 26, md: 50, lg: 36 },
+            lineHeight: { xs: "40px", md: "42px" },
             maxWidth: titleMaxWidth || 1050,
             whiteSpace: "pre-line",
           }}
@@ -124,7 +124,7 @@ const PageHeroSection = ({
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 700,
-              fontSize: { xs: 20, md: 28, lg: 22 },
+              fontSize: { xs: 20, md: 28, lg: 18 },
               lineHeight: 1.1,
               mt: 3,
               maxWidth: 800,
@@ -140,8 +140,8 @@ const PageHeroSection = ({
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 400,
-              fontSize: { xs: 16, md: 26, lg: 22 },
-              lineHeight: { xs: "normal", md: "30px" },
+              fontSize: { xs: 16, md: 26, lg: 18 },
+              lineHeight: { xs: "normal", md: "20px" },
               letterSpacing: "0.52px",
               mt: { xs: 2, md: 1 },
               maxWidth: 1000,
@@ -180,7 +180,7 @@ const PageHeroSection = ({
                   py: 1.2,
                   fontFamily: din.style.fontFamily,
                   fontWeight: 500,
-                  fontSize: { xs: 14, md: 18, lg: 18 },
+                  fontSize: { xs: 14, md: 18, lg: 16},
                   textTransform: "none",
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
                 }}
@@ -206,7 +206,7 @@ const PageHeroSection = ({
                   py: 1,
                   fontFamily: din.style.fontFamily,
                   fontWeight: 500,
-                  fontSize: { xs: 14, md: 16, lg: 18 },
+                  fontSize: { xs: 14, md: 16, lg: 16 },
                   textTransform: "none",
                   "&:hover": {
                     borderColor: COLORS.PRIMARY_HOVER,

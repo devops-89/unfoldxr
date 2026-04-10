@@ -16,7 +16,7 @@ const KnowledgeSection = ({ data }: Props) => {
         sx={{
           bgcolor: COLORS.BLACK,
           color: COLORS.WHITE,
-          py: { xs: 8, md: 20 },
+          py: { xs: 8, md: 10 },
         }}
       >
         <Box
@@ -34,10 +34,10 @@ const KnowledgeSection = ({ data }: Props) => {
                   fontFamily: din.style.fontFamily,
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  fontSize: { xs: 30, md: 54 },
+                  fontSize: { xs: 30, md: 48 },
                   lineHeight: 1.1,
                   maxWidth: 800,
-                  mb: { xs: 2, md: 4 },
+                  mb: { xs: 2, md: 2 },
                 }}
               >
                 {data.title}
@@ -52,8 +52,8 @@ const KnowledgeSection = ({ data }: Props) => {
                     key={index}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 17, md: 22 },
-                      lineHeight: 1.5,
+                      fontSize: { xs: 17, md: 18 },
+                      lineHeight: "28px",
                       color: COLORS.WHITE,
                     }}
                   >
@@ -69,8 +69,8 @@ const KnowledgeSection = ({ data }: Props) => {
               sx={{
                 mt: { xs: 4, md: 8 },
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 17, md: 22 },
-                lineHeight: 1.5,
+                fontSize: { xs: 17, md: 18 },
+                lineHeight: "28px",
                 color: COLORS.WHITE,
               }}
             >

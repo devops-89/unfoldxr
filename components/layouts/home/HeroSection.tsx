@@ -2,7 +2,7 @@
 
 import PageHeroSection from "@/components/widgets/PageHeroSection";
 import { homePage } from "@/utils/Website-Data";
-import banner from "@/images/banner/homePage/hero.png";
+// banner removed as it was unused
 import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const HeroSection = () => {
@@ -11,7 +11,8 @@ const HeroSection = () => {
 
   return (
     <PageHeroSection
-      image={banner.src}
+      image={"/images/homepage/HeroSection.png"}
+      overlayOpacity={0.7}
       titleOutlined={data.heading1}
       title={data.heading2}
       description={data.description}

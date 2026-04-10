@@ -11,24 +11,24 @@ const Metrics = () => {
           sx={{
             backgroundColor: "#EDEDED",
             borderRadius: "45px",
-            mt: { xs: 4, md: 12 },
+            mt: { xs: 4, md: 6 },
             px: { xs: 4, sm: 6, md: 8 },
-            pt: { xs: 5, md: 10 },
-            pb: { xs: 6, md: 12 },
+            pt: { xs: 5, md: 6 },
+            pb: { xs: 6, md: 2 },
           }}
         >
           {/* Heading — full width, centered, uppercase bold */}
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 22, sm: 28, md: 48 },
+              fontSize: { xs: 22, sm: 28, md: 36 },
               fontWeight: 900,
               lineHeight: "52px",
               textTransform: "uppercase",
               textAlign: "center",
               color: "#000",
               width: { xs: "100%", md: "100%" },
-              mb: { xs: 4, md: 5 },
+              mb: { xs: 4, md: 3 },
             }}
           >
             {homePage.metrics.heading}
@@ -52,7 +52,7 @@ const Metrics = () => {
                   alignItems={{ xs: "center", md: "flex-start" }}
                   spacing={0}
                 >
-                  {/* "We commit atleast" */}
+                  {/* "We commit atleast"
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
@@ -65,7 +65,7 @@ const Metrics = () => {
                     }}
                   >
                     {homePage.metrics.leftSection.heading}
-                  </Typography>
+                  </Typography> */}
 
                   {/* 30% */}
                   <Typography

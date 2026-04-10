@@ -25,7 +25,7 @@ const DevicesSection = () => {
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 30, md: 48 },
+              fontSize: { xs: 30, md: 36 },
               fontWeight: 900,
               textTransform: "uppercase",
               textAlign: { xs: "center", md: "left" },

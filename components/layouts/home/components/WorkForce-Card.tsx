@@ -1,22 +1,27 @@
 import React from "react";
-import increase from "@/images/banner/homePage/workforce/increase-productivity.png";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { din, helvetica } from "@/utils/fonts";
 import { WORKFORCE_CARD_PROPS } from "@/utils/types";
 
-const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
+const WorkforceCard = ({ img, icon, heading, description }: WORKFORCE_CARD_PROPS) => {
+  const Icon = icon;
   return (
     <Box sx={{ textAlign: "center" }}>
       <Box
         sx={{
-          height: { xs: 60, md: 80 },
+          height: { xs: 60, md: 40 },
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: "center",
           justifyContent: "center",
+          color: "#000",
         }}
       >
-        <Image src={img} alt="" width={48} />
+        {icon ? (
+          <Icon sx={{ fontSize: { xs: 40, md: 48 } }} />
+        ) : (
+          img && <Image src={img} alt="" width={36} />
+        )}
       </Box>
       <Typography
         sx={{
@@ -27,7 +32,7 @@ const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
           lineHeight: { xs: 1.2, md: "30px" },
           letterSpacing: "0.52px",
           textTransform: "uppercase",
-          my: { xs: 1.5, md: 3 },
+          my: { xs: 1.5, md: 2 },
           textAlign: "center",
         }}
       >

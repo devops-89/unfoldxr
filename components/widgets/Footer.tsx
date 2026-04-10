@@ -12,10 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { COLORS } from "@/utils/enum";
-
 import { FOOTER_COLUMNS, SOCIAL_LINKS } from "@/utils/constant";
-// import glowingBall from "@/images/homepage/globe.gif";
-
 import logoWhite from "@/images/logo/logo_white.png";
 import linkedin from "@/images/social_icons/linkedin.svg";
 import youtube from "@/images/social_icons/youtube.svg";
@@ -55,7 +52,7 @@ export default function Footer() {
   ];
 
   return (
-    <Box component="footer" sx={{ bgcolor: "black", pt: 8, pb: 4 }}>
+    <Box component="footer" sx={{ bgcolor: "black", pt: 4, pb: 2 }}>
       <Box
         sx={{
           position: "relative",
@@ -68,7 +65,7 @@ export default function Footer() {
             container
             spacing={{ xs: 4, md: 2 }}
             justifyContent="space-between"
-            sx={{ pb: { xs: 8, md: 10 }, borderBottom: "1px solid #222" }}
+            sx={{ pb: { xs: 4, md: 4 }, borderBottom: "1px solid #222" }}
           >
             {FOOTER_COLUMNS.map((column) => {
               const isSingleLink =
@@ -112,7 +109,7 @@ export default function Footer() {
                     <>
                       <Typography
                         variant="subtitle1"
-                        sx={{ fontWeight: 700, mb: 1.5, color: "#ffffff" }}
+                        sx={{ fontWeight: 700, mb: 1.4, color: "#ffffff" }}
                       >
                         {column.title}
                       </Typography>
@@ -166,10 +163,10 @@ export default function Footer() {
             spacing={4}
             alignItems="center"
             justifyContent="space-between"
-            sx={{ py: { xs: 4, md: 8 } }}
+            sx={{ pt: { xs: 4, md: 2 }, pb: 0 }}
           >
             {/* Left: Glowing Ball + Heading */}
-            <Grid size={{ xs: 12, md: 8 }}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Stack
                 direction={{ xs: "column", md: "row" }}
                 alignItems="center"
@@ -177,12 +174,13 @@ export default function Footer() {
               >
                 <Box
                   sx={{
-                    width: { xs: 280, sm: 300, md: 300 },
-                    height: { xs: 280, sm: 300, md: 300 },
+                    width: { xs: 220, sm: 250, md: 250 },
+                    height: { xs: 220, sm: 250, md: 250 },
                     position: "relative",
                     display: "block",
                     mx: { xs: "auto", md: 0 },
                     opacity: 0.9,
+                    // mb: -4,
                   }}
                 >
                   <Box
@@ -212,7 +210,7 @@ export default function Footer() {
                       sx={{
                         fontWeight: 800,
                         color: "#ffffff",
-                        fontSize: { xs: 24, md: 28 },
+                        fontSize: { xs: 24, md: 22 },
                         lineHeight: 1.2,
                       }}
                     >
@@ -221,7 +219,7 @@ export default function Footer() {
                     </Typography>
                     <Typography
                       sx={{
-                        fontSize: { xs: 16, md: 18 },
+                        fontSize: { xs: 16, md: 16 },
                         color: "#ffffff",
                         opacity: 0.8,
                         fontWeight: 500,
@@ -236,12 +234,12 @@ export default function Footer() {
                     sx={{
                       borderRadius: 52,
                       alignSelf: { xs: "center", md: "flex-start" },
-                      px: { lg: 6, xs: 4 },
-                      py: 1.5,
+                      px: { lg: 3, xs: 4 },
+                      py: 1.1,
                       bgcolor: "#b6ec1a",
                       color: "black",
-                      fontSize: { lg: 18, xs: 16 },
-                      fontWeight: 700,
+                      fontSize: { lg: 16, xs: 16 },
+                      fontWeight: 600,
                       textTransform: "none",
                       boxShadow: "0px 4px 14px rgba(182, 236, 26, 0.3)",
                       "&:hover": {
@@ -329,8 +327,8 @@ export default function Footer() {
                     >
                       <Box
                         sx={{
-                          width: { xs: 18, md: 22 },
-                          height: { xs: 18, md: 22 },
+                          width: { xs: 18, md: 18 },
+                          height: { xs: 18, md: 18 },
                           position: "relative",
                         }}
                       >
@@ -351,12 +349,12 @@ export default function Footer() {
 
           <Box
             sx={{
-              pt: 4,
+              pt: 2,
               borderTop: "1px solid #222",
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "space-between",
               position: "relative",
             }}
           >
@@ -375,7 +373,7 @@ export default function Footer() {
                 mt: { xs: 3, sm: 0 },
               }}
             >
-              <Link href="#" style={{ textDecoration: "none" }}>
+              {/* <Link href="#" style={{ textDecoration: "none" }}>
                 <Button
                   variant="text"
                   sx={{
@@ -390,7 +388,7 @@ export default function Footer() {
                 >
                   Terms & Conditions
                 </Button>
-              </Link>
+              </Link> */}
               <Link href="/privacy-policy" style={{ textDecoration: "none" }}>
                 <Button
                   variant="text"

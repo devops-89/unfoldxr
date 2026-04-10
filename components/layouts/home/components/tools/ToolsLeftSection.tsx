@@ -6,13 +6,13 @@ import { COLORS } from "@/utils/enum";
 
 const ToolsLeftSection = ({ ctaText, image, onCtaClick }: TOOLS_LEFT_SECTION_PROPS & { onCtaClick?: () => void }) => {
   return (
-    <Stack spacing={{ xs: 4, md: 8 }} alignItems={{ xs: "center", md: "flex-start" }}>
+    <Stack spacing={{ xs: 4, md: 6 }} alignItems={{ xs: "center", md: "flex-start" }}>
       {/* CTA */}
       <ContainedButton
         onClick={onCtaClick}
         sx={{
           height: { xs: "44px", md: "50px" },
-          fontSize: { xs: 16, md: 18 },
+          fontSize: { xs: 16, md: 16 },
           fontWeight: 700,
           
           px: 6,
@@ -32,7 +32,7 @@ const ToolsLeftSection = ({ ctaText, image, onCtaClick }: TOOLS_LEFT_SECTION_PRO
           position: "relative",
           width: "100%",
           maxWidth: "400px",
-          height: { xs: "250px", md: "350px" },
+          height: { xs: "200px", md: "300px" },
         }}
       >
         <Image

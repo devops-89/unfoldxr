@@ -9,14 +9,14 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
     <Box
       sx={{
         backgroundColor: "#272829",
-        px: { xs: 3, md: 5 },
-        py: { xs: 3, md: 4 },
+        px: { xs: 3, md: 4 },
+        py: { xs: 3, md: 3 },
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         gap: { xs: 2, md: 1 },
         borderRadius: "16px",
-        minHeight: { xs: "auto", md: "140px" },
+        minHeight: { xs: "auto", md: "110px" },
       }}
     >
       {/* Number */}
@@ -24,11 +24,11 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
         sx={{
           color: "rgba(182, 236, 26, 0.60)",
           fontFamily: din.style.fontFamily,
-          fontSize: { xs: 40, md: 48 },
+          fontSize: { xs: 40, md: 36 },
           fontWeight: 900,
           lineHeight: "52px",
           flexShrink: 0,
-          minWidth: { xs: 50, md: 90 },
+          minWidth: { xs: 40, md: 50 },
         }}
       >
         {number}
@@ -38,7 +38,7 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
       <Typography
         sx={{
           fontFamily: din.style.fontFamily,
-          fontSize: { xs: 14, md: 22 },
+          fontSize: { xs: 14, md: 18 },
           fontWeight: 900,
           lineHeight: { xs: "20px", md: "30px" },
           color: COLORS.WHITE,

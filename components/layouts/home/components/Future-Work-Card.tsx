@@ -43,7 +43,7 @@ const FutureWorkCard = ({
       <Typography
         sx={{
           fontFamily: helvetica.style.fontFamily,
-          fontSize: { xs: 16, md: 22 },
+          fontSize: { xs: 16, md: 18 },
           fontWeight: 700,
           lineHeight: { xs: "24px", md: "30px" },
           letterSpacing: "0.52px",
@@ -58,7 +58,7 @@ const FutureWorkCard = ({
           component={"span"}
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 22 },
+            fontSize: { xs: 16, md: 18 },
             fontWeight: 400,
             lineHeight: { xs: "24px", md: "30px" },
             letterSpacing: "0.52px",
@@ -76,7 +76,7 @@ const FutureWorkCard = ({
             color: COLORS.WHITE,
             textAlign: "left",
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 14, md: 18 },
+            fontSize: { xs: 14, md: 16 },
             lineHeight: { xs: "22px", md: "30px" },
             letterSpacing: "0.05px",
             fontWeight: 400,

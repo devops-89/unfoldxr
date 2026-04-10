@@ -9,11 +9,11 @@ const AiIndustry = () => {
     <Box>
       <Box
         sx={{
-          height: { xs: "auto", md: "60vh" },
+          // height: { xs: "auto", md: "45vh" },
           display: "flex",
           alignItems: { xs: "flex-start", md: "center" },
           justifyContent: "center",
-          py: { xs: 6, md: 0 },
+          py: { xs: 6, md: 8 },
         }}
       >
         <Container maxWidth="lg">
@@ -22,7 +22,7 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 28, md: 48 },
+              fontSize: { xs: 28, md: 36 },
               textTransform: "uppercase",
               fontWeight: 900,
               lineHeight: "52px",
@@ -36,7 +36,7 @@ const AiIndustry = () => {
             sx={{
               textAlign: "center",
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 16, md: 22 },
+              fontSize: { xs: 16, md: 18 },
               letterSpacing: "0.52px",
               lineHeight: "30px",
               fontWeight: 400,
@@ -54,11 +54,12 @@ const AiIndustry = () => {
               justifyContent: "center",
               gap: { xs: 1.5, md: 2 },
               mt: { xs: 4, md: 6 },
-              maxWidth: "100%",
+              maxWidth: "90%",
+              mx: "auto",
             }}
           >
             {homePage.Ai_industry.ai_industry_data.map((val, i) => (
-              <IndustryChip key={i} img={val.img} label={val.label} />
+              <IndustryChip key={i} img={val.img} icon={val.icon} label={val.label} />
             ))}
           </Box>
         </Container>

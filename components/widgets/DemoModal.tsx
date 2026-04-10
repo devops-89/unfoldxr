@@ -14,7 +14,7 @@ const DemoModal = () => {
     <Dialog
       open={isOpen}
       onClose={closeModal}
-      maxWidth="md"
+      maxWidth="sm"
       fullWidth
       PaperProps={{
         sx: {
@@ -24,21 +24,21 @@ const DemoModal = () => {
         },
       }}
     >
-      <Box sx={{ position: "absolute", right: 16, top: 16, zIndex: 1 }}>
-        <IconButton onClick={closeModal}>
-          <CloseIcon />
+      <Box sx={{ position: "absolute", right: 12, top: 12, zIndex: 1 }}>
+        <IconButton onClick={closeModal} size="small">
+          <CloseIcon fontSize="small" />
         </IconButton>
       </Box>
-      <DialogContent sx={{ p: { xs: 3, md: 6 }, pt: { xs: 6, md: 8 } }}>
-        <Box sx={{ mb: 4 }}>
+      <DialogContent sx={{ p: { xs: 2.5, md: 4 }, pt: { xs: 5, md: 6 } }}>
+        <Box sx={{ mb: 3 }}>
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 28, md: 36, lg: 40 },
+              fontSize: { xs: 22, md: 28, lg: 22 },
               fontWeight: 900,
               textTransform: "uppercase",
               lineHeight: 1.2,
-              mb: 2,
+              mb: 1.5,
             }}
           >
             {contactPage.contactFormSection.heading}
