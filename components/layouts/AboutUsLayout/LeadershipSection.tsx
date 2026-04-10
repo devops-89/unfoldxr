@@ -7,13 +7,16 @@ const LeadershipSection = () => {
   const { leadershipSection: data } = aboutPage;
 
   return (
-    <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 15 } }}>
-      <Typography 
-        sx={{ 
-          fontSize: { xs: 30, md: 48 }, 
-          fontWeight: 900, 
-          textTransform: "uppercase", 
-          mb: 8, 
+    <Container
+      maxWidth="xl"
+      sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 15 } }}
+    >
+      <Typography
+        sx={{
+          fontSize: { xs: 30, md: 48 },
+          fontWeight: 900,
+          textTransform: "uppercase",
+          mb: 8,
           fontFamily: din.style.fontFamily,
           color: COLORS.BLACK,
           lineHeight: "52px",
@@ -26,46 +29,51 @@ const LeadershipSection = () => {
         {data.members.map((member, idx) => {
           const isEven = idx % 2 === 0;
           return (
-            <Grid 
-              container 
-              key={idx} 
-              spacing={{ xs: 4, md: 8 }} 
+            <Grid
+              container
+              key={idx}
+              spacing={{ xs: 4, md: 8 }}
               alignItems="flex-start"
               direction={isEven ? "row-reverse" : "row"}
             >
               <Grid size={{ xs: 12, md: 4.5 }}>
-                <Box 
-                  component="img" 
-                  src={member.image} 
-                  alt={member.name} 
-                  sx={{ 
-                    width: "100%", 
+                <Box
+                  component="img"
+                  src={member.image}
+                  alt={member.name}
+                  sx={{
+                    width: "100%",
                     borderRadius: "12px",
-                    display: "block"
-                  }} 
+                    display: "block",
+                  }}
                 />
               </Grid>
               <Grid size={{ xs: 12, md: 7.5 }}>
-                <Box sx={{ textAlign: { xs: "left", md: isEven ? "left" : "right" }, mt: { xs: 3, md: 0 } }}>
-                  <Typography 
-                    sx={{ 
-                      fontSize: { xs: 26, md: 48 }, 
-                      fontWeight: 900, 
-                      textTransform: "uppercase", 
+                <Box
+                  sx={{
+                    textAlign: { xs: "left", md: isEven ? "left" : "right" },
+                    mt: { xs: 3, md: 0 },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: { xs: 26, md: 48 },
+                      fontWeight: 900,
+                      textTransform: "uppercase",
                       fontFamily: din.style.fontFamily,
                       color: COLORS.BLACK,
-                      lineHeight: "52px"
+                      lineHeight: "52px",
                     }}
                   >
                     {member.name}
                   </Typography>
-                  <Typography 
-                    sx={{ 
-                      fontSize: { xs: 20, md: 22 }, 
+                  <Typography
+                    sx={{
+                      fontSize: { xs: 20, md: 22 },
                       fontWeight: 600,
                       textTransform: "uppercase",
                       mt: 1,
-                      mb: 4, 
+                      mb: 4,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
                       lineHeight: "30px",
@@ -73,14 +81,14 @@ const LeadershipSection = () => {
                   >
                     {member.role}
                   </Typography>
-                  <Typography 
-                    sx={{ 
-                      fontSize: { xs: 18, md: 22 }, 
+                  <Typography
+                    sx={{
+                      fontSize: { xs: 18, md: 22 },
                       lineHeight: "30px",
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
                       textAlign: "justify",
-                      whiteSpace: "pre-line"
+                      whiteSpace: "pre-line",
                     }}
                   >
                     {member.bio}
@@ -96,4 +104,3 @@ const LeadershipSection = () => {
 };
 
 export default LeadershipSection;
-

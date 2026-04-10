@@ -9,7 +9,7 @@ const AiIndustry = () => {
     <Box>
       <Box
         sx={{
-          height: { xs: "auto", md: "85vh" },
+          height: { xs: "auto", md: "60vh" },
           display: "flex",
           alignItems: { xs: "flex-start", md: "center" },
           justifyContent: "center",
@@ -17,7 +17,6 @@ const AiIndustry = () => {
         }}
       >
         <Container maxWidth="lg">
-          
           {/* Heading */}
           <Typography
             sx={{
@@ -26,8 +25,7 @@ const AiIndustry = () => {
               fontSize: { xs: 28, md: 48 },
               textTransform: "uppercase",
               fontWeight: 900,
-              lineHeight:"52px",
-
+              lineHeight: "52px",
             }}
           >
             {homePage.Ai_industry.heading}
@@ -39,8 +37,8 @@ const AiIndustry = () => {
               textAlign: "center",
               fontFamily: helvetica.style.fontFamily,
               fontSize: { xs: 16, md: 22 },
-              letterSpacing:"0.52px",
-              lineHeight:"30px",
+              letterSpacing: "0.52px",
+              lineHeight: "30px",
               fontWeight: 400,
               mt: 1,
             }}
@@ -63,7 +61,6 @@ const AiIndustry = () => {
               <IndustryChip key={i} img={val.img} label={val.label} />
             ))}
           </Box>
-
         </Container>
       </Box>
     </Box>

@@ -23,7 +23,7 @@ const MetricCard = ({ title, description }: PARTNERS_METRICS_CARD_PROPS) => {
           mt: 2,
           lineHeight: "30px",
           fontWeight: 500,
-          maxWidth: "280px",
+          maxWidth: { xs: "280px", md: "320px" },
           mx: { xs: "auto", md: 0 },
         }}
       >

@@ -10,9 +10,17 @@ import { useDemoModal } from "@/components/context/DemoModalContext";
 const Meetava = () => {
   const { openModal } = useDemoModal();
   return (
-    <Box sx={{ mt: { xs: 8, md: 24 }, mb: { xs: 8, md: 24 } }}>
-      <Container maxWidth="xl">
-        <Box sx={{ px: { xs: 0, sm: 2, md: 8 } }}>
+    <Box
+      sx={{ mt: { xs: 8, md: 24 }, mb: { xs: 8, md: 24 }, overflow: "hidden" }}
+    >
+      <Box
+        sx={{
+          width: { xs: "95%", md: "95%", lg: "90%" },
+          maxWidth: 1600,
+          mx: "auto",
+        }}
+      >
+        <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
           {/* Full-width Heading */}
           <Typography
             sx={{
@@ -37,13 +45,12 @@ const Meetava = () => {
                     key={i}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 14, md:22 },
+                      fontSize: { xs: 14, md: 22 },
                       fontWeight: 400,
                       lineHeight: { xs: "22px", md: "30px" },
                       color: "#000",
                       textAlign: { xs: "center", md: "justify" },
                       letterSpacing: "0.52px",
-
                     }}
                   >
                     {val.label}
@@ -95,13 +102,16 @@ const Meetava = () => {
                     objectFit: "cover",
                   }}
                 >
-                  <source src="/images/homepage/White-globe.mp4" type="video/mp4" />
+                  <source
+                    src="/images/homepage/White-globe.mp4"
+                    type="video/mp4"
+                  />
                 </Box>
               </Stack>
             </Grid>
           </Grid>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

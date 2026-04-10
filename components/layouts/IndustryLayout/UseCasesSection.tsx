@@ -1,5 +1,6 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
+import Link from "next/link";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
 
@@ -9,8 +10,23 @@ interface Props {
 
 const UseCasesSection = ({ data }: Props) => {
   const getMarginLeft = (index: number) => {
-    const margins = [0, 8, 4, 0]; 
+    const margins = [0, 8, 4, 0];
     return { md: margins[index] || 0 };
+  };
+
+  const getRouteSlug = (label: string) => {
+    const text = label.toLowerCase();
+    if (text.includes("repair") || text.includes("maintenance"))
+      return "repair-maintenance";
+    if (text.includes("field service") || text.includes("troubleshooting"))
+      return "field-inspection";
+    if (text.includes("inspection") || text.includes("compliance"))
+      return "inspection-compliance";
+    if (text.includes("training") || text.includes("onboarding"))
+      return "training-and-onboarding";
+
+    // Fallback standard slugifier
+    return text.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   };
 
   return (
@@ -32,7 +48,7 @@ const UseCasesSection = ({ data }: Props) => {
       >
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="flex-start">
           {/* Left Side: Headline and Button */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
@@ -47,34 +63,10 @@ const UseCasesSection = ({ data }: Props) => {
             >
               {data.title}
             </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                borderRadius: "99px",
-                bgcolor: COLORS.PRIMARY_GREEN,
-                color: COLORS.BLACK,
-                px: { xs: 2.5, md: 4 },
-                py: 1.2,
-                fontFamily: din.style.fontFamily,
-                fontWeight: 700,
-                fontSize: { xs: 14, md: 18, lg: 18 },
-                textTransform: "none",
-                boxShadow: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: 1.5,
-                "&:hover": {
-                  bgcolor: COLORS.PRIMARY_HOVER,
-                  boxShadow: "none",
-                },
-              }}
-            >
-              {data.ctaText} &rarr;
-            </Button>
           </Grid>
 
           {/* Right Side: Staggered Pills */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Stack spacing={3} alignItems="stretch">
               {data.items.map((label, i) => (
                 <Box
@@ -86,12 +78,12 @@ const UseCasesSection = ({ data }: Props) => {
                     py: { xs: 1.2, md: 1.5 },
                     display: "flex",
                     alignItems: "center",
-                    gap: { xs: 2, md: 3 },
+                    justifyContent: "space-between",
                     transition: "all 0.3s ease",
                     bgcolor: COLORS.WHITE,
                     ml: getMarginLeft(i),
                     boxShadow: "0px 4px 12px rgba(0,0,0,0.03)",
-                    width: "100%", 
+                    width: "100%",
                     "&:hover": {
                       borderColor: COLORS.PRIMARY_GREEN,
                       bgcolor: "rgba(197, 255, 46, 0.05)",
@@ -101,33 +93,71 @@ const UseCasesSection = ({ data }: Props) => {
                 >
                   <Box
                     sx={{
-                      width: { xs: 40, md: 48 },
-                      height: { xs: 40, md: 48 },
-                      minWidth: { xs: 40, md: 48 },
-                      borderRadius: "50%",
-                      bgcolor: COLORS.BLACK,
-                      color: COLORS.WHITE,
-                      display: "grid",
-                      placeItems: "center",
-                      fontFamily: din.style.fontFamily,
-                      fontSize: { xs: 16, md: 20 },
-                      fontWeight: 700,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: { xs: 2, md: 3 },
                     }}
                   >
-                    {`0${i + 1}`}
+                    <Box
+                      sx={{
+                        width: { xs: 40, md: 48 },
+                        height: { xs: 40, md: 48 },
+                        minWidth: { xs: 40, md: 48 },
+                        borderRadius: "50%",
+                        bgcolor: COLORS.BLACK,
+                        color: COLORS.WHITE,
+                        display: "grid",
+                        placeItems: "center",
+                        fontFamily: din.style.fontFamily,
+                        fontSize: { xs: 16, md: 20 },
+                        fontWeight: 700,
+                      }}
+                    >
+                      {`0${i + 1}`}
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontFamily: helvetica.style.fontFamily,
+                        fontWeight: 700,
+                        fontSize: { xs: 16, md: 20, lg: 22 },
+                        color: COLORS.BLACK,
+                        lineHeight: 1.2,
+                        letterSpacing: "0.52px",
+                      }}
+                    >
+                      {label}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontFamily: helvetica.style.fontFamily,
-                      fontWeight: 700,
-                      fontSize: { xs: 16, md: 24, lg: 22 },
-                      color: COLORS.BLACK,
-                      lineHeight: "30px",
-                      letterSpacing: "0.52px",
-                    }}
+
+                  <Link
+                    href={`/usecases/${getRouteSlug(label)}`}
+                    style={{ textDecoration: "none" }}
                   >
-                    {label}
-                  </Typography>
+                    <Box
+                      sx={{
+                        bgcolor: COLORS.BLACK,
+                        borderRadius: "100px",
+                        px: { xs: 2.5, md: 3 },
+                        py: { xs: 1, md: 1.2 },
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        color: "#b8ed1a",
+                        fontFamily: din.style.fontFamily,
+                        fontWeight: 700,
+                        fontSize: { xs: 14, md: 16 },
+                        whiteSpace: "nowrap",
+                        ml: 2,
+                        textDecoration: "none",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          bgcolor: "#333",
+                        },
+                      }}
+                    >
+                      Know more &rarr;
+                    </Box>
+                  </Link>
                 </Box>
               ))}
             </Stack>

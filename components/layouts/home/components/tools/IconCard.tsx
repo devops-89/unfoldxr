@@ -3,6 +3,7 @@ import { ICON_CARD_PROPS } from "@/utils/types";
 import Image from "next/image";
 import { helvetica } from "@/utils/fonts";
 
+
 const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
   return (
     <Box
@@ -19,12 +20,7 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
     >
       <Typography
         sx={{
-          fontFamily: helvetica.style.fontFamily,
-          fontWeight: 700,
           fontSize: { xs: 18, md: 22 },
-          lineHeight: {xs:"24px", md:"30px"},
-          mb: 1,
-          letterSpacing:"0.52px",
         }}
       >
         {card.title}

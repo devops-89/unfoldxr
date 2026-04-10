@@ -1,36 +1,44 @@
+"use client";
+
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { useRouter } from "next/navigation";
 import ContainedButton from "@/components/widgets/ContainedButton";
 
 const NewsSection = () => {
   const { newsSection: data } = aboutPage;
+  const router = useRouter();
 
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
-      <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
-        <Card 
-          sx={{ 
-            borderRadius: { xs: 3, md: "45px" }, 
-            boxShadow: "none", 
-            bgcolor: COLORS.WHITE 
+
+      <Container
+        maxWidth={false}
+        sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
+      >
+        <Card
+          sx={{
+            borderRadius: { xs: 3, md: "45px" },
+            boxShadow: "none",
+            bgcolor: COLORS.WHITE,
           }}
         >
-          <CardContent 
-            sx={{ 
-              p: { xs: 4, md: "60px 40px" }, 
+          <CardContent
+            sx={{
+              p: { xs: 4, md: "60px 40px" },
               textAlign: "center",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
-            <Typography 
-              sx={{ 
-                fontSize: { xs: 28, md: 48 }, 
-                fontWeight: 900, 
-                textTransform: "uppercase", 
+            <Typography
+              sx={{
+                fontSize: { xs: 28, md: 48 },
+                fontWeight: 900,
+                textTransform: "uppercase",
                 fontFamily: din.style.fontFamily,
                 color: COLORS.BLACK,
                 mb: 2,
@@ -39,27 +47,28 @@ const NewsSection = () => {
             >
               {data.title}
             </Typography>
-            <Typography 
-              sx={{ 
-                fontSize: { xs: 18, md: 22 }, 
+            <Typography
+              sx={{
+                fontSize: { xs: 18, md: 22 },
                 fontFamily: helvetica.style.fontFamily,
                 color: COLORS.BLACK,
                 maxWidth: 800,
                 lineHeight: "30px",
-                mb: 6
+                mb: 6,
               }}
             >
               {data.description}
             </Typography>
-            <ContainedButton 
-              sx={{ 
+            <ContainedButton
+              onClick={() => router.push("/contact-us?tab=email")}
+              sx={{
                 px: { xs: 2.5, md: 4 },
                 py: 1.2,
                 fontSize: { xs: 14, md: 18, lg: 18 },
-                fontWeight: 500
+                fontWeight: 500,
               }}
             >
-              Contact us &rarr;
+              Write to us &rarr;
             </ContainedButton>
           </CardContent>
         </Card>
@@ -69,4 +78,3 @@ const NewsSection = () => {
 };
 
 export default NewsSection;
-

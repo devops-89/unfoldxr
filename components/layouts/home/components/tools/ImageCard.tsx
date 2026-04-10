@@ -39,12 +39,13 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontWeight: 700,
             fontSize: { xs: 18, md: 22 },
+            fontWeight: 700,
             color: card.titleColor || COLORS.WHITE,
-            lineHeight: {xs:"24px", md:"30px"},
             mb: 1,
-            letterSpacing:"0.52px",
+            textTransform: "uppercase",
+            lineHeight: "30px",
+            letterSpacing: "0.52px",
           }}
         >
           {card.title}
@@ -54,11 +55,10 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
           <Typography
             sx={{
               fontFamily: helvetica.style.fontFamily,
-              fontWeight: 400,
               fontSize: { xs: 14, md: 18 },
+              fontWeight: 400,
+              lineHeight: "26px",
               color: card.descriptionColor || "rgba(255, 255, 255, 0.8)",
-              lineHeight: { xs: "24px", md: "30px" },
-              letterSpacing: "0.52px",
             }}
           >
             {card.description}

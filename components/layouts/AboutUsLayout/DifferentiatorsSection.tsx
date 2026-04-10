@@ -56,7 +56,7 @@ const DifferentiatorsSection = () => {
                   <Box>
                     <Typography
                       sx={{
-                        fontSize: { xs: 22, md: 22},
+                        fontSize: { xs: 22, md: 22 },
                         fontWeight: 700,
                         lineHeight: "30px",
                         mb: 1,

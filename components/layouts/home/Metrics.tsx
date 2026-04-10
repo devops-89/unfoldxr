@@ -58,8 +58,8 @@ const Metrics = () => {
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 18, md: 20, lg: 22 },
                       fontWeight: 700,
-                      lineHeight:"30px",
-                      letterSpacing:"0.52px",
+                      lineHeight: "30px",
+                      letterSpacing: "0.52px",
                       color: "#000",
                       textTransform: "capitalize",
                     }}

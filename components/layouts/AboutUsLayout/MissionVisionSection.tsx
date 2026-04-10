@@ -105,44 +105,50 @@ const MissionVisionSection = () => {
         >
           {data.brandDna.map((item, idx) => (
             <Box key={idx} sx={{ flex: 1 }}>
-              <Box
-                sx={{
-                  height: "100%",
-                  bgcolor: COLORS.CARD_BG_DARK,
-                  color: COLORS.WHITE,
-                  borderRadius: "20px",
-                  p: { xs: 4, md: "25px 30px" },
-                  display: "flex",
-                  flexDirection: "column",
-                  minHeight: { xs: 220, md: 250 },
-                  justifyContent: "space-between",
-                  gap: { xs: 6, md: 2 },
-                  mb: { xs: 3, md: 0 },
-                }}
-              >
-                <Typography
+                <Box
                   sx={{
-                    fontSize: { xs: 16, md: 22 },
-                    color: COLORS.TEXT_GREY,
-                    lineHeight: { xs: 1.35, md: "30px" },
-                    fontFamily: helvetica.style.fontFamily,
-                    // textAlign: "justify",
+                    height: "100%",
+                    bgcolor: COLORS.PRIMARY_GREEN, // High contrast highlight
+                    color: COLORS.BLACK,
+                    borderRadius: "20px",
+                    p: { xs: 4, md: "35px 30px" },
+                    display: "flex",
+                    flexDirection: "column",
+                    minHeight: { xs: 240, md: 280 },
+                    justifyContent: "space-between",
+                    gap: { xs: 4, md: 2 },
+                    mb: { xs: 3, md: 0 },
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "translateY(-10px)",
+                      boxShadow: "0px 10px 40px rgba(0, 0, 0, 0.2)",
+                    },
                   }}
                 >
-                  {item.description}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: { xs: 24, md: 32 },
-                    fontWeight: 700,
-                    lineHeight: "36px",
-                    fontFamily: din.style.fontFamily,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {item.title}
-                </Typography>
-              </Box>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: 16, md: 18 },
+                      color: "rgba(0, 0, 0, 0.7)", // Semi-transparent black for description
+                      lineHeight: { xs: 1.35, md: "30px" },
+                      fontFamily: helvetica.style.fontFamily,
+                      fontWeight: 400,
+                    }}
+                  >
+                    {item.description}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: 26, md: 32 },
+                      fontWeight: 900,
+                      lineHeight: "1.2",
+                      fontFamily: din.style.fontFamily,
+                      textTransform: "uppercase",
+                      color: COLORS.BLACK,
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                </Box>
             </Box>
           ))}
         </Stack>

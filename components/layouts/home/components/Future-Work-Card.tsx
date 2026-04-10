@@ -46,7 +46,7 @@ const FutureWorkCard = ({
           fontSize: { xs: 16, md: 22 },
           fontWeight: 700,
           lineHeight: { xs: "24px", md: "30px" },
-          letterSpacing:"0.52px",
+          letterSpacing: "0.52px",
           textTransform: "uppercase",
           color: isActive ? COLORS.PRIMARY_GREEN : COLORS.WHITE,
           textAlign: "left",
@@ -58,10 +58,10 @@ const FutureWorkCard = ({
           component={"span"}
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 22   },
+            fontSize: { xs: 16, md: 22 },
             fontWeight: 400,
             lineHeight: { xs: "24px", md: "30px" },
-            letterSpacing:"0.52px",
+            letterSpacing: "0.52px",
             color: isActive ? COLORS.PRIMARY_GREEN : COLORS.WHITE,
             textTransform: "uppercase",
           }}

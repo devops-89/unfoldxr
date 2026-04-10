@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { useSearchParams } from "next/navigation";
 import ContactForm from "./components/ContactForm";
 import ShootUsEmail from "./components/ShootUsEmail";
 import GiveUsCall from "./components/GiveUsCall";
@@ -10,8 +11,30 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 
-const ContactFormSection = () => {
+// Main exported component with Suspense boundary
+export default function ContactFormSection() {
+  return (
+    <Suspense fallback={<Box sx={{ minHeight: '400px', bgcolor: '#fff' }} />}>
+      <ContactFormSectionContent />
+    </Suspense>
+  );
+}
+
+// Internal content component that uses searchParams
+const ContactFormSectionContent = () => {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState(0);
+
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+    if (tab === "email") {
+      setActiveTab(1);
+    } else if (tab === "call") {
+      setActiveTab(2);
+    } else if (tab === "form") {
+      setActiveTab(0);
+    }
+  }, [searchParams]);
 
   const tabs = [
     { label: "Submit a form", icon: <AssignmentTurnedInIcon sx={{ fontSize: 28 }} /> },
@@ -22,7 +45,6 @@ const ContactFormSection = () => {
   return (
     <Box sx={{ backgroundColor: "#FFFFFF", py: { xs: 6, md: 10 } }}>
       <Container maxWidth={false} sx={{ maxWidth: 1300 }}>
-        {/* OUTER #EEE CARD — wraps everything */}
         <Box
           sx={{
             backgroundColor: "#EEEEEE",
@@ -31,8 +53,6 @@ const ContactFormSection = () => {
           }}
         >
           <Grid container spacing={{ xs: 4, md: 8 }} alignItems="flex-start">
-
-            {/* LEFT: Heading */}
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 sx={{
@@ -50,9 +70,7 @@ const ContactFormSection = () => {
               </Typography>
             </Grid>
 
-            {/* RIGHT: Tabs + Content */}
             <Grid size={{ xs: 12, md: 7 }}>
-              {/* TABS HEADER */}
               <Stack
                 direction="row"
                 alignItems="center"
@@ -90,7 +108,6 @@ const ContactFormSection = () => {
                     </Typography>
                   </Box>
                 ))}
-                {/* Background divider line */}
                 <Box
                   sx={{
                     position: "absolute",
@@ -104,7 +121,6 @@ const ContactFormSection = () => {
                 />
               </Stack>
 
-              {/* TAB CONTENT */}
               <Box sx={{ mt: 1 }}>
                 {activeTab === 0 && (
                   <Box
@@ -114,7 +130,7 @@ const ContactFormSection = () => {
                       p: { xs: 3, md: 5 },
                     }}
                   >
-<ContactForm
+                    <ContactForm
                       formData={contactPage.contactFormSection.contactFormData}
                       note={contactPage.contactFormSection.note}
                     />
@@ -124,12 +140,9 @@ const ContactFormSection = () => {
                 {activeTab === 2 && <GiveUsCall />}
               </Box>
             </Grid>
-
           </Grid>
         </Box>
       </Container>
     </Box>
   );
 };
-
-export default ContactFormSection;

@@ -74,7 +74,7 @@ const Header = () => {
               zIndex: 100,
               backdropFilter: "blur(10px)",
               mt: { xs: 1, md: 3 },
-              width: { xs: "95%", md: "90%", lg: "80%" },
+              width: { xs: "95%", md: "90%", lg: "84%" },
               boxSizing: "border-box",
             }}
           >

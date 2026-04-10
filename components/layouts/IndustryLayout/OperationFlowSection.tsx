@@ -19,14 +19,16 @@ import FactCheckIcon from "@mui/icons-material/FactCheck";
 const phaseIcons = [
   <EventNoteIcon key="0" sx={{ fontSize: 20, color: "#000" }} />,
   <PrecisionManufacturingIcon key="1" sx={{ fontSize: 20, color: "#000" }} />,
-  <FactCheckIcon key="2" sx={{ fontSize: 20, color: "#000" }} />
+  <FactCheckIcon key="2" sx={{ fontSize: 20, color: "#000" }} />,
 ];
 
 const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
   const { openModal } = useDemoModal();
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 6, md: 13 } }}>
+    <Box
+      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 6, md: 13 } }}
+    >
       <Box
         sx={{
           width: { xs: "85%", md: "80%" },
@@ -112,7 +114,11 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                   {block.items.map((item) => (
                     <Box
                       key={item}
-                      sx={{ display: "flex", alignItems: "flex-start", gap: 1.5 }}
+                      sx={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 1.5,
+                      }}
                     >
                       <Typography
                         sx={{
@@ -144,7 +150,6 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
         </Grid>
 
         <Box sx={{ textAlign: "center", mt: { xs: 6, md: 8 } }}>
-
           <Button
             variant="contained"
             onClick={openModal}

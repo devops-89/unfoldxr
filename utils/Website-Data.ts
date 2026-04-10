@@ -399,7 +399,7 @@ export const contactPage={
 export const aboutPage = {
   herosection: {
     heading: "AN INTELLIGENT WORK \nPLATFORM BUILT FOR THE \nFRONTLINE.",
-    cta: "Schedule a demo",
+    cta: "Talk to UnfoldXR Expert",
   },
   introSection: {
     heading: "ABOUT UNFOLDXR",

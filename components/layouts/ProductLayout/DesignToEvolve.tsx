@@ -16,7 +16,7 @@ const DesignToEvolve = () => {
       sx={{
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
-        py: { xs: 8, md: 14 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Box
@@ -218,6 +218,8 @@ const DesignToEvolve = () => {
         {/* Device Image */}
         <Box
           sx={{
+            width: { xs: "90%", md: "70%" },
+            mx: "auto",
             mt: { xs: 6, md: 10 },
             borderRadius: { xs: 2.5, md: "24px" },
             overflow: "hidden",

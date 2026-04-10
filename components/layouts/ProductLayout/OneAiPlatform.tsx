@@ -33,10 +33,10 @@ const industries = [
     icon: <LocalGasStationRoundedIcon sx={{ fontSize: 18 }} />,
   },
   { label: "Aviation", icon: <FlightRoundedIcon sx={{ fontSize: 18 }} /> },
-  {
-    label: "Field Service Support",
-    icon: <SupportAgentRoundedIcon sx={{ fontSize: 18 }} />,
-  },
+  // {
+  //   label: "Field Service Support",
+  //   icon: <SupportAgentRoundedIcon sx={{ fontSize: 18 }} />,
+  // },
   { label: "Insurance", icon: <SecurityRoundedIcon sx={{ fontSize: 18 }} /> },
   { label: "Hospitality", icon: <HotelRoundedIcon sx={{ fontSize: 18 }} /> },
 ];
@@ -53,8 +53,8 @@ const OneAiPlatform = () => {
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 3, md: "24px" },
-            px: { xs: 3, md: 8 },
-            py: { xs: 6, md: 10 },
+            px: { xs: 3, md:6 },
+            py: { xs: 6, md: 8 },
           }}
         >
           <Typography

@@ -13,19 +13,30 @@ const ExistingPartnersChip: React.FC<PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        bgcolor: "#FFFFFF",
+        borderRadius: "16px",
+        height: "100px",
+        width: "100%",
+        px: 3,
+        py: 2,
+        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.05)",
+        transition: "all 0.3s ease",
+        "&:hover": {
+          transform: "translateY(-5px)",
+          boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
+        },
       }}
     >
-      <Image
-        src={image}
-        alt="partner"
-        style={{
-          height: "40px",
-          width: "auto",
-          maxWidth: "100%",
-          maxHeight: "40px",
-          objectFit: "contain",
-        }}
-      />
+      <Box sx={{ position: "relative", width: "100%", height: "40px" }}>
+        <Image
+          src={image}
+          alt="partner"
+          fill
+          style={{
+            objectFit: "contain",
+          }}
+        />
+      </Box>
     </Box>
   );
 };

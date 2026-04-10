@@ -40,7 +40,7 @@ const WorkForce = () => {
             >
               {homePage.workforce.heading}
             </Typography>
- 
+
             {/* Description */}
             <Typography
               sx={{
@@ -50,7 +50,7 @@ const WorkForce = () => {
                 fontStyle: "normal",
                 fontWeight: 400,
                 lineHeight: { xs: 1.4, md: "30px" },
-                letterSpacing:"0.52px",
+                letterSpacing: "0.52px",
                 mt: { xs: 2, md: 3 },
                 textAlign: { xs: "center", md: "left" },
               }}
@@ -59,17 +59,13 @@ const WorkForce = () => {
             </Typography>
 
             {/* Cards */}
-            <Grid
-              container
-              sx={{ mt: { xs: 4, md: 10 } }} 
-              spacing={4}
-            >
+            <Grid container sx={{ mt: { xs: 4, md: 10 } }} spacing={4}>
               {homePage.workforce.data.map((val, i) => (
                 <Grid
-                  size={{ xs: 12, sm: 6, md: 4 }} 
+                  size={{ xs: 12, sm: 6, md: 4 }}
                   key={i}
                   sx={{
-                    mt: { xs: 0, md: 0 }, 
+                    mt: { xs: 0, md: 0 },
                   }}
                 >
                   <WorkforceCard

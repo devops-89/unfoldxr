@@ -21,7 +21,7 @@ const FromAssist = () => {
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 4, md: "24px" },
-            py: { xs: 8, md: 10 },
+            py: { xs: 8, md: 8 },
             px: { xs: 3, md: 8 },
             textAlign: "center",
             position: "relative",
@@ -114,7 +114,7 @@ const FromAssist = () => {
               >
                 {data.cta1} <ArrowForwardRoundedIcon />
               </Button>
-              <Typography
+              {/* <Typography
                 onClick={openModal}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
@@ -128,7 +128,7 @@ const FromAssist = () => {
                 }}
               >
                 {data.cta2}
-              </Typography>
+              </Typography> */}
             </Box>
           </Box>
         </Box>

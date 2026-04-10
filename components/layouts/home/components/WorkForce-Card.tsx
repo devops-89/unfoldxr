@@ -41,8 +41,9 @@ const WorkforceCard = ({ img, heading, description }: WORKFORCE_CARD_PROPS) => {
           fontSize: { xs: 14, md: 18 },
           lineHeight: { xs: 1.4, md: "30px" },
           textAlign: "center",
-          letterSpacing:"0.52px",
-        whiteSpace:"pre-line",      }}
+          letterSpacing: "0.52px",
+          whiteSpace: "pre-line",
+        }}
       >
         {description}
       </Typography>

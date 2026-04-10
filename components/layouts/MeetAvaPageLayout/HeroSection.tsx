@@ -9,7 +9,7 @@ const HeroSection = () => {
     <Box
       sx={{
         bgcolor: COLORS.BLACK,
-        minHeight: { md: "95vh" },
+        minHeight: { md: "90vh" },
         display: "flex",
         alignItems: "center",
         pt: { xs: 14, md: 12 },

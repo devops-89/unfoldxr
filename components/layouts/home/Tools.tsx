@@ -29,11 +29,17 @@ const Tools = () => {
         py: { xs: 8, md: 12 },
       }}
     >
-      <Container maxWidth="xl">
+      <Box
+        sx={{
+          width: { xs: "95%", md: "95%", lg: "90%" },
+          maxWidth: 1600,
+          mx: "auto",
+        }}
+      >
         <Box
           sx={{
             py: { xs: 4, md: 10 },
-            px: { xs: 4, sm: 6, md: 8 },
+            px: { xs: 4, sm: 6, md: 10 },
             bgcolor: COLORS.WHITE,
             borderRadius: "45px",
           }}
@@ -47,7 +53,7 @@ const Tools = () => {
                 fontSize: { xs: 28, md: 48 },
                 fontWeight: 900,
                 textTransform: "uppercase",
-                lineHeight: {xs:"38px", md:"52px"},
+                lineHeight: { xs: "38px", md: "52px" },
                 color: COLORS.BLACK,
                 textAlign: { xs: "center", md: "left" },
                 display: "block",
@@ -69,7 +75,7 @@ const Tools = () => {
                   fontSize: { xs: 28, md: 48 },
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  lineHeight: {xs:"38px", md:"52px"},
+                  lineHeight: { xs: "38px", md: "52px" },
                   color: COLORS.BLACK,
                   textAlign: { xs: "center", md: "left" },
                   whiteSpace: { xs: "normal", md: "nowrap" },
@@ -96,7 +102,7 @@ const Tools = () => {
                   fontWeight: 700,
                   fontSize: { xs: 16, md: 22 },
                   lineHeight: { xs: "24px", md: "30px" },
-                  letterSpacing:"0.52px",
+                  letterSpacing: "0.52px",
                   color: COLORS.BLACK,
                   textAlign: { xs: "center", md: "right" },
                   whiteSpace: "pre-line",
@@ -116,15 +122,18 @@ const Tools = () => {
             sx={{ mt: { xs: 4, md: 8 } }}
           >
             <Grid size={{ xs: 12, md: 6 }}>
-              <ToolsLeftSection {...homePage.tools.leftSection} onCtaClick={openModal} />
+              <ToolsLeftSection
+                {...homePage.tools.leftSection}
+                onCtaClick={openModal}
+              />
             </Grid>
 
-            <Grid size={{ xs: 12, md: 6 } }>
-              <ToolsRightSection {...homePage.tools.rightSection}  />
+            <Grid size={{ xs: 12, md: 6 }}>
+              <ToolsRightSection {...homePage.tools.rightSection} />
             </Grid>
           </Grid>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

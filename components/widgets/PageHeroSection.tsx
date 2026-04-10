@@ -168,7 +168,9 @@ const PageHeroSection = ({
                 href={primaryBtn.href}
                 onClick={
                   primaryBtn.onClick ||
-                  (primaryBtn.label.toLowerCase().includes("demo") ? openModal : undefined)
+                  (primaryBtn.label.toLowerCase().includes("demo")
+                    ? openModal
+                    : undefined)
                 }
                 sx={{
                   bgcolor: COLORS.PRIMARY_GREEN,
@@ -192,7 +194,9 @@ const PageHeroSection = ({
                 href={secondaryBtn.href}
                 onClick={
                   secondaryBtn.onClick ||
-                  (secondaryBtn.label.toLowerCase().includes("demo") ? openModal : undefined)
+                  (secondaryBtn.label.toLowerCase().includes("demo")
+                    ? openModal
+                    : undefined)
                 }
                 sx={{
                   borderColor: COLORS.PRIMARY_GREEN,

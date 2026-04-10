@@ -22,17 +22,17 @@ const MetricsSection = () => {
           px: { xs: 0, md: 3 }, 
         }}
       >
-        <Grid container spacing={8} alignItems="flex-start">
+        <Grid container spacing={7} alignItems="flex-start">
 
           {/* LEFT SIDE */}
-          <Grid size={{xs:12,md:6}} sx={{ textAlign: { xs: "center", md: "left" } }}>
+          <Grid size={{xs:12,md:5}} sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
               sx={{
-                fontSize: { xs: 28, md: 48 },
+                fontSize: { xs: 32, md: 48 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.BLACK,
-                lineHeight: "52px",
+                lineHeight: { xs: 1.1, md: "52px" },
               }}
             >
               {partnersPage.metricsSection.heading}
@@ -41,10 +41,10 @@ const MetricsSection = () => {
             <Typography
               sx={{
                 mt: 4,
-                fontSize: { xs: 16, md: 22 },
+                fontSize: { xs: 18, md: 22 },
                 color: COLORS.BLACK,
                 lineHeight: "30px",
-                maxWidth: { xs: "400px", md: "100%" },
+                maxWidth: { xs: "500px", md: "100%" },
                 mx: { xs: "auto", md: 0 },
               }}
             >
@@ -53,8 +53,8 @@ const MetricsSection = () => {
           </Grid>
 
           {/* RIGHT SIDE (CARDS) */}
-          <Grid size={{xs:12,md:6}} >
-            <Grid container spacing={6}>
+          <Grid size={{xs:12,md:7}} >
+            <Grid container spacing={{ xs: 5, md: 6 }}>
               {partnersPage.metricsSection.metrics_card_data.map((card, index) => (
                 <Grid size={{...card.gridSize}} key={index}>
                   <MetricCard

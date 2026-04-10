@@ -53,7 +53,13 @@ const DevicesCard = ({
         />
       )}
 
-      <Box sx={{ position: "relative", zIndex: 1, maxWidth: { xs: "100%", md: gridSize === 5 ? "100%" : "60%" } }}>
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 1,
+          maxWidth: { xs: "100%", md: gridSize === 5 ? "100%" : "60%" },
+        }}
+      >
         {/* Heading */}
         <Typography
           sx={{
@@ -63,7 +69,7 @@ const DevicesCard = ({
             color: textColor,
             textTransform: "uppercase",
             lineHeight: { xs: "26px", md: "30px" },
-            letterSpacing:"0.52px",
+            letterSpacing: "0.52px",
           }}
         >
           {heading}
@@ -80,7 +86,7 @@ const DevicesCard = ({
             fontSize: { xs: 13, md: 18 },
             fontWeight: 400,
             lineHeight: { xs: "20px", md: "30px" },
-            letterSpacing:"0.52px",
+            letterSpacing: "0.52px",
           }}
         >
           {description}

@@ -26,7 +26,7 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
           fontFamily: din.style.fontFamily,
           fontSize: { xs: 40, md: 48 },
           fontWeight: 900,
-          lineHeight:"52px",
+          lineHeight: "52px",
           flexShrink: 0,
           minWidth: { xs: 50, md: 90 },
         }}
@@ -43,7 +43,7 @@ const OutcomeCard = ({ number, label }: OUTCOME_CARD_PROPS) => {
           lineHeight: { xs: "20px", md: "30px" },
           color: COLORS.WHITE,
           textTransform: "uppercase",
-          letterSpacing:"0.52px",
+          letterSpacing: "0.52px",
         }}
       >
         {label}

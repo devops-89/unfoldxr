@@ -63,10 +63,7 @@ const OutcomesSection = ({ data }: Props) => {
             sx={{ position: "relative" }}
           >
             {/* Left Side: Headline with Highlight */}
-            <Grid
-              size={{ xs: 12, md: 7}}
-              sx={{ zIndex: 2 }}
-            >
+            <Grid size={{ xs: 12, md: 7 }} sx={{ zIndex: 2 }}>
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,

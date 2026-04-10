@@ -23,9 +23,9 @@ const AboutUnfoldxr = () => {
                 sx={{
                   fontFamily: din.style.fontFamily,
                   fontSize: { xs: 36, md: 54 },
-                  lineHeight: { xs: 1.05, md: "92px" },
-                  textTransform: "uppercase",
                   fontWeight: 900,
+                  textTransform: "uppercase",
+                  lineHeight: { xs: 1.05, md: "92px" },
                 }}
               >
                 {homePage.aboutUnfoldxr.heading}
@@ -52,6 +52,7 @@ const AboutUnfoldxr = () => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 24 },
+                    fontWeight: 400,
                     lineHeight: { xs: 1.75, md: "43px" },
                     mb: { xs: 2, md: 3 },
                     textAlign: "justify",
@@ -63,10 +64,11 @@ const AboutUnfoldxr = () => {
 
               <Typography
                 sx={{
-                  fontFamily: helvetica.style.fontFamily,
+                  fontFamily: din.style.fontFamily,
                   fontSize: { xs: 20, md: 28 },
-                  lineHeight: { xs: 1.5, md: "48px" },
                   fontWeight: 700,
+                  textTransform: "uppercase",
+                  lineHeight: { xs: 1.5, md: "48px" },
                   mt: { xs: 2, md: 4 },
                 }}
               >

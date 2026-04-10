@@ -87,7 +87,7 @@ const SupportYourOperations = () => {
 
         <Box
           sx={{
-            width: { xs: "90%", md: "80%" },
+            width: { xs: "90%", md: "65%" },
             mx: "auto",
             position: "relative",
             zIndex: 1,

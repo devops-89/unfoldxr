@@ -83,7 +83,7 @@ export const HEADER_LINKS = [
   //   url: "#",
   // },
   {
-    label: "About us",
+    label: "About Us",
     url: "#",
     subLinks: [
       { label: "About UnfoldXR", url: "/about-us" },
@@ -162,7 +162,7 @@ export const FOOTER_COLUMNS: {
     ],
   },
   {
-    title: "About us",
+    title: "About Us",
     links: [
       // { label: "Mission, Vision, Leadership", url: "/about-us" },
       // { label: "Brand DNA", url: "/about-us" },
@@ -432,21 +432,6 @@ export const partnersExistingPartnersData: PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS
     },
     {
       image: existingPartner6,
-    },
-    {
-      image: existingPartner1,
-    },
-    {
-      image: existingPartner2,
-    },
-    {
-      image: existingPartner3,
-    },
-    {
-      image: existingPartner4,
-    },
-    {
-      image: existingPartner5,
     },
   ];
 

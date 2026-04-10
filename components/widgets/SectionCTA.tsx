@@ -36,8 +36,8 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
     <Box
       sx={{
         bgcolor: COLORS.BLACK,
-        py: { xs: 8, md: 15 },
-        pb: isAbout ? { xs: 8, md: 15 } : undefined,
+        py: { xs: 6, md: 8 },
+        pb: isAbout ? { xs: 6, md: 8 } : undefined,
         ...sx,
       }}
     >
@@ -58,8 +58,8 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 : "none",
             width: { xs: "95%", md: "90%", lg: "80%" },
             mx: "auto",
-            py: { xs: 4, md: isAbout ? "80px" : 10 },
-            px: { xs: 2, md: 8 },
+            py: { xs: 4, md: isAbout ? "60px" : 6 },
+            px: { xs: 3, md: 5 },
             textAlign: "center",
             position: "relative",
             overflow: "hidden",
@@ -135,7 +135,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
             <Button
               onClick={onBtnClick}
               sx={{
-                mt: isAbout ? 0 : 6,
+                mt: isAbout ? 0 : 4,
                 bgcolor: COLORS.PRIMARY_GREEN,
                 color: COLORS.BLACK,
                 borderRadius: 99,
