@@ -30,16 +30,24 @@ const BusinessResultsSection = ({ data }: Props) => {
           Business Results You Can Measure
         </Typography>
 
-        <Grid container rowSpacing={{ xs: 4, md:3 }} columnSpacing={3}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+            gap: { xs: 4, md: 3 },
+            gridAutoRows: "1fr",
+          }}
+        >
           {data.items.map((item, index) => (
-            <Grid key={index} size={{ xs: 12, md: 4 }}>
               <Box
+                key={index}
                 sx={{
                   bgcolor: COLORS.CHARCOAL,
                   color: COLORS.WHITE,
                   borderRadius: "28px",
-                  p: { xs: 4, md: 5 },
+                  p: { xs: 2.5, md: 3.5 },
                   height: "100%",
+                  width: "100%",
                   display: "flex",
                   flexDirection: "column",
                   transition: "transform 0.3s ease",
@@ -54,6 +62,7 @@ const BusinessResultsSection = ({ data }: Props) => {
                     textTransform: "uppercase",
                     lineHeight: "30px",
                     letterSpacing: "0.52px",
+                    color: COLORS.PRIMARY_GREEN,
                     mb: 2.5,
                   }}
                 >
@@ -66,33 +75,15 @@ const BusinessResultsSection = ({ data }: Props) => {
                     // lineHeight: 1.5,
                     color: COLORS.WHITE_ALPHA_80,
                     letterSpacing: "0.52px",
-                    mb: 5,
+                    mb: 0,
                   }}
                 >
                   {item.description}
                 </Typography>
-                <Box sx={{ mt: "auto" }}>
-                  <Button
-                    sx={{
-                      bgcolor: COLORS.PRIMARY_GREEN,
-                      color: COLORS.BLACK,
-                      borderRadius: 99,
-                      px: { xs: 2.5, md: 3 },
-                      py: 1.2,
-                      fontSize: { xs: 14, md: 18, lg: 18 },
-                      fontWeight: 600,
-                      fontFamily: inter.style.fontFamily,
-                      textTransform: "none",
-                      "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
-                    }}
-                  >
-                    Learn more
-                  </Button>
-                </Box>
+
               </Box>
-            </Grid>
           ))}
-        </Grid>
+        </Box>
       </Box>
     </Box>
   );

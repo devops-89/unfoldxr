@@ -244,58 +244,126 @@ const InterventionSection = ({ data }: Props) => {
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                textTransform: "uppercase",
-                fontSize: { xs: 28, md: 48 },
-                lineHeight: "52px",
+                fontSize: { xs: 32, md: 48 },
+                lineHeight: 1.1,
                 color: COLORS.BLACK,
+                textTransform: "uppercase",
               }}
             >
               {data.title}
             </Typography>
           </Grid>
 
-          {/* Right Side: Descriptions */}
+          {/* Right Side: Description */}
           <Grid size={{ xs: 12, md: 7 }}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 4,
+              }}
+            >
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 22 },
-                  lineHeight: "30px",
-                  letterSpacing: "0.52px",
+                  fontSize: { xs: 16, md: 20 },
+                  lineHeight: 1.5,
                   color: COLORS.BLACK,
+                  textAlign: "justify",
                 }}
               >
                 {data.description1}
               </Typography>
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 22 },
-                  lineHeight: 1.5,
-                  color: COLORS.BLACK,
-                }}
-              >
-                {data.description2}
-              </Typography>
+              {data.description2 && (
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: { xs: 16, md: 20 },
+                    lineHeight: 1.5,
+                    color: COLORS.BLACK,
+                    textAlign: "justify",
+                  }}
+                >
+                  {data.description2}
+                </Typography>
+              )}
             </Box>
           </Grid>
         </Grid>
 
-        {/* Third Description paragraph */}
-        {data.description3 && (
-          <Typography
-            sx={{
-              mt: 8,
-              fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 16, md: 22 },
-              lineHeight: 1.5,
-              color: COLORS.BLACK,
-              maxWidth: "100%",
-            }}
-          >
-            {data.description3}
-          </Typography>
+        {/* Third Description paragraph or Variants Cards */}
+        {data.cards && data.cards.length > 0 ? (
+          <Box sx={{ mt: 8, mb: 10 }}>
+            {data.description3 && (
+              <Typography
+                sx={{
+                  fontFamily: helvetica.style.fontFamily,
+                  fontSize: { xs: 16, md: 20 },
+                  lineHeight: 1.5,
+                  color: COLORS.BLACK,
+                  mb: 5,
+                  textAlign: "justify",
+                }}
+              >
+                {data.description3}
+              </Typography>
+            )}
+            <Grid container spacing={4} justifyContent="center">
+              {data.cards.map((card, index) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                  <Box
+                    sx={{
+                      height: "100%",
+                      minHeight: { xs: 80, md: 120 },
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: 4,
+                      borderRadius: "20px",
+                      bgcolor: "transparent",
+                      border: "1px solid rgba(0, 0, 0, 0.12)",
+                      transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                      cursor: "default",
+                      "&:hover": {
+                        borderColor: COLORS.PRIMARY_GREEN,
+                        transform: "translateY(-5px)",
+                        boxShadow: `0 10px 30px rgba(0,0,0,0.05)`,
+                      },
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: din.style.fontFamily,
+                        fontWeight: 900,
+                        fontSize: { xs: 16, md: 22 },
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        color: COLORS.BLACK,
+                        textAlign: "center",
+                      }}
+                    >
+                      {card.label}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        ) : (
+          data.description3 && (
+            <Typography
+              sx={{
+                mt: 8,
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: { xs: 16, md: 22 },
+                lineHeight: 1.5,
+                color: COLORS.BLACK,
+                maxWidth: "100%",
+              }}
+            >
+              {data.description3}
+            </Typography>
+          )
         )}
       </Box>
 
@@ -328,7 +396,7 @@ const InterventionSection = ({ data }: Props) => {
           sx={{
             position: "relative",
             zIndex: 1,
-            width: { xs: "95%", md: "80%" },
+            width: { xs: "95%", md: "70%", lg: "80%" },
             mx: "auto",
             display: "flex",
             justifyContent: "center",
@@ -340,7 +408,7 @@ const InterventionSection = ({ data }: Props) => {
             alt="Tablet Intervention"
             sx={{
               width: "100%",
-              maxWidth: 1200,
+              maxWidth: 950,
               height: "auto",
               display: "block",
               borderRadius: { xs: 4, md: "24px" },
