@@ -19,7 +19,7 @@ export interface UseCaseData {
     description4?: string;
     image?: string;
     layout?: "default" | "side-by-side";
-    cards?: { label: string; image: string }[];
+    cards?: { label: string; image: string; description?: string }[];
   };
   capabilities: {
     title: string;
@@ -78,10 +78,24 @@ export const useCasesData: Record<string, UseCaseData> = {
       description2:
         "Teams learn by doing, follow standardised guidance, and access critical knowledge in real time through AI Assistant, AVA or remote experts.",
       description3:
-        "With three versions designed for different stages of operational maturity — UnfoldXR Augment, UnfoldXR Empower, and UnfoldXR Edge — the platform scales with your organization.",
+        "With three versions designed for different stages of operational maturity —",
       description4:
         "Start with structured digital guidance and grow into intelligent, AI-driven workforce enablement when you are ready.",
       image: "/images/usecase/TabImage.png",
+      cards: [
+        {
+          label: "UNFOLDXR AUGMENT",
+          image: "/images/usecase/Inspection/Intervention/Augment1.png",
+        },
+        {
+          label: "UNFOLDXR EMPOWER",
+          image: "/images/usecase/Inspection/Intervention/Empower.png",
+        },
+        {
+          label: "UNFOLDXR EDGE",
+          image: "/images/usecase/Inspection/Intervention/Edge.png",
+        },
+      ],
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER TRAINING, ONBOARDING & KNOWLEDGE CAPTURE",
@@ -230,21 +244,24 @@ export const useCasesData: Record<string, UseCaseData> = {
       description2:
         "Evidence is captured in real time, reports are generated automatically, and deviations are identified instantly — helping teams stay compliant and audit-ready at all times.",
       description3:
-        "With three versions designed for different stages of operational maturity — UnfoldXR Augment, UnfoldXR Empower, and UnfoldXR Edge —",
+        "With three versions designed for different stages of operational maturity -",
       description4:
         "organizations can start with standardized digital inspections and scale into AI-driven predictive quality and compliance intelligence.",
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
           image: "/images/usecase/Inspection/Intervention/Augment1.png",
+          description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
           image: "/images/usecase/Inspection/Intervention/Empower.png",
+          description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
           image: "/images/usecase/Inspection/Intervention/Edge.png",
+          description: "Define the modern workflow with AI-AR tech",
         },
       ],
       image: "/images/Product/TabImage.png",
@@ -409,21 +426,24 @@ export const useCasesData: Record<string, UseCaseData> = {
         "With UnfoldXR, AI and augmented reality touches the 80% workforce at the frontlines who are still not receiving the technological support they need to augment their productivity.",
       description2: "Coordination becomes simpler. Tasks are executed with higher accuracy. Work stays consistent and reliable across sites, shifts, and teams.",
       description3:
-        "With three versions designed for different stages of operational maturity - UnfoldXR Augment, UnfoldXR Empower, UnfoldXR Edge - we scale with your requirements.",
+        "With three versions designed for different stages of operational maturity —",
       description4:
         "Start where you are today, knowing the platform is ready to grow with you from day one.",
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
           image: "/images/usecase/Inspection/Intervention/Augment1.png",
+          description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
           image: "/images/usecase/Inspection/Intervention/Empower.png",
+          description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
           image: "/images/usecase/Inspection/Intervention/Edge.png",
+          description: "Define the modern workflow with AI-AR tech",
         },
       ],
       image: "/images/usecase/Repair/Repair.png",
@@ -482,7 +502,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "Reduced Unplanned Downtime",
-          description: "Smart CMMS integration routes tickets with near 100% accuracy, while digital machine profiles and predictive alerts help prevent 25–30% of unexpected failures.",
+          description: "Smart CMMS integration routes tickets with near 100% accuracy, while digital machine profiles and predictive alerts help prevent 30% of unexpected failures.",
         },
         {
           title: "Higher First-Time Fix Rates",
@@ -490,7 +510,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         },
         {
           title: "Faster Maintenance Turnaround",
-          description: "Live AR expert support cuts troubleshooting time by 40–60%, accelerating issue resolution and restoring operations faster.",
+          description: "Live AR expert support cuts troubleshooting time by 50%, accelerating issue resolution and restoring operations faster.",
         },
         {
           title: "Lower Dependency On On-Site Experts",
@@ -502,7 +522,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         },
         {
           title: "Better Utilisation Of Skilled Technicians",
-          description: "AI productivity insights improve technician efficiency by 20–30%, ensuring the right skills are applied where they create the most value.",
+          description: "AI productivity insights improve technician efficiency by 30%, ensuring the right skills are applied where they create the most value.",
         },
       ],
     },
@@ -577,14 +597,17 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           label: "UNFOLDXR AUGMENT",
           image: "/images/usecase/Inspection/Intervention/Augment1.png",
+          description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
           image: "/images/usecase/Inspection/Intervention/Empower.png",
+          description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
           image: "/images/usecase/Inspection/Intervention/Edge.png",
+          description: "Define the modern workflow with AI-AR tech",
         },
       ],
       image: "/images/usecase/FieldInspection/field.png",
