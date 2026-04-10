@@ -266,9 +266,8 @@ const InterventionSection = ({ data }: Props) => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 22 },
-                  lineHeight: "30px",
-                  letterSpacing: "0.52px",
+                  fontSize: { xs: 16, md: 20 },
+                  lineHeight: 1.5,
                   color: COLORS.BLACK,
                   textAlign: "justify",
                 }}
