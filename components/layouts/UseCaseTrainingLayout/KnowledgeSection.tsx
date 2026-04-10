@@ -16,7 +16,7 @@ const KnowledgeSection = ({ data }: Props) => {
         sx={{
           bgcolor: COLORS.BLACK,
           color: COLORS.WHITE,
-          py: { xs: 8, md: 10 },
+          py: { xs: 4, md: 6 },
         }}
       >
         <Box
@@ -34,8 +34,8 @@ const KnowledgeSection = ({ data }: Props) => {
                   fontFamily: din.style.fontFamily,
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  fontSize: { xs: 30, md: 48 },
-                  lineHeight: 1.1,
+                  fontSize: { xs: 26, md: 36 },
+                  lineHeight: "42px",
                   maxWidth: 800,
                   mb: { xs: 2, md: 2 },
                 }}
@@ -67,7 +67,7 @@ const KnowledgeSection = ({ data }: Props) => {
           {data.footerText && (
             <Typography
               sx={{
-                mt: { xs: 4, md: 8 },
+                mt: { xs: 4, md: 6 },
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 17, md: 18 },
                 lineHeight: "28px",
@@ -87,7 +87,7 @@ const KnowledgeSection = ({ data }: Props) => {
       sx={{
         bgcolor: COLORS.BLACK,
         color: COLORS.WHITE,
-        py: { xs: 10, md: 20 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Box
@@ -105,8 +105,8 @@ const KnowledgeSection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 30, md: 48 },
-                lineHeight: "52px",
+                fontSize: { xs: 26, md: 36 },
+                lineHeight: "44px",
                 maxWidth: 600,
               }}
             >
@@ -135,8 +135,8 @@ const KnowledgeSection = ({ data }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 17, md: 22 },
-                      lineHeight: "30px",
+                      fontSize: { xs: 16, md: 18 },
+                      lineHeight: "28px",
                       letterSpacing: "0.52px",
                       color: COLORS.WHITE,
                     }}
@@ -152,10 +152,10 @@ const KnowledgeSection = ({ data }: Props) => {
         {data.footerText && (
           <Typography
             sx={{
-              mt: { xs: 6, md: 10 },
+              mt: { xs: 6, md: 6 },
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 17, md: 22 },
-              lineHeight: 1.5,
+              fontSize: { xs: 16, md: 18 },
+              lineHeight: "28px",
               color: COLORS.WHITE,
             }}
           >

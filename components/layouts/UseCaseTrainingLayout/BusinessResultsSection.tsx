@@ -8,7 +8,7 @@ interface Props {
 }
 const BusinessResultsSection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
+    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
       <Box
         sx={{
           width: { xs: "95%", md: "80%" },
@@ -21,9 +21,9 @@ const BusinessResultsSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 48 },
-            lineHeight: "52px",
-            mb: { xs: 6, md: 8 },
+            fontSize: { xs: 28, md: 36 },
+            lineHeight: "42px",
+            mb: { xs: 6, md: 6 },
             maxWidth: 900,
           }}
         >
@@ -58,9 +58,9 @@ const BusinessResultsSection = ({ data }: Props) => {
                   sx={{
                     fontFamily: inter.style.fontFamily,
                     fontWeight: 800,
-                    fontSize: { xs: 20, md: 22 },
+                    fontSize: { xs: 20, md: 18 },
                     textTransform: "uppercase",
-                    lineHeight: "30px",
+                    lineHeight: "24px",
                     letterSpacing: "0.52px",
                     color: COLORS.PRIMARY_GREEN,
                     mb: 2.5,
@@ -71,11 +71,11 @@ const BusinessResultsSection = ({ data }: Props) => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 14, md: 18 },
-                    // lineHeight: 1.5,
+                    fontSize: { xs: 14, md: 16 },
+                    lineHeight: "24px",
                     color: COLORS.WHITE_ALPHA_80,
                     letterSpacing: "0.52px",
-                    mb: 0,
+                    mb: 2
                   }}
                 >
                   {item.description}

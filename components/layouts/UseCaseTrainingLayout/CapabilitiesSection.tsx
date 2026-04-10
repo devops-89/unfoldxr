@@ -22,7 +22,7 @@ const CapabilitiesSection = ({ data }: Props) => {
         sx={{
           bgcolor: COLORS.BLACK,
           color: COLORS.WHITE,
-          py: { xs: 8, md: 20 },
+          py: { xs: 8, md: 10 },
           position: "relative",
           overflow: "hidden",
         }}
@@ -86,9 +86,9 @@ const CapabilitiesSection = ({ data }: Props) => {
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
               textTransform: "uppercase",
-              fontSize: { xs: 28, md: 54 },
-              lineHeight: 1.1,
-              mb: { xs: 8, md: 12 },
+              fontSize: { xs: 28, md: 36 },
+              lineHeight: "42px",
+              mb: { xs: 8, md: 8 },
               maxWidth: 1000,
             }}
           >
@@ -129,9 +129,9 @@ const CapabilitiesSection = ({ data }: Props) => {
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    fontSize: { xs: 18, md: 22 },
+                    fontSize: { xs: 18, md: 18 },
                     color: COLORS.PRIMARY_GREEN,
-                    lineHeight: 1.2,
+                    lineHeight: "24px",
                   }}
                 >
                   {item.title}
@@ -140,7 +140,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 15, md: 16 },
-                    lineHeight: 1.5,
+                    lineHeight: "24px",
                     color: COLORS.TEXT_GREY,
                   }}
                 >
@@ -153,7 +153,7 @@ const CapabilitiesSection = ({ data }: Props) => {
           {/* Footer CTA */}
           <Box
             sx={{
-              mt: { xs: 10, md: 12 },
+              mt: { xs: 6, md: 8 },
               display: "flex",
               justifyContent: "center",
             }}
@@ -167,7 +167,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                 py: 1.2,
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: 14, md: 18, lg: 20 },
+                fontSize: { xs: 14, md: 18, lg: 18 },
                 textTransform: "none",
                 display: "flex",
                 alignItems: "center",
@@ -189,7 +189,7 @@ const CapabilitiesSection = ({ data }: Props) => {
       sx={{
         bgcolor: COLORS.BLACK,
         color: COLORS.WHITE,
-        py: { xs: 8, md: 20 },
+        py: { xs: 8, md: 8 },
         position: "relative",
         overflow: "hidden",
       }}
@@ -252,10 +252,10 @@ const CapabilitiesSection = ({ data }: Props) => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 48 },
-            lineHeight: "52px",
-            mb: { xs: 8, md: 15 },
-            maxWidth: 1000,
+            fontSize: { xs: 28, md: 36 },
+            lineHeight: "42px",
+            mb: { xs: 2, md: 4 },
+            maxWidth: 900,
           }}
         >
           {data.title}
@@ -268,7 +268,7 @@ const CapabilitiesSection = ({ data }: Props) => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: { xs: 2.5, md: 1 },
+                gap: { xs: 2.5, md: 0 },
                 position: "relative",
               }}
             >
@@ -282,7 +282,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                   }}
                 >
                   {/* Header Pill Column */}
-                  <Box sx={{ flex: 1, py: activeItem === index ? 1.5 : 0.8 }}>
+                  <Box sx={{ flex: 1, py: activeItem === index ? 1 : 0.8 }}>
                     <Box
                       onClick={() => setActiveItem(index)}
                       sx={{
@@ -292,7 +292,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                             : "1px solid transparent",
                         borderRadius: 99,
                         px: { xs: 3, md: 4 },
-                        py: activeItem === index ? 1.8 : 0.8,
+                        py: activeItem === index ? 1.5 : 0.6,
                         width: "fit-content",
                         cursor: "pointer",
                         opacity: activeItem === index ? 1 : 0.5,
@@ -314,9 +314,9 @@ const CapabilitiesSection = ({ data }: Props) => {
                               : COLORS.WHITE,
                           textTransform: "uppercase",
                           fontFamily: helvetica.style.fontFamily,
-                          fontSize: { xs: 15, md: 18 },
+                          fontSize: { xs: 15, md: 16 },
                           fontWeight: 900,
-                          lineHeight: "30px",
+                          lineHeight: "17px",
                           letterSpacing: "0.02em",
                         }}
                       >
@@ -429,8 +429,8 @@ const CapabilitiesSection = ({ data }: Props) => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 18, md: 22 },
-                  lineHeight: "30px",
+                  fontSize: { xs: 18, md: 16 },
+                  lineHeight: "24px",
                   letterSpacing: "0.52px",
                   color: COLORS.WHITE,
                   fontWeight: 500,
@@ -444,10 +444,9 @@ const CapabilitiesSection = ({ data }: Props) => {
           </Grid>
         </Grid>
 
-        {/* Footer CTA */}
-        <Box
-          sx={{
-            mt: { xs: 10, md: 15 },
+          <Box
+            sx={{
+              mt: { xs: 6, md: 8 },
             display: "flex",
             justifyContent: "center",
           }}

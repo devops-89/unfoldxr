@@ -533,8 +533,8 @@ export const useCasesData: Record<string, UseCaseData> = {
         { label: "AUTOMOTIVE", img: "/images/banner/homePage/ai-industry/automotive.png" },
         { label: "OIL & GAS", img: "/images/banner/homePage/ai-industry/oil_gas.png" },
         { label: "HEALTHCARE", img: "/images/banner/homePage/ai-industry/healthcare.png" },
-        { label: "FIELD SERVICE SUPPORT", img: "/images/banner/homePage/ai-industry/logistics.png" },
         { label: "AVIATION (MRO)", img: "/images/banner/homePage/ai-industry/aviation.png" },
+        { label: "MARINE", img: "" }, // Will fallback to icon in IndustrySection
         { label: "CONSTRUCTION", img: "/images/banner/homePage/ai-industry/construction.png" },
         { label: "HOSPITALITY", img: "/images/banner/homePage/ai-industry/logistics.png" },
         { label: "INSURANCE", img: "/images/banner/homePage/ai-industry/logistics.png" },

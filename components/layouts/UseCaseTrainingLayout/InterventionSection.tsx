@@ -11,7 +11,7 @@ const InterventionSection = ({ data }: Props) => {
 
   if (isSideBySide) {
     return (
-      <Box sx={{ bgcolor: COLORS.WHITE, color: COLORS.BLACK, py: { xs: 8, md: 15 } }}>
+      <Box sx={{ bgcolor: COLORS.WHITE, color: COLORS.BLACK, py: { xs: 8, md: 8 } }}>
         <Box sx={{ width: { xs: "90%", md: "80%" }, mx: "auto", px: { xs: 2, md: 0 } }}>
           {/* Top Row: Title, Desc1, Desc2 */}
           <Box sx={{ maxWidth: { xs: "100%", md: "90%" }, mb: { xs: 5, md: 8 } }}>
@@ -20,8 +20,8 @@ const InterventionSection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 28, md: 54 },
-                lineHeight: 1,
+                fontSize: { xs: 28, md: 36 },
+                lineHeight: "42px",
                 mb: 4,
                 color: COLORS.BLACK,
               }}
@@ -38,7 +38,7 @@ const InterventionSection = ({ data }: Props) => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 22 },
+                  fontSize: { xs: 16, md: 18 },
                   lineHeight: 1.5,
                 }}
               >
@@ -47,8 +47,8 @@ const InterventionSection = ({ data }: Props) => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 22 },
-                  lineHeight: 1.5,
+                  fontSize: { xs: 16, md: 18 },
+                  lineHeight: "28px",
                 }}
               >
                 {data.description2}
@@ -65,7 +65,7 @@ const InterventionSection = ({ data }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 16, md: 18, lg: 20 },
+                      fontSize: { xs: 16, md: 18 },
                       lineHeight: 1.5,
                       textAlign: "justify",
                     }}
@@ -77,8 +77,8 @@ const InterventionSection = ({ data }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 16, md: 18, lg: 20 },
-                      lineHeight: 1.5,
+                      fontSize: { xs: 16, md: 18, lg: 18 },
+                      lineHeight: "28px",
                       textAlign: "justify",
                     }}
                   >
@@ -226,7 +226,7 @@ const InterventionSection = ({ data }: Props) => {
       sx={{
         bgcolor: COLORS.WHITE,
         color: COLORS.BLACK,
-        pt: { xs: 8, md: 20 },
+        pt: { xs: 6, md: 10 },
         pb: 0,
       }}
     >
@@ -244,8 +244,8 @@ const InterventionSection = ({ data }: Props) => {
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: 32, md: 48 },
-                lineHeight: 1.1,
+                fontSize: { xs: 32, md: 36 },
+                lineHeight: "42px",
                 color: COLORS.BLACK,
                 textTransform: "uppercase",
               }}
@@ -266,8 +266,8 @@ const InterventionSection = ({ data }: Props) => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 20 },
-                  lineHeight: 1.5,
+                  fontSize: { xs: 16, md: 18 },
+                  lineHeight: "28px",
                   color: COLORS.BLACK,
                   textAlign: "justify",
                 }}
@@ -278,8 +278,8 @@ const InterventionSection = ({ data }: Props) => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 16, md: 20 },
-                    lineHeight: 1.5,
+                    fontSize: { xs: 16, md: 18 },
+                    lineHeight: "28px",
                     color: COLORS.BLACK,
                     textAlign: "justify",
                   }}
@@ -293,12 +293,12 @@ const InterventionSection = ({ data }: Props) => {
 
         {/* Third Description paragraph or Variants Cards */}
         {data.cards && data.cards.length > 0 ? (
-          <Box sx={{ mt: 8, mb: 10 }}>
+          <Box sx={{ mt: 5, mb: 4 }}>
             {data.description3 && (
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 20 },
+                  fontSize: { xs: 16, md: 18 },
                   lineHeight: 1.5,
                   color: COLORS.BLACK,
                   mb: 5,
@@ -314,14 +314,14 @@ const InterventionSection = ({ data }: Props) => {
                   <Box
                     sx={{
                       height: "100%",
-                      minHeight: { xs: 80, md: 120 },
+                      minHeight: { xs: 80, md: 100 },
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      padding: 4,
+                      padding: 3,
                       borderRadius: "20px",
                       bgcolor: "transparent",
-                      border: "1px solid rgba(0, 0, 0, 0.12)",
+                      border: "1px solid rgba(184, 237, 26, 0.9)",
                       transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                       cursor: "default",
                       "&:hover": {
@@ -335,7 +335,7 @@ const InterventionSection = ({ data }: Props) => {
                       sx={{
                         fontFamily: din.style.fontFamily,
                         fontWeight: 900,
-                        fontSize: { xs: 16, md: 22 },
+                        fontSize: { xs: 16, md: 18 },
                         textTransform: "uppercase",
                         letterSpacing: "0.05em",
                         color: COLORS.BLACK,
@@ -353,9 +353,9 @@ const InterventionSection = ({ data }: Props) => {
           data.description3 && (
             <Typography
               sx={{
-                mt: 8,
+                mt: 6,
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 22 },
+                fontSize: { xs: 16, md: 18 },
                 lineHeight: 1.5,
                 color: COLORS.BLACK,
                 maxWidth: "100%",
@@ -368,7 +368,7 @@ const InterventionSection = ({ data }: Props) => {
       </Box>
 
       {/* Tablet Area with Overlap Transition */}
-      <Box sx={{ position: "relative", mt: { xs: 10, md: 18 } }}>
+      <Box sx={{ position: "relative", mt: { xs: 8, md: 8 } }}>
         {/* Background Split - Top White, Bottom Black */}
         <Box
           sx={{
@@ -408,7 +408,7 @@ const InterventionSection = ({ data }: Props) => {
             alt="Tablet Intervention"
             sx={{
               width: "100%",
-              maxWidth: 950,
+              maxWidth: 900,
               height: "auto",
               display: "block",
               borderRadius: { xs: 4, md: "24px" },

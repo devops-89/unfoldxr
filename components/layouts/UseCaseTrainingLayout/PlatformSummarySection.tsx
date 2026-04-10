@@ -16,7 +16,7 @@ const PlatformSummarySection = ({ data }: Props) => {
           mx: "auto",
           bgcolor: COLORS.BG_LIGHT,
           borderRadius: { xs: "24px", md: "40px" },
-          p: { xs: 3.5, md: 10 },
+          p: { xs: 3.5, md: 6 },
           overflow: "hidden",
         }}
       >
@@ -27,8 +27,8 @@ const PlatformSummarySection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 28, md: 48 },
-                lineHeight: "52px",
+                fontSize: { xs: 28, md: 36 },
+                lineHeight: "42px",
                 color: COLORS.BLACK,
               }}
             >
@@ -39,11 +39,11 @@ const PlatformSummarySection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 22 },
+                fontSize: { xs: 16, md: 18 },
                 lineHeight: "30px",
                 letterSpacing: "0.52px",
                 color: COLORS.OVERLAY_07,
-                mb: 4,
+                mb: 2,
               }}
             >
               {data.description1}
@@ -51,7 +51,7 @@ const PlatformSummarySection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 22 },
+                fontSize: { xs: 16, md: 18 },
                 lineHeight: 1.6,
                 color: COLORS.OVERLAY_07,
               }}

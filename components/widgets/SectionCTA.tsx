@@ -101,8 +101,8 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: variant === "about" ? 24 : 26, md: 48 },
-                lineHeight: "52px",
+                fontSize: { xs: variant === "about" ? 24 : 26, md: 36 },
+                lineHeight: "42px",
                 letterSpacing: variant === "default" ? "-0.051px" : "normal",
                 color: COLORS.BLACK,
                 textAlign: "center",
@@ -120,7 +120,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 sx={{
                   mt: 3,
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: isIndustry ? 22 : 20 },
+                  fontSize: { xs: 16, md: isIndustry ? 22 : 18 },
                   color: COLORS.BLACK,
                   fontWeight: isIndustry ? 400 : 500,
                   lineHeight: "30px",
@@ -143,7 +143,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 py: 1.2,
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
-                fontSize: { xs: 14, md: 18, lg: 18 },
+                fontSize: { xs: 14, md: 16 },
                 textTransform: "none",
                 "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 },
               }}
