@@ -8,14 +8,14 @@ const CareersSection = () => {
   const { careersSection: data } = aboutPage;
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 15 } }}>
+    <Box sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
       <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}>
         <Typography 
           sx={{ 
-            fontSize: { xs: 28, md: 48 }, 
+            fontSize: { xs: 28, md: 36 }, 
             fontWeight: 900, 
             textTransform: "uppercase", 
-            mb: 4, 
+            mb: 2, 
             fontFamily: din.style.fontFamily,
             lineHeight: "52px",
           }}
@@ -25,10 +25,10 @@ const CareersSection = () => {
         
         <Typography 
           sx={{ 
-            fontSize: { xs: 18, md: 22 }, 
-            lineHeight: "30px", 
+            fontSize: { xs: 18, md: 18 }, 
+            lineHeight: "28px", 
             maxWidth: 1200, 
-            mb: 8, 
+            mb: 4, 
             fontFamily: helvetica.style.fontFamily,
             whiteSpace: "pre-line"
           }}
@@ -54,7 +54,7 @@ const CareersSection = () => {
               >
                 <Typography 
                   sx={{ 
-                    fontSize: { xs: 28, md: 48 }, 
+                    fontSize: { xs: 28, md: 36 }, 
                     color: "rgba(182, 236, 26, 0.4)", 
                     fontWeight: 900, 
                     fontFamily: din.style.fontFamily,
@@ -66,7 +66,7 @@ const CareersSection = () => {
                 </Typography>
                 <Typography 
                   sx={{ 
-                    fontSize: { xs: 16, md: 22 }, 
+                    fontSize: { xs: 16, md: 18 }, 
                     textTransform: "uppercase", 
                     fontWeight: 700, 
                     fontFamily: din.style.fontFamily,
@@ -82,9 +82,9 @@ const CareersSection = () => {
 
         <Typography 
           sx={{ 
-            mt: 10, 
-            mb: 6, 
-            fontSize: { xs: 18, md: 22 }, 
+            mt: 4, 
+            mb: 4, 
+            fontSize: { xs: 18, md: 18 }, 
             fontFamily: helvetica.style.fontFamily,
             maxWidth: 1000,
             lineHeight: "30px",
@@ -97,7 +97,7 @@ const CareersSection = () => {
           sx={{ 
             px: { xs: 2.5, md: 4 },
             py: 1.2,
-            fontSize: { xs: 14, md: 18, lg: 18 },
+            fontSize: { xs: 14, md: 16 },
             fontWeight: 500,
             lineHeight: "30px",
           }}

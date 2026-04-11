@@ -11,8 +11,7 @@ const DifferentiatorsSection = () => {
       sx={{
         bgcolor: COLORS.BLACK,
         color: COLORS.WHITE,
-        pt: 10,
-        pb: { xs: 8, md: 15 },
+        py: { xs: 8, md: 10 },
         overflow: "hidden",
       }}
     >
@@ -24,11 +23,11 @@ const DifferentiatorsSection = () => {
           <Grid size={{ xs: 12, md: 7 }}>
             <Typography
               sx={{
-                fontSize: { xs: 36, md: 48 },
+                fontSize: { xs: 36, md: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: { xs: 1.1, md: "52px" },
-                mb: 6,
+                mb: 4,
                 fontFamily: din.style.fontFamily,
               }}
             >
@@ -56,9 +55,9 @@ const DifferentiatorsSection = () => {
                   <Box>
                     <Typography
                       sx={{
-                        fontSize: { xs: 22, md: 22 },
+                        fontSize: { xs: 22, md: 18 },
                         fontWeight: 700,
-                        lineHeight: "30px",
+                        lineHeight: "28px",
                         mb: 1,
                         textTransform: "uppercase",
                         fontFamily: din.style.fontFamily,
@@ -68,8 +67,8 @@ const DifferentiatorsSection = () => {
                     </Typography>
                     <Typography
                       sx={{
-                        fontSize: { xs: 17, md: 18 },
-                        lineHeight: "30px",
+                        fontSize: { xs: 17, md: 16 },
+                        lineHeight: "28px",
                         color: COLORS.WHITE,
                         fontFamily: helvetica.style.fontFamily,
                         textAlign: "left",
@@ -89,13 +88,14 @@ const DifferentiatorsSection = () => {
               src={data.image}
               alt="Differentiator"
               sx={{
-                width: { xs: "100%", md: "85%" },
-                ml: { xs: 0, md: "285px" },
+                width: { xs: "100%", md: "70%" },
+                ml: { xs: 0, md: "360px" },
                 mt: { xs: 4, md: 0 },
                 height: "auto",
                 objectFit: "cover",
                 borderRadius: "20px",
                 display: "block",
+                objectPosition: "right",
               }}
             />
           </Grid>

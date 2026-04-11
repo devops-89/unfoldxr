@@ -11,7 +11,7 @@ const EvolvesCtaSection = () => {
   const { evolvesCtaSection: data } = meetAvaPage;
 
   return (
-    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 15 } }}>
+    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Box
         sx={{
           width: { xs: "85%", md: "80%" },
@@ -23,7 +23,7 @@ const EvolvesCtaSection = () => {
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 4, md: "24px" },
-            py: { xs: 5, md: 10 },
+            py: { xs: 5, md: 6 },
             px: { xs: 2, md: 8 },
             textAlign: "center",
             position: "relative",
@@ -32,7 +32,7 @@ const EvolvesCtaSection = () => {
           }}
         >
           {/* Neon Purple Decoration */}
-          <Box
+          {/* <Box
             sx={{
               position: "absolute",
               left: -40,
@@ -42,7 +42,7 @@ const EvolvesCtaSection = () => {
               background: `radial-gradient(circle, ${COLORS.PURPLE_GLOW} 0%, rgba(160,32,240,0) 70%)`,
               zIndex: 0,
             }}
-          />
+          /> */}
 
           <Box
             sx={{
@@ -57,7 +57,7 @@ const EvolvesCtaSection = () => {
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
-                fontSize: { xs: 28, md: 52, lg: 48 },
+                fontSize: { xs: 28, md: 32, lg: 36 },
                 lineHeight: "52px",
                 letterSpacing: "-0.051px",
                 color: COLORS.BLACK,
@@ -73,7 +73,7 @@ const EvolvesCtaSection = () => {
             <Button
               onClick={openModal}
               sx={{
-                mt: 6,
+                mt: 4,
                 bgcolor: COLORS.PRIMARY_GREEN,
                 color: COLORS.BLACK,
                 borderRadius: 99,
@@ -81,7 +81,7 @@ const EvolvesCtaSection = () => {
                 py: 2,
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
-                fontSize: { xs: 14, md: 18 },
+                fontSize: { xs: 14, md: 16, lg: 16 },
                 textTransform: "none",
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}

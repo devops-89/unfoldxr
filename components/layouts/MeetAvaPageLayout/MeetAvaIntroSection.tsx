@@ -10,7 +10,7 @@ const MeetAvaIntroSection = () => {
     <Box
       sx={{
         bgcolor: "#f7f7f7",
-        minHeight: { md: "85vh" },
+        // minHeight: { md: "85vh" },
         display: "flex",
         alignItems: "center",
         py: { xs: 6, md: 10 },
@@ -28,12 +28,12 @@ const MeetAvaIntroSection = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 48, lg: 48 },
+                fontSize: { xs: 28, md: 48, lg: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.BLACK,
                 lineHeight: "52px",
-                mb: 3,
+                mb: 2,
               }}
             >
               {data.heading}
@@ -43,7 +43,7 @@ const MeetAvaIntroSection = () => {
                 key={index}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 15, md: 22 },
+                  fontSize: { xs: 15, md: 18 },
                   color: COLORS.BLACK,
                   lineHeight: "30px",
                   textAlign: "justify",

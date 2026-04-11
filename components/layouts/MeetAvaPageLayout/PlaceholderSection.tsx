@@ -8,7 +8,7 @@ const PlaceholderSection = () => {
 
   return (
     <Box
-      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, pb: { xs: 8, md: 12 } }}
+      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, pb: { xs: 8, md: 10 } }}
     >
       <Box
         sx={{
@@ -22,7 +22,7 @@ const PlaceholderSection = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 28, md: 48 },
+                fontSize: { xs: 28, md: 32, lg: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: "52px",
@@ -34,7 +34,7 @@ const PlaceholderSection = () => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 22 },
+                fontSize: { xs: 16, md: 18, lg: 18 },
                 lineHeight: "30px",
                 color: "rgba(255,255,255,0.85)",
                 whiteSpace: "pre-line",
@@ -50,7 +50,7 @@ const PlaceholderSection = () => {
               alt=""
               sx={{
                 maxWidth: "100%",
-                width: { xs: 280, md: 400 },
+                width: { xs: 280, md: 370 },
                 height: "auto",
                 transform: "rotate(9deg)",
                 mx: "auto",

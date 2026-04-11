@@ -8,7 +8,7 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
         backgroundColor: "#1E1F21",
         borderRadius: "20px",
         borderLeft: "4px solid #B6EC1A",
-        p: { xs: 4, md: 5 },
+        p: { xs: 4, md: 4 },
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -19,7 +19,7 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
         sx={{
           color: "#ffffff",
           fontWeight: 800,
-          fontSize: { xs: 22, md: 22 },
+          fontSize: { xs: 22, md: 18 },
           lineHeight: "30px",
         }}
       >
@@ -30,7 +30,7 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
         sx={{
           borderBottom: 2,
           width: "40%",
-          my: 3,
+          my: 2,
           borderColor: "rgba(255, 255, 255, 0.8)",
           mx: { xs: "auto", md: 0 },
         }}
@@ -39,7 +39,7 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
       <Typography
         sx={{
           color: "#BDBDBD",
-          fontSize: 18,
+          fontSize: 16,
           lineHeight: "30px",
           fontWeight: 400,
         }}

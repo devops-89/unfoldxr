@@ -27,7 +27,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
 
   return (
     <Box
-      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 6, md: 13 } }}
+      sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 6, md: 10 } }}
     >
       <Box
         sx={{
@@ -39,12 +39,12 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 28, md: 48, lg: 48 },
+            fontSize: { xs: 28, md: 48, lg: 36 },
             lineHeight: "52px",
             textTransform: "uppercase",
             fontWeight: 900,
             maxWidth: 1000,
-            mb: 7,
+            mb: 4,
           }}
         >
           {data.title}
@@ -75,7 +75,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: din.style.fontFamily,
-                      fontSize: { xs: 20, md: 22 },
+                      fontSize: { xs: 20, md: 16, lg: 18 },
                       fontWeight: 700,
                       lineHeight: "30px",
                       letterSpacing: "0.52px",
@@ -87,8 +87,8 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                   </Typography>
                   <Box
                     sx={{
-                      width: 36,
-                      height: 36,
+                      width: 32,
+                      height: 32,
                       bgcolor: COLORS.PRIMARY_GREEN,
                       borderRadius: "8px",
                       display: "flex",
@@ -149,7 +149,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
           ))}
         </Grid>
 
-        <Box sx={{ textAlign: "center", mt: { xs: 6, md: 8 } }}>
+        <Box sx={{ textAlign: "center", mt: { xs: 6, md: 6 } }}>
           <Button
             variant="contained"
             onClick={openModal}
@@ -160,7 +160,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
               py: 1.5,
               borderRadius: "99px",
               fontFamily: din.style.fontFamily,
-              fontSize: { xs: 16, md: 18 },
+              fontSize: { xs: 16, md: 16 },
               fontWeight: 700,
               textTransform: "none",
               boxShadow: "none",

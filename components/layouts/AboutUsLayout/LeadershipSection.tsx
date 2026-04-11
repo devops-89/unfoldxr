@@ -9,14 +9,14 @@ const LeadershipSection = () => {
   return (
     <Container
       maxWidth="xl"
-      sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 15 } }}
+      sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 10 } }}
     >
       <Typography
         sx={{
-          fontSize: { xs: 30, md: 48 },
+          fontSize: { xs: 30, md: 36 },
           fontWeight: 900,
           textTransform: "uppercase",
-          mb: 8,
+          mb: 4,
           fontFamily: din.style.fontFamily,
           color: COLORS.BLACK,
           lineHeight: "52px",
@@ -57,7 +57,7 @@ const LeadershipSection = () => {
                 >
                   <Typography
                     sx={{
-                      fontSize: { xs: 26, md: 48 },
+                      fontSize: { xs: 26, md: 36 },
                       fontWeight: 900,
                       textTransform: "uppercase",
                       fontFamily: din.style.fontFamily,
@@ -69,11 +69,11 @@ const LeadershipSection = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: { xs: 20, md: 22 },
+                      fontSize: { xs: 20, md: 20 },
                       fontWeight: 600,
                       textTransform: "uppercase",
                       mt: 1,
-                      mb: 4,
+                      mb: 3,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
                       lineHeight: "30px",
@@ -83,8 +83,8 @@ const LeadershipSection = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: { xs: 18, md: 22 },
-                      lineHeight: "30px",
+                      fontSize: { xs: 18, md: 18 },
+                      lineHeight: "28px",
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
                       textAlign: "justify",

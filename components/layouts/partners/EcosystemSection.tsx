@@ -13,10 +13,10 @@ const EcosystemSection = () => {
     <Box
       sx={{
         backgroundColor: "#000",
-        minHeight: { md: "85vh" },
+        // minHeight: { md: "85vh" },
         display: "flex",
         alignItems: "center",
-        py: { xs: 8, md: 0 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Container
@@ -36,8 +36,8 @@ const EcosystemSection = () => {
           <Typography
             sx={{
               fontWeight: 900,
-              fontSize: { xs: 26, md: 48 },
-              mb: 6,
+              fontSize: { xs: 26, md: 36 },
+              mb: 4,
               color: "#000",
               lineHeight: "52px",
               maxWidth: "800px",
@@ -83,18 +83,18 @@ const EcosystemSection = () => {
                         <Box
                           onClick={() => setActiveTab(i)}
                           sx={{
-                            cursor: "pointer",
-                            width: "fit-content",
                             border:
                               activeTab === i
                                 ? `2px solid ${COLORS.PRIMARY_HOVER}`
                                 : "2px solid transparent",
                             borderRadius: "32px",
                             px: { xs: 2.3, md: 3 },
-                            py: activeTab === i ? 2.5 : 1.2,
+                            py: activeTab === i ? 2 : 1.2,
                             opacity: activeTab === i ? 1 : 0.5,
+                            cursor: "pointer",
+                            width: "fit-content",
                             transition: "all 0.3s ease",
-                            mb: 2.5,
+                            mb: 1,
                             "&:hover": {
                               bgcolor: "rgba(0, 0, 0, 0.03)",
                               borderColor:
@@ -107,15 +107,16 @@ const EcosystemSection = () => {
                         >
                           <Typography
                             sx={{
-                              fontSize: { xs: 16, md: 22 },
-                              color:
-                                activeTab === i ? COLORS.PRIMARY_HOVER : "#000",
-                              fontWeight: 900,
-                              whiteSpace: "normal",
-                              lineHeight: "30px",
-                              textTransform: "uppercase",
-                              maxWidth: { xs: "85vw", md: "100%" },
                               fontFamily: din.style.fontFamily,
+                              fontWeight: 700,
+                              textTransform: "uppercase",
+                              color:
+                                activeTab === i ? COLORS.PRIMARY_HOVER : COLORS.BLACK,
+                              fontSize: { xs: 18, md: 16 },
+                              lineHeight: "22px",
+                              letterSpacing: "0.52px",
+                              maxWidth: { xs: "85vw", md: "100%" },
+                              whiteSpace: "normal",
                             }}
                           >
                             {item.label}
@@ -242,7 +243,7 @@ const EcosystemSection = () => {
                 <Typography
                   key={activeTab} // Smooth fade trigger
                   sx={{
-                    fontSize: { xs: 16, md: 22 },
+                    fontSize: { xs: 16, md: 16 },
                     lineHeight: "28px",
                     color: "#000",
                     fontWeight: 500,

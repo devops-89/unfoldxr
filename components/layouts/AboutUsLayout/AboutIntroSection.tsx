@@ -12,7 +12,7 @@ import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 const AboutIntroSection = () => (
   <Box
-    sx={{ bgcolor: COLORS.BLACK, pt: { xs: 8, md: 20 }, pb: { xs: 8, md: 20 } }}
+    sx={{ bgcolor: COLORS.BLACK, py: { xs: 8, md: 10 } }}
   >
     <Container
       maxWidth={false}
@@ -27,13 +27,13 @@ const AboutIntroSection = () => (
         }}
       >
         <CardContent
-          sx={{ px: { xs: 3, md: 10 }, py: { xs: 4, md: 10, lg: 15 } }}
+          sx={{ px: { xs: 3, md: 10 }, py: { xs: 4, md: 10, lg: 10 } }}
         >
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 sx={{
-                  fontSize: { xs: 34, md: 48 },
+                  fontSize: { xs: 34, md: 36, lg: 36 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   lineHeight: "52px",
@@ -50,8 +50,8 @@ const AboutIntroSection = () => (
                   <Typography
                     key={idx}
                     sx={{
-                      fontSize: { xs: 18, md: 22 },
-                      lineHeight: "30px",
+                      fontSize: { xs: 18, md: 18, lg: 18 },
+                      lineHeight: "28px",
                       fontWeight: 400,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
@@ -63,13 +63,13 @@ const AboutIntroSection = () => (
                 ))}
                 <Typography
                   sx={{
-                    fontSize: { xs: 24, md: 22 },
-                    lineHeight: "30px",
+                    fontSize: { xs: 24, md: 18, lg: 18 },
+                    lineHeight: "28px",
                     fontWeight: 700,
                     fontFamily: helvetica.style.fontFamily,
                     color: COLORS.BLACK,
                     textAlign: "left",
-                    mt: { xs: 2, md: 2 },
+                    mt: { xs: 2, md: 1 },
                   }}
                 >
                   {aboutPage.introSection.highlight}

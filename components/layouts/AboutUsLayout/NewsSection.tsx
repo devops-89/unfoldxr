@@ -12,7 +12,7 @@ const NewsSection = () => {
   const router = useRouter();
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
+    <Box sx={{ bgcolor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
 
       <Container
         maxWidth={false}
@@ -27,7 +27,7 @@ const NewsSection = () => {
         >
           <CardContent
             sx={{
-              p: { xs: 4, md: "60px 40px" },
+              p: { xs: 4, md: 6 },
               textAlign: "center",
               display: "flex",
               flexDirection: "column",
@@ -36,12 +36,12 @@ const NewsSection = () => {
           >
             <Typography
               sx={{
-                fontSize: { xs: 28, md: 48 },
+                fontSize: { xs: 28, md: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 fontFamily: din.style.fontFamily,
                 color: COLORS.BLACK,
-                mb: 2,
+                mb: 1,
                 lineHeight: "52px",
               }}
             >
@@ -49,12 +49,12 @@ const NewsSection = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: 18, md: 22 },
+                fontSize: { xs: 18, md: 18 },
                 fontFamily: helvetica.style.fontFamily,
                 color: COLORS.BLACK,
                 maxWidth: 800,
-                lineHeight: "30px",
-                mb: 6,
+                lineHeight: "28px",
+                mb: 4,
               }}
             >
               {data.description}
@@ -64,7 +64,7 @@ const NewsSection = () => {
               sx={{
                 px: { xs: 2.5, md: 4 },
                 py: 1.2,
-                fontSize: { xs: 14, md: 18, lg: 18 },
+                fontSize: { xs: 14, md: 16 },
                 fontWeight: 500,
               }}
             >

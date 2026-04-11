@@ -7,10 +7,10 @@ const WhyPartnerSection = () => {
     <Box
       sx={{
         backgroundColor: "#000",
-        minHeight: { md: "90vh" },
+        // minHeight: { md: "90vh" },
         display: "flex",
         alignItems: "center",
-        py: { xs: 8, md: 0 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Container
@@ -23,9 +23,9 @@ const WhyPartnerSection = () => {
         <Typography
           sx={{
             color: "#fff",
-            fontSize: { xs: 28, md: 48 },
+            fontSize: { xs: 28, md: 36 },
             fontWeight: 900,
-            mb: { xs: 6, md: 8 },
+            mb: { xs: 6, md: 4 },
             textTransform: "uppercase",
             lineHeight: "52px",
             textAlign: { xs: "center", md: "left" },

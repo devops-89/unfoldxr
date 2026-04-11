@@ -9,7 +9,7 @@ const SupportYourOperations = () => {
   const data = homePage.productPage.supportOperations;
 
   return (
-    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 14 } }}>
+    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Container
         maxWidth={false}
         sx={{
@@ -26,7 +26,7 @@ const SupportYourOperations = () => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: { xs: "40px", md: "52px" },
-                fontSize: { xs: 28, md: 48 },
+                fontSize: { xs: 28, md: 36 },
                 color: COLORS.WHITE,
               }}
             >
@@ -43,7 +43,7 @@ const SupportYourOperations = () => {
                 mt: 4,
                 fontFamily: helvetica.style.fontFamily,
                 fontWeight: 700,
-                fontSize: { xs: 18, md: 20, lg: 22 },
+                fontSize: { xs: 18, md: 16, lg: 18 },
                 lineHeight: "34px",
                 color: COLORS.WHITE,
               }}

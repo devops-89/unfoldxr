@@ -31,7 +31,7 @@ const DesignToEvolve = () => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 48, lg: 48 },
+            fontSize: { xs: 28, md: 32, lg: 36 },
             lineHeight: "52px",
             maxWidth: 900,
           }}
@@ -54,7 +54,7 @@ const DesignToEvolve = () => {
           sx={{
             mt: 3,
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 18, lg: 22 },
+            fontSize: { xs: 16, md: 16, lg: 18 },
             lineHeight: "30px",
             letterSpacing: "0.52px",
             color: COLORS.TEXT_GRAY,
@@ -68,7 +68,7 @@ const DesignToEvolve = () => {
         <Grid
           container
           spacing={{ xs: 4, md: 4 }}
-          sx={{ mt: { xs: 6, md: 10 } }}
+          sx={{ mt: { xs: 6, md: 6 } }}
         >
           {/* Left Menu Column */}
           <Grid size={{ xs: 12, md: 4 }}>
@@ -76,7 +76,7 @@ const DesignToEvolve = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: { xs: 2, md: 4 },
+                gap: { xs: 2, md: 2 },
                 alignItems: "flex-start",
               }}
             >
@@ -100,7 +100,7 @@ const DesignToEvolve = () => {
                           : COLORS.WHITE,
                       textTransform: "uppercase",
                       letterSpacing: "0.52px",
-                      fontSize: { xs: 16, md: 22 },
+                      fontSize: { xs: 12, md: 14, lg: 16 },
                       fontWeight: 700,
                       width: "fit-content",
                       cursor: "pointer",
@@ -133,7 +133,7 @@ const DesignToEvolve = () => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           fontWeight: 700,
-                          fontSize: { xs: 18, md: 24 },
+                          fontSize: { xs: 18, md: 16 },
                           color: COLORS.WHITE,
                           mb: 1.5,
                           textTransform: "none",
@@ -144,7 +144,7 @@ const DesignToEvolve = () => {
                       <Typography
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
-                          fontSize: { xs: 16, md: 18 },
+                          fontSize: { xs: 16, md: 16 },
                           lineHeight: 1.5,
                           color: COLORS.TEXT_GRAY,
                           textTransform: "none",
@@ -186,10 +186,10 @@ const DesignToEvolve = () => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontWeight: 700,
-                    fontSize: { xs: 18, md: 22 },
+                    fontSize: { xs: 18, md: 16 },
                     color: COLORS.WHITE,
                     lineHeight: "30px",
-                    mb: 2,
+                    mb: 1.1,
                     transition: "all 0.3s ease",
                     textTransform: "none",
                   }}
@@ -200,7 +200,7 @@ const DesignToEvolve = () => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 16, md: 18 },
+                    fontSize: { xs: 16, md: 16 },
                     lineHeight: "30px",
                     color: COLORS.TEXT_GRAY,
                     maxWidth: 650,

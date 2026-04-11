@@ -31,7 +31,7 @@ const ShootUsEmail = () => {
       </Typography>
       <Box
         sx={{
-          backgroundColor: "#F4F7F9",
+          backgroundColor: "#000",
           px: 4,
           py: 2,
           borderRadius: "100px",
@@ -39,14 +39,20 @@ const ShootUsEmail = () => {
         }}
       >
         <Typography
+          component="a"
+          href="mailto:info@unfoldxr.com"
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 20, md: 22 },
+            fontSize: { xs: 20, md: 18 },
             fontWeight: 500,
             color: "#b6eb1a",
+            textDecoration: "none",
+            "&:hover": {
+               textDecoration: "underline"
+            }
           }}
         >
-          support@.com
+          info@unfoldxr.com
         </Typography>
       </Box>
     </Box>

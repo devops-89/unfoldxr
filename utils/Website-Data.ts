@@ -492,7 +492,7 @@ export const aboutPage = {
 export const meetAvaPage = {
   heroSection: {
     title: "AVA The Agentic Intelligence Behind UnfoldXR.",
-    heading: "BUILT WITH HEART. POWERED BY AI.",
+    heading: "BUILT WITH HEART. \nPOWERED BY AI.",
     subHeading: "AVA stands for AI Virtual Assistant. But the story behind the name runs deeper.",
     image: heroRing.src
   },

@@ -9,10 +9,10 @@ const ExistingPartnersSection = () => {
     <Box
       sx={{
         backgroundColor: "#F9F9F9",
-        minHeight: { md: "70vh" },
+        // minHeight: { md: "70vh" },
         display: "flex",
         alignItems: "center",
-        py: { xs: 8, md: 0 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Container
@@ -26,11 +26,11 @@ const ExistingPartnersSection = () => {
         <Typography
           sx={{
             fontWeight: 900,
-            fontSize: { xs: 28, md: 48 },
+            fontSize: { xs: 28, md: 36 },
             lineHeight: "52px",
             textTransform: "uppercase",
             color: "#000",
-            mb: { xs: 6, md: 8 },
+            mb: { xs: 6, md: 6 },
             textAlign: { xs: "center", md: "left" },
           }}
         >

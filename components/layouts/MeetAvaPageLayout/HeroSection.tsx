@@ -9,11 +9,10 @@ const HeroSection = () => {
     <Box
       sx={{
         bgcolor: COLORS.BLACK,
-        minHeight: { md: "90vh" },
+        minHeight: { md: "100vh" },
         display: "flex",
         alignItems: "center",
-        pt: { xs: 14, md: 12 },
-        pb: { xs: 4, md: 6 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Box
@@ -51,7 +50,7 @@ const HeroSection = () => {
             <Grid
               size={{ xs: 12, md: 6 }}
               sx={{
-                p: { xs: 4, md: 8, lg: 8 },
+                p: { xs: 4, md: 8, lg: 6 },
 
                 zIndex: 1,
                 display: "flex",
@@ -62,12 +61,12 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 18, md: 20, lg: 22 },
+                  fontSize: { xs: 18, md: 20, lg: 18 },
                   fontWeight: 700,
                   color: COLORS.WHITE,
                   maxWidth: "100%",
                   lineHeight: "30px",
-                  mb: 4,
+                  mb: 2
                 }}
               >
                 {data.title.split("The Agentic")[0]}
@@ -77,12 +76,13 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 56, lg: 48 },
+                  fontSize: { xs: 36, md: 56, lg: 36 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   color: COLORS.WHITE,
                   lineHeight: "52px",
-                  mb: 2,
+                  whiteSpace: "pre-line",
+                  mb: 1,
                 }}
               >
                 {data.heading}
@@ -90,7 +90,7 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 18, lg: 22 },
+                  fontSize: { xs: 16, md: 18, lg: 18 },
                   color: COLORS.WHITE,
                   lineHeight: "30px",
                   maxWidth: "90%",

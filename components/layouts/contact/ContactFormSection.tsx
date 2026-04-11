@@ -39,7 +39,7 @@ const ContactFormSectionContent = () => {
   const tabs = [
     { label: "Submit a form", icon: <AssignmentTurnedInIcon sx={{ fontSize: 28 }} /> },
     { label: "Shoot us an email", icon: <MailOutlineIcon sx={{ fontSize: 28 }} /> },
-    { label: "Give us a call", icon: <PhoneInTalkIcon sx={{ fontSize: 28 }} /> },
+    // { label: "Give us a call", icon: <PhoneInTalkIcon sx={{ fontSize: 28 }} /> },
   ];
 
   return (
@@ -57,7 +57,7 @@ const ContactFormSectionContent = () => {
               <Typography
                 sx={{
                   fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 48, lg: 48 },
+                  fontSize: { xs: 36, md: 36, lg: 36 },
                   fontWeight: 900,
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -121,23 +121,35 @@ const ContactFormSectionContent = () => {
                 />
               </Stack>
 
-              <Box sx={{ mt: 1 }}>
-                {activeTab === 0 && (
-                  <Box
-                    sx={{
-                      backgroundColor: "#EEEEEE",
-                      borderRadius: "16px",
-                      p: { xs: 3, md: 5 },
-                    }}
-                  >
-                    <ContactForm
-                      formData={contactPage.contactFormSection.contactFormData}
-                      note={contactPage.contactFormSection.note}
-                    />
-                  </Box>
-                )}
-                {activeTab === 1 && <ShootUsEmail />}
-                {activeTab === 2 && <GiveUsCall />}
+              <Box sx={{ mt: 1, display: "grid" }}>
+                <Box
+                  sx={{
+                    gridArea: "1/1",
+                    visibility: activeTab === 0 ? "visible" : "hidden",
+                    opacity: activeTab === 0 ? 1 : 0,
+                    pointerEvents: activeTab === 0 ? "auto" : "none",
+                    transition: "opacity 0.3s ease",
+                    backgroundColor: "#EEEEEE",
+                    borderRadius: "16px",
+                    p: { xs: 3, md: 5 },
+                  }}
+                >
+                  <ContactForm
+                    formData={contactPage.contactFormSection.contactFormData}
+                    note={contactPage.contactFormSection.note}
+                  />
+                </Box>
+                <Box
+                  sx={{
+                    gridArea: "1/1",
+                    visibility: activeTab === 1 ? "visible" : "hidden",
+                    opacity: activeTab === 1 ? 1 : 0,
+                    pointerEvents: activeTab === 1 ? "auto" : "none",
+                    transition: "opacity 0.3s ease",
+                  }}
+                >
+                  <ShootUsEmail />
+                </Box>
               </Box>
             </Grid>
           </Grid>

@@ -24,7 +24,7 @@ const EnterpriseReady = () => {
       sx={{
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
-        py: { xs: 8, md: 16 },
+        py: { xs: 8, md: 10 },
         position: "relative",
         overflow: "hidden",
       }}
@@ -37,8 +37,8 @@ const EnterpriseReady = () => {
         sx={{
           position: "absolute",
           left: 0,
-          top: { xs: 0, md: 35 },
-          width: { xs: "100%", md: "28%" },
+          top: { xs: 0, md: 10 },
+          width: { xs: "100%", md: "23%" },
           height: { xs: "50%", md: "85%" },
           objectFit: "cover",
           opacity: { xs: 0.26, md: 0.9 },
@@ -66,8 +66,8 @@ const EnterpriseReady = () => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: "52px",
-                fontSize: { xs: 28, md: 48, lg: 48 },
-                mb: { xs: 6, md: 8 },
+                fontSize: { xs: 28, md: 32, lg: 36 },
+                mb: { xs: 6, md: 4 },
               }}
             >
               {data.title.includes("Enterprise-ready") ? (
@@ -93,7 +93,7 @@ const EnterpriseReady = () => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           fontWeight: 700,
-                          fontSize: { xs: 18, md: 22 },
+                          fontSize: { xs: 18, md: 18 },
                           textTransform: "uppercase",
                           lineHeight: "30px",
                           mb: 1.5,
@@ -105,8 +105,8 @@ const EnterpriseReady = () => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           color: COLORS.TEXT_MUTED,
-                          fontSize: { xs: 14, md: 18 },
-                          lineHeight: "30px",
+                          fontSize: { xs: 14, md: 16 },
+                          lineHeight: "24px",
                         }}
                       >
                         {point.desc}

@@ -13,7 +13,7 @@ const FromAssist = () => {
   const { openModal } = useDemoModal();
 
   return (
-    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 12 } }}>
+    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Box
         sx={{ width: { xs: "85%", md: "80%" }, mx: "auto", px: { xs: 0, md: 0 } }}
       >
@@ -21,7 +21,7 @@ const FromAssist = () => {
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 4, md: "24px" },
-            py: { xs: 8, md: 8 },
+            py: { xs: 8, md: 6 },
             px: { xs: 3, md: 8 },
             textAlign: "center",
             position: "relative",
@@ -48,8 +48,8 @@ const FromAssist = () => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                fontSize: { xs: 24, md: 44, lg: 48 },
-                lineHeight: "52px",
+                fontSize: { xs: 24, md: 36, lg: 36 },
+                lineHeight: "45px",
                 color: COLORS.BLACK,
                 maxWidth: { xs: 280, md: 1100 },
                 mx: "auto",
@@ -73,10 +73,10 @@ const FromAssist = () => {
               sx={{
                 mt: 3,
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 20, lg: 22 },
+                fontSize: { xs: 16, md: 20, lg: 18 },
                 color: COLORS.BLACK,
                 fontWeight: 500,
-                lineHeight: "30px",
+                lineHeight: "24px",
               }}
             >
               {data.subtitle}
@@ -102,7 +102,7 @@ const FromAssist = () => {
                   py: 1.8,
                   fontFamily: helvetica.style.fontFamily,
                   fontWeight: 700,
-                  fontSize: 18,
+                  fontSize: 16,
                   textTransform: "none",
                   boxShadow: "none",
                   lineHeight: "28px",

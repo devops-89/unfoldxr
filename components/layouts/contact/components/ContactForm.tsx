@@ -66,8 +66,8 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
         variant="contained"
         sx={{
           mt: 3,
-          backgroundColor: "#b6ec1a", 
-          color: "#000",
+          backgroundColor: "#000", 
+          color: "#b6ec1a",
           fontFamily: "Inter, sans-serif",
           fontWeight: 700,
           fontSize: 14,
@@ -77,7 +77,8 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
           py: 1.2,
           boxShadow: "none",
           "&:hover": {
-            backgroundColor: "#a5d915",
+            backgroundColor: "#b6ec1a",
+            color: "#000",
             boxShadow: "none",
           },
         }}

@@ -120,7 +120,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 sx={{
                   mt: 3,
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: isIndustry ? 22 : 18 },
+                  fontSize: { xs: 16, md: isIndustry ? 18 : 18 },
                   color: COLORS.BLACK,
                   fontWeight: isIndustry ? 400 : 500,
                   lineHeight: "30px",

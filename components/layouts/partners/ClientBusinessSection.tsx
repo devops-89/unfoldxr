@@ -9,21 +9,21 @@ const ClientBusinessSection = () => {
         position: "relative",
         backgroundColor: "#000",
         color: "#fff",
-        minHeight: { md: "85vh" },
+        // minHeight: { md: "85vh" },
         display: "flex",
         alignItems: "center",
-        py: { xs: 8, md: 0 },
+        py: { xs: 8, md: 10 },
         overflow: "visible",
       }}
     >
       <Container
         maxWidth={false}
         sx={{
-          mt: 12,
+          mt: 3,
           width: { xs: "95%", md: "90%", lg: "80%" },
           mx: "auto",
           zIndex: 1,
-          mb: 10,
+          mb: 4,
         }}
       >
         <Grid container spacing={4} alignItems="center">
@@ -33,10 +33,10 @@ const ClientBusinessSection = () => {
               <Typography
                 sx={{
                   fontWeight: 900,
-                  fontSize: { xs: 28, md: 48 },
+                  fontSize: { xs: 28, md: 36 },
                   lineHeight: "52px",
                   textTransform: "uppercase",
-                  mb: 8,
+                  mb: 4,
                   textAlign: { xs: "center", md: "left" },
                 }}
               >

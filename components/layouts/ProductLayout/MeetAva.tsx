@@ -11,8 +11,7 @@ const MeetAva = () => {
       sx={{
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
-        pt: { xs: 8, md: 2 },
-        pb: { xs: 8, md: 8 },
+        py: { xs: 8, md: 2 },
         overflow: "hidden",
       }}
     >
@@ -30,7 +29,7 @@ const MeetAva = () => {
                   fontFamily: din.style.fontFamily,
                   fontWeight: 900,
                   textTransform: "uppercase",
-                  fontSize: { xs: 28, md: 48, lg: 48 },
+                  fontSize: { xs: 28, md: 48, lg: 36 },
                   lineHeight: "52px",
                   maxWidth: "100%",
                   whiteSpace: "pre-line",
@@ -42,7 +41,7 @@ const MeetAva = () => {
               sx={{
                 mt: 4,
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 18, lg: 22 },
+                fontSize: { xs: 16, md: 18, lg: 18 },
                 lineHeight: "30px",
                 color: COLORS.TEXT_GRAY,
                 maxWidth: 720,
@@ -65,7 +64,7 @@ const MeetAva = () => {
                   py: 1.5,
                   fontFamily: helvetica.style.fontFamily,
                   fontWeight: 700,
-                  fontSize: 18,
+                  fontSize: 16,
                   textTransform: "none",
                   boxShadow: "none",
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER, boxShadow: "none" },

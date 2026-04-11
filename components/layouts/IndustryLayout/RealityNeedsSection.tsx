@@ -12,7 +12,7 @@ const RealityNeedsSection = ({ data }: Props) => {
     <Box
       sx={{
         bgcolor: COLORS.WHITE,
-        minHeight: { md: "85vh" },
+        // minHeight: { md: "85vh" },
         display: "flex",
         alignItems: "center",
         py: { xs: 8, md: 10 },
@@ -28,12 +28,11 @@ const RealityNeedsSection = ({ data }: Props) => {
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 28, md: 48, lg: 48 },
-            lineHeight: "52px",
+            fontSize: { xs: 28, md: 36},
+            lineHeight: "42px",
             textTransform: "uppercase",
-            fontWeight: 900,
-            color: COLORS.BLACK,
-            mb: 8,
+            fontWeight: 900,  color: COLORS.BLACK,
+            mb: 4,
           }}
         >
           {data.title}
@@ -46,7 +45,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                 bgcolor: COLORS.CARD_BG_DARK,
                 color: COLORS.WHITE,
                 borderRadius: 4,
-                p: { xs: 3.2, md: 4, lg: 5 },
+                p: { xs: 3.2, md: 4, lg: 4 },
                 height: "100%",
               }}
             >
@@ -54,12 +53,12 @@ const RealityNeedsSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: din.style.fontFamily,
                   textTransform: "uppercase",
-                  fontSize: { xs: 20, md: 24, lg: 22 },
+                  fontSize: { xs: 20, md: 24, lg: 18 },
                   color: COLORS.PRIMARY_GREEN,
                   fontWeight: 700,
                   lineHeight: "30px",
                   letterSpacing: "0.52px",
-                  mb: 3,
+                  mb: 2,
                 }}
               >
                 {data.realitiesTitle}
@@ -70,7 +69,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                     key={item}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 15, md: 18, lg: 18 },
+                      fontSize: { xs: 15, md: 18, lg: 16 },
                       lineHeight: "27px",
                       letterSpacing: "0.52px",
                       display: "flex",
@@ -93,7 +92,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                 bgcolor: COLORS.CARD_BG_DARK,
                 color: COLORS.WHITE,
                 borderRadius: 4,
-                p: { xs: 3.2, md: 4, lg: 5 },
+                p: { xs: 3.2, md: 4, lg: 4 },
                 height: "100%",
                 mb: { xs: 3, md: 0 },
               }}
@@ -102,12 +101,12 @@ const RealityNeedsSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: din.style.fontFamily,
                   textTransform: "uppercase",
-                  fontSize: { xs: 20, md: 24, lg: 22 },
+                  fontSize: { xs: 20, md: 24, lg: 18 },
                   color: COLORS.PRIMARY_GREEN,
                   fontWeight: 700,
                   lineHeight: "30px",
                   letterSpacing: "0.52px",
-                  mb: 3,
+                  mb: 2,
                   whiteSpace: "pre-line",
                 }}
               >
@@ -119,7 +118,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                     key={item}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 15, md: 18, lg: 18 },
+                      fontSize: { xs: 15, md: 18, lg: 16 },
                       lineHeight: "27px",
                       letterSpacing: "0.52px",
                       display: "flex",
@@ -142,7 +141,7 @@ const RealityNeedsSection = ({ data }: Props) => {
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 18, md: 26, lg: 22 },
+            fontSize: { xs: 18, md: 26, lg: 18 },
             mt: { xs: 8, md: 10 },
             maxWidth: 1100,
             mx: "auto",

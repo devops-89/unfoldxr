@@ -7,7 +7,7 @@ const MetricCard = ({ title, description }: PARTNERS_METRICS_CARD_PROPS) => {
     <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
       <Typography
         sx={{
-          fontSize: { xs: 28, md: 45},
+          fontSize: { xs: 28, md: 36},
           fontWeight: 900,
           color: COLORS.PRIMARY_GREEN,
           lineHeight: "52px",

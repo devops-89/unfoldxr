@@ -20,13 +20,13 @@ const AvaSupportSection = () => {
           width: { xs: "85%", md: "80%" },
           mx: "auto",
           px: { xs: 0, md: 0 },
-          py: { xs: 2.5, md: 5 },
+          py: { xs: 2.5, md: 4 },
         }}
       >
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 28, md: 48 },
+            fontSize: { xs: 28, md: 32, lg: 36 },
             fontWeight: 900,
             textTransform: "uppercase",
             lineHeight: "52px",
@@ -38,7 +38,7 @@ const AvaSupportSection = () => {
         <Typography
           sx={{
             fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 22 },
+            fontSize: { xs: 16, md: 18, lg: 18 },
             lineHeight: "30px",
             letterSpacing: "0.52px",
             maxWidth: 1660,
@@ -81,47 +81,40 @@ const AvaSupportSection = () => {
                       <Box
                         onClick={() => setActiveFeature(i)}
                         sx={{
-                          cursor: "pointer",
-                          width: "fit-content",
                           border:
                             activeFeature === i
                               ? `2px solid ${COLORS.PRIMARY_GREEN}`
                               : "2px solid transparent",
-                          borderRadius: "78px",
-                          px: { xs: 3, md: 4 },
-                          py: activeFeature === i ? 2.5 : 1.2,
-                          mb: 2.5,
+                          borderRadius: "32px",
+                          px: { xs: 2.3, md: 3 },
+                          py: activeFeature === i ? 2 : 1.2,
                           opacity: activeFeature === i ? 1 : 0.5,
+                          cursor: "pointer",
+                          width: "fit-content",
                           transition: "all 0.3s ease",
-                          bgcolor:
-                            activeFeature === i
-                              ? "rgba(182, 236, 26, 0.05)"
-                              : "transparent",
+                          mb: 1,
                           "&:hover": {
-                            bgcolor:
-                              activeFeature === i
-                                ? "rgba(182, 236, 26, 0.1)"
-                                : "rgba(255, 255, 255, 0.05)",
+                            bgcolor: "rgba(255, 255, 255, 0.05)",
                             borderColor:
                               activeFeature === i
                                 ? COLORS.PRIMARY_GREEN
-                                : "rgba(255, 255, 255, 0.2)",
+                                : "rgba(255, 255, 255, 0.1)",
                             opacity: 1,
                           },
                         }}
                       >
                         <Typography
                           sx={{
-                            fontFamily: helvetica.style.fontFamily,
-                            fontWeight: 900,
-                            fontSize: { xs: 15, md: 17, lg: 18 },
+                            fontFamily: din.style.fontFamily,
+                            fontWeight: 700,
                             textTransform: "uppercase",
-                            letterSpacing: "0.52px",
                             color:
                               activeFeature === i
                                 ? COLORS.PRIMARY_GREEN
                                 : COLORS.WHITE,
-                            lineHeight: "30px",
+                            fontSize: { xs: 18, md: 16 },
+                            lineHeight: "22px",
+                            letterSpacing: "0.52px",
                             transition: "color 0.3s ease",
                           }}
                         >
@@ -256,7 +249,7 @@ const AvaSupportSection = () => {
                 <Typography
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 18, md: 20, lg: 22 },
+                    fontSize: { xs: 18, md: 20, lg: 16 },
                     fontWeight: 500,
                     lineHeight: "30px",
                     color: COLORS.WHITE,

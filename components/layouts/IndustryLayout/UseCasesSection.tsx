@@ -33,7 +33,7 @@ const UseCasesSection = ({ data }: Props) => {
     <Box
       sx={{
         bgcolor: COLORS.WHITE,
-        minHeight: { md: "80vh" },
+        // minHeight: { md: "80vh" },
         display: "flex",
         alignItems: "center",
         py: { xs: 8, md: 10 },
@@ -52,13 +52,13 @@ const UseCasesSection = ({ data }: Props) => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 36, md: 48, lg: 48 },
+                fontSize: { xs: 28, md: 34, lg: 36 },
                 lineHeight: "52px",
                 textTransform: "uppercase",
                 fontWeight: 900,
                 color: COLORS.BLACK,
                 maxWidth: 700,
-                mb: 6,
+                mb: 4,
               }}
             >
               {data.title}
@@ -109,7 +109,7 @@ const UseCasesSection = ({ data }: Props) => {
                         display: "grid",
                         placeItems: "center",
                         fontFamily: din.style.fontFamily,
-                        fontSize: { xs: 16, md: 20 },
+                        fontSize: { xs: 16, md: 16, lg: 18 },
                         fontWeight: 700,
                       }}
                     >
@@ -119,7 +119,7 @@ const UseCasesSection = ({ data }: Props) => {
                       sx={{
                         fontFamily: helvetica.style.fontFamily,
                         fontWeight: 700,
-                        fontSize: { xs: 16, md: 20, lg: 22 },
+                        fontSize: { xs: 16, md: 16, lg: 18 },
                         color: COLORS.BLACK,
                         lineHeight: 1.2,
                         letterSpacing: "0.52px",
@@ -145,7 +145,7 @@ const UseCasesSection = ({ data }: Props) => {
                         color: "#b8ed1a",
                         fontFamily: din.style.fontFamily,
                         fontWeight: 700,
-                        fontSize: { xs: 14, md: 16 },
+                        fontSize: { xs: 14, md: 14, lg: 15 },
                         whiteSpace: "nowrap",
                         ml: 2,
                         textDecoration: "none",

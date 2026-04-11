@@ -15,7 +15,7 @@ const ExploreCapabilities = () => {
       sx={{
         backgroundColor: COLORS.WHITE,
         color: COLORS.BLACK,
-        py: { xs: 8, md: 16 },
+        py: { xs: 8, md: 10 },
       }}
     >
       <Box
@@ -30,9 +30,9 @@ const ExploreCapabilities = () => {
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 28, md: 48, lg: 48 },
+            fontSize: { xs: 28, md: 48, lg: 36 },
             lineHeight: "52px",
-            mb: { xs: 6, md: 10 },
+            mb: { xs: 6, md: 6 },
           }}
         >
           {data.title}
@@ -77,12 +77,12 @@ const ExploreCapabilities = () => {
                               : "2px solid transparent",
                           borderRadius: "32px",
                           px: { xs: 2.3, md: 3 },
-                          py: activeIndex === index ? 2.5 : 1.2,
+                          py: activeIndex === index ? 2 : 1.2,
                           opacity: activeIndex === index ? 1 : 0.5,
                           cursor: "pointer",
                           width: "fit-content",
                           transition: "all 0.3s ease",
-                          mb: 2.5,
+                          mb: 1,
                           "&:hover": {
                             bgcolor: "rgba(0, 0, 0, 0.03)",
                             borderColor:
@@ -102,8 +102,8 @@ const ExploreCapabilities = () => {
                               activeIndex === index
                                 ? COLORS.PRIMARY_HOVER
                                 : COLORS.BLACK,
-                            fontSize: { xs: 18, md: 22 },
-                            lineHeight: "30px",
+                            fontSize: { xs: 18, md: 16 },
+                            lineHeight: "22px",
                             letterSpacing: "0.52px",
                           }}
                         >
@@ -111,9 +111,9 @@ const ExploreCapabilities = () => {
                         </Typography>
                         <Typography
                           sx={{
-                            mt: 0.8,
+                            // mt: 0.8,
                             fontFamily: din.style.fontFamily,
-                            fontSize: { xs: 16, md: 18 },
+                            fontSize: { xs: 16, md: 15 },
                             color:
                               activeIndex === index
                                 ? COLORS.PRIMARY_HOVER
@@ -251,7 +251,7 @@ const ExploreCapabilities = () => {
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 18, md: 22 },
+                  fontSize: { xs: 18, md: 16 },
                   lineHeight: "30px",
                   letterSpacing: "0.52px",
                   color: COLORS.BLACK,
