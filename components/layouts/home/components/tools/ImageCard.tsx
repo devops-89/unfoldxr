@@ -1,36 +1,37 @@
 import { Box, Typography } from "@mui/material";
 import { IMAGE_CARD_PROPS } from "@/utils/types";
-import { helvetica } from "@/utils/fonts";
+import { helvetica, din } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
+import Link from "next/link";
 
-const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
-  return (
-    <Box
-      sx={{
-        p: { xs: 2.5, md: 3 },
-        borderRadius: "16px",
-        height: { xs: "180px", md: "210px" },
-        position: "relative",
-        overflow: "hidden",
-        backgroundImage: `url(${card.image.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        gap: 1,
-        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.05)",
-        backgroundColor: card.titleColor === "#000000" ? "#F5F5F5" : "transparent",
-      }}
-    >
-      {/* Overlay for better text readability */}
-      {card.titleColor !== "#000000" ? (
+const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
+  <Box
+    sx={{
+      p: { xs: 2.5, md: 3 },
+      borderRadius: "16px",
+      height: { xs: "180px", md: "210px" },
+      position: "relative",
+      overflow: "hidden",
+      backgroundImage: `url(${card.image.src})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-end",
+      gap: 1,
+      boxShadow: card.titleColor === "#000000" ? "0px 6px 30px rgba(0, 0, 0, 0.12)" : "0px 4px 20px rgba(0, 0, 0, 0.05)",
+      backgroundColor: card.titleColor === "#000000" ? "#F8F9FA" : "transparent",
+      border: card.titleColor === "#000000" ? "1px solid rgba(0,0,0,0.05)" : "none",
+    }}
+  >
+    {/* Overlay for better text readability */}
+    {card.titleColor !== "#000000" ? (
         <Box
           sx={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, transparent 100%)",
+            background: "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%)",
             zIndex: 0,
           }}
         />
@@ -39,44 +40,81 @@ const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
           sx={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%)",
+            background: "linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.1) 100%)",
             zIndex: 0,
           }}
         />
       )}
 
-      <Box sx={{ position: "relative", zIndex: 1 }}>
-        <Typography
-          sx={{
-            fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 16 },
-            fontWeight: 700,
-            color: card.titleColor || COLORS.WHITE,
-            mb: 1,
-            textTransform: "none",
-            lineHeight: "20px",
-            letterSpacing: "0.52px",
-          }}
-        >
-          {card.title}
-        </Typography>
-
-        {card.description && (
+      <Box sx={{ position: "relative", zIndex: 1, flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+        {card.tag ? (
+          <Box sx={{ 
+            alignSelf: "flex-start", 
+            bgcolor: card.titleColor === "#000000" ? "#000000" : "#B6EC1A", 
+            px: 2, 
+            py: 0.5, 
+            borderRadius: "100px",
+            boxShadow: "0px 4px 10px rgba(0,0,0,0.15)"
+          }}>
+            <Typography sx={{ 
+              fontFamily: din.style.fontFamily, 
+              fontSize: 12, 
+              fontWeight: 900, 
+              color: card.titleColor === "#000000" ? "#B6EC1A" : "#000000", 
+              textTransform: "uppercase",
+              letterSpacing: "0.5px"
+            }}>
+              {card.tag}
+            </Typography>
+          </Box>
+        ) : (
+          <Box />
+        )}
+        <Box>
           <Typography
             sx={{
               fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 13, md: 15 },
-              fontWeight: 400,
+              fontSize: { xs: 16, md: 16 },
+              fontWeight: 700,
+              color: card.titleColor || COLORS.WHITE,
+              mb: 1,
+              textTransform: "none",
               lineHeight: "20px",
-              color: card.descriptionColor || "rgba(255, 255, 255, 0.8)",
+              letterSpacing: "0.52px",
             }}
           >
-            {card.description}
+            {card.title}
           </Typography>
-        )}
+
+          {card.description && (
+            <Typography
+              sx={{
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: { xs: 13, md: 15 },
+                fontWeight: 400,
+                lineHeight: "20px",
+                color: card.descriptionColor || "rgba(255, 255, 255, 0.8)",
+              }}
+            >
+              {card.description}
+            </Typography>
+          )}
+        </Box>
       </Box>
-    </Box>
-  );
+  </Box>
+);
+
+const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
+  if (card.link) {
+    return (
+      <Link href={card.link} passHref legacyBehavior>
+        <Box component="a" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: "none", display: "block", color: "inherit", transition: "transform 0.2s ease", '&:hover': { transform: "scale(1.02)" } }}>
+          <ImageCardContent card={card} />
+        </Box>
+      </Link>
+    );
+  }
+  return <ImageCardContent card={card} />;
 };
 
 export default ImageCard;

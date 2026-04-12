@@ -48,6 +48,8 @@ export interface IMAGE_CARD_PROPS extends TOOLS_CARD_BASE{
   description?:string;
   titleColor?: string;       
   descriptionColor?: string;  
+  tag?: string;
+  link?: string;
 }
 
 export interface ICON_CARD_PROPS extends TOOLS_CARD_BASE{

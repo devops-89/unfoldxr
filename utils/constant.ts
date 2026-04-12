@@ -312,25 +312,28 @@ export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
   cards: [
     {
       type: "image",
-      title: "From many tools to one intelligent platform ",
+      title: "AI for Frontline Workers: The Future of Enterprise Productivity",
       image: humanizeChatbot,
+      tag: "Blog",
+      link: "https://unfoldxr.com/blog/ai-frontline-workers-future-enterprise-productivity/",
       gridSize: 5,
     },
     {
       type: "image",
-      title: "Augmenting human productivity with AR & AI",
-      description:
-        "Streamlining operations with smart automation and immersive technology.",
+      title: "Coming Soon",
+      description: "Press release link will be shared soon.",
       image: augmentingHuman,
+      tag: "Press Release",
       gridSize: 7,
     },
     {
       type: "image",
-      title: "The future of work: AI-powered, AR-enabled",
-      description: "Smarter collaboration with next-gen tech.",
+      title: "Coming Soon",
+      description: "Press release link will be shared soon.",
       image: smsChatBg,
       titleColor: "#000000",
       descriptionColor: "#51555c",
+      tag: "Press Release",
       gridSize: 7,
     },
     {

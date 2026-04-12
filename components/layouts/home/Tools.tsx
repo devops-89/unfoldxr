@@ -81,7 +81,7 @@ const Tools = () => {
                   whiteSpace: { xs: "normal", md: "nowrap" },
                 }}
               >
-                ONE AR-ENABLED PLATFORM
+                ONE PLATFORM
               </Typography>
 
               {/* Stretching Divider - only visible horizontally on desktop */}
