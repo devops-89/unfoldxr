@@ -11,132 +11,85 @@ const OutcomesSection = ({ data }: Props) => {
   return (
     <Box
       sx={{
-        position: "relative",
-        minHeight: { xs: 900, md: "100vh" },
+        bgcolor: "#000000",
         color: COLORS.WHITE,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        overflow: "hidden",
-        py: { xs: 10, md: 15 },
+        py: { xs: 8, md: 15 },
+        px: { xs: 3, md: 8, lg: 12 },
       }}
     >
-      <Box
-        component="img"
-        src={data.image}
-        alt=""
-        sx={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        }}
-      />
-      <Box
-        sx={{ position: "absolute", inset: 0, bgcolor: "rgba(0,0,0,0.8)" }}
-      />
-
-      <Box
-        sx={{
-          width: { xs: "85%", md: "85%" },
-          mx: "auto",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {/* Border Frame */}
-        <Box
+      <Box sx={{ maxWidth: "1400px", mx: "auto" }}>
+        {/* Top Heading */}
+        <Typography
           sx={{
-            ml: { xs: 0, md: -5.5, lg: 1 },
-            p: { xs: 3, md: 8 },
-            pt: { xs: 8, md: 10 },
-            position: "relative",
-            width: "100%",
-            mx: "auto",
+            fontFamily: din.style.fontFamily,
+            fontSize: { xs: 32, md: 44, lg: 52 },
+            lineHeight: { xs: "40px", md: "60px" },
+            textTransform: "uppercase",
+            fontWeight: 900,
+            color: COLORS.WHITE,
+            mb: { xs: 6, md: 8 },
+            maxWidth: "1000px",
           }}
         >
-          <Grid
-            container
-            spacing={6}
-            alignItems="flex-start"
-            sx={{ position: "relative" }}
-          >
-            {/* Left Side: Headline with Highlight */}
-            <Grid size={{ xs: 12, md: 7 }} sx={{ zIndex: 2 }}>
-              <Typography
-                sx={{
-                  fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 33, md: 48, lg: 48 },
-                  lineHeight: "52px",
-                  textTransform: "uppercase",
-                  fontWeight: 900,
-                  color: COLORS.WHITE,
-                  position: "relative",
-                  zIndex: 1,
-                }}
-              >
-                {data.titleLines.map((line, idx) => (
-                  <Box
-                    key={idx}
-                    component="span"
-                    sx={{
-                      display: "block",
-                    }}
-                  >
-                    {line}
-                  </Box>
-                ))}
-              </Typography>
-            </Grid>
+          {data.titleLines.join(" ")}
+        </Typography>
 
-            {/* Right Side: Stats Grid */}
-            <Grid size={{ xs: 12, md: 5 }}>
-              <Grid
-                container
-                spacing={{ xs: 3, md: 5 }}
-                rowSpacing={{ xs: 5, md: 6 }}
-              >
-                {data.metrics.map((metric, i) => (
-                  <Grid key={i} size={{ xs: 12, sm: 6 }}>
-                    <Stack
-                      spacing={0.5}
+        <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
+          {/* Left Side: Image */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              component="img"
+              src={data.image}
+              alt="Industry Outcomes"
+              sx={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "24px",
+                objectFit: "cover",
+                border: "8px solid #2A2A2A", 
+                boxShadow: "0px 20px 40px rgba(0,0,0,0.5)",
+              }}
+            />
+          </Grid>
+
+          {/* Right Side: Stats */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Grid
+              container
+              spacing={{ xs: 4, md: 5 }}
+            >
+              {data.metrics.map((metric, i) => (
+                <Grid key={i} size={{ xs: 12, sm: 6 }}>
+                  <Stack spacing={1}>
+                    <Typography
                       sx={{
-                        position: "relative",
+                        fontFamily: din.style.fontFamily,
+                        color: COLORS.PRIMARY_GREEN,
+                        fontSize: { xs: 42, md: 48, lg: 36},
+                        fontWeight: 900,
+                        lineHeight: 1,
                       }}
                     >
-                      <Typography
-                        sx={{
-                          fontFamily: din.style.fontFamily,
-                          color: COLORS.PRIMARY_GREEN,
-                          fontSize: { xs: 42, md: 48, lg: 48 },
-                          fontWeight: 900,
-                          lineHeight: "52px",
-                          position: "relative",
-                          zIndex: 1,
-                        }}
-                      >
-                        {metric.value}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontFamily: helvetica.style.fontFamily,
-                          fontSize: { xs: 15, md: 16, lg: 18 },
-                          lineHeight: "23px",
-                          letterSpacing: "0.52px",
-                          color: "rgba(255,255,255,0.9)",
-                          fontWeight: 400,
-                        }}
-                      >
-                        {metric.text}
-                      </Typography>
-                    </Stack>
-                  </Grid>
-                ))}
-              </Grid>
+                      {metric.value}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: helvetica.style.fontFamily,
+                        fontSize: { xs: 15, md: 16, lg: 16 },
+                        lineHeight: "24px",
+                        letterSpacing: "0.5px",
+                        color: "rgba(255,255,255,0.9)",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {metric.text}
+                    </Typography>
+                  </Stack>
+                </Grid>
+              ))}
             </Grid>
           </Grid>
-        </Box>
+        </Grid>
       </Box>
     </Box>
   );

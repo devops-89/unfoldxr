@@ -12,7 +12,7 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
       height: { xs: "180px", md: "210px" },
       position: "relative",
       overflow: "hidden",
-      backgroundImage: `url(${card.image.src})`,
+      backgroundImage: card.image && !card.video ? `url(${typeof card.image === "string" ? card.image : card.image.src})` : "none",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -25,6 +25,28 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
       border: card.titleColor === "#000000" ? "1px solid rgba(0,0,0,0.05)" : "none",
     }}
   >
+    {/* Video Background */}
+    {card.video && (
+      <Box
+        component="video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        src={card.video}
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      />
+    )}
+
     {/* Overlay for better text readability */}
     {card.titleColor !== "#000000" ? (
         <Box
@@ -32,7 +54,7 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
             position: "absolute",
             inset: 0,
             background: "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%)",
-            zIndex: 0,
+            zIndex: 1,
           }}
         />
       ) : (
@@ -41,12 +63,12 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
             position: "absolute",
             inset: 0,
             background: "linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.1) 100%)",
-            zIndex: 0,
+            zIndex: 1,
           }}
         />
       )}
 
-      <Box sx={{ position: "relative", zIndex: 1, flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+      <Box sx={{ position: "relative", zIndex: 2, flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
         {card.tag ? (
           <Box sx={{ 
             alignSelf: "flex-start", 

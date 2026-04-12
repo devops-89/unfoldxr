@@ -337,9 +337,10 @@ export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
       gridSize: 7,
     },
     {
-      type: "icon",
+      type: "image",
       title: "Smarter support, better outcomes",
-      icons: [bell, clock, calender],
+      video: "/images/banner/homePage/ToolsSection/LogoVideo.mp4",
+      tag: "Video Animation",
       gridSize: 5,
     },
   ],

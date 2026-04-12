@@ -44,7 +44,8 @@ export interface TOOLS_CARD_BASE{
 
 export interface IMAGE_CARD_PROPS extends TOOLS_CARD_BASE{
   type:"image";
-  image: StaticImageData;
+  image?: StaticImageData | string;
+  video?: string;
   description?:string;
   titleColor?: string;       
   descriptionColor?: string;  
