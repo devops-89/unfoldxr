@@ -118,18 +118,22 @@ export const homePage = {
       {
         number: "01",
         description: "Repair, Maintenance, Asset Management",
+        link: "/usecases/repair-maintenance",
       },
       {
         number: "02",
         description: "Field Service, Troubleshooting & Remote  Collaboration",
+        link: "/usecases/field-inspection",
       },
       {
         number: "03",
         description: "Training, Onboarding &  Knowledge Capture",
+        link: "/usecases/training",
       },
       {
         number: "04",
         description: "Inspection, Compliance & Quality Assurance",
+        link: "/usecases/inspection-compliance",
       },
     ],
     cta: "Know more",

@@ -5,10 +5,9 @@ import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import { useDemoModal } from "@/components/context/DemoModalContext";
+import Link from "next/link";
 
 const Meetava = () => {
-  const { openModal } = useDemoModal();
   return (
     <Box
       sx={{ mt: { xs: 8, md: 12 }, mb: { xs: 8, md: 12 }, overflow: "hidden" }}
@@ -59,18 +58,19 @@ const Meetava = () => {
                 </Stack>
 
                 <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
-                  <ContainedButton
-                    onClick={openModal}
-                    sx={{
-                      width: { xs: "100%", md: "auto" },
-                      borderRadius: 99,
-                      px: { xs: 2.5, md: 4 },
-                      py: 1.2,
-                      fontSize: { xs: 14, md: 18, lg: 16 },
-                    }}
-                  >
-                    Book a demo now
-                  </ContainedButton>
+                  <Link href="/meet-ava" style={{ textDecoration: "none" }}>
+                    <ContainedButton
+                      sx={{
+                        width: { xs: "100%", md: "auto" },
+                        borderRadius: 99,
+                        px: { xs: 2.5, md: 4 },
+                        py: 1.2,
+                        fontSize: { xs: 14, md: 18, lg: 16 },
+                      }}
+                    >
+                      Meet AVA
+                    </ContainedButton>
+                  </Link>
                 </Box>
               </Stack>
             </Grid>

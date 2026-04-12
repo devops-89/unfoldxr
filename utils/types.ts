@@ -22,6 +22,7 @@ export interface FUTURE_WORK_CARD_PROPS {
 export interface OUTCOME_CARD_PROPS {
   number: string;
   label: string;
+  link?: string;
 }
 
 export interface DEVICES_SECTION_DATA_PROPS {
@@ -30,6 +31,8 @@ export interface DEVICES_SECTION_DATA_PROPS {
   heading: string;
   description: string;
   gridSize: number;
+  bgColor?: string;
+  textColor?: string;
 }
 
 export interface TOOLS_CARD_BASE{

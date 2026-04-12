@@ -42,6 +42,8 @@ const DevicesSection = () => {
               <Grid key={i} size={{ xs: 12, md: val.gridSize }}>
                 <DevicesCard
                   bgImg={val.bgImg}
+                  bgColor={val.bgColor}
+                  textColor={val.textColor}
                   img={val.img}
                   heading={val.heading}
                   description={val.description}

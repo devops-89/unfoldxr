@@ -11,7 +11,7 @@ const Outcome = () => {
     <Box
       sx={{
         backgroundColor: COLORS.BLACK,
-        py: { xs: 8, md: 8 },
+        py: { xs: 8, md: 12 },
         // minHeight: "75vh",
         display: "flex",
         alignItems: "center",
@@ -61,24 +61,10 @@ const Outcome = () => {
           <Grid container spacing={{ xs: 2, md: 3 }}>
             {homePage.outcome.data.map((val, i) => (
               <Grid size={{ xs: 12, md: 6 }} key={i}>
-                <OutcomeCard number={val.number} label={val.description} />
+                <OutcomeCard number={val.number} label={val.description} link={(val as any).link} />
               </Grid>
             ))}
           </Grid>
-
-          {/* CTA */}
-          <Box sx={{ mt: 6, textAlign: "center" }}>
-            <ContainedButton
-              sx={{
-                width: { xs: "100%", md: "auto" },
-                height: { xs: "45px", md: "60px" },
-                fontSize: { xs: 16, md: 16 },
-                lineHeight: "30px",
-              }}
-            >
-              {homePage.outcome.cta}
-            </ContainedButton>
-          </Box>
         </Box>
       </Box>
     </Box>

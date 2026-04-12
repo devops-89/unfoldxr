@@ -267,29 +267,35 @@ export const FUTURE_WORK_CARD_DATA: FUTURE_WORK_CARD_PROPS[] = [
 
 export const DEVICES_SECTION_DATA: DEVICES_SECTION_DATA_PROPS[] = [
   {
-    bgImg: devicesImpact.src,
     heading: "Impact Shouldn’t Depend on Hardware",
     description:
       "Frontline performance should not be limited by device budgets. Either delivered through audio or immersive AR, UnfoldXR delivers seamless performance.",
     gridSize: 7,
+    bgColor: "#1E1F21",
+    textColor: "#FFFFFF",
   },
   {
     heading: "Works Across All Devices",
     description:
       "Mobile phones, tablets, basic smart glasses, screenless helmets, and advanced AR wearables.",
     gridSize: 5,
+    bgColor: "#EAECEE",
+    textColor: "#000000",
   },
   {
     heading: "Device-Adaptive by Design",
     description:
       "UnfoldXR adjusts automatically to the device in use, ensuring a consistent experience everywhere.",
     gridSize: 5,
+    bgColor: "#EAECEE",
+    textColor: "#000000",
   },
   {
     heading: "Built for What’s Next",
     description: "As hardware evolves, UnfoldXR evolves with it.",
-    bgImg: built.src,
     gridSize: 7,
+    bgColor: "#B6EC1A",
+    textColor: "#000000",
   },
 ];
 

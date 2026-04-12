@@ -15,10 +15,12 @@ const DevicesCard = ({
   description,
   gridSize,
   isFirst = false,
+  bgColor,
+  textColor: overrideTextColor,
 }: DevicesCardProps) => {
   const hasBg = Boolean(bgImg);
-  const textColor = hasBg ? COLORS.WHITE : COLORS.BLACK;
-  const accentColor = hasBg ? COLORS.WHITE : COLORS.BLACK;
+  const textColor = overrideTextColor || (hasBg ? COLORS.WHITE : COLORS.BLACK);
+  const accentColor = textColor;
 
   return (
     <Box
@@ -27,7 +29,7 @@ const DevicesCard = ({
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundColor: hasBg ? "transparent" : "#D3DEE4",
+        backgroundColor: bgColor || (hasBg ? "transparent" : "#D3DEE4"),
         borderRadius: "28px",
         height: { xs: "240px", md: "250px" },
         display: "flex",
