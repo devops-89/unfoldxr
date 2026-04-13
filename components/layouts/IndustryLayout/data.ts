@@ -533,7 +533,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Insurance", "Operations"],
-      image: "/images/Industries/Insurance/20.png",
+      image: "/images/Industries/Insurance/insurance.jpeg",
       metrics: [
         { value: "40%", text: "reduction in claim cycle time, enabling faster settlements" },
         { value: "60%", text: "reduction in on-site visits, allowing remote damage assessment" },
