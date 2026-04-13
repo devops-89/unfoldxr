@@ -9,12 +9,12 @@ import ExistingPartnersSection from "./ExistingPartnersSection";
 const PartnersLayout = () => {
   return (
     <Box>
-    <HeroSection />
-    <MetricsSection />
-    <WhyPartnerSection />
-    <EcosystemSection />
-    <ClientBusinessSection />
-    <ExistingPartnersSection />
+      <HeroSection />
+      <MetricsSection />
+      <WhyPartnerSection />
+      <EcosystemSection />
+      <ClientBusinessSection />
+      {/* <ExistingPartnersSection /> */}
     </Box>
   );
 };

@@ -193,7 +193,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       title: "Device & Deployment",
       deviceA: {
         image:
-          "/images/usecase/MobilePhone.png",
+          "/images/usecase/MobileTabletGlass.png",
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
@@ -379,7 +379,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     deviceDeployment: {
       title: "Device & Deployment",
       deviceA: {
-        image: "/images/usecase/MobilePhone.png",
+        image: "/images/usecase/MobileTabletGlass.png",
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
@@ -543,7 +543,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     deviceDeployment: {
       title: "DEVICE & DEPLOYMENT",
       deviceA: {
-        image: "/images/usecase/MobilePhone.png",
+        image: "/images/usecase/MobileTabletGlass.png",
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
@@ -701,7 +701,7 @@ export const useCasesData: Record<string, UseCaseData> = {
     deviceDeployment: {
       title: "DEVICE & DEPLOYMENT",
       deviceA: {
-        image: "/images/usecase/MobilePhone.png",
+        image: "/images/usecase/MobileTabletGlass.png",
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {

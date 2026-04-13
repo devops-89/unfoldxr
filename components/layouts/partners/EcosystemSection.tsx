@@ -70,7 +70,9 @@ const EcosystemSection = () => {
                       position: "relative",
                     }}
                   >
-                    <Box sx={{ display: "flex", flex: 1, alignItems: "stretch" }}>
+                    <Box
+                      sx={{ display: "flex", flex: 1, alignItems: "stretch" }}
+                    >
                       {/* Header Pill Wrapper to ensure Stepper alignment */}
                       <Box
                         sx={{
@@ -111,7 +113,9 @@ const EcosystemSection = () => {
                               fontWeight: 700,
                               textTransform: "uppercase",
                               color:
-                                activeTab === i ? COLORS.PRIMARY_HOVER : COLORS.BLACK,
+                                activeTab === i
+                                  ? COLORS.PRIMARY_HOVER
+                                  : COLORS.BLACK,
                               fontSize: { xs: 18, md: 16 },
                               lineHeight: "22px",
                               letterSpacing: "0.52px",
@@ -187,8 +191,7 @@ const EcosystemSection = () => {
                           sx={{
                             width: 8,
                             height: 8,
-                            bgcolor:
-                              i <= activeTab ? COLORS.BLACK : "#BDBDBD",
+                            bgcolor: i <= activeTab ? COLORS.BLACK : "#BDBDBD",
                             borderRadius: "50%",
                             position: "relative",
                             zIndex: 2,
@@ -232,7 +235,10 @@ const EcosystemSection = () => {
             </Grid>
 
             {/* RIGHT (Desktop only) */}
-            <Grid size={{ xs: 12, md: 7 }} sx={{ display: { xs: "none", md: "block" } }}>
+            <Grid
+              size={{ xs: 12, md: 7 }}
+              sx={{ display: { xs: "none", md: "block" } }}
+            >
               <Box
                 sx={{
                   pl: { md: 6 },
