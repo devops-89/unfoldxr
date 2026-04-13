@@ -1,5 +1,5 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Grid, Typography, Stack } from "@mui/material";
+import { Box, Grid, Typography, Stack, Container } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
 
@@ -13,11 +13,10 @@ const OutcomesSection = ({ data }: Props) => {
       sx={{
         bgcolor: "#000000",
         color: COLORS.WHITE,
-        py: { xs: 8, md: 15 },
-        px: { xs: 3, md: 8, lg: 12 },
+        py: { xs: 8, md: 10 },
       }}
     >
-      <Box sx={{ maxWidth: "1400px", mx: "auto" }}>
+      <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "83%" }, mx: "auto", px: 0 }}>
         {/* Top Heading */}
         <Typography
           sx={{
@@ -90,7 +89,7 @@ const OutcomesSection = ({ data }: Props) => {
             </Grid>
           </Grid>
         </Grid>
-      </Box>
+      </Container>
     </Box>
   );
 };
