@@ -199,11 +199,20 @@ export const FOOTER_COLUMNS = [
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
-    icon: GarageRoundedIcon, // Placeholder or same icon set
+    img: increase, 
     heading: "INCREASE PRODUCTIVITY",
-    description: "40% reduction in technician training \n time   & error diagnosis",
+    description: "40% reduction in technician training \n time & error diagnosis",
   },
-  // ... other items remained same, I'll just keep the structure for brevity in task
+  {
+    img: reduce,
+    heading: "REDUCE DOWNTIME",
+    description: "Errors and rework reduced by 50%,\n40% increase in first-time fix rate",
+  },
+  {
+    img: operational,
+    heading: "LOWER OPERATIONAL COSTS",
+    description: "50% less onsite visit\nand increased remote collaboration",
+  }
 ];
 
 export const AI_INDUSTRY_DATA = MASTER_INDUSTRIES.map((ind) => ({

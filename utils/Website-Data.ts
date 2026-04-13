@@ -24,7 +24,7 @@ import heroRing from "@/images/meet-ava/herosection-image.png";
 import introImage from "@/images/meet-ava/meet-ava.png";
 import phonePlaceholder from "@/images/meet-ava/ask-ava.png";
 import automotiveHero from "@/images/Industries/hero.png";
-import automotiveOutcomes from "@/images/Industries/Driving.png";
+import automotiveOutcomes from "@/images/Industries/Driving.jpeg";
 import automotiveIcon from "@/images/Industries/Icon.svg";
 import { INDUSTRY_PAGE_PROPS } from "./types";
 export const homePage = {

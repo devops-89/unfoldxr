@@ -105,7 +105,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes In", "Automotive", "Operations"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/Driving.jpeg",
       metrics: [
         { value: "25%", text: "reduction in assembly time, improving line throughput." },
         { value: "20%", text: "reduction in defect escape rate, ensuring issues are caught before dispatch." },
@@ -191,7 +191,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Refinery", "Operations"],
-      image: "/images/Industries/OilGas/4.jpg",
+      image: "/images/Industries/OilGas/oil&gas.jpeg",
       metrics: [
         { value: "15%", text: "reduction in shutdown duration, enabling shorter turnarounds" },
         { value: "20%", text: "reduction in HSE incidents, improving safety in task execution" },
@@ -449,7 +449,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Marine", "Operations"],
-      image: "/images/Industries/Driving.png",
+      image: "/images/Industries/Driving.jpeg",
       metrics: [
         { value: "20%", text: "reduction in engine overhaul time, reducing wrench time" },
         { value: "50%", text: "reduction in crew onboarding time, making vessels ready faster" },
