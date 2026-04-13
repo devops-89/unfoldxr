@@ -276,7 +276,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In", "Manufacturing"],
-      image: "/images/Industries/Manufacturing/5.png",
+      image: "/images/Industries/Manufacturing/5.jpeg",
       metrics: [
         { value: "15%", text: "reduction in mean time to repair, enabling faster fault recovery" },
         { value: "15%", text: "reduction in unplanned downtime, improving machine availability" },
