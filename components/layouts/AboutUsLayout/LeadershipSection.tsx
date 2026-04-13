@@ -2,10 +2,8 @@ import { Box, Container, Grid, Typography, Stack } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
-
 const LeadershipSection = () => {
   const { leadershipSection: data } = aboutPage;
-
   return (
     <Container
       maxWidth={false}

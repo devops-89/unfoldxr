@@ -1,12 +1,14 @@
+"use client";
 import { COLORS } from "@/utils/enum";
 import { din } from "@/utils/fonts";
 import { OUTCOME_CARD_PROPS } from "@/utils/types";
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import ContainedButton from "@/components/widgets/ContainedButton";
 
 const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
+  const router = useRouter();
   return (
     <Box
       sx={{
@@ -57,21 +59,20 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
       {/* CTA Button placed on right side */}
       <Box sx={{ flexShrink: 0, mt: { xs: 1, md: 0 }, alignSelf: { xs: "flex-end", md: "center" } }}>
         {link ? (
-          <Link href={link} passHref legacyBehavior>
-            <ContainedButton
-              sx={{
-                width: "auto",
-                minWidth: "120px",
-                height: { xs: "36px", md: "42px" },
-                fontSize: { xs: 12, md: 14 },
-                fontWeight: 700,
-                borderRadius: "100px",
-                px: 2,
-              }}
-            >
-              Know More
-            </ContainedButton>
-          </Link>
+          <ContainedButton
+            onClick={() => router.push(link)}
+            sx={{
+              width: "auto",
+              minWidth: "120px",
+              height: { xs: "36px", md: "42px" },
+              fontSize: { xs: 12, md: 14 },
+              fontWeight: 700,
+              borderRadius: "100px",
+              px: 2,
+            }}
+          >
+            Know More
+          </ContainedButton>
         ) : (
           <ContainedButton
             sx={{

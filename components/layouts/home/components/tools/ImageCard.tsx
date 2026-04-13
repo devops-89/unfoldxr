@@ -1,3 +1,4 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import { IMAGE_CARD_PROPS } from "@/utils/types";
 import { helvetica, din } from "@/utils/fonts";
@@ -129,7 +130,7 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
 const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
   if (card.link) {
     return (
-      <Link href={card.link} passHref legacyBehavior>
+      <Link href={card.link} passHref>
         <Box component="a" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: "none", display: "block", color: "inherit", transition: "transform 0.2s ease", '&:hover': { transform: "scale(1.02)" } }}>
           <ImageCardContent card={card} />
         </Box>
