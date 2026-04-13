@@ -4,6 +4,7 @@ export interface UseCaseData {
     subtitle: string;
     description: string;
     image: string;
+    overlayOpacity?: number;
   };
   knowledge: {
     title: string;
@@ -102,39 +103,39 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "DIGITAL SOP & WORKFLOW CREATION (CREATOR MODE)",
-          description: "Capture expert processes once and convert them into structured, step-by-step digital workflows for training and execution.",
+          description: "Captures expert processes and converts them into structured, step-by-step digital workflows. This ensures knowledge is standardised and easily accessible for training and execution. An experienced technician records a process once, which becomes a repeatable workflow for new hires.",
         },
         {
           title: "VIDEO-TO-WORKFLOW CONVERSION",
-          description: "Transform existing training videos into interactive, guided instructions.",
+          description: "Transforms existing training videos into interactive, guided instructions. This makes passive content actionable and easier to follow during real tasks. A training video is converted into step-by-step guidance that employees can use while performing the task.",
         },
         {
           title: "CONTEXT-AWARE LEARNING AT THE MOMENT OF WORK",
-          description: "Deliver training guidance aligned to the specific asset, task, or environment.",
+          description: "Delivers training guidance aligned to the specific asset, task, or environment. This improves learning effectiveness by embedding it within real work. A technician receives relevant instructions while working on a specific machine instead of referring to generic training material.",
         },
         {
-          title: "AI-GUIDED ASSISTANCE (AVA)",
-          description: "Provide real-time support, explanations, and recommendations before, during, and after tasks.",
+          title: "AI-GUIDED ASSISTANCE",
+          description: "Provides real-time support, explanations, and recommendations throughout task execution. This reduces dependency on constant supervision and improves confidence in decision-making. A trainee receives instant guidance while performing a task independently.",
         },
         {
           title: "SMART SCAN MODE",
-          description: "Scan assets or QR codes to instantly access relevant training, SOPs, and contextual guidance.",
+          description: "Enables scanning of assets or QR codes to access relevant training, SOPs, and contextual guidance. This reduces time spent searching for information and ensures accuracy. A worker scans a machine and instantly accesses the correct training workflow.",
         },
         {
           title: "REMOTE EXPERT COLLABORATION",
-          description: "Enable trainees to connect with senior experts through live audio, video, and visual guidance.",
+          description: "Connects trainees with experienced professionals through live audio, video, and visual guidance. This accelerates learning and reduces delays in problem-solving. A new employee receives real-time support from a senior expert while performing a complex task.",
         },
         {
           title: "EVIDENCE-BASED SKILL VALIDATION",
-          description: "Capture task completion data, photos, videos, and notes to verify competency and compliance.",
+          description: "Captures task completion data, photos, videos, and notes to verify competency and compliance. This ensures objective assessment of skills and readiness. A completed task is recorded and reviewed to confirm that the trainee meets required standards.",
         },
         {
           title: "ADAPTIVE WORKFLOWS",
-          description: "Ensure instructions adjust automatically across devices and environments for consistent learning outcomes.",
+          description: "Adjusts instructions dynamically based on device, environment, and task complexity. This ensures consistent learning outcomes across different scenarios. A workflow adapts seamlessly whether accessed on a mobile device or smart glasses.",
         },
         {
           title: "DEVICE-AGNOSTIC DEPLOYMENT",
-          description: "Accessible on mobile phones, tablets, and smart glasses, supporting both classroom and field-based training.",
+          description: "Works across mobile phones, tablets, and smart glasses for both classroom and field-based training. This enables flexible learning without dependency on a specific device. A trainee can start learning on a tablet and continue on smart glasses during field execution.",
         },
       ],
     },
@@ -271,58 +272,47 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "INTELLIGENT INSPECTION PLANNING & ROSTERING",
-          description:
-            "Automatically assign inspections based on compliance schedules, asset criticality, skill levels, and location.",
+          description: "Automatically assigns inspections based on compliance schedules, asset criticality, skill levels, and location. This ensures timely inspections and reduces the risk of missed or delayed checks. A high-risk asset is automatically prioritised and assigned to a qualified inspector.",
         },
         {
           title: "CONTEXT-AWARE DIGITAL CHECKLISTS",
-          description:
-            "Deliver guided, SOP-aligned inspection workflows specific to assets, regulations, and quality standards and enable hands-free inspection.",
+          description: "Delivers guided, SOP-aligned inspection workflows specific to assets, regulations, and quality standards. This improves consistency and ensures every step is completed as required. An inspector follows a structured checklist tailored to a specific machine and compliance requirement.",
         },
         {
           title: "SMART SCAN & ASSET RECOGNITION",
-          description:
-            "Instantly identify equipment through QR or visual recognition to access inspection history and compliance records.",
+          description: "Identifies equipment through QR codes or visual recognition to access inspection history and compliance records. This reduces time spent locating information and improves inspection accuracy. An inspector scans an asset and instantly views its past inspection logs and pending checks.",
         },
         {
-          title: "AI-GUIDED VALIDATION (AVA)",
-          description:
-            "Provide real-time recommendations, flag anomalies, and assist decision-making during inspections.",
+          title: "AI-GUIDED VALIDATION",
+          description: "Provides real-time recommendations, flags anomalies, and supports decision-making during inspections. This improves defect detection and reduces the chances of oversight. While inspecting equipment, deviations from standard parameters are highlighted immediately.",
         },
         {
           title: "EVIDENCE CAPTURE & AUTO-DOCUMENTATION",
-          description:
-            "Capture photos, videos, annotations, and notes with automatic generation of compliance-ready reports.",
+          description: "Captures photos, videos, annotations, and notes and converts them into compliance-ready reports. This reduces manual effort and ensures complete documentation. A completed inspection automatically generates a detailed report with supporting evidence.",
         },
         {
           title: "GEO-TAGGED & TIME-STAMPED VERIFICATION",
-          description:
-            "Ensure inspections are completed at the correct location with verifiable digital audit trails.",
+          description: "Records location and time data for every inspection activity. This ensures authenticity and creates a verifiable audit trail. An inspection entry includes exact location and timestamp details for audit validation.",
         },
         {
           title: "AR-BASED MEASUREMENT & VISUAL GUIDANCE",
-          description:
-            "Enable precise measurements and overlay-based inspection assistance to reduce manual errors.",
+          description: "Enables precise measurements and visual overlays during inspections. This reduces manual errors and improves accuracy in quality checks. An inspector uses AR overlays to measure clearances and verify alignment on-site.",
         },
         {
           title: "DEVIATION REPORTING & ESCALATION",
-          description:
-            "Instantly report faults or compliance gaps to trigger corrective workflows.",
+          description: "Allows instant reporting of faults or compliance gaps during inspections. This ensures faster corrective action and reduces risk exposure. A detected issue is immediately logged and routed to the relevant team for resolution.",
         },
         {
           title: "OFFLINE-READY EXECUTION",
-          description:
-            "Conduct inspections seamlessly in low or no-connectivity environments.",
+          description: "Supports inspection workflows and documentation even in low or no connectivity environments. This ensures continuity of operations across remote or restricted locations. An inspector completes a full compliance check in a no-network zone without interruption.",
         },
         {
           title: "CONTINUOUS QUALITY INTELLIGENCE",
-          description:
-            "Every inspection strengthens future workflows, identifies patterns, and improves preventive controls.",
+          description: "Uses inspection data to identify patterns and improve future workflows. This strengthens preventive controls and reduces recurring issues. Repeated defects across sites are identified and addressed through updated inspection processes.",
         },
         {
           title: "DEVICE-AGNOSTIC DEPLOYMENT",
-          description:
-            "Accessible on mobile phones, tablets, and smart glasses, from simple devices to advanced AR wearables.",
+          description: "Works across mobile phones, tablets, and smart glasses. This ensures flexibility and ease of adoption across different inspection environments. An inspector can switch between devices depending on the task without affecting workflow continuity.",
         },
       ],
     },
@@ -453,47 +443,47 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "INTELLIGENT TASK PLANNING & ROSTERING",
-          description: "Automatically assign and schedule work based on skills, location, priority, and asset criticality.",
+          description: "Automatically assigns and schedules work based on skills, location, priority, and asset criticality. This improves planning efficiency and reduces delays in task execution. A critical machine issue is assigned to the nearest qualified technician with the right expertise.",
         },
         {
           title: "CONTEXT-AWARE TASK EXECUTION",
-          description: "Guided SOPs and instructions aligned to the specific asset, location, and task.",
+          description: "Delivers guided SOPs aligned to the specific asset, location, and task. This ensures consistent execution and reduces dependency on manual interpretation. A technician performs a repair by following step-by-step instructions tailored to that equipment.",
         },
         {
           title: "ASSET HISTORY AT THE MOMENT OF WORK",
-          description: "Instant access to past maintenance records, fault logs, and service history on site.",
+          description: "Provides instant access to past maintenance records, fault logs, and service history on site. This improves decision-making and speeds up troubleshooting. A technician reviews previous breakdown patterns before starting a repair.",
         },
         {
           title: "INTELLIGENT DIAGNOSTICS (SCAN MODE)",
-          description: "Real-time issue identification with recommended actions during maintenance and repair.",
+          description: "Enables real-time issue identification with recommended actions during maintenance and repair. This reduces diagnosis time and improves accuracy. A technician scans an asset and receives possible fault causes with guided next steps.",
         },
         {
-          title: "AI-GUIDED ASSISTANCE (AVA)",
-          description: "Moment-of-work AI-assisted recommendations and decision support that adapt as the task progresses.",
+          title: "AI-GUIDED ASSISTANCE",
+          description: "Provides real-time recommendations and decision support as the task progresses. This improves troubleshooting efficiency and reduces reliance on external input. A technician receives adaptive guidance while resolving a complex issue.",
         },
         {
           title: "REMOTE EXPERT COLLABORATION",
-          description: "Connect with specialists via live audio, video, and visual guidance when escalation is needed.",
+          description: "Connects technicians with specialists via live audio, video, and visual guidance when escalation is needed. This reduces downtime and avoids unnecessary travel. An expert remotely guides a technician through a critical repair.",
         },
         {
           title: "OFFLINE-READY EXECUTION",
-          description: "Continue guided work even in low or no-connectivity environments.",
+          description: "Supports guided work even in low or no-connectivity environments. This ensures uninterrupted operations in remote or restricted locations. A technician completes maintenance tasks in a no-network zone without disruption.",
         },
         {
           title: "EVIDENCE CAPTURE & REPORTING",
-          description: "Capture photos, videos, and notes, with automatic maintenance reports generated at completion.",
+          description: "Captures photos, videos, and notes and converts them into structured maintenance reports automatically. This reduces manual effort and improves documentation accuracy. A completed repair generates a ready-to-submit service report with all evidence.",
         },
         {
           title: "CONTINUOUS KNOWLEDGE BUILDING",
-          description: "Every completed task strengthens SOPs and improves future maintenance outcomes.",
+          description: "Uses every completed task to improve SOPs and future maintenance workflows. This strengthens operational knowledge and reduces recurring issues. A resolved fault becomes part of a standard workflow for similar cases.",
         },
         {
           title: "CREATOR MODE",
-          description: "Capture expert tasks once. UnfoldXR auto-creates SOPs and training workflows.",
+          description: "Captures expert tasks once and converts them into SOPs and training workflows. This ensures knowledge is preserved and easily scaled across teams. An experienced technician records a repair process that becomes a reusable workflow.",
         },
         {
-          title: "DEVICE-AGNOSTIC",
-          description: "Runs on mobiles, tablets, and smart glasses, from basic to advanced AR devices.",
+          title: "DEVICE-AGNOSTIC DEPLOYMENT",
+          description: "Runs seamlessly across mobile devices, tablets, and smart glasses. This ensures flexibility and easy adoption across environments. A technician switches between devices based on task requirements without affecting execution.",
         },
       ],
     },
@@ -574,6 +564,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       description:
         "UnfoldXR brings AI and augmented reality powered intelligence directly to field service operations anytime, anywhere.",
       image: "/images/usecase/FieldInspection/HeroSection.jpeg",
+      overlayOpacity: 0.7,
     },
     knowledge: {
       title: "REDUCE SERVICE DELAYS WITH SMARTER FIELD SERVICE",
@@ -617,43 +608,43 @@ export const useCasesData: Record<string, UseCaseData> = {
       items: [
         {
           title: "INTELLIGENT TICKET ROUTING & ROSTERING",
-          description: "Automatically assign service tickets based on skills, availability, priority, and location.",
+          description: "Automatically assigns service tickets based on skills, availability, priority, and location. This reduces delays in allocation and ensures faster response times. A high-priority breakdown is routed to the nearest qualified technician without manual intervention.",
         },
         {
           title: "CONTEXT-AWARE FIELD GUIDANCE",
-          description: "Deliver step-by-step SOPs aligned to the specific asset and fault condition on site.",
+          description: "Delivers step-by-step SOPs aligned to the specific asset and fault condition on site. This improves accuracy and ensures tasks are executed as per standards. A technician diagnosing a machine follows guidance tailored to that exact fault scenario.",
         },
         {
           title: "SMART SCAN DIAGNOSTICS",
-          description: "Scan QR codes or assets to instantly access machine history, fault logs, and guided troubleshooting paths.",
+          description: "Enables scanning of QR codes or assets to access machine history, fault logs, and troubleshooting paths. This reduces time spent searching for information and speeds up diagnosis. A technician scans a machine and instantly views past issues and recommended fixes.",
         },
         {
-          title: "AI-GUIDED ASSISTANCE (AVA)",
-          description: "Provide adaptive recommendations and decision support as the technician works through the issue.",
+          title: "AI-GUIDED ASSISTANCE",
+          description: "Provides adaptive recommendations and decision support during task execution. This improves troubleshooting speed and reduces dependency on external support. While resolving an issue, the technician receives suggestions based on similar past cases.",
         },
         {
           title: "LIVE REMOTE EXPERT COLLABORATION",
-          description: "Enable one-tap connection to specialists via audio, video, screen sharing, and AR visual guidance.",
+          description: "Enables instant connection to specialists via audio, video, screen sharing, and AR guidance. This reduces escalation delays and avoids unnecessary travel. An expert remotely guides a field technician through a complex repair in real time.",
         },
         {
           title: "FULL ASSET & SERVICE HISTORY ACCESS",
-          description: "Ensure technicians have real-time visibility into past repairs and maintenance data.",
+          description: "Provides real-time visibility into past repairs, maintenance records, and service logs. This improves decision-making and ensures informed troubleshooting. A technician checks previous breakdown patterns before starting the repair.",
         },
         {
           title: "OFFLINE-READY EXECUTION",
-          description: "Continue guided diagnostics and documentation even in low-connectivity environments.",
+          description: "Allows tasks, guidance, and documentation to continue even in low or no connectivity environments. This ensures uninterrupted work in remote or network-limited locations. A field worker completes diagnostics in a remote site without internet access.",
         },
         {
           title: "EVIDENCE CAPTURE & AUTOMATED REPORTING",
-          description: "Capture photos, videos, and notes with AI-generated service reports filed automatically.",
+          description: "Captures photos, videos, and notes and converts them into structured reports automatically. This reduces manual documentation effort and improves accuracy. A completed service task generates a ready report with all supporting evidence.",
         },
         {
           title: "CONTINUOUS KNOWLEDGE IMPROVEMENT",
-          description: "Every resolved case strengthens workflows and improves future troubleshooting accuracy.",
+          description: "Uses every completed case to refine workflows and improve future troubleshooting. This increases efficiency and strengthens the knowledge base over time. A resolved issue becomes part of a guided workflow for similar future cases.",
         },
         {
           title: "DEVICE-AGNOSTIC DEPLOYMENT",
-          description: "Runs seamlessly on mobile devices, tablets, and smart glasses.",
+          description: "Runs seamlessly across mobile devices, tablets, and smart glasses. This ensures flexibility and easy adoption across different environments. A technician switches between devices based on task requirements without disruption.",
         },
       ],
     },

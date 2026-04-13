@@ -26,9 +26,9 @@ const ClientBusinessSection = () => {
           mb: 4,
         }}
       >
-        <Grid container spacing={4} alignItems="center">
+        <Grid container spacing={4} alignItems="stretch">
           {/* LEFT CONTENT */}
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, md: 7 }} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <Box maxWidth="700px">
               <Typography
                 sx={{
@@ -53,29 +53,24 @@ const ClientBusinessSection = () => {
             </Box>
           </Grid>
 
-          {/* RIGHT OFFSET FOR IMAGE */}
-          <Grid size={{ xs: 12, md: 5 }} />
+          {/* RIGHT FIXED IMAGE - Anchored to stretch alongside content */}
+          <Grid size={{ xs: 12, md: 5 }}>
+            <Box
+              component="img"
+              src={partnersPage.clientBusinessSection.image.src}
+              alt="Worker"
+              sx={{
+                width: { xs: "100%", md: "100%" },
+                height: { xs: "auto", md: "100%" },
+                objectFit: "contain",
+                objectPosition: "right bottom",
+                display: { xs: "none", md: "block" },
+                pointerEvents: "none",
+              }}
+            />
+          </Grid>
         </Grid>
       </Container>
-
-      {/* RIGHT FIXED IMAGE - Anchored to bottom right */}
-      <Box
-        component="img"
-        src={partnersPage.clientBusinessSection.image.src}
-        alt="Worker"
-        sx={{
-          position: "absolute",
-          right: 0,
-          bottom: 0,
-          width: { md: "40%", lg: "28%" },
-          maxWidth: "700px",
-          height: "auto",
-          objectFit: "contain",
-          display: { xs: "none", md: "block" },
-          pointerEvents: "none",
-          // objectPosition: "right",
-        }}
-      />
     </Box>
   );
 };

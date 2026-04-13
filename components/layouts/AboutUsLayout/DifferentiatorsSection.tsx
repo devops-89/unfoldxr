@@ -19,8 +19,8 @@ const DifferentiatorsSection = () => {
         maxWidth={false}
         sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
       >
-        <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 7 }}>
+        <Grid container spacing={{ xs: 6, md: 10 }} alignItems="stretch">
+          <Grid size={{ xs: 12, md: 7 }} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <Typography
               sx={{
                 fontSize: { xs: 36, md: 36 },
@@ -89,13 +89,13 @@ const DifferentiatorsSection = () => {
               alt="Differentiator"
               sx={{
                 width: { xs: "100%", md: "70%" },
-                ml: { xs: 0, md: "360px" },
+                ml: { xs: 0, md: 15 },
                 mt: { xs: 4, md: 0 },
-                height: "auto",
+                height: { xs: "auto", md: "100%" },
                 objectFit: "cover",
                 borderRadius: "20px",
                 display: "block",
-                objectPosition: "right",
+                objectPosition: "center",
               }}
             />
           </Grid>
