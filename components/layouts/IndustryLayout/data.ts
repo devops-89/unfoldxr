@@ -362,7 +362,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "Across Retail & Logistics", "Operations"],
-      image: "/images/Industries/Retail/21.png",
+      image: "/images/Industries/Retail/retail.jpeg",
       metrics: [
         { value: "15%", text: "improvement in pick accuracy, reducing mis-picks" },
         { value: "25%", text: "increase in pick rate, enabling more units per hour" },
@@ -703,7 +703,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Healthcare", "Operations"],
-      image: "/images/Industries/Healthcare/19.png",
+      image: "/images/Industries/Healthcare/healthcare.jpeg",
       metrics: [
         { value: "20%", text: "reduction in equipment repair time, bringing modalities back faster" },
         { value: "15%", text: "improvement in first-time fix rate, reducing repeat callouts" },
