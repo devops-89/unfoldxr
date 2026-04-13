@@ -14,7 +14,7 @@ import {
 import ava from "@/images/banner/homePage/avapng.png";
 import partnersClientBusiness from "@/public/images/about-us/partner/client-business.png";
 import tools from "@/images/banner/homePage/tools/tools-team.png";
-import ankushImg from "@/images/about-us/about-leadership.png";
+import ankushImg from "@/public/images/about-us/ankush-Jagga.jpeg";
 import riteshImg from "@/images/about-us/about-leadership2.png";
 import differentiatorImg from "@/images/about-us/about-differentiator.png";
 import icon1 from "@/images/about-us/icons/icon1.png";
@@ -315,27 +315,27 @@ export const partnersPage={
     metrics_card_data: [
       {
         title: "51.8% CAGR",
-        description: "projected growth in the ar/vr market between 2024 and 2029",
+        description: "projected growth in the AR/VR market between 2024 and 2029",
         gridSize: { xs: 12, md: 6 },
       },
       {
         title: "$446.5B",
-        description: "market size expected for ai-powered ar by 2033",
+        description: "market size expected for AI-powered AR by 2033",
         gridSize: { xs: 12, md: 6 },
       },
       {
         title: "32%",
-        description: "productivity boost reported by organizations adopting ar and vr (ibm)",
+        description: "productivity boost reported by organizations adopting AR and VR (IBM)",
         gridSize: { xs: 12, md: 6 },
       },
       {
         title: "46%",
-        description: "reduction in task completion time achieved through ar/vr adoption (ibm)",
+        description: "reduction in task completion time achieved through AR/VR adoption (IBM)",
         gridSize: { xs: 12, md: 6 },
       },
       {
         title: "70%",
-        description: "of fortune 500 companies expected to implement augmented connected worker initiatives by 2027 (gartner)",
+        description: "of Fortune 500 companies expected to implement augmented connected worker initiatives by 2027 (Gartner)",
         gridSize: { xs: 12 },
       },
     ]
@@ -495,7 +495,7 @@ export const aboutPage = {
 
 export const meetAvaPage = {
   heroSection: {
-    title: "AVA The Agentic Intelligence Behind UnfoldXR.",
+    title: "AVA — The Agentic Intelligence Behind UnfoldXR.",
     heading: "BUILT WITH HEART. \nPOWERED BY AI.",
     subHeading: "AVA stands for AI Virtual Assistant. But the story behind the name runs deeper.",
     image: heroRing.src

@@ -8,8 +8,13 @@ const LeadershipSection = () => {
 
   return (
     <Container
-      maxWidth="xl"
-      sx={{ py: { xs: 8, md: 12 }, px: { xs: 2.5, md: 10 } }}
+      maxWidth={false}
+      sx={{
+        width: { xs: "90%", md: "90%", lg: "83%" },
+        mx: "auto",
+        px: 0,
+        py: { xs: 8, md: 12 },
+      }}
     >
       <Typography
         sx={{
@@ -43,8 +48,13 @@ const LeadershipSection = () => {
                   alt={member.name}
                   sx={{
                     width: "100%",
+                    maxWidth: { md: 450 },
+                    maxHeight: { md: 700 },
+                    objectFit: "cover",
+                    objectPosition: "top",
                     borderRadius: "12px",
                     display: "block",
+                    mx: "auto",
                   }}
                 />
               </Grid>

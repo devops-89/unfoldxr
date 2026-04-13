@@ -16,7 +16,7 @@ const AboutIntroSection = () => (
   >
     <Container
       maxWidth={false}
-      sx={{ width: { xs: "90%", md: "90%", lg: "85%" }, mx: "auto", px: 0 }}
+      sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
     >
       <Card
         sx={{

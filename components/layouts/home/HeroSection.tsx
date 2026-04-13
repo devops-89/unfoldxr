@@ -17,8 +17,7 @@ const HeroSection = () => {
       title={data.heading2}
       description={data.description}
       objectPosition={{ xs: "80% center", md: "center" }}
-      primaryBtn={{ label: data.cta1 }}
-      secondaryBtn={{ label: data.cta2, onClick: openModal }}
+      primaryBtn={{ label: data.cta2, onClick: openModal }}
     />
   );
 };

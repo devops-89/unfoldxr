@@ -1,5 +1,5 @@
 import { din, helvetica } from "@/utils/fonts";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, Container } from "@mui/material";
 import { meetAvaPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 
@@ -9,105 +9,98 @@ const HeroSection = () => {
     <Box
       sx={{
         bgcolor: COLORS.BLACK,
-        minHeight: { md: "100vh" },
+        minHeight: { xs: "auto", md: "100vh" },
         display: "flex",
         alignItems: "center",
-        py: { xs: 8, md: 10 },
+        pt: { xs: 8, md: 10 },
+        pb: 0,
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <Box
+      <Container
+        maxWidth={false}
         sx={{
-          width: { xs: "95%", md: "80%" },
+          width: { xs: "90%", md: "85%", lg: "83%" },
           mx: "auto",
-          px: { xs: 0, md: 0 },
+          position: "relative",
+          zIndex: 2,
         }}
       >
-        <Typography
-          sx={{
-            fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 12, md: 14 },
-            color: COLORS.WHITE,
-            textAlign: "right",
-            mb: 2,
-            px: 2,
-          }}
-        >
-          {/* *note - it was never animated, but we'll get this into motion by creative team */}
-        </Typography>
-        <Box
-          sx={{
-            position: "relative",
-            bgcolor: COLORS.CARD_BG_DARK,
-            borderRadius: { xs: 4, md: "40px" },
-            overflow: "hidden",
-            minHeight: { xs: 520, md: 680 },
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: "stretch",
-          }}
-        >
-          <Grid container sx={{ width: "100%" }}>
-            <Grid
-              size={{ xs: 12, md: 6 }}
+        <Grid container spacing={{ xs: 6, md: 4 }} alignItems="stretch">
+          <Grid
+            size={{ xs: 12, md: 6.5, lg: 6 }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: "left",
+            }}
+          >
+            {/* Small Label Title */}
+            <Typography
               sx={{
-                p: { xs: 4, md: 8, lg: 6 },
-
-                zIndex: 1,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: { xs: 14, md: 18, lg: 20 },
+                fontWeight: 700,
+                color: COLORS.WHITE,
+                lineHeight: 1.2,
+                mb: { xs: 3, md: 4 },
+                letterSpacing: "0.02em",
+                opacity: 0.9,
               }}
             >
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 18, md: 20, lg: 18 },
-                  fontWeight: 700,
-                  color: COLORS.WHITE,
-                  maxWidth: "100%",
-                  lineHeight: { xs: "28px", md: "30px" },
-                  mb: 2
-                }}
-              >
-                {data.title.split("The Agentic")[0]}
-                <br />
-                The Agentic{data.title.split("The Agentic")[1]}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: din.style.fontFamily,
+              {data.title}
+            </Typography>
+
+            {/* Main Heading */}
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: din.style.fontFamily,
                   fontSize: { xs: 36, md: 56, lg: 36 },
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  color: COLORS.WHITE,
+                fontWeight: 900,
+                textTransform: "uppercase",
+                color: COLORS.WHITE,
                   lineHeight: { xs: "35px", md: "52px" },
                   whiteSpace: "pre-line",
                   mb: 1,
-                }}
-              >
-                {data.heading}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 18, lg: 18 },
-                  color: COLORS.WHITE,
-                  lineHeight: { xs: "28px", md: "30px" },
-                  maxWidth: "90%",
-                }}
-              >
-                {data.subHeading}
-              </Typography>
-            </Grid>
-            <Grid
-              size={{ xs: 12, md: 6 }}
+              }}
+            >
+              {data.heading}
+            </Typography>
+
+            {/* Subheading / Description */}
+            <Typography
+              sx={{
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: { xs: 16, md: 18, lg: 18},
+                fontWeight: 400,
+                color: "rgba(255, 255, 255, 0.7)",
+                lineHeight: 1.6,
+                maxWidth: { md: "90%", lg: "85%" },
+              }}
+            >
+              {data.subHeading}
+            </Typography>
+          </Grid>
+
+          {/* Right Section: Image */}
+          <Grid
+            size={{ xs: 12, md: 5.5, lg: 6 }}
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "center", md: "flex-end" },
+              position: "relative",
+            }}
+          >
+            <Box
               sx={{
                 position: "relative",
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: { xs: "center", md: "flex-end" },
-                minHeight: { xs: 300, md: "100%" },
-                overflow: "hidden",
+                width: { xs: "120%", md: "140%", lg: "150%" },
+                maxWidth: { xs: 600, md: 1000, lg: 1200 },
+                mr: { md: -10, lg: -25},
+                mt: "auto",
               }}
             >
               <Box
@@ -115,20 +108,32 @@ const HeroSection = () => {
                 src={data.image}
                 alt="Meet AVA"
                 sx={{
-                  width: { xs: "100%", md: "auto" },
-                  height: { xs: "auto", md: "100%" },
-                  objectFit: "contain",
+                  width: "100%",
+                  height: "auto",
                   display: "block",
-                  position: { md: "absolute" },
-                  top: { md: "50%" },
-                  right: { md: "-15%" },
-                  transform: { md: "translateY(-50%)" },
+                  filter: "drop-shadow(0px 0px 50px rgba(162, 211, 37, 0.15))",
                 }}
               />
-            </Grid>
+            </Box>
           </Grid>
-        </Box>
-      </Box>
+        </Grid>
+      </Container>
+
+      {/* Background Decorative Blur (Optional, for premium feel) */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: "20%",
+          right: "-10%",
+          width: "40vw",
+          height: "40vw",
+          bgcolor: "rgba(162, 211, 37, 0.05)",
+          filter: "blur(150px)",
+          borderRadius: "50%",
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+      />
     </Box>
   );
 };
