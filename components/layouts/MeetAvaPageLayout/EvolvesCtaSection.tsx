@@ -58,7 +58,7 @@ const EvolvesCtaSection = () => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
                 fontSize: { xs: 28, md: 32, lg: 36 },
-                lineHeight: "52px",
+                lineHeight: { xs: "35px", md: "52px" },
                 letterSpacing: "-0.051px",
                 color: COLORS.BLACK,
                 textAlign: "center",

@@ -26,7 +26,7 @@ const IndustrySection = ({ data }: Props) => {
             fontWeight: 900,
             textTransform: "uppercase",
             fontSize: { xs: 24, md: 36 },
-            lineHeight: "42px",
+            lineHeight: { xs: "35px", md: "42px" },
             mb: 2,
           }}
         >
@@ -40,7 +40,7 @@ const IndustrySection = ({ data }: Props) => {
             color: COLORS.BLACK,
             maxWidth: 1000,
             letterSpacing: "0.52px",
-            lineHeight: "30px",
+            lineHeight: { xs: "28px", md: "30px" },
             mx: "auto",
             mb: { xs: 4, md: 6 },
           }}
@@ -124,7 +124,7 @@ const IndustrySection = ({ data }: Props) => {
                       textTransform: "uppercase",
                       color: COLORS.BLACK,
                       letterSpacing: "0.52px",
-                      lineHeight: "30px",
+                      lineHeight: { xs: "24px", md: "30px" },
                     }}
                   >
                     {industry.label}

@@ -53,7 +53,7 @@ const UseCasesSection = ({ data }: Props) => {
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontSize: { xs: 28, md: 34, lg: 36 },
-                lineHeight: "52px",
+                lineHeight: { xs: "35px", md: "52px" },
                 textTransform: "uppercase",
                 fontWeight: 900,
                 color: COLORS.BLACK,
@@ -121,7 +121,7 @@ const UseCasesSection = ({ data }: Props) => {
                         fontWeight: 700,
                         fontSize: { xs: 16, md: 16, lg: 18 },
                         color: COLORS.BLACK,
-                        lineHeight: 1.2,
+                        lineHeight: { xs: "24px", md: 1.2 },
                         letterSpacing: "0.52px",
                       }}
                     >

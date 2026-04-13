@@ -101,7 +101,7 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
               color: card.titleColor || COLORS.WHITE,
               mb: 1,
               textTransform: "none",
-              lineHeight: "20px",
+              lineHeight: { xs: "24px", md: "20px" },
               letterSpacing: "0.52px",
             }}
           >
@@ -114,7 +114,7 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 13, md: 15 },
                 fontWeight: 400,
-                lineHeight: "20px",
+                lineHeight: { xs: "22px", md: "20px" },
                 color: card.descriptionColor || "rgba(255, 255, 255, 0.8)",
               }}
             >

@@ -30,7 +30,7 @@ const DevicesSection = () => {
               textTransform: "uppercase",
               textAlign: { xs: "center", md: "left" },
               mb: { xs: 3, md: 5 },
-              lineHeight: { xs: "38px", md: "52px" },
+              lineHeight: { xs: "35px", md: "52px" },
             }}
           >
             {homePage.devicesSection.heading}

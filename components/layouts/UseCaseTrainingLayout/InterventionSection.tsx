@@ -21,7 +21,7 @@ const InterventionSection = ({ data }: Props) => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 fontSize: { xs: 28, md: 36 },
-                lineHeight: "42px",
+                lineHeight: { xs: "35px", md: "42px" },
                 mb: 4,
                 color: COLORS.BLACK,
               }}
@@ -39,7 +39,7 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: 1.5,
+                  lineHeight: { xs: "28px", md: 1.5 },
                 }}
               >
                 {data.description1}
@@ -48,7 +48,7 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: "28px",
+                  lineHeight: { xs: "28px", md: "28px" },
                 }}
               >
                 {data.description2}
@@ -66,7 +66,7 @@ const InterventionSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 16, md: 18 },
-                      lineHeight: 1.5,
+                      lineHeight: { xs: "28px", md: 1.5 },
                       textAlign: "justify",
                     }}
                   >
@@ -78,7 +78,7 @@ const InterventionSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 16, md: 18, lg: 18 },
-                      lineHeight: "28px",
+                      lineHeight: { xs: "28px", md: "28px" },
                       textAlign: "justify",
                     }}
                   >
@@ -245,7 +245,7 @@ const InterventionSection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 fontSize: { xs: 32, md: 36 },
-                lineHeight: "42px",
+                lineHeight: { xs: "35px", md: "42px" },
                 color: COLORS.BLACK,
                 textTransform: "uppercase",
               }}
@@ -267,7 +267,7 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: "28px",
+                  lineHeight: { xs: "28px", md: "28px" },
                   color: COLORS.BLACK,
                   textAlign: "justify",
                 }}
@@ -279,7 +279,7 @@ const InterventionSection = ({ data }: Props) => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
-                    lineHeight: "28px",
+                    lineHeight: { xs: "28px", md: "28px" },
                     color: COLORS.BLACK,
                     textAlign: "justify",
                   }}
@@ -299,7 +299,7 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: 1.5,
+                  lineHeight: { xs: "28px", md: 1.5 },
                   color: COLORS.BLACK,
                   mb: 5,
                   textAlign: "justify",
@@ -356,7 +356,7 @@ const InterventionSection = ({ data }: Props) => {
                 mt: 6,
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18 },
-                lineHeight: 1.5,
+                lineHeight: { xs: "28px", md: 1.5 },
                 color: COLORS.BLACK,
                 maxWidth: "100%",
               }}

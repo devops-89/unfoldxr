@@ -29,7 +29,7 @@ const AvaSupportSection = () => {
             fontSize: { xs: 28, md: 32, lg: 36 },
             fontWeight: 900,
             textTransform: "uppercase",
-            lineHeight: "52px",
+            lineHeight: { xs: "35px", md: "52px" },
             mb: 2,
           }}
         >
@@ -39,7 +39,7 @@ const AvaSupportSection = () => {
           sx={{
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 18, lg: 18 },
-            lineHeight: "30px",
+            lineHeight: { xs: "28px", md: "30px" },
             letterSpacing: "0.52px",
             maxWidth: 1660,
             mb: { xs: 4, md: 8, lg: 10   },
@@ -113,7 +113,7 @@ const AvaSupportSection = () => {
                                 ? COLORS.PRIMARY_GREEN
                                 : COLORS.WHITE,
                             fontSize: { xs: 18, md: 16 },
-                            lineHeight: "22px",
+                            lineHeight: { xs: "28px", md: "22px" },
                             letterSpacing: "0.52px",
                             transition: "color 0.3s ease",
                           }}
@@ -223,7 +223,7 @@ const AvaSupportSection = () => {
                       sx={{
                         fontFamily: helvetica.style.fontFamily,
                         fontSize: 15,
-                        lineHeight: 1.6,
+                        lineHeight: { xs: "26px", md: 1.6 },
                         color: "rgba(255,255,255,0.8)",
                       }}
                     >

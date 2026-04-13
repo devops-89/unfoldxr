@@ -28,7 +28,7 @@ const PlatformSummarySection = ({ data }: Props) => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 fontSize: { xs: 28, md: 36 },
-                lineHeight: "42px",
+                lineHeight: { xs: "35px", md: "42px" },
                 color: COLORS.BLACK,
               }}
             >
@@ -40,7 +40,7 @@ const PlatformSummarySection = ({ data }: Props) => {
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18 },
-                lineHeight: "30px",
+                lineHeight: { xs: "28px", md: "30px" },
                 letterSpacing: "0.52px",
                 color: COLORS.OVERLAY_07,
                 mb: 2,
@@ -52,7 +52,7 @@ const PlatformSummarySection = ({ data }: Props) => {
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18 },
-                lineHeight: 1.6,
+                lineHeight: { xs: "28px", md: 1.6 },
                 color: COLORS.OVERLAY_07,
               }}
             >

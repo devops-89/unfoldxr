@@ -102,7 +102,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 fontSize: { xs: variant === "about" ? 24 : 26, md: 36 },
-                lineHeight: "42px",
+                lineHeight: { xs: "35px", md: "42px" },
                 letterSpacing: variant === "default" ? "-0.051px" : "normal",
                 color: COLORS.BLACK,
                 textAlign: "center",
@@ -123,7 +123,7 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
                   fontSize: { xs: 16, md: isIndustry ? 18 : 18 },
                   color: COLORS.BLACK,
                   fontWeight: isIndustry ? 400 : 500,
-                  lineHeight: "30px",
+                  lineHeight: { xs: "28px", md: "30px" },
                   maxWidth: isIndustry ? 900 : 700,
                   mx: "auto",
                 }}

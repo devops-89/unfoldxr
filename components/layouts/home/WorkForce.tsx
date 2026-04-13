@@ -32,7 +32,7 @@ const WorkForce = () => {
                 fontSize: { xs: 24, md: 36 },
                 fontStyle: "normal",
                 fontWeight: 900,
-                lineHeight: "52px",
+                lineHeight: { xs: "35px", md: "52px" },
                 textTransform: "uppercase",
                 textAlign: { xs: "center", md: "left" },
                 wordBreak: "break-word",

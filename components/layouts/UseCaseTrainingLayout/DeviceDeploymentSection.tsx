@@ -24,7 +24,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
             fontWeight: 900,
             textTransform: "uppercase",
             fontSize: { xs: 28, md: 36 },
-            lineHeight: "42px",
+            lineHeight: { xs: "35px", md: "42px" },
             mb: { xs: 6, md: 6 },
           }}
         >
@@ -70,7 +70,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontWeight: 900,
                     textTransform: "uppercase",
                     fontSize: { xs: 24, md: 18 },
-                    lineHeight: "30px",
+                    lineHeight: { xs: "28px", md: "30px" },
                     mb: 2,
                   }}
                 >
@@ -123,7 +123,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontWeight: 900,
                     textTransform: "uppercase",
                     fontSize: { xs: 24, md: 18 },
-                    lineHeight: "30px",
+                    lineHeight: { xs: "28px", md: "30px" },
                     width: 340,
                     mb: 2,
                   }}
@@ -173,7 +173,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     fontWeight: 900,
                     textTransform: "uppercase",
                     fontSize: { xs: 24, md: 18 },
-                    lineHeight: "30px",
+                    lineHeight: { xs: "28px", md: "30px" },
                     mb: 2,
                   }}
                 >

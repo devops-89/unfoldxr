@@ -29,7 +29,7 @@ const RealityNeedsSection = ({ data }: Props) => {
           sx={{
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 28, md: 36},
-            lineHeight: "42px",
+            lineHeight: { xs: "35px", md: "42px" },
             textTransform: "uppercase",
             fontWeight: 900,  color: COLORS.BLACK,
             mb: 4,
@@ -56,7 +56,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                   fontSize: { xs: 20, md: 24, lg: 18 },
                   color: COLORS.PRIMARY_GREEN,
                   fontWeight: 700,
-                  lineHeight: "30px",
+                  lineHeight: { xs: "28px", md: "30px" },
                   letterSpacing: "0.52px",
                   mb: 2,
                 }}
@@ -70,7 +70,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 15, md: 18, lg: 16 },
-                      lineHeight: "27px",
+                      lineHeight: { xs: "26px", md: "27px" },
                       letterSpacing: "0.52px",
                       display: "flex",
                       gap: 1.5,
@@ -104,7 +104,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                   fontSize: { xs: 20, md: 24, lg: 18 },
                   color: COLORS.PRIMARY_GREEN,
                   fontWeight: 700,
-                  lineHeight: "30px",
+                  lineHeight: { xs: "28px", md: "30px" },
                   letterSpacing: "0.52px",
                   mb: 2,
                   whiteSpace: "pre-line",
@@ -119,7 +119,7 @@ const RealityNeedsSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 15, md: 18, lg: 16 },
-                      lineHeight: "27px",
+                      lineHeight: { xs: "26px", md: "27px" },
                       letterSpacing: "0.52px",
                       display: "flex",
                       gap: 1.5,
@@ -147,7 +147,7 @@ const RealityNeedsSection = ({ data }: Props) => {
             mx: "auto",
             color: COLORS.BLACK,
             fontWeight: 700,
-            lineHeight: "30px",
+            lineHeight: { xs: "28px", md: "30px" },
             letterSpacing: "0.52px",
             whiteSpace: "pre-line",
           }}

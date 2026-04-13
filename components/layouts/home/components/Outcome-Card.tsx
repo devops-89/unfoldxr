@@ -14,8 +14,8 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
         px: { xs: 3, md: 4 },
         py: { xs: 3, md: 3 },
         display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: { xs: "flex-start", md: "center" },
         justifyContent: "space-between",
         gap: { xs: 2, md: 2 },
         borderRadius: "16px",
@@ -30,7 +30,7 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 40, md: 36 },
             fontWeight: 900,
-            lineHeight: "52px",
+            lineHeight: { xs: "35px", md: "52px" },
             flexShrink: 0,
             minWidth: { xs: 40, md: 50 },
           }}
@@ -44,7 +44,7 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 14, md: 18 },
             fontWeight: 900,
-            lineHeight: { xs: "20px", md: "30px" },
+            lineHeight: { xs: "28px", md: "30px" },
             color: COLORS.WHITE,
             textTransform: "uppercase",
             letterSpacing: "0.52px",
@@ -55,7 +55,7 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
       </Box>
 
       {/* CTA Button placed on right side */}
-      <Box sx={{ flexShrink: 0 }}>
+      <Box sx={{ flexShrink: 0, mt: { xs: 1, md: 0 }, alignSelf: { xs: "flex-end", md: "center" } }}>
         {link ? (
           <Link href={link} passHref legacyBehavior>
             <ContainedButton

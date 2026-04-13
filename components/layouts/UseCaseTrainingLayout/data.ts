@@ -569,11 +569,11 @@ export const useCasesData: Record<string, UseCaseData> = {
   },
   "field-inspection": {
     hero: {
-      title: "FIELD SERVICE, TROUBLESHOOTING & REMOTE COLLABORATION",
+      title: "FIELD SERVICE, TROUBLESHOOTING & \n REMOTE COLLABORATION",
       subtitle: "The perfect human–AI collaboration in the field.",
       description:
         "UnfoldXR brings AI and augmented reality powered intelligence directly to field service operations anytime, anywhere.",
-      image: "/images/usecase/FieldInspection/HeroSection.png",
+      image: "/images/usecase/FieldInspection/HeroSection.jpeg",
     },
     knowledge: {
       title: "REDUCE SERVICE DELAYS WITH SMARTER FIELD SERVICE",

@@ -62,7 +62,7 @@ const FutureWork = () => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.WHITE,
-                lineHeight: { xs: "36px", md: "52px" },
+                lineHeight: { xs: "35px", md: "52px" },
               }}
             >
               {homePage.future_work.leftSection.heading}
@@ -74,7 +74,7 @@ const FutureWork = () => {
                 fontSize: { xs: 12, md: 18 },
                 color: COLORS.WHITE,
                 fontWeight: 400,
-                lineHeight: "30px",
+                lineHeight: { xs: "24px", md: "30px" },
                 letterSpacing: "0.52px",
                 my: 2,
               }}
@@ -88,7 +88,7 @@ const FutureWork = () => {
                 fontWeight: 700,
                 color: COLORS.WHITE,
                 fontFamily: helvetica.style.fontFamily,
-                lineHeight: "30px",
+                lineHeight: { xs: "24px", md: "30px" },
                 letterSpacing: "0.52px",
               }}
             >
@@ -101,7 +101,7 @@ const FutureWork = () => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.PRIMARY_GREEN,
-                lineHeight: { xs: "40px", md: "52px" },
+                lineHeight: { xs: "35px", md: "52px" },
                 fontFamily: din.style.fontFamily,
                 mt: 4,
               }}

@@ -32,7 +32,7 @@ const Meetava = () => {
                     fontWeight: 900,
                     textTransform: "uppercase",
                     textAlign: { xs: "center", md: "left" },
-                    lineHeight: { xs: "38px", md: "52px" },
+                    lineHeight: { xs: "35px", md: "52px" },
                   }}
                 >
                   {homePage.meetAva.heading}
@@ -46,7 +46,7 @@ const Meetava = () => {
                         fontFamily: helvetica.style.fontFamily,
                         fontSize: { xs: 14, md: 18 },
                         fontWeight: 400,
-                        lineHeight: { xs: "22px", md: "28px" },
+                        lineHeight: { xs: "26px", md: "28px" },
                         color: "#000",
                         textAlign: { xs: "center", md: "justify" },
                         letterSpacing: "0.52px",

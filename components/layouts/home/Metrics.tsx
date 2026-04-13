@@ -23,7 +23,7 @@ const Metrics = () => {
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 22, sm: 28, md: 36 },
               fontWeight: 900,
-              lineHeight: "52px",
+              lineHeight: { xs: "35px", md: "52px" },
               textTransform: "uppercase",
               textAlign: "center",
               color: "#000",
@@ -105,7 +105,7 @@ const Metrics = () => {
                         fontFamily: din.style.fontFamily,
                         fontSize: { xs: 20, sm: 28, md: 28 },
                         fontWeight: 400,
-                        lineHeight: { xs: 1.4, md: "30px" },
+                        lineHeight: { xs: "28px", md: "30px" },
                         color: "#000",
                         textAlign: { xs: "center", md: "right" },
                         textTransform: "capitalize",
@@ -120,7 +120,7 @@ const Metrics = () => {
                           fontSize: { xs: 20, sm: 28, md: 30 },
                           fontWeight: 900,
                           color: "#000",
-                          lineHeight: "30px",
+                          lineHeight: { xs: "28px", md: "30px" },
                           textTransform: "capitalize",
                         }}
                       >

@@ -30,7 +30,7 @@ const MeetAva = () => {
                   fontWeight: 900,
                   textTransform: "uppercase",
                   fontSize: { xs: 28, md: 48, lg: 36 },
-                  lineHeight: "52px",
+                  lineHeight: { xs: "35px", md: "52px" },
                   maxWidth: "100%",
                   whiteSpace: "pre-line",
                 }}
@@ -42,7 +42,7 @@ const MeetAva = () => {
                 mt: 4,
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18, lg: 18 },
-                lineHeight: "30px",
+                lineHeight: { xs: "28px", md: "30px" },
                 color: COLORS.TEXT_GRAY,
                 maxWidth: 720,
                 letterSpacing: "0.52px",

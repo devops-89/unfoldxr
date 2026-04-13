@@ -87,7 +87,7 @@ const CapabilitiesSection = ({ data }: Props) => {
               fontWeight: 900,
               textTransform: "uppercase",
               fontSize: { xs: 28, md: 36 },
-              lineHeight: "42px",
+              lineHeight: { xs: "35px", md: "42px" },
               mb: { xs: 8, md: 8 },
               maxWidth: 1000,
             }}
@@ -131,7 +131,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                     textTransform: "uppercase",
                     fontSize: { xs: 18, md: 18 },
                     color: COLORS.PRIMARY_GREEN,
-                    lineHeight: "24px",
+                    lineHeight: { xs: "24px", md: "24px" },
                   }}
                 >
                   {item.title}
@@ -140,7 +140,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 15, md: 16 },
-                    lineHeight: "24px",
+                    lineHeight: { xs: "24px", md: "24px" },
                     color: COLORS.TEXT_GREY,
                   }}
                 >
@@ -253,7 +253,7 @@ const CapabilitiesSection = ({ data }: Props) => {
             fontWeight: 900,
             textTransform: "uppercase",
             fontSize: { xs: 28, md: 36 },
-            lineHeight: "42px",
+            lineHeight: { xs: "35px", md: "42px" },
             mb: { xs: 2, md: 4 },
             maxWidth: 900,
           }}
@@ -316,7 +316,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                           fontFamily: helvetica.style.fontFamily,
                           fontSize: { xs: 15, md: 16 },
                           fontWeight: 900,
-                          lineHeight: "17px",
+                          lineHeight: { xs: "24px", md: "17px" },
                           letterSpacing: "0.02em",
                         }}
                       >
@@ -333,7 +333,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                           px: 2,
                           fontFamily: helvetica.style.fontFamily,
                           fontSize: { xs: 15 },
-                          lineHeight: 1.5,
+                          lineHeight: { xs: "26px", md: 1.5 },
                           color: COLORS.WHITE,
                           fontWeight: 500,
                           textTransform: "none",

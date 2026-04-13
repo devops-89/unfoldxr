@@ -22,7 +22,7 @@ const BusinessResultsSection = ({ data }: Props) => {
             fontWeight: 900,
             textTransform: "uppercase",
             fontSize: { xs: 28, md: 36 },
-            lineHeight: "42px",
+            lineHeight: { xs: "35px", md: "42px" },
             mb: { xs: 6, md: 6 },
             maxWidth: 900,
           }}
@@ -60,7 +60,7 @@ const BusinessResultsSection = ({ data }: Props) => {
                     fontWeight: 800,
                     fontSize: { xs: 20, md: 18 },
                     textTransform: "uppercase",
-                    lineHeight: "24px",
+                    lineHeight: { xs: "28px", md: "24px" },
                     letterSpacing: "0.52px",
                     color: COLORS.PRIMARY_GREEN,
                     mb: 2.5,
@@ -72,7 +72,7 @@ const BusinessResultsSection = ({ data }: Props) => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 14, md: 16 },
-                    lineHeight: "24px",
+                    lineHeight: { xs: "26px", md: "24px" },
                     color: COLORS.WHITE_ALPHA_80,
                     letterSpacing: "0.52px",
                     mb: 2

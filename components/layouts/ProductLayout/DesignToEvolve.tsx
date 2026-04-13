@@ -32,7 +32,7 @@ const DesignToEvolve = () => {
             fontWeight: 900,
             textTransform: "uppercase",
             fontSize: { xs: 28, md: 32, lg: 36 },
-            lineHeight: "52px",
+            lineHeight: { xs: "35px", md: "52px" },
             maxWidth: 900,
           }}
         >
@@ -55,7 +55,7 @@ const DesignToEvolve = () => {
             mt: 3,
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 16, lg: 18 },
-            lineHeight: "30px",
+            lineHeight: { xs: "28px", md: "30px" },
             letterSpacing: "0.52px",
             color: COLORS.TEXT_GRAY,
             maxWidth: 1000,
@@ -145,7 +145,7 @@ const DesignToEvolve = () => {
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
                           fontSize: { xs: 16, md: 16 },
-                          lineHeight: 1.5,
+                          lineHeight: { xs: "26px", md: 1.5 },
                           color: COLORS.TEXT_GRAY,
                           textTransform: "none",
                         }}

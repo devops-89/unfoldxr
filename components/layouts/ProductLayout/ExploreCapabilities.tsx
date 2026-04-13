@@ -31,7 +31,7 @@ const ExploreCapabilities = () => {
             fontWeight: 900,
             textTransform: "uppercase",
             fontSize: { xs: 28, md: 48, lg: 36 },
-            lineHeight: "52px",
+            lineHeight: { xs: "35px", md: "52px" },
             mb: { xs: 6, md: 6 },
           }}
         >
@@ -103,7 +103,7 @@ const ExploreCapabilities = () => {
                                 ? COLORS.PRIMARY_HOVER
                                 : COLORS.BLACK,
                             fontSize: { xs: 18, md: 16 },
-                            lineHeight: "22px",
+                            lineHeight: { xs: "28px", md: "22px" },
                             letterSpacing: "0.52px",
                           }}
                         >
@@ -118,7 +118,7 @@ const ExploreCapabilities = () => {
                               activeIndex === index
                                 ? COLORS.PRIMARY_HOVER
                                 : COLORS.BLACK,
-                            lineHeight: "30px",
+                            lineHeight: { xs: "28px", md: "30px" },
                           }}
                         >
                           {item.subtitle}
@@ -223,7 +223,7 @@ const ExploreCapabilities = () => {
                       sx={{
                         fontFamily: helvetica.style.fontFamily,
                         fontSize: 15,
-                        lineHeight: 1.6,
+                        lineHeight: { xs: "26px", md: 1.6 },
                         color: "rgba(0,0,0,0.8)",
                       }}
                     >

@@ -32,7 +32,7 @@ const MeetAvaIntroSection = () => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.BLACK,
-                lineHeight: "52px",
+                lineHeight: { xs: "35px", md: "52px" },
                 mb: 2,
               }}
             >
@@ -45,7 +45,7 @@ const MeetAvaIntroSection = () => {
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 15, md: 18 },
                   color: COLORS.BLACK,
-                  lineHeight: "30px",
+                  lineHeight: { xs: "28px", md: "30px" },
                   textAlign: "justify",
                   mb: 2,
                 }}

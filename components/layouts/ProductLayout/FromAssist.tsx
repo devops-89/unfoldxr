@@ -49,7 +49,7 @@ const FromAssist = () => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 fontSize: { xs: 24, md: 36, lg: 36 },
-                lineHeight: "45px",
+                lineHeight: { xs: "35px", md: "45px" },
                 color: COLORS.BLACK,
                 maxWidth: { xs: 280, md: 1100 },
                 mx: "auto",
@@ -76,7 +76,7 @@ const FromAssist = () => {
                 fontSize: { xs: 16, md: 20, lg: 18 },
                 color: COLORS.BLACK,
                 fontWeight: 500,
-                lineHeight: "24px",
+                lineHeight: { xs: "28px", md: "24px" },
               }}
             >
               {data.subtitle}

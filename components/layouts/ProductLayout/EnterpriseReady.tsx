@@ -65,7 +65,7 @@ const EnterpriseReady = () => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                lineHeight: "52px",
+                lineHeight: { xs: "35px", md: "52px" },
                 fontSize: { xs: 28, md: 32, lg: 36 },
                 mb: { xs: 6, md: 4 },
               }}
@@ -95,7 +95,7 @@ const EnterpriseReady = () => {
                           fontWeight: 700,
                           fontSize: { xs: 18, md: 18 },
                           textTransform: "uppercase",
-                          lineHeight: "30px",
+                          lineHeight: { xs: "28px", md: "30px" },
                           mb: 1.5,
                         }}
                       >
@@ -106,7 +106,7 @@ const EnterpriseReady = () => {
                           fontFamily: helvetica.style.fontFamily,
                           color: COLORS.TEXT_MUTED,
                           fontSize: { xs: 14, md: 16 },
-                          lineHeight: "24px",
+                          lineHeight: { xs: "26px", md: "24px" },
                         }}
                       >
                         {point.desc}

@@ -23,7 +23,7 @@ const OutcomesSection = ({ data }: Props) => {
           sx={{
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 32, md: 44, lg: 52 },
-            lineHeight: { xs: "40px", md: "60px" },
+            lineHeight: { xs: "35px", md: "60px" },
             textTransform: "uppercase",
             fontWeight: 900,
             color: COLORS.WHITE,
@@ -76,7 +76,7 @@ const OutcomesSection = ({ data }: Props) => {
                       sx={{
                         fontFamily: helvetica.style.fontFamily,
                         fontSize: { xs: 15, md: 16, lg: 16 },
-                        lineHeight: "24px",
+                        lineHeight: { xs: "28px", md: "24px" },
                         letterSpacing: "0.5px",
                         color: "rgba(255,255,255,0.9)",
                         fontWeight: 400,

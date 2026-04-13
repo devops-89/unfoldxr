@@ -70,7 +70,7 @@ const DevicesCard = ({
             fontWeight: 900,
             color: textColor,
             textTransform: "uppercase",
-            lineHeight: { xs: "26px", md: "30px" },
+            lineHeight: { xs: "28px", md: "30px" },
             letterSpacing: "0.52px",
           }}
         >
@@ -87,7 +87,7 @@ const DevicesCard = ({
             color: textColor,
             fontSize: { xs: 13, md: 16 },
             fontWeight: 400,
-            lineHeight: { xs: "20px", md: "24px" },
+            lineHeight: { xs: "24px", md: "24px" },
             letterSpacing: "0.52px",
           }}
         >

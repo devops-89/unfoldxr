@@ -25,7 +25,7 @@ const AiIndustry = () => {
               fontSize: { xs: 28, md: 36 },
               textTransform: "uppercase",
               fontWeight: 900,
-              lineHeight: "52px",
+              lineHeight: { xs: "35px", md: "52px" },
             }}
           >
             {homePage.Ai_industry.heading}
@@ -38,7 +38,7 @@ const AiIndustry = () => {
               fontFamily: helvetica.style.fontFamily,
               fontSize: { xs: 16, md: 18 },
               letterSpacing: "0.52px",
-              lineHeight: "30px",
+              lineHeight: { xs: "28px", md: "30px" },
               fontWeight: 400,
               mt: 1,
             }}

@@ -65,7 +65,7 @@ const HeroSection = () => {
                   fontWeight: 700,
                   color: COLORS.WHITE,
                   maxWidth: "100%",
-                  lineHeight: "30px",
+                  lineHeight: { xs: "28px", md: "30px" },
                   mb: 2
                 }}
               >
@@ -80,7 +80,7 @@ const HeroSection = () => {
                   fontWeight: 900,
                   textTransform: "uppercase",
                   color: COLORS.WHITE,
-                  lineHeight: "52px",
+                  lineHeight: { xs: "35px", md: "52px" },
                   whiteSpace: "pre-line",
                   mb: 1,
                 }}
@@ -92,7 +92,7 @@ const HeroSection = () => {
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18, lg: 18 },
                   color: COLORS.WHITE,
-                  lineHeight: "30px",
+                  lineHeight: { xs: "28px", md: "30px" },
                   maxWidth: "90%",
                 }}
               >

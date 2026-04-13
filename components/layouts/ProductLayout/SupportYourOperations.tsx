@@ -25,7 +25,7 @@ const SupportYourOperations = () => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 textTransform: "uppercase",
-                lineHeight: { xs: "40px", md: "52px" },
+                lineHeight: { xs: "35px", md: "52px" },
                 fontSize: { xs: 28, md: 36 },
                 color: COLORS.WHITE,
               }}
@@ -44,7 +44,7 @@ const SupportYourOperations = () => {
                 fontFamily: helvetica.style.fontFamily,
                 fontWeight: 700,
                 fontSize: { xs: 18, md: 16, lg: 18 },
-                lineHeight: "34px",
+                lineHeight: { xs: "28px", md: "34px" },
                 color: COLORS.WHITE,
               }}
             >

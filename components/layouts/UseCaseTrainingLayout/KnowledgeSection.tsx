@@ -35,7 +35,7 @@ const KnowledgeSection = ({ data }: Props) => {
                   fontWeight: 900,
                   textTransform: "uppercase",
                   fontSize: { xs: 26, md: 36 },
-                  lineHeight: "42px",
+                  lineHeight: { xs: "35px", md: "42px" },
                   maxWidth: 800,
                   mb: { xs: 2, md: 2 },
                 }}
@@ -53,7 +53,7 @@ const KnowledgeSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 17, md: 18 },
-                      lineHeight: "28px",
+                      lineHeight: { xs: "28px", md: "28px" },
                       color: COLORS.WHITE,
                     }}
                   >
@@ -70,7 +70,7 @@ const KnowledgeSection = ({ data }: Props) => {
                 mt: { xs: 4, md: 6 },
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 17, md: 18 },
-                lineHeight: "28px",
+                lineHeight: { xs: "28px", md: "28px" },
                 color: COLORS.WHITE,
               }}
             >
@@ -106,7 +106,7 @@ const KnowledgeSection = ({ data }: Props) => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 fontSize: { xs: 26, md: 36 },
-                lineHeight: "44px",
+                lineHeight: { xs: "35px", md: "44px" },
                 maxWidth: 600,
               }}
             >
@@ -136,7 +136,7 @@ const KnowledgeSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 16, md: 18 },
-                      lineHeight: "28px",
+                      lineHeight: { xs: "28px", md: "28px" },
                       letterSpacing: "0.52px",
                       color: COLORS.WHITE,
                     }}
@@ -155,7 +155,7 @@ const KnowledgeSection = ({ data }: Props) => {
               mt: { xs: 6, md: 6 },
               fontFamily: helvetica.style.fontFamily,
               fontSize: { xs: 16, md: 18 },
-              lineHeight: "28px",
+              lineHeight: { xs: "28px", md: "28px" },
               color: COLORS.WHITE,
             }}
           >

@@ -40,7 +40,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
           sx={{
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 28, md: 48, lg: 36 },
-            lineHeight: "52px",
+            lineHeight: { xs: "35px", md: "52px" },
             textTransform: "uppercase",
             fontWeight: 900,
             maxWidth: 1000,
@@ -77,7 +77,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                       fontFamily: din.style.fontFamily,
                       fontSize: { xs: 20, md: 16, lg: 18 },
                       fontWeight: 700,
-                      lineHeight: "30px",
+                      lineHeight: { xs: "28px", md: "30px" },
                       letterSpacing: "0.52px",
                       textTransform: "uppercase",
                       color: COLORS.WHITE,
@@ -135,7 +135,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                           fontFamily: helvetica.style.fontFamily,
                           color: "rgba(255,255,255,0.8)",
                           fontSize: { xs: 14, md: 16 },
-                          lineHeight: 1.4,
+                          lineHeight: { xs: "24px", md: 1.4 },
                           letterSpacing: "0.52px",
                         }}
                       >

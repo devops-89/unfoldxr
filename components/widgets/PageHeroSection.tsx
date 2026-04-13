@@ -21,6 +21,7 @@ interface PageHeroSectionProps {
   overlayOpacity?: number;
   primaryBtn?: ButtonConfig;
   secondaryBtn?: ButtonConfig;
+  objectPosition?: any;
 }
 const PageHeroSection = ({
   image,
@@ -32,13 +33,14 @@ const PageHeroSection = ({
   overlayOpacity = 0.4,
   primaryBtn,
   secondaryBtn,
+  objectPosition = "center",
 }: PageHeroSectionProps) => {
   const { openModal } = useDemoModal();
   return (
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "80svh", md: "100vh" },
+        minHeight: { xs: "100svh", md: "100vh" },
         display: "flex",
         alignItems: "center",
         color: COLORS.WHITE,
@@ -56,6 +58,7 @@ const PageHeroSection = ({
           width: "100%",
           height: "100%",
           objectFit: "cover",
+          objectPosition: objectPosition,
           zIndex: 0,
         }}
       />
@@ -92,7 +95,7 @@ const PageHeroSection = ({
               fontSize: { xs: 26, md: 50, lg: 36 },
               fontStyle: "normal",
               fontWeight: 900,
-              lineHeight: { xs: "40px", md: "42px" },
+              lineHeight: { xs: "35px", md: "42px" },
               textTransform: "uppercase",
               WebkitTextStrokeWidth: { xs: "1px", md: "2px" },
               WebkitTextStrokeColor: "#FFF",
@@ -110,7 +113,7 @@ const PageHeroSection = ({
             fontWeight: 900,
             textTransform: "uppercase",
             fontSize: { xs: 26, md: 50, lg: 36 },
-            lineHeight: { xs: "40px", md: "42px" },
+            lineHeight: { xs: "35px", md: "42px" },
             maxWidth: titleMaxWidth || 1050,
             whiteSpace: "pre-line",
           }}
@@ -125,7 +128,7 @@ const PageHeroSection = ({
               fontFamily: din.style.fontFamily,
               fontWeight: 700,
               fontSize: { xs: 20, md: 28, lg: 18 },
-              lineHeight: 1.1,
+              lineHeight: { xs: "35px", md: 1.1 },
               mt: 3,
               maxWidth: 800,
             }}
@@ -141,7 +144,7 @@ const PageHeroSection = ({
               fontFamily: din.style.fontFamily,
               fontWeight: 400,
               fontSize: { xs: 16, md: 26, lg: 18 },
-              lineHeight: { xs: "normal", md: "20px" },
+              lineHeight: { xs: "28px", md: "20px" },
               letterSpacing: "0.52px",
               mt: { xs: 2, md: 1 },
               maxWidth: 1000,
