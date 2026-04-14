@@ -36,7 +36,7 @@ const LeadershipSection = () => {
               container
               key={idx}
               spacing={{ xs: 4, md: 8 }}
-              alignItems="flex-start"
+              alignItems="center" // Centered for better vertical balance
               direction={isEven ? "row-reverse" : "row"}
             >
               <Grid size={{ xs: 12, md: 4.5 }}>
@@ -59,7 +59,7 @@ const LeadershipSection = () => {
               <Grid size={{ xs: 12, md: 7.5 }}>
                 <Box
                   sx={{
-                    textAlign: { xs: "left", md: isEven ? "left" : "right" },
+                    textAlign: "left", // Standardized to left for better readability
                     mt: { xs: 3, md: 0 },
                   }}
                 >
@@ -70,32 +70,33 @@ const LeadershipSection = () => {
                       textTransform: "uppercase",
                       fontFamily: din.style.fontFamily,
                       color: COLORS.BLACK,
-                      lineHeight: "52px",
+                      lineHeight: 1.1, // Tighter for premium look
+                      mb: 1,
                     }}
                   >
                     {member.name}
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: { xs: 20, md: 20 },
+                      fontSize: { xs: 18, md: 20 },
                       fontWeight: 600,
                       textTransform: "uppercase",
-                      mt: 1,
-                      mb: 3,
+                      mb: 4,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.BLACK,
-                      lineHeight: "30px",
+                      lineHeight: 1.3,
+                      opacity: 0.8,
                     }}
                   >
                     {member.role}
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: { xs: 18, md: 18 },
+                      fontSize: { xs: 16, md: 17 },
                       lineHeight: "28px",
                       fontFamily: helvetica.style.fontFamily,
-                      color: COLORS.BLACK,
-                      textAlign: "justify",
+                      color: "rgba(0, 0, 0, 0.8)",
+                      textAlign: "left", // Removed justify for cleaner spacing
                       whiteSpace: "pre-line",
                     }}
                   >

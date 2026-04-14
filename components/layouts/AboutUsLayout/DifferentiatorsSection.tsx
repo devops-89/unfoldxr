@@ -20,7 +20,14 @@ const DifferentiatorsSection = () => {
         sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
       >
         <Grid container spacing={{ xs: 6, md: 10 }} alignItems="stretch">
-          <Grid size={{ xs: 12, md: 7 }} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <Grid
+            size={{ xs: 12, md: 7 }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
             <Typography
               sx={{
                 fontSize: { xs: 36, md: 36 },

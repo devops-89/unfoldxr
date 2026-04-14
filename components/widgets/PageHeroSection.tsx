@@ -171,7 +171,9 @@ const PageHeroSection = ({
                 href={primaryBtn.href}
                 onClick={
                   primaryBtn.onClick ||
-                  (primaryBtn.label.toLowerCase().includes("demo")
+                  (["demo", "expert", "specialist", "partner"].some((kw) =>
+                    primaryBtn.label.toLowerCase().includes(kw),
+                  )
                     ? openModal
                     : undefined)
                 }
@@ -183,7 +185,7 @@ const PageHeroSection = ({
                   py: 1.2,
                   fontFamily: din.style.fontFamily,
                   fontWeight: 500,
-                  fontSize: { xs: 14, md: 18, lg: 16},
+                  fontSize: { xs: 14, md: 18, lg: 16 },
                   textTransform: "none",
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
                 }}
@@ -197,7 +199,9 @@ const PageHeroSection = ({
                 href={secondaryBtn.href}
                 onClick={
                   secondaryBtn.onClick ||
-                  (secondaryBtn.label.toLowerCase().includes("demo")
+                  (["demo", "expert", "specialist", "partner"].some((kw) =>
+                    secondaryBtn.label.toLowerCase().includes(kw),
+                  )
                     ? openModal
                     : undefined)
                 }

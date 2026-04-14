@@ -11,45 +11,63 @@ const MeetAva = () => {
       sx={{
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
-        py: { xs: 8, md: 2 },
+        py: { xs: 8, md: 10, lg: 15 },
+        position: "relative",
         overflow: "hidden",
+        "@keyframes float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "@keyframes fadeInUp": {
+          "0%": { opacity: 0, transform: "translateY(30px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
       }}
     >
       <Box
         sx={{
-          width: { xs: "85%", md: "80%" },
+          width: { xs: "90%", md: "85%", lg: "83%" },
           mx: "auto",
-          px: { xs: 0, md: 0 },
+          position: "relative",
+          zIndex: 2,
         }}
       >
-        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 7 }}>
-              <Typography
-                sx={{
-                  fontFamily: din.style.fontFamily,
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  fontSize: { xs: 28, md: 48, lg: 36 },
-                  lineHeight: { xs: "35px", md: "52px" },
-                  maxWidth: "100%",
-                  whiteSpace: "pre-line",
-                }}
-              >
-                {data.title}
-              </Typography>
+        <Grid container spacing={{ xs: 6, md: 8 }} alignItems="flex-start">
+          <Grid
+            size={{ xs: 12, md: 6.5 }}
+            sx={{
+              animation: "fadeInUp 1s ease-out forwards",
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: din.style.fontFamily,
+                fontWeight: 900,
+                textTransform: "uppercase",
+                fontSize: { xs: 28, md: 40, lg: 48 },
+                lineHeight: { xs: "35px", md: "48px", lg: "52px" },
+                maxWidth: "100%",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {data.title}
+            </Typography>
             <Typography
               sx={{
                 mt: 4,
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 18, lg: 18 },
-                lineHeight: { xs: "28px", md: "30px" },
-                color: COLORS.TEXT_GRAY,
+                fontSize: { xs: 16, md: 18, lg: 19 },
+                lineHeight: { xs: "28px", md: "32px" },
+                color: "rgba(255, 255, 255, 0.7)",
                 maxWidth: 720,
                 letterSpacing: "0.52px",
               }}
             >
               {data.description.replace("The perfect work buddy.", "")}
-              <Box component="span" sx={{ fontWeight: "bold", color: COLORS.WHITE }}>
+              <Box
+                component="span"
+                sx={{ fontWeight: "bold", color: COLORS.WHITE }}
+              >
                 The perfect work buddy.
               </Box>
             </Typography>
@@ -67,7 +85,10 @@ const MeetAva = () => {
                   fontSize: 16,
                   textTransform: "none",
                   boxShadow: "none",
-                  "&:hover": { bgcolor: COLORS.PRIMARY_HOVER, boxShadow: "none" },
+                  "&:hover": {
+                    bgcolor: COLORS.PRIMARY_HOVER,
+                    boxShadow: "none",
+                  },
                 }}
               >
                 {data.cta}
@@ -75,11 +96,12 @@ const MeetAva = () => {
             </Box>
           </Grid>
           <Grid
-            size={{ xs: 12, md: 5 }}
+            size={{ xs: 12, md: 5.5 }}
             sx={{
+              display: "flex",
+              justifyContent: { xs: "center", md: "flex-end" },
               position: "relative",
-              minHeight: { md: 400 },
-              display: { xs: "none", md: "block" },
+              animation: "fadeInUp 1.2s ease-out forwards",
             }}
           >
             <Box
@@ -87,24 +109,33 @@ const MeetAva = () => {
               src={data.img}
               alt="AVA visual"
               sx={{
-                width: { xs: "100%", md: "750px", lg: 700 },
-                maxWidth: "none",
+                width: "100%",
+                maxWidth: { xs: "350px", md: "500px", lg: "650px" },
+                height: "auto",
                 display: "block",
-                position: { xs: "relative", md: "absolute", lg: "relative" },
-                // top: { xs: "auto", md: "0%" },
-                // right: { xs: "auto", md: "-200px", lg: "-250px" },
-                mx: { xs: "auto", md: 0 },
-                // transform: {
-                //   xs: "translate(10%, -10%)",
-                //   md: "translateY(-50%)",
-                //   lg: "translateY(-50%)",
-                // },
-                zIndex: 0,
+                animation: "float 6s ease-in-out infinite",
+                filter: "drop-shadow(0px 0px 80px rgba(160, 32, 240, 0.25))",
               }}
             />
           </Grid>
         </Grid>
       </Box>
+
+      {/* Decorative Background Blur */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: "15%",
+          right: "-10%",
+          width: "40vw",
+          height: "40vw",
+          bgcolor: "rgba(160, 32, 240, 0.08)",
+          filter: "blur(180px)",
+          borderRadius: "50%",
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+      />
     </Box>
   );
 };

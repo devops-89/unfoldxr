@@ -1,149 +1,197 @@
 import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
-
 import { COLORS } from "@/utils/enum";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import EastIcon from "@mui/icons-material/East";
 
 const SupportYourOperations = () => {
   const data = homePage.productPage.supportOperations;
 
   return (
-    <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
+    <Box
+      sx={{
+        background: `linear-gradient(to bottom, ${COLORS.BLACK} 70%, ${COLORS.WHITE} 30%)`,
+        pt: { xs: 8, md: 10 },
+        pb: { xs: 6, md: 8 },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Container
         maxWidth={false}
         sx={{
           width: { xs: "95%", md: "90%", lg: "80%" },
           mx: "auto",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
-          {/* Text Content */}
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Typography
-              sx={{
-                fontFamily: din.style.fontFamily,
-                fontWeight: 900,
-                textTransform: "uppercase",
-                lineHeight: { xs: "35px", md: "52px" },
-                fontSize: { xs: 28, md: 36 },
-                color: COLORS.WHITE,
-              }}
-            >
-              {data.lifecycle.title.split("lifecycle")[0]}
-              <Box
-                component="br"
-                sx={{ display: { xs: "none", md: "block" } }}
-              />
-              lifecycle
-              {data.lifecycle.title.split("lifecycle")[1]}
-            </Typography>
-            <Typography
-              sx={{
-                mt: 4,
-                fontFamily: helvetica.style.fontFamily,
-                fontWeight: 700,
-                fontSize: { xs: 18, md: 16, lg: 18 },
-                lineHeight: { xs: "28px", md: "34px" },
-                color: COLORS.WHITE,
-              }}
-            >
-              {data.lifecycle.stages.map((stage, i) => (
-                <Box
-                  key={i}
-                  sx={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: 2,
-                    mb: 1,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      minWidth: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      bgcolor: COLORS.PRIMARY_GREEN || "#00FF00",
-                      mt: 1.5,
-                    }}
-                  />
-                  {stage}
-                </Box>
-              ))}
-            </Typography>
-          </Grid>
-
-          {/* Image Content */}
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Box
-              sx={{
-                borderRadius: { xs: 4, md: 6 },
-                overflow: "hidden",
-                position: "relative",
-                boxShadow: "0px 20px 40px rgba(0,0,0,0.4)",
-              }}
-            >
-              <Box
-                component="img"
-                src={data.lifecycle.bg}
-                alt="Operations lifecycle"
+        {/* Text Content */}
+        <Box
+          sx={{
+            mb: { xs: 6, md: 8 },
+            maxWidth: "900px",
+            alignSelf: "flex-start",
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: din.style.fontFamily,
+              fontWeight: 900,
+              textTransform: "uppercase",
+              lineHeight: { xs: "1.2", md: "1.1" },
+              fontSize: { xs: 24, md: 36, lg: 40 },
+              color: COLORS.WHITE,
+              mb: 4,
+              textAlign: "left",
+            }}
+          >
+            {data.lifecycle.title}
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
+              alignItems: "flex-start",
+            }}
+          >
+            {data.lifecycle.stages.map((stage, i) => (
+              <Typography
+                key={i}
                 sx={{
-                  width: "100%",
-                  height: "auto",
-                  minHeight: { md: 400 },
-                  maxHeight: { xs: 400, md: 600 },
-                  display: "block",
-                  objectFit: "cover",
-                }}
-              />
-
-              {/* Dark Overlay */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  inset: 0,
-                  bgcolor: "rgba(0,0,0,0.3)",
-                }}
-              />
-
-              {/* Play Button Indicator */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: { xs: 60, md: 80 },
-                  height: { xs: 60, md: 80 },
-                  borderRadius: "50%",
-                  bgcolor: "rgba(255,255,255,0.2)",
-                  backdropFilter: "blur(4px)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  border: "1px solid rgba(255,255,255,0.4)",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    bgcolor: "rgba(255,255,255,0.3)",
-                    transform: "translate(-50%, -50%) scale(1.1)",
-                  },
+                  fontFamily: helvetica.style.fontFamily,
+                  fontWeight: 700,
+                  fontSize: { xs: 16, md: 18, lg: 20 },
+                  color: COLORS.WHITE,
+                  opacity: 0.9,
+                  textAlign: "left",
                 }}
               >
-                <Box
-                  sx={{
-                    width: 0,
-                    height: 0,
-                    borderTop: "10px solid transparent",
-                    borderBottom: "10px solid transparent",
-                    borderLeft: `16px solid ${COLORS.WHITE}`,
-                    ml: 0.5,
-                  }}
-                />
-              </Box>
+                {stage}
+              </Typography>
+            ))}
+          </Box>
+        </Box>
+
+        {/* Video/Image Content */}
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: "1000px",
+            borderRadius: { xs: 4, md: 8 },
+            overflow: "hidden",
+            position: "relative",
+            boxShadow: "0px 20px 60px rgba(0,0,0,0.5)",
+            aspectRatio: { xs: "16/10", md: "16/9" },
+            alignSelf: "center",
+          }}
+        >
+          <Box
+            component="img"
+            src={data.lifecycle.bg}
+            alt="Operations lifecycle"
+            sx={{
+              width: "100%",
+              height: "100%",
+              display: "block",
+              objectFit: "cover",
+            }}
+          />
+
+          {/* Overlay for better text visibility (optional but recommended for glassy effects) */}
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 0,
+              bgcolor: "rgba(0,0,0,0.2)",
+            }}
+          />
+
+          {/* View Case Study Button */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              display: "flex",
+              alignItems: "center",
+              gap: 1.5,
+              bgcolor: "rgba(255,255,255,0.1)",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(255,255,255,0.3)",
+              borderRadius: "100px",
+              pl: 1,
+              pr: 2.5,
+              py: 1,
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              "&:hover": {
+                bgcolor: "rgba(255,255,255,0.2)",
+                transform: "translate(-50%, -50%) scale(1.05)",
+              },
+            }}
+          >
+            <Box
+              sx={{
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                bgcolor: COLORS.WHITE,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <PlayArrowIcon sx={{ color: COLORS.BLACK, fontSize: 24 }} />
             </Box>
-          </Grid>
-        </Grid>
+            <Typography
+              sx={{
+                color: COLORS.WHITE,
+                fontFamily: din.style.fontFamily,
+                fontWeight: 700,
+                fontSize: 14,
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+              }}
+            >
+              View Case Study <EastIcon sx={{ fontSize: 16 }} />
+            </Typography>
+          </Box>
+
+          {/* Placeholder Text Overlay */}
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "15%",
+              width: "100%",
+              textAlign: "center",
+              px: 4,
+            }}
+          >
+            <Typography
+              sx={{
+                color: COLORS.WHITE,
+                fontFamily: din.style.fontFamily,
+                fontWeight: 900,
+                fontSize: { xs: 12, md: 16, lg: 18 },
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                opacity: 0.9,
+                textShadow: "0px 2px 4px rgba(0,0,0,0.5)",
+              }}
+            >
+              *THIS IS A PLACEHOLDER IMAGE*, WILL BE REPLACED BY VID THUMBNAIL
+            </Typography>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

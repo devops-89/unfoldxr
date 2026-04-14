@@ -6,14 +6,16 @@ import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import { useRouter } from "next/navigation";
 import ContainedButton from "@/components/widgets/ContainedButton";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const NewsSection = () => {
   const { newsSection: data } = aboutPage;
   const router = useRouter();
 
+  const { openModal } = useDemoModal();
+
   return (
     <Box sx={{ bgcolor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
-
       <Container
         maxWidth={false}
         sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
@@ -60,7 +62,7 @@ const NewsSection = () => {
               {data.description}
             </Typography>
             <ContainedButton
-              onClick={() => router.push("/contact-us?tab=email")}
+              onClick={openModal}
               sx={{
                 px: { xs: 2.5, md: 4 },
                 py: 1.2,

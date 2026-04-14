@@ -12,10 +12,18 @@ const HeroSection = () => {
         minHeight: { xs: "auto", md: "100vh" },
         display: "flex",
         alignItems: "center",
-        pt: { xs: 8, md: 10 },
+        pt: { xs: 8, md: 4 },
         pb: 0,
         position: "relative",
         overflow: "hidden",
+        "@keyframes fadeInUp": {
+          "0%": { opacity: 0, transform: "translateY(30px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        "@keyframes float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
       }}
     >
       <Container
@@ -35,6 +43,7 @@ const HeroSection = () => {
               flexDirection: "column",
               justifyContent: "center",
               textAlign: "left",
+              animation: "fadeInUp 1s ease-out forwards",
             }}
           >
             {/* Small Label Title */}
@@ -46,8 +55,9 @@ const HeroSection = () => {
                 color: COLORS.WHITE,
                 lineHeight: 1.2,
                 mb: { xs: 3, md: 4 },
-                letterSpacing: "0.02em",
+                letterSpacing: "0.05em",
                 opacity: 0.9,
+                textTransform: "uppercase",
               }}
             >
               {data.title}
@@ -58,13 +68,13 @@ const HeroSection = () => {
               variant="h1"
               sx={{
                 fontFamily: din.style.fontFamily,
-                  fontSize: { xs: 36, md: 56, lg: 36 },
+                fontSize: { xs: 36, md: 56, lg: 64 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.WHITE,
-                  lineHeight: { xs: "35px", md: "52px" },
-                  whiteSpace: "pre-line",
-                  mb: 1,
+                lineHeight: { xs: "1.1", md: "1.1" },
+                whiteSpace: "pre-line",
+                mb: 4,
               }}
             >
               {data.heading}
@@ -74,7 +84,7 @@ const HeroSection = () => {
             <Typography
               sx={{
                 fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 18, lg: 18},
+                fontSize: { xs: 16, md: 18, lg: 19 },
                 fontWeight: 400,
                 color: "rgba(255, 255, 255, 0.7)",
                 lineHeight: 1.6,
@@ -91,7 +101,9 @@ const HeroSection = () => {
             sx={{
               display: "flex",
               justifyContent: { xs: "center", md: "flex-end" },
+              alignItems: "flex-start",
               position: "relative",
+              animation: "fadeInUp 1.2s ease-out forwards",
             }}
           >
             <Box
@@ -99,8 +111,8 @@ const HeroSection = () => {
                 position: "relative",
                 width: { xs: "120%", md: "140%", lg: "150%" },
                 maxWidth: { xs: 600, md: 1000, lg: 1200 },
-                mr: { md: -10, lg: -25},
-                mt: "auto",
+                mr: { md: -10, lg: -25 },
+                mt: { xs: 4, md: 0 },
               }}
             >
               <Box
@@ -111,7 +123,8 @@ const HeroSection = () => {
                   width: "100%",
                   height: "auto",
                   display: "block",
-                  filter: "drop-shadow(0px 0px 50px rgba(162, 211, 37, 0.15))",
+                  filter: "drop-shadow(0px 0px 80px rgba(162, 211, 37, 0.25))",
+                  animation: "float 6s ease-in-out infinite",
                 }}
               />
             </Box>
@@ -123,12 +136,12 @@ const HeroSection = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "20%",
-          right: "-10%",
-          width: "40vw",
-          height: "40vw",
-          bgcolor: "rgba(162, 211, 37, 0.05)",
-          filter: "blur(150px)",
+          top: "10%",
+          right: "-5%",
+          width: "45vw",
+          height: "45vw",
+          bgcolor: "rgba(162, 211, 37, 0.08)",
+          filter: "blur(180px)",
           borderRadius: "50%",
           zIndex: 1,
           pointerEvents: "none",
