@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { Box, Button, Grid, Typography, Stack, alpha } from "@mui/material";
 
 import { din, helvetica } from "@/utils/fonts";
@@ -15,6 +17,7 @@ const MATURITY_LEVELS = [
 ];
 
 const InterventionSection2 = ({ data }: Props) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const isSideBySide = data.layout === "side-by-side";
 
   if (isSideBySide) {
@@ -327,9 +330,9 @@ const InterventionSection2 = ({ data }: Props) => {
           </Grid>
         </Grid>
 
-        {/* Editorial Maturity Path Section */}
+        {/* Premium Gallery Grid Section */}
         {data.cards && data.cards.length > 0 && (
-          <Box sx={{ mt: { xs: 6, md: 8 }, mb: 2, position: "relative" }}>
+          <Box sx={{ mt: { xs: 8, md: 12 }, mb: 4, position: "relative" }}>
             {data.description3 && (
               <Typography
                 sx={{
@@ -337,165 +340,134 @@ const InterventionSection2 = ({ data }: Props) => {
                   fontSize: { xs: 16, md: 18 },
                   lineHeight: 1.6,
                   color: "rgba(0,0,0,0.6)",
-                  mb: { xs: 6, md: 8 },
-                  maxWidth: 600,
+                  mb: { xs: 6, md: 10 },
+                  maxWidth: 650,
                 }}
               >
                 {data.description3}
               </Typography>
             )}
 
-            {/* DASHED CONNECTOR PATH (Desktop Only) */}
-            <Box
-              sx={{
-                position: "absolute",
-                top: "60%",
-                left: "10%",
-                right: "10%",
-                height: "1px",
-                borderBottom: "2px dashed rgba(182, 236, 26, 0.3)",
-                display: { xs: "none", md: "block" },
-                zIndex: 0,
-              }}
-            />
-
-            <Grid
-              container
-              spacing={4}
-              sx={{ position: "relative", zIndex: 1 }}
-            >
+            <Grid container spacing={{ xs: 6, md: 4 }}>
               {data.cards.map((card, index) => (
                 <Grid
                   key={index}
                   size={{ xs: 12, md: 4 }}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                   sx={{
-                    mt: {
-                      md: index === 0 ? 0 : index === 1 ? 8 : 16,
+                    position: "relative",
+                    transition: "all 0.4s ease",
+                    "&:not(:last-child)": {
+                      borderRight: { md: "1px solid rgba(0,0,0,0.06)" },
+                      pr: { md: 4 },
+                    },
+                    "&:not(:first-of-type)": {
+                      pl: { md: 4 },
                     },
                   }}
                 >
+                  {/* Top Accent Line */}
                   <Box
                     sx={{
-                      position: "relative",
-                      p: { xs: 3, md: 4 },
-                      borderRadius: "32px",
-                      bgcolor: "rgba(255, 255, 255, 0.5)",
-                      backdropFilter: "blur(10px)",
-                      border: "1px solid rgba(0,0,0,0.05)",
-                      height: "100%",
-                      minHeight: 220,
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      transition: "all 0.5s cubic-bezier(0.19, 1, 0.22, 1)",
+                      position: "absolute",
+                      top: { md: -20 },
+                      left: { md: 4 },
+                      width: hoveredIndex === index ? "40px" : "0px",
+                      height: "2px",
+                      bgcolor: COLORS.PRIMARY_GREEN,
+                      transition: "width 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+                      display: { xs: "none", md: "block" },
+                    }}
+                  />
+
+                  {/* Image Header */}
+                  <Box
+                    sx={{
+                      width: "100%",
+                      aspectRatio: "16/10",
+                      borderRadius: "16px",
                       overflow: "hidden",
-                      cursor: "pointer",
-                      "&:hover": {
-                        transform: "translateY(-12px)",
-                        boxShadow: "0 30px 60px rgba(182, 236, 26, 0.15)",
-                        bgcolor: "rgba(255,255,255,1)",
-                        borderColor: COLORS.PRIMARY_GREEN,
-                        "& .watermark": {
-                          transform: "translate(-20px, -20px) scale(1.1)",
-                          opacity: 0.1,
-                        },
-                        "& .arrow-icon": {
-                          opacity: 1,
-                          transform: "translateX(5px)",
-                        },
-                      },
+                      bgcolor: "rgba(0,0,0,0.03)",
+                      mb: 4,
+                      position: "relative",
                     }}
                   >
-                    {/* EDITORIAL WATERMARK NUMBER */}
-                    <Typography
-                      className="watermark"
+                    <Box
+                      component="img"
+                      src={card.image}
+                      alt={card.label}
                       sx={{
-                        position: "absolute",
-                        top: 20,
-                        right: -10,
-                        fontFamily: din.style.fontFamily,
-                        fontSize: 160,
-                        fontWeight: 900,
-                        lineHeight: 0.8,
-                        color: COLORS.PRIMARY_GREEN,
-                        opacity: 0.05,
-                        zIndex: -1,
-                        transition: "all 0.6s ease",
-                        userSelect: "none",
-                        pointerEvents: "none",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+                        transform: hoveredIndex === index ? "scale(1.08)" : "scale(1)",
                       }}
+                    />
+                  </Box>
+
+                  {/* Content Container */}
+                  <Box sx={{ pr: 2 }}>
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="flex-start"
+                      sx={{ mb: 2 }}
                     >
-                      0{index + 1}
-                    </Typography>
-
-                    <Box>
-                      <Stack
-                        direction="row"
-                        spacing={1.5}
-                        alignItems="center"
-                        sx={{ mb: 2 }}
-                      >
-                        <Box
-                          sx={{
-                            px: 1.5,
-                            py: 0.5,
-                            bgcolor: "rgba(182, 236, 26, 0.1)",
-                            borderRadius: "100px",
-                            border: "1px solid rgba(182, 236, 26, 0.3)",
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              fontSize: 11,
-                              fontWeight: 900,
-                              color: COLORS.BLACK,
-                              textTransform: "uppercase",
-                              letterSpacing: "1px",
-                              fontFamily: din.style.fontFamily,
-                            }}
-                          >
-                            Stage 0{index + 1}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            height: "1px",
-                            flexGrow: 1,
-                            bgcolor: "rgba(0,0,0,0.05)",
-                          }}
-                        />
-                      </Stack>
-
                       <Typography
                         sx={{
                           fontFamily: din.style.fontFamily,
+                          fontSize: 14,
                           fontWeight: 900,
-                          fontSize: { xs: 20, md: 24 },
-                          textTransform: "uppercase",
-                          letterSpacing: "-0.5px",
-                          color: COLORS.BLACK,
-                          mb: 1,
-                          lineHeight: 1.1,
+                          color: hoveredIndex === index ? COLORS.PRIMARY_GREEN : "rgba(0,0,0,0.3)",
+                          transition: "color 0.3s ease",
+                          letterSpacing: "2px",
                         }}
                       >
-                        {card.label}
+                        0{index + 1}
                       </Typography>
-
                       <Typography
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
-                          fontSize: 13,
-                          fontWeight: 500,
-                          color: "rgba(0,0,0,0.5)",
+                          fontSize: 11,
+                          fontWeight: 700,
+                          color: "rgba(0,0,0,0.4)",
                           textTransform: "uppercase",
-                          letterSpacing: "2px",
+                          letterSpacing: "1.2px",
                         }}
                       >
                         {MATURITY_LEVELS[index]}
                       </Typography>
-                    </Box>
+                    </Stack>
 
-                    {/* Removed Explore Workflow per user request */}
+                    <Typography
+                      sx={{
+                        fontFamily: din.style.fontFamily,
+                        fontWeight: 900,
+                        fontSize: { xs: 22, md: 24 },
+                        textTransform: "uppercase",
+                        lineHeight: 1.1,
+                        color: COLORS.BLACK,
+                        mb: 2,
+                        letterSpacing: "-0.5px",
+                      }}
+                    >
+                      {card.label}
+                    </Typography>
+
+                    <Typography
+                      sx={{
+                        fontFamily: helvetica.style.fontFamily,
+                        fontSize: 15,
+                        lineHeight: 1.6,
+                        color: "rgba(0,0,0,0.6)",
+                      }}
+                    >
+                      {/* Using description from data if available, or fallback */}
+                      {card.description ||
+                        "Standardized digital guidance for consistent operational execution and knowledge retention."}
+                    </Typography>
                   </Box>
                 </Grid>
               ))}
