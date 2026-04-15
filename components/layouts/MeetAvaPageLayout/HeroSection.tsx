@@ -1,10 +1,13 @@
-import { din, helvetica } from "@/utils/fonts";
-import { Box, Grid, Typography, Container } from "@mui/material";
+"use client";
+
+import PageHeroSection from "@/components/widgets/PageHeroSection";
 import { meetAvaPage } from "@/utils/Website-Data";
-import { COLORS } from "@/utils/enum";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const HeroSection = () => {
   const { heroSection: data } = meetAvaPage;
+  const { openModal } = useDemoModal();
+
   return (
     <Box
       sx={{
