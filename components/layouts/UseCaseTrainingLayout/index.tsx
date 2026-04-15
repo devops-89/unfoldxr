@@ -10,6 +10,7 @@ import PlatformSummarySection from "./PlatformSummarySection";
 import FinalCTASection from "./FinalCTASection";
 import { useCasesData } from "./data";
 import { COLORS } from "@/utils/enum";
+import InterventionSection2 from "./InterventionSection2";
 
 interface UseCaseTrainingLayoutProps {
   slug?: string;
@@ -24,7 +25,8 @@ const UseCaseTrainingLayout = ({ slug }: UseCaseTrainingLayoutProps) => {
     <Box sx={{ bgcolor: COLORS.WHITE }}>
       <HeroSection data={data.hero} />
       <KnowledgeSection data={data.knowledge} />
-      <InterventionSection data={data.intervention} />
+      {/* <InterventionSection data={data.intervention} /> */}
+      <InterventionSection2 data={data.intervention} />
       <CapabilitiesSection data={data.capabilities} />
       <BusinessResultsSection data={data.businessResults} />
       <IndustrySection data={data.industry} />

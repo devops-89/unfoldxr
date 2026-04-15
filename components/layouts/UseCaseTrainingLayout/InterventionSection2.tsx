@@ -1,4 +1,5 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, Stack, alpha } from "@mui/material";
+
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
@@ -6,7 +7,14 @@ import { COLORS } from "@/utils/enum";
 interface Props {
   data: UseCaseData["intervention"];
 }
-const InterventionSection = ({ data }: Props) => {
+
+const MATURITY_LEVELS = [
+  "Standard Guidance",
+  "Advanced Enablement",
+  "Autonomous Excellence",
+];
+
+const InterventionSection2 = ({ data }: Props) => {
   const isSideBySide = data.layout === "side-by-side";
 
   if (isSideBySide) {
@@ -15,12 +23,15 @@ const InterventionSection = ({ data }: Props) => {
         sx={{
           bgcolor: COLORS.WHITE,
           color: COLORS.BLACK,
-          py: { xs: 8, md: 8 },
+          py: { xs: 6, md: 7 },
+          position: "relative",
+          overflow: "hidden",
         }}
       >
         <Box
           sx={{
-            width: { xs: "90%", md: "80%" },
+            width: { xs: "95%", md: "90%", lg: "84%" },
+            maxWidth: 1200,
             mx: "auto",
             px: { xs: 2, md: 0 },
           }}
@@ -35,9 +46,10 @@ const InterventionSection = ({ data }: Props) => {
                 fontWeight: 900,
                 textTransform: "uppercase",
                 fontSize: { xs: 28, md: 36 },
-                lineHeight: { xs: "35px", md: "42px" },
+                lineHeight: 1.1,
                 mb: 4,
                 color: COLORS.BLACK,
+                letterSpacing: "-0.5px",
               }}
             >
               {data.title}
@@ -53,7 +65,7 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: { xs: "28px", md: 1.5 },
+                  lineHeight: 1.6,
                 }}
               >
                 {data.description1}
@@ -62,7 +74,7 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: { xs: "28px", md: "28px" },
+                  lineHeight: 1.6,
                 }}
               >
                 {data.description2}
@@ -80,7 +92,7 @@ const InterventionSection = ({ data }: Props) => {
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 16, md: 18 },
-                      lineHeight: { xs: "28px", md: 1.5 },
+                      lineHeight: 1.6,
                       textAlign: "justify",
                     }}
                   >
@@ -91,8 +103,8 @@ const InterventionSection = ({ data }: Props) => {
                   <Typography
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 16, md: 18, lg: 18 },
-                      lineHeight: { xs: "28px", md: "28px" },
+                      fontSize: { xs: 16, md: 18 },
+                      lineHeight: 1.6,
                       textAlign: "justify",
                     }}
                   >
@@ -123,13 +135,22 @@ const InterventionSection = ({ data }: Props) => {
                           borderRadius: "16px",
                           overflow: "hidden",
                           cursor: "pointer",
-                          "&:hover .hover-btn": {
-                            opacity: 1,
-                            transform: "translateX(-50%) scale(1)",
+                          transition:
+                            "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
+                          "&:hover": {
+                            flex: 1.5,
+                            "& .hover-btn": {
+                              opacity: 1,
+                              transform: "translateX(-50%) scale(1)",
+                            },
+                            "& .card-img": {
+                              transform: "scale(1.1)",
+                            },
                           },
                         }}
                       >
                         <Box
+                          className="card-img"
                           component="img"
                           src={card.image}
                           alt={card.label}
@@ -137,6 +158,7 @@ const InterventionSection = ({ data }: Props) => {
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
+                            transition: "transform 0.6s ease",
                           }}
                         />
                         {/* Dark Overlay */}
@@ -238,13 +260,14 @@ const InterventionSection = ({ data }: Props) => {
       sx={{
         bgcolor: COLORS.WHITE,
         color: COLORS.BLACK,
-        pt: { xs: 6, md: 10 },
+        pt: { xs: 5, md: 7 },
         pb: 0,
       }}
     >
       <Box
         sx={{
-          width: { xs: "90%", md: "80%" },
+          width: { xs: "95%", md: "90%", lg: "84%" },
+          maxWidth: 1200,
           mx: "auto",
           px: { xs: 2, md: 0 },
         }}
@@ -257,9 +280,10 @@ const InterventionSection = ({ data }: Props) => {
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
                 fontSize: { xs: 32, md: 36 },
-                lineHeight: { xs: "35px", md: "42px" },
+                lineHeight: 1.1,
                 color: COLORS.BLACK,
                 textTransform: "uppercase",
+                letterSpacing: "-0.5px",
               }}
             >
               {data.title}
@@ -279,8 +303,8 @@ const InterventionSection = ({ data }: Props) => {
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: { xs: "28px", md: "28px" },
-                  color: COLORS.BLACK,
+                  lineHeight: 1.6,
+                  color: "rgba(0,0,0,0.8)",
                   textAlign: "justify",
                 }}
               >
@@ -291,8 +315,8 @@ const InterventionSection = ({ data }: Props) => {
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
-                    lineHeight: { xs: "28px", md: "28px" },
-                    color: COLORS.BLACK,
+                    lineHeight: 1.6,
+                    color: "rgba(0,0,0,0.8)",
                     textAlign: "justify",
                   }}
                 >
@@ -303,85 +327,200 @@ const InterventionSection = ({ data }: Props) => {
           </Grid>
         </Grid>
 
-        {/* Third Description paragraph or Variants Cards */}
-        {data.cards && data.cards.length > 0 ? (
-          <Box sx={{ mt: 5, mb: 4 }}>
+        {/* Editorial Maturity Path Section */}
+        {data.cards && data.cards.length > 0 && (
+          <Box sx={{ mt: { xs: 6, md: 8 }, mb: 2, position: "relative" }}>
             {data.description3 && (
               <Typography
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
-                  lineHeight: { xs: "28px", md: 1.5 },
-                  color: COLORS.BLACK,
-                  mb: 5,
-                  textAlign: "justify",
+                  lineHeight: 1.6,
+                  color: "rgba(0,0,0,0.6)",
+                  mb: { xs: 6, md: 8 },
+                  maxWidth: 600,
                 }}
               >
                 {data.description3}
               </Typography>
             )}
-            <Grid container spacing={4} justifyContent="center">
+
+            {/* DASHED CONNECTOR PATH (Desktop Only) */}
+            <Box
+              sx={{
+                position: "absolute",
+                top: "60%",
+                left: "10%",
+                right: "10%",
+                height: "1px",
+                borderBottom: "2px dashed rgba(182, 236, 26, 0.3)",
+                display: { xs: "none", md: "block" },
+                zIndex: 0,
+              }}
+            />
+
+            <Grid
+              container
+              spacing={4}
+              sx={{ position: "relative", zIndex: 1 }}
+            >
               {data.cards.map((card, index) => (
-                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                <Grid
+                  key={index}
+                  size={{ xs: 12, md: 4 }}
+                  sx={{
+                    mt: {
+                      md: index === 0 ? 0 : index === 1 ? 8 : 16,
+                    },
+                  }}
+                >
                   <Box
                     sx={{
+                      position: "relative",
+                      p: { xs: 3, md: 4 },
+                      borderRadius: "32px",
+                      bgcolor: "rgba(255, 255, 255, 0.5)",
+                      backdropFilter: "blur(10px)",
+                      border: "1px solid rgba(0,0,0,0.05)",
                       height: "100%",
-                      minHeight: { xs: 80, md: 100 },
+                      minHeight: 220,
                       display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      padding: 3,
-                      borderRadius: "20px",
-                      bgcolor: "transparent",
-                      border: "1px solid rgba(184, 237, 26, 0.9)",
-                      transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-                      cursor: "default",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      transition: "all 0.5s cubic-bezier(0.19, 1, 0.22, 1)",
+                      overflow: "hidden",
+                      cursor: "pointer",
                       "&:hover": {
+                        transform: "translateY(-12px)",
+                        boxShadow: "0 30px 60px rgba(182, 236, 26, 0.15)",
+                        bgcolor: "rgba(255,255,255,1)",
                         borderColor: COLORS.PRIMARY_GREEN,
-                        transform: "translateY(-5px)",
-                        boxShadow: `0 10px 30px rgba(0,0,0,0.05)`,
+                        "& .watermark": {
+                          transform: "translate(-20px, -20px) scale(1.1)",
+                          opacity: 0.1,
+                        },
+                        "& .arrow-icon": {
+                          opacity: 1,
+                          transform: "translateX(5px)",
+                        },
                       },
                     }}
                   >
+                    {/* EDITORIAL WATERMARK NUMBER */}
                     <Typography
+                      className="watermark"
                       sx={{
+                        position: "absolute",
+                        top: 20,
+                        right: -10,
                         fontFamily: din.style.fontFamily,
+                        fontSize: 160,
                         fontWeight: 900,
-                        fontSize: { xs: 16, md: 18 },
-                        textTransform: "uppercase",
-                        letterSpacing: "0.05em",
-                        color: COLORS.BLACK,
-                        textAlign: "center",
+                        lineHeight: 0.8,
+                        color: COLORS.PRIMARY_GREEN,
+                        opacity: 0.05,
+                        zIndex: -1,
+                        transition: "all 0.6s ease",
+                        userSelect: "none",
+                        pointerEvents: "none",
                       }}
                     >
-                      {card.label}
+                      0{index + 1}
                     </Typography>
+
+                    <Box>
+                      <Stack
+                        direction="row"
+                        spacing={1.5}
+                        alignItems="center"
+                        sx={{ mb: 2 }}
+                      >
+                        <Box
+                          sx={{
+                            px: 1.5,
+                            py: 0.5,
+                            bgcolor: "rgba(182, 236, 26, 0.1)",
+                            borderRadius: "100px",
+                            border: "1px solid rgba(182, 236, 26, 0.3)",
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              fontSize: 11,
+                              fontWeight: 900,
+                              color: COLORS.BLACK,
+                              textTransform: "uppercase",
+                              letterSpacing: "1px",
+                              fontFamily: din.style.fontFamily,
+                            }}
+                          >
+                            Stage 0{index + 1}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            height: "1px",
+                            flexGrow: 1,
+                            bgcolor: "rgba(0,0,0,0.05)",
+                          }}
+                        />
+                      </Stack>
+
+                      <Typography
+                        sx={{
+                          fontFamily: din.style.fontFamily,
+                          fontWeight: 900,
+                          fontSize: { xs: 20, md: 24 },
+                          textTransform: "uppercase",
+                          letterSpacing: "-0.5px",
+                          color: COLORS.BLACK,
+                          mb: 1,
+                          lineHeight: 1.1,
+                        }}
+                      >
+                        {card.label}
+                      </Typography>
+
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          fontSize: 13,
+                          fontWeight: 500,
+                          color: "rgba(0,0,0,0.5)",
+                          textTransform: "uppercase",
+                          letterSpacing: "2px",
+                        }}
+                      >
+                        {MATURITY_LEVELS[index]}
+                      </Typography>
+                    </Box>
+
+                    {/* Removed Explore Workflow per user request */}
                   </Box>
                 </Grid>
               ))}
             </Grid>
           </Box>
-        ) : (
-          data.description3 && (
-            <Typography
-              sx={{
-                mt: 6,
-                fontFamily: helvetica.style.fontFamily,
-                fontSize: { xs: 16, md: 18 },
-                lineHeight: { xs: "28px", md: 1.5 },
-                color: COLORS.BLACK,
-                maxWidth: "100%",
-              }}
-            >
-              {data.description3}
-            </Typography>
-          )
+        )}
+
+        {!data.cards?.length && data.description3 && (
+          <Typography
+            sx={{
+              mt: 6,
+              fontFamily: helvetica.style.fontFamily,
+              fontSize: { xs: 16, md: 18 },
+              lineHeight: 1.6,
+              color: "rgba(0,0,0,0.8)",
+              maxWidth: "100%",
+            }}
+          >
+            {data.description3}
+          </Typography>
         )}
       </Box>
 
       {/* Tablet Area with Overlap Transition */}
-      <Box sx={{ position: "relative", mt: { xs: 8, md: 8 } }}>
-        {/* Background Split - Top White, Bottom Black */}
+      <Box sx={{ position: "relative", mt: { xs: 4, md: 6 } }}>
         <Box
           sx={{
             position: "absolute",
@@ -403,12 +542,11 @@ const InterventionSection = ({ data }: Props) => {
           }}
         />
 
-        {/* The Tablet Image Container */}
         <Box
           sx={{
             position: "relative",
             zIndex: 1,
-            width: { xs: "95%", md: "70%", lg: "80%" },
+            width: { xs: "95%", md: "60%", lg: "70%" },
             mx: "auto",
             display: "flex",
             justifyContent: "center",
@@ -420,11 +558,11 @@ const InterventionSection = ({ data }: Props) => {
             alt="Tablet Intervention"
             sx={{
               width: "100%",
-              maxWidth: 900,
+              maxWidth: 850,
               height: "auto",
               display: "block",
               borderRadius: { xs: 4, md: "24px" },
-              filter: `drop-shadow(0px 30px 60px ${COLORS.BLACK_ALPHA_30})`,
+              filter: `drop-shadow(0px 30px 60px rgba(0,0,0,0.2))`,
             }}
           />
         </Box>
@@ -433,4 +571,4 @@ const InterventionSection = ({ data }: Props) => {
   );
 };
 
-export default InterventionSection;
+export default InterventionSection2;

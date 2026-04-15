@@ -10,6 +10,7 @@ import Outcome from "./Outcome";
 import DevicesSection from "./Devices-Section";
 import Tools from "./Tools";
 import AboutUnfoldxr from "./About-Unfoldxr";
+import ManyTools from "./Many-tools";
 
 const HomeLayout = () => {
   return (
@@ -38,6 +39,7 @@ const HomeLayout = () => {
       <DevicesSection />
 
       <Tools />
+      {/* <ManyTools /> */}
     </Box>
   );
 };

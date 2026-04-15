@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <PageHeroSection
       image={"/images/homepage/HeroSection.png"}
-      overlayOpacity={0.7}
+      overlayOpacity={0.2}
       titleOutlined={data.heading1}
       title={data.heading2}
       description={data.description}

@@ -19,7 +19,7 @@ const FutureWorkCard = ({
         position: "relative",
         pl: { xs: 3, md: 5 },
         transition: "all 0.3s ease",
-        opacity: isActive ? 1 : 0.4,
+        opacity: isActive ? 1 : 1,
         "&:hover": {
           opacity: isActive ? 1 : 0.7,
         },
@@ -62,7 +62,7 @@ const FutureWorkCard = ({
             fontWeight: 400,
             lineHeight: { xs: "28px", md: "30px" },
             letterSpacing: "0.52px",
-            color: isActive ? COLORS.PRIMARY_GREEN : COLORS.WHITE,
+            color: COLORS.WHITE,
             textTransform: "uppercase",
           }}
         >
