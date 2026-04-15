@@ -4,6 +4,7 @@ import Header from "@/components/widgets/Header";
 import Footer from "@/components/widgets/Footer";
 import { DemoModalProvider } from "@/components/context/DemoModalContext";
 import DemoModal from "@/components/widgets/DemoModal";
+import ReCaptchaProvider from "@/components/context/ReCaptchaProvider";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,12 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body style={{ margin: 0, overflowX: "hidden" }}>
-        <DemoModalProvider>
-          <Header />
-          {children}
-          <Footer />
-          <DemoModal />
-        </DemoModalProvider>
+        <ReCaptchaProvider>
+          <DemoModalProvider>
+            <Header />
+            {children}
+            <Footer />
+            <DemoModal />
+          </DemoModalProvider>
+        </ReCaptchaProvider>
       </body>
     </html>
   );

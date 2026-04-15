@@ -1,6 +1,8 @@
+"use client";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import { CONTACT_FORM_DATA } from "@/utils/types";
-import ReCAPTCHA from "react-google-recaptcha";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useCallback } from "react";
 
 interface Props {
   formData: CONTACT_FORM_DATA;
@@ -8,10 +10,35 @@ interface Props {
 }
 
 const ContactForm: React.FC<Props> = ({ formData, note }) => {
-  const googleSiteKey = process.env.GOOGLE_RECAPTCHA_SITE_KEY;
-  console.log("fite", googleSiteKey);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!executeRecaptcha) return;
+
+      const token = await executeRecaptcha("contact_form");
+
+      // Verify with your API
+      const res = await fetch("/api/verify-recaptha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+
+      const data = await res.json();
+      if (!data.success) {
+        console.error("reCAPTCHA verification failed");
+        return;
+      }
+
+      // TODO: proceed with form submission
+    },
+    [executeRecaptcha]
+  );
+
   return (
-    <Box>
+    <Box component="form" onSubmit={handleSubmit}>
       {/* Fields */}
       <Grid container spacing={1.5}>
         {formData.formFields.map((field) => (
@@ -51,14 +78,6 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
             />
           </Grid>
         ))}
-
-        <Grid size={6}>
-          <ReCAPTCHA
-            sitekey={
-              googleSiteKey || "" || "6Lf9gLAsAAAAAL8J7wneF4f1YoWKc-b4_3xjt9RQ"
-            }
-          />
-        </Grid>
       </Grid>
 
       {/* Note */}
@@ -74,6 +93,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
 
       {/* Button */}
       <Button
+        type="submit"
         variant="contained"
         sx={{
           mt: 3,
