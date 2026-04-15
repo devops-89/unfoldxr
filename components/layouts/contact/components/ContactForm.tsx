@@ -1,23 +1,26 @@
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import { CONTACT_FORM_DATA } from "@/utils/types";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface Props {
-  formData:CONTACT_FORM_DATA;
+  formData: CONTACT_FORM_DATA;
   note: string;
 }
 
 const ContactForm: React.FC<Props> = ({ formData, note }) => {
+  const googleSiteKey = process.env.GOOGLE_RECAPTCHA_SITE_KEY;
+  console.log("fite", googleSiteKey);
   return (
     <Box>
       {/* Fields */}
       <Grid container spacing={1.5}>
         {formData.formFields.map((field) => (
           <Grid
-           size={{
-            xs: 12,
-            sm: field.name === "message" ? 12 : 6
-           }}
-           key={field.name}
+            size={{
+              xs: 12,
+              sm: field.name === "message" ? 12 : 6,
+            }}
+            key={field.name}
           >
             <TextField
               fullWidth
@@ -32,8 +35,8 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
                   fontWeight: 700,
                   fontSize: 13,
                   color: "#666",
-                  "& .MuiFormLabel-asterisk": { color: "red" }
-                }
+                  "& .MuiFormLabel-asterisk": { color: "red" },
+                },
               }}
               InputProps={{
                 sx: {
@@ -43,13 +46,21 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
                   "& fieldset": { borderColor: "transparent" },
                   "&:hover fieldset": { borderColor: "transparent" },
                   "&.Mui-focused fieldset": { borderColor: "#ccc" },
-                }
+                },
               }}
             />
           </Grid>
         ))}
+
+        <Grid size={6}>
+          <ReCAPTCHA
+            sitekey={
+              googleSiteKey || "" || "6Lf9gLAsAAAAAL8J7wneF4f1YoWKc-b4_3xjt9RQ"
+            }
+          />
+        </Grid>
       </Grid>
- 
+
       {/* Note */}
       <Typography
         variant="body2"
@@ -60,13 +71,13 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
       >
         {note}
       </Typography>
- 
+
       {/* Button */}
       <Button
         variant="contained"
         sx={{
           mt: 3,
-          backgroundColor: "#000", 
+          backgroundColor: "#000",
           color: "#b6ec1a",
           fontFamily: "Inter, sans-serif",
           fontWeight: 700,

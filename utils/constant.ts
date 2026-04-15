@@ -176,11 +176,11 @@ export const FOOTER_COLUMNS = [
   {
     title: "Resources",
     links: [
-       { label: "Case Studies", url: "#" },
-       { label: "Blog / Insights", url: "#" },
-       { label: "Product Videos", url: "#" },
-       { label: "Brochure", url: "#" },
-       { label: "Feature List", url: "#" },
+      { label: "Case Studies", url: "#" },
+      { label: "Blog / Insights", url: "#" },
+      { label: "Product Videos", url: "#" },
+      { label: "Brochure", url: "#" },
+      { label: "Feature List", url: "#" },
     ],
   },
   {
@@ -199,20 +199,22 @@ export const FOOTER_COLUMNS = [
 
 export const WORKFORCE_CARD_DATA: WORKFORCE_CARD_PROPS[] = [
   {
-    img: increase, 
+    img: increase,
     heading: "INCREASE PRODUCTIVITY",
-    description: "40% reduction in technician training \n time & error diagnosis",
+    description:
+      "40% reduction in technician training \n time & error diagnosis",
   },
   {
     img: reduce,
     heading: "REDUCE DOWNTIME",
-    description: "Errors and rework reduced by 50%,\n40% increase in first-time fix rate",
+    description:
+      "Errors and rework reduced by 50%,\n40% increase in first-time fix rate",
   },
   {
     img: operational,
     heading: "LOWER OPERATIONAL COSTS",
     description: "50% less onsite visit\nand increased remote collaboration",
-  }
+  },
 ];
 
 export const AI_INDUSTRY_DATA = MASTER_INDUSTRIES.map((ind) => ({

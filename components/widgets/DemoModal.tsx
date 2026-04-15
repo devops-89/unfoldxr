@@ -1,6 +1,12 @@
 "use client";
 
-import { Dialog, DialogContent, IconButton, Box, Typography } from "@mui/material";
+import {
+  Dialog,
+  DialogContent,
+  IconButton,
+  Box,
+  Typography,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ContactForm from "@/components/layouts/contact/components/ContactForm";
 import { useDemoModal } from "../context/DemoModalContext";
