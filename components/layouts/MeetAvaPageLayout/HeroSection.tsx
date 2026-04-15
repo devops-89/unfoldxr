@@ -1,7 +1,9 @@
 "use client";
 
-import PageHeroSection from "@/components/widgets/PageHeroSection";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { meetAvaPage } from "@/utils/Website-Data";
+import { COLORS } from "@/utils/enum";
+import { din, helvetica } from "@/utils/fonts";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const HeroSection = () => {

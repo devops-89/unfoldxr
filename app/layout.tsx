@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body style={{ margin: 0, overflowX: "hidden" }}>
+      <body style={{ margin: 0, overflowX: "hidden" }} suppressHydrationWarning>
         <ReCaptchaProvider>
           <DemoModalProvider>
             <Header />

@@ -14,8 +14,8 @@ import {
 import ava from "@/images/banner/homePage/avapng.png";
 import partnersClientBusiness from "@/public/images/partners/business-augmentation.png";
 import tools from "@/images/banner/homePage/tools/tools-team.png";
-import ankushImg from "@/public/images/about-us/ankush.jpeg";
-import riteshImg from "@/images/about-us/about-leadership2.png";
+import ankushImg from "@/public/images/about-us/ankush.png";
+import riteshImg from "@/images/about-us/ritesh.png";
 import differentiatorImg from "@/images/about-us/about-differentiator.png";
 import icon1 from "@/images/about-us/icons/icon1.png";
 import icon2 from "@/images/about-us/icons/icon2.png";
@@ -27,6 +27,7 @@ import automotiveHero from "@/images/Industries/hero.png";
 import automotiveOutcomes from "@/images/Industries/Driving.jpeg";
 import automotiveIcon from "@/images/Industries/Icon.svg";
 import { INDUSTRY_PAGE_PROPS } from "./types";
+
 export const homePage = {
   herosection: {
     heading1: "Augmenting",
@@ -38,7 +39,7 @@ export const homePage = {
   workforce: {
     heading: "Built for 2.8 billion Workforce that keeps the World Running",
     description:
-      "Most AI is built for people at desks. But 80% of the global workforce is deskless. That’s 2.8 billion people. UnfoldXR is built for them. AI and augmented reality delivered at the moment of work where decisions are made, assets are maintained, and operations move forward.",
+      "Most AI is built for people at desks. But 80% of the global workforce is deskless. That's 2.8 billion people. UnfoldXR is built for them. AI and augmented reality delivered at the moment of work where decisions are made, assets are maintained, and operations move forward.",
     data: WORKFORCE_CARD_DATA,
   },
   aboutUnfoldxr: {
@@ -63,7 +64,7 @@ export const homePage = {
       description:
         "UnfoldXR replaces multiple, fragmented frontline tools with one unified platform assisting technicians at every step of a task. From smart planning, to fast diagnosis, error-free execution and instant reporting one continuous flow with AI & AR-powered proficiency.",
       subDescription:
-        "Built to evolve with your needs, our platform comes in three variants. ",
+        "Built to evolve with your needs, our platform comes in three variants. ",
       endHeading: "Welcome to the Future of Work!",
       cta: "Know More",
     },
@@ -102,7 +103,7 @@ export const homePage = {
             "From guided task execution and live diagnostics to smart planning and automated reporting,  AVA turns complex operations into structured, compliant, and measurable workflows.",
         },
         {
-          label: "Ava doesn’t replace technicians. It augments them.",
+          label: "Ava doesn't replace technicians. It augments them.",
         },
       ],
       cta: "Meet Ava",
@@ -169,7 +170,6 @@ export const homePage = {
         ],
         bg: "/images/Product/SupportYourOperations.png",
         cta: "View case study",
-        // placeholderText: "*THIS IS A PLACEHOLDER IMAGE*, WILL BE REPLACED BY VID THUMBNAIL",
       },
     },
     designToEvolve: {
@@ -208,7 +208,7 @@ export const homePage = {
         "UnfoldXR enhances skiller operations, on ground executions & real-time decision making",
     },
     meetAva: {
-      title: "Meet AVA Your \n‘AI Virtual Assistant’ \nFor Everything Work.",
+      title: "Meet AVA Your \n'AI Virtual Assistant' \nFor Everything Work.",
       description:
         "AVA supports your workforce across all three versions of the platform. It works alongside your teams as an intelligent assistant, a sharp analyser, and a reliable task partner. The perfect work buddy.",
       img: "/images/Product/MeetAva.png",
@@ -318,8 +318,6 @@ export const partnersPage = {
         title: "51.8% CAGR",
         description:
           "projected growth in the AR/VR market between 2024 and 2029",
-        description:
-          "projected growth in the AR/VR market between 2024 and 2029",
         gridSize: { xs: 12, md: 6 },
       },
       {
@@ -329,8 +327,6 @@ export const partnersPage = {
       },
       {
         title: "32%",
-        description:
-          "productivity boost reported by organizations adopting AR and VR (IBM)",
         description:
           "productivity boost reported by organizations adopting AR and VR (IBM)",
         gridSize: { xs: 12, md: 6 },
@@ -345,54 +341,14 @@ export const partnersPage = {
         title: "70%",
         description:
           "of Fortune 500 companies expected to implement augmented connected worker initiatives by 2027 (Gartner)",
-        description:
-          "of Fortune 500 companies expected to implement augmented connected worker initiatives by 2027 (Gartner)",
         gridSize: { xs: 12 },
       },
     ],
-    ],
   },
   whyPartnerSection: {
     heading: "WHY PARTNER WITH UNFOLDXR?",
     why_partner_card_data: partnersWhyPartnerData,
-  whyPartnerSection: {
-    heading: "WHY PARTNER WITH UNFOLDXR?",
-    why_partner_card_data: partnersWhyPartnerData,
   },
-  ecosystemSystem: {
-    heading: "WHO WE PARTNER WITH BUILT FOR ECOSYSTEM COLLABORATION",
-    data: [
-      {
-        label: "ERP and CMMS partners",
-        description:
-          "Extend ERP modules into hands-free execution. Reduce errors and improve first-time fix rates. Create real-time feedback loops into maintenance systems.",
-      },
-      {
-        label: "PSM platforms",
-        description:
-          "Integration with process safety management platforms ensures high compliance and audit-ready workflows for industrial operations.",
-      },
-      {
-        label: "IoT & digital twin companies",
-        description:
-          "Bring live telemetry and real-time asset health data directly to the technician's view through augmented reality overlays.",
-      },
-      {
-        label: "LMS & training platforms",
-        description:
-          "Turn training manuals into interactive, hands-on learning experiences that happen in the flow of work.",
-      },
-      {
-        label: "Staffing partners",
-        description:
-          "Empower temporary and new staff with AI-guided tools that reduce ramp-up time and ensure consistent execution from day one.",
-      },
-      {
-        label: "Automation & robotics partners",
-        description:
-          "Coordinate human-robot collaboration with intuitive AR interfaces for better efficiency and safety.",
-      },
-    ],
   ecosystemSystem: {
     heading: "WHO WE PARTNER WITH BUILT FOR ECOSYSTEM COLLABORATION",
     data: [
@@ -432,16 +388,7 @@ export const partnersPage = {
     title: "DON'T JUST ADD VALUE, AUGMENT YOUR CLIENT'S BUSINESS.",
     image: partnersClientBusiness,
     client_business_card_data: partnersClientBusinessData,
-  clientBusinessSection: {
-    title: "DON'T JUST ADD VALUE, AUGMENT YOUR CLIENT'S BUSINESS.",
-    image: partnersClientBusiness,
-    client_business_card_data: partnersClientBusinessData,
   },
-  existingPartnersSection: {
-    heading: "Our Existing Partners",
-    existing_partners_chip_data: partnersExistingPartnersData,
-  },
-};
   existingPartnersSection: {
     heading: "Our Existing Partners",
     existing_partners_chip_data: partnersExistingPartnersData,
@@ -450,19 +397,11 @@ export const partnersPage = {
 
 export const contactPage = {
   herosection: {
-export const contactPage = {
-  herosection: {
-    heading1: "Ready to watch the future of work unfold? ",
+    heading1: "Ready to watch the future of work unfold? ",
     description: "Contact an UnfoldXR expert.",
   },
   contactFormSection: {
-    heading: "Let’s augment human productivity together.",
-    note: "Note: By submitting this form, you will receive the information requested as well as sales and/or marketing communication on resources, news, and events related to UnfoldXR. You can unsubscribe anytime. For further details about your rights and how we process your personal information, see our Privacy Policy.",
-    contactFormData: contactFormData,
-  },
-};
-  contactFormSection: {
-    heading: "Let’s augment human productivity together.",
+    heading: "Let's augment human productivity together.",
     note: "Note: By submitting this form, you will receive the information requested as well as sales and/or marketing communication on resources, news, and events related to UnfoldXR. You can unsubscribe anytime. For further details about your rights and how we process your personal information, see our Privacy Policy.",
     contactFormData: contactFormData,
   },
@@ -496,20 +435,14 @@ export const aboutPage = {
         title: "Curious",
         description:
           "We push the edge of what's possible, forging a new era of human, machine and AI partnership.",
-        description:
-          "We push the edge of what's possible, forging a new era of human, machine and AI partnership.",
       },
       {
         title: "Engineered Strong",
         description:
           "Curiosity drives us, precision defines us. We deliver certainty, not trial-and-error. Confidently unfolding what's next.",
-        description:
-          "Curiosity drives us, precision defines us. We deliver certainty, not trial-and-error. Confidently unfolding what's next.",
       },
       {
         title: "Human first AI",
-        description:
-          "Human at the core. Intelligence around it. Tuned for impact, always.",
         description:
           "Human at the core. Intelligence around it. Tuned for impact, always.",
       },
@@ -528,10 +461,7 @@ export const aboutPage = {
         name: "RITESH GANGNANI",
         role: "CO-FOUNDER & HEAD ARCHITECT",
         image: riteshImg.src,
-        bio: "Ritesh Gangnani is the Co-founder & Head Architect at UnfoldXR, where he leads the AI and technology strategy powering next-generation smart glasses for the deskless workforce. Deep expertise in AI, ML, and computer vision, Ritesh has a track record of building production-grade AI systems from the ground up. As Head of AI at Segmind, he helped shape a leading generative AI platform — contributing to open-source breakthroughs like Segmoe (mixture of diffusion experts) and building scalable AI infrastructure used by thousands of developers worldwide.\n\na passionate open-source contributor, Ritesh is the creator of VoltaML, a popular GPU-accelerated inference library known in the ML community for making model deployment faster and more accessible. He is also the founder of Pixl Studio, an AI-powered creative studio for image generation, video, and virtual try-on. His expertise spans computer vision, deep learning, generative AI, and edge deployment with published research and a Master's degree from South Asian University grounding his work in both theory and application.\n\nat UnfoldXR, Ritesh is architecting the AI backbone that brings hands-free intelligence to frontline workers through smart glasses — turning complex AI into seamless, human-first experiences at the edge. At UnfoldXR, he builds with one belief: the best AI is the one that works for you, not the other way around.",
-      },
-    ],
-        bio: "Ritesh Gangnani is the Co-founder & Head Architect at UnfoldXR, where he leads the AI and technology strategy powering next-generation smart glasses for the deskless workforce. Deep expertise in AI, ML, and computer vision, Ritesh has a track record of building production-grade AI systems from the ground up. As Head of AI at Segmind, he helped shape a leading generative AI platform — contributing to open-source breakthroughs like Segmoe (mixture of diffusion experts) and building scalable AI infrastructure used by thousands of developers worldwide.\n\na passionate open-source contributor, Ritesh is the creator of VoltaML, a popular GPU-accelerated inference library known in the ML community for making model deployment faster and more accessible. He is also the founder of Pixl Studio, an AI-powered creative studio for image generation, video, and virtual try-on. His expertise spans computer vision, deep learning, generative AI, and edge deployment with published research and a Master's degree from South Asian University grounding his work in both theory and application.\n\nat UnfoldXR, Ritesh is architecting the AI backbone that brings hands-free intelligence to frontline workers through smart glasses — turning complex AI into seamless, human-first experiences at the edge. At UnfoldXR, he builds with one belief: the best AI is the one that works for you, not the other way around.",
+        bio: "Ritesh Gangnani is the Co-founder & Head Architect at UnfoldXR, where he leads the AI and technology strategy powering next-generation smart glasses for the deskless workforce. Deep expertise in AI, ML, and computer vision, Ritesh has a track record of building production-grade AI systems from the ground up. As Head of AI at Segmind, he helped shape a leading generative AI platform — contributing to open-source breakthroughs like Segmoe (mixture of diffusion experts) and building scalable AI infrastructure used by thousands of developers worldwide.\n\nA passionate open-source contributor, Ritesh is the creator of VoltaML, a popular GPU-accelerated inference library known in the ML community for making model deployment faster and more accessible. He is also the founder of Pixl Studio, an AI-powered creative studio for image generation, video, and virtual try-on. His expertise spans computer vision, deep learning, generative AI, and edge deployment with published research and a Master's degree from South Asian University grounding his work in both theory and application.\n\nAt UnfoldXR, Ritesh is architecting the AI backbone that brings hands-free intelligence to frontline workers through smart glasses — turning complex AI into seamless, human-first experiences at the edge. At UnfoldXR, he builds with one belief: the best AI is the one that works for you, not the other way around.",
       },
     ],
   },
@@ -544,15 +474,9 @@ export const aboutPage = {
         description:
           "Designed for frontline teams, not desk users. Intelligence delivered where real work happens.",
         icon: icon1.src,
-        description:
-          "Designed for frontline teams, not desk users. Intelligence delivered where real work happens.",
-        icon: icon1.src,
       },
       {
         title: "BUILT FOR EVERY STAGE OF WORK",
-        description:
-          "From planning to execution to reporting. One connected, continuous workflow.",
-        icon: icon2.src,
         description:
           "From planning to execution to reporting. One connected, continuous workflow.",
         icon: icon2.src,
@@ -564,16 +488,9 @@ export const aboutPage = {
         icon: icon3.src,
       },
     ],
-        description:
-          "Innovation is a continuous process and we are determined to change how the future of work looks. Human expertise, augmented by tech.",
-        icon: icon3.src,
-      },
-    ],
   },
   newsSection: {
     title: "IN NEWS",
-    description:
-      "For press inquiries, media coverage, speaking engagements, and industry insights, please connect with us.",
     description:
       "For press inquiries, media coverage, speaking engagements, and industry insights, please connect with us.",
   },
@@ -581,23 +498,16 @@ export const aboutPage = {
     title: "CAREERS",
     description:
       "At UnfoldXR, you will work at the intersection of AI, XR, enterprise systems, and human productivity. But more importantly, you will build tools that empower millions of frontline workers.",
-    description:
-      "At UnfoldXR, you will work at the intersection of AI, XR, enterprise systems, and human productivity. But more importantly, you will build tools that empower millions of frontline workers.",
     values: [
       "CURIOSITY AND PRINCIPLED THINKING",
       "ENGINEERING DEPTH WITH HUMAN EMPATHY",
       "CALM EXECUTION UNDER PRESSURE",
       "LONG-TERM OWNERSHIP",
-      "LONG-TERM OWNERSHIP",
     ],
-    bottomText:
-      "If you believe technology should augment human potential, we would like to hear from you.",
     bottomText:
       "If you believe technology should augment human potential, we would like to hear from you.",
   },
   finalCtaSection: {
-    heading: "UNFOLDXR — AUGMENTING THE FUTURE OF WORK.",
-  },
     heading: "UNFOLDXR — AUGMENTING THE FUTURE OF WORK.",
   },
 };
@@ -609,9 +519,6 @@ export const meetAvaPage = {
     subHeading:
       "AVA stands for AI Virtual Assistant. But the story behind the name runs deeper.",
     image: heroRing.src,
-    subHeading:
-      "AVA stands for AI Virtual Assistant. But the story behind the name runs deeper.",
-    image: heroRing.src,
   },
   introSection: {
     heading: "Meet AVA,",
@@ -619,15 +526,11 @@ export const meetAvaPage = {
       "Named after our co-founder Ankush Jagga's daughter, AVA is more than an acronym. When you build something that carries the name of someone you love, you build it with care, responsibility, and a long-term vision.",
       "AVA is not just an assistant. It is an agentic AI, designed to understand context, make decisions, and move work forward. Built into UnfoldXR, AVA stands beside frontline teams when work feels complex or uncertain. It diagnoses intelligently, guides thoughtfully, and adapts in real time.",
       "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen It, helping every worker perform with clarity, confidence, and growth.",
-      "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen It, helping every worker perform with clarity, confidence, and growth.",
     ],
-    image: introImage.src,
     image: introImage.src,
   },
   supportSection: {
     heading: "How AVA Supports at Every Step",
-    description:
-      "Designed to support your workforce throughout the lifecycle of work, across all three versions of UnfoldXR Augment, Empower, and Edge; AVA adapts to your organisation's stage of operational maturity. Each version unlocks deeper intelligence and broader capability. As you scale, AVA scales with you.",
     description:
       "Designed to support your workforce throughout the lifecycle of work, across all three versions of UnfoldXR Augment, Empower, and Edge; AVA adapts to your organisation's stage of operational maturity. Each version unlocks deeper intelligence and broader capability. As you scale, AVA scales with you.",
     features: [
@@ -635,13 +538,9 @@ export const meetAvaPage = {
         label: "Guided Execution",
         description:
           "Delivers step-by-step digital instructions aligned to the specific asset, location, and task.",
-        description:
-          "Delivers step-by-step digital instructions aligned to the specific asset, location, and task.",
       },
       {
         label: "Smart Rostering",
-        description:
-          "Optimises who does what and when, so the right skills meet the right work at the right time.",
         description:
           "Optimises who does what and when, so the right skills meet the right work at the right time.",
       },
@@ -649,13 +548,9 @@ export const meetAvaPage = {
         label: "Plan my Day",
         description:
           "Surfaces priorities and sequences work so frontline teams start each shift with clarity.",
-        description:
-          "Surfaces priorities and sequences work so frontline teams start each shift with clarity.",
       },
       {
         label: "Contextual Pro Tips",
-        description:
-          "Surfaces relevant guidance in context so workers never hunt for answers mid-task.",
         description:
           "Surfaces relevant guidance in context so workers never hunt for answers mid-task.",
       },
@@ -663,13 +558,9 @@ export const meetAvaPage = {
         label: "Process Capture",
         description:
           "Records how work is actually done so expertise becomes repeatable, searchable knowledge.",
-        description:
-          "Records how work is actually done so expertise becomes repeatable, searchable knowledge.",
       },
       {
         label: "Workflow Creation",
-        description:
-          "Builds and adapts workflows without heavy IT lift, keeping operations agile.",
         description:
           "Builds and adapts workflows without heavy IT lift, keeping operations agile.",
       },
@@ -677,13 +568,9 @@ export const meetAvaPage = {
         label: "Automated Reporting",
         description:
           "Generates structured reports from execution data so compliance and handoffs stay effortless.",
-        description:
-          "Generates structured reports from execution data so compliance and handoffs stay effortless.",
       },
       {
         label: "Performance Tracking",
-        description:
-          "Measures outcomes and trends so leaders can coach teams and improve operations continuously.",
         description:
           "Measures outcomes and trends so leaders can coach teams and improve operations continuously.",
       },
@@ -691,10 +578,7 @@ export const meetAvaPage = {
         label: "Continuously Learning",
         description:
           "Improves with every task so AVA gets sharper as your organisation scales.",
-        description:
-          "Improves with every task so AVA gets sharper as your organisation scales.",
       },
-    ],
     ],
   },
   placeholderSection: {
@@ -702,14 +586,9 @@ export const meetAvaPage = {
     description:
       "Traditional systems are reactive and input-driven.\nAVA operates as an agentic AI layer with goal-oriented execution while orchestrating workflows. It maintains task continuity with minimal manual intervention, bringing speed and accuracy across the system.",
     image: phonePlaceholder.src,
-    description:
-      "Traditional systems are reactive and input-driven.\nAVA operates as an agentic AI layer with goal-oriented execution while orchestrating workflows. It maintains task continuity with minimal manual intervention, bringing speed and accuracy across the system.",
-    image: phonePlaceholder.src,
   },
   evolvesCtaSection: {
     heading: "Evolves with your business needs.",
-    cta: "Request a demo",
-  },
     cta: "Request a demo",
   },
 };
@@ -721,15 +600,9 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
         "Built for Automotive Operations Where Precision Is Non-Negotiable",
       description:
         "UnfoldXR is an AI-powered augmented reality platform for automotive manufacturing and service that combines real-time intelligence, guided execution, and scalable expertise for complex, high-precision operations.",
-      title:
-        "Built for Automotive Operations Where Precision Is Non-Negotiable",
-      description:
-        "UnfoldXR is an AI-powered augmented reality platform for automotive manufacturing and service that combines real-time intelligence, guided execution, and scalable expertise for complex, high-precision operations.",
       image: automotiveHero.src,
     },
     realityNeedsSection: {
-      title:
-        "We Understand Automotive Operations and What It Takes to Run Them at Scale",
       title:
         "We Understand Automotive Operations and What It Takes to Run Them at Scale",
       realities: [
@@ -745,8 +618,6 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
         "Shorter training cycles for technicians and operators.",
         "Scalable expertise across global operations.",
       ],
-      bottomText:
-        "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without adding complexity.",
       bottomText:
         "UnfoldXR is designed specifically for these realities. We bring intelligence into execution, without adding complexity.",
       ctaText: "Watch how UnfoldXR augments automotive operations",
@@ -819,36 +690,10 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
           value: "50%",
           text: "reduction in expert travel, with more issues resolved remotely.",
         },
-        {
-          value: "25%",
-          text: "reduction in assembly time, improving line throughput.",
-        },
-        {
-          value: "20%",
-          text: "reduction in defect escape rate, ensuring issues are caught before dispatch.",
-        },
-        {
-          value: "30%",
-          text: "reduction in warranty diagnosis time, enabling quicker fault isolation.",
-        },
-        {
-          value: "40%",
-          text: "reduction in technician ramp-up time, accelerating new model readiness.",
-        },
-        {
-          value: "15%",
-          text: "improvement in first-time fix rate, reducing repeat visits.",
-        },
-        {
-          value: "50%",
-          text: "reduction in expert travel, with more issues resolved remotely.",
-        },
       ],
     },
     finalCtaSection: {
       heading: "Bring intelligence to your manufacturing floor",
-      description:
-        "See how UnfoldXR improves execution, reduces downtime, and scales expertise across your operations.",
       description:
         "See how UnfoldXR improves execution, reduces downtime, and scales expertise across your operations.",
       ctaText: "Talk to us",

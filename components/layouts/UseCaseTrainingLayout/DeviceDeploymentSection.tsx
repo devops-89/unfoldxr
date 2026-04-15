@@ -40,13 +40,19 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 borderRadius: "20px",
                 overflow: "hidden",
                 height: { xs: 300, md: 260 },
+                bgcolor: "#111",
               }}
             >
               <Box
                 component="img"
                 src={data.deviceA.image}
                 alt={data.deviceA.title}
-                sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
               />
               <Box
                 sx={{
@@ -142,22 +148,27 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
-                height: { xs: 300, md: 260 },
+                height: { xs: 300, md: 265 },
               }}
             >
               <Box
                 component="img"
                 src={data.deviceC.image}
                 alt={data.deviceC.title}
-                sx={{ width: "100%", height: "130%", objectFit: "cover" }}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "100% center",
+                }}
               />
-              <Box
+              {/* <Box
                 sx={{
                   position: "absolute",
                   inset: 0,
                   bgcolor: COLORS.BLACK_ALPHA_60,
                 }}
-              />
+              /> */}
               <Box
                 sx={{
                   position: "absolute",
