@@ -137,150 +137,90 @@ const InterventionSection2 = ({ data }: Props) => {
                           flex: 1,
                           minWidth: 0,
                           position: "relative",
-                          borderRadius: "20px",
+                          borderRadius: "16px",
                           cursor: "pointer",
-                          transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
-                          bgcolor: COLORS.BG_LIGHT,
+                          transition: "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)",
+                          background:
+                            hoveredIndex === index
+                              ? "linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%)"
+                              : "#F9F9F9",
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "center",
                           justifyContent: "center",
-                          perspective: "1000px",
+                          p: 4,
+                          perspective: "1500px",
+                          border: "1px solid",
+                          borderColor:
+                            hoveredIndex === index
+                              ? "rgba(0,0,0,0.06)"
+                              : "rgba(0,0,0,0.03)",
                           boxShadow:
                             hoveredIndex === index
-                              ? "0 30px 60px -12px rgba(50,50,93,0.15), 0 18px 36px -18px rgba(0,0,0,0.2)"
-                              : "0 4px 6px -1px rgba(0,0,0,0.05)",
+                              ? "0 30px 60px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(255,255,255,0.8)"
+                              : "0 10px 20px rgba(0,0,0,0.02)",
                           transform:
                             hoveredIndex === index
-                              ? "translateY(-10px) rotateY(-5deg) scale(1.05)"
-                              : "translateY(0) rotateY(0) scale(1)",
-                          overflow: "hidden",
+                              ? "translateY(-8px) rotateY(-8deg)"
+                              : "translateY(0) rotateY(0)",
                           "&:hover": {
-                            flex: 1.5,
-                            bgcolor: COLORS.WHITE,
+                            flex: 1.4,
                             zIndex: 2,
-                            "& .card-content": {
-                              transform: "translateZ(50px)",
-                            },
+                          },
+                          // Gloss Glare
+                          "&::after": {
+                            content: '""',
+                            position: "absolute",
+                            inset: 0,
+                            borderRadius: "16px",
+                            background:
+                              "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)",
+                            transform:
+                              hoveredIndex === index
+                                ? "translateX(100%) translateY(100%) rotate(45deg)"
+                                : "translateX(-100%) translateY(-100%) rotate(45deg)",
+                            transition: "transform 1s ease-in-out",
+                            pointerEvents: "none",
+                            zIndex: 1,
+                          },
+                          // Brand Glow
+                          "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            bottom: 0,
+                            left: "15%",
+                            width: "70%",
+                            height: "2px",
+                            bgcolor: COLORS.PRIMARY_GREEN,
+                            opacity: hoveredIndex === index ? 1 : 0,
+                            transition: "all 0.4s ease",
+                            filter: "blur(1.5px)",
+                            boxShadow: `0 0 10px ${alpha(COLORS.PRIMARY_GREEN, 0.5)}`,
+                            zIndex: 2,
                           },
                         }}
                       >
-                        {/* Background Accent */}
-                        <Box
+                        <Typography
                           sx={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "4px",
-                            bgcolor:
-                              hoveredIndex === index
-                                ? COLORS.PRIMARY_GREEN
-                                : "rgba(0,0,0,0.05)",
-                            transition: "all 0.3s ease",
-                          }}
-                        />
-
-                        {/* Card Content Container */}
-                        <Box
-                          className="card-content"
-                          sx={{
-                            width: "100%",
-                            height: "100%",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "center",
+                            fontFamily: din.style.fontFamily,
+                            fontWeight: 900,
+                            fontSize: { xs: 18, md: 22 },
+                            textTransform: "uppercase",
+                            lineHeight: 1.1,
+                            color: COLORS.BLACK,
+                            letterSpacing: "-0.5px",
                             textAlign: "center",
-                            px: 3,
-                            transition: "transform 0.5s ease",
-                            transformStyle: "preserve-3d",
+                            maxWidth: 160,
+                            transition: "all 0.5s ease",
+                            transform:
+                              hoveredIndex === index
+                                ? "translateZ(30px) scale(1.05)"
+                                : "translateZ(0) scale(1)",
+                            zIndex: 3,
                           }}
                         >
-                          {/* Numbering */}
-                          <Typography
-                            sx={{
-                              fontFamily: din.style.fontFamily,
-                              fontSize: { xs: 32, md: 48 },
-                              fontWeight: 900,
-                              color:
-                                hoveredIndex === index
-                                  ? COLORS.PRIMARY_GREEN
-                                  : "rgba(0,0,0,0.03)",
-                              mb: 1,
-                              lineHeight: 1,
-                              transition: "color 0.4s ease",
-                            }}
-                          >
-                            0{index + 1}
-                          </Typography>
-
-                          {/* Maturity Level Label */}
-                          <Typography
-                            sx={{
-                              fontFamily: helvetica.style.fontFamily,
-                              fontSize: 10,
-                              fontWeight: 700,
-                              color: "rgba(0,0,0,0.4)",
-                              textTransform: "uppercase",
-                              letterSpacing: "2px",
-                              mb: 2,
-                            }}
-                          >
-                            {MATURITY_LEVELS[index]}
-                          </Typography>
-
-                          {/* Heading */}
-                          <Typography
-                            sx={{
-                              fontFamily: din.style.fontFamily,
-                              fontWeight: 900,
-                              fontSize: { xs: 16, md: 20 },
-                              textTransform: "uppercase",
-                              lineHeight: 1.2,
-                              color: COLORS.BLACK,
-                              mb: 3,
-                              letterSpacing: "1px",
-                            }}
-                          >
-                            {card.label.split(" ").map((word, i) => (
-                              <span key={i} style={{ display: "block" }}>
-                                {word}
-                              </span>
-                            ))}
-                          </Typography>
-
-                          {/* Learn More Indicator (Only visible on hover) */}
-                          <Typography
-                            sx={{
-                              fontFamily: din.style.fontFamily,
-                              fontSize: 12,
-                              fontWeight: 900,
-                              color: COLORS.PRIMARY_GREEN,
-                              textTransform: "uppercase",
-                              letterSpacing: "2px",
-                              opacity: hoveredIndex === index ? 1 : 0,
-                              transform:
-                                hoveredIndex === index
-                                  ? "translateY(0)"
-                                  : "translateY(20px)",
-                              transition: "all 0.4s ease",
-                            }}
-                          >
-                            Explore Solution
-                          </Typography>
-                        </Box>
-
-                        {/* Decorative 3D Shadow Overlay */}
-                        <Box
-                          sx={{
-                            position: "absolute",
-                            inset: 0,
-                            background:
-                              "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.02) 100%)",
-                            pointerEvents: "none",
-                          }}
-                        />
+                          {card.label}
+                        </Typography>
                       </Box>
                     ))}
                   </Box>
@@ -401,115 +341,101 @@ const InterventionSection2 = ({ data }: Props) => {
                   onMouseLeave={() => setHoveredIndex(null)}
                   sx={{
                     position: "relative",
-                    perspective: "1200px",
+                    perspective: "1500px",
                   }}
                 >
                   <Box
                     sx={{
                       width: "100%",
-                      borderRadius: "24px",
-                      bgcolor: COLORS.BG_LIGHT,
-                      p: { xs: 4, md: 6 },
+                      borderRadius: "16px",
+                      background:
+                        hoveredIndex === index
+                          ? "linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%)"
+                          : "#F9F9F9",
+                      p: { xs: 4, md: 5 },
                       height: "100%",
-                      minHeight: 320,
+                      minHeight: 220,
                       display: "flex",
                       flexDirection: "column",
+                      alignItems: "center",
                       justifyContent: "center",
-                      transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+                      transition: "all 0.5s cubic-bezier(0.23, 1, 0.32, 1)",
                       transformStyle: "preserve-3d",
                       cursor: "pointer",
-                      border: "1px solid rgba(0,0,0,0.03)",
+                      border: "1px solid",
+                      borderColor:
+                        hoveredIndex === index
+                          ? "rgba(0,0,0,0.06)"
+                          : "rgba(0,0,0,0.03)",
                       transform:
                         hoveredIndex === index
-                          ? "translateY(-12px) rotateX(4deg) rotateY(-4deg)"
+                          ? "translateY(-16px) rotateX(8deg) rotateY(-8deg)"
                           : "translateY(0) rotateX(0) rotateY(0)",
                       boxShadow:
                         hoveredIndex === index
-                          ? "0 40px 80px -20px rgba(0,0,0,0.15)"
-                          : "0 10px 30px -15px rgba(0,0,0,0.05)",
-                      "&:hover": {
-                        bgcolor: COLORS.WHITE,
-                        borderColor: "rgba(0,0,0,0.08)",
+                          ? `0 20px 40px rgba(0,0,0,0.06), 
+                             0 40px 80px rgba(0,0,0,0.04),
+                             inset 0 0 0 1px rgba(255,255,255,0.8)`
+                          : "0 10px 30px rgba(0,0,0,0.02)",
+
+                      // Glossy Glare Effect
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        inset: 0,
+                        borderRadius: "16px",
+                        background:
+                          "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)",
+                        transform:
+                          hoveredIndex === index
+                            ? "translateX(100%) translateY(100%) rotate(45deg)"
+                            : "translateX(-100%) translateY(-100%) rotate(45deg)",
+                        transition: "transform 0.8s ease-in-out",
+                        pointerEvents: "none",
+                        zIndex: 1,
+                      },
+
+                      // Bottom Brand Accent
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        bottom: 0,
+                        left: "10%",
+                        width: "80%",
+                        height: "2px",
+                        bgcolor: COLORS.PRIMARY_GREEN,
+                        opacity: hoveredIndex === index ? 1 : 0,
+                        transition: "all 0.4s ease",
+                        filter: "blur(1px)",
+                        boxShadow: `0 0 10px ${alpha(COLORS.PRIMARY_GREEN, 0.5)}`,
+                        zIndex: 2,
                       },
                     }}
                   >
-                    {/* Top Accent Line */}
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: 24,
-                        left: 24,
-                        width: hoveredIndex === index ? "40px" : "20px",
-                        height: "2px",
-                        bgcolor: COLORS.PRIMARY_GREEN,
-                        transition: "width 0.4s ease",
-                      }}
-                    />
-
-                    {/* Step Number */}
-                    <Typography
-                      sx={{
-                        fontFamily: din.style.fontFamily,
-                        fontSize: 14,
-                        fontWeight: 900,
-                        color:
-                          hoveredIndex === index
-                            ? COLORS.PRIMARY_GREEN
-                            : "rgba(0,0,0,0.2)",
-                        transition: "color 0.3s ease",
-                        letterSpacing: "4px",
-                        mb: 2,
-                        transform: "translateZ(20px)",
-                      }}
-                    >
-                      VERSION 0{index + 1}
-                    </Typography>
-
-                    {/* Maturity Level Tag */}
-                    <Typography
-                      sx={{
-                        fontFamily: helvetica.style.fontFamily,
-                        fontSize: 11,
-                        fontWeight: 700,
-                        color: "rgba(0,0,0,0.4)",
-                        textTransform: "uppercase",
-                        letterSpacing: "1.5px",
-                        mb: 4,
-                        transform: "translateZ(10px)",
-                      }}
-                    >
-                      {MATURITY_LEVELS[index]}
-                    </Typography>
-
-                    {/* Heading */}
+                    {/* Main Label with translateZ for parallax depth */}
                     <Typography
                       sx={{
                         fontFamily: din.style.fontFamily,
                         fontWeight: 900,
-                        fontSize: { xs: 26, md: 32 },
+                        fontSize: { xs: 24, md: 28 },
                         textTransform: "uppercase",
                         lineHeight: 1.1,
                         color: COLORS.BLACK,
-                        mb: 3,
                         letterSpacing: "-0.5px",
-                        transform: "translateZ(40px)",
+                        textAlign: "center",
+                        transition: "all 0.5s ease",
+                        transform:
+                          hoveredIndex === index
+                            ? "translateZ(50px) scale(1.05)"
+                            : "translateZ(0) scale(1)",
+                        textShadow:
+                          hoveredIndex === index
+                            ? "0 10px 20px rgba(0,0,0,0.05)"
+                            : "none",
+                        zIndex: 3,
                       }}
                     >
                       {card.label}
-                    </Typography>
-
-                    {/* Short Description */}
-                    <Typography
-                      sx={{
-                        fontFamily: helvetica.style.fontFamily,
-                        fontSize: 15,
-                        lineHeight: 1.6,
-                        color: "rgba(0,0,0,0.5)",
-                        transform: "translateZ(15px)",
-                      }}
-                    >
-                      {card.description ||
-                        "Standardized digital guidance for consistent operational execution and knowledge retention."}
                     </Typography>
                   </Box>
                 </Grid>
