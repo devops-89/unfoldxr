@@ -46,8 +46,8 @@ const LeadershipSection = () => {
                   alt={member.name}
                   sx={{
                     width: "100%",
-                    maxWidth: { md: 450 },
-                    maxHeight: { md: 700 },
+                    maxWidth: { md: 380 },
+                    maxHeight: { md: 570 },
                     objectFit: "cover",
                     objectPosition: "top",
                     borderRadius: "12px",
