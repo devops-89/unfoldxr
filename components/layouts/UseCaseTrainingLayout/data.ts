@@ -685,13 +685,15 @@ export const useCasesData: Record<string, UseCaseData> = {
       overlayOpacity: 0.7,
     },
     knowledge: {
-      title: "REDUCE SERVICE DELAYS WITH SMARTER FIELD SERVICE",
+      title:
+        "With UnfoldXR, reduce delays and resolve issues faster in the field",
       items: [
-        "Field service and troubleshooting time-critical functions. Delays, misdiagnosis, or incomplete fixes directly impact customer satisfaction, asset uptime, and operational cost.",
-        "Yet in most organizations, field teams still depend on phone calls, fragmented documentation, delayed escalations, and manual reporting. While the problems are distributed, expertise is centralized. The gap between the two creates downtime, repeat visits, and rising service costs.",
-        "Unlike traditional support tools that solve only one part of the problem, UnfoldXR brings intelligence across the entire service lifecycle — from ticket assignment and on-site diagnostics to expert escalation and automated reporting.",
+        "Delays and misdiagnosis in time-critical tasks impact uptime and costs",
+        "Fragmented tools like calls, manuals, and manual reporting slow teams down",
+        "Distributed problems with centralised expertise create operational gaps",
       ],
-      footerText: "",
+      footerText:
+        "Resulting in downtime, repeat visits, and rising service costs. UnfoldXR unifies the entire lifecycle — assign, diagnose, collaborate, and report, delivering faster resolution and consistent performance.",
     },
     intervention: {
       title: "THE UNFOLDXR INTERVENTION",
