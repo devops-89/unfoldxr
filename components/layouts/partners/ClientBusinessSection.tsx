@@ -57,7 +57,7 @@ const ClientBusinessSection = () => {
           <Grid size={{ xs: 12, md: 5 }}>
             <Box
               component="img"
-              src={partnersPage.clientBusinessSection.image.src}
+              src={partnersPage.clientBusinessSection.image}
               alt="Worker"
               sx={{
                 width: { xs: "100%", md: "100%" },
@@ -66,6 +66,7 @@ const ClientBusinessSection = () => {
                 objectPosition: "right bottom",
                 display: { xs: "none", md: "block" },
                 pointerEvents: "none",
+                
               }}
             />
           </Grid>

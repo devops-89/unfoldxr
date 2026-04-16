@@ -386,7 +386,7 @@ export const partnersPage = {
   },
   clientBusinessSection: {
     title: "DON'T JUST ADD VALUE, AUGMENT YOUR CLIENT'S BUSINESS.",
-    image: partnersClientBusiness,
+    image: "/images/partners/Client_business.jpg",
     client_business_card_data: partnersClientBusinessData,
   },
   existingPartnersSection: {

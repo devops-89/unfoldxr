@@ -26,7 +26,7 @@ const EnterpriseReady = () => {
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
         py: { xs: 6, md: 6, lg: 5 },
-        minHeight: { md: "85vh", lg: "80vh" },
+        minHeight: { md: "85vh", lg: "75vh" },
         display: "flex",
         alignItems: "center",
         position: "relative",
@@ -45,7 +45,7 @@ const EnterpriseReady = () => {
           top: 0,
           bottom: 0,
           width: { xs: "100%", md: "35%", lg: "1000px" },
-          maxWidth: { md: "400px", lg: "450px" },
+          maxWidth: { md: "400px", lg: "420px" },
           zIndex: 1,
           opacity: { xs: 0.3, md: 0.85 },
           "&::after": {
@@ -94,7 +94,7 @@ const EnterpriseReady = () => {
                 textTransform: "uppercase",
                 lineHeight: { xs: "1.1", md: "1.1" },
                 fontSize: { xs: 22, md: 32, lg: 36 },
-                mb: { xs: 4, md: 3, lg: 4 },
+                mb: { xs: 4, md: 3, lg: 2 },
               }}
             >
               {data.title.split(".").map((text, i) => (
@@ -158,7 +158,7 @@ const EnterpriseReady = () => {
                           fontWeight: 700,
                           fontSize: { xs: 14, md: 15 },
                           textTransform: "uppercase",
-                          lineHeight: "1.3",
+                          lineHeight: "1.2",
                           mb: 0.5,
                           letterSpacing: "0.5px",
                         }}
@@ -170,7 +170,7 @@ const EnterpriseReady = () => {
                           fontFamily: helvetica.style.fontFamily,
                           color: COLORS.TEXT_MUTED,
                           fontSize: { xs: 12, md: 13 },
-                          lineHeight: "1.4",
+                          lineHeight: "1.3",
                           opacity: 0.8,
                           maxWidth: "320px",
                         }}
