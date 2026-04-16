@@ -475,7 +475,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       subtitle: "The costliest downtime is the one you didn't prevent.",
       description:
         "UnfoldXR brings AI and augmented reality–powered intelligence directly into maintenance operations, reducing downtime and increasing profit.",
-      image: "/images/usecase/Maintenance/heroSection.jpeg",
+      image: "/images/usecase/Maintenance/heroSectionv2.png",
     },
     knowledge: {
       title:
