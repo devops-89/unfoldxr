@@ -14,8 +14,8 @@ import {
 import ava from "@/images/banner/homePage/avapng.png";
 import partnersClientBusiness from "@/public/images/partners/business-augmentation.png";
 import tools from "@/images/banner/homePage/tools/tools-team.png";
-import ankushImg from "@/public/images/about-us/ANKUSHJAGGA2.png";
-import riteshImg from "@/public/images/about-us/RITESHGANGNANI2.png";
+import ankushImg from "@/public/images/about-us/ankush.png";
+import riteshImg from "@/public/images/about-us/ritesh.png";
 import differentiatorImg from "@/images/about-us/about-differentiator.png";
 import icon1 from "@/images/about-us/icons/icon1.png";
 import icon2 from "@/images/about-us/icons/icon2.png";
