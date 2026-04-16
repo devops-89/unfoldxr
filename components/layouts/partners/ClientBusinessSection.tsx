@@ -66,7 +66,7 @@ const ClientBusinessSection = () => {
                 objectPosition: "right bottom",
                 display: { xs: "none", md: "block" },
                 pointerEvents: "none",
-                
+                borderRadius: "15px",
               }}
             />
           </Grid>
