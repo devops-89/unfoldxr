@@ -62,11 +62,11 @@ const ClientBusinessSection = () => {
               sx={{
                 width: { xs: "100%", md: "100%" },
                 height: { xs: "auto", md: "100%" },
-                objectFit: "contain",
-                objectPosition: "right bottom",
+                objectFit: "cover",
+                objectPosition: "center",
                 display: { xs: "none", md: "block" },
                 pointerEvents: "none",
-                borderRadius: "15px",
+                borderRadius: "20px",
               }}
             />
           </Grid>
