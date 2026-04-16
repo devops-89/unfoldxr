@@ -499,7 +499,7 @@ const InterventionSection2 = ({ data }: Props) => {
             alt="Tablet Intervention"
             sx={{
               width: "100%",
-              maxWidth: 850,
+              maxWidth: 750,
               height: "auto",
               display: "block",
               borderRadius: { xs: 4, md: "24px" },
