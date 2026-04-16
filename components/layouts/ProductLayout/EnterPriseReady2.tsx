@@ -178,12 +178,12 @@ const EnterpriseReady2 = () => {
         </Grid>
       </Box> */}
       <Container maxWidth="lg">
-        <Grid container alignItems={"center"} spacing={9}>
+        <Grid container alignItems={"center"} spacing={10}>
           <Grid size={6}>
             <Image
               src={data.img}
               alt=""
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: "500px", height: "auto" }}
             />
           </Grid>
           <Grid size={6}>

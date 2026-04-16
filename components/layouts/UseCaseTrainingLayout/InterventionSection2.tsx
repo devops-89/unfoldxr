@@ -122,7 +122,7 @@ const InterventionSection2 = ({ data }: Props) => {
                     sx={{
                       display: "flex",
                       gap: 2,
-                      height: { xs: 360, md: 440 },
+                      height: { xs: 240, md: 280 },
                     }}
                   >
                     {data.cards.map((card, index) => (
@@ -202,7 +202,7 @@ const InterventionSection2 = ({ data }: Props) => {
                           sx={{
                             fontFamily: din.style.fontFamily,
                             fontWeight: 900,
-                            fontSize: { xs: 18, md: 22 },
+                            fontSize: { xs: 16, md: 18 },
                             textTransform: "uppercase",
                             lineHeight: 1.1,
                             color: COLORS.BLACK,
@@ -346,9 +346,9 @@ const InterventionSection2 = ({ data }: Props) => {
                         hoveredIndex === index
                           ? COLORS.CHARCOAL
                           : "#F9F9F9",
-                      p: { xs: 4, md: 5 },
+                      p: { xs: 2, md: 3 },
                       height: "100%",
-                      minHeight: 220,
+                      minHeight: 140,
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
@@ -411,7 +411,7 @@ const InterventionSection2 = ({ data }: Props) => {
                       sx={{
                         fontFamily: din.style.fontFamily,
                         fontWeight: 900,
-                        fontSize: { xs: 24, md: 28 },
+                        fontSize: { xs: 18, md: 22 },
                         textTransform: "uppercase",
                         lineHeight: 1.1,
                         color:
