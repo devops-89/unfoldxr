@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import IntegrationInstructionsRoundedIcon from "@mui/icons-material/IntegrationInstructionsRounded";
 import AccountTreeRoundedIcon from "@mui/icons-material/AccountTreeRounded";
 import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
@@ -8,6 +8,7 @@ import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import Image from "next/image";
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   integration: <IntegrationInstructionsRoundedIcon sx={{ fontSize: 24 }} />,
@@ -17,7 +18,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   procurement: <HandymanRoundedIcon sx={{ fontSize: 24 }} />,
 };
 
-const EnterpriseReady = () => {
+const EnterpriseReady2 = () => {
   const data = homePage.productPage.enterpriseReady;
 
   return (
@@ -38,7 +39,7 @@ const EnterpriseReady = () => {
       }}
     >
       {/* Background Image with Premium Blending */}
-      <Box
+      {/* <Box
         sx={{
           position: "absolute",
           left: 0,
@@ -48,18 +49,9 @@ const EnterpriseReady = () => {
           maxWidth: { md: "500px", lg: "520px" },
           zIndex: 1,
           opacity: { xs: 0.3, md: 0.85 },
-          // "&::after": {
-          //   content: '""',
-          //   position: "absolute",
-          //   inset: 0,
-          //   background: {
-          //     xs: `linear-gradient(to bottom, ${COLORS.BLACK} 0%, transparent 40%, transparent 60%, ${COLORS.BLACK} 100%)`,
-          //     md: `linear-gradient(to right, transparent 60%, ${COLORS.BLACK} 100%), linear-gradient(to bottom, ${COLORS.BLACK} 0%, transparent 10%, transparent 90%, ${COLORS.BLACK} 100%)`,
-          //   },
-          // },
         }}
       >
-        {/* <Box
+        <Box
           component="img"
           src={data.img}
           alt="Enterprise operations"
@@ -69,7 +61,7 @@ const EnterpriseReady = () => {
             objectFit: "cover",
             pointerEvents: "none",
           }}
-        /> */}
+        />
       </Box>
 
       <Box
@@ -184,9 +176,117 @@ const EnterpriseReady = () => {
             </Grid>
           </Grid>
         </Grid>
-      </Box>
+      </Box> */}
+      <Container maxWidth="lg">
+        <Grid container alignItems={"center"} spacing={9}>
+          <Grid size={6}>
+            <Image
+              src={data.img}
+              alt=""
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Grid>
+          <Grid size={6}>
+            <Typography
+              sx={{
+                fontFamily: din.style.fontFamily,
+                fontWeight: 900,
+                textTransform: "uppercase",
+                lineHeight: { xs: "1.1", md: "1.1" },
+                fontSize: { xs: 22, md: 32, lg: 36 },
+                mb: { xs: 4, md: 3, lg: 2 },
+              }}
+            >
+              {data.title.split(".").map((text, i) => (
+                <React.Fragment key={i}>
+                  {text}
+                  {i < data.title.split(".").length - 1 && (
+                    <Box
+                      component="br"
+                      sx={{ display: { xs: "none", md: "block" } }}
+                    />
+                  )}
+                </React.Fragment>
+              ))}
+            </Typography>
+
+            <Grid container spacing={{ xs: 2, md: 3, lg: 4.5 }}>
+              {(data.points as any[]).map((point, index) => (
+                <Grid
+                  key={point.title}
+                  size={{ xs: 12, sm: 6 }}
+                  sx={{
+                    animation: `fadeInUp 0.6s ease-out forwards ${
+                      0.2 + index * 0.08
+                    }s`,
+                    opacity: 0,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: { xs: 1, md: 1.5 },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        color: COLORS.PRIMARY_GREEN,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: { xs: 36, md: 44 },
+                        height: { xs: 36, md: 44 },
+                        borderRadius: "50%",
+                        bgcolor: "rgba(204, 249, 25, 0.05)",
+                        border: "1px solid rgba(204, 249, 25, 0.15)",
+                        boxShadow: "0 0 15px rgba(204, 249, 25, 0.05)",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          bgcolor: "rgba(204, 249, 25, 0.1)",
+                          boxShadow: "0 0 25px rgba(204, 249, 25, 0.15)",
+                          transform: "scale(1.05)",
+                        },
+                      }}
+                    >
+                      {ICON_MAP[point.icon]}
+                    </Box>
+                    <Box>
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          fontWeight: 700,
+                          fontSize: { xs: 14, md: 15 },
+                          textTransform: "uppercase",
+                          lineHeight: "1.2",
+                          mb: 0.5,
+                          letterSpacing: "0.5px",
+                        }}
+                      >
+                        {point.title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          color: COLORS.TEXT_MUTED,
+                          fontSize: { xs: 12, md: 13 },
+                          lineHeight: "1.3",
+                          opacity: 0.8,
+                          maxWidth: "320px",
+                        }}
+                      >
+                        {point.desc}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container>
     </Box>
   );
 };
 
-export default EnterpriseReady;
+export default EnterpriseReady2;

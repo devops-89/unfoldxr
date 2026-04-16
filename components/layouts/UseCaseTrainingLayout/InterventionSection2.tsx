@@ -84,10 +84,7 @@ const InterventionSection2 = ({ data }: Props) => {
               </Typography>
             </Box>
           </Box>
-
-          {/* Bottom Row: Desc3/Desc4 (Left) | Cards (Right) */}
           <Grid container spacing={{ xs: 5, md: 5 }} alignItems="flex-start">
-            {/* Left Side: Text Content */}
             <Grid size={{ xs: 12, md: 5 }}>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
                 {data.description3 && (
@@ -138,11 +135,12 @@ const InterventionSection2 = ({ data }: Props) => {
                           minWidth: 0,
                           position: "relative",
                           borderRadius: "16px",
+                          overflow: "hidden",
                           cursor: "pointer",
                           transition: "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)",
                           background:
                             hoveredIndex === index
-                              ? "linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%)"
+                              ? COLORS.CHARCOAL
                               : "#F9F9F9",
                           display: "flex",
                           flexDirection: "column",
@@ -211,11 +209,6 @@ const InterventionSection2 = ({ data }: Props) => {
                             letterSpacing: "-0.5px",
                             textAlign: "center",
                             maxWidth: 160,
-                            transition: "all 0.5s ease",
-                            transform:
-                              hoveredIndex === index
-                                ? "translateZ(30px) scale(1.05)"
-                                : "translateZ(0) scale(1)",
                             zIndex: 3,
                           }}
                         >
@@ -348,9 +341,10 @@ const InterventionSection2 = ({ data }: Props) => {
                     sx={{
                       width: "100%",
                       borderRadius: "16px",
+                      overflow: "hidden",
                       background:
                         hoveredIndex === index
-                          ? "linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%)"
+                          ? COLORS.CHARCOAL
                           : "#F9F9F9",
                       p: { xs: 4, md: 5 },
                       height: "100%",
@@ -420,14 +414,12 @@ const InterventionSection2 = ({ data }: Props) => {
                         fontSize: { xs: 24, md: 28 },
                         textTransform: "uppercase",
                         lineHeight: 1.1,
-                        color: COLORS.BLACK,
+                        color:
+                          hoveredIndex === index
+                            ? COLORS.PRIMARY_GREEN
+                            : COLORS.BLACK,
                         letterSpacing: "-0.5px",
                         textAlign: "center",
-                        transition: "all 0.5s ease",
-                        transform:
-                          hoveredIndex === index
-                            ? "translateZ(50px) scale(1.05)"
-                            : "translateZ(0) scale(1)",
                         textShadow:
                           hoveredIndex === index
                             ? "0 10px 20px rgba(0,0,0,0.05)"

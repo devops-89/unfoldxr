@@ -27,7 +27,7 @@ import automotiveHero from "@/images/Industries/hero.png";
 import automotiveOutcomes from "@/images/Industries/Driving.jpeg";
 import automotiveIcon from "@/images/Industries/Icon.svg";
 import { INDUSTRY_PAGE_PROPS } from "./types";
-
+import enterPriseready from "@/images/Product/Enterprise2.png";
 export const homePage = {
   herosection: {
     heading1: "Augmenting",
@@ -264,7 +264,7 @@ export const homePage = {
     },
     enterpriseReady: {
       title: "Enterprise-ready. Operational from day one.",
-      img: "/images/Product/Enterprise.png",
+      img: enterPriseready,
       points: [
         {
           title: "Seamless system integration",

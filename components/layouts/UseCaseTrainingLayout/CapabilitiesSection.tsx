@@ -7,6 +7,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import VerticalStepper from "@/components/widgets/VerticalStepper";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 interface Props {
   data: UseCaseData["capabilities"];
@@ -15,6 +16,8 @@ interface Props {
 const CapabilitiesSection = ({ data }: Props) => {
   const [activeItem, setActiveItem] = useState(0);
   const isGrid = data.layout === "grid";
+
+  const { openModal } = useDemoModal();
 
   if (isGrid) {
     return (
@@ -174,6 +177,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                 gap: 2,
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}
+              onClick={openModal}
             >
               Download the full UnfoldXR feature list{" "}
               <ArrowForwardRoundedIcon />
@@ -444,9 +448,9 @@ const CapabilitiesSection = ({ data }: Props) => {
           </Grid>
         </Grid>
 
-          <Box
-            sx={{
-              mt: { xs: 6, md: 8 },
+        <Box
+          sx={{
+            mt: { xs: 6, md: 8 },
             display: "flex",
             justifyContent: "center",
           }}
@@ -467,6 +471,7 @@ const CapabilitiesSection = ({ data }: Props) => {
               gap: 2,
               "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
             }}
+            onClick={openModal}
           >
             Download the full UnfoldXR feature list <ArrowForwardRoundedIcon />
           </Button>

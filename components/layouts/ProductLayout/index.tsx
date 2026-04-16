@@ -7,6 +7,7 @@ import MeetAva from "./MeetAva";
 import ExploreCapabilities from "./ExploreCapabilities";
 import EnterpriseReady from "./EnterpriseReady";
 import FromAssist from "./FromAssist";
+import EnterpriseReady2 from "./EnterPriseReady2";
 
 const ProductLayout = () => {
   return (
@@ -17,7 +18,7 @@ const ProductLayout = () => {
       <OneAiPlatform />
       <MeetAva />
       <ExploreCapabilities />
-      <EnterpriseReady />
+      <EnterpriseReady2 />
       <FromAssist />
     </Box>
   );
