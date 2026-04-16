@@ -218,7 +218,7 @@ const DesignToEvolve = () => {
         {/* Device Image */}
         <Box
           sx={{
-            width: { xs: "90%", md: "70%" },
+            width: { xs: "90%", md: "60%" },
             mx: "auto",
             mt: { xs: 6, md: 10 },
             borderRadius: { xs: 2.5, md: "24px" },
