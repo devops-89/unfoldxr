@@ -12,7 +12,7 @@ const FinalCtaSection = () => {
     <SectionCTA
       title={data.heading}
       btnText="Talk to us"
-      onBtnClick={openModal}
+      onBtnClick={() => openModal("about_final_cta")}
       variant="about"
       sx={{ pb: 0 }}
       innerSx={{

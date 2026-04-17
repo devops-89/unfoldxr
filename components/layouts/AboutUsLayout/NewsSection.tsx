@@ -62,7 +62,7 @@ const NewsSection = () => {
               {data.description}
             </Typography>
             <ContainedButton
-              onClick={openModal}
+              onClick={() => openModal("about_news")}
               sx={{
                 px: { xs: 2.5, md: 4 },
                 py: 1.2,
