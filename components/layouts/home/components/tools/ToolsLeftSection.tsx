@@ -4,9 +4,16 @@ import Image from "next/image";
 import { TOOLS_LEFT_SECTION_PROPS } from "@/utils/types";
 import { COLORS } from "@/utils/enum";
 
-const ToolsLeftSection = ({ ctaText, image, onCtaClick }: TOOLS_LEFT_SECTION_PROPS & { onCtaClick?: () => void }) => {
+const ToolsLeftSection = ({
+  ctaText,
+  image,
+  onCtaClick,
+}: TOOLS_LEFT_SECTION_PROPS & { onCtaClick?: () => void }) => {
   return (
-    <Stack spacing={{ xs: 4, md: 6 }} alignItems={{ xs: "center", md: "flex-start" }}>
+    <Stack
+      spacing={{ xs: 4, md: 6 }}
+      alignItems={{ xs: "center", md: "flex-start" }}
+    >
       {/* CTA */}
       <ContainedButton
         onClick={onCtaClick}
@@ -14,9 +21,9 @@ const ToolsLeftSection = ({ ctaText, image, onCtaClick }: TOOLS_LEFT_SECTION_PRO
           height: { xs: "44px", md: "50px" },
           fontSize: { xs: 16, md: 16 },
           fontWeight: 700,
-          
+
           px: 6,
-          backgroundColor: "#C4FF1A", 
+          backgroundColor: "#C4FF1A",
           color: COLORS.BLACK,
           "&:hover": {
             backgroundColor: "#A8E015",

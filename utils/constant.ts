@@ -29,10 +29,10 @@ import built from "@/images/banner/homePage/devices/built.png";
 import bell from "@/images/homepage/tools/bell.svg";
 import calender from "@/images/homepage/tools/calender.svg";
 import clock from "@/images/homepage/tools/clock.svg";
-import augmentingHuman from "@/images/homepage/tools/augmenting-human.svg";
-import smsChatBg from "@/images/homepage/tools/sms-chat-bg.svg";
-import humanizeChatbot from "@/images/homepage/tools/humanize-chatbot.svg";
-import leftSectionBg from "@/images/homepage/tools/left-section-bg.svg";
+import augmentingHuman from "@/images/homepage/tools/augmented-workers.jpg";
+import smsChatBg from "@/images/homepage/tools/realwear.avif";
+import humanizeChatbot from "@/images/homepage/tools/ai-frontline-workers.jpg";
+import leftSectionBg from "@/images/homepage/tools/tools.png";
 import existingPartner1 from "@/images/banner/partners/existing-partners/partner1.svg";
 import existingPartner2 from "@/images/banner/partners/existing-partners/partner2.svg";
 import existingPartner3 from "@/images/banner/partners/existing-partners/partner3.svg";
@@ -298,20 +298,22 @@ export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
     },
     {
       type: "image",
-      title: "Coming Soon",
-      description: "Press release link will be shared soon.",
+      title: "How Augmented Reality is Solving Critical Workforce Challenges",
+      link: "https://www.unfoldxr.com/blog/augmented-reality-solving-critical-workforce-challenges/",
       image: augmentingHuman,
-      tag: "Press Release",
+      tag: "Blog",
       gridSize: 7,
     },
     {
       type: "image",
-      title: "Coming Soon",
-      description: "Press release link will be shared soon.",
+      title:
+        "UnfoldXR Partners with RealWear to Bring Intelligent Wearables to the Frontline",
+      // description: "Press release link will be shared soon.",
+      link: "https://unfoldxr.com/news/unfoldxr-partners-with-realwear/",
       image: smsChatBg,
-      titleColor: "#000000",
-      descriptionColor: "#51555c",
       tag: "Press Release",
+      backgroundSize: "contain",
+      bgColor: "#FFFFFF",
       gridSize: 7,
     },
     {

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "UnfoldXR",
   description: "UnfoldXR",
   icons: {
-    icon: "/Fav-icon.svg",
+    icon: "/icon.svg",
   },
 };
 

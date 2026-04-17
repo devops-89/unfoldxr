@@ -166,7 +166,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  bgcolor: COLORS.BLACK_ALPHA_60,
+                  bgcolor: "rgba(0,0,0,0.30)",
                 }}
               /> */}
               <Box

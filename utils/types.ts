@@ -51,6 +51,8 @@ export interface IMAGE_CARD_PROPS extends TOOLS_CARD_BASE{
   descriptionColor?: string;  
   tag?: string;
   link?: string;
+  backgroundSize?: "cover" | "contain";
+  bgColor?: string;
 }
 
 export interface ICON_CARD_PROPS extends TOOLS_CARD_BASE{

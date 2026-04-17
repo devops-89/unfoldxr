@@ -17,7 +17,6 @@ const MATURITY_LEVELS = [
 ];
 
 const InterventionSection2 = ({ data }: Props) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const isSideBySide = data.layout === "side-by-side";
 
   if (isSideBySide) {
@@ -122,90 +121,37 @@ const InterventionSection2 = ({ data }: Props) => {
                     sx={{
                       display: "flex",
                       gap: 2,
-                      height: { xs: 240, md: 280 },
+                      height: { xs: 180, md: 200 },
                     }}
                   >
                     {data.cards.map((card, index) => (
                       <Box
                         key={index}
-                        onMouseEnter={() => setHoveredIndex(index)}
-                        onMouseLeave={() => setHoveredIndex(null)}
                         sx={{
                           flex: 1,
                           minWidth: 0,
                           position: "relative",
                           borderRadius: "16px",
                           overflow: "hidden",
-                          cursor: "pointer",
-                          transition: "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)",
-                          background:
-                            hoveredIndex === index
-                              ? COLORS.CHARCOAL
-                              : "#F9F9F9",
+                          background: COLORS.CHARCOAL,
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "center",
                           justifyContent: "center",
-                          p: 4,
-                          perspective: "1500px",
+                          p: 2.5,
                           border: "1px solid",
-                          borderColor:
-                            hoveredIndex === index
-                              ? "rgba(0,0,0,0.06)"
-                              : "rgba(0,0,0,0.03)",
-                          boxShadow:
-                            hoveredIndex === index
-                              ? "0 30px 60px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(255,255,255,0.8)"
-                              : "0 10px 20px rgba(0,0,0,0.02)",
-                          transform:
-                            hoveredIndex === index
-                              ? "translateY(-8px) rotateY(-8deg)"
-                              : "translateY(0) rotateY(0)",
-                          "&:hover": {
-                            flex: 1.4,
-                            zIndex: 2,
-                          },
-                          // Gloss Glare
-                          "&::after": {
-                            content: '""',
-                            position: "absolute",
-                            inset: 0,
-                            borderRadius: "16px",
-                            background:
-                              "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)",
-                            transform:
-                              hoveredIndex === index
-                                ? "translateX(100%) translateY(100%) rotate(45deg)"
-                                : "translateX(-100%) translateY(-100%) rotate(45deg)",
-                            transition: "transform 1s ease-in-out",
-                            pointerEvents: "none",
-                            zIndex: 1,
-                          },
-                          // Brand Glow
-                          "&::before": {
-                            content: '""',
-                            position: "absolute",
-                            bottom: 0,
-                            left: "15%",
-                            width: "70%",
-                            height: "2px",
-                            bgcolor: COLORS.PRIMARY_GREEN,
-                            opacity: hoveredIndex === index ? 1 : 0,
-                            transition: "all 0.4s ease",
-                            filter: "blur(1.5px)",
-                            boxShadow: `0 0 10px ${alpha(COLORS.PRIMARY_GREEN, 0.5)}`,
-                            zIndex: 2,
-                          },
+                          borderColor: "rgba(255,255,255,0.05)",
+                          boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
                         }}
                       >
                         <Typography
                           sx={{
                             fontFamily: din.style.fontFamily,
                             fontWeight: 900,
-                            fontSize: { xs: 16, md: 18 },
+                            fontSize: { xs: 14, md: 16 },
                             textTransform: "uppercase",
                             lineHeight: 1.1,
-                            color: COLORS.BLACK,
+                            color: COLORS.PRIMARY_GREEN,
                             letterSpacing: "-0.5px",
                             textAlign: "center",
                             maxWidth: 160,
@@ -330,11 +276,8 @@ const InterventionSection2 = ({ data }: Props) => {
                 <Grid
                   key={index}
                   size={{ xs: 12, md: 4 }}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
                   sx={{
                     position: "relative",
-                    perspective: "1500px",
                   }}
                 >
                   <Box
@@ -342,88 +285,29 @@ const InterventionSection2 = ({ data }: Props) => {
                       width: "100%",
                       borderRadius: "16px",
                       overflow: "hidden",
-                      background:
-                        hoveredIndex === index
-                          ? COLORS.CHARCOAL
-                          : "#F9F9F9",
-                      p: { xs: 2, md: 3 },
+                      background: COLORS.CHARCOAL,
+                      p: { xs: 2.5 },
                       height: "100%",
-                      minHeight: 140,
+                      minHeight: 100,
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
-                      transition: "all 0.5s cubic-bezier(0.23, 1, 0.32, 1)",
-                      transformStyle: "preserve-3d",
-                      cursor: "pointer",
                       border: "1px solid",
-                      borderColor:
-                        hoveredIndex === index
-                          ? "rgba(0,0,0,0.06)"
-                          : "rgba(0,0,0,0.03)",
-                      transform:
-                        hoveredIndex === index
-                          ? "translateY(-16px) rotateX(8deg) rotateY(-8deg)"
-                          : "translateY(0) rotateX(0) rotateY(0)",
-                      boxShadow:
-                        hoveredIndex === index
-                          ? `0 20px 40px rgba(0,0,0,0.06), 
-                             0 40px 80px rgba(0,0,0,0.04),
-                             inset 0 0 0 1px rgba(255,255,255,0.8)`
-                          : "0 10px 30px rgba(0,0,0,0.02)",
-
-                      // Glossy Glare Effect
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        inset: 0,
-                        borderRadius: "16px",
-                        background:
-                          "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)",
-                        transform:
-                          hoveredIndex === index
-                            ? "translateX(100%) translateY(100%) rotate(45deg)"
-                            : "translateX(-100%) translateY(-100%) rotate(45deg)",
-                        transition: "transform 0.8s ease-in-out",
-                        pointerEvents: "none",
-                        zIndex: 1,
-                      },
-
-                      // Bottom Brand Accent
-                      "&::before": {
-                        content: '""',
-                        position: "absolute",
-                        bottom: 0,
-                        left: "10%",
-                        width: "80%",
-                        height: "2px",
-                        bgcolor: COLORS.PRIMARY_GREEN,
-                        opacity: hoveredIndex === index ? 1 : 0,
-                        transition: "all 0.4s ease",
-                        filter: "blur(1px)",
-                        boxShadow: `0 0 10px ${alpha(COLORS.PRIMARY_GREEN, 0.5)}`,
-                        zIndex: 2,
-                      },
+                      borderColor: "rgba(255,255,255,0.05)",
+                      boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
                     }}
                   >
-                    {/* Main Label with translateZ for parallax depth */}
                     <Typography
                       sx={{
                         fontFamily: din.style.fontFamily,
                         fontWeight: 900,
-                        fontSize: { xs: 18, md: 22 },
+                        fontSize: { xs: 16, md: 18 },
                         textTransform: "uppercase",
                         lineHeight: 1.1,
-                        color:
-                          hoveredIndex === index
-                            ? COLORS.PRIMARY_GREEN
-                            : COLORS.BLACK,
+                        color: COLORS.PRIMARY_GREEN,
                         letterSpacing: "-0.5px",
                         textAlign: "center",
-                        textShadow:
-                          hoveredIndex === index
-                            ? "0 10px 20px rgba(0,0,0,0.05)"
-                            : "none",
                         zIndex: 3,
                       }}
                     >

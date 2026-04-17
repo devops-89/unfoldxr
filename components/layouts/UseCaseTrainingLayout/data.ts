@@ -239,7 +239,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM SIMPLE HANDHELD DEVICES TO ADVANCED AR WEARABLES",
       },
       deviceC: {
-        image: "/images/usecase/Scale.png",
+        image: "/images/usecase/scale2.png",
         title: "SCALES WITH WORKFORCE SIZE, COMPLEXITY, AND BUDGET",
       },
     },
@@ -452,7 +452,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM LIGHTWEIGHT INSPECTION DEVICES TO ADVANCED AR SYSTEMS",
       },
       deviceC: {
-        image: "/images/usecase/Scale.png",
+        image: "/images/usecase/scale2.png",
         title:
           "SCALES ACROSS FACILITIES, REGULATORY ENVIRONMENTS, AND OPERATIONAL COMPLEXITY",
       },
@@ -659,7 +659,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM SIMPLE WEARABLES TO HIGH-END DEVICES",
       },
       deviceC: {
-        image: "/images/usecase/Scale.png",
+        image: "/images/usecase/scale2.png",
         title: "SCALES WITH TASK COMPLEXITY AND BUDGET",
       },
     },
@@ -855,7 +855,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM LIGHTWEIGHT FIELD-READY DEVICES TO ADVANCED AR SYSTEMS",
       },
       deviceC: {
-        image: "/images/usecase/Scale.png",
+        image: "/images/usecase/scale2.png",
         title:
           "SCALES ACROSS REGIONS, TECHNICIAN VOLUMES, AND SERVICE COMPLEXITY",
       },

@@ -13,17 +13,28 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
       height: { xs: "180px", md: "210px" },
       position: "relative",
       overflow: "hidden",
-      backgroundImage: card.image && !card.video ? `url(${typeof card.image === "string" ? card.image : card.image.src})` : "none",
-      backgroundSize: "cover",
+      backgroundImage:
+        card.image && !card.video
+          ? `url(${typeof card.image === "string" ? card.image : card.image.src})`
+          : "none",
+      backgroundSize: card.backgroundSize || "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-end",
       gap: 1,
-      boxShadow: card.titleColor === "#000000" ? "0px 6px 30px rgba(0, 0, 0, 0.12)" : "0px 4px 20px rgba(0, 0, 0, 0.05)",
-      backgroundColor: card.titleColor === "#000000" ? "#F8F9FA" : "transparent",
-      border: card.titleColor === "#000000" ? "1px solid rgba(0,0,0,0.05)" : "none",
+      boxShadow:
+        card.titleColor === "#000000"
+          ? "0px 6px 30px rgba(0, 0, 0, 0.12)"
+          : "0px 4px 20px rgba(0, 0, 0, 0.05)",
+      backgroundColor: card.bgColor
+        ? card.bgColor
+        : card.titleColor === "#000000"
+          ? "#F8F9FA"
+          : "transparent",
+      border:
+        card.titleColor === "#000000" ? "1px solid rgba(0,0,0,0.05)" : "none",
     }}
   >
     {/* Video Background */}
@@ -49,44 +60,52 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
     )}
 
     {/* Overlay for better text readability */}
-    {card.titleColor !== "#000000" ? (
-        <Box
-          sx={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%)",
-            zIndex: 1,
-          }}
-        />
-      ) : (
-        <Box
-          sx={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.1) 100%)",
-            zIndex: 1,
-          }}
-        />
-      )}
+    {!card.video && (
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          background:
+            card.titleColor !== "#000000"
+              ? "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%)"
+              : "linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.1) 100%)",
+          zIndex: 1,
+        }}
+      />
+    )}
 
-      <Box sx={{ position: "relative", zIndex: 2, flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+    {!card.video && (
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 2,
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
         {card.tag ? (
-          <Box sx={{ 
-            alignSelf: "flex-start", 
-            bgcolor: card.titleColor === "#000000" ? "#000000" : "#B6EC1A", 
-            px: 2, 
-            py: 0.5, 
-            borderRadius: "100px",
-            boxShadow: "0px 4px 10px rgba(0,0,0,0.15)"
-          }}>
-            <Typography sx={{ 
-              fontFamily: din.style.fontFamily, 
-              fontSize: 12, 
-              fontWeight: 900, 
-              color: card.titleColor === "#000000" ? "#B6EC1A" : "#000000", 
-              textTransform: "uppercase",
-              letterSpacing: "0.5px"
-            }}>
+          <Box
+            sx={{
+              alignSelf: "flex-start",
+              bgcolor: card.titleColor === "#000000" ? "#000000" : "#B6EC1A",
+              px: 2,
+              py: 0.5,
+              borderRadius: "100px",
+              boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: din.style.fontFamily,
+                fontSize: 12,
+                fontWeight: 900,
+                color: card.titleColor === "#000000" ? "#B6EC1A" : "#000000",
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+              }}
+            >
               {card.tag}
             </Typography>
           </Box>
@@ -124,14 +143,26 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
           )}
         </Box>
       </Box>
+    )}
   </Box>
 );
 
 const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
   if (card.link) {
     return (
-      <Link href={card.link} passHref>
-        <Box component="a" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: "none", display: "block", color: "inherit", transition: "transform 0.2s ease", '&:hover': { transform: "scale(1.02)" } }}>
+      <Link href={card.link} passHref style={{ textDecoration: "none" }}>
+        <Box
+          component="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            textDecoration: "none",
+            display: "block",
+            color: "inherit",
+            transition: "transform 0.2s ease",
+            "&:hover": { transform: "scale(1.02)", textDecoration: "none" },
+          }}
+        >
           <ImageCardContent card={card} />
         </Box>
       </Link>

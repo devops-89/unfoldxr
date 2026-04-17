@@ -183,7 +183,7 @@ const EnterpriseReady2 = () => {
             <Image
               src={data.img}
               alt=""
-              style={{ width: "500px", height: "auto" }}
+              style={{ width: "400px", height: "auto" }}
             />
           </Grid>
           <Grid size={6}>
