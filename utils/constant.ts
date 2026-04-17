@@ -137,9 +137,10 @@ export const HEADER_LINKS = [
         label: "Blogs & Insights",
         url: "#",
       },
-      // {
-      //   label:""
-      // }
+      {
+        label: "Latest News",
+        url: "#",
+      },
     ],
   },
   {
@@ -189,11 +190,12 @@ export const FOOTER_COLUMNS = [
   {
     title: "Resources",
     links: [
-      { label: "Case Studies", url: "#" },
-      { label: "Blog / Insights", url: "#" },
-      { label: "Product Videos", url: "#" },
-      { label: "Brochure", url: "#" },
-      { label: "Feature List", url: "#" },
+      { label: "Blog & Insights", url: "#" },
+
+      {
+        label: "Latest News",
+        url: "#",
+      },
     ],
   },
   {

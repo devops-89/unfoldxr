@@ -65,7 +65,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 sx={{
                   position: "absolute",
                   left: { xs: 20, md: 40 },
-                  top: { xs: 20, md: 40 },
+                  top: { xs: 20, md: 20 },
                   maxWidth: "80%",
                 }}
               >
@@ -77,7 +77,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                     textTransform: "uppercase",
                     fontSize: { xs: 24, md: 18 },
                     lineHeight: { xs: "28px", md: "30px" },
-                    mb: 2,
+                    mb: 1,
                   }}
                 >
                   {data.deviceA.title}
@@ -118,7 +118,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 sx={{
                   position: "absolute",
                   left: { xs: 20, md: 40 },
-                  top: { xs: 20, md: 40 },
+                  top: { xs: 20, md: 20 },
                   maxWidth: "80%",
                 }}
               >
@@ -173,7 +173,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
                 sx={{
                   position: "absolute",
                   left: { xs: 20, md: 40 },
-                  top: { xs: 20, md: 40 },
+                  top: { xs: 20, md: 20 },
                   maxWidth: "80%",
                 }}
               >

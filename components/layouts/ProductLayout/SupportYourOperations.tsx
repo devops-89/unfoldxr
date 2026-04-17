@@ -137,8 +137,10 @@ const SupportYourOperations = () => {
                 bgcolor: "rgba(255,255,255,0.2)",
                 transform: "translate(-50%, -50%) scale(1.05)",
               },
+              justifyContent: "center",
             }}
             onClick={() => openModal("home_hero")}
+            textAlign={"center"}
           >
             {/* <Box
               sx={{
@@ -164,10 +166,12 @@ const SupportYourOperations = () => {
                 gap: 1,
                 textTransform: "uppercase",
                 letterSpacing: "0.5px",
+                textAlign: "center",
+                pl: 2,
               }}
             >
               Connect to see UnfoldXR in Action{" "}
-              <EastIcon sx={{ fontSize: 16 }} />
+              {/* <EastIcon sx={{ fontSize: 16 }} /> */}
             </Typography>
           </Box>
         </Box>

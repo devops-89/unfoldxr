@@ -62,7 +62,8 @@ const DemoModal = () => {
                 color: "#000",
               }}
             >
-              You've done your part. We'll execute ours.
+              You've done your part.
+              <br /> We'll execute ours.
             </Typography>
             <Typography
               sx={{
