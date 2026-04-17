@@ -17,7 +17,7 @@ const HeroSection = ({ data }: Props) => {
       subtitle={data.subtitle}
       description={data.description}
       overlayOpacity={data.overlayOpacity}
-      primaryBtn={{ label: "Request a demo", onClick: openModal }}
+      primaryBtn={{ label: "Request a demo", onClick: () => openModal("usecase_hero") }}
     />
   );
 };
