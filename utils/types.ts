@@ -35,37 +35,36 @@ export interface DEVICES_SECTION_DATA_PROPS {
   textColor?: string;
 }
 
-export interface TOOLS_CARD_BASE{
-  
-  title:string;
-  gridSize:number;
-  type:"image" | "icon"
+export interface TOOLS_CARD_BASE {
+  title: string;
+  gridSize: number;
+  type: "image" | "icon";
 }
 
-export interface IMAGE_CARD_PROPS extends TOOLS_CARD_BASE{
-  type:"image";
+export interface IMAGE_CARD_PROPS extends TOOLS_CARD_BASE {
+  type: "image";
   image?: StaticImageData | string;
   video?: string;
-  description?:string;
-  titleColor?: string;       
-  descriptionColor?: string;  
+  description?: string;
+  titleColor?: string;
+  descriptionColor?: string;
   tag?: string;
   link?: string;
   backgroundSize?: "cover" | "contain";
   bgColor?: string;
 }
 
-export interface ICON_CARD_PROPS extends TOOLS_CARD_BASE{
-  type:"icon";
-  icons:string[];
+export interface ICON_CARD_PROPS extends TOOLS_CARD_BASE {
+  type: "icon";
+  icons: string[];
 }
 
-export type TOOL_CARD_PROPS=IMAGE_CARD_PROPS | ICON_CARD_PROPS;
+export type TOOL_CARD_PROPS = IMAGE_CARD_PROPS | ICON_CARD_PROPS;
 
 export interface TOOLS_LEFT_SECTION_PROPS {
   ctaText: string;
   note: string;
-  image:StaticImageData
+  image: StaticImageData;
 }
 
 export interface TOOLS_RIGHT_SECTION_PROPS {
@@ -75,7 +74,7 @@ export interface TOOLS_RIGHT_SECTION_PROPS {
 
 // Partners Page Types ================================================================
 
-export interface PARTNERS_METRICS_CARD_PROPS{
+export interface PARTNERS_METRICS_CARD_PROPS {
   title: string;
   description: string;
   gridSize: {
@@ -85,25 +84,23 @@ export interface PARTNERS_METRICS_CARD_PROPS{
   };
 }
 
-export interface PARTNERS_WHY_PARTNER_CARD_PROPS{
-  title:string;
-  description:string;
-
+export interface PARTNERS_WHY_PARTNER_CARD_PROPS {
+  title: string;
+  description: string;
 }
 
-
-export interface PARTNERS_ECOSYSTEM_CARD_PROPS{
-  label:string;
+export interface PARTNERS_ECOSYSTEM_CARD_PROPS {
+  label: string;
 }
 
-export interface PARTNERS_CLIENT_BUSINESS_CARD_PROPS{
-  id:number;
-  title:string;
-  description:string;
+export interface PARTNERS_CLIENT_BUSINESS_CARD_PROPS {
+  id: number;
+  title: string;
+  description: string;
 }
 
-export interface PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS{
-  image:StaticImageData
+export interface PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS {
+  image: StaticImageData;
 }
 
 // Contact Section Types =========================================================
@@ -116,13 +113,10 @@ export interface CONTACTFORMFIELD {
   rows?: number;
 }
 
-export interface CONTACT_FORM_DATA{
-  formFields:CONTACTFORMFIELD[];
-  buttonText:string;
+export interface CONTACT_FORM_DATA {
+  formFields: CONTACTFORMFIELD[];
+  buttonText: string;
 }
-
-
-
 
 export interface ABOUT_PAGE_HERO_PROPS {
   heading: string;

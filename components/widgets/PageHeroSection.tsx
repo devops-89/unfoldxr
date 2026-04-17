@@ -40,7 +40,7 @@ const PageHeroSection = ({
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "100svh", md: "100vh" },
+        minHeight: { xs: "100vh", md: "100vh" },
         display: "flex",
         alignItems: "center",
         color: COLORS.WHITE,
@@ -87,7 +87,6 @@ const PageHeroSection = ({
           px: { xs: 3, md: 0 },
         }}
       >
-        {/* Outlined Title (optional — home page style) */}
         {titleOutlined && (
           <Typography
             sx={{
@@ -106,7 +105,6 @@ const PageHeroSection = ({
           </Typography>
         )}
 
-        {/* Title */}
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
@@ -116,12 +114,12 @@ const PageHeroSection = ({
             lineHeight: { xs: "35px", md: "42px" },
             maxWidth: titleMaxWidth || 1050,
             whiteSpace: "pre-line",
+            width: { xs: "100%", lg: "70%" },
           }}
         >
           {title}
         </Typography>
 
-        {/* Subtitle (optional) */}
         {subtitle && (
           <Typography
             sx={{
@@ -137,7 +135,6 @@ const PageHeroSection = ({
           </Typography>
         )}
 
-        {/* Description (optional) */}
         {description && (
           <Typography
             sx={{
@@ -150,13 +147,13 @@ const PageHeroSection = ({
               maxWidth: 1000,
               textTransform: "none",
               color: COLORS.WHITE,
+              width: { xs: "100%", md: "50%" },
             }}
           >
             {description}
           </Typography>
         )}
 
-        {/* Buttons (optional) */}
         {(primaryBtn || secondaryBtn) && (
           <Box
             sx={{
@@ -174,7 +171,7 @@ const PageHeroSection = ({
                   (["demo", "expert", "specialist", "partner"].some((kw) =>
                     primaryBtn.label.toLowerCase().includes(kw),
                   )
-                    ? openModal
+                    ? () => openModal("hero")
                     : undefined)
                 }
                 sx={{
@@ -202,7 +199,7 @@ const PageHeroSection = ({
                   (["demo", "expert", "specialist", "partner"].some((kw) =>
                     secondaryBtn.label.toLowerCase().includes(kw),
                   )
-                    ? openModal
+                    ? () => openModal("hero")
                     : undefined)
                 }
                 sx={{

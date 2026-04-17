@@ -19,167 +19,167 @@ const MATURITY_LEVELS = [
 const InterventionSection2 = ({ data }: Props) => {
   const isSideBySide = data.layout === "side-by-side";
 
-  if (isSideBySide) {
-    return (
-      <Box
-        sx={{
-          bgcolor: COLORS.WHITE,
-          color: COLORS.BLACK,
-          py: { xs: 6, md: 7 },
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <Box
-          sx={{
-            width: { xs: "95%", md: "90%", lg: "84%" },
-            maxWidth: 1200,
-            mx: "auto",
-            px: { xs: 2, md: 0 },
-          }}
-        >
-          {/* Top Row: Title, Desc1, Desc2 */}
-          <Box
-            sx={{ maxWidth: { xs: "100%", md: "90%" }, mb: { xs: 5, md: 8 } }}
-          >
-            <Typography
-              sx={{
-                fontFamily: din.style.fontFamily,
-                fontWeight: 900,
-                textTransform: "uppercase",
-                fontSize: { xs: 28, md: 36 },
-                lineHeight: 1.1,
-                mb: 4,
-                color: COLORS.BLACK,
-                letterSpacing: "-0.5px",
-              }}
-            >
-              {data.title}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 2,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 18 },
-                  lineHeight: 1.6,
-                }}
-              >
-                {data.description1}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 18 },
-                  lineHeight: 1.6,
-                }}
-              >
-                {data.description2}
-              </Typography>
-            </Box>
-          </Box>
-          <Grid container spacing={{ xs: 5, md: 5 }} alignItems="flex-start">
-            <Grid size={{ xs: 12, md: 5 }}>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-                {data.description3 && (
-                  <Typography
-                    sx={{
-                      fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 16, md: 18 },
-                      lineHeight: 1.6,
-                      textAlign: "justify",
-                    }}
-                  >
-                    {data.description3}
-                  </Typography>
-                )}
-                {data.description4 && (
-                  <Typography
-                    sx={{
-                      fontFamily: helvetica.style.fontFamily,
-                      fontSize: { xs: 16, md: 18 },
-                      lineHeight: 1.6,
-                      textAlign: "justify",
-                    }}
-                  >
-                    {data.description4}
-                  </Typography>
-                )}
-              </Box>
-            </Grid>
+  // if (isSideBySide) {
+  //   return (
+  //     <Box
+  //       sx={{
+  //         bgcolor: COLORS.WHITE,
+  //         color: COLORS.BLACK,
+  //         py: { xs: 6, md: 7 },
+  //         position: "relative",
+  //         overflow: "hidden",
+  //       }}
+  //     >
+  //       <Box
+  //         sx={{
+  //           width: { xs: "95%", md: "90%", lg: "84%" },
+  //           maxWidth: 1200,
+  //           mx: "auto",
+  //           px: { xs: 2, md: 0 },
+  //         }}
+  //       >
+  //         {/* Top Row: Title, Desc1, Desc2 */}
+  //         <Box
+  //           sx={{ maxWidth: { xs: "100%", md: "90%" }, mb: { xs: 5, md: 8 } }}
+  //         >
+  //           <Typography
+  //             sx={{
+  //               fontFamily: din.style.fontFamily,
+  //               fontWeight: 900,
+  //               textTransform: "uppercase",
+  //               fontSize: { xs: 28, md: 36 },
+  //               lineHeight: 1.1,
+  //               mb: 4,
+  //               color: COLORS.BLACK,
+  //               letterSpacing: "-0.5px",
+  //             }}
+  //           >
+  //             {data.title}
+  //           </Typography>
+  //           <Box
+  //             sx={{
+  //               display: "flex",
+  //               flexDirection: "column",
+  //               gap: 2,
+  //             }}
+  //           >
+  //             <Typography
+  //               sx={{
+  //                 fontFamily: helvetica.style.fontFamily,
+  //                 fontSize: { xs: 16, md: 18 },
+  //                 lineHeight: 1.6,
+  //               }}
+  //             >
+  //               {data.description1}
+  //             </Typography>
+  //             <Typography
+  //               sx={{
+  //                 fontFamily: helvetica.style.fontFamily,
+  //                 fontSize: { xs: 16, md: 18 },
+  //                 lineHeight: 1.6,
+  //               }}
+  //             >
+  //               {data.description2}
+  //             </Typography>
+  //           </Box>
+  //         </Box>
+  //         <Grid container spacing={{ xs: 5, md: 5 }} alignItems="flex-start">
+  //           <Grid size={{ xs: 12, md: 5 }}>
+  //             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+  //               {data.description3 && (
+  //                 <Typography
+  //                   sx={{
+  //                     fontFamily: helvetica.style.fontFamily,
+  //                     fontSize: { xs: 16, md: 18 },
+  //                     lineHeight: 1.6,
+  //                     textAlign: "justify",
+  //                   }}
+  //                 >
+  //                   {data.description3}
+  //                 </Typography>
+  //               )}
+  //               {data.description4 && (
+  //                 <Typography
+  //                   sx={{
+  //                     fontFamily: helvetica.style.fontFamily,
+  //                     fontSize: { xs: 16, md: 18 },
+  //                     lineHeight: 1.6,
+  //                     textAlign: "justify",
+  //                   }}
+  //                 >
+  //                   {data.description4}
+  //                 </Typography>
+  //               )}
+  //             </Box>
+  //           </Grid>
 
-            {/* Right Side: 3 Vertical Image Cards or single image */}
-            <Grid size={{ xs: 12, md: 7 }}>
-              {data.cards && data.cards.length > 0 ? (
-                <Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      gap: 2,
-                      height: { xs: 180, md: 200 },
-                    }}
-                  >
-                    {data.cards.map((card, index) => (
-                      <Box
-                        key={index}
-                        sx={{
-                          flex: 1,
-                          minWidth: 0,
-                          position: "relative",
-                          borderRadius: "16px",
-                          overflow: "hidden",
-                          background: COLORS.CHARCOAL,
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          p: 2.5,
-                          border: "1px solid",
-                          borderColor: "rgba(255,255,255,0.05)",
-                          boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: din.style.fontFamily,
-                            fontWeight: 900,
-                            fontSize: { xs: 14, md: 16 },
-                            textTransform: "uppercase",
-                            lineHeight: 1.1,
-                            color: COLORS.PRIMARY_GREEN,
-                            letterSpacing: "-0.5px",
-                            textAlign: "center",
-                            maxWidth: 160,
-                            zIndex: 3,
-                          }}
-                        >
-                          {card.label}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Box>
-                </Box>
-              ) : (
-                <Box>
-                  <Box
-                    component="img"
-                    src={data.image}
-                    alt={data.title}
-                    sx={{ width: "100%", height: "auto", borderRadius: "24px" }}
-                  />
-                </Box>
-              )}
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
-    );
-  }
+  //           {/* Right Side: 3 Vertical Image Cards or single image */}
+  //           <Grid size={{ xs: 12, md: 7 }}>
+  //             {data.cards && data.cards.length > 0 ? (
+  //               <Box>
+  //                 <Box
+  //                   sx={{
+  //                     display: "flex",
+  //                     gap: 2,
+  //                     height: { xs: 180, md: 200 },
+  //                   }}
+  //                 >
+  //                   {data.cards.map((card, index) => (
+  //                     <Box
+  //                       key={index}
+  //                       sx={{
+  //                         flex: 1,
+  //                         minWidth: 0,
+  //                         position: "relative",
+  //                         borderRadius: "16px",
+  //                         overflow: "hidden",
+  //                         background: COLORS.CHARCOAL,
+  //                         display: "flex",
+  //                         flexDirection: "column",
+  //                         alignItems: "center",
+  //                         justifyContent: "center",
+  //                         p: 2.5,
+  //                         border: "1px solid",
+  //                         borderColor: "rgba(255,255,255,0.05)",
+  //                         boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
+  //                       }}
+  //                     >
+  //                       <Typography
+  //                         sx={{
+  //                           fontFamily: din.style.fontFamily,
+  //                           fontWeight: 900,
+  //                           fontSize: { xs: 14, md: 16 },
+  //                           textTransform: "uppercase",
+  //                           lineHeight: 1.1,
+  //                           color: COLORS.PRIMARY_GREEN,
+  //                           letterSpacing: "-0.5px",
+  //                           textAlign: "center",
+  //                           maxWidth: 160,
+  //                           zIndex: 3,
+  //                         }}
+  //                       >
+  //                         {card.label}
+  //                       </Typography>
+  //                     </Box>
+  //                   ))}
+  //                 </Box>
+  //               </Box>
+  //             ) : (
+  //               <Box>
+  //                 <Box
+  //                   component="img"
+  //                   src={data.image}
+  //                   alt={data.title}
+  //                   sx={{ width: "100%", height: "auto", borderRadius: "24px" }}
+  //                 />
+  //               </Box>
+  //             )}
+  //           </Grid>
+  //         </Grid>
+  //       </Box>
+  //     </Box>
+  //   );
+  // }
 
   return (
     <Box
@@ -246,31 +246,29 @@ const InterventionSection2 = ({ data }: Props) => {
                     textAlign: "justify",
                   }}
                 >
-                  {data.description2}
+                  {data.description2} {data.description3 && data.description3}
+                </Typography>
+              )}
+              {data.description3 && (
+                <Typography
+                  sx={{
+                    fontFamily: helvetica.style.fontFamily,
+                    fontSize: { xs: 16, md: 18 },
+                    lineHeight: 1.6,
+                    color: "rgba(0,0,0,0.6)",
+                    mb: { xs: 6, md: 2 },
+                    maxWidth: 650,
+                  }}
+                >
+                  {data.description3}
                 </Typography>
               )}
             </Box>
           </Grid>
         </Grid>
 
-        {/* Premium Gallery Grid Section */}
         {data.cards && data.cards.length > 0 && (
-          <Box sx={{ mt: { xs: 8, md: 12 }, mb: 4, position: "relative" }}>
-            {data.description3 && (
-              <Typography
-                sx={{
-                  fontFamily: helvetica.style.fontFamily,
-                  fontSize: { xs: 16, md: 18 },
-                  lineHeight: 1.6,
-                  color: "rgba(0,0,0,0.6)",
-                  mb: { xs: 6, md: 10 },
-                  maxWidth: 650,
-                }}
-              >
-                {data.description3}
-              </Typography>
-            )}
-
+          <Box sx={{ mt: { xs: 8, md: 5 }, mb: 4, position: "relative" }}>
             <Grid container spacing={{ xs: 6, md: 4 }}>
               {data.cards.map((card, index) => (
                 <Grid

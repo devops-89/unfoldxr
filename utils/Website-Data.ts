@@ -152,7 +152,7 @@ export const homePage = {
   productPage: {
     supportOperations: {
       hero: {
-        bg: "/images/Product/Hero-section.png",
+        bg: "/images/Product/Hero-section2.png",
         title: "The only AI-powered augmented reality platform you need",
         subtitle:
           "To train, guide, support & scale frontline workforce, remote teams and skilled technicians",
@@ -461,7 +461,7 @@ export const aboutPage = {
         name: "RITESH GANGNANI",
         role: "CO-FOUNDER & HEAD ARCHITECT",
         image: riteshImg,
-        bio: "Ritesh Gangnani is the Co-founder & Head Architect at UnfoldXR, where he leads the AI and technology strategy powering next-generation smart glasses for the deskless workforce. Deep expertise in AI, ML, and computer vision, Ritesh has a track record of building production-grade AI systems from the ground up. As Head of AI at Segmind, he helped shape a leading generative AI platform — contributing to open-source breakthroughs like Segmoe (mixture of diffusion experts) and building scalable AI infrastructure used by thousands of developers worldwide.\n\nA passionate open-source contributor, Ritesh is the creator of VoltaML, a popular GPU-accelerated inference library known in the ML community for making model deployment faster and more accessible. He is also the founder of Pixl Studio, an AI-powered creative studio for image generation, video, and virtual try-on. His expertise spans computer vision, deep learning, generative AI, and edge deployment with published research and a Master's degree from South Asian University grounding his work in both theory and application.\n\nAt UnfoldXR, Ritesh is architecting the AI backbone that brings hands-free intelligence to frontline workers through smart glasses — turning complex AI into seamless, human-first experiences at the edge. At UnfoldXR, he builds with one belief: the best AI is the one that works for you, not the other way around.",
+        bio: "Ritesh Gangnani is the Co-founder & Head Architect at UnfoldXR, where he leads the AI and technology strategy powering next-generation smart glasses for the deskless workforce. Deep expertise in AI, ML, and computer vision, Ritesh has a track record of building production-grade AI systems from the ground up. As Head of AI at Segmind, he helped shape a leading generative AI platform — contributing to open-source breakthroughs like Segmoe (mixture of diffusion experts) and building scalable AI infrastructure used by thousands of developers worldwide.\n\nHe is also the founder of Pixl Studio, an AI-powered creative studio for image generation, video, and virtual try-on. His expertise spans computer vision, deep learning, generative AI, and edge deployment with published research and a Master's degree from South Asian University grounding his work in both theory and application.\n\nAt UnfoldXR, Ritesh is architecting the AI backbone that brings hands-free intelligence to frontline workers through smart glasses — turning complex AI into seamless, human-first experiences at the edge. At UnfoldXR, he builds with one belief: the best AI is the one that works for you, not the other way around.",
       },
     ],
   },

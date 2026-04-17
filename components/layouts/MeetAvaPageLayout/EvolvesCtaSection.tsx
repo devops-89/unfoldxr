@@ -71,7 +71,7 @@ const EvolvesCtaSection = () => {
             </Typography>
 
             <Button
-              onClick={openModal}
+            onClick={() => openModal("meet_ava_cta")}
               sx={{
                 mt: 4,
                 bgcolor: COLORS.PRIMARY_GREEN,

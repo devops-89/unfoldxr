@@ -124,7 +124,7 @@ const Tools = () => {
             <Grid size={{ xs: 12, md: 6 }}>
               <ToolsLeftSection
                 {...homePage.tools.leftSection}
-                onCtaClick={openModal}
+                onCtaClick={() => openModal("tools")}
               />
             </Grid>
 

@@ -150,11 +150,13 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
 const ImageCard = ({ card }: { card: IMAGE_CARD_PROPS }) => {
   if (card.link) {
     return (
-      <Link href={card.link} passHref style={{ textDecoration: "none" }}>
+      <Link
+        href={card.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: "none" }}
+      >
         <Box
-          component="a"
-          target="_blank"
-          rel="noopener noreferrer"
           sx={{
             textDecoration: "none",
             display: "block",

@@ -1,5 +1,5 @@
 import PageHeroSection from "@/components/widgets/PageHeroSection";
-import banner from "@/images/about-us/about-homepage.png";
+import banner from "@/images/about-us/about-heroSection2.jpg.png";
 import { aboutPage } from "@/utils/Website-Data";
 
 const HeroSection = () => {

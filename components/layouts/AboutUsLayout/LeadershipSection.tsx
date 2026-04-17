@@ -41,13 +41,19 @@ const LeadershipSection = () => {
             <Grid
               container
               key={idx}
-              spacing={{ xs: 4, md: 10 }}
+              spacing={{ xs: 4, md: 8 }}
               alignItems="flex-start"
               direction={isEven ? "row-reverse" : "row"}
             >
               <Grid
-                size={{ xs: 12, md: 4.5 }}
-                sx={{ position: "relative", overflow: "hidden" }}
+                size={{ xs: 12, md: 4 }}
+                sx={{
+                  position: "relative",
+                  overflow: "hidden",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
               >
                 {isEven ? (
                   <Image
@@ -60,6 +66,7 @@ const LeadershipSection = () => {
                       height: isEven ? "auto" : "auto",
                       display: "block",
                       marginTop: "50px",
+                      filter: "grayscale(100%)",
                     }}
                     priority={idx === 0}
                   />
@@ -68,15 +75,16 @@ const LeadershipSection = () => {
                     src={member.image}
                     alt={member.name}
                     style={{
-                      width: isEven ? "250px" : "400px",
+                      width: isEven ? "250px" : "350px",
                       height: isEven ? "auto" : "auto",
                       display: "block",
+                      filter: "grayscale(100%)",
                     }}
                     priority={idx === 0}
                   />
                 )}
               </Grid>
-              <Grid size={{ xs: 12, md: 7.5 }}>
+              <Grid size={{ xs: 12, md: 8 }}>
                 <Box
                   sx={{
                     textAlign: "left",

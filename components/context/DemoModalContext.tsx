@@ -4,20 +4,42 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface DemoModalContextType {
   isOpen: boolean;
-  openModal: () => void;
+  isSuccess: boolean;
+  source: string | null;
+  openModal: (source?: string) => void;
   closeModal: () => void;
+  setSuccess: (val: boolean) => void;
 }
 
-const DemoModalContext = createContext<DemoModalContextType | undefined>(undefined);
+const DemoModalContext = createContext<DemoModalContextType | undefined>(
+  undefined,
+);
 
 export const DemoModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [source, setSource] = useState<string | null>(null);
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+  const openModal = (modalSource?: string) => {
+    if (modalSource) setSource(modalSource);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    // Reset after animation (delay)
+    setTimeout(() => {
+      setIsSuccess(false);
+      setSource(null);
+    }, 300);
+  };
+
+  const setSuccess = (val: boolean) => setIsSuccess(val);
 
   return (
-    <DemoModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <DemoModalContext.Provider
+      value={{ isOpen, isSuccess, source, openModal, closeModal, setSuccess }}
+    >
       {children}
     </DemoModalContext.Provider>
   );

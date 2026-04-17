@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import FutureWorkCard from "./components/Future-Work-Card";
 import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import Link from "next/link";
 
 const FutureWork = () => {
   const { openModal } = useDemoModal();
@@ -108,18 +109,18 @@ const FutureWork = () => {
             >
               {homePage.future_work.leftSection.endHeading}
             </Typography>
-
-            <ContainedButton
-              onClick={openModal}
-              sx={{
-                mt: 3,
-                width: { xs: "100%", md: "auto" },
-                height: { xs: "45px", md: "60px" },
-                fontSize: { xs: 16, md: 16 },
-              }}
-            >
-              {homePage.future_work.leftSection.cta}
-            </ContainedButton>
+            <Link href="/Product">
+              <ContainedButton
+                sx={{
+                  mt: 3,
+                  width: { xs: "100%", md: "auto" },
+                  height: { xs: "45px", md: "60px" },
+                  fontSize: { xs: 16, md: 16 },
+                }}
+              >
+                {homePage.future_work.leftSection.cta}
+              </ContainedButton>
+            </Link>
           </Grid>
 
           {/* RIGHT SECTION - INTERACTIVE STEPPER */}

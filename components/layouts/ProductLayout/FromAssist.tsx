@@ -93,7 +93,7 @@ const FromAssist = () => {
               }}
             >
               <Button
-                onClick={openModal}
+                onClick={() => openModal("product_assist")}
                 sx={{
                   bgcolor: COLORS.PRIMARY_GREEN,
                   color: COLORS.BLACK,

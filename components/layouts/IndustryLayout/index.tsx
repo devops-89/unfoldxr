@@ -16,8 +16,8 @@ const IndustryLayout = ({ data }: Props) => {
     <Box>
       <HeroSection data={data.hero} />
       <RealityNeedsSection data={data.realityNeeds} />
-      <OperationFlowSection 
-        data={data.operationFlow} 
+      <OperationFlowSection
+        data={data.operationFlow}
         ctaIcon={data.finalCta.ctaIcon}
       />
       <UseCasesSection data={data.useCases} />

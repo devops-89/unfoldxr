@@ -79,9 +79,9 @@ export const useCasesData: Record<string, UseCaseData> = {
       description1:
         "With UnfoldXR, AI and augmented reality empower the 80% deskless workforce that traditional learning systems often overlook. Training becomes embedded in execution.",
       description2:
-        "Teams learn by doing, follow standardised guidance, and access critical knowledge in real time through AI Assistant, AVA or remote experts.",
-      description3:
-        "With three versions designed for different stages of operational maturity —",
+        "Teams learn by doing, follow standardised guidance, and access critical knowledge in real time through AI Assistant, AVA or remote experts. With three versions designed for different stages of operational maturity —",
+      // description3:
+      //   "With three versions designed for different stages of operational maturity —",
       description4:
         "Start with structured digital guidance and grow into intelligent, AI-driven workforce enablement when you are ready.",
       image: "/images/usecase/TabImage.png",
@@ -156,7 +156,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           title: "Accelerated Time to Productivity",
           description:
-            "On-the-job AR-guided training and structured digital workflows reduce onboarding time by 40–60%, helping new hires become productive 30–50% faster than traditional methods.",
+            "On-the-job AR-guided training and structured digital workflows reduce onboarding time by 40%, helping new hires become productive 50% faster than traditional methods.",
         },
         {
           title: "Zero Knowledge Loss",
@@ -166,17 +166,17 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           title: "Consistent, SOP-Aligned Training",
           description:
-            "Standardized digital workflows maintain 100% alignment with operating procedures across sites and shifts increasing operational efficiency & reducing Turn-Around Time (TAT). With AVA’s (AI Virtual Assistance) support technician efficiency improves by 20–30%.",
+            "Standardized digital workflows maintain 100% alignment with operating procedures across sites and shifts increasing operational efficiency & reducing Turn-Around Time (TAT). With AVA’s (AI Virtual Assistance) support technician efficiency improves by 30%.",
         },
         {
           title: "Greater Skill Confidence in the Field",
           description:
-            "AVA’s (AI Virtual Assistant) assistance and live AR expert support at the moment of work, reduce troubleshooting time by 40–60%, enabling technicians to perform accurately with less supervision.",
+            "AVA’s (AI Virtual Assistant) assistance and live AR expert support at the moment of work, reduce troubleshooting time by 40%, enabling technicians to perform accurately with less supervision.",
         },
         {
           title: "Lower Training & Support Costs",
           description:
-            "Remote collaboration and digital workflows reduce the need for repeated in-person sessions, while faster access to manuals and SOPs saves 30–50% of time typically spent searching for information.",
+            "Remote collaboration and digital workflows reduce the need for repeated in-person sessions, while faster access to manuals and SOPs saves 30% of time typically spent searching for information.",
         },
         {
           title: "Measurable Competency & Audit Readiness",
@@ -239,7 +239,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM SIMPLE HANDHELD DEVICES TO ADVANCED AR WEARABLES",
       },
       deviceC: {
-        image: "/images/usecase/scale2.png",
+        image: "/images/usecase/scale3.png",
         title: "SCALES WITH WORKFORCE SIZE, COMPLEXITY, AND BUDGET",
       },
     },
@@ -278,9 +278,9 @@ export const useCasesData: Record<string, UseCaseData> = {
       description1:
         "UnfoldXR enables organizations to run inspections with greater precision and lower risk. AI and augmented reality guide frontline teams through structured, context-aware inspection workflows aligned to the asset, regulation, or quality standard.",
       description2:
-        "Evidence is captured in real time, reports are generated automatically, and deviations are identified instantly — helping teams stay compliant and audit-ready at all times.",
-      description3:
-        "With three versions designed for different stages of operational maturity -",
+        "Evidence is captured in real time, reports are generated automatically, and deviations are identified instantly — helping teams stay compliant and audit-ready at all times. With three versions designed for different stages of operational maturity -",
+      // description3:
+      //   "",
       description4:
         "organizations can start with standardized digital inspections and scale into AI-driven predictive quality and compliance intelligence.",
       cards: [
@@ -369,7 +369,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           title: "Higher Compliance Accuracy",
           description:
-            "AI-guided checklists and built-in SOP validation reduce inspection errors by up to 50% and cut missed defects by 50-70%. Hands-free AR inspections also reduce inspection time by 30-50%.",
+            "AI-guided checklists and built-in SOP validation reduce inspection errors by up to 50% and cut missed defects by 50-70%. Hands-free AR inspections also reduce inspection time by 30-50.",
         },
         {
           title: "Audit-Ready Documentation",
@@ -379,12 +379,12 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           title: "Reduced Inspection Time",
           description:
-            "Structured workflows and instant asset access reduce inspection duration by 30-40%. Quick Scan and digital records help inspectors find information up to 3x faster, cutting manual search time by 70%.",
+            "Structured workflows and instant asset access reduce inspection duration by 30%. Quick Scan and digital records help inspectors find information up to 3x faster, cutting manual search time by 70%.",
         },
         {
           title: "Fewer Compliance Violations",
           description:
-            "Predictive insights and standardized inspection controls help prevent 25-30% of recurring non-conformities, reducing regulatory exposure and corrective actions.",
+            "Predictive insights and standardized inspection controls help prevent 30% of recurring non-conformities, reducing regulatory exposure and corrective actions.",
         },
         {
           title: "Consistent Quality Across Locations",
@@ -452,7 +452,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM LIGHTWEIGHT INSPECTION DEVICES TO ADVANCED AR SYSTEMS",
       },
       deviceC: {
-        image: "/images/usecase/scale2.png",
+        image: "/images/usecase/scale3.png",
         title:
           "SCALES ACROSS FACILITIES, REGULATORY ENVIRONMENTS, AND OPERATIONAL COMPLEXITY",
       },
@@ -493,9 +493,8 @@ export const useCasesData: Record<string, UseCaseData> = {
       description1:
         "With UnfoldXR, AI and augmented reality touches the 80% workforce at the frontlines who are still not receiving the technological support they need to augment their productivity.",
       description2:
-        "Coordination becomes simpler. Tasks are executed with higher accuracy. Work stays consistent and reliable across sites, shifts, and teams.",
-      description3:
-        "With three versions designed for different stages of operational maturity —",
+        "Coordination becomes simpler. Tasks are executed with higher accuracy. Work stays consistent and reliable across sites, shifts, and teams. With three versions designed for different stages of operational maturity —",
+      // description3: "",
       description4:
         "Start where you are today, knowing the platform is ready to grow with you from day one.",
       cards: [
@@ -659,7 +658,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM SIMPLE WEARABLES TO HIGH-END DEVICES",
       },
       deviceC: {
-        image: "/images/usecase/scale2.png",
+        image: "/images/usecase/scale3.png",
         title: "SCALES WITH TASK COMPLEXITY AND BUDGET",
       },
     },
@@ -784,12 +783,12 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           title: "Reduced Mean Time To Repair (MTTR)",
           description:
-            "AI-guided diagnostics and structured troubleshooting workflows accelerate fault identification and resolution. Technicians spend 30–50% less time searching through manuals and SOPs.",
+            "AI-guided diagnostics and structured troubleshooting workflows accelerate fault identification and resolution. Technicians spend 50% less time searching through manuals and SOPs.",
         },
         {
           title: "Higher First-Time Fix Rates",
           description:
-            "Guided service workflows and contextual assistance improve diagnostic accuracy, driving a 20–40% increase in first-time fix rates and reducing unnecessary repeat visits.",
+            "Guided service workflows and contextual assistance improve diagnostic accuracy, driving a 40% increase in first-time fix rates and reducing unnecessary repeat visits.",
         },
         {
           title: "Lower Escalation & Rework Costs",
@@ -799,7 +798,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           title: "Improved Technician Productivity",
           description:
-            "AI-assisted decision support and optimized scheduling improve field team efficiency by 20–30%, ensuring better workforce utilization and faster service cycles.",
+            "AI-assisted decision support and optimized scheduling improve field team efficiency by 30%, ensuring better workforce utilization and faster service cycles.",
         },
         {
           title: "Reduced Downtime",
@@ -809,7 +808,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         {
           title: "Higher Customer Satisfaction",
           description:
-            "Quicker, more accurate resolutions increase service reliability, resulting in 20–30% higher customer satisfaction due to faster turnaround and improved service quality.",
+            "Quicker, more accurate resolutions increase service reliability, resulting in 30% higher customer satisfaction due to faster turnaround and improved service quality.",
         },
       ],
     },
@@ -855,7 +854,7 @@ export const useCasesData: Record<string, UseCaseData> = {
         title: "FROM LIGHTWEIGHT FIELD-READY DEVICES TO ADVANCED AR SYSTEMS",
       },
       deviceC: {
-        image: "/images/usecase/scale2.png",
+        image: "/images/usecase/scale3.png",
         title:
           "SCALES ACROSS REGIONS, TECHNICIAN VOLUMES, AND SERVICE COMPLEXITY",
       },

@@ -16,7 +16,7 @@ const FinalCtaSection = ({ data }: Props) => {
       title={data.title}
       subtitle={data.description}
       btnText={data.ctaText}
-      onBtnClick={openModal}
+      onBtnClick={() => openModal("industry_final_cta")}
       variant="industry"
       innerSx={{
         width: { xs: "85%", md: "90%", lg: "80%" },

@@ -119,7 +119,7 @@ export default function Footer() {
                           onClick={(e) => {
                             if (link.label.toLowerCase().includes("demo")) {
                               e.preventDefault();
-                              openModal();
+                              openModal("footer");
                             }
                           }}
                           sx={{ display: "block", cursor: "pointer" }}
@@ -229,7 +229,7 @@ export default function Footer() {
                     </Typography>
                   </Stack>
                   <Button
-                    onClick={openModal}
+                    onClick={() => openModal("footer")}
                     variant="contained"
                     sx={{
                       borderRadius: 52,

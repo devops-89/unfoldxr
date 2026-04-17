@@ -152,7 +152,7 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
         <Box sx={{ textAlign: "center", mt: { xs: 6, md: 6 } }}>
           <Button
             variant="contained"
-            onClick={openModal}
+            onClick={() => openModal("industry_flow")}
             sx={{
               bgcolor: COLORS.PRIMARY_GREEN,
               color: COLORS.BLACK,

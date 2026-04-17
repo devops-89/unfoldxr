@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
@@ -5,9 +6,11 @@ import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import EastIcon from "@mui/icons-material/East";
+import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const SupportYourOperations = () => {
   const data = homePage.productPage.supportOperations;
+  const { openModal } = useDemoModal();
 
   return (
     <Box
@@ -135,8 +138,9 @@ const SupportYourOperations = () => {
                 transform: "translate(-50%, -50%) scale(1.05)",
               },
             }}
+            onClick={() => openModal("home_hero")}
           >
-            <Box
+            {/* <Box
               sx={{
                 width: 40,
                 height: 40,
@@ -148,7 +152,7 @@ const SupportYourOperations = () => {
               }}
             >
               <PlayArrowIcon sx={{ color: COLORS.BLACK, fontSize: 24 }} />
-            </Box>
+            </Box> */}
             <Typography
               sx={{
                 color: COLORS.WHITE,
@@ -162,33 +166,8 @@ const SupportYourOperations = () => {
                 letterSpacing: "0.5px",
               }}
             >
-              View Case Study <EastIcon sx={{ fontSize: 16 }} />
-            </Typography>
-          </Box>
-
-          {/* Placeholder Text Overlay */}
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "15%",
-              width: "100%",
-              textAlign: "center",
-              px: 4,
-            }}
-          >
-            <Typography
-              sx={{
-                color: COLORS.WHITE,
-                fontFamily: din.style.fontFamily,
-                fontWeight: 900,
-                fontSize: { xs: 12, md: 16, lg: 18 },
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                opacity: 0.9,
-                textShadow: "0px 2px 4px rgba(0,0,0,0.5)",
-              }}
-            >
-              *THIS IS A PLACEHOLDER IMAGE*, WILL BE REPLACED BY VID THUMBNAIL
+              Connect to see UnfoldXR in Action{" "}
+              <EastIcon sx={{ fontSize: 16 }} />
             </Typography>
           </Box>
         </Box>

@@ -73,7 +73,7 @@ const HeroSection = () => {
               variant="h1"
               sx={{
                 fontFamily: din.style.fontFamily,
-                fontSize: { xs: 36, md: 56, lg: 64 },
+                fontSize: { xs: 26, md: 50, lg: 36 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 color: COLORS.WHITE,

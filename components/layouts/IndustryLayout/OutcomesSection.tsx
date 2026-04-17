@@ -16,12 +16,15 @@ const OutcomesSection = ({ data }: Props) => {
         py: { xs: 8, md: 10 },
       }}
     >
-      <Container maxWidth={false} sx={{ width: { xs: "90%", md: "90%", lg: "83%" }, mx: "auto", px: 0 }}>
+      <Container
+        maxWidth={false}
+        sx={{ width: { xs: "90%", md: "90%", lg: "83%" }, mx: "auto", px: 0 }}
+      >
         {/* Top Heading */}
         <Typography
           sx={{
             fontFamily: din.style.fontFamily,
-            fontSize: { xs: 32, md: 44, lg: 52 },
+            fontSize: { xs: 32, md: 30, lg: 35 },
             lineHeight: { xs: "35px", md: "60px" },
             textTransform: "uppercase",
             fontWeight: 900,
@@ -45,7 +48,7 @@ const OutcomesSection = ({ data }: Props) => {
                 height: "auto",
                 borderRadius: "24px",
                 objectFit: "cover",
-                border: "8px solid #2A2A2A", 
+                border: "8px solid #2A2A2A",
                 boxShadow: "0px 20px 40px rgba(0,0,0,0.5)",
               }}
             />
@@ -53,10 +56,7 @@ const OutcomesSection = ({ data }: Props) => {
 
           {/* Right Side: Stats */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Grid
-              container
-              spacing={{ xs: 4, md: 5 }}
-            >
+            <Grid container spacing={{ xs: 4, md: 5 }}>
               {data.metrics.map((metric, i) => (
                 <Grid key={i} size={{ xs: 12, sm: 6 }}>
                   <Stack spacing={1}>
@@ -64,7 +64,7 @@ const OutcomesSection = ({ data }: Props) => {
                       sx={{
                         fontFamily: din.style.fontFamily,
                         color: COLORS.PRIMARY_GREEN,
-                        fontSize: { xs: 42, md: 48, lg: 36},
+                        fontSize: { xs: 42, md: 48, lg: 36 },
                         fontWeight: 900,
                         lineHeight: 1,
                       }}

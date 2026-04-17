@@ -130,6 +130,19 @@ export const HEADER_LINKS = [
     ],
   },
   {
+    label: "Resources",
+    url: "#",
+    subLinks: [
+      {
+        label: "Blogs & Insights",
+        url: "#",
+      },
+      // {
+      //   label:""
+      // }
+    ],
+  },
+  {
     label: "About Us",
     url: "#",
     subLinks: [

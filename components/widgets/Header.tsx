@@ -34,7 +34,10 @@ const Header = () => {
 
   const pathname = usePathname();
 
-  const handleOpenPopover = (event: React.MouseEvent<HTMLElement>, label: string) => {
+  const handleOpenPopover = (
+    event: React.MouseEvent<HTMLElement>,
+    label: string,
+  ) => {
     setAnchorEl(event.currentTarget);
     setActiveMenu(label);
   };
@@ -80,8 +83,14 @@ const Header = () => {
           >
             {/* Logo */}
             <Link href="/" style={{ display: "flex", alignItems: "center" }}>
-              <Box sx={{ width: { xs: 130, sm: 160, md: 200 }, display: "flex" }}>
-                <Image src={logo} alt="logo" style={{ width: "100%", height: "auto" }} />
+              <Box
+                sx={{ width: { xs: 130, sm: 160, md: 200 }, display: "flex" }}
+              >
+                <Image
+                  src={logo}
+                  alt="logo"
+                  style={{ width: "100%", height: "auto" }}
+                />
               </Box>
             </Link>
 
@@ -107,7 +116,13 @@ const Header = () => {
                   }}
                 >
                   {val.subLinks ? (
-                    <Box sx={{ height: "100%", display: "flex", alignItems: "center" }}>
+                    <Box
+                      sx={{
+                        height: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
                       <Box
                         onMouseEnter={(e) => handleOpenPopover(e, val.label)}
                         sx={{
@@ -133,7 +148,10 @@ const Header = () => {
                             fontSize: 18,
                             color: COLORS.BLACK,
                             transition: "transform 0.3s ease",
-                            transform: activeMenu === val.label ? "rotate(180deg)" : "none",
+                            transform:
+                              activeMenu === val.label
+                                ? "rotate(180deg)"
+                                : "none",
                           }}
                         />
                       </Box>
@@ -209,7 +227,10 @@ const Header = () => {
                       </Popover>
                     </Box>
                   ) : (
-                    <Link href={val.url || "#"} style={{ textDecoration: "none" }}>
+                    <Link
+                      href={val.url || "#"}
+                      style={{ textDecoration: "none" }}
+                    >
                       <Typography
                         sx={{
                           fontFamily: helvetica.style.fontFamily,
@@ -226,7 +247,7 @@ const Header = () => {
               ))}
 
               <Button
-                onClick={openModal}
+                onClick={() => openModal("header")}
                 sx={{
                   backgroundColor: COLORS.PRIMARY_GREEN,
                   borderRadius: "23px",
@@ -263,9 +284,20 @@ const Header = () => {
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <Box sx={{ width: 280, p: 3 }}>
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              mb: 3,
+            }}
+          >
             <Link href="/" onClick={() => setOpen(false)}>
-              <Image src={logo} alt="logo" style={{ width: 140, height: "auto" }} />
+              <Image
+                src={logo}
+                alt="logo"
+                style={{ width: 140, height: "auto" }}
+              />
             </Link>
             <IconButton onClick={() => setOpen(false)}>✕</IconButton>
           </Box>
@@ -276,7 +308,11 @@ const Header = () => {
                 {val.subLinks ? (
                   <Box>
                     <Box
-                      onClick={() => setMobileExpanded(mobileExpanded === val.label ? null : val.label)}
+                      onClick={() =>
+                        setMobileExpanded(
+                          mobileExpanded === val.label ? null : val.label,
+                        )
+                      }
                       sx={{
                         display: "flex",
                         alignItems: "center",
@@ -285,12 +321,21 @@ const Header = () => {
                         cursor: "pointer",
                       }}
                     >
-                      <Typography sx={{ fontFamily: helvetica.style.fontFamily, fontSize: 16, color: COLORS.BLACK }}>
+                      <Typography
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          fontSize: 16,
+                          color: COLORS.BLACK,
+                        }}
+                      >
                         {val.label}
                       </Typography>
                       <KeyboardArrowDownIcon
                         sx={{
-                          transform: mobileExpanded === val.label ? "rotate(180deg)" : "none",
+                          transform:
+                            mobileExpanded === val.label
+                              ? "rotate(180deg)"
+                              : "none",
                           transition: "0.3s",
                         }}
                       />
@@ -302,9 +347,19 @@ const Header = () => {
                             key={j}
                             href={sub.url}
                             onClick={() => setOpen(false)}
-                            style={{ textDecoration: "none", padding: "8px 0", display: "block" }}
+                            style={{
+                              textDecoration: "none",
+                              padding: "8px 0",
+                              display: "block",
+                            }}
                           >
-                            <Typography sx={{ fontFamily: helvetica.style.fontFamily, fontSize: 14, color: COLORS.BLACK }}>
+                            <Typography
+                              sx={{
+                                fontFamily: helvetica.style.fontFamily,
+                                fontSize: 14,
+                                color: COLORS.BLACK,
+                              }}
+                            >
                               {sub.label}
                             </Typography>
                           </Link>
@@ -315,11 +370,21 @@ const Header = () => {
                 ) : (
                   <Link
                     href={val.url || "#"}
-                    style={{ textDecoration: "none", display: "block", paddingTop: 8, paddingBottom: 8 }}
+                    style={{
+                      textDecoration: "none",
+                      display: "block",
+                      paddingTop: 8,
+                      paddingBottom: 8,
+                    }}
                     onClick={() => setOpen(false)}
                   >
                     <Typography
-                      sx={{ fontFamily: helvetica.style.fontFamily, fontSize: 16, color: COLORS.BLACK, py: 1 }}
+                      sx={{
+                        fontFamily: helvetica.style.fontFamily,
+                        fontSize: 16,
+                        color: COLORS.BLACK,
+                        py: 1,
+                      }}
                     >
                       {val.label}
                     </Typography>

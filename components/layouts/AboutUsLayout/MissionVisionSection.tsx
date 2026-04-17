@@ -90,7 +90,7 @@ const MissionVisionSection = () => {
             fontSize: { xs: 28, md: 36, lg: 36 },
             fontWeight: 700,
             lineHeight: "52px",
-            mt: 4,
+            mt: 6,
             mb: 2,
             fontFamily: din.style.fontFamily,
           }}
@@ -148,7 +148,7 @@ const MissionVisionSection = () => {
                 >
                   <Typography
                     sx={{
-                      fontSize: { xs: 14, md: 16 },
+                      fontSize: { xs: 14, md: 25 },
                       fontWeight: 900,
                       lineHeight: 1.2,
                       fontFamily: din.style.fontFamily,

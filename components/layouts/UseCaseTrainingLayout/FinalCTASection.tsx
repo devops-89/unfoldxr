@@ -15,7 +15,7 @@ const FinalCTASection = ({ data }: Props) => {
     <SectionCTA
       title={data.title}
       subtitle={data.subtitle}
-      onBtnClick={openModal}
+      onBtnClick={() => openModal("usecase_final_cta")}
       innerSx={{
         width: { xs: "85%", md: "90%", lg: "80%" },
         mx: "auto",

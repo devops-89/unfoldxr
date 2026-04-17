@@ -177,7 +177,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                 gap: 2,
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
               }}
-              onClick={openModal}
+              onClick={() => openModal("capabilities")}
             >
               Download the full UnfoldXR feature list{" "}
               <ArrowForwardRoundedIcon />
@@ -471,7 +471,7 @@ const CapabilitiesSection = ({ data }: Props) => {
               gap: 2,
               "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
             }}
-            onClick={openModal}
+            onClick={() => openModal("capabilities")}
           >
             Download the full UnfoldXR feature list <ArrowForwardRoundedIcon />
           </Button>
