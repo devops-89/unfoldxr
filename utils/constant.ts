@@ -312,8 +312,6 @@ export const toolsRightData: TOOLS_RIGHT_SECTION_PROPS = {
       link: "https://unfoldxr.com/news/unfoldxr-partners-with-realwear/",
       image: smsChatBg,
       tag: "Press Release",
-      backgroundSize: "contain",
-      bgColor: "#FFFFFF",
       gridSize: 7,
     },
     {

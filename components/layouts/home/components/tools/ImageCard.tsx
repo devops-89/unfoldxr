@@ -67,8 +67,8 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
           inset: 0,
           background:
             card.titleColor !== "#000000"
-              ? "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%)"
-              : "linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.1) 100%)",
+              ? "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0) 60%)"
+              : "linear-gradient(0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0) 60%)",
           zIndex: 1,
         }}
       />
