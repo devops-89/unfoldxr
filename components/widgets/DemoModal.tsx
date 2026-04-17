@@ -78,6 +78,17 @@ const DemoModal = () => {
               <br /> A real human from the UnfoldXR team will get back to you
               soon.
             </Typography>
+            <Typography
+              sx={{
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: 16,
+                color: "#666",
+                maxWidth: 300,
+                mx: "auto",
+              }}
+            >
+              Typical response time: 1-2 working days.
+            </Typography>
             <Button
               onClick={closeModal}
               sx={{

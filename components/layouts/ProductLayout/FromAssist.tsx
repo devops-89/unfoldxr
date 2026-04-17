@@ -15,7 +15,11 @@ const FromAssist = () => {
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Box
-        sx={{ width: { xs: "85%", md: "80%" }, mx: "auto", px: { xs: 0, md: 0 } }}
+        sx={{
+          width: { xs: "85%", md: "80%" },
+          mx: "auto",
+          px: { xs: 0, md: 0 },
+        }}
       >
         <Box
           sx={{
@@ -109,10 +113,13 @@ const FromAssist = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: 1.5,
-                  "&:hover": { bgcolor: COLORS.PRIMARY_HOVER, boxShadow: "none" },
+                  "&:hover": {
+                    bgcolor: COLORS.PRIMARY_HOVER,
+                    boxShadow: "none",
+                  },
                 }}
               >
-                {data.cta1} <ArrowForwardRoundedIcon />
+                Write to us <ArrowForwardRoundedIcon />
               </Button>
               {/* <Typography
                 onClick={openModal}
