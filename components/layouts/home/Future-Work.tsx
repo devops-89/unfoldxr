@@ -113,8 +113,8 @@ const FutureWork = () => {
               <ContainedButton
                 sx={{
                   mt: 3,
-                  width: { xs: "100%", md: "auto" },
-                  height: { xs: "45px", md: "60px" },
+                  width: { xs: "100%", md: "150px" },
+                  height: { xs: "45px", md: "50px" },
                   fontSize: { xs: 16, md: 16 },
                 }}
               >

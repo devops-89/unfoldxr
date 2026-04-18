@@ -39,7 +39,7 @@ const DemoModal = () => {
         </IconButton>
       </Box>
       <DialogContent sx={{ p: { xs: 2.5, md: 4 }, pt: { xs: 5, md: 6 } }}>
-        {isSuccess && source === "capabilities" ? (
+        {isSuccess ? (
           <Box
             sx={{
               textAlign: "center",
