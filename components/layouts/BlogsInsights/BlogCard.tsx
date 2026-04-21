@@ -72,7 +72,7 @@ export default function BlogCard() {
                 borderTopRightRadius: 2,
                     boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
                     transition: "0.3s",
-                    border: index === 3 ? "2px solid #3b82f6" : "none",
+                 
                     "&:hover": {
                     
                       transform: "translateY(-4px)",
