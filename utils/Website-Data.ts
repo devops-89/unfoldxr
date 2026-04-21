@@ -701,3 +701,16 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
     },
   },
 };
+
+
+export const  BlogsInsightsPage = {
+  herosection: {
+    title: "Blogs",
+    heading: "REIMAGING HOW FRONTLINE WORKS",
+  },
+  IntelligenceSection: {
+    title: "Bring intelligence to your manufacturing floor",
+    description:
+      "See how UnfoldXR improves execution, reduces downtime, and scales expertise across your operations.",
+  },
+};

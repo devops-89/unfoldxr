@@ -135,7 +135,7 @@ export const HEADER_LINKS = [
     subLinks: [
       {
         label: "Blogs & Insights",
-        url: "#",
+        url: "/blogs-insights",
       },
       {
         label: "Latest News",
