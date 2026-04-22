@@ -714,3 +714,49 @@ export const  BlogsInsightsPage = {
       "See how UnfoldXR improves execution, reduces downtime, and scales expertise across your operations.",
   },
 };
+
+
+ export const blogData = [
+  {
+    id: 1,
+    title: "Long established",
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
+    date: "May 20th 2020",
+    img: "/images/resources/blogsinsights/blogcard/blog-card (3).png",
+  },
+  {
+    id:2,
+    title: "Long established 2",
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
+    date: "May 20th 2020",
+    img: "/images/resources/blogsinsights/blogcard/blog-card (1).png",
+  },
+  {
+    id:3,
+    title: "Long established 3",
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
+    date: "May 20th 2020",
+    img: "/images/resources/blogsinsights/blogcard/blog-card (2).png",
+  },
+  {
+    id:4,
+    title: "Long established 4",
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
+    date: "May 20th 2020",
+    img: "/images/resources/blogsinsights/blogcard/blog-card (3).png",
+  },
+  {
+    id:5,
+    title: "Long established 5",
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
+    date: "May 20th 2020",
+    img: "/images/resources/blogsinsights/blogcard/blog-card (1).png",
+  },
+  {
+    id:6,
+    title: "Long established 6",
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
+    date: "May 20th 2020",
+    img: "/images/resources/blogsinsights/blogcard/blog-card (2).png",
+  },
+];

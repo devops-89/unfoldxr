@@ -10,6 +10,7 @@ export default function HeroSection() {
    title={BlogsInsightsPage.herosection.heading}
 //    subtitle={BlogsInsightsPage.herosection.heading}
     overlayOpacity={0.7}
+      titleMt={30}
    />
   )
 }

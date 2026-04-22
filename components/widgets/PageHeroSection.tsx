@@ -22,6 +22,7 @@ interface PageHeroSectionProps {
   primaryBtn?: ButtonConfig;
   secondaryBtn?: ButtonConfig;
   objectPosition?: any;
+  titleMt?: number | string;
 }
 const PageHeroSection = ({
   image,
@@ -34,6 +35,8 @@ const PageHeroSection = ({
   primaryBtn,
   secondaryBtn,
   objectPosition = "center",
+  titleMt 
+
 }: PageHeroSectionProps) => {
   const { openModal } = useDemoModal();
   return (
@@ -115,6 +118,7 @@ const PageHeroSection = ({
             maxWidth: titleMaxWidth || 1050,
             whiteSpace: "pre-line",
             width: { xs: "100%", lg: "70%" },
+            mt: titleMt || 0,
           }}
         >
           {title}

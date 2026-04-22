@@ -14,47 +14,11 @@ import {
   PaginationItem,
   Stack,
 } from "@mui/material";
-import { ArrowForwardIosSharp } from "@mui/icons-material";
 import { COLORS } from "@/utils/enum";
+import Link from "next/link";
+import { blogData } from "@/utils/Website-Data";
 
-const blogData = [
-  {
-    title: "long established",
-    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    date: "May 20th 2020",
-    img: "/images/resources/blogsinsights/blogcard/blog-card (3).png",
-  },
-  {
-    title: "long established",
-    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    date: "May 20th 2020",
-    img: "/images/resources/blogsinsights/blogcard/blog-card (1).png",
-  },
-  {
-    title: "long established",
-    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    date: "May 20th 2020",
-    img: "/images/resources/blogsinsights/blogcard/blog-card (2).png",
-  },
-  {
-    title: "long established",
-    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    date: "May 20th 2020",
-    img: "/images/resources/blogsinsights/blogcard/blog-card (3).png",
-  },
-  {
-    title: "long established",
-    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    date: "May 20th 2020",
-    img: "/images/resources/blogsinsights/blogcard/blog-card (1).png",
-  },
-  {
-    title: "long established",
-    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    date: "May 20th 2020",
-    img: "/images/resources/blogsinsights/blogcard/blog-card (2).png",
-  },
-];
+
 
 export default function BlogCard() {
   return (
@@ -62,17 +26,21 @@ export default function BlogCard() {
 
       <Box sx={{ pb: 10 ,pt: 10 ,px: { xs: 1, md: 15 } }}>
         <Container maxWidth="xl">
-          <Grid container spacing={4}>
-            {blogData.map((blog, index) => (
-              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-                
-                <Card
-                  sx={{
+      
+            <Grid container spacing={4} >
+              {blogData.map((blog, index) => (
+                <Grid size={{ xs: 12, sm: 6, md: 4, }} key={index} >
+                   <Link
+        href={`/blogs-insights-card-detail/${blog.id}`}
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
+                  <Card
+                    sx={{
                borderTopLeftRadius: 2,
                 borderTopRightRadius: 2,
                     boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
                     transition: "0.3s",
-                 
+                    
                     "&:hover": {
                     
                       transform: "translateY(-4px)",
@@ -132,7 +100,7 @@ export default function BlogCard() {
                     </Box>
                   </CardContent>
                 </Card>
-
+                </Link>
               </Grid>
             ))}
           </Grid>
