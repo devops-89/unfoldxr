@@ -26,8 +26,8 @@ const EnterpriseReady2 = () => {
       sx={{
         backgroundColor: COLORS.BLACK,
         color: COLORS.WHITE,
-        py: { xs: 6, md: 6, lg: 5 },
-        minHeight: { md: "85vh", lg: "75vh" },
+        py: { xs: 3, md: 6, lg: 5 },
+        minHeight: { xs: "auto",md: "85vh", lg: "75vh" },
         display: "flex",
         alignItems: "center",
         position: "relative",
@@ -177,16 +177,16 @@ const EnterpriseReady2 = () => {
           </Grid>
         </Grid>
       </Box> */}
+
       <Container maxWidth="lg">
-        <Grid container alignItems={"center"} spacing={10}>
-          <Grid size={6}>
-            <Image
-              src={data.img}
-              alt=""
-              style={{ width: "400px", height: "auto" }}
-            />
-          </Grid>
-          <Grid size={6}>
+        <Grid container alignItems="center" spacing={4}>
+          
+          {/* TEXT */}
+          <Grid size={{ xs: 12, md: 6.5, lg: 6 }}   sx={{
+              order: { xs: 1, md: 2 },
+            }}>
+         
+          
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
@@ -210,11 +210,12 @@ const EnterpriseReady2 = () => {
               ))}
             </Typography>
 
-            <Grid container spacing={{ xs: 2, md: 3, lg: 4.5 }}>
+            <Grid container spacing={{ xs: 1.5, md: 3, lg: 4.5 }}>
               {(data.points as any[]).map((point, index) => (
                 <Grid
                   key={point.title}
                   size={{ xs: 12, sm: 6 }}
+                
                   sx={{
                     animation: `fadeInUp 0.6s ease-out forwards ${
                       0.2 + index * 0.08
@@ -283,6 +284,28 @@ const EnterpriseReady2 = () => {
               ))}
             </Grid>
           </Grid>
+
+          {/* IMAGE */}
+          <Grid
+          size={{ xs: 12, md: 5.5, lg: 6 }}
+          
+            sx={{
+              order: { xs: 2, md: 1 },
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src={data.img}
+              alt=""
+              style={{
+                width: "100%",
+                maxWidth: "400px",
+                height: "auto",
+              }}
+            />
+          </Grid>
+
         </Grid>
       </Container>
     </Box>
