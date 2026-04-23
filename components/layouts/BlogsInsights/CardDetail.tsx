@@ -1,189 +1,282 @@
 import { COLORS } from '@/utils/enum'
+import { FiberManualRecord } from '@mui/icons-material';
 import {
   Box,
-  
   Button,
-  
   Divider,
-  
-  keyframes,
-  
+  Grid,
   Typography,
 } from '@mui/material'
-import Link from 'next/link';
+import Link from 'next/link'
 import React from 'react'
 
 export default function CardDetail({ product }: any) {
 
-  
   if (!product) {
     return <div>Blog not found</div>;
   }
 
   return (
-    <Box sx={{ bgcolor: COLORS.BLACK, minHeight: "100vh" }}>
+    <Box sx={{ bgcolor: COLORS.WHITE, minHeight: "100vh"  }}>
 
-      {/* IMAGE SECTION */}
-      <Box
+  
+<Box sx={{ position: "relative" }}>
+  {/* HERO IMAGE */}
+  <Box
+    component="img"
+    src={product.img}
+    alt={product.title}
+    sx={{
+      width: "100%",
+      height: { xs: 300, md: 850 }, 
+      objectFit: "cover",
+    }}
+  />
+
+  <Box
+    sx={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-end",
+      px: { xs: 2, md: 19 },
+      pb: 40,
+    }}
+  >
+    {/* Title */}
+    <Typography
+      sx={{
+        fontSize: { xs: 24, md: 40 },
+        fontWeight: 500,
+        color: COLORS.BLACK,
+        maxWidth: "600px",
+        mb: 2,
+      }}
+    >
+      {product.title}
+    </Typography>
+
+
+    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <Typography
         sx={{
-          px: { xs: "4px", sm: "4px", md: "4px", lg: "4px" }, 
-          
+          bgcolor: "#000",
+          color: COLORS.PRIMARY_GREEN,
+          px: 1.5,
+          py: 1,
+          fontSize: "13px",
+          borderRadius: "4px",
         }}
       >
-        <Box
-          component="img"
-          src={product.img}
-          alt={product.title}
-          sx={{
-            width: "100%",
-            height: { xs: 200, md: 700 },
-            objectFit: "cover",
+        UnFoldXr
+      </Typography>
 
-          }}
-        />
-      </Box>
+      <FiberManualRecord sx={{ fontSize: 8, color: "#fff" }} />
 
-      {/* CONTENT SECTION */}
+      <Typography
+        sx={{
+          bgcolor: "#000",
+          color: COLORS.PRIMARY_GREEN,
+          px: 1.5,
+          py: 1,
+          fontSize: "13px",
+          borderRadius: "4px",
+        }}
+      >
+        {product.date}
+      </Typography>
+    </Box>
+  </Box>
+</Box>
+
+      {/* CONTENT WRAPPER */}
       <Box
         sx={{
-          px: { xs: "30px", sm: "30px", md: "30px", lg: "30px" },
-          py: { xs: 4, md: 4 },
-          bgcolor: COLORS.WHITE,          
-    borderRadius: "10px",    
-    mx: { xs: "4px", md: "20px" }, 
-        
-    mt:4      
+          maxWidth: "900px",
+          mx: "auto",
+          mt: 6,
+          px: { xs: 2, md: 0 },
+          pb: 6,
         }}
       >
 
-        {/* Title */}
+        {/* INTRO TITLE */}
         <Typography
-          
           sx={{
-            color: COLORS.BLACK,
-            fontWeight: 700,
-            fontSize: { xs: 35, md: 45 },
+            fontSize: { xs: 22, md: 40 },
+            fontWeight: 600,
             mb: 2,
-            textTransform:"uppercase"
+            color: "#1a1a1a",
           }}
         >
-          {product.title}
+          Introduction
         </Typography>
 
-        {/* Meta */}
-        <Typography sx={{ color: "#aaa", mb: 1 ,fontSize: "14px" }}>
-          UnFoldXr • {product.date} 
-        </Typography>
-        
-
-        {/* Description */}
-       <Divider sx={{ borderColor: COLORS.BLACK}} />
+        {/* INTRO TEXT */}
         <Typography
           sx={{
-            color: COLORS.CARD_BG_DARK,
+            color: "#555",
             lineHeight: 1.8,
-            fontSize: "16px",
-            pt: 2
-    
+            fontSize: "15px",
+            mb: 1,
           }}
         >
           {product.desc}
         </Typography>
-        
-       
-     <Typography sx={{color:COLORS.BLACK,fontSize:"28px",lineHeight:1.5,fontWeight:700,pt:2}} >
+          <Typography
+          sx={{
+            color: "#555",
+            lineHeight: 1.8,
+            fontSize: "15px",
+            mb: 2,
+          }}
+        >
+          {product.desc1}
+        </Typography>
+          <Typography
+          sx={{
+            color: "#555",
+            lineHeight: 1.8,
+            fontSize: "15px",
+            mb: 4,
+          }}
+        >
+          {product.desc2}
+        </Typography>
+
+        {/* SECOND IMAGE */}
+         <Box
+      sx={{
+        maxWidth: "1100px",
+        mx: "auto",
+        p: 2,
+      }}
+    >
+      <Grid
+        container
+        spacing={3}
+        alignItems="center"
+        sx={{
+          bgcolor: "#f5f5f5",
+          borderRadius: "10px",
+          p: { xs: 2, md: 3 },
+        }}
+      >
+        {/* IMAGE */}
+        <Grid size={{ xs: 12, md: 6 }}>
+          <Box
+            component="img"
+            src={product.img}
+            alt="interior"
+            sx={{
+              width: "100%",
+              height: { xs: 200, md: 260 },
+              objectFit: "cover",
+              borderRadius: "8px",
+            }}
+          />
+        </Grid>
+
+        {/* TEXT */}
+        <Grid size={{ xs: 12, md: 6 }}>
+          <Typography
+            sx={{
+              color: "#333",
+              fontSize: "15px",
+              lineHeight: 1.8,
+              mb: 2,
+            }}
+          >
+            Wariant zdjęcia z tekstem obok. Pozwala na użycie dłuższej formy
+            tekstowej, będącej rozszerzeniem / kontekstem zdjęcia. Moduł ten
+            może występować w dwóch wariantach: zdjęcie po lewej stronie + tekst
+            po prawej, zdjęcie po prawej stronie + tekst po lewej.
+          </Typography>
+
+          <Typography
+            sx={{
+              color: "#333",
+              fontSize: "15px",
+              lineHeight: 1.8,
+            }}
+          >
+            W przypadku dłuższych tekstów, konieczne będzie dzielenie bloku tak,
+            by treść na wysokość zdjęcia została „ucięta” i kontynuowana w nowym
+            bloku o pełnej szerokości, pod zdjęciem.
+          </Typography>
+        </Grid>
+      </Grid>
+    </Box>
+
+ <Typography sx={{color:COLORS.BLACK,fontSize:"28px",lineHeight:1.5,fontWeight:700,pt:2,pb:2}} >
   AI-Powered Smart Glasses
 </Typography>
+        {/* BODY TEXT */}
+        <Typography
+          sx={{
+            color: "#555",
+            lineHeight: 1.8,
+            fontSize: "15px",
+            mb: 2,
+          }}
+        >
+          {product.desc1}
+        </Typography>
 
-<Typography sx={{color:COLORS.CARD_BG_DARK,fontSize:"16px",lineHeight:1.5,pt:1,pb: 2}}>
-  AI glasses are transforming the way we interact with the world by blending vision, intelligence, and connectivity into a single wearable device. These smart glasses enhance everyday experiences through real-time data, voice assistance, and augmented visuals, making tasks faster, smarter, and more intuitive.
-</Typography>
+     
 
+        {/* QUOTE BLOCK */}
+        <Box
+          sx={{
+            borderLeft: "4px solid #999",
+            pl: 2,
+            my: 3,
+          }}
+        >
+          <Typography
+            sx={{
+              fontStyle: "italic",
+              color: "#333",
+              lineHeight: 1.8,
+            }}
+          >
+            “These innovations are designed to improve productivity, accessibility, and convenience across various industries and daily life.The future of AI glasses is promising.”
+          </Typography>
+        </Box>
 
-<Typography sx={{color:COLORS.BLACK,fontSize:"28px",lineHeight:1.5,fontWeight:700,pt:2}} >
-  Advanced Features & Innovation
-</Typography>
+        {/* FINAL TEXT */}
+        <Typography
+          sx={{
+            color: "#555",
+            lineHeight: 1.8,
+            fontSize: "15px",
+          }}
+        >
+          {product.desc1}
+        </Typography>
 
-<Typography sx={{color:COLORS.CARD_BG_DARK,fontSize:"16px",lineHeight:1.5,pt:1}}>
-  Built with cutting-edge artificial intelligence, modern smart glasses integrate powerful features such as real-time translation, object recognition, and hands-free navigation. These innovations are designed to improve productivity, accessibility, and convenience across various industries and daily life.
-</Typography>
+        {/* BACK BUTTON */}
+        <Link href="/blogs-insights" style={{ textDecoration: "none" }}>
+          <Button
+            sx={{
+              mt: 5,
+              bgcolor: "#000",
+              color: COLORS.PRIMARY_GREEN,
+              px: 3,
+              "&:hover": {
+                bgcolor: "#000",
+                color: COLORS.WHITE,
+              },
+            }}
+          >
+            ← Back to Blog
+          </Button>
+        </Link>
 
-<Typography sx={{color:COLORS.CARD_BG_DARK,fontSize:"16px",lineHeight:1.5,pt:1,pb: 2}}>
-  From professionals to everyday users, AI glasses provide seamless digital interaction without interrupting natural vision, offering a perfect balance between technology and human experience.
-</Typography>
-
-
-<Typography
-  sx={{
-    color: COLORS.BLACK,
-    fontSize: "28px",
-    fontWeight: 700,
-    pt: 3,
-  }}
->
-  Key Capabilities of AI Glasses
-</Typography>
-
-<Typography
-  sx={{
-    color: COLORS.CARD_BG_DARK,
-    fontSize: "16px",
-    lineHeight: 1.8,
-    pt: 1,
-  }}
->
-  AI-powered smart glasses come equipped with a wide range of intelligent features that enhance both personal and professional use:
-</Typography>
-
-<Box
-  component="ul"
-  sx={{
-    pl: 3,
-    pt: 1,
-    pb: 2,
-    color: COLORS.CARD_BG_DARK,
-    listStyleType: "disc",
-    "& li": {
-      marginBottom: "8px",
-    }
-  }}
->
-  <li style={{ fontSize:"18px" }}>Real-time voice assistant for hands-free control and communication</li>
-  <li style={{ fontSize:"18px" }}>Augmented reality overlays for navigation, directions, and notifications</li>
-  <li style={{ fontSize:"18px" }}>AI-based object and face recognition for enhanced awareness</li>
-  <li style={{ fontSize:"18px" }}>Instant translation and transcription for global communication</li>
-</Box>
-
-<Typography sx={{color:COLORS.BLACK,fontSize:"28px",lineHeight:1.5,fontWeight:700,pt:2}} >
-  Advanced Features & Innovation
-</Typography>
-
-<Typography sx={{color:COLORS.CARD_BG_DARK,fontSize:"16px",lineHeight:1.5,pt:1}}>
-  Built with cutting-edge artificial intelligence, modern smart glasses integrate powerful features such as real-time translation, object recognition, and hands-free navigation. These innovations are designed to improve productivity, accessibility, and convenience across various industries and daily life.
-</Typography>
-
-<Typography sx={{color:COLORS.CARD_BG_DARK,fontSize:"16px",lineHeight:1.5,pt:1,pb: 2}}>
-  From professionals to everyday users, AI glasses provide seamless digital interaction without interrupting natural vision, offering a perfect balance between technology and human experience.
-</Typography>
-
-<Typography
-  sx={{
-    color: COLORS.CARD_BG_DARK,
-    fontSize: "16px",
-    lineHeight: 1.8,
-    pb: 2,
-  }}
->
-  With continuous advancements in artificial intelligence, these glasses are becoming smarter, lighter, and more efficient—reshaping the future of wearable technology and redefining how we see and interact with the world.
-</Typography>
-
-   {/* Back */}
-       <Link href="/blogs-insights"  style={{ textDecoration: "none", color: "inherit" }}><Button sx={{ color: COLORS.WHITE, mb: 2, cursor: "pointer" ,bgcolor: COLORS.BLACK, "&:hover": {
-        
-        color: COLORS.PRIMARY_GREEN,          
-      }, }}>
-          ← Back to Blog
-        </Button></Link>
       </Box>
     </Box>
   )
