@@ -22,7 +22,7 @@ import { blogData } from "@/utils/Website-Data";
 
 export default function BlogCard() {
   return (
-    <Box >
+    
 
       <Box sx={{ pb: 10 ,pt: 10 ,px: { xs: 1, md: 15 } }}>
         <Container maxWidth="xl">
@@ -65,9 +65,6 @@ export default function BlogCard() {
                         fontSize: "14px",
                         lineHeight: 1.7,
                         mb: 3,
-                        display: "-webkit-box",
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: "vertical",
                         overflow: "hidden",
                       }}
                     >
@@ -133,9 +130,10 @@ export default function BlogCard() {
     }}
   />
 </Stack>
+
         </Container>
       </Box>
 
-    </Box>
+    
   );
 }
