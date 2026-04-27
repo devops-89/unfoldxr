@@ -8,8 +8,8 @@ import { useRouter } from "next/navigation";
 import ContainedButton from "@/components/widgets/ContainedButton";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 
-const NewsSection = () => {
-  const { newsSection: data } = aboutPage;
+const Section = () => {
+  const { Section: data } = aboutPage;
   const router = useRouter();
 
   const { openModal } = useDemoModal();
@@ -62,7 +62,7 @@ const NewsSection = () => {
               {data.description}
             </Typography>
             <ContainedButton
-              onClick={() => openModal("about_news")}
+              onClick={() => openModal("about_")}
               sx={{
                 px: { xs: 2.5, md: 4 },
                 py: 1.2,
@@ -79,4 +79,4 @@ const NewsSection = () => {
   );
 };
 
-export default NewsSection;
+export default Section;
