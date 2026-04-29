@@ -5,6 +5,7 @@ import { Box, Button, Grid, Typography, Stack, alpha } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
+import Image from "next/image";
 
 interface Props {
   data: UseCaseData["intervention"];
@@ -368,18 +369,23 @@ const InterventionSection2 = ({ data }: Props) => {
           }}
         >
           <Box
-            component="img"
-            src={data.image}
-            alt="Tablet Intervention"
             sx={{
+              position: "relative",
               width: "100%",
               maxWidth: 750,
-              height: "auto",
+              height: { xs: 250, md: 400, lg: 575 },
               display: "block",
               borderRadius: { xs: 4, md: "24px" },
               filter: `drop-shadow(0px 30px 60px rgba(0,0,0,0.2))`,
             }}
-          />
+          >
+            <Image
+              src={data.image}
+              alt="Tablet Intervention"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

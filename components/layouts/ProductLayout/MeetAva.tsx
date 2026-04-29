@@ -2,6 +2,7 @@ import { Box, Grid, Typography, Button } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import Image from "next/image";
 
 const MeetAva = () => {
   const data = homePage.productPage.meetAva;
@@ -105,18 +106,23 @@ const MeetAva = () => {
             }}
           >
             <Box
-              component="img"
-              src={data.img}
-              alt="AVA visual"
               sx={{
                 width: "100%",
                 maxWidth: { xs: "350px", md: "500px", lg: "650px" },
-                height: "auto",
-                display: "block",
-                animation: "float 6s ease-in-out infinite",
-                filter: "drop-shadow(0px 0px 80px rgba(160, 32, 240, 0.25))",
               }}
-            />
+            >
+              <Image
+                src={data.img}
+                alt="AVA visual"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  animation: "float 6s ease-in-out infinite",
+                  filter: "drop-shadow(0px 0px 80px rgba(160, 32, 240, 0.25))",
+                }}
+              />
+            </Box>
           </Grid>
         </Grid>
       </Box>

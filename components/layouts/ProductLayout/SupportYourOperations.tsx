@@ -7,6 +7,7 @@ import { COLORS } from "@/utils/enum";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import EastIcon from "@mui/icons-material/East";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import Image from "next/image";
 
 const SupportYourOperations = () => {
   const data = homePage.productPage.supportOperations;
@@ -94,16 +95,19 @@ const SupportYourOperations = () => {
           }}
         >
           <Box
-            component="img"
-            src={data.lifecycle.bg}
-            alt="Operations lifecycle"
             sx={{
               width: "100%",
               height: "100%",
               display: "block",
-              objectFit: "cover",
             }}
-          />
+          >
+            <Image
+              src={data.lifecycle.bg}
+              alt="Operations lifecycle"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </Box>
 
           {/* Overlay for better text visibility (optional but recommended for glassy effects) */}
           <Box

@@ -1,11 +1,24 @@
 import mobile from "@/public/images/usecase/mockup.jpeg";
+import { StaticImageData } from "next/image";
+import HeroSectionTraining from "@/images/usecase/HeroSection.png";
+import TabImageTraining from "@/images/usecase/TabImage.png";
+import TabImageInspection from "@/images/Product/TabImage.png";
+import TabImageRepair from "@/images/usecase/Repair/Repair.png";
+import TabImageField from "@/images/usecase/FieldInspection/field.png";
+import HeroSectionInspection from "@/images/usecase/Inspection/Hero-section.png";
+import HeroSectionRepair from "@/images/usecase/Maintenance/heroSectionv2.png";
+import HeroSectionFieldService from "@/images/usecase/FieldInspection/HeroSection.jpeg";
+import MockUp from "@/images/usecase/mockup.jpeg";
+import FromSimple from "@/images/usecase/FromSimple.png";
+import Scale from "@/images/usecase/scale3.png";
+
 
 export interface UseCaseData {
   hero: {
     title: string;
     subtitle: string;
     description: string;
-    image: string;
+    image: string | StaticImageData;
     overlayOpacity?: number;
   };
   knowledge: {
@@ -20,9 +33,9 @@ export interface UseCaseData {
     description2: string;
     description3?: string;
     description4?: string;
-    image?: string;
+    image: string | StaticImageData;
     layout?: "default" | "side-by-side";
-    cards?: { label: string; image: string; description?: string }[];
+    cards?: { label: string; image?: string | StaticImageData; description?: string }[];
   };
   capabilities: {
     title: string;
@@ -36,13 +49,13 @@ export interface UseCaseData {
   industry: {
     title: string;
     subtitle: string;
-    customIndustries?: { label: string; img: string | any }[];
+    customIndustries?: { label: string; img: string | StaticImageData }[];
   };
   deviceDeployment: {
     title: string;
-    deviceA: { image: string; title: string };
-    deviceB: { image: string; title: string };
-    deviceC: { image: string; title: string };
+    deviceA: { image: string | StaticImageData; title: string };
+    deviceB: { image: string | StaticImageData; title: string };
+    deviceC: { image: string | StaticImageData; title: string };
   };
   platformSummary: {
     title: string;
@@ -56,13 +69,13 @@ export interface UseCaseData {
 }
 
 export const useCasesData: Record<string, UseCaseData> = {
-  training: {
+  "training": {
     hero: {
       title: "TRAINING, ONBOARDING & \nKNOWLEDGE CAPTURE",
       subtitle: "The strongest teams learn in the flow of work.",
       description:
         "UnfoldXR brings AI and augmented reality–powered intelligence into learning and capability building and makes it available right at the moment of work.",
-      image: "/images/usecase/HeroSection.png",
+      image: HeroSectionTraining,
     },
     knowledge: {
       title: "WITH UNFOLDXR, TURN EXPERTISE INTO SCALABLE KNOWLEDGE",
@@ -84,19 +97,16 @@ export const useCasesData: Record<string, UseCaseData> = {
       //   "With three versions designed for different stages of operational maturity —",
       description4:
         "Start with structured digital guidance and grow into intelligent, AI-driven workforce enablement when you are ready.",
-      image: "/images/usecase/TabImage.png",
+      image: TabImageTraining,
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
-          image: "/images/usecase/Inspection/Intervention/Augment1.png",
         },
         {
           label: "UNFOLDXR EMPOWER",
-          image: "/images/usecase/Inspection/Intervention/Empower.png",
         },
         {
           label: "UNFOLDXR EDGE",
-          image: "/images/usecase/Inspection/Intervention/Edge.png",
         },
       ],
     },
@@ -231,15 +241,15 @@ export const useCasesData: Record<string, UseCaseData> = {
     deviceDeployment: {
       title: "Device & Deployment",
       deviceA: {
-        image: "/images/usecase/mockup.jpeg",
+        image: MockUp,
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
-        image: "/images/usecase/FromSimple.png",
+        image: FromSimple,
         title: "FROM SIMPLE HANDHELD DEVICES TO ADVANCED AR WEARABLES",
       },
       deviceC: {
-        image: "/images/usecase/scale3.png",
+        image: Scale,
         title: "SCALES WITH WORKFORCE SIZE, COMPLEXITY, AND BUDGET",
       },
     },
@@ -261,7 +271,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       subtitle: "The best incident is the one that never happened.",
       description:
         "UnfoldXR brings AI and augmented reality-powered intelligence directly into inspection and quality workflows. Stay audit-ready always.",
-      image: "/images/usecase/Inspection/Hero-section.png",
+      image: HeroSectionInspection,
     },
     knowledge: {
       title: "WITH UNFOLDXR, MAKE COMPLIANCE STRUCTURED AND AUDIT-READY",
@@ -286,21 +296,18 @@ export const useCasesData: Record<string, UseCaseData> = {
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
-          image: "/images/usecase/Inspection/Intervention/Augment1.png",
           description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
-          image: "/images/usecase/Inspection/Intervention/Empower.png",
           description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
-          image: "/images/usecase/Inspection/Intervention/Edge.png",
           description: "Define the modern workflow with AI-AR tech",
         },
       ],
-      image: "/images/Product/TabImage.png",
+      image: TabImageInspection,
     },
     capabilities: {
       title:
@@ -444,15 +451,15 @@ export const useCasesData: Record<string, UseCaseData> = {
     deviceDeployment: {
       title: "Device & Deployment",
       deviceA: {
-        image: "/images/usecase/mockup.jpeg",
+        image: MockUp,
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
-        image: "/images/usecase/FromSimple.png",
+        image: FromSimple,
         title: "FROM LIGHTWEIGHT INSPECTION DEVICES TO ADVANCED AR SYSTEMS",
       },
       deviceC: {
-        image: "/images/usecase/scale3.png",
+        image: Scale,
         title:
           "SCALES ACROSS FACILITIES, REGULATORY ENVIRONMENTS, AND OPERATIONAL COMPLEXITY",
       },
@@ -475,7 +482,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       subtitle: "The costliest downtime is the one you didn't prevent.",
       description:
         "UnfoldXR brings AI and augmented reality–powered intelligence directly into maintenance operations, reducing downtime and increasing profit.",
-      image: "/images/usecase/Maintenance/heroSectionv2.png",
+      image: HeroSectionRepair,
     },
     knowledge: {
       title:
@@ -500,21 +507,18 @@ export const useCasesData: Record<string, UseCaseData> = {
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
-          image: "/images/usecase/Inspection/Intervention/Augment1.png",
           description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
-          image: "/images/usecase/Inspection/Intervention/Empower.png",
           description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
-          image: "/images/usecase/Inspection/Intervention/Edge.png",
           description: "Define the modern workflow with AI-AR tech",
         },
       ],
-      image: "/images/usecase/Repair/Repair.png",
+      image: TabImageRepair,
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER REPAIR, MAINTENANCE AND ASSET MANAGEMENT",
@@ -650,15 +654,15 @@ export const useCasesData: Record<string, UseCaseData> = {
     deviceDeployment: {
       title: "DEVICE & DEPLOYMENT",
       deviceA: {
-        image: "/images/usecase/mockup.jpeg",
+        image: MockUp,
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
-        image: "/images/usecase/FromSimple.png",
+        image: FromSimple,
         title: "FROM SIMPLE WEARABLES TO HIGH-END DEVICES",
       },
       deviceC: {
-        image: "/images/usecase/scale3.png",
+        image: Scale,
         title: "SCALES WITH TASK COMPLEXITY AND BUDGET",
       },
     },
@@ -680,7 +684,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       subtitle: "The perfect human–AI collaboration in the field.",
       description:
         "UnfoldXR brings AI and augmented reality powered intelligence directly to field service operations anytime, anywhere.",
-      image: "/images/usecase/FieldInspection/HeroSection.jpeg",
+      image: HeroSectionFieldService,
       overlayOpacity: 0.7,
     },
     knowledge: {
@@ -706,21 +710,18 @@ export const useCasesData: Record<string, UseCaseData> = {
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
-          image: "/images/usecase/Inspection/Intervention/Augment1.png",
           description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
-          image: "/images/usecase/Inspection/Intervention/Empower.png",
           description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
-          image: "/images/usecase/Inspection/Intervention/Edge.png",
           description: "Define the modern workflow with AI-AR tech",
         },
       ],
-      image: "/images/usecase/FieldInspection/field.png",
+      image: TabImageField,
     },
     capabilities: {
       title: "CAPABILITIES THAT POWER TROUBLESHOOTING & FIELD SERVICE",
@@ -846,15 +847,15 @@ export const useCasesData: Record<string, UseCaseData> = {
     deviceDeployment: {
       title: "DEVICE & DEPLOYMENT",
       deviceA: {
-        image: "/images/usecase/mockup.jpeg",
+        image: MockUp,
         title: "MOBILE PHONES, TABLETS, AND SMART GLASSES",
       },
       deviceB: {
-        image: "/images/usecase/FromSimple.png",
+        image: FromSimple,
         title: "FROM LIGHTWEIGHT FIELD-READY DEVICES TO ADVANCED AR SYSTEMS",
       },
       deviceC: {
-        image: "/images/usecase/scale3.png",
+        image: Scale,
         title:
           "SCALES ACROSS REGIONS, TECHNICIAN VOLUMES, AND SERVICE COMPLEXITY",
       },

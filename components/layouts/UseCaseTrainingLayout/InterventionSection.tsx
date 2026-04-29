@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
+import Image from "next/image";
 
 interface Props {
   data: UseCaseData["intervention"];
@@ -130,15 +131,19 @@ const InterventionSection = ({ data }: Props) => {
                         }}
                       >
                         <Box
-                          component="img"
-                          src={card.image}
-                          alt={card.label}
-                          sx={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                          }}
-                        />
+                         sx={{
+                           position: "relative",
+                           width: "100%",
+                           height: "100%",
+                         }}
+                       >
+                         <Image
+                           src={card.image}
+                           alt={card.label}
+                           fill
+                           style={{ objectFit: "cover" }}
+                         />
+                       </Box>
                         {/* Dark Overlay */}
                         <Box
                           sx={{
@@ -219,11 +224,21 @@ const InterventionSection = ({ data }: Props) => {
               ) : (
                 <Box>
                   <Box
-                    component="img"
-                    src={data.image}
-                    alt={data.title}
-                    sx={{ width: "100%", height: "auto", borderRadius: "24px" }}
-                  />
+                 sx={{
+                   position: "relative",
+                   width: "100%",
+                   height: 400,
+                   borderRadius: "24px",
+                   overflow: "hidden",
+                 }}
+               >
+                 <Image
+                   src={data.image}
+                   alt={data.title}
+                   fill
+                   style={{ objectFit: "cover" }}
+                 />
+               </Box>
                 </Box>
               )}
             </Grid>
@@ -415,10 +430,8 @@ const InterventionSection = ({ data }: Props) => {
           }}
         >
           <Box
-            component="img"
-            src={data.image}
-            alt="Tablet Intervention"
             sx={{
+              position: "relative",
               width: "100%",
               maxWidth: 900,
               height: "auto",
@@ -426,7 +439,14 @@ const InterventionSection = ({ data }: Props) => {
               borderRadius: { xs: 4, md: "24px" },
               filter: `drop-shadow(0px 30px 60px ${COLORS.BLACK_ALPHA_30})`,
             }}
-          />
+          >
+            <Image
+              src={data.image}
+              alt="Tablet Intervention"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

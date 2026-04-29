@@ -4,6 +4,8 @@ import { Box, Button, Typography } from "@mui/material";
 import { din } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 import { useDemoModal } from "../context/DemoModalContext";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 interface ButtonConfig {
   label: string;
@@ -12,7 +14,7 @@ interface ButtonConfig {
 }
 
 interface PageHeroSectionProps {
-  image: string;
+  image: string | StaticImageData;
   titleOutlined?: string;
   title: string;
   subtitle?: string;
@@ -48,20 +50,24 @@ const PageHeroSection = ({
       }}
     >
       {/* Background Image */}
-      <Box
-        component="img"
-        src={image}
-        alt=""
-        sx={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: objectPosition,
-          zIndex: 0,
-        }}
-      />
+    <Box
+  sx={{
+    position: "absolute",
+    inset: 0,
+    zIndex: 0,
+  }}
+  >
+  <Image
+    src={image}
+    alt={title}
+    fill
+    style={{
+      objectFit: "cover",
+      objectPosition: objectPosition,
+    }}
+    priority
+  />
+  </Box>
 
       {/* Dark Overlay */}
       <Box

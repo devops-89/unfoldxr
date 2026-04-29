@@ -2,6 +2,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { meetAvaPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import Image from "next/image";
 
 const PlaceholderSection = () => {
   const { placeholderSection: data } = meetAvaPage;
@@ -45,17 +46,23 @@ const PlaceholderSection = () => {
           </Grid>
           <Grid size={{ xs: 12, md: 5 }} sx={{ textAlign: { xs: "center", md: "right" } }}>
             <Box
-              component="img"
-              src={data.image}
-              alt=""
               sx={{
                 maxWidth: "100%",
                 width: { xs: 280, md: 370 },
-                height: "auto",
-                transform: "rotate(9deg)",
                 mx: "auto",
               }}
-            />
+            >
+              <Image
+                src={data.image}
+                alt=""
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  transform: "rotate(9deg)",
+                }}
+              />
+            </Box>
           </Grid>
         </Grid>
       </Box>

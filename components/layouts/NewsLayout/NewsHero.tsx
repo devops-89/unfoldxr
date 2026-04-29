@@ -1,0 +1,72 @@
+import React from 'react'
+import { Box, Typography } from '@mui/material'
+import { COLORS } from '@/utils/enum'
+import { din } from '@/utils/fonts'
+
+interface NewsHeroProps {
+    image: string;
+    title: string;
+    titleMaxWidth?: number | string;
+    objectPosition?: any;
+}
+
+const NewsHero = ({image, title, titleMaxWidth, objectPosition="center"}: NewsHeroProps) => {
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: { xs: "100vh", md: "100vh" },
+        display: "flex",
+        alignItems: "center",
+        color: COLORS.WHITE,
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Image */}
+      <Box
+        component="img"
+        src={image}
+        alt=""
+        sx={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: objectPosition,
+          zIndex: 0,
+        }}
+      />
+       <Box
+              sx={{
+                position: "relative",
+                zIndex: 2,
+                width: { xs: "100%", md: "80%" },
+                boxSizing: "border-box",
+                mx: "auto",
+                pt: { xs: 12, md: 18 },
+                pb: { xs: 8, md: 12 },
+                pl: { xs: 0, md: 2 },
+                px: { xs: 3, md: 0 },
+              }}
+            >
+                 <Typography
+          sx={{
+            fontFamily: din.style.fontFamily,
+            fontWeight: 900,
+            textTransform: "uppercase",
+            fontSize: { xs: 26, md: 50, lg: 36 },
+            lineHeight: { xs: "35px", md: "42px" },
+            maxWidth: titleMaxWidth || 1050,
+            whiteSpace: "pre-line",
+            width: { xs: "100%", lg: "70%" },
+          }}
+        >
+          {title}
+        </Typography>
+        </Box>
+      </Box>
+  )
+}
+
+export default NewsHero

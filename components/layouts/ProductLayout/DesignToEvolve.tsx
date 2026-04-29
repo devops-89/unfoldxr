@@ -6,6 +6,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import VerticalStepper from "@/components/widgets/VerticalStepper";
+import Image from "next/image";
 
 const DesignToEvolve = () => {
   const data = homePage.productPage.designToEvolve;
@@ -227,11 +228,20 @@ const DesignToEvolve = () => {
           }}
         >
           <Box
-            component="img"
-            src={data.img}
-            alt="Platform preview"
-            sx={{ width: "100%", display: "block", objectFit: "cover" }}
-          />
+            sx={{
+              width: "100%",
+            }}
+          >
+            <Image
+              src={data.img}
+              alt="Platform preview"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+              }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

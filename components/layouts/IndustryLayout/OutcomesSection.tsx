@@ -2,6 +2,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { Box, Grid, Typography, Stack, Container } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
+import Image from "next/image";
 
 interface Props {
   data: IndustryData["outcomes"];
@@ -40,18 +41,25 @@ const OutcomesSection = ({ data }: Props) => {
           {/* Left Side: Image */}
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
-              component="img"
-              src={data.image}
-              alt="Industry Outcomes"
               sx={{
+                position: "relative",
                 width: "100%",
-                height: "auto",
+                height: { xs: 250, md: 400, lg: 443 },
                 borderRadius: "24px",
-                objectFit: "cover",
+                overflow: "hidden",
                 border: "8px solid #2A2A2A",
                 boxShadow: "0px 20px 40px rgba(0,0,0,0.5)",
               }}
-            />
+            >
+              <Image
+                src={data.image}
+                alt="Industry Outcomes"
+                fill
+                style={{
+                  objectFit: "fill",
+                }}
+              />
+            </Box>
           </Grid>
 
           {/* Right Side: Stats */}
