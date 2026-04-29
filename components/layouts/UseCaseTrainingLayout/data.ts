@@ -12,6 +12,9 @@ import HeroSectionFieldService from "@/images/usecase/FieldInspection/HeroSectio
 import MockUp from "@/images/usecase/mockup.jpeg";
 import FromSimple from "@/images/usecase/FromSimple.png";
 import Scale from "@/images/usecase/scale3.png";
+import Augument1 from "@/images/usecase/Inspection/Intervention/Augment1.png";
+import Edge from "@/images/usecase/Inspection/Intervention/Edge.png";
+import Empower from "@/images/usecase/Inspection/Intervention/Empower.png";
 
 
 export interface UseCaseData {
@@ -36,7 +39,7 @@ export interface UseCaseData {
     description4?: string;
     image: string | StaticImageData | StaticImport;
     layout?: "default" | "side-by-side";
-    cards?: { label: string; image?: string | StaticImageData; description?: string }[];
+    cards?: { label: string; image: string | StaticImageData | StaticImport; description?: string }[];
   };
   capabilities: {
     title: string;
@@ -102,12 +105,15 @@ export const useCasesData: Record<string, UseCaseData> = {
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
+          image: Augument1,
         },
         {
           label: "UNFOLDXR EMPOWER",
+          image: Empower,
         },
         {
           label: "UNFOLDXR EDGE",
+          image: Edge,
         },
       ],
     },
@@ -297,14 +303,17 @@ export const useCasesData: Record<string, UseCaseData> = {
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
+          image: Augument1,
           description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
+          image: Empower,
           description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
+          image: Edge,
           description: "Define the modern workflow with AI-AR tech",
         },
       ],
@@ -508,14 +517,17 @@ export const useCasesData: Record<string, UseCaseData> = {
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
+          image: Augument1,
           description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
+          image: Empower,
           description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
+          image: Edge,
           description: "Define the modern workflow with AI-AR tech",
         },
       ],
@@ -711,14 +723,17 @@ export const useCasesData: Record<string, UseCaseData> = {
       cards: [
         {
           label: "UNFOLDXR AUGMENT",
+          image: Augument1,
           description: "Enhance productivity for frontline work",
         },
         {
           label: "UNFOLDXR EMPOWER",
+          image: Empower,
           description: "Enhance intelligent decision-making and scale",
         },
         {
           label: "UNFOLDXR EDGE",
+          image: Edge,
           description: "Define the modern workflow with AI-AR tech",
         },
       ],
