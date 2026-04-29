@@ -1,8 +1,9 @@
-
+import { StaticImageData } from "next/image";
+import NewsHero from "@/images/news-img/news2.jpg";
 
 export interface NewsData {
   hero: {
-    image: string;
+    image: string | StaticImageData;
     title: string;
   };
   newsSection: {
@@ -19,7 +20,7 @@ export type NewsItem = {
   id: number;
   title: string;
   summary: string;
-  image: string;
+  image: string | StaticImageData;
   date: string;
   author?: string;
   readTime?: string;
@@ -27,7 +28,7 @@ export type NewsItem = {
 
 export const newsData: NewsData = {
   hero: {
-    image: "/images/news-img/news2.jpg",
+    image: NewsHero,
     title: "Latest News",
   },
   newsSection: {

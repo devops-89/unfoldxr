@@ -1,5 +1,6 @@
 import mobile from "@/public/images/usecase/mockup.jpeg";
 import { StaticImageData } from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import HeroSectionTraining from "@/images/usecase/HeroSection.png";
 import TabImageTraining from "@/images/usecase/TabImage.png";
 import TabImageInspection from "@/images/Product/TabImage.png";
@@ -33,7 +34,7 @@ export interface UseCaseData {
     description2: string;
     description3?: string;
     description4?: string;
-    image: string | StaticImageData;
+    image: string | StaticImageData | StaticImport;
     layout?: "default" | "side-by-side";
     cards?: { label: string; image?: string | StaticImageData; description?: string }[];
   };

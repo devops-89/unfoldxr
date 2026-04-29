@@ -2,9 +2,11 @@ import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/enum'
 import { din } from '@/utils/fonts'
+import { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 interface NewsHeroProps {
-    image: string;
+    image: string | StaticImageData;
     title: string;
     titleMaxWidth?: number | string;
     objectPosition?: any;
@@ -24,19 +26,23 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center"}: NewsHe
     >
       {/* Background Image */}
       <Box
-        component="img"
-        src={image}
-        alt=""
         sx={{
           position: "absolute",
           inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: objectPosition,
           zIndex: 0,
         }}
-      />
+      >
+        <Image
+          src={image}
+          alt=""
+          fill
+          priority
+          style={{
+            objectFit: "cover",
+            objectPosition: objectPosition,
+          }}
+        />
+      </Box>
        <Box
               sx={{
                 position: "relative",
