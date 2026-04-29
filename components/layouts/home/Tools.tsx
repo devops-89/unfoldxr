@@ -15,6 +15,7 @@ import { homePage } from "@/utils/Website-Data";
 import ToolsLeftSection from "./components/tools/ToolsLeftSection";
 import ToolsRightSection from "./components/tools/ToolsRightSection";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import SplitText from "@/components/widgets/animations/SplitText";
 
 const Tools = () => {
   const { openModal } = useDemoModal();
@@ -47,7 +48,18 @@ const Tools = () => {
           {/* TOP SECTION */}
           <Box sx={{ mb: { xs: 4, md: 6 } }}>
             {/* Top Line of Heading */}
-            <Typography
+            <SplitText
+              text="THE WORK OF MANY TOOLS."
+              tag="h2"
+              splitType="words"
+              delay={40}
+              duration={1.2}
+              ease="power3.out"
+              from={{ opacity: 0, y: 30 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign={{ xs: "center", md: "left" } as any}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontSize: { xs: 28, md: 36 },
@@ -55,12 +67,9 @@ const Tools = () => {
                 textTransform: "uppercase",
                 lineHeight: { xs: "35px", md: "48px" },
                 color: COLORS.BLACK,
-                textAlign: { xs: "center", md: "left" },
                 display: "block",
               }}
-            >
-              THE WORK OF MANY TOOLS.
-            </Typography>
+            />
 
             {/* Bottom Line of Heading + Stretching Divider + Subheading */}
             <Stack
@@ -69,7 +78,18 @@ const Tools = () => {
               spacing={{ xs: 2, md: 3 }}
               sx={{ width: "100%", mt: { xs: 1, md: 0 } }}
             >
-              <Typography
+              <SplitText
+                text="ONE PLATFORM"
+                tag="p"
+                splitType="words"
+                delay={40}
+                duration={1.2}
+                ease="power3.out"
+                from={{ opacity: 0, y: 30 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-50px"
+                textAlign={{ xs: "center", md: "left" } as any}
                 sx={{
                   fontFamily: din.style.fontFamily,
                   fontSize: { xs: 28, md: 36 },
@@ -77,12 +97,9 @@ const Tools = () => {
                   textTransform: "uppercase",
                   lineHeight: { xs: "35px", md: "52px" },
                   color: COLORS.BLACK,
-                  textAlign: { xs: "center", md: "left" },
                   whiteSpace: { xs: "normal", md: "nowrap" },
                 }}
-              >
-                ONE PLATFORM
-              </Typography>
+              />
 
               {/* Stretching Divider - only visible horizontally on desktop */}
               <Box
@@ -96,7 +113,18 @@ const Tools = () => {
                 }}
               />
 
-              <Typography
+              <SplitText
+                text={"Augmenting \nhuman productivity."}
+                tag="p"
+                splitType="lines"
+                delay={100}
+                duration={1}
+                ease="power3.out"
+                from={{ opacity: 0, y: 20 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-50px"
+                textAlign={{ xs: "center", md: "right" } as any}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontWeight: 700,
@@ -104,14 +132,11 @@ const Tools = () => {
                   lineHeight: { xs: "28px", md: "28px" },
                   letterSpacing: "0.52px",
                   color: COLORS.BLACK,
-                  textAlign: { xs: "center", md: "right" },
                   whiteSpace: "pre-line",
                   minWidth: { xs: "unset", md: "max-content" },
                   pb: { xs: 0, md: "8px" },
                 }}
-              >
-                Augmenting {"\n"}human productivity.
-              </Typography>
+              />
             </Stack>
           </Box>
 

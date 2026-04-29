@@ -3,6 +3,7 @@ import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import DevicesCard from "./components/Devices-Card";
+import SplitText from "@/components/widgets/animations/SplitText";
 
 const DevicesSection = () => {
   return (
@@ -22,19 +23,27 @@ const DevicesSection = () => {
         }}
       >
         <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
-          <Typography
+          <SplitText
+            text={homePage.devicesSection.heading}
+            tag="h2"
+            splitType="words"
+            delay={40}
+            duration={1.2}
+            ease="power3.out"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign={{ xs: "center", md: "left" } as any}
             sx={{
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 30, md: 36 },
               fontWeight: 900,
               textTransform: "uppercase",
-              textAlign: { xs: "center", md: "left" },
               mb: { xs: 3, md: 5 },
               lineHeight: { xs: "35px", md: "52px" },
             }}
-          >
-            {homePage.devicesSection.heading}
-          </Typography>
+          />
 
           {/* 2x2 Grid */}
           <Grid container spacing={{ xs: 2, md: 2 }}>

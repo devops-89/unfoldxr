@@ -3,6 +3,7 @@ import { din } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import StylizedDivider from "@/components/widgets/StylizedDivider";
+import Image from "next/image";
 
 interface Props {
   data: UseCaseData["deviceDeployment"];
@@ -44,16 +45,21 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               }}
             >
               <Box
-                component="img"
-                src={data.deviceA.image}
-                alt={data.deviceA.title}
                 sx={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center",
                 }}
-              />
+              >
+                <Image
+                  src={data.deviceA.image}
+                  alt={data.deviceA.title}
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                />
+              </Box>
               <Box
                 sx={{
                   position: "absolute",
@@ -97,16 +103,21 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               }}
             >
               <Box
-                component="img"
-                src={data.deviceB.image}
-                alt={data.deviceB.title}
                 sx={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "contain",
-                  objectPosition: "right",
                 }}
-              />
+              >
+                <Image
+                  src={data.deviceB.image}
+                  alt={data.deviceB.title}
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "right",
+                  }}
+                />
+              </Box>
               <Box
                 sx={{
                   position: "absolute",
@@ -152,16 +163,21 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               }}
             >
               <Box
-                component="img"
-                src={data.deviceC.image}
-                alt={data.deviceC.title}
                 sx={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "100% center",
                 }}
-              />
+              >
+                <Image
+                  src={data.deviceC.image}
+                  alt={data.deviceC.title}
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "100% center",
+                  }}
+                />
+              </Box>
               {/* <Box
                 sx={{
                   position: "absolute",

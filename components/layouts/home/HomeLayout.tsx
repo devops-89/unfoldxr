@@ -1,3 +1,4 @@
+"use client";
 import { Box } from "@mui/material";
 import HeroSection from "./HeroSection";
 import WorkForce from "./WorkForce";
@@ -11,34 +12,51 @@ import DevicesSection from "./Devices-Section";
 import Tools from "./Tools";
 import AboutUnfoldxr from "./About-Unfoldxr";
 import ManyTools from "./Many-tools";
+import AnimateOnScroll from "@/components/widgets/AnimateOnScroll";
 
 const HomeLayout = () => {
   return (
     <Box>
       <HeroSection />
 
-      <Box
-        sx={{
-          backgroundColor: COLORS.BLACK,
-          py: { xs: 8, md: 10 },
-        }}
-      >
-        <WorkForce />
-      </Box>
+      <AnimateOnScroll direction="up">
+        <Box
+          sx={{
+            backgroundColor: COLORS.BLACK,
+            py: { xs: 8, md: 10 },
+          }}
+        >
+          <WorkForce />
+        </Box>
+      </AnimateOnScroll>
 
-      <AiIndustry />
+      <AnimateOnScroll direction="up" delay={0.1}>
+        <AiIndustry />
+      </AnimateOnScroll>
 
-      <FutureWork />
+      <AnimateOnScroll direction="up" delay={0.1}>
+        <FutureWork />
+      </AnimateOnScroll>
 
-      <Metrics />
+      <AnimateOnScroll direction="up" delay={0.1}>
+        <Metrics />
+      </AnimateOnScroll>
 
-      <Meetava />
+      <AnimateOnScroll direction="up" delay={0.1}>
+        <Meetava />
+      </AnimateOnScroll>
 
-      <Outcome />
+      <AnimateOnScroll direction="up" delay={0.1}>
+        <Outcome />
+      </AnimateOnScroll>
 
-      <DevicesSection />
+      <AnimateOnScroll direction="up" delay={0.1}>
+        <DevicesSection />
+      </AnimateOnScroll>
 
-      <Tools />
+      <AnimateOnScroll direction="up" delay={0.1}>
+        <Tools />
+      </AnimateOnScroll>
       {/* <ManyTools /> */}
     </Box>
   );

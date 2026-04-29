@@ -8,6 +8,7 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import FutureWorkCard from "./components/Future-Work-Card";
 import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
+import SplitText from "@/components/widgets/animations/SplitText";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 import Link from "next/link";
 
@@ -56,7 +57,18 @@ const FutureWork = () => {
         <Grid container spacing={{ xs: 4, md: 10 }} sx={{ p: 0, m: 0 }}>
           {/* LEFT SECTION */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Typography
+            <SplitText
+              text={homePage.future_work.leftSection.heading}
+              tag="h2"
+              splitType="words"
+              delay={40}
+              duration={1.2}
+              ease="power3.out"
+              from={{ opacity: 0, y: 30 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign="left"
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontSize: { xs: 20, md: 36 },
@@ -65,11 +77,20 @@ const FutureWork = () => {
                 color: COLORS.WHITE,
                 lineHeight: { xs: "35px", md: "52px" },
               }}
-            >
-              {homePage.future_work.leftSection.heading}
-            </Typography>
+            />
 
-            <Typography
+            <SplitText
+              text={homePage.future_work.leftSection.description}
+              tag="p"
+              splitType="lines"
+              delay={100}
+              duration={1}
+              ease="power3.out"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign="left"
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 12, md: 18 },
@@ -79,11 +100,20 @@ const FutureWork = () => {
                 letterSpacing: "0.52px",
                 my: 2,
               }}
-            >
-              {homePage.future_work.leftSection.description}
-            </Typography>
+            />
 
-            <Typography
+            <SplitText
+              text={homePage.future_work.leftSection.subDescription}
+              tag="p"
+              splitType="lines"
+              delay={100}
+              duration={1}
+              ease="power3.out"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign="left"
               sx={{
                 fontSize: { xs: 12, md: 18 },
                 fontWeight: 700,
@@ -92,11 +122,20 @@ const FutureWork = () => {
                 lineHeight: { xs: "24px", md: "30px" },
                 letterSpacing: "0.52px",
               }}
-            >
-              {homePage.future_work.leftSection.subDescription}
-            </Typography>
+            />
 
-            <Typography
+            <SplitText
+              text={homePage.future_work.leftSection.endHeading}
+              tag="h3"
+              splitType="words"
+              delay={40}
+              duration={1.2}
+              ease="power3.out"
+              from={{ opacity: 0, y: 30 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign="left"
               sx={{
                 fontSize: { xs: 28, md: 36 },
                 fontWeight: 900,
@@ -106,9 +145,7 @@ const FutureWork = () => {
                 fontFamily: din.style.fontFamily,
                 mt: 4,
               }}
-            >
-              {homePage.future_work.leftSection.endHeading}
-            </Typography>
+            />
             <Link href="/Product">
               <ContainedButton
                 sx={{

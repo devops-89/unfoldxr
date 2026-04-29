@@ -4,6 +4,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 import { MASTER_INDUSTRIES } from "@/utils/constant";
 import React from "react";
+import SplitText from "@/components/widgets/animations/SplitText";
 
 interface IndustrySectionProps {
   title: string;
@@ -28,9 +29,19 @@ const IndustrySection = ({
     <Box sx={{ backgroundColor: bgColor, py: { xs: 8, md: 10 } }}>
       <Container maxWidth="lg">
         {/* Title */}
-        <Typography
+        <SplitText
+          text={title}
+          tag="h2"
+          splitType="words"
+          delay={40}
+          duration={1.2}
+          ease="power3.out"
+          from={{ opacity: 0, y: 30 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-50px"
+          textAlign="center"
           sx={{
-            textAlign: "center",
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
@@ -39,14 +50,22 @@ const IndustrySection = ({
             color: textColor,
             mb: 2,
           }}
-        >
-          {title}
-        </Typography>
+        />
 
         {/* Description */}
-        <Typography
+        <SplitText
+          text={description}
+          tag="p"
+          splitType="lines"
+          delay={100}
+          duration={1}
+          ease="power3.out"
+          from={{ opacity: 0, y: 20 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-50px"
+          textAlign="center"
           sx={{
-            textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 18 },
             lineHeight: { xs: "28px", md: "30px" },
@@ -55,9 +74,7 @@ const IndustrySection = ({
             mx: "auto",
             mb: { xs: 4, md: 6 },
           }}
-        >
-          {description}
-        </Typography>
+        />
 
         {/* Industry Pills Container */}
         <Box

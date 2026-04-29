@@ -5,6 +5,7 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import OutcomeCard from "./components/Outcome-Card";
 import ContainedButton from "@/components/widgets/ContainedButton";
+import SplitText from "@/components/widgets/animations/SplitText";
 
 const Outcome = () => {
   return (
@@ -26,9 +27,19 @@ const Outcome = () => {
       >
         <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
           {/* Heading */}
-          <Typography
+          <SplitText
+            text={homePage.outcome.heading}
+            tag="h2"
+            splitType="words"
+            delay={40}
+            duration={1.2}
+            ease="power3.out"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign="left"
             sx={{
-              textAlign: "left",
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 28, md: 36 },
               color: COLORS.WHITE,
@@ -36,32 +47,45 @@ const Outcome = () => {
               textTransform: "uppercase",
               lineHeight: { xs: "38px", md: "52px" },
             }}
-          >
-            {homePage.outcome.heading}
-          </Typography>
+          />
 
           {/* Subheading */}
-          <Typography
-            sx={{
-              fontFamily: helvetica.style.fontFamily,
-              fontSize: { xs: 14, md: 18 },
-              color: COLORS.WHITE,
-              fontWeight: 400,
-              lineHeight: { xs: "22px", md: "30px" },
-              letterSpacing: "0.52px",
-              mt: 1,
-              mb: 2,
-              opacity: 0.8,
-            }}
-          >
-            {homePage.outcome.subHeading}
-          </Typography>
+          <Box>
+            <SplitText
+              text={homePage.outcome.subHeading}
+              tag="p"
+              splitType="lines"
+              delay={100}
+              duration={1}
+              ease="power3.out"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign="left"
+              sx={{
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: { xs: 14, md: 18 },
+                color: COLORS.WHITE,
+                fontWeight: 400,
+                lineHeight: { xs: "22px", md: "30px" },
+                letterSpacing: "0.52px",
+                mt: 1,
+                mb: 2,
+                opacity: 0.8,
+              }}
+            />
+          </Box>
 
           {/* 2x2 Cards Grid */}
           <Grid container spacing={{ xs: 2, md: 3 }}>
             {homePage.outcome.data.map((val, i) => (
               <Grid size={{ xs: 12, md: 6 }} key={i}>
-                <OutcomeCard number={val.number} label={val.description} link={(val as any).link} />
+                <OutcomeCard
+                  number={val.number}
+                  label={val.description}
+                  link={(val as any).link}
+                />
               </Grid>
             ))}
           </Grid>

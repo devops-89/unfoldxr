@@ -2,6 +2,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { meetAvaPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import Image from "next/image";
 
 const MeetAvaIntroSection = () => {
   const { introSection: data } = meetAvaPage;
@@ -56,17 +57,22 @@ const MeetAvaIntroSection = () => {
           </Grid>
           <Grid size={{ xs: 12, md: 5 }} sx={{ order: { xs: 2, md: 1 } }}>
             <Box
-              component="img"
-              src={data.image}
-              alt="Meet AVA"
               sx={{
                 width: "100%",
-                height: "auto",
-                objectFit: "cover",
                 borderRadius: { xs: 3, md: "45px" },
-                display: "block",
+                overflow: "hidden",
               }}
-            />
+            >
+              <Image
+                src={data.image}
+                alt="Meet AVA"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                }}
+              />
+            </Box>
           </Grid>
         </Grid>
       </Box>

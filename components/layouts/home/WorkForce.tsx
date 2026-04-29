@@ -4,6 +4,7 @@ import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import WorkforceCard from "./components/WorkForce-Card";
+import SplitText from "@/components/widgets/animations/SplitText";
 
 const WorkForce = () => {
   return (
@@ -25,7 +26,18 @@ const WorkForce = () => {
         >
           <Box sx={{ width: "100%" }}>
             {/* Heading */}
-            <Typography
+            <SplitText
+              text={homePage.workforce.heading}
+              tag="h2"
+              splitType="words"
+              delay={40}
+              duration={1.2}
+              ease="power3.out"
+              from={{ opacity: 0, y: 30 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign={{ xs: "center", md: "left" } as any}
               sx={{
                 color: "#000",
                 fontFamily: din.style.fontFamily,
@@ -34,15 +46,23 @@ const WorkForce = () => {
                 fontWeight: 900,
                 lineHeight: { xs: "35px", md: "52px" },
                 textTransform: "uppercase",
-                textAlign: { xs: "center", md: "left" },
                 wordBreak: "break-word",
               }}
-            >
-              {homePage.workforce.heading}
-            </Typography>
+            />
 
             {/* Description */}
-            <Typography
+            <SplitText
+              text={homePage.workforce.description}
+              tag="p"
+              splitType="lines"
+              delay={100}
+              duration={1}
+              ease="power3.out"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign={{ xs: "center", md: "left" } as any}
               sx={{
                 color: "#000",
                 fontFamily: helvetica.style.fontFamily,
@@ -52,11 +72,8 @@ const WorkForce = () => {
                 lineHeight: { xs: 1.4, md: "30px" },
                 letterSpacing: "0.52px",
                 mt: { xs: 2, md: 2 },
-                textAlign: { xs: "center", md: "left" },
               }}
-            >
-              {homePage.workforce.description}
-            </Typography>
+            />
 
             {/* Cards */}
             <Grid container sx={{ mt: { xs: 4, md: 10 } }} spacing={4}>

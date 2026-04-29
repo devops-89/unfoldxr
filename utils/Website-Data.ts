@@ -28,6 +28,11 @@ import automotiveOutcomes from "@/images/Industries/Driving.jpeg";
 import automotiveIcon from "@/images/Industries/Icon.svg";
 import { INDUSTRY_PAGE_PROPS } from "./types";
 import enterPriseready from "@/images/Product/Enterprise2.png";
+import PlatformHero from "@/images/Product/Hero-section2.png";
+import SupportYourOperations from "@/images/Product/SupportYourOperations.png";
+import DesignToEvolveTabImage from "@/images/Product/TabImage.png";
+import MeetAva from "@/images/Product/MeetAva.png";
+
 export const homePage = {
   herosection: {
     heading1: "Augmenting",
@@ -152,7 +157,7 @@ export const homePage = {
   productPage: {
     supportOperations: {
       hero: {
-        bg: "/images/Product/Hero-section2.png",
+        bg: PlatformHero,
         title: "The only AI-powered augmented reality platform you need",
         subtitle:
           "To train, guide, support & scale frontline workforce, remote teams and skilled technicians",
@@ -168,7 +173,7 @@ export const homePage = {
           "During execution.",
           "After completion.",
         ],
-        bg: "/images/Product/SupportYourOperations.png",
+        bg: SupportYourOperations,
         cta: "View case study",
       },
     },
@@ -176,7 +181,7 @@ export const homePage = {
       title: "Designed to evolve with your operations",
       description:
         "Start with what you need today and expand as your operations grow. UnfoldXR let's organizations scale capabilities without paying for unnecessary complexity.",
-      img: "/images/Product/TabImage.png",
+      img: DesignToEvolveTabImage,
       variants: [
         {
           title: "UnfoldXR Augment",
@@ -211,7 +216,7 @@ export const homePage = {
       title: "Meet AVA Your \n'AI Virtual Assistant' \nFor Everything Work.",
       description:
         "AVA supports your workforce across all three versions of the platform. It works alongside your teams as an intelligent assistant, a sharp analyser, and a reliable task partner. The perfect work buddy.",
-      img: "/images/Product/MeetAva.png",
+      img: MeetAva,
       cta: "Visit AVA",
       ctaLink: "/meet-ava",
     },
@@ -518,7 +523,7 @@ export const meetAvaPage = {
     heading: "BUILT WITH HEART. \nPOWERED BY AI.",
     subHeading:
       "AVA stands for AI Virtual Assistant. But the story behind the name runs deeper.",
-    image: heroRing.src,
+    image: heroRing,
   },
   introSection: {
     heading: "Meet AVA,",
@@ -527,7 +532,7 @@ export const meetAvaPage = {
       "AVA is not just an assistant. It is an agentic AI, designed to understand context, make decisions, and move work forward. Built into UnfoldXR, AVA stands beside frontline teams when work feels complex or uncertain. It diagnoses intelligently, guides thoughtfully, and adapts in real time.",
       "Rooted in curiosity, care, and creativity, AVA has one purpose: not to replace human capability, but to strengthen It, helping every worker perform with clarity, confidence, and growth.",
     ],
-    image: introImage.src,
+    image: introImage,
   },
   supportSection: {
     heading: "How AVA Supports at Every Step",
@@ -585,7 +590,7 @@ export const meetAvaPage = {
     heading: "BEYOND ASSISTANCE. INTO ACTION.",
     description:
       "Traditional systems are reactive and input-driven.\nAVA operates as an agentic AI layer with goal-oriented execution while orchestrating workflows. It maintains task continuity with minimal manual intervention, bringing speed and accuracy across the system.",
-    image: phonePlaceholder.src,
+    image: phonePlaceholder,
   },
   evolvesCtaSection: {
     heading: "Evolves with your business needs.",
@@ -701,3 +706,5 @@ export const industriesPage: { automotive: INDUSTRY_PAGE_PROPS } = {
     },
   },
 };
+
+

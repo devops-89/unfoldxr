@@ -1,8 +1,25 @@
+import { StaticImageData } from "next/image";
+import HeroAutomotive from "@/images/Industries/hero.png";
+import HeroOilGas from "@/images/Industries/OilGas/HeroSection.png";
+import HeroManufacturing from "@/images/Industries/Manufacturing/heroSection.jpg";
+import HeroRetail from "@/images/Industries/Retail/HeroSection2.png";
+import HeroMarine from "@/images/Industries/Marine/HeroSection.png";
+import HeroInsurance from "@/images/Industries/Insurance/insurance-industry2.png";
+import HeroAviation from "@/images/Industries/Aviation/HeroSection.png";
+import HeroHealthcare from "@/images/Industries/Healthcare/HeroSection2.png";
+import DrivingAutomotive from "@/images/Industries/Driving.jpeg";
+import OilandGas from "@/images/Industries/OilGas/oil&gas.jpeg";
+import ManufacturingOutcomes from "@/images/Industries/Manufacturing/5.jpeg";
+import RetailOutcomes from "@/images/Industries/Retail/retail.jpg";
+import InsuranceOutcomes from "@/images/Industries/Insurance/insurance.jpeg";
+import AviationOutcomes from "@/images/Industries/Aviation/6.jpg";
+import HealthcareOutcomes from "@/images/Industries/Healthcare/healthcare.jpeg";
+
 export interface IndustryData {
   hero: {
     title: string;
     description: string;
-    image: string;
+    image: string | StaticImageData;
     overlayOpacity?: number;
   };
   realityNeeds: {
@@ -25,7 +42,7 @@ export interface IndustryData {
   };
   outcomes: {
     titleLines: string[];
-    image: string;
+    image: string | StaticImageData;
     metrics: { value: string; text: string }[];
   };
   finalCta: {
@@ -43,7 +60,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Built for Automotive \nOperations Where Precision \nIs Non-Negotiable",
       description:
         "UnfoldXR is an AI-powered augmented reality platform for automotive manufacturing and service that combines real-time intelligence, guided execution, and scalable expertise for complex, high-precision operations.",
-      image: "/images/Industries/hero.png",
+      image: HeroAutomotive,
     },
     realityNeeds: {
       title:
@@ -114,7 +131,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Automotive",
         "Operations",
       ],
-      image: "/images/Industries/Driving.jpeg",
+      image: DrivingAutomotive,
       metrics: [
         {
           value: "25%",
@@ -156,7 +173,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Built for Oil & Gas Industry \nWhere Downtime and \nNon-Compliance Are Not an Option",
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to maintenance, inspection, and turnaround operations across refineries and processing plants.",
-      image: "/images/Industries/OilGas/HeroSection.png",
+      image: HeroOilGas,
       overlayOpacity: 0.8,
     },
     realityNeeds: {
@@ -228,7 +245,7 @@ export const industriesData: Record<string, IndustryData> = {
         "In Refinery",
         "Operations",
       ],
-      image: "/images/Industries/OilGas/oil&gas.jpeg",
+      image: OilandGas,
       metrics: [
         {
           value: "15%",
@@ -269,7 +286,7 @@ export const industriesData: Record<string, IndustryData> = {
       title: "Built for Manufacturing Floors \nThat Can’t Afford Mistakes",
       description:
         "UnfoldXR is an AI-powered augmented reality platform for manufacturing that combines real-time intelligence, guided execution, and scalable expertise for high-precision, safety-critical operations.",
-      image: "/images/Industries/Manufacturing/heroSection.jpg",
+      image: HeroManufacturing,
       overlayOpacity: 0.8,
     },
     realityNeeds: {
@@ -334,7 +351,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In", "Manufacturing"],
-      image: "/images/Industries/Manufacturing/5.jpeg",
+      image: ManufacturingOutcomes,
       metrics: [
         {
           value: "15%",
@@ -376,7 +393,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Built for Retail & Logistics Operations Where Consistency Drives Performance",
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time knowledge, and operational intelligence to warehouse, logistics, and store teams — across locations, shifts, and supply chains.",
-      image: "/images/Industries/Retail/HeroSection2.png",
+      image: HeroRetail,
       overlayOpacity: 0.8,
     },
     realityNeeds: {
@@ -448,7 +465,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Across Retail & Logistics",
         "Operations",
       ],
-      image: "/images/Industries/Retail/retail.jpg",
+      image: RetailOutcomes,
       metrics: [
         {
           value: "15%",
@@ -490,7 +507,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Built for Marine Operations \nWhere Downtime at Sea \nIs Not an Option",
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to vessel maintenance, inspections, and offshore operations across sea, port, and shore.",
-      image: "/images/Industries/Marine/HeroSection.png",
+      image: HeroMarine,
       overlayOpacity: 0.8,
     },
     realityNeeds: {
@@ -558,7 +575,7 @@ export const industriesData: Record<string, IndustryData> = {
     },
     outcomes: {
       titleLines: ["Driving Measurable", "Outcomes", "In Marine", "Operations"],
-      image: "/images/Industries/Driving.jpeg",
+      image: DrivingAutomotive,
       metrics: [
         {
           value: "20%",
@@ -600,7 +617,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Built for Insurance Operations Where Accuracy and \nCompliance Matter",
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided inspections, real-time intelligence, and structured documentation to insurance assessments, compliance checks, and risk evaluations.",
-      image: "/images/Industries/Insurance/insurance-industry2.png",
+      image: HeroInsurance,
       overlayOpacity: 0.8,
     },
     realityNeeds: {
@@ -670,7 +687,7 @@ export const industriesData: Record<string, IndustryData> = {
         "In Insurance",
         "Operations",
       ],
-      image: "/images/Industries/Insurance/insurance.jpeg",
+      image: InsuranceOutcomes,
       metrics: [
         {
           value: "40%",
@@ -712,7 +729,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Built for Aviation Operations \nWhere Precision and \nSafety Are Critical",
       description:
         "UnfoldXR is an AI-powered augmented reality platform for aviation that brings real-time guidance, expert collaboration, and operational intelligence to aircraft maintenance, inspection, and ground operations.",
-      image: "/images/Industries/Aviation/HeroSection.png",
+      image: HeroAviation,
       overlayOpacity: 0.8,
     },
     realityNeeds: {
@@ -783,7 +800,7 @@ export const industriesData: Record<string, IndustryData> = {
         "In Aviation",
         "Operations",
       ],
-      image: "/images/Industries/Aviation/6.jpg",
+      image: AviationOutcomes,
       metrics: [
         {
           value: "25%",
@@ -825,7 +842,7 @@ export const industriesData: Record<string, IndustryData> = {
         "Built for Healthcare Operations \nWhere Precision and \nSpeed Save Lives",
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to modern healthcare operations.",
-      image: "/images/Industries/Healthcare/HeroSection2.png",
+      image: HeroHealthcare,
       overlayOpacity: 0.8,
     },
     realityNeeds: {
@@ -896,7 +913,7 @@ export const industriesData: Record<string, IndustryData> = {
         "In Healthcare",
         "Operations",
       ],
-      image: "/images/Industries/Healthcare/healthcare.jpeg",
+      image: HealthcareOutcomes,
       metrics: [
         {
           value: "20%",

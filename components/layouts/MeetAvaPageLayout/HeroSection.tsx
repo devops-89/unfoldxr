@@ -5,6 +5,7 @@ import { meetAvaPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import Image from "next/image";
 
 const HeroSection = () => {
   const { heroSection: data } = meetAvaPage;
@@ -121,17 +122,22 @@ const HeroSection = () => {
               }}
             >
               <Box
-                component="img"
-                src={data.image}
-                alt="Meet AVA"
                 sx={{
                   width: "100%",
-                  height: "auto",
-                  display: "block",
-                  filter: "drop-shadow(0px 0px 80px rgba(162, 211, 37, 0.25))",
-                  animation: "float 6s ease-in-out infinite",
                 }}
-              />
+              >
+                <Image
+                  src={data.image}
+                  alt="Meet AVA"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    filter: "drop-shadow(0px 0px 80px rgba(162, 211, 37, 0.25))",
+                    animation: "float 6s ease-in-out infinite",
+                  }}
+                />
+              </Box>
             </Box>
           </Grid>
         </Grid>

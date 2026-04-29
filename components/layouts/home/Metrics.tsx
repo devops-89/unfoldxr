@@ -2,6 +2,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
+import SplitText from "@/components/widgets/animations/SplitText";
 
 const Metrics = () => {
   return (
@@ -18,21 +19,29 @@ const Metrics = () => {
           }}
         >
           {/* Heading — full width, centered, uppercase bold */}
-          <Typography
+          <SplitText
+            text={homePage.metrics.heading}
+            tag="h2"
+            splitType="words"
+            delay={40}
+            duration={1.2}
+            ease="power3.out"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign="center"
             sx={{
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 22, sm: 28, md: 36 },
               fontWeight: 900,
               lineHeight: { xs: "35px", md: "52px" },
               textTransform: "uppercase",
-              textAlign: "center",
               color: "#000",
               width: { xs: "100%", md: "100%" },
               mb: { xs: 4, md: 3 },
             }}
-          >
-            {homePage.metrics.heading}
-          </Typography>
+          />
 
           {/* Inner white box containing all content below heading */}
           <Box

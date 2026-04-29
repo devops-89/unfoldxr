@@ -9,7 +9,7 @@ import ContainedButton from "@/components/widgets/ContainedButton";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 
 const Section = () => {
-  const { Section: data } = aboutPage;
+  const { newsSection: data } = aboutPage;
   const router = useRouter();
 
   const { openModal } = useDemoModal();

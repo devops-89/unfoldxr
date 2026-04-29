@@ -6,6 +6,7 @@ import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import SplitText from "@/components/widgets/animations/SplitText";
 
 const Meetava = () => {
   return (
@@ -25,35 +26,51 @@ const Meetava = () => {
             {/* LEFT: Heading + description + CTA */}
             <Grid size={{ xs: 12, md: 7 }}>
               <Stack spacing={3}>
-                <Typography
+                <SplitText
+                  text={homePage.meetAva.heading}
+                  tag="h2"
+                  splitType="words"
+                  delay={40}
+                  duration={1.2}
+                  ease="power3.out"
+                  from={{ opacity: 0, y: 30 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-50px"
+                  textAlign={{ xs: "center", md: "left" } as any}
                   sx={{
                     fontSize: { xs: 28, md: 36 },
                     fontFamily: din.style.fontFamily,
                     fontWeight: 900,
                     textTransform: "uppercase",
-                    textAlign: { xs: "center", md: "left" },
                     lineHeight: { xs: "35px", md: "52px" },
                   }}
-                >
-                  {homePage.meetAva.heading}
-                </Typography>
+                />
 
                 <Stack spacing={2}>
                   {homePage.meetAva.leftSection.description.map((val, i) => (
-                    <Typography
+                    <SplitText
                       key={i}
+                      text={val.label}
+                      tag="p"
+                      splitType="lines"
+                      delay={100}
+                      duration={1}
+                      ease="power3.out"
+                      from={{ opacity: 0, y: 20 }}
+                      to={{ opacity: 1, y: 0 }}
+                      threshold={0.1}
+                      rootMargin="-50px"
+                      textAlign={{ xs: "center", md: "justify" } as any}
                       sx={{
                         fontFamily: helvetica.style.fontFamily,
                         fontSize: { xs: 14, md: 18 },
                         fontWeight: 400,
                         lineHeight: { xs: "26px", md: "28px" },
                         color: "#000",
-                        textAlign: { xs: "center", md: "justify" },
                         letterSpacing: "0.52px",
                       }}
-                    >
-                      {val.label}
-                    </Typography>
+                    />
                   ))}
                 </Stack>
 
