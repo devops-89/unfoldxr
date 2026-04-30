@@ -61,7 +61,7 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center"}: NewsHe
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
             textTransform: "uppercase",
-            fontSize: { xs: 26, md: 50, lg: 36 },
+            fontSize: { xs: 26, md: 50, lg: 64 },
             lineHeight: { xs: "35px", md: "42px" },
             maxWidth: titleMaxWidth || 1050,
             whiteSpace: "pre-line",

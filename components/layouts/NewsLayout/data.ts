@@ -1,5 +1,11 @@
 import { StaticImageData } from "next/image";
-import NewsHero from "@/images/news-img/news2.jpg";
+import NewsHero from "@/images/news-img/dummyNewsHero.jpg";
+import NewsCardImg from "@/images/news-img/CardsImages/news1.jpg";
+import NewsCardImg2 from "@/images/news-img/CardsImages/news2.jpg";
+import NewsCardImg3 from "@/images/news-img/CardsImages/news3.jpg";
+import NewsCardImg4 from "@/images/news-img/CardsImages/news4.jpg";
+import NewsCardImg5 from "@/images/news-img/CardsImages/news5.jpg";
+import NewsCardImg6 from "@/images/news-img/CardsImages/news6.jpg";
 
 export interface NewsData {
   hero: {
@@ -47,7 +53,7 @@ export const newsItems: NewsItem[] = [
      title: "UnfoldXR Partners with Realwear...",
     summary:
       "It is a long established fact that a reader will be distracted...",
-    image: "/images/news1.jpg",
+    image: NewsCardImg,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5min reading",
@@ -57,7 +63,7 @@ export const newsItems: NewsItem[] = [
     title: "Long established",
     summary:
       "It is a long established fact that a reader will be distracted...",
-    image: "/images/news2.jpg",
+    image: NewsCardImg2,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5min reading",
@@ -67,7 +73,7 @@ export const newsItems: NewsItem[] = [
     title: "Long established",
     summary:
       "It is a long established fact that a reader will be distracted...",
-    image: "/images/news2.jpg",
+    image: NewsCardImg3,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5min reading",
@@ -77,7 +83,7 @@ export const newsItems: NewsItem[] = [
     title: "Long established",
     summary:
       "It is a long established fact that a reader will be distracted...",
-    image: "/images/news2.jpg",
+    image: NewsCardImg4,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5min reading",
@@ -87,7 +93,7 @@ export const newsItems: NewsItem[] = [
     title: "Long established",
     summary:
       "It is a long established fact that a reader will be distracted...",
-    image: "/images/news2.jpg",
+    image: NewsCardImg5,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5min reading",
@@ -97,7 +103,37 @@ export const newsItems: NewsItem[] = [
     title: "Long established",
     summary:
       "It is a long established fact that a reader will be distracted...",
-    image: "/images/news2.jpg",
+    image: NewsCardImg6,
+    date: "May 20th 2020",
+    author: "Author Name",
+    readTime: "5min reading",
+  },
+  {
+    id: 7,
+    title: "Long established",
+    summary:
+      "It is a long established fact that a reader will be distracted...",
+    image: NewsCardImg6,
+    date: "May 20th 2020",
+    author: "Author Name",
+    readTime: "5min reading",
+  },
+  {
+    id: 8,
+    title: "Long established",
+    summary:
+      "It is a long established fact that a reader will be distracted...",
+    image: NewsCardImg6,
+    date: "May 20th 2020",
+    author: "Author Name",
+    readTime: "5min reading",
+  },
+  {
+    id: 9,
+    title: "Long established",
+    summary:
+      "It is a long established fact that a reader will be distracted...",
+    image: NewsCardImg6,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5min reading",

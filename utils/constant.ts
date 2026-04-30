@@ -139,7 +139,7 @@ export const HEADER_LINKS = [
       },
       {
         label: "Latest News",
-        url: "#",
+        url: "/news",
       },
     ],
   },
