@@ -5,7 +5,7 @@ import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
 
-interface NewsHeroProps {
+interface CaseHeroProps {
     image: string | StaticImageData;
     title: string;
     titleMaxWidth?: number | string;
@@ -13,7 +13,7 @@ interface NewsHeroProps {
     overlayOpacity?: number;
 }
 
-const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity}: NewsHeroProps) => {
+const CaseHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity}: CaseHeroProps) => {
   return (
     <Box
       sx={{
@@ -85,4 +85,4 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
   )
 }
 
-export default NewsHero
+export default CaseHero

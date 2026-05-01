@@ -10,10 +10,12 @@ import FutureWorkCard from "./components/Future-Work-Card";
 import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 import Link from "next/link";
+import { useInView } from "@/utils/useInView";
 
 const FutureWork = () => {
   const { openModal } = useDemoModal();
   const [expandedSteps, setExpandedSteps] = useState([0]);
+  const { ref, visible } = useInView(0.1);
 
   const handleToggle = (index: number) => {
     if (expandedSteps.includes(index)) {
@@ -41,6 +43,7 @@ const FutureWork = () => {
   return (
     <Box sx={{ py: { xs: 4, md: 0 }, width: "100%", overflow: "hidden" }}>
       <Box
+        ref={ref}
         sx={{
           backgroundColor: COLORS.BLACK,
           borderRadius: "24px",
@@ -51,11 +54,22 @@ const FutureWork = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(50px)",
+          transition: "all 0.8s ease",
         }}
       >
         <Grid container spacing={{ xs: 4, md: 10 }} sx={{ p: 0, m: 0 }}>
           {/* LEFT SECTION */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid 
+              size={{ xs: 12, md: 6 }}
+              sx={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(40px)",
+                transition: "all 0.7s ease 0.2s",
+
+              }}
+          >
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
@@ -116,6 +130,27 @@ const FutureWork = () => {
                   width: { xs: "100%", md: "150px" },
                   height: { xs: "45px", md: "50px" },
                   fontSize: { xs: 16, md: 16 },
+                  position: "relative",
+                  overflow: "hidden",
+                  "&:hover": {
+                    transform: "translateY(-3px)",
+                    boxShadow: "0 8px 20px rgba(204,249,25,0.3)",
+                  },
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: "-75%",
+                    width: "50%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                    transform: "skewX(-20deg)",
+                    transition: "left 0.6s ease",
+                  },
+                  "&:hover::after": {
+                    left: "125%",
+                  },
                 }}
               >
                 {homePage.future_work.leftSection.cta}

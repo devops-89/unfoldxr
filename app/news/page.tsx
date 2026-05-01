@@ -8,7 +8,7 @@ const page = () => {
     const data = newsData;
   return (
     <div>
-      <NewsHero image={data.hero.image} title={data.hero.title} />
+      <NewsHero image={data.hero.image} title={data.hero.title} overlayOpacity={data.hero.overlayOpacity} />
       <NewsIndex />
       <FinalCTASection title={data.finalCTAsection.title} subtitle={data.finalCTAsection.subtitle} />
     </div>

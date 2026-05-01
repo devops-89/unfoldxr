@@ -22,6 +22,10 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
         gap: { xs: 2, md: 2 },
         borderRadius: "16px",
         minHeight: { xs: "auto", md: "110px" },
+        transition: "all 0.3s ease", 
+        "&:hover": {
+        transform: "translateY(-6px)",
+        }, 
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", gap: { xs: 2, md: 1 }, flex: 1 }}>
@@ -69,6 +73,10 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
               fontWeight: 700,
               borderRadius: "100px",
               px: 2,
+              transition: "all 0.3s ease",
+              "&:hover": {
+              transform: "translateX(6px)",
+              },
             }}
           >
             Know More
@@ -83,6 +91,10 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
               fontWeight: 700,
               borderRadius: "100px",
               px: 2,
+              transition: "all 0.3s ease", 
+              "&:hover": {
+              transform: "translateX(6px)",
+              },                          
             }}
           >
             Know More

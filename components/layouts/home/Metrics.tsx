@@ -1,13 +1,18 @@
+"use client";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
+import { useInView } from "@/utils/useInView";
 
 const Metrics = () => {
+  const { ref, visible } = useInView(0.1);
+
   return (
     <Box>
       <Container maxWidth="xl">
         <Box
+          ref={ref}
           sx={{
             backgroundColor: "#EDEDED",
             borderRadius: "45px",
@@ -15,6 +20,9 @@ const Metrics = () => {
             px: { xs: 4, sm: 6, md: 8 },
             pt: { xs: 5, md: 6 },
             pb: { xs: 6, md: 2 },
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(60px)",
+            transition: "all 0.8s ease",
           }}
         >
           {/* Heading — full width, centered, uppercase bold */}
@@ -29,6 +37,9 @@ const Metrics = () => {
               color: "#000",
               width: { xs: "100%", md: "100%" },
               mb: { xs: 4, md: 3 },
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(30px)",
+              transition: "all 0.6s ease 0.2s",
             }}
           >
             {homePage.metrics.heading}
@@ -83,6 +94,9 @@ const Metrics = () => {
                       letterSpacing: { xs: "-1px", md: "-4px" },
 
                       ml: { xs: 0, md: -2 },
+                      opacity: visible ? 1 : 0,
+                      transform: visible ? "translateY(0) scale(1)" : "translateY(50px) scale(0.9)",
+                      transition: "all 0.7s ease 0.3s",
                     }}
                   >
                     {homePage.metrics.leftSection.number}
@@ -111,6 +125,9 @@ const Metrics = () => {
                         textTransform: "capitalize",
                         mb: { xs: 2, md: 3 },
                         letterSpacing: "0.52px",
+                        opacity: visible ? 1 : 0,
+                        transform: visible ? "translateY(0)" : "translateY(40px)",
+                        transition: `all 0.6s ease ${0.4 + i * 0.15}s`,
                       }}
                     >
                       <Typography

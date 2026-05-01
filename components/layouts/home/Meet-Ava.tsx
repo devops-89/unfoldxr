@@ -6,8 +6,11 @@ import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useInView } from "@/utils/useInView";
 
 const Meetava = () => {
+  const { ref, visible } = useInView();
+
   return (
     <Box
       sx={{ mt: { xs: 8, md: 12 }, mb: { xs: 8, md: 12 }, overflow: "hidden" }}
@@ -23,7 +26,7 @@ const Meetava = () => {
         <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
           <Grid container alignItems="center" spacing={{ xs: 4, md: 6 }}>
             {/* LEFT: Heading + description + CTA */}
-            <Grid size={{ xs: 12, md: 7 }}>
+            <Grid size={{ xs: 12, md: 7 }} ref={ref}>
               <Stack spacing={3}>
                 <Typography
                   sx={{
@@ -33,6 +36,14 @@ const Meetava = () => {
                     textTransform: "uppercase",
                     textAlign: { xs: "center", md: "left" },
                     lineHeight: { xs: "35px", md: "52px" },
+                    opacity: 0,
+                    transform: "translateY(30px)",
+                    transition: "all 0.6s ease",
+                
+                    ...(visible && {
+                      opacity: 1,
+                      transform: "translateY(0)",
+                    }),
                   }}
                 >
                   {homePage.meetAva.heading}
@@ -50,6 +61,14 @@ const Meetava = () => {
                         color: "#000",
                         textAlign: { xs: "center", md: "justify" },
                         letterSpacing: "0.52px",
+                        opacity: 0,
+                        transform: "translateY(30px)",
+                        transition: "all 0.6s ease",
+                    
+                        ...(visible && {
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        }),
                       }}
                     >
                       {val.label}
@@ -66,6 +85,30 @@ const Meetava = () => {
                         px: { xs: 2.5, md: 4 },
                         py: 1.2,
                         fontSize: { xs: 14, md: 18, lg: 16 },
+                        position: "relative",
+                        overflow: "hidden",
+                    
+                        "&:hover": {
+                          transform: "translateY(-3px)",
+                          boxShadow: "0 8px 20px rgba(204,249,25,0.3)",
+                        },
+                    
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          top: 0,
+                          left: "-75%",
+                          width: "50%",
+                          height: "100%",
+                          background:
+                            "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                          transform: "skewX(-20deg)",
+                          transition: "left 0.6s ease",
+                        },
+                    
+                        "&:hover::after": {
+                          left: "125%",
+                        },
                       }}
                     >
                       Meet AVA

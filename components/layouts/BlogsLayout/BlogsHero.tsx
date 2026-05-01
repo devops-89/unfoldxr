@@ -5,7 +5,7 @@ import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
 
-interface NewsHeroProps {
+interface BlogsHeroProps {
     image: string | StaticImageData;
     title: string;
     titleMaxWidth?: number | string;
@@ -13,7 +13,7 @@ interface NewsHeroProps {
     overlayOpacity?: number;
 }
 
-const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity}: NewsHeroProps) => {
+const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity}: BlogsHeroProps) => {
   return (
     <Box
       sx={{
@@ -44,7 +44,7 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
           }}
         />
       </Box>
-       {/* Dark Overlay */}
+      {/* Dark Overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -66,18 +66,30 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
                 px: { xs: 3, md: 0 },
               }}
             >
-          <Typography
-              sx={{
-                fontFamily: din.style.fontFamily,
-                fontWeight: 900,
-                textTransform: "uppercase",
-                fontSize: { xs: 26, md: 50, lg: 50 },
-                lineHeight: { xs: "35px", md: "42px" },
-                maxWidth: titleMaxWidth || 1050,
-                whiteSpace: "pre-line",
-                width: { xs: "100%", lg: "70%" },
-              }}
-          >
+        <Typography
+         sx={{
+           fontFamily: din.style.fontFamily,
+           fontSize: { xs: 16, md: 20, lg: 30 },
+           fontWeight: 600,
+           letterSpacing: "2px",
+           mb: 1.5,
+           opacity: 0.8,
+         }}
+        >
+            Blogs
+        </Typography>
+        <Typography
+          sx={{
+            fontFamily: din.style.fontFamily,
+            fontWeight: 900,
+            textTransform: "uppercase",
+            fontSize: { xs: 26, md: 50, lg: 50 },
+            lineHeight: { xs: "35px", md: "42px" },
+            maxWidth: titleMaxWidth || 1050,
+            whiteSpace: "nowrap",
+            width: { xs: "100%", lg: "70%" },
+          }}
+        >
           {title}
         </Typography>
         </Box>
@@ -85,4 +97,4 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
   )
 }
 
-export default NewsHero
+export default BlogsHero

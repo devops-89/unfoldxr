@@ -135,12 +135,15 @@ export const HEADER_LINKS = [
     subLinks: [
       {
         label: "Blogs & Insights",
-        url: "#",
+        url: "/blogs",
       },
       {
         label: "Latest News",
         url: "/news",
       },
+      { 
+        label: "Case Studies", 
+        url: "/casestudies" }, // Az
     ],
   },
   {
@@ -190,12 +193,14 @@ export const FOOTER_COLUMNS = [
   {
     title: "Resources",
     links: [
-      { label: "Blog & Insights", url: "#" },
+      { label: "Blog & Insights", url: "/blogs" },
 
       {
         label: "Latest News",
-        url: "#",
+        url: "/news",
       },
+
+      { label: "Case Studies", url: "/casestudies" }, // Az
     ],
   },
   {
