@@ -16,12 +16,6 @@ const WorkforceCard = ({ img, icon, heading, description }: WORKFORCE_CARD_PROPS
         transition: "all 0.25s ease",
     
         border: "1px solid transparent",
-    
-        "&:hover": {
-          transform: "translateY(-4px) scale(1.02)",
-          border: "1px solid rgba(0,0,0,0.06)",
-          boxShadow: "0px 8px 24px rgba(0,0,0,0.12)",
-        },
       }}
     >
  {/* ICON */}
