@@ -1,8 +1,10 @@
+"use client";
 import { din } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import DevicesCard from "./components/Devices-Card";
+import { motion } from "framer-motion";
 
 const DevicesSection = () => {
   return (
@@ -21,7 +23,14 @@ const DevicesSection = () => {
           mx: "auto",
         }}
       >
-        <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
+        <Box 
+          component={motion.div}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}
+        >
           <Typography
             sx={{
               fontFamily: din.style.fontFamily,
@@ -37,9 +46,39 @@ const DevicesSection = () => {
           </Typography>
 
           {/* 2x2 Grid */}
-          <Grid container spacing={{ xs: 2, md: 2 }}>
+          <Grid 
+              container
+              component={motion.div}
+              spacing={{ xs: 2, md: 2 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.15,
+                  },
+                },
+              }}
+          >
             {homePage.devicesSection.data.map((val, i) => (
-              <Grid key={i} size={{ xs: 12, md: val.gridSize }}>
+              <Grid 
+                  key={i} 
+                  size={{ xs: 12, md: val.gridSize }}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        duration: 0.6,
+                        ease: "easeOut",
+                      },
+                    },
+                  }}
+              >
                 <DevicesCard
                   bgImg={val.bgImg}
                   bgColor={val.bgColor}

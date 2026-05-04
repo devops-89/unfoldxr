@@ -3,16 +3,22 @@ import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import { useInView } from "@/utils/useInView";
+import { motion } from "framer-motion";
+import CountUp from "@/utils/count-up";
+
+
 
 const Metrics = () => {
-  const { ref, visible } = useInView(0.1);
-
   return (
+
     <Box>
       <Container maxWidth="xl">
         <Box
-          ref={ref}
+          component={motion.div}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           sx={{
             backgroundColor: "#EDEDED",
             borderRadius: "45px",
@@ -20,13 +26,15 @@ const Metrics = () => {
             px: { xs: 4, sm: 6, md: 8 },
             pt: { xs: 5, md: 6 },
             pb: { xs: 6, md: 2 },
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(60px)",
-            transition: "all 0.8s ease",
           }}
         >
           {/* Heading — full width, centered, uppercase bold */}
           <Typography
+            component={motion.div}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             sx={{
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 22, sm: 28, md: 36 },
@@ -37,9 +45,6 @@ const Metrics = () => {
               color: "#000",
               width: { xs: "100%", md: "100%" },
               mb: { xs: 4, md: 3 },
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(30px)",
-              transition: "all 0.6s ease 0.2s",
             }}
           >
             {homePage.metrics.heading}
@@ -80,6 +85,15 @@ const Metrics = () => {
 
                   {/* 30% */}
                   <Typography
+                    component={motion.div}
+                    initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 120,
+                      damping: 10,
+                    }}
                     sx={{
                       fontFamily: din.style.fontFamily,
                       fontSize: {
@@ -94,12 +108,15 @@ const Metrics = () => {
                       letterSpacing: { xs: "-1px", md: "-4px" },
 
                       ml: { xs: 0, md: -2 },
-                      opacity: visible ? 1 : 0,
-                      transform: visible ? "translateY(0) scale(1)" : "translateY(50px) scale(0.9)",
-                      transition: "all 0.7s ease 0.3s",
                     }}
                   >
-                    {homePage.metrics.leftSection.number}
+                    <CountUp
+                      from={0}
+                      to={30}
+                      duration={1}
+                      className="count-up-text"
+                    />
+                    %
                   </Typography>
                 </Stack>
               </Grid>
@@ -107,6 +124,18 @@ const Metrics = () => {
               {/* RIGHT */}
               <Grid size={{ xs: 12, md: 7 }}>
                 <Stack
+                  component={motion.div}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false }}
+                  variants={{
+                    hidden: {},
+                    visible: {
+                      transition: {
+                        staggerChildren: 0.15,
+                      },
+                    },
+                  }}
                   spacing={0}
                   alignItems={{ xs: "center", md: "flex-end" }}
                   justifyContent="center"
@@ -114,6 +143,16 @@ const Metrics = () => {
                 >
                   {homePage.metrics.rightSection.map((val, i) => (
                     <Typography
+                      component={motion.div}
+                      variants={{
+                        hidden: { opacity: 0, y: 40 },
+                        visible: { opacity: 1, y: 0 },
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        ease: "easeOut",
+                        delay: 0.2,
+                      }}
                       key={i}
                       sx={{
                         fontFamily: din.style.fontFamily,
@@ -125,9 +164,6 @@ const Metrics = () => {
                         textTransform: "capitalize",
                         mb: { xs: 2, md: 3 },
                         letterSpacing: "0.52px",
-                        opacity: visible ? 1 : 0,
-                        transform: visible ? "translateY(0)" : "translateY(40px)",
-                        transition: `all 0.6s ease ${0.4 + i * 0.15}s`,
                       }}
                     >
                       <Typography

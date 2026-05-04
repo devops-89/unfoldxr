@@ -5,16 +5,19 @@ import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import WorkforceCard from "./components/WorkForce-Card";
-import { useInView } from "@/utils/useInView";
+import { motion } from "framer-motion";
 
 const WorkForce = () => {
-  const { ref, visible } = useInView(0.1);
 
   return (
     <Box>
       <Container maxWidth={false} disableGutters>
         <Box
-          ref={ref}
+          component={motion.div}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{
             backgroundColor: COLORS.WHITE,
             px: { xs: 2, sm: 6, md: 10 },
@@ -26,14 +29,16 @@ const WorkForce = () => {
             justifyContent: "center",
             width: { xs: "90%", md: "90%", lg: "80%" },
             mx: "auto",
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(40px)",
-            transition: "all 0.7s ease",
           }}
         >
           <Box sx={{ width: "100%" }}>
             {/* Heading */}
             <Typography
+              component={motion.div}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               sx={{
                 color: "#000",
                 fontFamily: din.style.fontFamily,
@@ -44,9 +49,6 @@ const WorkForce = () => {
                 textTransform: "uppercase",
                 textAlign: { xs: "center", md: "left" },
                 wordBreak: "break-word",
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(30px)",
-                transition: "all 0.6s ease 0.1s",
               }}
             >
               {homePage.workforce.heading}
@@ -54,6 +56,11 @@ const WorkForce = () => {
 
             {/* Description */}
             <Typography
+              component={motion.div}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               sx={{
                 color: "#000",
                 fontFamily: helvetica.style.fontFamily,
@@ -64,26 +71,41 @@ const WorkForce = () => {
                 letterSpacing: "0.52px",
                 mt: { xs: 2, md: 2 },
                 textAlign: { xs: "center", md: "left" },
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(30px)",
-                transition: "all 0.6s ease 0.2s",
               }}
             >
               {homePage.workforce.description}
             </Typography>
 
             {/* Cards */}
-            <Grid container sx={{ mt: { xs: 4, md: 10 } }} spacing={4}>
+            <Grid
+              container
+              component={motion.div}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.15,
+                  },
+                },
+              }} 
+              sx={{ mt: { xs: 4, md: 10 } }} 
+              spacing={4}
+            >
               {homePage.workforce.data.map((val, i) => (
                 <Grid
-                  ref={ref}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   size={{ xs: 12, sm: 6, md: 4 }}
                   key={i}
                   sx={{
                     mt: { xs: 0, md: 0 },
-                    opacity: visible ? 1 : 0,
-                    transform: visible ? "translateY(0)" : "translateY(40px)",
-                    transition: `all 0.6s ease ${i * 0.15}s`,
                   }}
                 >
                   <WorkforceCard

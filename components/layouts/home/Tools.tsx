@@ -15,6 +15,7 @@ import { homePage } from "@/utils/Website-Data";
 import ToolsLeftSection from "./components/tools/ToolsLeftSection";
 import ToolsRightSection from "./components/tools/ToolsRightSection";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import { motion } from "framer-motion";
 
 const Tools = () => {
   const { openModal } = useDemoModal();
@@ -37,6 +38,11 @@ const Tools = () => {
         }}
       >
         <Box
+          component={motion.div}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           sx={{
             py: { xs: 4, md: 4 },
             px: { xs: 4, sm: 6, md: 10 },
@@ -45,7 +51,13 @@ const Tools = () => {
           }}
         >
           {/* TOP SECTION */}
-          <Box sx={{ mb: { xs: 4, md: 6 } }}>
+          <Box 
+          component={motion.div}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          sx={{ mb: { xs: 4, md: 6 } }}>
             {/* Top Line of Heading */}
             <Typography
               sx={{
@@ -120,15 +132,49 @@ const Tools = () => {
             container
             spacing={{ xs: 3, md: 8 }}
             sx={{ mt: { xs: 4, md: 4 } }}
+            component={motion.div}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2,
+                },
+              },
+            }}
           >
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid 
+            size={{ xs: 12, md: 6 }}
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.6, ease: "easeOut" },
+              },
+            }}
+            >
               <ToolsLeftSection
                 {...homePage.tools.leftSection}
                 onCtaClick={() => openModal("tools")}
               />
             </Grid>
 
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid 
+            size={{ xs: 12, md: 6 }}
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.6, ease: "easeOut" },
+              },
+            }}
+            >
               <ToolsRightSection {...homePage.tools.rightSection} />
             </Grid>
           </Grid>

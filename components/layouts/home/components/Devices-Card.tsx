@@ -39,6 +39,30 @@ const DevicesCard = ({
         p: { xs: 3, md: 4 },
         overflow: "hidden",
         position: "relative",
+        transition: "transform 0.35s ease, box-shadow 0.35s ease",
+
+        "&:hover": {
+          transform: "translateY(-6px)",
+          boxShadow: "0px 20px 50px rgba(0,0,0,0.25)",
+        },
+    
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: "-120%",
+          width: "60%",
+          height: "100%",
+          background:
+            "linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent)",
+          transform: "skewX(-20deg)",
+        },
+    
+        "&:hover::after": {
+          left: "130%",
+          transition: "left 0.8s ease",
+        },
+
       }}
     >
       {/* Gradient overlay for bg cards */}

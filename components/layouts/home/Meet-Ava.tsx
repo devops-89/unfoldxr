@@ -6,10 +6,12 @@ import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { useInView } from "@/utils/useInView";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Meetava = () => {
-  const { ref, visible } = useInView();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.2 });
 
   return (
     <Box
@@ -28,6 +30,15 @@ const Meetava = () => {
             {/* LEFT: Heading + description + CTA */}
             <Grid size={{ xs: 12, md: 7 }} ref={ref}>
               <Stack spacing={3}>
+                <motion.div
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6 }}
+                >
                 <Typography
                   sx={{
                     fontSize: { xs: 28, md: 36 },
@@ -36,21 +47,33 @@ const Meetava = () => {
                     textTransform: "uppercase",
                     textAlign: { xs: "center", md: "left" },
                     lineHeight: { xs: "35px", md: "52px" },
-                    opacity: 0,
-                    transform: "translateY(30px)",
-                    transition: "all 0.6s ease",
-                
-                    ...(visible && {
-                      opacity: 1,
-                      transform: "translateY(0)",
-                    }),
                   }}
                 >
                   {homePage.meetAva.heading}
                 </Typography>
+                </motion.div>
 
+                <motion.div
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  variants={{
+                    visible: {
+                      transition: {
+                        staggerChildren: 0.15,
+                      },
+                    },
+                  }}
+                >
                 <Stack spacing={2}>
                   {homePage.meetAva.leftSection.description.map((val, i) => (
+                    <motion.div
+                      key={i}
+                      variants={{
+                        hidden: { opacity: 0, y: 30 },
+                        visible: { opacity: 1, y: 0 },
+                      }}
+                      transition={{ duration: 0.5 }}
+                    >
                     <Typography
                       key={i}
                       sx={{
@@ -61,21 +84,20 @@ const Meetava = () => {
                         color: "#000",
                         textAlign: { xs: "center", md: "justify" },
                         letterSpacing: "0.52px",
-                        opacity: 0,
-                        transform: "translateY(30px)",
-                        transition: "all 0.6s ease",
-                    
-                        ...(visible && {
-                          opacity: 1,
-                          transform: "translateY(0)",
-                        }),
                       }}
                     >
                       {val.label}
                     </Typography>
+                    </motion.div>
                   ))}
                 </Stack>
-
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
                 <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
                   <Link href="/meet-ava" style={{ textDecoration: "none" }}>
                     <ContainedButton
@@ -87,11 +109,6 @@ const Meetava = () => {
                         fontSize: { xs: 14, md: 18, lg: 16 },
                         position: "relative",
                         overflow: "hidden",
-                    
-                        "&:hover": {
-                          transform: "translateY(-3px)",
-                          boxShadow: "0 8px 20px rgba(204,249,25,0.3)",
-                        },
                     
                         "&::after": {
                           content: '""',
@@ -115,6 +132,7 @@ const Meetava = () => {
                     </ContainedButton>
                   </Link>
                 </Box>
+                </motion.div>
               </Stack>
             </Grid>
 
@@ -127,6 +145,22 @@ const Meetava = () => {
                 alignItems: "center",
               }}
             >
+              <motion.div
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.85, rotate: -5 },
+                  visible: {
+                    opacity: 1,
+                    scale: 1,
+                    rotate: 0,
+                  },
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeOut",
+                }}
+              >
               <Stack alignItems={{ xs: "center", md: "flex-end" }} spacing={1}>
                 <Box
                   component="video"
@@ -149,6 +183,7 @@ const Meetava = () => {
                   />
                 </Box>
               </Stack>
+              </motion.div>
             </Grid>
           </Grid>
         </Box>

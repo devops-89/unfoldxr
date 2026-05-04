@@ -3,22 +3,38 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { din, helvetica } from "@/utils/fonts";
 import { WORKFORCE_CARD_PROPS } from "@/utils/types";
+import { motion } from "framer-motion";
 
 const WorkforceCard = ({ img, icon, heading, description }: WORKFORCE_CARD_PROPS) => {
   const Icon = icon;
   return (
-    <Box sx={{ textAlign: "center" }}>
+    <Box 
+        className="card"
+        sx={{
+        textAlign: "center",
+        borderRadius: "16px",
+        transition: "all 0.25s ease",
+    
+        border: "1px solid transparent",
+    
+        "&:hover": {
+          transform: "translateY(-4px) scale(1.02)",
+          border: "1px solid rgba(0,0,0,0.06)",
+          boxShadow: "0px 8px 24px rgba(0,0,0,0.12)",
+        },
+      }}
+    >
+ {/* ICON */}
       <Box
         sx={{
           height: { xs: 60, md: 40 },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#000",
         }}
       >
         {icon ? (
-          <Icon sx={{ fontSize: { xs: 40, md: 48 } }} />
+          <Icon sx={{ fontSize: { xs: 40, md: 48 }, color: "#000" }} />
         ) : (
           img && <Image src={img} alt="" width={36} />
         )}

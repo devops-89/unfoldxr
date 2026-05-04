@@ -28,6 +28,24 @@ const ToolsLeftSection = ({
           "&:hover": {
             backgroundColor: "#A8E015",
           },
+            position: "relative",
+            overflow: "hidden",
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: "-75%",
+              width: "50%",
+              height: "100%",
+              background:
+                "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+              transform: "skewX(-20deg)",
+              transition: "left 0.6s ease",
+            },
+        
+            "&:hover::after": {
+              left: "125%",
+            },
         }}
       >
         {ctaText}

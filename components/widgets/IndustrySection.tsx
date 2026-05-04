@@ -1,9 +1,11 @@
+"use client";
 import { Box, Container, Typography, alpha } from "@mui/material";
 import Link from "next/link";
 import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 import { MASTER_INDUSTRIES } from "@/utils/constant";
 import React from "react";
+import { motion } from "framer-motion";
 
 interface IndustrySectionProps {
   title: string;
@@ -25,26 +27,46 @@ const IndustrySection = ({
   textColor = COLORS.BLACK,
 }: IndustrySectionProps) => {
   return (
-    <Box sx={{ backgroundColor: bgColor, py: { xs: 8, md: 10 } }}>
+    <Box 
+        component={motion.div}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        sx={{ 
+          backgroundColor: bgColor, 
+          py: { xs: 8, md: 10 } 
+          }}
+    >
       <Container maxWidth="lg">
         {/* Title */}
         <Typography
-          sx={{
-            textAlign: "center",
-            fontFamily: din.style.fontFamily,
-            fontWeight: 900,
-            textTransform: "uppercase",
-            fontSize: { xs: 24, md: 36 },
-            lineHeight: { xs: "35px", md: "52px" },
-            color: textColor,
-            mb: 2,
-          }}
+           component={motion.div}
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: false }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+           sx={{
+             textAlign: "center",
+             fontFamily: din.style.fontFamily,
+             fontWeight: 900,
+             textTransform: "uppercase",
+             fontSize: { xs: 24, md: 36 },
+             lineHeight: { xs: "35px", md: "52px" },
+             color: textColor,
+             mb: 2,
+           }}
         >
           {title}
         </Typography>
 
         {/* Description */}
         <Typography
+          component={motion.div}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
@@ -61,6 +83,18 @@ const IndustrySection = ({
 
         {/* Industry Pills Container */}
         <Box
+          component={motion.div}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.08,
+              },
+            },
+          }}
           sx={{
             display: "flex",
             flexWrap: "wrap",
@@ -78,6 +112,19 @@ const IndustrySection = ({
                 style={{ textDecoration: "none" }}
               >
                 <Box
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 20, scale: 0.9 },
+                    visible: { opacity: 1, y: 0, scale: 1 },
+                  }}
+                  whileHover={{
+                     y: -2,
+                   }}
+                   transition={{
+                     type: "spring",
+                     stiffness: 120,
+                     damping: 12,
+                   }}
                   sx={{
                     border: textColor === COLORS.WHITE 
                       ? "1px solid rgba(255, 255, 255, 0.15)" 
@@ -90,11 +137,11 @@ const IndustrySection = ({
                     gap: { xs: 1, md: 1.5 },
                     minWidth: "fit-content",
                     maxWidth: "100%",
-                    transition: "0.3s ease",
+                    transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+
                     "&:hover": {
-                      transform: "translateY(-2px)",
-                      boxShadow: "0px 4px 15px rgba(0,0,0,0.05)",
                       bgcolor: alpha(COLORS.PRIMARY_GREEN, 0.1),
+                      boxShadow: "0px 6px 18px rgba(0,0,0,0.08)",
                     },
                   }}
                 >

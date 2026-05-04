@@ -1,3 +1,4 @@
+"use client";
 import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
@@ -5,10 +6,15 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import OutcomeCard from "./components/Outcome-Card";
 import ContainedButton from "@/components/widgets/ContainedButton";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Outcome = () => {
+  const { scrollYProgress } = useScroll();
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   return (
     <Box
+      component={motion.div}
+      style={{ y: yBg }}
       sx={{
         backgroundColor: COLORS.BLACK,
         py: { xs: 8, md: 12 },
@@ -26,6 +32,12 @@ const Outcome = () => {
       >
         <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
           {/* Heading */}
+          <motion.div
+           initial={{ opacity: 0, y: 50 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6 }}
+           viewport={{ }}
+          >
           <Typography
             sx={{
               textAlign: "left",
@@ -39,8 +51,15 @@ const Outcome = () => {
           >
             {homePage.outcome.heading}
           </Typography>
+          </motion.div>
 
           {/* Subheading */}
+          <motion.div
+           initial={{ opacity: 0, y: 50 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6 }}
+           viewport={{ }}
+          >
           <Typography
             sx={{
               fontFamily: helvetica.style.fontFamily,
@@ -56,15 +75,38 @@ const Outcome = () => {
           >
             {homePage.outcome.subHeading}
           </Typography>
+          </motion.div>
 
           {/* 2x2 Cards Grid */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2,
+                },
+              },
+            }}
+          >
           <Grid container spacing={{ xs: 2, md: 3 }}>
             {homePage.outcome.data.map((val, i) => (
               <Grid size={{ xs: 12, md: 6 }} key={i}>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
                 <OutcomeCard number={val.number} label={val.description} link={(val as any).link} />
+                </motion.div>
               </Grid>
             ))}
           </Grid>
+          </motion.div>
         </Box>
       </Box>
     </Box>

@@ -6,6 +6,7 @@ import { COLORS } from "@/utils/enum";
 import { useDemoModal } from "../context/DemoModalContext";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import DecryptedText from "@/utils/decrypted-text";
 
 interface ButtonConfig {
   label: string;
@@ -123,7 +124,15 @@ const PageHeroSection = ({
             width: { xs: "100%", lg: "70%" },
           }}
         >
-          {title}
+          <DecryptedText
+            text={title}
+            animateOn="view"
+            sequential
+            revealDirection="start"
+            speed={30}
+            className="revealed"
+            encryptedClassName="encrypted"
+          />
         </Typography>
 
         {subtitle && (
@@ -156,7 +165,7 @@ const PageHeroSection = ({
               width: { xs: "100%", md: "50%" },
             }}
           >
-            {description}
+           {description}
           </Typography>
         )}
 
@@ -191,6 +200,23 @@ const PageHeroSection = ({
                   fontSize: { xs: 14, md: 18, lg: 16 },
                   textTransform: "none",
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
+                  overflow: "hidden",
+                  "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: "-75%",
+                  width: "50%",
+                  height: "100%",
+                  background:
+                    "linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent)",
+                  transform: "skewX(-20deg)",
+                },
+              
+                "&:hover::after": {
+                  left: "125%",
+                  transition: "left 0.6s ease",
+                },
                 }}
               >
                 {primaryBtn.label}

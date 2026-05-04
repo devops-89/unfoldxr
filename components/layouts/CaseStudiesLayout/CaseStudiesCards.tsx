@@ -4,7 +4,16 @@ import { CaseStudyItem } from "./data";
 
 export default function CaseStudyCard({ item }: { item: CaseStudyItem }) {
   return (
-    <Card sx={{ borderRadius: 0, overflow: "hidden" }}>
+    <Card 
+        sx={{ 
+          borderRadius: 0, 
+          overflow: "hidden",
+          transition: "all 0.3s ease", 
+          "&:hover": {
+          transform: "translateY(-6px)",
+          }, 
+          }}
+    >
       
       {/* Image wrapper */}
       <Box sx={{ position: "relative", width: "100%", height: 180 }}>

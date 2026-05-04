@@ -6,11 +6,16 @@ import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useRouter } from "next/navigation";
 import ContainedButton from "@/components/widgets/ContainedButton";
+import { motion } from "framer-motion";
 
 const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
   const router = useRouter();
   return (
     <Box
+      component={motion.div}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
       sx={{
         backgroundColor: "#272829",
         px: { xs: 3, md: 4 },
@@ -31,6 +36,22 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
       <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", gap: { xs: 2, md: 1 }, flex: 1 }}>
         {/* Number */}
         <Typography
+          component={motion.div}
+          variants={{
+            rest: {
+              scale: 1,
+              y: 0,
+            },
+            hover: {
+              scale: 1.1,
+              y: -6,
+              transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 5,
+              },
+            },
+          }}
           sx={{
             color: "rgba(182, 236, 26, 0.60)",
             fontFamily: din.style.fontFamily,

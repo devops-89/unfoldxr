@@ -10,12 +10,11 @@ import FutureWorkCard from "./components/Future-Work-Card";
 import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 import Link from "next/link";
-import { useInView } from "@/utils/useInView";
+import { motion } from "framer-motion";
 
 const FutureWork = () => {
   const { openModal } = useDemoModal();
   const [expandedSteps, setExpandedSteps] = useState([0]);
-  const { ref, visible } = useInView(0.1);
 
   const handleToggle = (index: number) => {
     if (expandedSteps.includes(index)) {
@@ -43,7 +42,11 @@ const FutureWork = () => {
   return (
     <Box sx={{ py: { xs: 4, md: 0 }, width: "100%", overflow: "hidden" }}>
       <Box
-        ref={ref}
+        component={motion.div}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         sx={{
           backgroundColor: COLORS.BLACK,
           borderRadius: "24px",
@@ -54,21 +57,17 @@ const FutureWork = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(50px)",
-          transition: "all 0.8s ease",
         }}
       >
         <Grid container spacing={{ xs: 4, md: 10 }} sx={{ p: 0, m: 0 }}>
           {/* LEFT SECTION */}
           <Grid 
               size={{ xs: 12, md: 6 }}
-              sx={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(40px)",
-                transition: "all 0.7s ease 0.2s",
-
-              }}
+              component={motion.div}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.7, delay: 0.2 }}
           >
             <Typography
               sx={{
@@ -133,7 +132,6 @@ const FutureWork = () => {
                   position: "relative",
                   overflow: "hidden",
                   "&:hover": {
-                    transform: "translateY(-3px)",
                     boxShadow: "0 8px 20px rgba(204,249,25,0.3)",
                   },
                   "&::after": {
@@ -160,8 +158,35 @@ const FutureWork = () => {
 
           {/* RIGHT SECTION - INTERACTIVE STEPPER */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Stack spacing={4} sx={{ width: "100%" }}>
+            <Stack 
+                spacing={4} 
+                sx={{ width: "100%" }}
+                component={motion.div}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false }}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.2,
+                    },
+                  },
+                }}
+            >
               {FUTURE_WORK_CARD_DATA.map((val, i) => (
+                <Box
+                  key={i}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.6, ease: "easeOut" },
+                    },
+                  }}
+                >
                 <FutureWorkCard
                   label={val.label}
                   value={val.value}
@@ -170,6 +195,7 @@ const FutureWork = () => {
                   onClick={() => handleToggle(i)}
                   key={i}
                 />
+                </Box>
               ))}
             </Stack>
           </Grid>
