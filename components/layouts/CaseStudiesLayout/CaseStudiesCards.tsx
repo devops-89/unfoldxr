@@ -1,8 +1,13 @@
-import { Card, CardContent, Typography, Box, Link } from "@mui/material";
+import { Card, CardContent, Typography, Box } from "@mui/material";
 import Image from "next/image";
 import { CaseStudyItem } from "./data";
+import Link from "next/link";
 
 export default function CaseStudyCard({ item }: { item: CaseStudyItem }) {
+
+  const shortTitle = item.title.split(" ").slice(0, 5).join(" ");
+  const shortSummary = item.content.split(" ").slice(0, 12).join(" ");
+
   return (
     <Card 
         sx={{ 
@@ -26,10 +31,13 @@ export default function CaseStudyCard({ item }: { item: CaseStudyItem }) {
       </Box>
 
       <CardContent>
-        <Typography fontWeight={700}>{item.title}</Typography>
+        <Typography fontWeight={700}>{shortTitle}...</Typography>
 
         <Typography variant="body2" color="text.secondary">
-          {item.summary} <Link href="#">Read more</Link>
+          {shortSummary}... 
+          <Link href={`/casestudies/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
+            Read more
+          </Link>
         </Typography>
 
         <Box mt={2} display="flex" justifyContent="space-between">

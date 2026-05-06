@@ -2,9 +2,8 @@
 import { Container } from "@mui/material";
 import BlogsGrid from "./BlogsGrid";
 import BlogsPagination from "./BlogsPagination";
-import { blogsItems, featuredCardItems } from "./data";
+import { blogsItems } from "./data";
 import { useState } from "react";
-import BlogsFeaturedCard from "./BlogsFeaturedCard";
 
 
 export default function BlogsPage() {
@@ -28,13 +27,6 @@ export default function BlogsPage() {
         width: { xs: "95%", md: "90%", lg: "87%" },
         margin: "0 auto",
      }}>
-      <BlogsFeaturedCard
-        title={featuredCardItems.title}
-        description={featuredCardItems.summary}
-        image={featuredCardItems.image}
-        date={featuredCardItems.date}
-        readTime={featuredCardItems.readTime}
-      />
       <BlogsGrid news={currentItems} />
       <BlogsPagination count={Math.ceil(blogsItems.length / itemsPerPage)}
         page={page}
