@@ -2,6 +2,7 @@ import { Card, CardContent, Typography, Box } from "@mui/material";
 import Image from "next/image";
 import { BlogsItem } from "./data";
 import Link from "next/link";
+import { helvetica } from "@/utils/fonts";
 
 export default function BlogsCard({ item }: { item: BlogsItem }) {
 
@@ -31,9 +32,17 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
       </Box>
 
       <CardContent>
-        <Typography fontWeight={700}>{shortTitle}...</Typography>
+        <Typography 
+          fontWeight={700}
+          sx={{fontFamily: helvetica.style.fontFamily}}
+        >{shortTitle}...
+        </Typography>
 
-        <Typography variant="body2" color="text.secondary">
+        <Typography 
+          variant="body2" 
+          color="text.secondary"
+          sx={{fontFamily: helvetica.style.fontFamily}}
+        >
           {shortSummary}... 
           <Link href={`/blogs/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
             Read more
@@ -41,11 +50,19 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
         </Typography>
 
         <Box mt={2} display="flex" justifyContent="space-between">
-            <Typography variant="caption" color="text.secondary">
+            <Typography 
+              variant="caption" 
+              color="text.secondary"
+              sx={{fontFamily: helvetica.style.fontFamily}}
+            >
               {item.date}
             </Typography>
           {item.readTime && (
-            <Typography variant="caption">{item.readTime}</Typography>
+            <Typography 
+              variant="caption"
+              sx={{fontFamily: helvetica.style.fontFamily}}
+            >{item.readTime}
+            </Typography>
           )}
         </Box>
       </CardContent>

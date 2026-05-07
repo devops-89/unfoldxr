@@ -1,6 +1,7 @@
 import { Box, Typography, TextField, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
+import { din } from "@/utils/fonts";
 
 export default function NewsHeader() {
   return (
@@ -11,7 +12,11 @@ export default function NewsHeader() {
          gap={{ xs: 2, md: 0 }}
          mb={5}
     >
-      <Typography variant="h4" fontWeight={900}>
+      <Typography 
+        variant="h4" 
+        fontWeight={900}
+        sx={{fontFamily: din.style.fontFamily}}
+      >
         NEWS & ARTICLE
       </Typography>
 
@@ -25,6 +30,7 @@ export default function NewsHeader() {
             "& .MuiOutlinedInput-root": {
               borderRadius: "999px",
             },
+            fontFamily: din.style.fontFamily,
           }}
           slotProps={{
             input: {

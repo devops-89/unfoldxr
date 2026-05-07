@@ -54,125 +54,131 @@ export const caseStudiesData: CaseStudiesData = {
     },
 };
 
+const generateSlug = (title: string, id: number) => {
+  const slug = title
+    .toLowerCase()
+    .split(" ")
+    .slice(0, 4)
+    .join("-")
+    .replace(/[^\w-]+/g, "");
+
+  return `${slug}-${id}`;
+};
+
+const createCaseStudyItem = (
+  item: Omit<CaseStudyItem, "slug">
+): CaseStudyItem => ({
+  ...item,
+  slug: generateSlug(item.title, item.id),
+});
+
 export const caseStudyItems: CaseStudyItem[] = [
-  {
+  createCaseStudyItem({
     id: 1,
      title: "UnfoldXR Partners with Realwear",
     image: CaseStydiesCard1,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "unfoldxr-parters-with-realwear",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 2,
     title: "Digital Transformation Strategies for Growing Businesses",
     image: CaseStydiesCard2,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "digital-transformation-strategies",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 3,
     title: "Emerging Technologies Shaping the Future of IT",
     image: CaseStydiesCard3,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "emerging-technologies-shaping-the-future",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 4,
     title: "How ERP Systems Improve Operational Efficiency",
     image: CaseStydiesCard4,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "how-erp-systems-improve",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 5,
     title: "Building Strong Digital Marketing Strategies for Startups",
     image: CaseStydiesCard5,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "building-strong-digital-marketing-strategies",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 6,
     title: "Trends in Mobile App Development for 2026",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "trends-in-mobile-app-development",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 7,
     title: "Long established",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "long-established",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 8,
     title: "Long established",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "long-established",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 9,
     title: "Long established",
     image: CaseStydiesCard6 ,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "long-established",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 10,
     title: "Long established",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "long-established",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 11,
     title: "Long established",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "long-established",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
-  {
+  }),
+  createCaseStudyItem({
     id: 12,
     title: "Long established",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
     readTime: "5 min reading",
-    slug: "long-established",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-  },
+  }),
 ];

@@ -4,6 +4,8 @@ import { newsItems } from "@/components/layouts/NewsLayout/data";
 import Image from 'next/image';
 import { Chip } from '@mui/material';
 import Link from 'next/link';
+import { din, helvetica } from "@/utils/fonts";
+import { COLORS } from "@/utils/enum";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -18,43 +20,19 @@ export default async function NewsDetailPage({ params }: Props) {
    return (
     <Box 
         sx={{ 
-            pt: 14,
-            px: 5,
-            pb: 5, 
-            maxWidth: "900px", 
+            maxWidth: "100%", 
             mx: "auto" 
             }}
     >
-      
-      <Typography variant="h3" sx={{ fontWeight: 700 }}>
-        {news.title}
-      </Typography>
-
-      <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 2 }}>
-        <Link href="/news" style={{ textDecoration: "none" }}>
-          <Chip
-            label="← Back to News"
-            clickable
-            sx={{
-              borderRadius: "999px",
-              fontWeight: 500,
-            }}
-          />
-        </Link>
-        <Typography sx={{ color: "text.secondary" }}>
-          {news.date} • {news.readTime}
-        </Typography>
-      </Box>
-
       <Box
         sx={{
-          position: "relative",
-          width: "100%",
-          height: 400,
-          mt: 3,
-          borderRadius: 3,
-          overflow: "hidden",
-        }}
+            position: "relative",
+            minHeight: { xs: "60vh", md: "60vh" },
+            display: "flex",
+            alignItems: "center",
+            color: COLORS.WHITE,
+            overflow: "hidden",
+           }}
       >
         <Image
           src={news.image}
@@ -63,11 +41,85 @@ export default async function NewsDetailPage({ params }: Props) {
           style={{ objectFit: "cover" }}
           priority
         />
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            bgcolor: "rgba(0,0,0,0.4)",
+            zIndex: 1,
+          }}
+        />
+        <Box
+          sx={{
+                position: "relative",
+                zIndex: 2,
+                width: { xs: "100%", md: "80%" },
+                boxSizing: "border-box",
+                mx: "auto",
+                pt: { xs: 12, md: 18 },
+                pb: { xs: 8, md: 12 },
+                pl: { xs: 0, md: 2 },
+                px: { xs: 3, md: 0 },
+              }}
+        >
+          <Typography
+            sx={{
+              fontWeight: 900,
+              textTransform: "uppercase",
+              fontSize: { xs: 26, md: 50, lg: 36 },
+              lineHeight: { xs: "35px", md: "42px" },
+              maxWidth: 1050,
+              whiteSpace: "pre-line",
+              width: { xs: "100%", lg: "70%" },
+              fontFamily: din.style.fontFamily,
+            }}
+          >
+            {news.title}
+          </Typography>
+        </Box>
       </Box>
 
-      <Typography sx={{ mt: 3, lineHeight: 1.7 }}>
+      <Box
+        sx={{
+          width: { xs: "95%", md: "90%", lg: "84%" },
+          mx: "auto",
+          pt: 6,
+          pb: 8,
+        }}
+      >
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <Link href="/news" style={{ textDecoration: "none" }}>
+          <Chip
+            label="← Back to News"
+            clickable
+            sx={{
+              borderRadius: "999px",
+              fontWeight: 600,
+              fontFamily: helvetica.style.fontFamily,
+            }}
+          />
+        </Link>
+        <Typography 
+            sx={{ 
+                color: "text.secondary", 
+                fontFamily: helvetica.style.fontFamily,
+                }}
+        >
+          {news.date} • {news.readTime}
+        </Typography>
+      </Box>
+
+      <Typography 
+        sx={{ 
+            mt: 3, 
+            fontFamily: helvetica.style.fontFamily,
+            lineHeight: 1.7, 
+            fontSize: "1.02rem" 
+            }}
+      >
         {news.content}
       </Typography>
+      </Box>
 
     </Box>
   );

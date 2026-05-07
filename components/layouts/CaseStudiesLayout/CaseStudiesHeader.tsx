@@ -1,5 +1,6 @@
 import { Box, Typography, TextField, InputAdornment, IconButton } from "@mui/material";
 import Link from "next/link";
+import { din } from "@/utils/fonts";
 
 export default function CaseStudiesHeader() {
   return (
@@ -10,7 +11,11 @@ export default function CaseStudiesHeader() {
          gap={{ xs: 2, md: 0 }}
          mb={5}
     >
-      <Typography variant="h4" fontWeight={900}>
+      <Typography 
+          variant="h4" 
+          fontWeight={900}
+          sx={{fontFamily: din.style.fontFamily}}
+      >
         CASE STUDY
       </Typography>
 
@@ -22,6 +27,7 @@ export default function CaseStudiesHeader() {
                 textDecoration: "underline", 
                 color: "inherit",
                 fontWeight: 400,
+                fontFamily: din.style.fontFamily,
                 }}>
             View all
           </Link>

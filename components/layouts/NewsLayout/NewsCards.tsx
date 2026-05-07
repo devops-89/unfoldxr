@@ -2,6 +2,7 @@ import { Card, CardContent, Typography, Box } from "@mui/material";
 import Image from "next/image";
 import { NewsItem } from "./data";
 import Link from "next/link";
+import { helvetica } from "@/utils/fonts";
 
 export default function NewsCard({ item }: { item: NewsItem }) {
 
@@ -31,9 +32,21 @@ export default function NewsCard({ item }: { item: NewsItem }) {
       </Box>
 
       <CardContent>
-        <Typography fontWeight={700}>{shortTitle}</Typography>
+        <Typography 
+          fontWeight={700}
+          sx={{
+            fontFamily: helvetica.style.fontFamily
+          }}
+        >{shortTitle}...
+        </Typography>
 
-        <Typography variant="body2" color="text.secondary">
+        <Typography 
+          variant="body2" 
+          color="text.secondary"
+          sx={{
+            fontFamily: helvetica.style.fontFamily
+          }}
+        >
           {shortSummary}... 
           <Link href={`/news/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
             Read more
@@ -42,16 +55,28 @@ export default function NewsCard({ item }: { item: NewsItem }) {
 
         <Box mt={2} display="flex" justifyContent="space-between">
           <Box>
-            <Typography variant="caption">{item.date}</Typography>
+            <Typography 
+              variant="caption"
+              sx={{fontFamily: helvetica.style.fontFamily}}
+            >{item.date}
+            </Typography>
             {item.author && (
-              <Typography variant="caption" display="block">
+              <Typography 
+                variant="caption" 
+                display="block"
+                sx={{fontFamily: helvetica.style.fontFamily}}
+              >
                 By "{item.author}"
               </Typography>
             )}
           </Box>
 
           {item.readTime && (
-            <Typography variant="caption">{item.readTime}</Typography>
+            <Typography 
+              variant="caption"
+              sx={{fontFamily: helvetica.style.fontFamily}}
+            >{item.readTime}
+            </Typography>
           )}
         </Box>
       </CardContent>
