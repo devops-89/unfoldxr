@@ -52,7 +52,7 @@ export const blogsData: BlogsData = {
 export const blogsItems: BlogsItem[] = [
   {
     id: 1,
-    title: "UnfoldXR Partners with Realwear...",
+    title: "UnfoldXR Partners with Realwear",
     image: BlogCard1,
     date: "May 20th 2020",
     readTime: "5 min reading",
@@ -61,47 +61,47 @@ export const blogsItems: BlogsItem[] = [
   },
   {
     id: 2,
-    title: "Long established",
+    title: "Digital Transformation Strategies for Growing Businesses",
     image: BlogCard2,
     date: "May 20th 2020",
     readTime: "5 min reading",
-    slug: "long-established",
+    slug: "digital-transformation-strategies",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
   },
   {
     id: 3,
-    title: "Long established",
+    title: "Emerging Technologies Shaping the Future of IT",
     image: BlogCard3,
     date: "May 20th 2020",
     readTime: "5 min reading",
-    slug: "long-established",
+    slug: "emerging-technologies-shaping-the-future",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
   },
   {
     id: 4,
-    title: "Long established",
+    title: "How ERP Systems Improve Operational Efficiency",
     image: BlogCard4,
     date: "May 20th 2020",
     readTime: "5 min reading",
-    slug: "long-established",
+    slug: "how-erp-systems-improve",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
   },
   {
     id: 5,
-    title: "Long established",
+    title: "Building Strong Digital Marketing Strategies for Startups",
     image: BlogCard5,
     date: "May 20th 2020",
     readTime: "5 min reading",
-    slug: "long-established",
+    slug: "building-strong-digital-marketing-strategies",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
   },
   {
     id: 6,
-    title: "Long established",
+    title: "Trends in Mobile App Development for 2026",
     image: BlogCard6,
     date: "May 20th 2020",
     readTime: "5 min reading",
-    slug: "long-established",
+    slug: "trends-in-mobile-app-development",
     content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
   },
   {

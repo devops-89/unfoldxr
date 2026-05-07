@@ -16,7 +16,15 @@ export default async function NewsDetailPage({ params }: Props) {
   if (!news) return notFound();
 
    return (
-    <Box sx={{ pt:15, p: 5, maxWidth: "900px", mx: "auto" }}>
+    <Box 
+        sx={{ 
+            pt: 14,
+            px: 5,
+            pb: 5, 
+            maxWidth: "900px", 
+            mx: "auto" 
+            }}
+    >
       
       <Typography variant="h3" sx={{ fontWeight: 700 }}>
         {news.title}

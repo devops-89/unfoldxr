@@ -35,7 +35,7 @@ export default function NewsCard({ item }: { item: NewsItem }) {
 
         <Typography variant="body2" color="text.secondary">
           {shortSummary}... 
-          <Link href={`/blogs/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
+          <Link href={`/news/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
             Read more
           </Link>
         </Typography>

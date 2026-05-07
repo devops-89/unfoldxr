@@ -16,7 +16,15 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   if (!caseStudy) return notFound();
 
    return (
-    <Box sx={{ p: 5, maxWidth: "900px", mx: "auto" }}>
+    <Box 
+        sx={{ 
+           pt: 14,
+           px: 5,
+           pb: 5, 
+           maxWidth: "900px", 
+           mx: "auto" 
+           }}
+    >
       
       <Typography variant="h3" sx={{ fontWeight: 700 }}>
         {caseStudy.title}
