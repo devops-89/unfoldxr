@@ -143,7 +143,13 @@ export const HEADER_LINKS = [
       },
       { 
         label: "Case Studies", 
-        url: "/casestudies" }, // Az
+        url: "/casestudies",
+      },
+      {
+        label: "Brochures, eBook and Infographics",
+        url: "/brochures",
+      },
+      
     ],
   },
   {
@@ -200,7 +206,11 @@ export const FOOTER_COLUMNS = [
         url: "/news",
       },
 
-      { label: "Case Studies", url: "/casestudies" }, // Az
+      { label: "Case Studies", url: "/casestudies" },
+      {
+        label: "Brochures, eBook and Infographics",
+        url: "/brochures",
+      },
     ],
   },
   {
