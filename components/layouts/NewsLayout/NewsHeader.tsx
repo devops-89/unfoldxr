@@ -3,7 +3,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 import { din } from "@/utils/fonts";
 
-export default function NewsHeader() {
+interface NewsHeaderProps {
+  searchTerm: string;
+  setSearchTerm: (value: string) => void;
+}
+
+
+export default function NewsHeader({
+  searchTerm,
+  setSearchTerm,
+}: NewsHeaderProps) {
   return (
     <Box display="flex" 
          justifyContent="space-between" 
@@ -25,6 +34,8 @@ export default function NewsHeader() {
           placeholder="Search"
           size="small"
           fullWidth
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           sx={{
             maxWidth: { md: 260 },
             "& .MuiOutlinedInput-root": {

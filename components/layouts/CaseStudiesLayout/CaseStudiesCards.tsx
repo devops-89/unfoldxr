@@ -7,9 +7,16 @@ import { helvetica } from "@/utils/fonts";
 export default function CaseStudyCard({ item }: { item: CaseStudyItem }) {
 
   const shortTitle = item.title.split(" ").slice(0, 5).join(" ");
-  const shortSummary = item.content.split(" ").slice(0, 12).join(" ");
+  const shortSummary = item.content.split(" ").slice(0, 19).join(" ");
 
   return (
+    <Link 
+      href={`/casestudies/${item.slug}`} 
+      style={{ 
+        color: "black", 
+        textDecoration: "none" 
+        }}
+    >
     <Card 
         sx={{ 
           borderRadius: 0, 
@@ -43,10 +50,7 @@ export default function CaseStudyCard({ item }: { item: CaseStudyItem }) {
           color="text.secondary"
           sx={{fontFamily: helvetica.style.fontFamily}}
         >
-          {shortSummary}... 
-          <Link href={`/casestudies/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
-            Read more
-          </Link>
+          {shortSummary}...
         </Typography>
 
         <Box mt={2} display="flex" justifyContent="space-between">
@@ -76,5 +80,6 @@ export default function CaseStudyCard({ item }: { item: CaseStudyItem }) {
         </Box>
       </CardContent>
     </Card>
+    </Link>
   );
 }
