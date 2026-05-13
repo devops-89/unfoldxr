@@ -129,7 +129,7 @@ export const caseStudyItems: CaseStudyItem[] = [
   }),
   createCaseStudyItem({
     id: 7,
-    title: "Long established",
+    title: "Long established Mobile App Development for 2026",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -138,7 +138,7 @@ export const caseStudyItems: CaseStudyItem[] = [
   }),
   createCaseStudyItem({
     id: 8,
-    title: "Long established",
+    title: "Long established Digital Marketing Strategies for Startups",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -147,7 +147,7 @@ export const caseStudyItems: CaseStudyItem[] = [
   }),
   createCaseStudyItem({
     id: 9,
-    title: "Long established",
+    title: "Long established Systems Improve Operational Efficiency",
     image: CaseStydiesCard6 ,
     date: "May 20th 2020",
     author: "Author Name",
@@ -156,7 +156,7 @@ export const caseStudyItems: CaseStudyItem[] = [
   }),
   createCaseStudyItem({
     id: 10,
-    title: "Long established",
+    title: "Long established Technologies Shaping the Future of IT",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -165,7 +165,7 @@ export const caseStudyItems: CaseStudyItem[] = [
   }),
   createCaseStudyItem({
     id: 11,
-    title: "Long established",
+    title: "Long established Partners with Realwear",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -174,7 +174,7 @@ export const caseStudyItems: CaseStudyItem[] = [
   }),
   createCaseStudyItem({
     id: 12,
-    title: "Long established",
+    title: "Long established Digital Marketing Strategies for Startups",
     image: CaseStydiesCard6,
     date: "May 20th 2020",
     author: "Author Name",

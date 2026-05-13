@@ -141,10 +141,10 @@ export const HEADER_LINKS = [
         label: "Latest News",
         url: "/news",
       },
-      { 
-        label: "Case Studies", 
-        url: "/casestudies",
-      },
+//      { 
+//        label: "Case Studies", 
+//        url: "/casestudies",
+//      },
       {
         label: "Brochures, eBook and Infographics",
         url: "/brochures",
@@ -206,7 +206,7 @@ export const FOOTER_COLUMNS = [
         url: "/news",
       },
 
-      { label: "Case Studies", url: "/casestudies" },
+   //  { label: "Case Studies", url: "/casestudies" },
       {
         label: "Brochures, eBook and Infographics",
         url: "/brochures",

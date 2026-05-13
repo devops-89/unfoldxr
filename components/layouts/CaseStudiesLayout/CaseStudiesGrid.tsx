@@ -6,7 +6,7 @@ export default function NewsGrid({ news }: { news: CaseStudyItem[] }) {
   return (
     <Grid container spacing={3}>
       {news.map((item) => (
-        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={item.id}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }} key={item.id}>
           <CaseStudyCard item={item} />
         </Grid>
       ))}

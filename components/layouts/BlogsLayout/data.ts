@@ -13,10 +13,6 @@ export interface BlogsData {
     title: string;
     overlayOpacity?: number;
   };
-  newsSection: {
-    title: string;
-    description: string;
-  };
     finalCTAsection: { 
     title: string;
     subtitle: string;
@@ -38,10 +34,6 @@ export const blogsData: BlogsData = {
     image: BlogHero,
     title: "Reimaging How Frontline Works",
     overlayOpacity: 0.7,
-  },
-  newsSection: {
-    title: "Stay Updated with Our Latest News",
-    description: "Discover the most recent updates and announcements from our team.",
   },
   finalCTAsection: {
     title: "Bring intelligence to Your manufacturing floor",
@@ -118,7 +110,7 @@ export const blogsItems: BlogsItem[] = [
   }),
   createBlogsItem({
     id: 7,
-    title: "Long established",
+    title: "Long established App Development for 2026",
     image: BlogCard6,
     date: "May 20th 2020",
     readTime: "5 min reading",
@@ -126,7 +118,7 @@ export const blogsItems: BlogsItem[] = [
   }),
   createBlogsItem({
     id: 8,
-    title: "Long established",
+    title: "Long established Systems Improve Operational Efficiency",
     image: BlogCard6,
     date: "May 20th 2020",
     readTime: "5 min reading",
@@ -134,7 +126,7 @@ export const blogsItems: BlogsItem[] = [
   }),
   createBlogsItem({
     id: 9,
-    title: "Long established",
+    title: "Long established Marketing Strategies for Startups",
     image: BlogCard6,
     date: "May 20th 2020",
     readTime: "5 min reading",

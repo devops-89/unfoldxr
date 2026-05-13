@@ -125,7 +125,7 @@ export const newsItems: NewsItem[] = [
   }),
   createNewsItem({
     id: 7,
-    title: "Long established",
+    title: "Long established Mobile App Development for 2026",
     image: NewsCardImg6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -134,7 +134,7 @@ export const newsItems: NewsItem[] = [
   }),
   createNewsItem({
     id: 8,
-    title: "Long established",
+    title: "Long established Digital Marketing Strategies for Startups",
     image: NewsCardImg6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -143,7 +143,7 @@ export const newsItems: NewsItem[] = [
   }),
   createNewsItem({
     id: 9,
-    title: "Long established",
+    title: "Long established Technologies Shaping the Future of IT",
     image: NewsCardImg6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -152,7 +152,7 @@ export const newsItems: NewsItem[] = [
   }),
   createNewsItem({
     id: 10,
-    title: "Long established",
+    title: "Long established Systems Improve Operational Efficiency",
     image: NewsCardImg6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -161,7 +161,7 @@ export const newsItems: NewsItem[] = [
   }),
   createNewsItem({
     id: 11,
-    title: "Long established",
+    title: "Long established Transformation Strategies for Growing Businesses",
     image: NewsCardImg6,
     date: "May 20th 2020",
     author: "Author Name",
@@ -170,7 +170,7 @@ export const newsItems: NewsItem[] = [
   }),
   createNewsItem({
     id: 12,
-    title: "Long established",
+    title: "Long established Partners with Realwear",
     image: NewsCardImg6,
     date: "May 20th 2020",
     author: "Author Name",

@@ -9,7 +9,7 @@ import CaseStudiesHeader from "./CaseStudiesHeader";
 
 export default function CaseStudiesPage() {
   const [page, setPage] = useState<number>(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 8;
 
   const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);

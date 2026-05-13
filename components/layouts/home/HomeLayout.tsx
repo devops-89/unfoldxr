@@ -11,6 +11,7 @@ import DevicesSection from "./Devices-Section";
 import Tools from "./Tools";
 import AboutUnfoldxr from "./About-Unfoldxr";
 import ManyTools from "./Many-tools";
+import ScrollScanSection from "./components/ScrollScanSection";
 
 const HomeLayout = () => {
   return (
@@ -25,6 +26,8 @@ const HomeLayout = () => {
       >
         <WorkForce />
       </Box>
+
+      <ScrollScanSection/>
 
       <AiIndustry />
 
