@@ -11,7 +11,7 @@ import DevicesSection from "./Devices-Section";
 import Tools from "./Tools";
 import AboutUnfoldxr from "./About-Unfoldxr";
 import ManyTools from "./Many-tools";
-import ScrollScanSection from "./components/ScrollScanSection";
+import ScrollScanSection from "./ScrollScanSection";
 
 const HomeLayout = () => {
   return (
