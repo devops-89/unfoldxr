@@ -2,6 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
+import{ COLORS } from "@/utils/enum";
 
 export type Category =
   | "Infographic"
@@ -41,14 +42,18 @@ const BrochuresTabs = ({
             key={tab}
             onClick={() => setActiveTab(tab)}
             sx={{
+              px: 1.5,
+              py: 1,
+              borderRadius: "999px",
               cursor: "pointer",
               fontFamily: helvetica.style.fontFamily,
               fontSize: "15px",
               fontWeight: 500,
               transition: "0.3s",
-              color: isActive ? "#ccf919" : "#9E9E9E",
+              backgroundColor: isActive ? COLORS.PRIMARY_GREEN : "none",
+              color: isActive ? COLORS.BLACK : COLORS.TEXT_MUTED,
               "&:hover": {
-                color: "#ccf919",
+                color: COLORS.BLACK,
               },
             }}
           >

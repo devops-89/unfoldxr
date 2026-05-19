@@ -1,13 +1,16 @@
 "use client";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
+import NewsHero from '@/components/layouts/NewsLayout/NewsHero'
+import FinalCTASection from '@/components/layouts/NewsLayout/FinalCTASection'
 import NewsHeader from "./NewsHeader";
 import NewsGrid from "./NewsGrid";
 import NewsPagination from "./NewsPagination";
-import { newsItems } from "./data";
+import { newsItems, newsData } from "./data";
 import { useState } from "react";
 
 
 export default function NewsPage() {
+  const data = newsData;
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [page, setPage] = useState<number>(1);
   const itemsPerPage = 8;
@@ -30,6 +33,8 @@ export default function NewsPage() {
   );
 
   return (
+    <Box>
+    <NewsHero image={data.hero.image} title={data.hero.title} overlayOpacity={data.hero.overlayOpacity} />
     <Container maxWidth={false}
      sx={{ 
         py: 6,
@@ -42,5 +47,7 @@ export default function NewsPage() {
         page={page}
         onChange={handleChange}/>
     </Container>
+    <FinalCTASection title={data.finalCTAsection.title} subtitle={data.finalCTAsection.subtitle} />
+    </Box>
   );
 }

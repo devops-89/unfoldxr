@@ -4,6 +4,8 @@ import { COLORS } from '@/utils/enum'
 import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
+import { BlogsItem } from './data'
+import FeaturedBlogCard from './FeaturedBlogCard'
 
 interface BlogsHeroProps {
     image: string | StaticImageData;
@@ -11,14 +13,16 @@ interface BlogsHeroProps {
     titleMaxWidth?: number | string;
     objectPosition?: any;
     overlayOpacity?: number;
+    featuredBlog?: BlogsItem
 }
 
-const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity}: BlogsHeroProps) => {
+const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity, featuredBlog}: BlogsHeroProps) => {
   return (
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "100vh", md: "100vh" },
+        height: { xs: "100vh", md: "100vh" },
+        backgroundColor: COLORS.WHITE,
         display: "flex",
         alignItems: "center",
         color: COLORS.WHITE,
@@ -31,6 +35,7 @@ const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overla
           position: "absolute",
           inset: 0,
           zIndex: 0,
+          height: "60%",
         }}
       >
         <Image
@@ -48,12 +53,15 @@ const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overla
       <Box
         sx={{
           position: "absolute",
-          inset: 0,
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "60%",
           bgcolor: `rgba(0,0,0,${overlayOpacity})`,
           zIndex: 1,
         }}
       />
-       <Box
+      {/*<Box
               sx={{
                 position: "relative",
                 zIndex: 2,
@@ -92,7 +100,10 @@ const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overla
         >
           {title}
         </Typography>
-        </Box>
+        </Box> */}
+        {featuredBlog && (
+           <FeaturedBlogCard blog={featuredBlog} />
+         )}
       </Box>
   )
 }

@@ -1,8 +1,10 @@
 "use client";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
+import BlogsHero from "@/components/layouts/BlogsLayout/BlogsHero";
+import FinalCTASection from "@/components/layouts/BlogsLayout/FinalCTASection";
 import BlogsGrid from "./BlogsGrid";
 import BlogsPagination from "./BlogsPagination";
-import { blogsItems } from "./data";
+import { blogsItems, blogsData } from "./data";
 import { useState } from "react";
 
 
@@ -20,7 +22,13 @@ export default function BlogsPage() {
     startIndex + itemsPerPage
   );
 
+  const featuredBlog = blogsItems.find(
+          (blog) => blog.featured
+        );
+
   return (
+    <Box>
+    <BlogsHero image={blogsData.hero.image} title={blogsData.hero.title} overlayOpacity={blogsData.hero.overlayOpacity} featuredBlog={featuredBlog} />
     <Container maxWidth={false}
      sx={{ 
         py: 6,
@@ -32,5 +40,7 @@ export default function BlogsPage() {
         page={page}
         onChange={handleChange}/>
     </Container>
+    <FinalCTASection title={blogsData.finalCTAsection.title} subtitle={blogsData.finalCTAsection.subtitle} />
+    </Box>
   );
 }

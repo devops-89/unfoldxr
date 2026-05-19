@@ -18,7 +18,7 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "100vh", md: "100vh" },
+        minHeight: { xs: "60vh", md: "60vh" },
         display: "flex",
         alignItems: "center",
         color: COLORS.WHITE,
