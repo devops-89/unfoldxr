@@ -17,8 +17,6 @@ const FeaturedBlogCard = ({ blog }: FeaturedBlogCardProps) => {
     <Box
       sx={{
         position: "absolute",
-        left: "50%",
-        transform: "translateX(-50%)",
         bottom: { xs: "4%", md: "8%" },
         width: { xs: "95%", md: "90%", lg: "84%" },
         backgroundColor: COLORS.WHITE,

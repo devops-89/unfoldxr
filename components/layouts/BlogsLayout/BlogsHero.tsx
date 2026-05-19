@@ -25,6 +25,7 @@ const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overla
         backgroundColor: COLORS.WHITE,
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         color: COLORS.WHITE,
         overflow: "hidden",
       }}
