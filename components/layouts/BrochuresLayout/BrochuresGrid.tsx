@@ -1,12 +1,8 @@
-// components/brochures/BrochureGrid.tsx
-
-"use client";
-
 import { Box } from "@mui/material";
 
 import BrochureCard from "@/components/layouts/BrochuresLayout/BrochuresCard";
 
-import { BrochureItem } from "@/components/layouts/BrochuresLayout/data"
+import { BrochureItem } from "@/components/layouts/BrochuresLayout/data";
 
 interface BrochureGridProps {
   items: BrochureItem[];

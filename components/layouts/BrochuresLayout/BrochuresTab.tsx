@@ -3,6 +3,8 @@
 import { Box, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import{ COLORS } from "@/utils/enum";
+import Link from "next/link";
+import { categorySlugMap } from "./data";
 
 export type Category =
   | "Infographic"
@@ -13,34 +15,47 @@ export type Category =
 
 interface BrochuresTabsProps {
   tabs: Category[];
-  activeTab: Category;
-  setActiveTab: (tab: Category) => void;
+  activeTabSlug: string;
 }
 
 const BrochuresTabs = ({
   tabs,
-  activeTab,
-  setActiveTab,
+  activeTabSlug,
 }: BrochuresTabsProps) => {
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
-        gap: "30px",
+        gap: {
+          xs: "10px",
+          sm: "16px",
+          md: "24px",
+          lg: "30px",
+        },
         borderBottom: "1px solid #D9D9D9",
-        pt: 10,
+        pt: {
+          xs: 4,
+          sm: 6,
+          md: 8,
+          lg: 10,
+        },
         pb: 1,
         flexWrap: "wrap",
       }}
     >
       {tabs.map((tab) => {
-        const isActive = activeTab === tab;
+        const isActive = categorySlugMap[tab] === activeTabSlug;
 
         return (
+          <Link
+          key={tab}
+          href={`/brochures/${categorySlugMap[tab]}`}
+          style={{
+             textDecoration: "none",
+           }}
+          >
           <Typography
-            key={tab}
-            onClick={() => setActiveTab(tab)}
             sx={{
               px: 1.5,
               py: 1,
@@ -59,6 +74,8 @@ const BrochuresTabs = ({
           >
             {tab}
           </Typography>
+          </Link>
+
         );
       })}
     </Box>

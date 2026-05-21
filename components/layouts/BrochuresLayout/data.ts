@@ -1,10 +1,12 @@
 import { StaticImageData } from "next/image";
 
-import BlogCard1 from "@/images/blogs-img/BlogsCardImages/blogs1.jpg";
-import BlogCard2 from "@/images/blogs-img/BlogsCardImages/blogs2.jpg";
-import BlogCard3 from "@/images/blogs-img/BlogsCardImages/blogs3.jpg";
-import BlogCard4 from "@/images/blogs-img/BlogsCardImages/blogs4.jpg";
-import BlogCard5 from "@/images/blogs-img/BlogsCardImages/blogs5.jpg";
+import testing1 from "@/images/resources/infographicImages/testing1.jpg";
+import testing2 from "@/images/resources/infographicImages/testing2.jpg";
+import testing3 from "@/images/resources/infographicImages/testing3.jpg";
+import testing4 from "@/images/resources/infographicImages/testing4.jpg";
+import testing5 from "@/images/resources/infographicImages/testing5.jpg";
+import AiIsRewriting from "@/images/resources/infographicImages/AI-IS-REWRITING.jpg";
+import EightyofTheWorkforce from "@/images/resources/infographicImages/Eighty-of-the-workforce.jpg";
 
 export interface BrochuresData {
     finalCTAsection: { 
@@ -30,7 +32,9 @@ export type BrochureCategory =
 export interface BrochureItem {
   id: number;
   title: string;
+  slug?: string;
   image: string | StaticImageData;
+  pdf?: string;
 }
 
 export const brochureTabs: BrochureCategory[] = [
@@ -41,6 +45,22 @@ export const brochureTabs: BrochureCategory[] = [
   "Report",
 ];
 
+export const categorySlugMap = {
+  "Infographic": "infographic",
+  "Events & Webinar": "events-webinar",
+  "Brochure": "brochure",
+  "eBook": "ebook",
+  "Report": "report",
+};
+
+export const slugCategoryMap = {
+  "infographic": "Infographic",
+  "events-webinar": "Events & Webinar",
+  "brochure": "Brochure",
+  "ebook": "eBook",
+  "report": "Report",
+} as const;
+
 
 export const brochureTabData: Record<
   BrochureCategory,
@@ -48,59 +68,15 @@ export const brochureTabData: Record<
 > = {
 
   "Infographic": [
-    { id: 1, title: "Card 1", image: BlogCard1 },
-    { id: 2, title: "Card 2", image: BlogCard1 },
-    { id: 3, title: "Card 3", image: BlogCard1 },
-    { id: 4, title: "Card 4", image: BlogCard1 },
-    { id: 5, title: "Card 5", image: BlogCard1 },
-    { id: 6, title: "Card 6", image: BlogCard1 },
-    { id: 7, title: "Card 7", image: BlogCard1 },
-    { id: 8, title: "Card 8", image: BlogCard1 },
-    { id: 9, title: "Card 9", image: BlogCard1 },
-    { id: 10, title: "Card 10", image: BlogCard1 },
-    { id: 11, title: "Card 11", image: BlogCard1 },
-    { id: 12, title: "Card 12", image: BlogCard1 },
+    { id: 1, title: "Card 1", image: AiIsRewriting, slug: "ai-is-rewritting", pdf: "/ResourcePdf/infographicsPdf/AI-IS-REWRITING.pdf" },
+    { id: 2, title: "Card 2", image: EightyofTheWorkforce, slug: "80%-of-workforce", pdf: "/ResourcePdf/infographicsPdf/Eighty-of-the-workforce.pdf"},
   ],
 
-  "Events & Webinar": [
-    { id: 13, title: "Card 13", image: BlogCard2 },
-    { id: 14, title: "Card 14", image: BlogCard2 },
-    { id: 15, title: "Card 15", image: BlogCard2 },
-    { id: 16, title: "Card 16", image: BlogCard2 },
-    { id: 17, title: "Card 17", image: BlogCard2 },
-    { id: 18, title: "Card 18", image: BlogCard2 },
-    { id: 19, title: "Card 19", image: BlogCard2 },
-    { id: 20, title: "Card 20", image: BlogCard2 },
-    { id: 21, title: "Card 21", image: BlogCard2 },
-    { id: 22, title: "Card 22", image: BlogCard2 },
-    { id: 23, title: "Card 23", image: BlogCard2 },
-    { id: 24, title: "Card 24", image: BlogCard2 },
-  ],
+  "Events & Webinar": [],
 
-  "Brochure": [
-    { id: 25, title: "Card 25", image: BlogCard3 },
-    { id: 26, title: "Card 26", image: BlogCard3 },
-    { id: 27, title: "Card 27", image: BlogCard3 },
-    { id: 28, title: "Card 28", image: BlogCard3 },
-    { id: 29, title: "Card 29", image: BlogCard3 },
-    { id: 30, title: "Card 30", image: BlogCard3 },
-  ],
+  "Brochure": [],
 
-  "eBook": [
-    { id: 31, title: "Card 31", image: BlogCard4 },
-    { id: 32, title: "Card 32", image: BlogCard4 },
-    { id: 33, title: "Card 33", image: BlogCard4 },
-    { id: 34, title: "Card 34", image: BlogCard4 },
-    { id: 35, title: "Card 35", image: BlogCard4 },
-    { id: 36, title: "Card 36", image: BlogCard4 },
-  ],
+  "eBook": [],
 
-  "Report": [
-    { id: 37, title: "Card 37", image: BlogCard5 },
-    { id: 38, title: "Card 38", image: BlogCard5 },
-    { id: 39, title: "Card 39", image: BlogCard5 },
-    { id: 40, title: "Card 40", image: BlogCard5 },
-    { id: 41, title: "Card 41", image: BlogCard5 },
-    { id: 42, title: "Card 42", image: BlogCard5 },
-  ],
+  "Report": [],
 };

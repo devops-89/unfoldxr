@@ -1,15 +1,5 @@
-import FinalCTASection from '@/components/layouts/BrochuresLayout/FinalCTASection';
-import React from 'react'
-import { brochuresData } from '@/components/layouts/BrochuresLayout/data';
-import BrochuresIndex from "@/components/layouts/BrochuresLayout/BrochuresIndex";
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return (
-    <div>
-      <BrochuresIndex/>
-      <FinalCTASection title={brochuresData.finalCTAsection.title} subtitle={brochuresData.finalCTAsection.subtitle}/>
-    </div>
-  )
+export default function Page() {
+  redirect("/brochures/infographic");
 }
-
-export default page
