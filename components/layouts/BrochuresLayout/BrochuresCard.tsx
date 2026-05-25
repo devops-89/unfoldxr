@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { COLORS } from "@/utils/enum";
 
 import { Box } from "@mui/material";
 
@@ -23,6 +24,8 @@ const CardImage = ({
       aspectRatio: "4 / 3",
       overflow: "hidden",
       background: "#eee",
+      borderBottom: "5px solid",
+      borderColor: COLORS.PRIMARY_GREEN,
       cursor: item.pdf
         ? "pointer"
         : "default",
