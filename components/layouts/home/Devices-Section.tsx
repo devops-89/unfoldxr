@@ -27,7 +27,7 @@ const DevicesSection = () => {
           component={motion.div}
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}
         >
@@ -52,7 +52,7 @@ const DevicesSection = () => {
               spacing={{ xs: 2, md: 2 }}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.15 }}
               variants={{
                 hidden: {},
                 visible: {

@@ -3,16 +3,11 @@
 import ContainedButton from "@/components/widgets/ContainedButton";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import Image from "next/image";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const Meetava = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.2 });
-
   return (
     <Box
       sx={{ mt: { xs: 8, md: 12 }, mb: { xs: 8, md: 12 }, overflow: "hidden" }}
@@ -26,13 +21,28 @@ const Meetava = () => {
         }}
       >
         <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
-          <Grid container alignItems="center" spacing={{ xs: 4, md: 6 }}>
+          <Grid
+            container
+            alignItems="center"
+            spacing={{ xs: 4, md: 6 }}
+            component={motion.div}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.15 }}
+            variants={{
+              hidden: { opacity: 1 },
+              visible: {
+                transition: {
+                  delayChildren: 0.15,
+                  staggerChildren: 0.12,
+                },
+              },
+            }}
+          >
             {/* LEFT: Heading + description + CTA */}
-            <Grid size={{ xs: 12, md: 7 }} ref={ref}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Stack spacing={3}>
                 <motion.div
-                  initial="hidden"
-                  animate={isInView ? "visible" : "hidden"}
                   variants={{
                     hidden: { opacity: 0, y: 40 },
                     visible: { opacity: 1, y: 0 },
@@ -54,9 +64,8 @@ const Meetava = () => {
                 </motion.div>
 
                 <motion.div
-                  initial="hidden"
-                  animate={isInView ? "visible" : "hidden"}
                   variants={{
+                    hidden: {},
                     visible: {
                       transition: {
                         staggerChildren: 0.15,
@@ -94,8 +103,10 @@ const Meetava = () => {
                 </motion.div>
                 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
                 <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
@@ -146,8 +157,6 @@ const Meetava = () => {
               }}
             >
               <motion.div
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
                 variants={{
                   hidden: { opacity: 0, scale: 0.85, rotate: -5 },
                   visible: {
@@ -160,10 +169,17 @@ const Meetava = () => {
                   duration: 0.7,
                   ease: "easeOut",
                 }}
+                whileHover={{ scale: 1.035, rotate: 1.5 }}
               >
               <Stack alignItems={{ xs: "center", md: "flex-end" }} spacing={1}>
                 <Box
-                  component="video"
+                  component={motion.video}
+                  animate={{ y: [0, -12, 0] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                   autoPlay
                   loop
                   muted
@@ -175,6 +191,7 @@ const Meetava = () => {
                     borderRadius: "50%",
                     display: "block",
                     objectFit: "cover",
+                    boxShadow: "0 28px 70px rgba(0,0,0,0.18)",
                   }}
                 >
                   <source

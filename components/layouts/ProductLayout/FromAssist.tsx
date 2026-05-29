@@ -5,6 +5,7 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { motion } from "framer-motion";
 
 import { useDemoModal } from "@/components/context/DemoModalContext";
 
@@ -15,6 +16,18 @@ const FromAssist = () => {
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Box
+        component={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
         sx={{
           width: { xs: "85%", md: "80%" },
           mx: "auto",
@@ -22,6 +35,12 @@ const FromAssist = () => {
         }}
       >
         <Box
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 4, md: "24px" },
@@ -35,6 +54,9 @@ const FromAssist = () => {
         >
           {/* Neon Purple Decoration */}
           <Box
+            component={motion.div}
+            animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             sx={{
               position: "absolute",
               left: -40,
@@ -48,6 +70,12 @@ const FromAssist = () => {
 
           <Box sx={{ position: "relative", zIndex: 1 }}>
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -74,6 +102,12 @@ const FromAssist = () => {
             </Typography>
 
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 mt: 3,
                 fontFamily: helvetica.style.fontFamily,
@@ -87,6 +121,12 @@ const FromAssist = () => {
             </Typography>
 
             <Box
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 mt: 6,
                 display: "flex",
@@ -122,7 +162,7 @@ const FromAssist = () => {
                 Write to us <ArrowForwardRoundedIcon />
               </Button>
               {/* <Typography
-                onClick={openModal}
+                onClick={() => openModal("product_assist")}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   textDecoration: "none",

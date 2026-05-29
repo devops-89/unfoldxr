@@ -10,6 +10,7 @@ import { din } from "@/utils/fonts";
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
+import { motion } from "framer-motion";
 
 // Main exported component with Suspense boundary
 export default function ContactFormSection() {
@@ -43,9 +44,27 @@ const ContactFormSectionContent = () => {
   ];
 
   return (
-    <Box sx={{ backgroundColor: "#FFFFFF", py: { xs: 6, md: 10 } }}>
+    <Box 
+      sx={{ backgroundColor: "#FFFFFF", py: { xs: 6, md: 10 } }}
+      component={motion.section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
+    >
       <Container maxWidth={false} sx={{ maxWidth: 1300 }}>
         <Box
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             backgroundColor: "#EEEEEE",
             borderRadius: "24px",
@@ -55,6 +74,12 @@ const ContactFormSectionContent = () => {
           <Grid container spacing={{ xs: 4, md: 8 }} alignItems="flex-start">
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, x: -30 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 sx={{
                   fontFamily: din.style.fontFamily,
                   fontSize: { xs: 36, md: 36, lg: 36 },
@@ -70,7 +95,15 @@ const ContactFormSectionContent = () => {
               </Typography>
             </Grid>
 
-            <Grid size={{ xs: 12, md: 7 }}>
+            <Grid 
+              size={{ xs: 12, md: 7 }}
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: 30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <Stack
                 direction="row"
                 alignItems="center"
@@ -158,3 +191,4 @@ const ContactFormSectionContent = () => {
     </Box>
   );
 };
+

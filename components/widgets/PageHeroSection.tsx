@@ -1,12 +1,13 @@
 "use client";
 
-import { Box, Button, Typography } from "@mui/material";
-import { din } from "@/utils/fonts";
+import BlurText from "./BlurText";
+import SplitText from "./SplitText";
 import { COLORS } from "@/utils/enum";
+import { din } from "@/utils/fonts";
+import { Box, Button, Typography } from "@mui/material";
+import Image, { StaticImageData } from "next/image";
 import { useDemoModal } from "../context/DemoModalContext";
-import Image from "next/image";
-import { StaticImageData } from "next/image";
-import DecryptedText from "@/utils/decrypted-text";
+import { motion } from "framer-motion";
 
 interface ButtonConfig {
   label: string;
@@ -52,12 +53,17 @@ const PageHeroSection = ({
     >
       {/* Background Image */}
     <Box
-  sx={{
-    position: "absolute",
-    inset: 0,
-    zIndex: 0,
-  }}
-  >
+      component={motion.div}
+      initial={{ scale: 1.08 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: false, amount: 0.15 }}
+      transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+      sx={{
+        position: "absolute",
+        inset: 0,
+        zIndex: 0,
+      }}
+    >
   <Image
     src={image}
     alt={title}
@@ -72,6 +78,11 @@ const PageHeroSection = ({
 
       {/* Dark Overlay */}
       <Box
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.15 }}
+        transition={{ duration: 1 }}
         sx={{
           position: "absolute",
           inset: 0,
@@ -80,8 +91,38 @@ const PageHeroSection = ({
         }}
       />
 
+      <Box
+        component={motion.div}
+        aria-hidden
+        initial={{ x: "-120%", opacity: 0 }}
+        whileInView={{ x: "120%", opacity: [0, 0.7, 0] }}
+        viewport={{ once: false, amount: 0.15 }}
+        transition={{ duration: 2.8, delay: 0.7, ease: "easeInOut" }}
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          pointerEvents: "none",
+          background:
+            "linear-gradient(105deg, transparent 35%, rgba(182,236,26,0.22) 50%, transparent 65%)",
+        }}
+      />
+
       {/* Content */}
       <Box
+        component={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.15 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              delayChildren: 0.25,
+              staggerChildren: 0.12,
+            },
+          },
+        }}
         sx={{
           position: "relative",
           zIndex: 2,
@@ -96,6 +137,12 @@ const PageHeroSection = ({
       >
         {titleOutlined && (
           <Typography
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 34 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
             sx={{
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 26, md: 50, lg: 36 },
@@ -113,6 +160,12 @@ const PageHeroSection = ({
         )}
 
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 36 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -124,14 +177,10 @@ const PageHeroSection = ({
             width: { xs: "100%", lg: "70%" },
           }}
         >
-          <DecryptedText
+          <BlurText
             text={title}
-            animateOn="view"
-            sequential
-            revealDirection="start"
-            speed={30}
-            className="revealed"
-            encryptedClassName="encrypted"
+            animateBy="words"
+            direction="top"
           />
         </Typography>
 
@@ -146,7 +195,7 @@ const PageHeroSection = ({
               maxWidth: 800,
             }}
           >
-            {subtitle}
+            <SplitText text={subtitle} splitType="lines" delay={50} globalDelay={0.5} />
           </Typography>
         )}
 
@@ -165,12 +214,18 @@ const PageHeroSection = ({
               width: { xs: "100%", md: "50%" },
             }}
           >
-           {description}
+           <SplitText text={description} splitType="lines" delay={30} globalDelay={0.9} />
           </Typography>
         )}
 
         {(primaryBtn || secondaryBtn) && (
           <Box
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 1.3 }}
             sx={{
               mt: { xs: 4, md: 5 },
               display: "flex",

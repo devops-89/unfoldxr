@@ -4,6 +4,7 @@ import { partnersPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import { useState } from "react";
 import { din, helvetica } from "@/utils/fonts";
+import { motion } from "framer-motion";
 
 const EcosystemSection = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -11,9 +12,18 @@ const EcosystemSection = () => {
 
   return (
     <Box
+      component={motion.section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         backgroundColor: "#000",
-        // minHeight: { md: "85vh" },
         display: "flex",
         alignItems: "center",
         py: { xs: 8, md: 10 },
@@ -27,6 +37,12 @@ const EcosystemSection = () => {
         }}
       >
         <Box
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{
             backgroundColor: "#fff",
             borderRadius: "20px",
@@ -34,6 +50,12 @@ const EcosystemSection = () => {
           }}
         >
           <Typography
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6 }}
             sx={{
               fontWeight: 900,
               fontSize: { xs: 26, md: 36 },
@@ -54,6 +76,13 @@ const EcosystemSection = () => {
             {/* LEFT */}
             <Grid size={{ xs: 12, md: 5 }}>
               <Box
+                component={motion.div}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.1 },
+                  },
+                }}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -63,6 +92,12 @@ const EcosystemSection = () => {
                 {data.map((item, i) => (
                   <Box
                     key={i}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.4 }}
                     sx={{
                       display: "flex",
                       flexDirection: { xs: "column", md: "row" },

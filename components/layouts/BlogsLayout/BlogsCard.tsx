@@ -22,9 +22,7 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
           borderRadius: 0, 
           overflow: "hidden",
           transition: "all 0.3s ease", 
-          "&:hover": {
-          transform: "translateY(-6px)",
-          },
+          boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
           }}
     >
       

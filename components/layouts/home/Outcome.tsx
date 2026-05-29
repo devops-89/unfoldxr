@@ -21,6 +21,26 @@ const Outcome = () => {
         // minHeight: "75vh",
         display: "flex",
         alignItems: "center",
+        position: "relative",
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(90deg, rgba(182,236,26,0.08) 0 1px, transparent 1px 100%)",
+          backgroundSize: "110px 100%",
+          animation: "outcomeLines 18s linear infinite",
+          opacity: 0.8,
+        },
+        "@keyframes outcomeLines": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(110px)" },
+        },
+        "& > *": {
+          position: "relative",
+          zIndex: 1,
+        },
       }}
     >
       <Box
@@ -36,7 +56,7 @@ const Outcome = () => {
            initial={{ opacity: 0, y: 50 }}
            whileInView={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.6 }}
-           viewport={{ }}
+           viewport={{ once: false, amount: 0.4 }}
           >
           <Typography
             sx={{
@@ -58,7 +78,7 @@ const Outcome = () => {
            initial={{ opacity: 0, y: 50 }}
            whileInView={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.6 }}
-           viewport={{ }}
+           viewport={{ once: false, amount: 0.4 }}
           >
           <Typography
             sx={{
@@ -81,7 +101,7 @@ const Outcome = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ }}
+            viewport={{ once: false, amount: 0.2 }}
             variants={{
               hidden: {},
               visible: {

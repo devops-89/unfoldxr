@@ -28,9 +28,29 @@ const OutcomeCard = ({ number, label, link }: OUTCOME_CARD_PROPS) => {
         borderRadius: "16px",
         minHeight: { xs: "auto", md: "110px" },
         transition: "all 0.3s ease", 
+        position: "relative",
+        overflow: "hidden",
         "&:hover": {
-        transform: "translateY(-6px)",
+          transform: "translateY(-6px)",
+          boxShadow: "0 22px 45px rgba(0,0,0,0.25)",
         }, 
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.16), transparent 70%)",
+          transform: "translateX(-100%)",
+          transition: "transform 0.65s ease",
+          pointerEvents: "none",
+        },
+        "&:hover::after": {
+          transform: "translateX(100%)",
+        },
+        "& > *": {
+          position: "relative",
+          zIndex: 1,
+        },
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center", gap: { xs: 2, md: 1 }, flex: 1 }}>

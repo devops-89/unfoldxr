@@ -6,6 +6,7 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { meetAvaPage } from "@/utils/Website-Data";
 import VerticalStepper from "@/components/widgets/VerticalStepper";
+import { motion, AnimatePresence } from "framer-motion";
 
 const AvaSupportSection = () => {
   const { supportSection: data } = meetAvaPage;
@@ -13,6 +14,18 @@ const AvaSupportSection = () => {
 
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
+      }}
       sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 10 } }}
     >
       <Box
@@ -24,6 +37,12 @@ const AvaSupportSection = () => {
         }}
       >
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 28, md: 32, lg: 36 },
@@ -36,6 +55,12 @@ const AvaSupportSection = () => {
           {data.heading}
         </Typography>
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             fontFamily: helvetica.style.fontFamily,
             fontSize: { xs: 16, md: 18, lg: 18 },
@@ -60,6 +85,12 @@ const AvaSupportSection = () => {
             >
               {data.features.map((feature, i) => (
                 <Box
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, x: -30 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   key={feature.label}
                   sx={{
                     display: "flex",
@@ -207,29 +238,38 @@ const AvaSupportSection = () => {
                   </Box>
 
                   {/* Mobile Description: Integrated into flow */}
-                  <Box
-                    sx={{
-                      display: {
-                        xs: activeFeature === i ? "block" : "none",
-                        md: "none",
-                      },
-                      px: 2,
-                      pb: 4,
-                      mt: -1,
-                      animation: "fadeIn 0.3s ease",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontFamily: helvetica.style.fontFamily,
-                        fontSize: 15,
-                        lineHeight: { xs: "26px", md: 1.6 },
-                        color: "rgba(255,255,255,0.8)",
-                      }}
-                    >
-                      {feature.description}
-                    </Typography>
-                  </Box>
+                  <AnimatePresence>
+                    {activeFeature === i && (
+                      <Box
+                        component={motion.div}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        sx={{
+                          display: {
+                            xs: "block",
+                            md: "none",
+                          },
+                          px: 2,
+                          pb: 4,
+                          mt: -1,
+                          overflow: "hidden"
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: helvetica.style.fontFamily,
+                            fontSize: 15,
+                            lineHeight: { xs: "26px", md: 1.6 },
+                            color: "rgba(255,255,255,0.8)",
+                          }}
+                        >
+                          {feature.description}
+                        </Typography>
+                      </Box>
+                    )}
+                  </AnimatePresence>
                 </Box>
               ))}
             </Box>
@@ -246,19 +286,26 @@ const AvaSupportSection = () => {
               }}
             >
               <Box>
-                <Typography
-                  sx={{
-                    fontFamily: helvetica.style.fontFamily,
-                    fontSize: { xs: 18, md: 20, lg: 16 },
-                    fontWeight: 500,
-                    lineHeight: "30px",
-                    color: COLORS.WHITE,
-                    maxWidth: { xs: 260, sm: 500, md: 800 },
-                    transition: "opacity 0.3s ease",
-                  }}
-                >
-                  {data.features[activeFeature].description}
-                </Typography>
+                <AnimatePresence mode="wait">
+                  <Typography
+                    component={motion.div}
+                    key={activeFeature}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    sx={{
+                      fontFamily: helvetica.style.fontFamily,
+                      fontSize: { xs: 18, md: 20, lg: 16 },
+                      fontWeight: 500,
+                      lineHeight: "30px",
+                      color: COLORS.WHITE,
+                      maxWidth: { xs: 260, sm: 500, md: 800 },
+                    }}
+                  >
+                    {data.features[activeFeature].description}
+                  </Typography>
+                </AnimatePresence>
               </Box>
             </Box>
           </Grid>

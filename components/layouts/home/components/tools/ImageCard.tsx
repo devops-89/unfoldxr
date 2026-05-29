@@ -4,9 +4,13 @@ import { IMAGE_CARD_PROPS } from "@/utils/types";
 import { helvetica, din } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
   <Box
+    component={motion.div}
+    whileHover={{ y: -8, scale: 1.025 }}
+    transition={{ type: "spring", stiffness: 240, damping: 22 }}
     sx={{
       p: { xs: 2.5, md: 3 },
       borderRadius: "16px",
@@ -35,12 +39,33 @@ const ImageCardContent = ({ card }: { card: IMAGE_CARD_PROPS }) => (
           : "transparent",
       border:
         card.titleColor === "#000000" ? "1px solid rgba(0,0,0,0.05)" : "none",
+      transition: "box-shadow 0.35s ease, background-size 0.55s ease",
+      "&:hover": {
+        backgroundSize: card.backgroundSize ? card.backgroundSize : "108%",
+        boxShadow: "0px 24px 55px rgba(0,0,0,0.22)",
+      },
+      "&::after": {
+        content: '""',
+        position: "absolute",
+        inset: 0,
+        background:
+          "linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.22), transparent 70%)",
+        transform: "translateX(-120%)",
+        transition: "transform 0.75s ease",
+        zIndex: 3,
+        pointerEvents: "none",
+      },
+      "&:hover::after": {
+        transform: "translateX(120%)",
+      },
     }}
   >
     {/* Video Background */}
     {card.video && (
       <Box
-        component="video"
+        component={motion.video}
+        whileHover={{ scale: 1.06 }}
+        transition={{ duration: 0.5 }}
         autoPlay
         loop
         muted

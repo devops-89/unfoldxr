@@ -1,12 +1,17 @@
+"use client";
 import { Box, Stack, Typography } from "@mui/material";
 import { ICON_CARD_PROPS } from "@/utils/types";
 import Image from "next/image";
 import { helvetica } from "@/utils/fonts";
+import { motion } from "framer-motion";
 
 
 const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
   return (
     <Box
+      component={motion.div}
+      whileHover={{ y: -8, scale: 1.025 }}
+      transition={{ type: "spring", stiffness: 240, damping: 22 }}
       sx={{
         p: { xs: 2.5, md: 3 },
         borderRadius: "16px",
@@ -16,6 +21,24 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        position: "relative",
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(135deg, transparent 25%, rgba(182,236,26,0.14), transparent 75%)",
+          transform: "translateX(-100%)",
+          transition: "transform 0.7s ease",
+        },
+        "&:hover::before": {
+          transform: "translateX(100%)",
+        },
+        "& > *": {
+          position: "relative",
+          zIndex: 1,
+        },
       }}
     >
       <Typography
@@ -41,6 +64,14 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
 
           return (
             <Box
+              component={motion.div}
+              animate={{ y: [0, -8 - i * 2, 0], rotate: [0, i % 2 ? -5 : 5, 0] }}
+              transition={{
+                duration: 3.8 + i * 0.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.25,
+              }}
               key={i}
               sx={{
                 width: { xs: 60, md: pos.size },

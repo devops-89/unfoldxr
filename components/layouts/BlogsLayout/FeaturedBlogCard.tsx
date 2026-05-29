@@ -16,11 +16,9 @@ const FeaturedBlogCard = ({ blog }: FeaturedBlogCardProps) => {
   return (
     <Box
       sx={{
-        position: "absolute",
-        bottom: { xs: "4%", md: "8%" },
         width: { xs: "95%", md: "90%", lg: "84%" },
         backgroundColor: COLORS.WHITE,
-        borderRadius: "0px",
+        borderRadius: "20px",
         overflow: "hidden",
         zIndex: 5,
         boxShadow: "0px 15px 50px rgba(0,0,0,0.12)",

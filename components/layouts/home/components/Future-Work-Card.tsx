@@ -1,8 +1,10 @@
+"use client";
 import { COLORS } from "@/utils/enum";
 import { helvetica } from "@/utils/fonts";
 import { FUTURE_WORK_CARD_PROPS } from "@/utils/types";
 import { Box, Typography, Collapse } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";
 
 const FutureWorkCard = ({
   label,
@@ -13,21 +15,27 @@ const FutureWorkCard = ({
 }: FUTURE_WORK_CARD_PROPS) => {
   return (
     <Box
+      component={motion.div}
       onClick={onClick}
+      whileHover={{ x: 8 }}
+      transition={{ type: "spring", stiffness: 260, damping: 24 }}
       sx={{
         cursor: "pointer",
         position: "relative",
         pl: { xs: 3, md: 5 },
         transition: "all 0.3s ease",
         opacity: isActive ? 1 : 1,
-        "&:hover": {
-          opacity: isActive ? 1 : 0.7,
-        },
+        "&:hover": { opacity: isActive ? 1 : 0.78 },
       }}
     >
       {/* Vertical Active Bar */}
       {isActive && (
         <Box
+          component={motion.div}
+          layoutId="future-work-active-bar"
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ type: "spring", stiffness: 280, damping: 24 }}
           sx={{
             position: "absolute",
             left: 0,
@@ -36,6 +44,8 @@ const FutureWorkCard = ({
             width: "4px",
             bgcolor: COLORS.PRIMARY_GREEN,
             borderRadius: "10px",
+            transformOrigin: "top",
+            boxShadow: "0 0 18px rgba(182,236,26,0.55)",
           }}
         />
       )}
@@ -72,6 +82,10 @@ const FutureWorkCard = ({
 
       <Collapse in={isActive}>
         <Typography
+          component={motion.div}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
           sx={{
             color: COLORS.WHITE,
             textAlign: "left",

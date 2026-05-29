@@ -13,6 +13,30 @@ const WhyPartnerCard = ({ title, description }: PARTNERS_WHY_PARTNER_CARD_PROPS)
         display: "flex",
         flexDirection: "column",
         textAlign: { xs: "center", md: "left" },
+        transition: "box-shadow 0.3s ease, border-color 0.3s ease",
+        position: "relative",
+        overflow: "hidden",
+        "&:hover": {
+          boxShadow: "0 22px 45px rgba(0,0,0,0.22)",
+          borderColor: "rgba(182, 236, 26, 0.3)",
+        },
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.16), transparent 72%)",
+          transform: "translateX(-120%)",
+          transition: "transform 0.65s ease",
+          zIndex: 0,
+        },
+        "&:hover::after": {
+          transform: "translateX(120%)",
+        },
+        "& > *": {
+          position: "relative",
+          zIndex: 1,
+        },
       }}
     >
       <Typography

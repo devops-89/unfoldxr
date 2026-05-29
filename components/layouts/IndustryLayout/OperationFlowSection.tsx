@@ -5,6 +5,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import { motion } from "framer-motion";
 
 interface Props {
   data: IndustryData["operationFlow"];
@@ -27,6 +28,16 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
 
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 6, md: 10 } }}
     >
       <Box
@@ -37,6 +48,12 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
         }}
       >
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 28, md: 48, lg: 36 },
@@ -52,7 +69,17 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
 
         <Grid container columnSpacing={4} rowSpacing={{ xs: 4, md: 4 }}>
           {data.phases.map((block, index) => (
-            <Grid key={block.phase} size={{ xs: 12, md: 4 }}>
+            <Grid 
+              key={block.phase} 
+              size={{ xs: 12, md: 4 }}
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 30, scale: 0.96 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
+            >
               <Box
                 sx={{
                   bgcolor: "transparent",
@@ -62,6 +89,29 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
+                  position: "relative",
+                  overflow: "hidden",
+                  transition: "box-shadow 0.3s ease, border-color 0.3s ease",
+                  "&:hover": {
+                    boxShadow: "0 22px 45px rgba(0,0,0,0.22)",
+                  },
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.16), transparent 72%)",
+                    transform: "translateX(-120%)",
+                    transition: "transform 0.65s ease",
+                    zIndex: 0,
+                  },
+                  "&:hover::after": {
+                    transform: "translateX(120%)",
+                  },
+                  "& > *": {
+                    position: "relative",
+                    zIndex: 1,
+                  },
                 }}
               >
                 <Box
@@ -149,7 +199,15 @@ const OperationFlowSection = ({ data, ctaIcon, ctaText }: Props) => {
           ))}
         </Grid>
 
-        <Box sx={{ textAlign: "center", mt: { xs: 6, md: 6 } }}>
+        <Box 
+          sx={{ textAlign: "center", mt: { xs: 6, md: 6 } }}
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5 }}
+        >
           <Button
             variant="contained"
             onClick={() => openModal("industry_flow")}

@@ -5,6 +5,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const LeadershipSection = () => {
   const { leadershipSection: data } = aboutPage;
@@ -12,6 +13,16 @@ const LeadershipSection = () => {
   return (
     <Container
       maxWidth={false}
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.1 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         width: { xs: "90%", md: "90%", lg: "83%" },
         mx: "auto",
@@ -20,6 +31,12 @@ const LeadershipSection = () => {
       }}
     >
       <Typography
+        component={motion.div}
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.6 }}
         sx={{
           fontSize: { xs: 30, md: 36 },
           fontWeight: 900,
@@ -44,9 +61,22 @@ const LeadershipSection = () => {
               spacing={{ xs: 4, md: 8 }}
               alignItems="flex-start"
               direction={isEven ? "row-reverse" : "row"}
+              component={motion.div}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.2 },
+                },
+              }}
             >
               <Grid
                 size={{ xs: 12, md: 4 }}
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.9, x: isEven ? 30 : -30 },
+                  visible: { opacity: 1, scale: 1, x: 0 },
+                }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 sx={{
                   position: "relative",
                   overflow: "hidden",
@@ -84,7 +114,15 @@ const LeadershipSection = () => {
                   />
                 )}
               </Grid>
-              <Grid size={{ xs: 12, md: 8 }}>
+              <Grid 
+                size={{ xs: 12, md: 8 }}
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, x: isEven ? -30 : 30 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.6 }}
+              >
                 <Box
                   sx={{
                     textAlign: "left",

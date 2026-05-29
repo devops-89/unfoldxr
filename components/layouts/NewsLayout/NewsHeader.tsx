@@ -1,7 +1,9 @@
+"use client";
 import { Box, Typography, TextField, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 import { din } from "@/utils/fonts";
+import { motion } from "framer-motion";
 
 interface NewsHeaderProps {
   searchTerm: string;
@@ -14,7 +16,13 @@ export default function NewsHeader({
   setSearchTerm,
 }: NewsHeaderProps) {
   return (
-    <Box display="flex" 
+    <Box 
+         component={motion.div}
+         initial={{ opacity: 0, y: 20 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         viewport={{ once: false, amount: 0.15 }}
+         transition={{ duration: 0.6 }}
+         display="flex" 
          justifyContent="space-between" 
          alignItems={{ xs: "flex-start", md: "center" }}
          flexDirection={{ xs: "column", md: "row" }}

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import IntegrationInstructionsRoundedIcon from "@mui/icons-material/IntegrationInstructionsRounded";
@@ -9,6 +11,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   integration: <IntegrationInstructionsRoundedIcon sx={{ fontSize: 24 }} />,
@@ -177,17 +180,66 @@ const EnterpriseReady2 = () => {
           </Grid>
         </Grid>
       </Box> */}
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="lg"
+        component={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+      >
         <Grid container alignItems={"center"} spacing={10}>
-          <Grid size={6}>
-            <Image
-              src={data.img}
-              alt=""
-              style={{ width: "400px", height: "auto" }}
-            />
+          {/* Left Side: Image */}
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, scale: 0.85, x: -50, rotate: -5 },
+                visible: { opacity: 1, scale: 1, x: 0, rotate: 0 },
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Image
+                  src={data.img}
+                  alt=""
+                  style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                    height: "auto",
+                    filter: "drop-shadow(0px 20px 40px rgba(162, 211, 37, 0.15))",
+                  }}
+                />
+              </motion.div>
+            </Box>
           </Grid>
-          <Grid size={6}>
+
+          {/* Right Side: Text & Features */}
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            component={motion.div}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
+          >
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -215,12 +267,12 @@ const EnterpriseReady2 = () => {
                 <Grid
                   key={point.title}
                   size={{ xs: 12, sm: 6 }}
-                  sx={{
-                    animation: `fadeInUp 0.6s ease-out forwards ${
-                      0.2 + index * 0.08
-                    }s`,
-                    opacity: 0,
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
                   }}
+                  transition={{ duration: 0.6 }}
                 >
                   <Box
                     sx={{

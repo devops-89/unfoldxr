@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Box,
@@ -9,6 +10,7 @@ import {
 } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
+import { motion } from "framer-motion";
 
 interface SectionCTAProps {
   title: string;
@@ -34,6 +36,16 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
 
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         bgcolor: COLORS.BLACK,
         py: { xs: 6, md: 8 },
@@ -49,6 +61,12 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
         }}
       >
         <Box
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: "24px",
@@ -88,6 +106,13 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
           )}
 
           <Box
+            component={motion.div}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
             sx={{
               position: "relative",
               zIndex: 1,
@@ -98,6 +123,12 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
             }}
           >
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -117,6 +148,12 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
 
             {subtitle && (
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
                 sx={{
                   mt: 3,
                   fontFamily: helvetica.style.fontFamily,
@@ -132,29 +169,37 @@ const SectionCTA: React.FC<SectionCTAProps> = ({
               </Typography>
             )}
 
-            <Button
-              onClick={onBtnClick}
-              sx={{
-                mt: isAbout ? 0 : 4,
-                bgcolor: COLORS.PRIMARY_GREEN,
-                color: COLORS.BLACK,
-                borderRadius: 99,
-                px: { xs: 2.5, md: 4 },
-                py: 1.2,
-                fontFamily: din.style.fontFamily,
-                fontWeight: 700,
-                fontSize: { xs: 14, md: 16 },
-                textTransform: "none",
-                "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 },
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: { opacity: 1, scale: 1 },
               }}
+              transition={{ duration: 0.5 }}
             >
-              {btnText}{" "}
-              {isAbout && (
-                <Box component="span" sx={{ ml: 1 }}>
-                  &rarr;
-                </Box>
-              )}
-            </Button>
+              <Button
+                onClick={onBtnClick}
+                sx={{
+                  mt: isAbout ? 0 : 4,
+                  bgcolor: COLORS.PRIMARY_GREEN,
+                  color: COLORS.BLACK,
+                  borderRadius: 99,
+                  px: { xs: 2.5, md: 4 },
+                  py: 1.2,
+                  fontFamily: din.style.fontFamily,
+                  fontWeight: 700,
+                  fontSize: { xs: 14, md: 16 },
+                  textTransform: "none",
+                  "&:hover": { bgcolor: COLORS.PRIMARY_GREEN, opacity: 0.9 },
+                }}
+              >
+                {btnText}{" "}
+                {isAbout && (
+                  <Box component="span" sx={{ ml: 1 }}>
+                    &rarr;
+                  </Box>
+                )}
+              </Button>
+            </motion.div>
           </Box>
         </Box>
       </Container>

@@ -1,9 +1,12 @@
+"use client";
+
 import { Box, Grid, Typography } from "@mui/material";
 import { din } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import StylizedDivider from "@/components/widgets/StylizedDivider";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   data: UseCaseData["deviceDeployment"];
@@ -11,7 +14,14 @@ interface Props {
 
 const DeviceDeploymentSection = ({ data }: Props) => {
   return (
-    <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
+    <Box
+      component={motion.section}
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.18 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+      sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}
+    >
       <Box
         sx={{
           width: { xs: "95%", md: "80%" },
@@ -20,6 +30,11 @@ const DeviceDeploymentSection = ({ data }: Props) => {
         }}
       >
         <Typography
+          component={motion.div}
+          initial={{ opacity: 0, x: -36 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -32,16 +47,39 @@ const DeviceDeploymentSection = ({ data }: Props) => {
           {data.title}
         </Typography>
 
-        <Grid container spacing={2.5}>
+        <Grid
+          container
+          spacing={2.5}
+          component={motion.div}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12 } },
+          }}
+        >
           {/* Top Row: Device A and B */}
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid
+            size={{ xs: 12, md: 7 }}
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 38, scale: 0.97 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
             <Box
+              component={motion.div}
+              whileHover={{ y: -8, scale: 1.012 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
               sx={{
                 position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
                 height: { xs: 300, md: 260 },
                 bgcolor: "#111",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
               }}
             >
               <Box
@@ -93,13 +131,25 @@ const DeviceDeploymentSection = ({ data }: Props) => {
             </Box>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid
+            size={{ xs: 12, md: 5 }}
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 38, scale: 0.97 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
             <Box
+              component={motion.div}
+              whileHover={{ y: -8, scale: 1.012 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
               sx={{
                 position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
                 height: { xs: 300, md: 260 },
+                boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
               }}
             >
               <Box
@@ -153,13 +203,25 @@ const DeviceDeploymentSection = ({ data }: Props) => {
           </Grid>
 
           {/* Bottom Row: Device C */}
-          <Grid size={{ xs: 12 }}>
+          <Grid
+            size={{ xs: 12 }}
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 38, scale: 0.97 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
             <Box
+              component={motion.div}
+              whileHover={{ y: -8, scale: 1.008 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
               sx={{
                 position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
                 height: { xs: 300, md: 265 },
+                boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
               }}
             >
               <Box

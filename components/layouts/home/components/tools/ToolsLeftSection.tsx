@@ -1,8 +1,10 @@
-import { Box, Stack, Typography } from "@mui/material";
+"use client";
 import ContainedButton from "@/components/widgets/ContainedButton";
-import Image from "next/image";
-import { TOOLS_LEFT_SECTION_PROPS } from "@/utils/types";
 import { COLORS } from "@/utils/enum";
+import { TOOLS_LEFT_SECTION_PROPS } from "@/utils/types";
+import { Box, Stack } from "@mui/material";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ToolsLeftSection = ({
   ctaText,
@@ -53,11 +55,16 @@ const ToolsLeftSection = ({
 
       {/* Image */}
       <Box
+        component={motion.div}
+        animate={{ y: [0, -10, 0], rotate: [0, 1.5, 0] }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+        whileHover={{ scale: 1.04 }}
         sx={{
           position: "relative",
           width: "100%",
           maxWidth: "400px",
           height: { xs: "200px", md: "300px" },
+          filter: "drop-shadow(0 24px 35px rgba(0,0,0,0.18))",
         }}
       >
         <Image

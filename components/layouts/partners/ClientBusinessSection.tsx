@@ -1,10 +1,23 @@
+"use client";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import ClientBusinessCard from "./components/ClientBusinessCard";
 import { partnersPage } from "@/utils/Website-Data";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 const ClientBusinessSection = () => {
   return (
     <Box
+      component={motion.section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         position: "relative",
         backgroundColor: "#000",
@@ -31,6 +44,12 @@ const ClientBusinessSection = () => {
           <Grid size={{ xs: 12, md: 7 }} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <Box maxWidth="700px">
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
                 sx={{
                   fontWeight: 900,
                   fontSize: { xs: 28, md: 36 },
@@ -43,10 +62,34 @@ const ClientBusinessSection = () => {
                 {partnersPage.clientBusinessSection.title}
               </Typography>
 
-              <Stack spacing={4}>
+              <Stack 
+                spacing={4}
+                component={motion.div}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.15 },
+                  },
+                }}
+              >
                 {partnersPage.clientBusinessSection.client_business_card_data.map(
                   (item) => (
-                    <ClientBusinessCard key={item.id} {...item} />
+                    <Box
+                      key={item.id}
+                      component={motion.div}
+                      variants={{
+                        hidden: { opacity: 0, x: -30 },
+                        visible: { 
+                          opacity: 1, 
+                          x: 0,
+                          transition: { duration: 0.5 }
+                        },
+                      }}
+                      whileHover={{ x: 8 }}
+                      transition={{ type: "spring", stiffness: 240, damping: 22 }}
+                    >
+                      <ClientBusinessCard {...item} />
+                    </Box>
                   ),
                 )}
               </Stack>
@@ -56,7 +99,12 @@ const ClientBusinessSection = () => {
           {/* RIGHT FIXED IMAGE - Anchored to stretch alongside content */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Box
-              component="img"
+              component={motion.img}
+              variants={{
+                hidden: { opacity: 0, scale: 0.95 },
+                visible: { opacity: 1, scale: 1 },
+              }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
               src={partnersPage.clientBusinessSection.image}
               alt="Worker"
               sx={{

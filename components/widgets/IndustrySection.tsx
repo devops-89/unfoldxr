@@ -35,7 +35,27 @@ const IndustrySection = ({
         transition={{ duration: 0.7, ease: "easeOut" }}
         sx={{ 
           backgroundColor: bgColor, 
-          py: { xs: 8, md: 10 } 
+          py: { xs: 8, md: 10 },
+          position: "relative",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: "50%",
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, rgba(182,236,26,0.55), transparent)",
+            transform: "scaleX(0)",
+            transformOrigin: "center",
+            animation: "industryLineReveal 5s ease-in-out infinite",
+          },
+          "@keyframes industryLineReveal": {
+            "0%, 35%": { transform: "scaleX(0)", opacity: 0 },
+            "55%": { transform: "scaleX(1)", opacity: 1 },
+            "100%": { transform: "scaleX(1)", opacity: 0 },
+          },
           }}
     >
       <Container maxWidth="lg">
@@ -118,7 +138,8 @@ const IndustrySection = ({
                     visible: { opacity: 1, y: 0, scale: 1 },
                   }}
                   whileHover={{
-                     y: -2,
+                     y: -6,
+                     scale: 1.04,
                    }}
                    transition={{
                      type: "spring",
@@ -143,9 +164,13 @@ const IndustrySection = ({
                       bgcolor: alpha(COLORS.PRIMARY_GREEN, 0.1),
                       boxShadow: "0px 6px 18px rgba(0,0,0,0.08)",
                     },
+                    "&:hover .industry-icon": {
+                      transform: "rotate(-8deg) scale(1.08)",
+                    },
                   }}
                 >
                   <Box
+                    className="industry-icon"
                     sx={{
                       width: { xs: 26, md: 34 },
                       height: { xs: 26, md: 34 },
@@ -156,6 +181,7 @@ const IndustrySection = ({
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
+                      transition: "transform 0.25s ease",
                     }}
                   >
                     {IconComponent && <IconComponent sx={{ fontSize: { xs: 14, md: 18 } }} />}

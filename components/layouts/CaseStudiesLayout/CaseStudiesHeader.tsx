@@ -1,10 +1,18 @@
+"use client";
 import { Box, Typography, TextField, InputAdornment, IconButton } from "@mui/material";
 import Link from "next/link";
 import { din } from "@/utils/fonts";
+import { motion } from "framer-motion";
 
 export default function CaseStudiesHeader() {
   return (
-    <Box display="flex" 
+    <Box 
+         component={motion.div}
+         initial={{ opacity: 0, y: 20 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         viewport={{ once: false, amount: 0.15 }}
+         transition={{ duration: 0.6 }}
+         display="flex" 
          justifyContent="space-between" 
          alignItems={{ xs: "flex-start", md: "center" }}
          flexDirection={{ xs: "column", md: "row" }}

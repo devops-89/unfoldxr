@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardContent,
@@ -10,10 +11,22 @@ import {
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { motion } from "framer-motion";
+
 const MissionVisionSection = () => {
   const { missionVisionSection: data } = aboutPage;
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         bgcolor: COLORS.BLACK,
         color: COLORS.WHITE,
@@ -25,6 +38,12 @@ const MissionVisionSection = () => {
         sx={{ width: { xs: "90%", md: "90%", lg: "80%" }, mx: "auto", px: 0 }}
       >
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             fontSize: { xs: 24, md: 18, lg: 18 },
             fontWeight: 700,
@@ -36,6 +55,12 @@ const MissionVisionSection = () => {
           {data.title}
         </Typography>
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             fontSize: { xs: 38, md: 36, lg: 36 },
             lineHeight: { xs: 1.1, md: "52px" },
@@ -49,6 +74,12 @@ const MissionVisionSection = () => {
           {data.heading}
         </Typography>
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             mt: 1,
             maxWidth: 920,
@@ -61,6 +92,12 @@ const MissionVisionSection = () => {
           {data.subHeading}
         </Typography>
         <Box
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, scale: 0.95, y: 30 },
+            visible: { opacity: 1, scale: 1, y: 0 },
+          }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{
             mt: 4,
             bgcolor: COLORS.CARD_BG_DARK,
@@ -86,6 +123,12 @@ const MissionVisionSection = () => {
           </Typography>
         </Box>
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             fontSize: { xs: 28, md: 36, lg: 36 },
             fontWeight: 700,
@@ -101,9 +144,26 @@ const MissionVisionSection = () => {
           direction={{ xs: "column", md: "row" }}
           spacing={{ xs: 4, md: 3 }}
           alignItems="stretch"
+          component={motion.div}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.15 },
+            },
+          }}
         >
           {data.brandDna.map((item, idx) => (
-            <Box key={idx} sx={{ flex: 1 }}>
+            <Box 
+              key={idx} 
+              sx={{ flex: 1 }}
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
+            >
               <Box
                 sx={{
                   height: "100%",
@@ -117,12 +177,30 @@ const MissionVisionSection = () => {
                   justifyContent: "space-between",
                   gap: { xs: 4, md: 2 },
                   mb: { xs: 3, md: 0 },
-                  transition: "all 0.3s ease",
+                  transition: "box-shadow 0.3s ease, border-color 0.3s ease",
                   border: "1px solid rgba(255, 255, 255, 0.05)",
+                  position: "relative",
+                  overflow: "hidden",
                   "&:hover": {
-                    transform: "translateY(-10px)",
-                    boxShadow: "0px 10px 40px rgba(0, 0, 0, 0.2)",
+                    boxShadow: "0 22px 45px rgba(0,0,0,0.22)",
                     borderColor: "rgba(182, 236, 26, 0.3)",
+                  },
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.16), transparent 72%)",
+                    transform: "translateX(-120%)",
+                    transition: "transform 0.65s ease",
+                    zIndex: 0,
+                  },
+                  "&:hover::after": {
+                    transform: "translateX(120%)",
+                  },
+                  "& > *": {
+                    position: "relative",
+                    zIndex: 1,
                   },
                 }}
               >
@@ -139,7 +217,6 @@ const MissionVisionSection = () => {
                 </Typography>
                 <Box
                   sx={{
-                    // bgcolor: COLORS.PRIMARY_GREEN,
                     px: 2,
                     py: 0.8,
                     borderRadius: "4px",

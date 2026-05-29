@@ -1,9 +1,12 @@
+"use client";
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/enum'
 import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import BlurText from '@/components/widgets/BlurText'
 
 interface CaseHeroProps {
     image: string | StaticImageData;
@@ -27,6 +30,11 @@ const CaseHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
     >
       {/* Background Image */}
       <Box
+        component={motion.div}
+        initial={{ opacity: 0, scale: 1.05 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
         sx={{
           position: "absolute",
           inset: 0,
@@ -46,6 +54,11 @@ const CaseHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
       </Box>
        {/* Dark Overlay */}
       <Box
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1, ease: "easeOut" }}
         sx={{
           position: "absolute",
           inset: 0,
@@ -54,18 +67,23 @@ const CaseHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
         }}
       />
        <Box
-              sx={{
-                position: "relative",
-                zIndex: 2,
-                width: { xs: "100%", md: "80%" },
-                boxSizing: "border-box",
-                mx: "auto",
-                pt: { xs: 12, md: 18 },
-                pb: { xs: 8, md: 12 },
-                pl: { xs: 0, md: 2 },
-                px: { xs: 3, md: 0 },
-              }}
-            >
+          component={motion.div}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          sx={{
+            position: "relative",
+            zIndex: 2,
+            width: { xs: "100%", md: "80%" },
+            boxSizing: "border-box",
+            mx: "auto",
+            pt: { xs: 12, md: 18 },
+            pb: { xs: 8, md: 12 },
+            pl: { xs: 0, md: 2 },
+            px: { xs: 3, md: 0 },
+          }}
+        >
           <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
@@ -78,7 +96,11 @@ const CaseHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
                 width: { xs: "100%", lg: "70%" },
               }}
           >
-          {title}
+          <BlurText
+            text={title}
+            animateBy="words"
+            direction="top"
+          />
         </Typography>
         </Box>
       </Box>

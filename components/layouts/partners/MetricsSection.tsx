@@ -1,11 +1,23 @@
+"use client";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import MetricCard from "./components/MetricCard";
 import { partnersPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { motion } from "framer-motion";
 
 const MetricsSection = () => {
   return (
     <Box
+      component={motion.section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         backgroundColor: "#fff",
         // minHeight: { md: "90vh" },
@@ -29,6 +41,12 @@ const MetricsSection = () => {
             sx={{ textAlign: { xs: "center", md: "left" } }}
           >
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontSize: { xs: 32, md: 36 },
                 fontWeight: 900,
@@ -41,6 +59,12 @@ const MetricsSection = () => {
             </Typography>
 
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               sx={{
                 mt: 2,
                 fontSize: { xs: 18, md: 18 },
@@ -56,10 +80,29 @@ const MetricsSection = () => {
 
           {/* RIGHT SIDE (CARDS) */}
           <Grid size={{ xs: 12, md: 7 }}>
-            <Grid container spacing={{ xs: 5, md: 5 }}>
+            <Grid 
+              container 
+              spacing={{ xs: 5, md: 5 }}
+              component={motion.div}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
+            >
               {partnersPage.metricsSection.metrics_card_data.map(
                 (card, index) => (
-                  <Grid size={{ ...card.gridSize }} key={index}>
+                  <Grid 
+                    size={{ ...card.gridSize }} 
+                    key={index}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, y: 30, scale: 0.95 },
+                      visible: { opacity: 1, y: 0, scale: 1 },
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <MetricCard
                       title={card.title}
                       description={card.description}

@@ -1,7 +1,9 @@
+"use client";
 import { din, helvetica } from "@/utils/fonts";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
+import { motion } from "framer-motion";
 
 interface Props {
   data: IndustryData["realityNeeds"];
@@ -10,9 +12,18 @@ interface Props {
 const RealityNeedsSection = ({ data }: Props) => {
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         bgcolor: COLORS.WHITE,
-        // minHeight: { md: "85vh" },
         display: "flex",
         alignItems: "center",
         py: { xs: 8, md: 10 },
@@ -26,6 +37,12 @@ const RealityNeedsSection = ({ data }: Props) => {
         }}
       >
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             fontFamily: din.style.fontFamily,
             fontSize: { xs: 28, md: 36},
@@ -41,12 +58,42 @@ const RealityNeedsSection = ({ data }: Props) => {
         <Grid container columnSpacing={6} rowSpacing={{ xs: 6, md: 6 }}>
           <Grid size={{ xs: 12, md: 4, lg: 6 }}>
             <Box
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
               sx={{
                 bgcolor: COLORS.CARD_BG_DARK,
                 color: COLORS.WHITE,
                 borderRadius: 4,
                 p: { xs: 3.2, md: 4, lg: 4 },
                 height: "100%",
+                position: "relative",
+                overflow: "hidden",
+                transition: "box-shadow 0.3s ease",
+                "&:hover": {
+                  boxShadow: "0 22px 45px rgba(0,0,0,0.22)",
+                },
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.16), transparent 72%)",
+                  transform: "translateX(-120%)",
+                  transition: "transform 0.65s ease",
+                  zIndex: 0,
+                },
+                "&:hover::after": {
+                  transform: "translateX(120%)",
+                },
+                "& > *": {
+                  position: "relative",
+                  zIndex: 1,
+                },
               }}
             >
               <Typography
@@ -63,10 +110,24 @@ const RealityNeedsSection = ({ data }: Props) => {
               >
                 {data.realitiesTitle}
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+              <Box 
+                sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}
+                component={motion.div}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.1 },
+                  },
+                }}
+              >
                 {data.realities.map((item) => (
                   <Typography
                     key={item}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 15, md: 18, lg: 16 },
@@ -88,6 +149,13 @@ const RealityNeedsSection = ({ data }: Props) => {
           </Grid>
           <Grid size={{ xs: 12, md: 4, lg: 6 }}>
             <Box
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: 30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
               sx={{
                 bgcolor: COLORS.CARD_BG_DARK,
                 color: COLORS.WHITE,
@@ -95,6 +163,29 @@ const RealityNeedsSection = ({ data }: Props) => {
                 p: { xs: 3.2, md: 4, lg: 4 },
                 height: "100%",
                 mb: { xs: 3, md: 0 },
+                position: "relative",
+                overflow: "hidden",
+                transition: "box-shadow 0.3s ease",
+                "&:hover": {
+                  boxShadow: "0 22px 45px rgba(0,0,0,0.22)",
+                },
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.16), transparent 72%)",
+                  transform: "translateX(-120%)",
+                  transition: "transform 0.65s ease",
+                  zIndex: 0,
+                },
+                "&:hover::after": {
+                  transform: "translateX(120%)",
+                },
+                "& > *": {
+                  position: "relative",
+                  zIndex: 1,
+                },
               }}
             >
               <Typography
@@ -112,10 +203,24 @@ const RealityNeedsSection = ({ data }: Props) => {
               >
                 {data.needsTitle}
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+              <Box 
+                sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}
+                component={motion.div}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.1 },
+                  },
+                }}
+              >
                 {data.needs.map((item) => (
                   <Typography
                     key={item}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 15, md: 18, lg: 16 },
@@ -138,6 +243,12 @@ const RealityNeedsSection = ({ data }: Props) => {
         </Grid>
 
         <Typography
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,
@@ -155,29 +266,6 @@ const RealityNeedsSection = ({ data }: Props) => {
           {data.bottomText}
         </Typography>
 
-        {/* <Box sx={{ textAlign: "center", mt: 5 }}>
-          <Button
-            variant="contained"
-            sx={{
-              bgcolor: COLORS.PRIMARY_GREEN,
-              color: COLORS.BLACK,
-              px: { xs: 4, md: 6 },
-              py: 1.5,
-              borderRadius: "99px",
-              fontFamily: din.style.fontFamily,
-              fontSize: { xs: 14, md: 16, lg: 18 },
-              fontWeight: 500,
-              textTransform: "none",
-              boxShadow: "none",
-              "&:hover": {
-                bgcolor: COLORS.PRIMARY_HOVER,
-                boxShadow: "none",
-              },
-            }}
-          >
-            {data.ctaText}
-          </Button>
-        </Box> */}
       </Box>
     </Box>
   );

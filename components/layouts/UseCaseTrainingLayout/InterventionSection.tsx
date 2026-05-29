@@ -1,8 +1,10 @@
+"use client";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   data: UseCaseData["intervention"];
@@ -13,6 +15,16 @@ const InterventionSection = ({ data }: Props) => {
   if (isSideBySide) {
     return (
       <Box
+        component={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.15 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.15 },
+          },
+        }}
         sx={{
           bgcolor: COLORS.WHITE,
           color: COLORS.BLACK,
@@ -31,6 +43,12 @@ const InterventionSection = ({ data }: Props) => {
             sx={{ maxWidth: { xs: "100%", md: "90%" }, mb: { xs: 5, md: 8 } }}
           >
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -44,6 +62,13 @@ const InterventionSection = ({ data }: Props) => {
               {data.title}
             </Typography>
             <Box
+              component={motion.div}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -51,6 +76,12 @@ const InterventionSection = ({ data }: Props) => {
               }}
             >
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
@@ -60,6 +91,12 @@ const InterventionSection = ({ data }: Props) => {
                 {data.description1}
               </Typography>
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
@@ -75,9 +112,24 @@ const InterventionSection = ({ data }: Props) => {
           <Grid container spacing={{ xs: 5, md: 5 }} alignItems="flex-start">
             {/* Left Side: Text Content */}
             <Grid size={{ xs: 12, md: 5 }}>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+              <Box 
+                sx={{ display: "flex", flexDirection: "column", gap: 3 }}
+                component={motion.div}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.15 },
+                  },
+                }}
+              >
                 {data.description3 && (
                   <Typography
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.6 }}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 16, md: 18 },
@@ -90,6 +142,12 @@ const InterventionSection = ({ data }: Props) => {
                 )}
                 {data.description4 && (
                   <Typography
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.6 }}
                     sx={{
                       fontFamily: helvetica.style.fontFamily,
                       fontSize: { xs: 16, md: 18, lg: 18 },
@@ -108,6 +166,13 @@ const InterventionSection = ({ data }: Props) => {
               {data.cards && data.cards.length > 0 ? (
                 <Box>
                   <Box
+                    component={motion.div}
+                    variants={{
+                      hidden: {},
+                      visible: {
+                        transition: { staggerChildren: 0.15 },
+                      },
+                    }}
                     sx={{
                       display: "flex",
                       gap: 2,
@@ -117,6 +182,12 @@ const InterventionSection = ({ data }: Props) => {
                     {data.cards.map((card, index) => (
                       <Box
                         key={index}
+                        component={motion.div}
+                        variants={{
+                          hidden: { opacity: 0, scale: 0.9, y: 30 },
+                          visible: { opacity: 1, scale: 1, y: 0 },
+                        }}
+                        transition={{ duration: 0.6 }}
                         sx={{
                           flex: 1,
                           minWidth: 0,
@@ -213,6 +284,22 @@ const InterventionSection = ({ data }: Props) => {
                             textTransform: "uppercase",
                             whiteSpace: "nowrap",
                             "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
+                            overflow: "hidden",
+                            "&::after": {
+                              content: '""',
+                              position: "absolute",
+                              top: 0,
+                              left: "-75%",
+                              width: "50%",
+                              height: "100%",
+                              background:
+                                "linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent)",
+                              transform: "skewX(-20deg)",
+                            },
+                            "&:hover::after": {
+                              left: "125%",
+                              transition: "left 0.6s ease",
+                            },
                           }}
                         >
                           Learn More
@@ -222,7 +309,14 @@ const InterventionSection = ({ data }: Props) => {
                   </Box>
                 </Box>
               ) : (
-                <Box>
+                <Box
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.95 },
+                    visible: { opacity: 1, scale: 1 },
+                  }}
+                  transition={{ duration: 0.7 }}
+                >
                   <Box
                  sx={{
                    position: "relative",
@@ -250,6 +344,16 @@ const InterventionSection = ({ data }: Props) => {
 
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         bgcolor: COLORS.WHITE,
         color: COLORS.BLACK,
@@ -268,6 +372,12 @@ const InterventionSection = ({ data }: Props) => {
           {/* Left Side: Title */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -284,6 +394,13 @@ const InterventionSection = ({ data }: Props) => {
           {/* Right Side: Description */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Box
+              component={motion.div}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -291,6 +408,12 @@ const InterventionSection = ({ data }: Props) => {
               }}
             >
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
@@ -303,6 +426,12 @@ const InterventionSection = ({ data }: Props) => {
               </Typography>
               {data.description2 && (
                 <Typography
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6 }}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
@@ -320,9 +449,24 @@ const InterventionSection = ({ data }: Props) => {
 
         {/* Third Description paragraph or Variants Cards */}
         {data.cards && data.cards.length > 0 ? (
-          <Box sx={{ mt: 5, mb: 4 }}>
+          <Box 
+            sx={{ mt: 5, mb: 4 }}
+            component={motion.div}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
+          >
             {data.description3 && (
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
@@ -335,9 +479,29 @@ const InterventionSection = ({ data }: Props) => {
                 {data.description3}
               </Typography>
             )}
-            <Grid container spacing={4} justifyContent="center">
+            <Grid 
+              container 
+              spacing={4} 
+              justifyContent="center"
+              component={motion.div}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
+            >
               {data.cards.map((card, index) => (
-                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                <Grid 
+                  size={{ xs: 12, sm: 6, md: 4 }} 
+                  key={index}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
                   <Box
                     sx={{
                       height: "100%",
@@ -379,6 +543,12 @@ const InterventionSection = ({ data }: Props) => {
         ) : (
           data.description3 && (
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 mt: 6,
                 fontFamily: helvetica.style.fontFamily,
@@ -395,7 +565,15 @@ const InterventionSection = ({ data }: Props) => {
       </Box>
 
       {/* Tablet Area with Overlap Transition */}
-      <Box sx={{ position: "relative", mt: { xs: 8, md: 8 } }}>
+      <Box 
+        sx={{ position: "relative", mt: { xs: 8, md: 8 } }}
+        component={motion.div}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         {/* Background Split - Top White, Bottom Black */}
         <Box
           sx={{

@@ -8,6 +8,7 @@ import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import VerticalStepper from "@/components/widgets/VerticalStepper";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import { motion } from "framer-motion";
 
 interface Props {
   data: UseCaseData["capabilities"];
@@ -22,6 +23,11 @@ const CapabilitiesSection = ({ data }: Props) => {
   if (isGrid) {
     return (
       <Box
+        component={motion.section}
+        initial={{ opacity: 0, y: 70 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.18 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
         sx={{
           bgcolor: COLORS.BLACK,
           color: COLORS.WHITE,
@@ -85,6 +91,11 @@ const CapabilitiesSection = ({ data }: Props) => {
           }}
         >
           <Typography
+            component={motion.div}
+            initial={{ opacity: 0, x: -36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
@@ -99,6 +110,14 @@ const CapabilitiesSection = ({ data }: Props) => {
           </Typography>
 
           <Box
+            component={motion.div}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.08 } },
+            }}
             sx={{
               display: "grid",
               gridTemplateColumns: {
@@ -111,6 +130,13 @@ const CapabilitiesSection = ({ data }: Props) => {
           >
             {data.items.map((item, index) => (
               <Box
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 34, scale: 0.96 },
+                  visible: { opacity: 1, y: 0, scale: 1 },
+                }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 240, damping: 22 }}
                 key={index}
                 sx={{
                   p: 4,
@@ -124,6 +150,7 @@ const CapabilitiesSection = ({ data }: Props) => {
                   "&:hover": {
                     bgcolor: "rgba(255, 255, 255, 0.05)",
                     borderColor: COLORS.PRIMARY_GREEN,
+                    boxShadow: "0 22px 45px rgba(0,0,0,0.24)",
                   },
                 }}
               >
@@ -162,6 +189,9 @@ const CapabilitiesSection = ({ data }: Props) => {
             }}
           >
             <Button
+              component={motion.button}
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 240, damping: 22 }}
               sx={{
                 bgcolor: COLORS.PRIMARY_GREEN,
                 color: COLORS.BLACK,
@@ -176,6 +206,23 @@ const CapabilitiesSection = ({ data }: Props) => {
                 alignItems: "center",
                 gap: 2,
                 "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
+                overflow: "hidden",
+                position: "relative",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: "-75%",
+                  width: "50%",
+                  height: "100%",
+                  background:
+                    "linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent)",
+                  transform: "skewX(-20deg)",
+                },
+                "&:hover::after": {
+                  left: "125%",
+                  transition: "left 0.6s ease",
+                },
               }}
               onClick={() => openModal("capabilities")}
             >
@@ -200,6 +247,11 @@ const CapabilitiesSection = ({ data }: Props) => {
     >
       {/* Background Pattern - Wavy Net */}
       <Box
+        component={motion.section}
+        initial={{ opacity: 0, y: 70 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.18 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
         sx={{
           position: "absolute",
           top: 0,
@@ -252,6 +304,11 @@ const CapabilitiesSection = ({ data }: Props) => {
         }}
       >
         <Typography
+          component={motion.div}
+          initial={{ opacity: 0, x: -36 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -269,6 +326,14 @@ const CapabilitiesSection = ({ data }: Props) => {
           {/* Left & Middle Combined: Capabilities List + Stepper Dots (Shared alignment) */}
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
+              component={motion.div}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.04 } },
+              }}
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -278,6 +343,12 @@ const CapabilitiesSection = ({ data }: Props) => {
             >
               {data.items.map((item, index) => (
                 <Box
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, x: -28 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                   key={item.title}
                   sx={{
                     display: "flex",
@@ -288,6 +359,9 @@ const CapabilitiesSection = ({ data }: Props) => {
                   {/* Header Pill Column */}
                   <Box sx={{ flex: 1, py: activeItem === index ? 1 : 0.8 }}>
                     <Box
+                      component={motion.div}
+                      whileHover={{ x: 8, scale: 1.015 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 24 }}
                       onClick={() => setActiveItem(index)}
                       sx={{
                         border:
@@ -431,6 +505,11 @@ const CapabilitiesSection = ({ data }: Props) => {
           >
             <Box sx={{ pt: { xs: 0, md: 2 } }}>
               <Typography
+                component={motion.div}
+                key={activeItem}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.28, ease: "easeOut" }}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 18, md: 16 },
@@ -456,6 +535,9 @@ const CapabilitiesSection = ({ data }: Props) => {
           }}
         >
           <Button
+            component={motion.button}
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 240, damping: 22 }}
             sx={{
               bgcolor: COLORS.PRIMARY_GREEN,
               color: COLORS.BLACK,
@@ -470,6 +552,23 @@ const CapabilitiesSection = ({ data }: Props) => {
               alignItems: "center",
               gap: 2,
               "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
+              overflow: "hidden",
+              position: "relative",
+              "&::after": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: "-75%",
+                width: "50%",
+                height: "100%",
+                background:
+                  "linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent)",
+                transform: "skewX(-20deg)",
+              },
+              "&:hover::after": {
+                left: "125%",
+                transition: "left 0.6s ease",
+              },
             }}
             onClick={() => openModal("capabilities")}
           >

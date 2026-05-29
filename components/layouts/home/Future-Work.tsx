@@ -45,7 +45,7 @@ const FutureWork = () => {
         component={motion.div}
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
+        viewport={{ once: false, amount: 0.15 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         sx={{
           backgroundColor: COLORS.BLACK,
@@ -57,6 +57,25 @@ const FutureWork = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          position: "relative",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(120deg, transparent 0%, rgba(182,236,26,0.08) 45%, transparent 70%)",
+            transform: "translateX(-100%)",
+            animation: "futureWorkSweep 7s ease-in-out infinite",
+          },
+          "@keyframes futureWorkSweep": {
+            "0%, 45%": { transform: "translateX(-100%)" },
+            "70%, 100%": { transform: "translateX(100%)" },
+          },
+          "& > *": {
+            position: "relative",
+            zIndex: 1,
+          },
         }}
       >
         <Grid container spacing={{ xs: 4, md: 10 }} sx={{ p: 0, m: 0 }}>
@@ -66,7 +85,7 @@ const FutureWork = () => {
               component={motion.div}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.7, delay: 0.2 }}
           >
             <Typography
@@ -164,7 +183,7 @@ const FutureWork = () => {
                 component={motion.div}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false }}
+                viewport={{ once: false, amount: 0.15 }}
                 variants={{
                   hidden: {},
                   visible: {

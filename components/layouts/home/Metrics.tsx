@@ -33,7 +33,7 @@ const Metrics = () => {
             component={motion.div}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             sx={{
               fontFamily: din.style.fontFamily,
@@ -88,7 +88,7 @@ const Metrics = () => {
                     component={motion.div}
                     initial={{ opacity: 0, y: 50, scale: 0.8 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: false, amount: 0.15 }}
                     transition={{
                       type: "spring",
                       stiffness: 120,
@@ -105,15 +105,15 @@ const Metrics = () => {
                       fontWeight: 900,
                       color: "#1C1C1C",
                       lineHeight: 0.85,
-                      letterSpacing: { xs: "-1px", md: "-4px" },
+                      letterSpacing: 0,
 
                       ml: { xs: 0, md: -2 },
                     }}
                   >
                     <CountUp
-                      from={0}
+                      from={1}
                       to={30}
-                      duration={1}
+                      duration={1.2}
                       className="count-up-text"
                     />
                     %
@@ -127,7 +127,7 @@ const Metrics = () => {
                   component={motion.div}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: false }}
+                  viewport={{ once: false, amount: 0.15 }}
                   variants={{
                     hidden: {},
                     visible: {

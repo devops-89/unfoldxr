@@ -3,9 +3,8 @@ import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from "react";
-import WorkforceCard from "./components/WorkForce-Card";
 import { motion } from "framer-motion";
+import WorkforceCard from "./components/WorkForce-Card";
 
 const WorkForce = () => {
 
@@ -13,31 +12,70 @@ const WorkForce = () => {
     <Box>
       <Container maxWidth={false} disableGutters>
         <Box
-          component={motion.div}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          sx={{
-            backgroundColor: COLORS.WHITE,
-            px: { xs: 2, sm: 6, md: 10 },
-            pt: { xs: 5, md: 6 },
-            pb: { xs: 6, md: 6 },
-            borderRadius: "15px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            width: { xs: "90%", md: "90%", lg: "80%" },
-            mx: "auto",
-          }}
-        >
+  component={motion.div}
+  initial={{ opacity: 0, y: 60, scale: 0.95 }}
+  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+  viewport={{ once: false, amount: 0.2 }}
+  transition={{
+    duration: 0.8,
+    ease: "easeOut",
+  }}
+  whileHover={{
+    y: -8,
+    scale: 1.01,
+  }}
+  sx={{
+    backgroundColor: COLORS.WHITE,
+    px: { xs: 2, sm: 6, md: 10 },
+    pt: { xs: 5, md: 6 },
+    pb: { xs: 6, md: 6 },
+    borderRadius: "15px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: { xs: "90%", md: "90%", lg: "80%" },
+    mx: "auto",
+
+    position: "relative",
+    overflow: "hidden",
+
+    boxShadow: "0 10px 40px rgba(0,0,0,0.08)",
+
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: "-50%",
+      left: "-50%",
+      width: "200%",
+      height: "200%",
+      background:
+        "radial-gradient(circle, rgba(162,211,37,0.12) 0%, transparent 60%)",
+      animation: "pulseGlow 8s linear infinite",
+      zIndex: 0,
+    },
+
+    "@keyframes pulseGlow": {
+      "0%": {
+        transform: "rotate(0deg)",
+      },
+      "100%": {
+        transform: "rotate(360deg)",
+      },
+    },
+
+    "& > *": {
+      position: "relative",
+      zIndex: 1,
+    },
+  }}
+>
           <Box sx={{ width: "100%" }}>
             {/* Heading */}
             <Typography
               component={motion.div}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               sx={{
                 color: "#000",
@@ -59,7 +97,7 @@ const WorkForce = () => {
               component={motion.div}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               sx={{
                 color: "#000",
@@ -82,7 +120,7 @@ const WorkForce = () => {
               component={motion.div}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.15 }}
               variants={{
                 hidden: {},
                 visible: {

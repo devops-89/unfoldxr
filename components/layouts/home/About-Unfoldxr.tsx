@@ -1,6 +1,8 @@
+"use client";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 
 const ABOUT_SECTION_IMAGE = "https://www.figma.com/api/mcp/asset/71295072-d7e6-4b6f-93ff-8883694276c8";
 
@@ -9,6 +11,16 @@ const AboutUnfoldxr = () => {
     <Box sx={{ py: { xs: 6, md: 10 } }}>
       <Container maxWidth="xl">
         <Box
+          component={motion.div}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.15 },
+            },
+          }}
           sx={{
             bgcolor: "#fff",
             borderRadius: { xs: "24px", md: "45px" },
@@ -20,6 +32,12 @@ const AboutUnfoldxr = () => {
           <Grid container spacing={{ xs: 3, md: 5 }} alignItems="flex-start">
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5 }}
                 sx={{
                   fontFamily: din.style.fontFamily,
                   fontSize: { xs: 36, md: 54 },
@@ -32,7 +50,12 @@ const AboutUnfoldxr = () => {
               </Typography>
 
               <Box
-                component="img"
+                component={motion.img}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.95 },
+                  visible: { opacity: 1, scale: 1 },
+                }}
+                transition={{ duration: 0.5 }}
                 src={ABOUT_SECTION_IMAGE}
                 alt="About UnfoldXR"
                 sx={{
@@ -49,6 +72,12 @@ const AboutUnfoldxr = () => {
               {homePage.aboutUnfoldxr.paragraphs.map((paragraph) => (
                 <Typography
                   key={paragraph}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 24 },
@@ -63,6 +92,12 @@ const AboutUnfoldxr = () => {
               ))}
 
               <Typography
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5 }}
                 sx={{
                   fontFamily: din.style.fontFamily,
                   fontSize: { xs: 20, md: 28 },
@@ -78,7 +113,12 @@ const AboutUnfoldxr = () => {
 
             <Grid size={{ xs: 12 }} sx={{ display: { xs: "block", md: "none" } }}>
               <Box
-                component="img"
+                component={motion.img}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.95 },
+                  visible: { opacity: 1, scale: 1 },
+                }}
+                transition={{ duration: 0.5 }}
                 src={ABOUT_SECTION_IMAGE}
                 alt="About UnfoldXR"
                 sx={{

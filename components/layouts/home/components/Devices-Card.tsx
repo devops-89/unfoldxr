@@ -1,9 +1,11 @@
+"use client";
 import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { DEVICES_SECTION_DATA_PROPS } from "@/utils/types";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import StylizedDivider from "@/components/widgets/StylizedDivider";
+import { motion } from "framer-motion";
 
 interface DevicesCardProps extends DEVICES_SECTION_DATA_PROPS {
   isFirst?: boolean;
@@ -24,6 +26,9 @@ const DevicesCard = ({
 
   return (
     <Box
+      component={motion.div}
+      whileHover={{ y: -8, scale: 1.012 }}
+      transition={{ type: "spring", stiffness: 240, damping: 22 }}
       sx={{
         backgroundImage: hasBg ? `url(${bgImg})` : "none",
         backgroundSize: "cover",
@@ -39,11 +44,11 @@ const DevicesCard = ({
         p: { xs: 3, md: 4 },
         overflow: "hidden",
         position: "relative",
-        transition: "transform 0.35s ease, box-shadow 0.35s ease",
+        transition: "box-shadow 0.35s ease, background-position 0.8s ease",
 
         "&:hover": {
-          transform: "translateY(-6px)",
           boxShadow: "0px 20px 50px rgba(0,0,0,0.25)",
+          backgroundPosition: "center 45%",
         },
     
         "&::after": {

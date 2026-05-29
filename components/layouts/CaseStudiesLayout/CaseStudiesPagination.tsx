@@ -1,4 +1,6 @@
+"use client";
 import { Box, Pagination } from "@mui/material";
+import { motion } from "framer-motion";
 
 type CaseStudyPaginationProps = {
   count: number;
@@ -8,7 +10,16 @@ type CaseStudyPaginationProps = {
 
 export default function CaseStudyPagination({  count, page, onChange, }: CaseStudyPaginationProps) {
       return (
-        <Box display="flex" justifyContent="center" mt={6}>
+        <Box 
+          display="flex" 
+          justifyContent="center" 
+          mt={6}
+          component={motion.div}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <Pagination
             count={count}
             page={page}

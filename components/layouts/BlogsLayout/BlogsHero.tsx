@@ -1,11 +1,10 @@
-import React from 'react'
-import { Box, Typography } from '@mui/material'
-import { COLORS } from '@/utils/enum'
-import { din } from '@/utils/fonts'
-import { StaticImageData } from 'next/image'
-import Image from 'next/image'
-import { BlogsItem } from './data'
-import FeaturedBlogCard from './FeaturedBlogCard'
+"use client";
+import { COLORS } from '@/utils/enum';
+import { Box } from '@mui/material';
+import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import { BlogsItem } from './data';
+import FeaturedBlogCard from './FeaturedBlogCard';
 
 interface BlogsHeroProps {
     image: string | StaticImageData;
@@ -32,11 +31,16 @@ const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overla
     >
       {/* Background Image */}
       <Box
+        component={motion.div}
+        initial={{ opacity: 0, scale: 1.05 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
         sx={{
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          height: "60%",
+          height: "100%",
         }}
       >
         <Image
@@ -52,58 +56,32 @@ const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overla
       </Box>
       {/* Dark Overlay */}
       <Box
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1, ease: "easeOut" }}
         sx={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
-          height: "60%",
+          height: "100%",
           bgcolor: `rgba(0,0,0,${overlayOpacity})`,
           zIndex: 1,
         }}
       />
-      {/*<Box
-              sx={{
-                position: "relative",
-                zIndex: 2,
-                width: { xs: "100%", md: "80%" },
-                boxSizing: "border-box",
-                mx: "auto",
-                pt: { xs: 12, md: 18 },
-                pb: { xs: 8, md: 12 },
-                pl: { xs: 0, md: 2 },
-                px: { xs: 3, md: 0 },
-              }}
-            >
-        <Typography
-         sx={{
-           fontFamily: din.style.fontFamily,
-           fontSize: { xs: 16, md: 20, lg: 30 },
-           fontWeight: 600,
-           letterSpacing: "2px",
-           mb: 1.5,
-           opacity: 0.8,
-         }}
-        >
-            Blogs
-        </Typography>
-        <Typography
-          sx={{
-            fontFamily: din.style.fontFamily,
-            fontWeight: 900,
-            textTransform: "uppercase",
-            fontSize: { xs: 26, md: 50, lg: 50 },
-            lineHeight: { xs: "35px", md: "42px" },
-            maxWidth: titleMaxWidth || 1050,
-            whiteSpace: "nowrap",
-            width: { xs: "100%", lg: "70%" },
-          }}
-        >
-          {title}
-        </Typography>
-        </Box> */}
         {featuredBlog && (
-           <FeaturedBlogCard blog={featuredBlog} />
+           <Box
+             component={motion.div}
+             initial={{ opacity: 0, y: 40 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: false, amount: 0.15 }}
+             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+             sx={{ position: "relative", zIndex: 3, width: "100%", display: "flex", justifyContent: "center" }}
+           >
+             <FeaturedBlogCard blog={featuredBlog} />
+           </Box>
          )}
       </Box>
   )

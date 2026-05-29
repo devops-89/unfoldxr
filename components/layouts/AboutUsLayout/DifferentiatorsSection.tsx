@@ -1,13 +1,25 @@
+"use client";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { motion } from "framer-motion";
 
 const DifferentiatorsSection = () => {
   const { differentiatorsSection: data } = aboutPage;
 
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         bgcolor: COLORS.BLACK,
         color: COLORS.WHITE,
@@ -29,6 +41,12 @@ const DifferentiatorsSection = () => {
             }}
           >
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontSize: { xs: 36, md: 36 },
                 fontWeight: 900,
@@ -40,13 +58,28 @@ const DifferentiatorsSection = () => {
             >
               {data.heading}
             </Typography>
-            <Stack spacing={5}>
+            <Stack 
+              spacing={5}
+              component={motion.div}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
+            >
               {data.items.map((item, idx) => (
                 <Stack
                   key={idx}
                   direction="row"
                   spacing={3}
                   alignItems="flex-start"
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, x: -30 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
                 >
                   <Box
                     component="img"
@@ -91,7 +124,12 @@ const DifferentiatorsSection = () => {
           </Grid>
           <Grid size={{ xs: 12, md: 5 }}>
             <Box
-              component="img"
+              component={motion.img}
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: { opacity: 1, scale: 1 },
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               src={data.image}
               alt="Differentiator"
               sx={{

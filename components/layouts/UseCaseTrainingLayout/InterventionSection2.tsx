@@ -6,6 +6,7 @@ import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   data: UseCaseData["intervention"];
@@ -184,6 +185,11 @@ const InterventionSection2 = ({ data }: Props) => {
 
   return (
     <Box
+      component={motion.section}
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.18 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
       sx={{
         bgcolor: COLORS.WHITE,
         color: COLORS.BLACK,
@@ -201,7 +207,14 @@ const InterventionSection2 = ({ data }: Props) => {
       >
         <Grid container spacing={{ xs: 5, md: 10 }}>
           {/* Left Side: Title */}
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid
+            size={{ xs: 12, md: 5 }}
+            component={motion.div}
+            initial={{ opacity: 0, x: -42 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.58, ease: "easeOut" }}
+          >
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
@@ -218,7 +231,14 @@ const InterventionSection2 = ({ data }: Props) => {
           </Grid>
 
           {/* Right Side: Description */}
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid
+            size={{ xs: 12, md: 7 }}
+            component={motion.div}
+            initial={{ opacity: 0, x: 42 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.58, ease: "easeOut", delay: 0.08 }}
+          >
             <Box
               sx={{
                 display: "flex",
@@ -270,9 +290,26 @@ const InterventionSection2 = ({ data }: Props) => {
 
         {data.cards && data.cards.length > 0 && (
           <Box sx={{ mt: { xs: 8, md: 5 }, mb: 4, position: "relative" }}>
-            <Grid container spacing={{ xs: 6, md: 4 }}>
+            <Grid
+              container
+              spacing={{ xs: 6, md: 4 }}
+              component={motion.div}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.12 } },
+              }}
+            >
               {data.cards.map((card, index) => (
                 <Grid
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 34, scale: 0.96 },
+                    visible: { opacity: 1, y: 0, scale: 1 },
+                  }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   key={index}
                   size={{ xs: 12, md: 4 }}
                   sx={{
@@ -280,6 +317,9 @@ const InterventionSection2 = ({ data }: Props) => {
                   }}
                 >
                   <Box
+                    component={motion.div}
+                    whileHover={{ y: -8, scale: 1.025 }}
+                    transition={{ type: "spring", stiffness: 240, damping: 22 }}
                     sx={{
                       width: "100%",
                       borderRadius: "16px",
@@ -295,6 +335,23 @@ const InterventionSection2 = ({ data }: Props) => {
                       border: "1px solid",
                       borderColor: "rgba(255,255,255,0.05)",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
+                      position: "relative",
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        inset: 0,
+                        background:
+                          "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.18), transparent 72%)",
+                        transform: "translateX(-120%)",
+                        transition: "transform 0.65s ease",
+                      },
+                      "&:hover::after": {
+                        transform: "translateX(120%)",
+                      },
+                      "& > *": {
+                        position: "relative",
+                        zIndex: 1,
+                      },
                     }}
                   >
                     <Typography
@@ -369,6 +426,12 @@ const InterventionSection2 = ({ data }: Props) => {
           }}
         >
           <Box
+            component={motion.div}
+            initial={{ opacity: 0, y: 60, scale: 0.94 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.25 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            whileHover={{ y: -10, scale: 1.015 }}
             sx={{
               position: "relative",
               width: "100%",

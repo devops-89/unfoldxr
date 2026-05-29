@@ -17,6 +17,34 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
         gap: 3,
         alignItems: "center",
         textAlign: { xs: "center", md: "left" },
+        p: { xs: 2, md: 3 },
+        borderRadius: "20px",
+        transition: "all 0.3s ease",
+        border: "1px solid rgba(255, 255, 255, 0)",
+        position: "relative",
+        overflow: "hidden",
+        "&:hover": {
+          boxShadow: "0 22px 45px rgba(0,0,0,0.22)",
+          borderColor: "rgba(182, 236, 26, 0.3)",
+          bgcolor: "rgba(255,255,255,0.03)",
+        },
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(110deg, transparent 25%, rgba(182,236,26,0.16), transparent 72%)",
+          transform: "translateX(-120%)",
+          transition: "transform 0.65s ease",
+          zIndex: 0,
+        },
+        "&:hover::after": {
+          transform: "translateX(120%)",
+        },
+        "& > *": {
+          position: "relative",
+          zIndex: 1,
+        },
       }}
     >
       {/* Number */}
@@ -35,6 +63,7 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
       {/* Content */}
       <Box>
         <Typography
+          component="div"
           sx={{
             fontSize: { xs: 14, md: 18 },
             lineHeight: "30px",

@@ -5,6 +5,7 @@ import { din } from "@/utils/fonts";
 import { meetAvaPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import { motion } from "framer-motion";
 
 const EvolvesCtaSection = () => {
   const { openModal } = useDemoModal();
@@ -13,6 +14,18 @@ const EvolvesCtaSection = () => {
   return (
     <Box sx={{ backgroundColor: COLORS.BLACK, py: { xs: 8, md: 10 } }}>
       <Box
+        component={motion.div}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
         sx={{
           width: { xs: "85%", md: "80%" },
           mx: "auto",
@@ -20,6 +33,12 @@ const EvolvesCtaSection = () => {
         }}
       >
         <Box
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           sx={{
             backgroundColor: COLORS.WHITE,
             borderRadius: { xs: 4, md: "24px" },
@@ -54,6 +73,12 @@ const EvolvesCtaSection = () => {
             }}
           >
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
@@ -70,24 +95,32 @@ const EvolvesCtaSection = () => {
               {data.heading}
             </Typography>
 
-            <Button
-            onClick={() => openModal("meet_ava_cta")}
-              sx={{
-                mt: 4,
-                bgcolor: COLORS.PRIMARY_GREEN,
-                color: COLORS.BLACK,
-                borderRadius: 99,
-                px: { xs: 4, md: 6 },
-                py: 2,
-                fontFamily: din.style.fontFamily,
-                fontWeight: 900,
-                fontSize: { xs: 14, md: 16, lg: 16 },
-                textTransform: "none",
-                "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
               }}
+              transition={{ duration: 0.6 }}
             >
-              {data.cta}
-            </Button>
+              <Button
+              onClick={() => openModal("meet_ava_cta")}
+                sx={{
+                  mt: 4,
+                  bgcolor: COLORS.PRIMARY_GREEN,
+                  color: COLORS.BLACK,
+                  borderRadius: 99,
+                  px: { xs: 4, md: 6 },
+                  py: 2,
+                  fontFamily: din.style.fontFamily,
+                  fontWeight: 900,
+                  fontSize: { xs: 14, md: 16, lg: 16 },
+                  textTransform: "none",
+                  "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
+                }}
+              >
+                {data.cta}
+              </Button>
+            </motion.div>
           </Box>
         </Box>
       </Box>

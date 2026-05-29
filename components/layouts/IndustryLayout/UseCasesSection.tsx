@@ -1,8 +1,10 @@
+"use client";
 import { din, helvetica } from "@/utils/fonts";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
+import { motion } from "framer-motion";
 
 interface Props {
   data: IndustryData["useCases"];
@@ -31,9 +33,18 @@ const UseCasesSection = ({ data }: Props) => {
 
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.15 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
       sx={{
         bgcolor: COLORS.WHITE,
-        // minHeight: { md: "80vh" },
         display: "flex",
         alignItems: "center",
         py: { xs: 8, md: 10 },
@@ -50,6 +61,12 @@ const UseCasesSection = ({ data }: Props) => {
           {/* Left Side: Headline and Button */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Typography
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.6 }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontSize: { xs: 28, md: 34, lg: 36 },
@@ -67,10 +84,26 @@ const UseCasesSection = ({ data }: Props) => {
 
           {/* Right Side: Staggered Pills */}
           <Grid size={{ xs: 12, md: 7 }}>
-            <Stack spacing={3} alignItems="stretch">
+            <Stack 
+              spacing={3} 
+              alignItems="stretch"
+              component={motion.div}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
+            >
               {data.items.map((label, i) => (
                 <Box
                   key={label}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, x: 30 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
                   sx={{
                     border: "1px solid #E0E0E0",
                     borderRadius: "100px",

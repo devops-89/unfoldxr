@@ -41,7 +41,7 @@ const Tools = () => {
           component={motion.div}
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           sx={{
             py: { xs: 4, md: 4 },
@@ -55,7 +55,7 @@ const Tools = () => {
           component={motion.div}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           sx={{ mb: { xs: 4, md: 6 } }}>
             {/* Top Line of Heading */}
@@ -135,7 +135,7 @@ const Tools = () => {
             component={motion.div}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false }}
+            viewport={{ once: false, amount: 0.15 }}
             variants={{
               hidden: {},
               visible: {
