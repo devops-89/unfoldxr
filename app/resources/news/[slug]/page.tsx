@@ -88,7 +88,7 @@ export default async function NewsDetailPage({ params }: Props) {
         }}
       >
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-        <Link href="/news" style={{ textDecoration: "none" }}>
+        <Link href="/resources/news" style={{ textDecoration: "none" }}>
           <Chip
             label="← Back to News"
             clickable

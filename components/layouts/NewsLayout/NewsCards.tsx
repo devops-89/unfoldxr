@@ -10,7 +10,7 @@ export default function NewsCard({ item }: { item: NewsItem }) {
   const shortSummary = item.content.split(" ").slice(0, 19).join(" ");
 
   return (
-    <Link href={`/news/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
+    <Link href={`/resources/news/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
     <Card 
         sx={{ 
           borderRadius: 0, 

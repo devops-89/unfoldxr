@@ -11,7 +11,7 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
 
   return (
     <Link 
-      href={`/blogs/${item.slug}`} 
+      href={`/resources/blogs/${item.slug}`} 
       style={{ 
         color: "black", 
         textDecoration: "none" 

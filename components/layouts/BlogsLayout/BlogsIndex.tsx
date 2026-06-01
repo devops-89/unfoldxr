@@ -35,7 +35,7 @@ export default function BlogsPage() {
         width: { xs: "95%", md: "90%", lg: "87%" },
         margin: "0 auto",
      }}>
-      <BlogsGrid news={currentItems} />
+      <BlogsGrid blogs={currentItems} />
       <BlogsPagination count={Math.ceil(blogsItems.length / itemsPerPage)}
         page={page}
         onChange={handleChange}/>

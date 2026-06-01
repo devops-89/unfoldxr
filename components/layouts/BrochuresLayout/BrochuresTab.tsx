@@ -50,7 +50,7 @@ const BrochuresTabs = ({
         return (
           <Link
           key={tab}
-          href={`/brochures/${categorySlugMap[tab]}`}
+          href={`/resources/brochures/${categorySlugMap[tab]}`}
           style={{
              textDecoration: "none",
            }}

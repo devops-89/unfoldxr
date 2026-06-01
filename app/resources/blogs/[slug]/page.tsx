@@ -88,7 +88,7 @@ export default async function BlogDetailPage({ params }: Props) {
             }}
           >
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <Link href="/blogs" style={{ textDecoration: "none" }}>
+            <Link href="/resources/blogs" style={{ textDecoration: "none" }}>
               <Chip
                 label="← Back to Blogs"
                 clickable

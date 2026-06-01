@@ -135,11 +135,11 @@ export const HEADER_LINKS = [
     subLinks: [
       {
         label: "Blogs & Insights",
-        url: "/blogs",
+        url: "/resources/blogs",
       },
       {
         label: "Latest News",
-        url: "/news",
+        url: "/resources/news",
       },
 //      { 
 //        label: "Case Studies", 
@@ -147,7 +147,7 @@ export const HEADER_LINKS = [
 //      },
       {
         label: "Brochures, eBook and Infographics",
-        url: "/brochures",
+        url: "/resources/brochures",
       },
       
     ],
@@ -199,17 +199,17 @@ export const FOOTER_COLUMNS = [
   {
     title: "Resources",
     links: [
-      { label: "Blog & Insights", url: "/blogs" },
+      { label: "Blog & Insights", url: "/resources/blogs" },
 
       {
         label: "Latest News",
-        url: "/news",
+        url: "/resources/news",
       },
 
    //  { label: "Case Studies", url: "/casestudies" },
       {
         label: "Brochures, eBook and Infographics",
-        url: "/brochures",
+        url: "/resources/brochures",
       },
     ],
   },
