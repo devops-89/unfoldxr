@@ -27,8 +27,6 @@ const HomeLayout = () => {
         <WorkForce />
       </Box>
 
-      <ScrollScanSection/>
-
       <AiIndustry />
 
       <FutureWork />
