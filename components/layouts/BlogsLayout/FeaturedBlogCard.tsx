@@ -80,7 +80,7 @@ const FeaturedBlogCard = ({ blog }: FeaturedBlogCardProps) => {
         </Typography>
 
         <Link
-          href={`/blogs/${blog.slug}`}
+          href={`/resources/blogs/${blog.slug}`}
           style={{
             width: "fit-content",
             textDecoration: "none",
@@ -120,7 +120,7 @@ const FeaturedBlogCard = ({ blog }: FeaturedBlogCardProps) => {
           fill
           priority
           style={{
-            objectFit: "cover",
+            objectFit: "fill",
           }}
         />
       </Box>

@@ -6,6 +6,7 @@ import { Chip } from '@mui/material';
 import Link from 'next/link';
 import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
+import ReactMarkDown from 'react-markdown';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -27,7 +28,9 @@ export default async function NewsDetailPage({ params }: Props) {
       <Box
         sx={{
             position: "relative",
-            minHeight: { xs: "60vh", md: "60vh" },
+            width: "100%",
+            aspectRatio: { xs: "16/9", md: "16/9", lg: "unset" },
+            height: { xs: "auto", md: "70vh", lg: "100vh" },
             display: "flex",
             alignItems: "center",
             color: COLORS.WHITE,
@@ -41,7 +44,7 @@ export default async function NewsDetailPage({ params }: Props) {
           style={{ objectFit: "cover" }}
           priority
         />
-        <Box
+    {/*    <Box
           sx={{
             position: "absolute",
             inset: 0,
@@ -77,6 +80,7 @@ export default async function NewsDetailPage({ params }: Props) {
             {news.title}
           </Typography>
         </Box>
+        */}
       </Box>
 
       <Box
@@ -109,7 +113,8 @@ export default async function NewsDetailPage({ params }: Props) {
         </Typography>
       </Box>
 
-      <Typography 
+      <Typography
+        component="div"
         sx={{ 
             mt: 3, 
             fontFamily: helvetica.style.fontFamily,
@@ -117,7 +122,9 @@ export default async function NewsDetailPage({ params }: Props) {
             fontSize: "1.02rem" 
             }}
       >
+      <ReactMarkDown>
         {news.content}
+      </ReactMarkDown>
       </Typography>
       </Box>
 

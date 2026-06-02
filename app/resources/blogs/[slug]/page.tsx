@@ -6,6 +6,7 @@ import { Chip } from '@mui/material';
 import Link from 'next/link';
 import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
+import ReactMarkDown from 'react-markdown';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -27,7 +28,9 @@ export default async function BlogDetailPage({ params }: Props) {
           <Box
             sx={{
                 position: "relative",
-                minHeight: { xs: "60vh", md: "60vh" },
+                width: "100%",
+                aspectRatio: { xs: "16/9", md: "16/9", lg: "unset" },
+                height: { xs: "auto", md: "70vh", lg: "100vh" },
                 display: "flex",
                 alignItems: "center",
                 color: COLORS.WHITE,
@@ -41,7 +44,8 @@ export default async function BlogDetailPage({ params }: Props) {
               style={{ objectFit: "cover" }}
               priority
             />
-            <Box
+            
+        {/*     <Box
               sx={{
                 position: "absolute",
                 inset: 0,
@@ -77,7 +81,9 @@ export default async function BlogDetailPage({ params }: Props) {
                 {blog.title}
               </Typography>
             </Box>
+              */}
           </Box>
+      
     
           <Box
             sx={{
@@ -110,6 +116,7 @@ export default async function BlogDetailPage({ params }: Props) {
           </Box>
     
           <Typography 
+            component="div"
             sx={{ 
                 mt: 3, 
                 fontFamily: helvetica.style.fontFamily,
@@ -117,7 +124,7 @@ export default async function BlogDetailPage({ params }: Props) {
                 fontSize: "1.02rem" 
                 }}
           >
-            {blog.content}
+            <ReactMarkDown>{blog.content}</ReactMarkDown>
           </Typography>
           </Box>
     

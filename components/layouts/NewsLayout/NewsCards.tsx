@@ -10,11 +10,22 @@ export default function NewsCard({ item }: { item: NewsItem }) {
   const shortSummary = item.content.split(" ").slice(0, 19).join(" ");
 
   return (
-    <Link href={`/resources/news/${item.slug}`} style={{ color: "black", textDecoration: "none" }}>
+    <Link 
+      href={`/resources/news/${item.slug}`} 
+      style={{ 
+        color: "black", 
+        textDecoration: "none",
+        display: "block",
+        height: "100%",
+        }}
+    >
     <Card 
         sx={{ 
+          height: "100%",
           borderRadius: 0, 
           overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
           transition: "all 0.3s ease", 
           "&:hover": {
           transform: "translateY(-6px)",
@@ -23,7 +34,7 @@ export default function NewsCard({ item }: { item: NewsItem }) {
     >
       
       {/* Image wrapper */}
-      <Box sx={{ position: "relative", width: "100%", height: 180 }}>
+      <Box sx={{ position: "relative", width: "100%", aspectRatio: "16/9", flexShrink: 0 }}>
         <Image
           src={item.image}
           alt={item.title}
@@ -32,7 +43,15 @@ export default function NewsCard({ item }: { item: NewsItem }) {
         />
       </Box>
 
-      <CardContent>
+      <CardContent
+        sx={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            flexGrow: 1,
+            height: "100%"
+          }}
+      >
+        <Box>
         <Typography 
           fontWeight={700}
           sx={{
@@ -50,8 +69,9 @@ export default function NewsCard({ item }: { item: NewsItem }) {
         >
           {shortSummary}...
         </Typography>
+        </Box>
 
-        <Box mt={2} display="flex" justifyContent="space-between">
+        <Box mt="auto" pt={2} display="flex" justifyContent="space-between">
           <Box>
             <Typography 
               variant="caption"

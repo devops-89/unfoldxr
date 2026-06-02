@@ -14,13 +14,18 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
       href={`/resources/blogs/${item.slug}`} 
       style={{ 
         color: "black", 
-        textDecoration: "none" 
+        textDecoration: "none",
+        display: "block",
+        height: "100%",
         }}
       >
     <Card 
         sx={{ 
+          height: "100%",
           borderRadius: 0, 
           overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
           transition: "all 0.3s ease", 
           "&:hover": {
           transform: "translateY(-6px)",
@@ -29,7 +34,7 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
     >
       
       {/* Image wrapper */}
-      <Box sx={{ position: "relative", width: "100%", height: 180 }}>
+      <Box sx={{ position: "relative", width: "100%", aspectRatio: "16/9", flexShrink: 0 }}>
         <Image
           src={item.image}
           alt={item.title}
@@ -38,7 +43,15 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
         />
       </Box>
 
-      <CardContent>
+      <CardContent
+        sx={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            flexGrow: 1,
+            height: "100%"
+          }}
+      >
+        <Box>
         <Typography 
           fontWeight={700}
           sx={{fontFamily: helvetica.style.fontFamily}}
@@ -52,8 +65,9 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
         >
           {shortSummary}... 
         </Typography>
+        </Box>
 
-        <Box mt={2} display="flex" justifyContent="space-between">
+        <Box mt="auto" pt={2} display="flex" justifyContent="space-between">
             <Typography 
               variant="caption" 
               color="text.secondary"
