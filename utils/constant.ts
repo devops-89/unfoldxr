@@ -134,7 +134,7 @@ export const HEADER_LINKS = [
     url: "#",
     subLinks: [
       {
-        label: "Blogs & Insights",
+        label: "Insights",
         url: "/resources/blogs",
       },
       {
@@ -199,7 +199,7 @@ export const FOOTER_COLUMNS = [
   {
     title: "Resources",
     links: [
-      { label: "Blog & Insights", url: "/resources/blogs" },
+      { label: "Insights", url: "/resources/blogs" },
 
       {
         label: "Latest News",

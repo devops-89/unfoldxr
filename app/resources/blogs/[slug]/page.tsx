@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Divider } from '@mui/material';
 import { blogsItems } from "@/components/layouts/BlogsLayout/data";
 import Image from 'next/image';
 import { Chip } from '@mui/material';
@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 import ReactMarkDown from 'react-markdown';
+import { Height } from '@mui/icons-material';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,7 +23,10 @@ export default async function BlogDetailPage({ params }: Props) {
      <Box 
             sx={{ 
                 maxWidth: "100%", 
-                mx: "auto" 
+                mx: "auto",
+                backgroundColor: COLORS.BLACK,
+                minHeight: "100vh",
+                color: COLORS.WHITE,
                 }}
         >
           <Box
@@ -89,7 +93,7 @@ export default async function BlogDetailPage({ params }: Props) {
             sx={{
               width: { xs: "95%", md: "90%", lg: "84%" },
               mx: "auto",
-              pt: 6,
+              pt: {xs: 4, md: 6 },
               pb: 8,
             }}
           >
@@ -102,29 +106,76 @@ export default async function BlogDetailPage({ params }: Props) {
                   borderRadius: "999px",
                   fontWeight: 600,
                   fontFamily: helvetica.style.fontFamily,
+                  backgroundColor: "rgba(255,255,255,0.1)", 
+                  color: COLORS.WHITE,
+                  "&:hover": { backgroundColor: "rgba(255,255,255,0.2)" }
                 }}
               />
             </Link>
             <Typography 
                 sx={{ 
-                     color: "text.secondary",
+                     color: "#aaa",
                      fontFamily: helvetica.style.fontFamily,
                    }}
             >
               {blog.date} • {blog.readTime}
             </Typography>
           </Box>
+
+          <Box sx={{ mt: 5, mb: 4 }}>
+            <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", mb: 2 }} />
+            <Typography 
+              sx={{ 
+                color: "#cccccc", 
+                fontStyle: "italic",
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: "1.05rem"
+              }}
+            >
+              By {blog.author}
+            </Typography>
+            <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", mt: 2 }} />
+          </Box>
     
           <Typography 
             component="div"
             sx={{ 
-                mt: 3, 
+                mt: 4, 
                 fontFamily: helvetica.style.fontFamily,
-                lineHeight: 1.7, 
-                fontSize: "1.02rem" 
+                lineHeight: { xs: 1.7, md: 1.8 }, 
+                fontSize: { xs: "1.05rem", md: "1.15rem", lg: "1.2rem" },
+                
+                // Base text color: Soft light gray (easier to read than pure white)
+                color: "#e0e0e0", 
+
+                // Highlighted content & headings in PRIMARY GREEN
+                '& h3': { mt: 5, mb: 2, fontSize: { xs: '1.5rem', md: '1.8rem' }, fontWeight: 'bold', fontFamily: din.style.fontFamily, color: COLORS.PRIMARY_GREEN },
+                '& h4': { mt: 4, mb: 1.5, fontSize: { xs: '1.2rem', md: '1.4rem' }, fontWeight: 'bold', color: COLORS.PRIMARY_GREEN },
+                '& strong': { fontWeight: 700, color: COLORS.PRIMARY_GREEN }, // Makes bolded text green!
+                
+                // Lists & Links formatting
+                '& p': { mb: 3 },
+                '& ul': { paddingLeft: '24px', marginBottom: '24px', listStyleType: 'disc' },
+                '& li': { marginBottom: '12px', display: 'list-item' },
+                '& a': { color: COLORS.PRIMARY_GREEN, textDecoration: 'none', '&:hover': { textDecoration: 'underline' }} 
                 }}
           >
-            <ReactMarkDown>{blog.content}</ReactMarkDown>
+            <ReactMarkDown
+              components={{
+                a: ({ node, ...props }) => {
+                  const isWebLink = props.href?.startsWith('http');
+                  return (
+                    <a 
+                      {...props} 
+                      target={isWebLink ? '_blank' : undefined}
+                      rel={isWebLink ? 'noopener noreferrer' : undefined}
+                    />
+                  );
+                }
+              }}
+            >
+              {blog.content}
+            </ReactMarkDown>
           </Typography>
           </Box>
     

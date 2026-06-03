@@ -70,7 +70,6 @@ export default function BlogsCard({ item }: { item: BlogsItem }) {
         <Box mt="auto" pt={2} display="flex" justifyContent="space-between">
             <Typography 
               variant="caption" 
-              color="text.secondary"
               sx={{fontFamily: helvetica.style.fontFamily}}
             >
               {item.date}

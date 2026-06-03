@@ -14,20 +14,21 @@ export default function NewsHeader({
   setSearchTerm,
 }: NewsHeaderProps) {
   return (
-    <Box display="flex" 
-         justifyContent="space-between" 
+    <Box 
+    display="flex" 
+         justifyContent="flex-start" 
          alignItems={{ xs: "flex-start", md: "center" }}
          flexDirection={{ xs: "column", md: "row" }}
          gap={{ xs: 2, md: 0 }}
          mb={5}
     >
-      <Typography 
+    {/*  <Typography 
         variant="h4" 
         fontWeight={900}
         sx={{fontFamily: din.style.fontFamily}}
       >
         NEWS & ARTICLE
-      </Typography>
+      </Typography> */}
 
       <Box display="flex" gap={2} width={{ xs: "100%", md: "auto" }}>
         <TextField
@@ -37,7 +38,7 @@ export default function NewsHeader({
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           sx={{
-            maxWidth: { md: 260 },
+            maxWidth: { xs: "100%", md: "auto" },
             "& .MuiOutlinedInput-root": {
               borderRadius: "999px",
             },

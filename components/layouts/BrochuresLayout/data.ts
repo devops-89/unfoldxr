@@ -69,7 +69,7 @@ export const brochureTabData: Record<
 
   "Infographic": [
     { id: 1, title: "Card 1", image: AiIsRewriting, slug: "ai-is-rewritting", pdf: "/ResourcePdf/infographicsPdf/AI-IS-REWRITING.pdf" },
-    { id: 2, title: "Card 2", image: EightyofTheWorkforce, slug: "80%-of-workforce", pdf: "/ResourcePdf/infographicsPdf/Eighty-of-the-workforce.pdf"},
+    { id: 2, title: "Card 2", image: EightyofTheWorkforce, slug: "80%-of-workforce", pdf: "/ResourcePdf/infographicsPdf/Eighty-percent-of-the-Workforce-Still.pdf" },
   ],
 
   "Events & Webinar": [],

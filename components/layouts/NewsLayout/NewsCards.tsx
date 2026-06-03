@@ -78,15 +78,15 @@ export default function NewsCard({ item }: { item: NewsItem }) {
               sx={{fontFamily: helvetica.style.fontFamily}}
             >{item.date}
             </Typography>
-            {item.author && (
+           {/* {item.author && (
               <Typography 
                 variant="caption" 
                 display="block"
                 sx={{fontFamily: helvetica.style.fontFamily}}
               >
                 By "{item.author}"
-              </Typography>
-            )}
+              </Typography> 
+            )} */}
           </Box>
 
           {item.readTime && (

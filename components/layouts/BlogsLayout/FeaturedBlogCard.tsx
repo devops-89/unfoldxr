@@ -109,18 +109,25 @@ const FeaturedBlogCard = ({ blog }: FeaturedBlogCardProps) => {
       {/* RIGHT IMAGE */}
       <Box
         sx={{
-          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           width: { xs: "100%", md: "42%" },
           minHeight: { xs: 260, md: "auto" },
+          p: { xs: 3, md: 5 },
         }}
       >
         <Image
-          src={blog.image}
+          src={typeof blog.image === 'object' ? blog.image.src : blog.image}
           alt={blog.title}
-          fill
+          width={800} 
+          height={500}
           priority
           style={{
-            objectFit: "fill",
+            width: "100%",
+            height: "auto",
+            display: "block",
+            border: `2px solid ${COLORS.PRIMARY_GREEN}`,
           }}
         />
       </Box>

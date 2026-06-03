@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import NewsHero from "@/images/news-img/dummyNewsHero.jpg";
+import NewsHero from "@/images/news-img/HeroNew.jpeg";
 import NewsCardImg from "@/images/news-img/CardsImages/news1.jpeg";
 import NewsCardImg2 from "@/images/news-img/CardsImages/news2.jpeg";
 import NewsCardImg3 from "@/images/news-img/CardsImages/news3.jpeg";
@@ -25,7 +25,7 @@ export type NewsItem = {
   title: string;
   image: string | StaticImageData;
   date: string;
-  author?: string;
+  location?: string;
   readTime?: string;
   slug: string;
   content: string;
@@ -70,9 +70,9 @@ export const newsItems: NewsItem[] = [
     id: 1,
     title: "As Industry 4.0 Accelerates, UnfoldXR Expands AI and AR Capabilities for Frontline Operations",
     image: NewsCardImg,
-    date: "May 20th 2020",
-    author: "Author Name",
-    readTime: "5 min reading",
+    date: "June 01, 2026",
+    location: "NOIDA",
+    readTime: "3 min reading",
     content: `NOIDA, 14th May 2026 - A new phase of Industry 4.0 is unfolding as organisations move beyond connected systems to focus on execution on the ground. While significant progress has been made in digitising operations, **80% of the frontline workforce** still operates without access to real-time intelligence at the moment of work.
 
 UnfoldXR, a new-age SaaS platform, is expanding its AI and augmented reality capabilities to address this gap by bringing structured, real-time guidance directly into frontline workflows. With a mission to empower **1 million workers by 2030**, UnfoldXR is shifting the focus from systems that analyse and report to end-to-end systems that actively support execution across all stages of work.
@@ -104,9 +104,9 @@ UnfoldXR is an AI and augmented reality platform designed to bring real-time int
     id: 2,
     title: "UnfoldXR Partners with RealWear to Bring Intelligent Wearables to the Frontline",
     image: NewsCardImg2,
-    date: "May 20th 2020",
-    author: "Author Name",
-    readTime: "5 min reading",
+    date: "April 09, 2026",
+    location: "NOIDA",
+    readTime: "3 min reading",
     content: `A new era of workforce productivity is emerging as AI, augmented reality, and wearable technology come together to transform how frontline work gets done. **UnfoldXR has announced its partnership with RealWear**, a global leader in voice-powered smart glasses, to bring intelligent, hands-free execution to industrial environments.
 
 Nearly **2.8 billion deskless workers** still operate without access to real-time intelligence, relying on manuals, memory, and delayed support to complete critical tasks. This gap continues to impact speed, accuracy, and overall operational performance across industries. This partnership between UnfoldXR and RealWear shall address this gap and meet the growing demand for faster, safer, and more consistent operations across industries.
@@ -145,9 +145,9 @@ RealWear is a global provider of rugged, voice-controlled smart glasses designed
     id: 3,
     title: "Why the Next AI Revolution Will Happen on the Frontline",
     image: NewsCardImg3,
-    date: "May 20th 2020",
-    author: "Author Name",
-    readTime: "5 min reading",
+    date: "March 20, 2026",
+    location: "NOIDA",
+    readTime: "3 min reading",
     content: `For the past few years, artificial intelligence has rapidly reshaped how people work — but mostly in one place: the office.
 
 From AI assistants helping draft emails to tools that automate coding and digital workflows, the current wave of AI innovation has largely focused on people sitting behind desks.

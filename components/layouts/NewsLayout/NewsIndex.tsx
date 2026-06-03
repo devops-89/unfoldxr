@@ -6,7 +6,7 @@ import NewsHeader from "./NewsHeader";
 import NewsGrid from "./NewsGrid";
 import NewsPagination from "./NewsPagination";
 import { newsItems, newsData } from "./data";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 
 export default function NewsPage() {
@@ -19,7 +19,13 @@ export default function NewsPage() {
     setPage(value);
   };
 
-  const filteredNews = newsItems.filter(
+  const sortedNews = useMemo(() => {
+    return [...newsItems].sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+  }, []);
+
+  const filteredNews = sortedNews.filter(
     (item) =>
       item.title
         .toLowerCase()
@@ -43,7 +49,7 @@ export default function NewsPage() {
      }}>
       <NewsHeader searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       <NewsGrid news={currentItems} />
-      <NewsPagination count={Math.ceil(newsItems.length / itemsPerPage)}
+      <NewsPagination count={Math.ceil(filteredNews.length / itemsPerPage)}
         page={page}
         onChange={handleChange}/>
     </Container>

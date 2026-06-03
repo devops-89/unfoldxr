@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import BlogHero from "@/images/blogs-img/blogsHero.jpg";
+import BlogHero from "@/images/blogs-img/BlogHeroNew.jpeg";
 import BlogCard1 from "@/images/blogs-img/BlogsCardImages/blog1.jpeg";
 import BlogCard2 from "@/images/blogs-img/BlogsCardImages/blog2.webp";
 import BlogCard3 from "@/images/blogs-img/BlogsCardImages/blog3.jpg";
@@ -8,6 +8,7 @@ import BlogCard5 from "@/images/blogs-img/BlogsCardImages/blog5.jpg";
 import BlogCard6 from "@/images/blogs-img/BlogsCardImages/blog6.jpg";
 import BlogCard7 from "@/images/blogs-img/BlogsCardImages/blog7.jpg";
 import BlogCard8 from "@/images/blogs-img/BlogsCardImages/blog8.jpeg";
+import BlogCard9 from "@/images/blogs-img/BlogsCardImages/newblog.webp";
 
 export interface BlogsData {
   hero: {
@@ -29,7 +30,7 @@ export type BlogsItem = {
   readTime?: string;
   slug: string;
   content: string;
-  featured?: boolean;
+  author?: string;
 };
 
 export const blogsData: BlogsData = {
@@ -67,8 +68,9 @@ export const blogsItems: BlogsItem[] = [
     id: 1,
     title: "Turning Knowledge into Action: The Power of Guided Workflows",
     image: BlogCard1,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "May 26, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR, Indrabati Sarkar / Lead - Brand Voice & Content Strategy (Consultant)",
     content: `Every organisation already has their knowledge documented. It exists in the form of SOPs, manuals, maintenance records, training videos, dashboards, and experienced employees. Any mid-size organisation has more than 500 to 2000 active SOPs and for large enterprises this number can go up to 50,000 active SOPs as they manage complex, global workflows.
 
 These knowledge documents or rich media like training videos contain deep operational understanding around inspections, repairs, troubleshooting, safety procedures, and machine behaviour etc. However, the challenge remains in making this knowledge usable during execution.
@@ -160,15 +162,15 @@ Guided Workflow helps organisations:
 * Continuously capture operational knowledge
 
 The next phase of operational excellence will not be defined by how much information organisations collect. It will depend on how effectively they turn knowledge into action.
-To know more about how UnfoldXR is enabling operational excellence by augmenting human performance through AI-powered Guided Workflows, write to us at [**info@unfoldxr.com**](mailto:info@unfoldxr.com) or visit us at **www.unfoldxr.com**.`,
-    featured: true,
+To know more about how UnfoldXR is enabling operational excellence by augmenting human performance through AI-powered Guided Workflows, write to us at [**info@unfoldxr.com**](mailto:info@unfoldxr.com) or visit us at [**www.unfoldxr.com**](https://www.unfoldxr.com).`,
   }),
   createBlogsItem({
     id: 2,
     title: "How AI and AR Are Transforming Compliance Inspection",
     image: BlogCard2,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "May 19, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR, Indrabati Sarkar / Lead - Brand Voice & Content Strategy (Consultant)",
     content: `Over the last decade, inspections and compliance workflows have become increasingly digitised. Paper checklists have largely moved to tablets, mobile apps, and workflow systems. Documentation is faster, records are easier to store, and audits are more traceable than before. 
 
 But all these digitisation alone has not solved the core problem. Most inspection workflows today are still passive. They record work, but they do not guide execution in real time. Inspectors are often expected to interpret SOPs, navigate fragmented systems, and make decisions based on experience or memory while performing tasks on the ground. 
@@ -199,7 +201,7 @@ Capabilities like real-time validation, geo-tagged evidence capture, AR-assisted
 ### Operational and Regulatory Impact
 The impact is operational as much as regulatory. **Guided digital workflows can reduce inspection time by 30–50% while improving consistency and reducing compliance gaps**, according to PTC and Deloitte studies. 
 
-More importantly, organisations become less dependent on individual knowledge and expertise to maintain quality and compliance standards. As workforce structures evolve and experienced talent becomes harder to find, this shift becomes increasingly important. Compliance can no longer depend only on training people once and expecting flawless execution in dynamic environments. It requires systems that actively support the on-ground staff at the moment of work. 
+More importantly, organisations become less dependent on individual knowledge and expertise to maintain quality and compliance standards. As workforce structures evolve and experienced talent becomes harder to find, this shift becomes increasingly important. Compliance can no longer depend only on training people once and expecting flawless execution in dynamic environments. It requires systems that actively support the on-ground staff at the moment of work.  
 
 ### The UnfoldXR Advantage
 Platforms like UnfoldXR are enabling this transition by embedding intelligence directly into inspection and quality workflows. AI, augmented reality, contextual guidance, and real-time collaboration work together to help frontline teams execute inspections with greater clarity, consistency, and confidence. 
@@ -210,8 +212,9 @@ To know more about how UnfoldXR is bringing real time guided inspections in the 
     id: 3,
     title: "Transforming Manufacturing with Real-Time Guided Execution",
     image: BlogCard3,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "May 11, 2026",
+    readTime: "3 min reading",
+    author: "Indrabati Sarkar",
     content: `Manufacturing is entering a new phase where work is no longer just executed, it is guided in real time. For years, the focus has been on building better systems, better visibility, and better analytics. But the next leap in productivity is not coming from more dashboards or reports but on-ground execution.
 
 With agentic AI and augmented reality, real-time guided execution is emerging as that next lever.
@@ -261,8 +264,9 @@ To learn more about how UnfoldXR is transforming manufacturing industries by ena
     id: 4,
     title: "The Rise of the Industry 4.0 and the Missing Piece in Frontline Execution",
     image: BlogCard4,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "May 05, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR",
     content: `For nearly two decades, extended reality has lived in that frustrating space of being "almost there." Impressive in demos, exciting in gaming, but rarely useful enough for everyday work. Earlier augmented reality or extended reality depended on expensive, PC-tethered setups that were difficult to deploy and nearly impossible to scale. Even when the technology worked, it didn't fit into real environments. It was heavy, isolated, and disconnected from how work actually happened.
 
 That's finally starting to change.
@@ -313,8 +317,9 @@ To see how UnfoldXR brings XR into real operations, enabling faster training, sm
     id: 5,
     title: "Why XR Is Finally Ready for Real Frontline Work",
     image: BlogCard5,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "April 28, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR",
     content: `For nearly two decades, extended reality has lived in that frustrating space of being "almost there." Impressive in demos, exciting in gaming, but rarely useful enough for everyday work. Earlier augmented reality or extended reality depended on expensive, PC-tethered setups that were difficult to deploy and nearly impossible to scale. Even when the technology worked, it didn't fit into real environments. It was heavy, isolated, and disconnected from how work actually happened.
 
 That's finally starting to change.
@@ -365,8 +370,9 @@ To see how UnfoldXR brings XR into real operations, enabling faster training, sm
     id: 6,
     title: "Bridging Skill Gap for Frontline Workers with Remote Support",
     image: BlogCard6,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "April 21, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR",
     content: `The workforce challenge is no longer emerging. It is already here. The 2026 Talent Shortage Survey suggests that employers across 41 countries reveal **72% report difficulty filling roles**. Across industries, experienced workers are retiring while new hires enter with limited hands-on exposure. According to the World Economic Forum, **over 50% of all employees will require reskilling** in the coming years. At the same time, sectors like manufacturing, automation and field service continue to face a shortage of skilled technicians.
 
 This creates a critical gap. The demand for expertise is growing, but the availability of experienced professionals is not keeping pace.
@@ -423,8 +429,9 @@ Organizations are able to scale expertise without scaling headcount, moving from
     id: 7,
     title: "How Augmented Reality is Solving Critical Workforce Challenges",
     image: BlogCard7,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "April 16, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR",
     content: `For years, augmented reality has been largely associated with gaming and entertainment. From immersive experiences to interactive filters, its adoption has been driven by engagement rather than execution.
 
 That is changing.
@@ -487,8 +494,9 @@ To know more about how UnfoldXR brings augmented reality into the moment of work
     id: 8,
     title: "AI for Frontline Workers: The Future of Enterprise Productivity",
     image: BlogCard8,
-    date: "May 20th 2020",
-    readTime: "5 min reading",
+    date: "April 07, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR",
     content: `If you are in charge of a manufacturing plant, a retail network, or a hospital system, your biggest challenges are not strategic. They are operational.
 
 A machine goes down mid-shift. A compliance step is missed during peak hours. A new worker takes longer to get productive. Unpredictable challenges which need rapid action, or pre-emptive steps creates unproductive hours that can be avoided.
@@ -554,5 +562,87 @@ With our Agentic AI, AVA and bringing extended reality directly into real-world 
 Our mission is to enable **one million frontline workers** to perform with greater confidence and safety by 2030, bridging the gap between human potential and technological support.
 
 Talk to an UnfoldXR expert to see how frontline intelligence can translate into measurable performance on the ground.`
+  }),
+  createBlogsItem({
+    id: 9,
+    title: "How Augmented Reality and Smart Glasses are Moving Beyond Gaming into Real World",
+    image: BlogCard9,
+    date: "June 02, 2026",
+    readTime: "3 min reading",
+    author: "UnfoldXR, Indrabati Sarkar / Lead - Brand Voice & Content (Consultant)",
+    content: `While we don't notice it, for most of us, augmented reality has already quietly entered everyday life. Trying on sunglasses through a phone camera, testing how furniture looks in a room, using face filters on social media, or previewing outfits digitally are all familiar examples of augmented reality in action. Industries like augmented reality in retail and augmented reality real estate have already shown how digital information can enhance real-world experiences in practical ways.
+
+But AR is now moving into something much bigger than consumer experiences and gaming. It is becoming a serious operational tool for businesses across industries.
+
+### What Is Augmented Reality?
+In simple terms, augmented reality adds digital information into the physical environment instead of replacing it entirely like virtual reality does.
+
+That information could include:
+* Instructions
+* Visual overlays
+* Diagnostics
+* Annotations
+* Alerts or workflows
+
+What we have to understand is that AR is not just about visual overlays; it has a defined goal of helping people make better decisions while performing a task. It is aimed at creating higher efficiency and building greater confidence for the user. The use case of AR in enterprises is increasingly becoming important for frontline industries where workers often depend on manuals, memory, and delayed expert support during operations.
+
+### Why AR Is Becoming More Practical Now
+For years, enterprise AR struggled because hardware was expensive, bulky, and difficult to deploy at scale. But several developments are making wearable augmented reality and mobile AR far more practical:
+* Lighter and more ergonomic smart devices
+* Better mobile and tablet-based AR experiences
+* Improvements in AI and computer vision
+* Faster cloud computing and connectivity
+* Easier integration with enterprise systems and workflows
+
+AR is no longer limited to specialised headsets alone. Many operational workflows can now run through phones, tablets, and lightweight wearables depending on the use case. At the same time, industries are facing growing pressure to improve productivity, reduce downtime, and address skilled workforce shortages where AR becomes operationally valuable.
+
+### What AR Means for Frontline Work
+Frontline work is highly dependent on execution quality and heavily time bound. Technicians, inspectors, and field workers often lose time searching for information, escalating issues, or interpreting static instructions. **According to McKinsey, technicians spend up to 30% of their time searching for information instead of performing actual work.**
+
+AR changes this by bringing guidance directly into the flow of work. Instead of switching between systems or reading lengthy manuals, workers can receive contextual support while performing tasks:
+* Step-by-step instructions
+* Visual guidance aligned to equipment
+* Real-time diagnostics
+* Remote video support from experts
+* Contextual information based on the task or asset
+
+This improves clarity during execution and reduces dependency on a handful of skilled workers. Importantly, AR is not just about visualisation, its real value lies in operational guidance.
+
+### How Frontline Workers Can Actually Use AR
+AR systems use cameras and sensors to understand the surrounding environment and place digital information within the worker’s field of view.
+
+A worker scanning a machine, for example, can instantly access:
+* Maintenance history
+* Inspection workflows
+* Troubleshooting guidance
+* Previous fault records
+
+The information appears in context, making it easier to act quickly and accurately.
+
+When combined with AI and an augmented reality workflow, the experience becomes even more powerful. Systems can adapt guidance dynamically based on the task, worker inputs, or operational conditions.
+
+### The Business Impact
+The operational benefits are becoming increasingly measurable:
+* Faster onboarding and training
+* Reduced downtime and rework
+* Better first-time fix rates
+* Improved compliance and documentation
+* Greater consistency across teams and locations
+
+**Studies by PTC and Deloitte show that guided workflows can reduce task completion time by 30-50%.**
+
+**At the same time, 80% of manufacturers say AI is helping improve productivity and save time, according to KPMG.**
+
+### Where UnfoldXR Fits In
+At UnfoldXR, the focus is not just on AR as a visual layer, but on combining AR with AI-powered guided workflows that actively support execution right at the frontline.
+
+This includes:
+* Real-time contextual guidance
+* Smart Scan and asset recognition
+* AI-assisted workflows
+* Remote expert collaboration
+* Continuous knowledge capture before, during, and after work
+
+At UnfoldXR, our goal is to augment human capabilities and bring intelligence directly into the moment of work with latest technologies like AI, AR, VR, MR and more. To know more about what we are doing to make enterprise AR accessible and cost-effective write to us at [**info@unfoldxr.com**](mailto:info@unfoldxr.com) or visit [**www.unfoldxr.com**](https://www.unfoldxr.com).`
   }),
 ];
