@@ -13,14 +13,14 @@ export default function BlogsPage() {
   const itemsPerPage = 8;
 
   const { latestFeaturedBlog, remainingBlogs } = useMemo(() => {
-    // Sort Newest to Oldest based on date
+
     const sorted = [...blogsItems].sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
     
     return {
-      latestFeaturedBlog: sorted[0],       // The absolute newest blog
-      remainingBlogs: sorted.slice(1)      // The rest of the array (no duplicates!)
+      latestFeaturedBlog: sorted[0],
+      remainingBlogs: sorted.slice(1)
     };
   }, []);
 
@@ -28,7 +28,6 @@ export default function BlogsPage() {
     setPage(value);
   };
 
-// 2. Pagination math is now applied ONLY to the remaining grid blogs
   const startIndex = (page - 1) * itemsPerPage;
   const currentItems = remainingBlogs.slice(
     startIndex,

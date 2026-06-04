@@ -2,6 +2,7 @@ import { Box, Typography, TextField, InputAdornment, IconButton } from "@mui/mat
 import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 import { din } from "@/utils/fonts";
+import { COLORS } from "@/utils/enum";
 
 interface NewsHeaderProps {
   searchTerm: string;
@@ -41,6 +42,9 @@ export default function NewsHeader({
             maxWidth: { xs: "100%", md: "auto" },
             "& .MuiOutlinedInput-root": {
               borderRadius: "999px",
+              "&.Mui-focused fieldset": {
+                borderColor: COLORS.PRIMARY_GREEN,
+              },
             },
             fontFamily: din.style.fontFamily,
           }}

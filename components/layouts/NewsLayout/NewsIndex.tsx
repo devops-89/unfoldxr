@@ -19,13 +19,22 @@ export default function NewsPage() {
     setPage(value);
   };
 
-  const sortedNews = useMemo(() => {
-    return [...newsItems].sort((a, b) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
+  const { latestFeaturedNews, remainingNews } = useMemo(() => {
+    const sorted = [...newsItems].sort((a, b) => {
+      const timeDifference = new Date(b.date).getTime() - new Date(a.date).getTime();
+
+      if (timeDifference === 0) return b.id - a.id;
+      
+      return timeDifference;
     });
+
+    return {
+      latestFeaturedNews: sorted[0],
+      remainingNews: sorted.slice(1)
+    };
   }, []);
 
-  const filteredNews = sortedNews.filter(
+  const filteredNews = remainingNews.filter(
     (item) =>
       item.title
         .toLowerCase()
@@ -40,7 +49,7 @@ export default function NewsPage() {
 
   return (
     <Box>
-    <NewsHero image={data.hero.image} title={data.hero.title} overlayOpacity={data.hero.overlayOpacity} />
+    <NewsHero image={data.hero.image} title={data.hero.title} overlayOpacity={data.hero.overlayOpacity} featuredNews={latestFeaturedNews} />
     <Container maxWidth={false}
      sx={{ 
         py: 6,

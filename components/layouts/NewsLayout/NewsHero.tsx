@@ -4,6 +4,8 @@ import { COLORS } from '@/utils/enum'
 import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
+import { NewsItem } from '../NewsLayout/data'
+import FeaturedNewsCard from './FeaturedNewsCard'
 
 interface NewsHeroProps {
     image: string | StaticImageData;
@@ -11,16 +13,19 @@ interface NewsHeroProps {
     titleMaxWidth?: number | string;
     objectPosition?: any;
     overlayOpacity?: number;
+    featuredNews?: NewsItem;
 }
 
-const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity}: NewsHeroProps) => {
+const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity, featuredNews}: NewsHeroProps) => {
   return (
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "60vh", md: "60vh" },
+        minHeight: { xs: "100vh", md: "100vh" },
+        backgroundColor: COLORS.WHITE,
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         color: COLORS.WHITE,
         overflow: "hidden",
       }}
@@ -31,6 +36,7 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
           position: "absolute",
           inset: 0,
           zIndex: 0,
+          height: "60%",
         }}
       >
         <Image
@@ -48,12 +54,15 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
       <Box
         sx={{
           position: "absolute",
-          inset: 0,
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "60%",
           bgcolor: `rgba(0,0,0,${overlayOpacity})`,
           zIndex: 1,
         }}
       />
-       <Box
+    {/*  <Box
               sx={{
                 position: "relative",
                 zIndex: 2,
@@ -80,7 +89,10 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
           >
           {title}
         </Typography>
-        </Box>
+        </Box> */}
+        {featuredNews && (
+         <FeaturedNewsCard news={featuredNews} />
+      )}
       </Box>
   )
 }
