@@ -4,24 +4,25 @@ import { COLORS } from '@/utils/enum'
 import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
-import { NewsItem } from '../NewsLayout/data'
-import FeaturedNewsCard from './FeaturedNewsCard'
+// import { NewsItem } from '../NewsLayout/data'
+// import FeaturedNewsCard from './FeaturedNewsCard'
 
 interface NewsHeroProps {
     image: string | StaticImageData;
     title: string;
+    subtitle?: string;
     titleMaxWidth?: number | string;
     objectPosition?: any;
     overlayOpacity?: number;
-    featuredNews?: NewsItem;
+    // featuredNews?: NewsItem;
 }
 
-const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlayOpacity, featuredNews}: NewsHeroProps) => {
+const NewsHero = ({image, title, subtitle, titleMaxWidth, objectPosition="center", overlayOpacity}: NewsHeroProps) => {
   return (
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "100vh", md: "100vh" },
+        minHeight: { xs: "60vh", md: "60vh" },
         backgroundColor: COLORS.WHITE,
         display: "flex",
         alignItems: "center",
@@ -36,7 +37,7 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          height: "60%",
+          // height: "60%",
         }}
       >
         <Image
@@ -57,12 +58,12 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
           top: 0,
           left: 0,
           width: "100%",
-          height: "60%",
+          height: "100%",
           bgcolor: `rgba(0,0,0,${overlayOpacity})`,
           zIndex: 1,
         }}
       />
-    {/*  <Box
+      <Box
               sx={{
                 position: "relative",
                 zIndex: 2,
@@ -89,10 +90,24 @@ const NewsHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
           >
           {title}
         </Typography>
-        </Box> */}
-        {featuredNews && (
+        {subtitle && (
+          <Typography
+            sx={{
+              fontFamily: din.style.fontFamily,
+              fontSize: { xs: 20, md: 28, lg: 18 },
+              lineHeight: 1.6,
+              maxWidth: 800,
+              mt: 2, // Space between title and subtitle
+              opacity: 0.9,
+            }}
+          >
+            {subtitle}
+          </Typography>
+        )}
+        </Box>
+       {/* {featuredNews && (
          <FeaturedNewsCard news={featuredNews} />
-      )}
+      )}  */}
       </Box>
   )
 }

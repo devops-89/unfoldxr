@@ -1,6 +1,6 @@
-import { Box, Typography, TextField, InputAdornment, IconButton } from "@mui/material";
+import { Box, TextField, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import TuneIcon from "@mui/icons-material/Tune";
+//import TuneIcon from "@mui/icons-material/Tune";
 import { din } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 
@@ -14,6 +14,7 @@ export default function NewsHeader({
   searchTerm,
   setSearchTerm,
 }: NewsHeaderProps) {
+
   return (
     <Box 
     display="flex" 
@@ -58,9 +59,9 @@ export default function NewsHeader({
             },
           }}
         />
-        <IconButton sx={{ flexShrink: 0 }}>
+        {/* <IconButton sx={{ flexShrink: 0 }}>
           <TuneIcon />
-        </IconButton>
+        </IconButton> */}
       </Box>
     </Box>
   );

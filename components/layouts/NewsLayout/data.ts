@@ -8,6 +8,7 @@ export interface NewsData {
   hero: {
     image: string | StaticImageData;
     title: string;
+    subtitle?: string;
     overlayOpacity?: number;
   };
   newsSection: {
@@ -34,7 +35,8 @@ export type NewsItem = {
 export const newsData: NewsData = {
   hero: {
     image: NewsHero,
-    title: "Latest News",
+    title: "The Next Shift",
+    subtitle: "Ideas, innovations, and updates shaping frontline work",
     overlayOpacity: 0.7,
   },
   newsSection: {
