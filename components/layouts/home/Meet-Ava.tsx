@@ -34,10 +34,10 @@ const Meetava = () => {
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
                   variants={{
-                    hidden: { opacity: 0, y: 40 },
-                    visible: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, y: 40, filter: "blur(12px)" },
+                    visible: { opacity: 1, y: 0, filter: "blur(0px)" },
                   }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 >
                 <Typography
                   sx={{
@@ -69,10 +69,10 @@ const Meetava = () => {
                     <motion.div
                       key={i}
                       variants={{
-                        hidden: { opacity: 0, y: 30 },
-                        visible: { opacity: 1, y: 0 },
+                        hidden: { opacity: 0, y: 30, filter: "blur(12px)" },
+                        visible: { opacity: 1, y: 0, filter: "blur(0px)" },
                       }}
-                      transition={{ duration: 0.5 }}
+                      transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                     >
                     <Typography
                       key={i}

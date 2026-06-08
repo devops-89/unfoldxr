@@ -5,16 +5,62 @@ import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import FutureWorkCard from "./components/Future-Work-Card";
 import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
+// Added the custom DecodeText component to mimic GSAP TextPlugin
+const DecodeText = ({ text, isVisible, delay = 0 }: { text: string, isVisible: boolean, delay?: number }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const chars = "01"; // The binary characters to scramble with
+
+  useEffect(() => {
+    if (!isVisible) {
+      // Show random binary when scrolled out of view
+      setDisplayedText(text.replace(/[a-zA-Z0-9]/g, () => chars[Math.floor(Math.random() * 2)]));
+      return;
+    }
+
+    let timeoutId: ReturnType<typeof setTimeout>;
+    let intervalId: ReturnType<typeof setInterval>;
+
+    timeoutId = setTimeout(() => {
+      let iteration = 0;
+      intervalId = setInterval(() => {
+        setDisplayedText((prev) =>
+          text
+            .split("")
+            .map((char, index) => {
+              if (index < iteration) return text[index];
+              return char === " " ? " " : chars[Math.floor(Math.random() * 2)];
+            })
+            .join("")
+        );
+
+        if (iteration >= text.length) clearInterval(intervalId);
+        iteration += 1 / 1.5; 
+      }, 40); 
+    }, delay * 1000); 
+
+    return () => {
+      clearTimeout(timeoutId);
+      clearInterval(intervalId);
+    };
+  }, [text, isVisible, delay]);
+
+  return <>{displayedText}</>;
+};
 
 const FutureWork = () => {
   const { openModal } = useDemoModal();
   const [expandedSteps, setExpandedSteps] = useState([0]);
+
+  //Create a ref to monitor scroll position for the Decode triggers 
+  const leftRef = useRef(null);
+  const isInView = useInView(leftRef, { once: false, margin: "-100px" });
 
   const handleToggle = (index: number) => {
     if (expandedSteps.includes(index)) {
@@ -45,7 +91,7 @@ const FutureWork = () => {
         component={motion.div}
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
+        viewport={{ once: false, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         sx={{
           backgroundColor: COLORS.BLACK,
@@ -63,13 +109,14 @@ const FutureWork = () => {
           {/* LEFT SECTION */}
           <Grid 
               size={{ xs: 12, md: 6 }}
-              component={motion.div}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              ref={leftRef}
           >
             <Typography
+              component={motion.div}
+              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontSize: { xs: 20, md: 36 },
@@ -79,10 +126,20 @@ const FutureWork = () => {
                 lineHeight: { xs: "35px", md: "52px" },
               }}
             >
-              {homePage.future_work.leftSection.heading}
+              {/* Use the DecodeText component here! Delay 0.2s */}
+              <DecodeText 
+                text={homePage.future_work.leftSection.heading} 
+                isVisible={isInView} 
+                delay={0.2} 
+              />
             </Typography>
 
             <Typography
+              component={motion.div}
+              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 12, md: 18 },
@@ -97,6 +154,11 @@ const FutureWork = () => {
             </Typography>
 
             <Typography
+              component={motion.div}
+              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
               sx={{
                 fontSize: { xs: 12, md: 18 },
                 fontWeight: 700,
@@ -110,6 +172,11 @@ const FutureWork = () => {
             </Typography>
 
             <Typography
+              component={motion.div}
+              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.8, ease: "easeOut" }}
               sx={{
                 fontSize: { xs: 28, md: 36 },
                 fontWeight: 900,
@@ -120,7 +187,7 @@ const FutureWork = () => {
                 mt: 4,
               }}
             >
-              {homePage.future_work.leftSection.endHeading}
+              {homePage.future_work.leftSection.endHeading}   
             </Typography>
             <Link href="/Product">
               <ContainedButton
@@ -164,7 +231,7 @@ const FutureWork = () => {
                 component={motion.div}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false }}
+                viewport={{ once: false, margin: "-100px" }}
                 variants={{
                   hidden: {},
                   visible: {

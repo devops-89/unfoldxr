@@ -3,14 +3,51 @@ import { COLORS } from "@/utils/enum";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import OutcomeCard from "./components/Outcome-Card";
 import ContainedButton from "@/components/widgets/ContainedButton";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const Outcome = () => {
   const { scrollYProgress } = useScroll();
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
+  // Single ref to trigger both texts at the exact same time
+  const textRef = useRef(null);
+  const isInView = useInView(textRef, { once: false, margin: "-100px" });
+
+  // Helper function to recreate GSAP's "SplitText" and center stagger
+  const renderSpotlightText = (text: string) => {
+    const chars = text.split("");
+    const center = chars.length / 2;
+
+    return chars.map((char, index) => {
+      // Calculates distance from center to stagger outward
+      const distanceFromCenter = Math.abs(index - center);
+
+      return (
+        <Box
+          key={index}
+          component={motion.span}
+          initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+          animate={isInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+          transition={{
+            duration: 0.4,
+            delay: distanceFromCenter * 0.05,
+            ease: "easeOut",
+          }}
+          sx={{ 
+            display: "inline-block", 
+            // Ensures space characters don't collapse
+            whiteSpace: char === " " ? "pre" : "normal" 
+          }}
+        >
+          {char}
+        </Box>
+      );
+    });
+  };
+
   return (
     <Box
       component={motion.div}
@@ -31,13 +68,8 @@ const Outcome = () => {
         }}
       >
         <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
+          <Box ref={textRef}>
           {/* Heading */}
-          <motion.div
-           initial={{ opacity: 0, y: 50 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
-           viewport={{ }}
-          >
           <Typography
             sx={{
               textAlign: "left",
@@ -49,17 +81,10 @@ const Outcome = () => {
               lineHeight: { xs: "38px", md: "52px" },
             }}
           >
-            {homePage.outcome.heading}
+            {renderSpotlightText(homePage.outcome.heading)}
           </Typography>
-          </motion.div>
 
           {/* Subheading */}
-          <motion.div
-           initial={{ opacity: 0, y: 50 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
-           viewport={{ }}
-          >
           <Typography
             sx={{
               fontFamily: helvetica.style.fontFamily,
@@ -73,20 +98,21 @@ const Outcome = () => {
               opacity: 0.8,
             }}
           >
-            {homePage.outcome.subHeading}
+            {renderSpotlightText(homePage.outcome.subHeading)}
           </Typography>
-          </motion.div>
+          </Box>
 
           {/* 2x2 Cards Grid */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ }}
+            viewport={{ once: false, margin: "-100px" }}
             variants={{
               hidden: {},
               visible: {
                 transition: {
                   staggerChildren: 0.2,
+                  delayChildren: 0.4,
                 },
               },
             }}

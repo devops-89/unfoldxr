@@ -8,7 +8,6 @@ import WorkforceCard from "./components/WorkForce-Card";
 import { motion } from "framer-motion";
 
 const WorkForce = () => {
-
   return (
     <Box>
       <Container maxWidth={false} disableGutters>
@@ -16,7 +15,8 @@ const WorkForce = () => {
           component={motion.div}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          // margin: "-100px" ensures the animation resets when scrolled slightly out of view
+          viewport={{ once: false, amount: 0.2, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{
             backgroundColor: COLORS.WHITE,
@@ -32,13 +32,14 @@ const WorkForce = () => {
           }}
         >
           <Box sx={{ width: "100%" }}>
-            {/* Heading */}
+            
+            {/* Heading WITH Cinematic Blur Reveal */}
             <Typography
               component={motion.div}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               sx={{
                 color: "#000",
                 fontFamily: din.style.fontFamily,
@@ -54,13 +55,13 @@ const WorkForce = () => {
               {homePage.workforce.heading}
             </Typography>
 
-            {/* Description */}
+            {/* Description WITH Cinematic Blur Reveal */}
             <Typography
               component={motion.div}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: false, margin: "-100px" }} // Replays every scroll
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               sx={{
                 color: "#000",
                 fontFamily: helvetica.style.fontFamily,
@@ -76,32 +77,23 @@ const WorkForce = () => {
               {homePage.workforce.description}
             </Typography>
 
-            {/* Cards */}
+            {/* Cards WITHOUT Blur (Standard fade-up) */}
             <Grid
               container
-              component={motion.div}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.15,
-                  },
-                },
-              }} 
               sx={{ mt: { xs: 4, md: 10 } }} 
               spacing={4}
             >
               {homePage.workforce.data.map((val, i) => (
                 <Grid
                   component={motion.div}
-                  variants={{
-                    hidden: { opacity: 0, y: 40 },
-                    visible: { opacity: 1, y: 0 },
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, margin: "-100px" }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.6 + (i * 0.15),
+                    ease: "easeOut" 
                   }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
                   size={{ xs: 12, sm: 6, md: 4 }}
                   key={i}
                   sx={{
@@ -117,6 +109,7 @@ const WorkForce = () => {
                 </Grid>
               ))}
             </Grid>
+
           </Box>
         </Box>
       </Container>
