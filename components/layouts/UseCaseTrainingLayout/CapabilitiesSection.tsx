@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
@@ -8,6 +8,7 @@ import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import VerticalStepper from "@/components/widgets/VerticalStepper";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import { motion, useInView } from "framer-motion";
 
 interface Props {
   data: UseCaseData["capabilities"];
@@ -18,6 +19,85 @@ const CapabilitiesSection = ({ data }: Props) => {
   const isGrid = data.layout === "grid";
 
   const { openModal } = useDemoModal();
+
+  // 👇 ADDED: Visibility observer for the heading spotlight trigger
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+  // Word-Wrapped Spotlight Reveal Function
+  const renderSpotlightText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length;
+    const center = totalLength / 2; // Finds middle of the phrase
+    let globalIndex = 0;
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      // 1. Map out letters for the current word
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        // Calculates distance from the total string's center point
+        const distanceFromCenter = Math.abs(currentIndex - center);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: distanceFromCenter * 0.025, // Staggers cleanly outwards
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block" }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      // 2. Map out spaces between words
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.abs(spaceIndex - center);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: spaceDist * 0.025,
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      // 3. Assemble components into a responsive unbreakable inline block
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
 
   if (isGrid) {
     return (
@@ -85,6 +165,7 @@ const CapabilitiesSection = ({ data }: Props) => {
           }}
         >
           <Typography
+            ref={headingRef}
             sx={{
               fontFamily: din.style.fontFamily,
               fontWeight: 900,
@@ -95,7 +176,7 @@ const CapabilitiesSection = ({ data }: Props) => {
               maxWidth: 1000,
             }}
           >
-            {data.title}
+            {renderSpotlightText(data.title)}
           </Typography>
 
           <Box
@@ -252,6 +333,7 @@ const CapabilitiesSection = ({ data }: Props) => {
         }}
       >
         <Typography
+          ref={headingRef}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -262,7 +344,7 @@ const CapabilitiesSection = ({ data }: Props) => {
             maxWidth: 900,
           }}
         >
-          {data.title}
+          {renderSpotlightText(data.title)}
         </Typography>
 
         <Grid container spacing={{ xs: 5, md: 0 }}>

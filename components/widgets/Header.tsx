@@ -128,7 +128,7 @@ const Header = () => {
                         sx={{
                           display: "flex",
                           alignItems: "center",
-                          cursor: "pointer",
+                        //  cursor: "pointer",
                           gap: 0.5,
                           py: 0.5, // Small padding for better UX but much less than full height
                         }}

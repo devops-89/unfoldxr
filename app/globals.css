@@ -16,7 +16,7 @@ html, body {
     cursor: none !important;
   }
 
-a, button, input, [role="button"], .clickable-card {
+a, button, input, select, option, [role="button"], [role="menuitem"], [role="option"], [role="listbox"], .clickable-card {
     cursor: none !important;
   }
 }

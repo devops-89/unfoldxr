@@ -1,12 +1,96 @@
+"use client";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { helvetica, inter, din } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface Props {
   data: UseCaseData["businessResults"];
 }
 const BusinessResultsSection = ({ data }: Props) => {
+
+  // Hook setup to watch scroll tracking for the heading
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+  // The seal-proof Word-Wrapped Vertical Blinds helper function
+  const renderVerticalBlindsText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length; 
+    let globalIndex = 0; 
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      // 1. Map out letters for the current word
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (distanceFromEdge * 0.04), 
+              ease: "easeOut",
+            }}
+            sx={{
+              display: "inline-block",
+              transformOrigin: "center", 
+            }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      // 2. Map out spaces securely
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (spaceDist * 0.04),
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      // 3. Keep words unified into responsive inline blocks
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
+
   return (
     <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
       <Box
@@ -17,6 +101,7 @@ const BusinessResultsSection = ({ data }: Props) => {
         }}
       >
         <Typography
+          ref={headingRef}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -27,7 +112,7 @@ const BusinessResultsSection = ({ data }: Props) => {
             maxWidth: 900,
           }}
         >
-          Business Results You Can Measure
+          {renderVerticalBlindsText("Business Results You Can Measure")}
         </Typography>
 
         <Box

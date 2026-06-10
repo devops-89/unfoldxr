@@ -1,11 +1,31 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Box, Button, Grid, Typography, Stack, alpha } from "@mui/material";
 
 import { din, helvetica } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
+import { motion, useInView, Variants } from "framer-motion";
+
+// VARIANTS FOR THE RIGHT SIDE TEXT
+const blurInVariant: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: "blur(0px)", 
+    transition: { duration: 0.8, ease: "easeOut" } 
+  }
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 } 
+  }
+};
 
 interface Props {
   data: UseCaseData["intervention"];
@@ -19,6 +39,87 @@ const MATURITY_LEVELS = [
 
 const InterventionSection2 = ({ data }: Props) => {
   const isSideBySide = data.layout === "side-by-side";
+
+  // ADDED: Ref and InView hook for the Vertical Blinds
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+// Word-Wrapper Logic
+  const renderVerticalBlindsText = (text: string) => {
+    if (!text) return null;
+    
+    // Split into words first
+    const words = text.split(" ");
+    const totalLength = text.length; // Keep total string length for the wave math
+    let globalIndex = 0; // Tracks the absolute character index
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      // 1. Animate the letters of the current word
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (distanceFromEdge * 0.04), 
+              ease: "easeOut",
+            }}
+            sx={{
+              display: "inline-block",
+              transformOrigin: "center", 
+            }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      // 2. Add the space back after the word (and animate it so the timing stays perfect)
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (spaceDist * 0.04),
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      // 3. Wrap the letters and the space in a container that refuses to break mid-word
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
 
   // if (isSideBySide) {
   //   return (
@@ -203,6 +304,7 @@ const InterventionSection2 = ({ data }: Props) => {
           {/* Left Side: Title */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Typography
+              ref={headingRef}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -213,13 +315,18 @@ const InterventionSection2 = ({ data }: Props) => {
                 letterSpacing: "-0.5px",
               }}
             >
-              {data.title}
+              {renderVerticalBlindsText(data.title)}
             </Typography>
           </Grid>
 
           {/* Right Side: Description */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Box
+              component={motion.div}                   
+              variants={staggerContainer} 
+              initial="hidden"  
+              whileInView="visible" 
+              viewport={{ once: false, margin: "-50px" }}
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -227,6 +334,8 @@ const InterventionSection2 = ({ data }: Props) => {
               }}
             >
               <Typography
+                component={motion.p}
+                variants={blurInVariant}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
@@ -239,6 +348,8 @@ const InterventionSection2 = ({ data }: Props) => {
               </Typography>
               {data.description2 && (
                 <Typography
+                  component={motion.p}
+                  variants={blurInVariant}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
@@ -252,6 +363,8 @@ const InterventionSection2 = ({ data }: Props) => {
               )}
               {data.description3 && (
                 <Typography
+                  component={motion.p}
+                  variants={blurInVariant}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
@@ -281,6 +394,7 @@ const InterventionSection2 = ({ data }: Props) => {
                 >
                   <Box
                     sx={{
+
                       width: "100%",
                       borderRadius: "16px",
                       overflow: "hidden",
@@ -295,9 +409,18 @@ const InterventionSection2 = ({ data }: Props) => {
                       border: "1px solid",
                       borderColor: "rgba(255,255,255,0.05)",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
+                      transition: "all 0.3s ease-in-out",
+                      "&:hover": {
+                        background: COLORS.PRIMARY_GREEN,
+                        borderColor: COLORS.PRIMARY_GREEN,
+                        "& .card-label": { 
+                          color: COLORS.BLACK, 
+                        }
+                      }
                     }}
                   >
                     <Typography
+                      className="card-label"
                       sx={{
                         fontFamily: din.style.fontFamily,
                         fontWeight: 900,
@@ -308,6 +431,7 @@ const InterventionSection2 = ({ data }: Props) => {
                         letterSpacing: "-0.5px",
                         textAlign: "center",
                         zIndex: 3,
+                        transition: "color 0.3s ease-in-out",
                       }}
                     >
                       {card.label}
