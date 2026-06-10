@@ -5,6 +5,7 @@ import Footer from "@/components/widgets/Footer";
 import { DemoModalProvider } from "@/components/context/DemoModalContext";
 import DemoModal from "@/components/widgets/DemoModal";
 import ReCaptchaProvider from "@/components/context/ReCaptchaProvider";
+import CustomCursor from "@/components/widgets/CustomCursor";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body style={{ margin: 0, overflowX: "hidden" }} suppressHydrationWarning>
         <ReCaptchaProvider>
           <DemoModalProvider>
+            <CustomCursor />
             <Header />
             {children}
             <Footer />

@@ -4,8 +4,19 @@ html, body {
   box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
+}
+
+@media (pointer: fine) {
+  body, html {
+    cursor: none !important;
+  }
+
+a, button, input, [role="button"], .clickable-card {
+    cursor: none !important;
+  }
 }

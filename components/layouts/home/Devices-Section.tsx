@@ -12,7 +12,7 @@ const DevicesSection = () => {
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
 
-  // Helper function to recreate GSAP's "Vertical Blinds" from edges
+  // Helper function to recreate "Vertical Blinds" from edges
   const renderVerticalBlindsText = (text: string) => {
     const chars = text.split("");
     const totalLength = chars.length;
@@ -48,7 +48,8 @@ const DevicesSection = () => {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 12 },
+        pt: { xs: 16, md: 16, lg: 12},
+        pb: { xs: 8, md: 12 },
         //minHeight: "85vh",
         //display: "flex",
         //alignItems: "center",
