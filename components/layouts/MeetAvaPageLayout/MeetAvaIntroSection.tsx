@@ -65,7 +65,7 @@ const MeetAvaIntroSection = () => {
             >
               <Image
                 src={data.image}
-                alt="Meet AVA"
+                alt="Representation of AVA, the AI Virtual Assistant"
                 style={{
                   width: "100%",
                   height: "auto",

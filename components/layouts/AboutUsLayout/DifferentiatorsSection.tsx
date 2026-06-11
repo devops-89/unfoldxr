@@ -93,7 +93,7 @@ const DifferentiatorsSection = () => {
             <Box
               component="img"
               src={data.image}
-              alt="Differentiator"
+              alt={`${data.heading} illustration`}
               sx={{
                 width: { xs: "100%", md: "70%" },
                 ml: { xs: 0, md: 15 },

@@ -67,7 +67,7 @@ const ManyTools = () => {
             <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
-              fontSize: { xs: 28, sm: 36, md: 48, lg: 52 },
+                fontSize: { xs: 28, sm: 36, md: 48, lg: 52 },
                 fontWeight: 900,
                 textTransform: "uppercase",
                 lineHeight: 1,
@@ -125,7 +125,7 @@ const ManyTools = () => {
             >
               <Image
                 src={leftSectionBg}
-                alt="Consolidation Platform"
+                alt="Illustration showing a unified consolidation platform"
                 fill
                 style={{ objectFit: "contain", padding: "40px", opacity: 0.8 }}
               />

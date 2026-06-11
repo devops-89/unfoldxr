@@ -40,7 +40,7 @@ const IndustryChip = ({ img, icon, label }: INDUSTRY_CHIP_PROPS) => {
           {img ? (
             <Image
               src={img}
-              alt=""
+              alt={label}
               width={16}  
               height={16}
             />

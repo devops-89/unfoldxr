@@ -103,7 +103,7 @@ const SupportYourOperations = () => {
           >
             <Image
               src={data.lifecycle.bg}
-              alt="Operations lifecycle"
+              alt={`${data.lifecycle.title} illustration`}
               fill
               style={{ objectFit: "cover" }}
             />

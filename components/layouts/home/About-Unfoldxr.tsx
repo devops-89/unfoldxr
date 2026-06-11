@@ -34,7 +34,7 @@ const AboutUnfoldxr = () => {
               <Box
                 component="img"
                 src={ABOUT_SECTION_IMAGE}
-                alt="About UnfoldXR"
+                alt="Collage of workers demonstrating UnfoldXR in action"
                 sx={{
                   width: "100%",
                   maxWidth: 420,
@@ -80,7 +80,7 @@ const AboutUnfoldxr = () => {
               <Box
                 component="img"
                 src={ABOUT_SECTION_IMAGE}
-                alt="About UnfoldXR"
+                alt="Collage of workers demonstrating UnfoldXR in action"
                 sx={{
                   width: "100%",
                   borderRadius: 3,

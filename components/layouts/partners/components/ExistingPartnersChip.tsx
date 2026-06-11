@@ -30,7 +30,7 @@ const ExistingPartnersChip: React.FC<PARTNERS_EXISITNG_PARTNERS_CHIP_PROPS> = ({
       <Box sx={{ position: "relative", width: "100%", height: "40px" }}>
         <Image
           src={image}
-          alt="partner"
+          alt="Partner company logo"
           fill
           style={{
             objectFit: "contain",

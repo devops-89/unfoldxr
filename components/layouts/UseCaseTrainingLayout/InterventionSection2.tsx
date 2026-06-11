@@ -11,11 +11,11 @@ import { motion, useInView, Variants } from "framer-motion";
 // VARIANTS FOR THE RIGHT SIDE TEXT
 const blurInVariant: Variants = {
   hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    filter: "blur(0px)", 
-    transition: { duration: 0.8, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: "easeOut" }
   }
 };
 
@@ -23,7 +23,7 @@ const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 } 
+    transition: { staggerChildren: 0.2 }
   }
 };
 
@@ -44,10 +44,10 @@ const InterventionSection2 = ({ data }: Props) => {
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
 
-// Word-Wrapper Logic
+  // Word-Wrapper Logic
   const renderVerticalBlindsText = (text: string) => {
     if (!text) return null;
-    
+
     // Split into words first
     const words = text.split(" ");
     const totalLength = text.length; // Keep total string length for the wave math
@@ -69,12 +69,12 @@ const InterventionSection2 = ({ data }: Props) => {
             animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
             transition={{
               duration: 0.4,
-              delay: 0.2 + (distanceFromEdge * 0.04), 
+              delay: 0.2 + (distanceFromEdge * 0.04),
               ease: "easeOut",
             }}
             sx={{
               display: "inline-block",
-              transformOrigin: "center", 
+              transformOrigin: "center",
             }}
           >
             {char}
@@ -322,10 +322,10 @@ const InterventionSection2 = ({ data }: Props) => {
           {/* Right Side: Description */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Box
-              component={motion.div}                   
-              variants={staggerContainer} 
-              initial="hidden"  
-              whileInView="visible" 
+              component={motion.div}
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: false, margin: "-50px" }}
               sx={{
                 display: "flex",
@@ -413,8 +413,8 @@ const InterventionSection2 = ({ data }: Props) => {
                       "&:hover": {
                         background: COLORS.PRIMARY_GREEN,
                         borderColor: COLORS.PRIMARY_GREEN,
-                        "& .card-label": { 
-                          color: COLORS.BLACK, 
+                        "& .card-label": {
+                          color: COLORS.BLACK,
                         }
                       }
                     }}
@@ -505,7 +505,7 @@ const InterventionSection2 = ({ data }: Props) => {
           >
             <Image
               src={data.image}
-              alt="Tablet Intervention"
+              alt={`${data.title} interface`}
               fill
               style={{ objectFit: "contain" }}
             />

@@ -58,7 +58,7 @@ const IconCard = ({ card }: { card: ICON_CARD_PROPS }) => {
             >
               {/* Force image to fill its larger container */}
               <Box sx={{ position: "relative", width: "80%", height: "80%" }}>
-                <Image src={icon} alt="Tools layout icon" fill style={{ objectFit: 'contain' }} />
+                <Image src={icon} alt={`${card.title} icon`} fill style={{ objectFit: 'contain' }} />
               </Box>
             </Box>
           );

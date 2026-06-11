@@ -294,7 +294,7 @@ export default function Footer() {
                     </Box>
                   </Link>
                 )}
-                 <Typography
+                <Typography
                   component="a"
                   href="mailto:info@unfoldxr.com"
                   sx={{

@@ -88,7 +88,7 @@ const Header = () => {
               >
                 <Image
                   src={logo}
-                  alt="logo"
+                  alt="UnfoldXR logo"
                   style={{ width: "100%", height: "auto" }}
                 />
               </Box>
@@ -295,7 +295,7 @@ const Header = () => {
             <Link href="/" onClick={() => setOpen(false)}>
               <Image
                 src={logo}
-                alt="logo"
+                alt="UnfoldXR logo"
                 style={{ width: 140, height: "auto" }}
               />
             </Link>

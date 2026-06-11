@@ -182,7 +182,7 @@ const EnterpriseReady2 = () => {
           <Grid size={6}>
             <Image
               src={data.img}
-              alt=""
+              alt="Diagram of enterprise ready system integrations"
               style={{ width: "400px", height: "auto" }}
             />
           </Grid>

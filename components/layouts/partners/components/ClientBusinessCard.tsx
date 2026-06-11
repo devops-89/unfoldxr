@@ -35,6 +35,7 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
       {/* Content */}
       <Box>
         <Typography
+          component="div"
           sx={{
             fontSize: { xs: 14, md: 18 },
             lineHeight: "30px",
@@ -54,7 +55,7 @@ const ClientBusinessCard: React.FC<PARTNERS_CLIENT_BUSINESS_CARD_PROPS> = ({
             -
           </Box>
           <Box
-            component="div"
+            component="span"
             sx={{
               fontWeight: 400,
               opacity: 0.9,

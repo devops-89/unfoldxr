@@ -35,7 +35,7 @@ const CaseHero = ({image, title, titleMaxWidth, objectPosition="center", overlay
       >
         <Image
           src={image}
-          alt=""
+          alt={`${title} background`}
           fill
           priority
           style={{

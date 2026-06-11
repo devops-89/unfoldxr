@@ -107,7 +107,7 @@ const ScrollScanSection = () => {
         <Box sx={{ position: "absolute", inset: 0 }}>
           <Image
             src={Airplane}
-            alt="airplane"
+            alt="Airplane hangar background"
             fill
              sizes="100vw"
             style={{ objectFit: "cover" }}
@@ -131,7 +131,7 @@ const ScrollScanSection = () => {
         >
           <Image
             src={BluePrint}
-            alt="blueprint"
+            alt="Engine blueprint scan visualization"
             width={500}
             height={260}
           />
@@ -150,7 +150,7 @@ const ScrollScanSection = () => {
         >
           <Image
             src={Mobile}
-            alt="mobile"
+            alt="Mobile device interface scanning the engine"
             width={700}
             height={650}
           />
@@ -169,7 +169,7 @@ const ScrollScanSection = () => {
         >
           <Image
             src={Mobile}
-            alt="vr"
+            alt="Virtual reality headset interface exploring the engine"
             width={700}
             height={650}
           />

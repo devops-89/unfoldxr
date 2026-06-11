@@ -41,7 +41,7 @@ const BlogsHero = ({image, title, titleMaxWidth, objectPosition="center", overla
       >
         <Image
           src={image}
-          alt=""
+          alt={title}
           fill
           priority
           style={{

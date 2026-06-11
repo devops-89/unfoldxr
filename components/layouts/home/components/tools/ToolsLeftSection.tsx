@@ -62,7 +62,7 @@ const ToolsLeftSection = ({
       >
         <Image
           src={image}
-          alt="Cursors illustration"
+          alt="Illustration of cursors highlighting interconnected tools"
           fill
           style={{ objectFit: "contain" }}
         />

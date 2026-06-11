@@ -113,7 +113,7 @@ const MeetAva = () => {
             >
               <Image
                 src={data.img}
-                alt="AVA visual"
+                alt={`${data.title.replace(/\n/g, ' ')} illustration`}
                 style={{
                   width: "100%",
                   height: "auto",

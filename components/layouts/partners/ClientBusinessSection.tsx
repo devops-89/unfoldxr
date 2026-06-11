@@ -58,7 +58,7 @@ const ClientBusinessSection = () => {
             <Box
               component="img"
               src={partnersPage.clientBusinessSection.image}
-              alt="Worker"
+              alt={`${partnersPage.clientBusinessSection.title} illustration`}
               sx={{
                 width: { xs: "100%", md: "100%" },
                 height: { xs: "auto", md: "100%" },

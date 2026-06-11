@@ -442,7 +442,7 @@ const InterventionSection = ({ data }: Props) => {
           >
             <Image
               src={data.image}
-              alt="Tablet Intervention"
+              alt={`${data.title} interface`}
               fill
               style={{ objectFit: "cover" }}
             />

@@ -30,7 +30,7 @@ const WorkforceCard = ({ img, icon, heading, description }: WORKFORCE_CARD_PROPS
         {icon ? (
           <Icon sx={{ fontSize: { xs: 40, md: 48 }, color: "#000" }} />
         ) : (
-          img && <Image src={img} alt="" width={36} />
+          img && <Image src={img} alt={heading} width={36} />
         )}
       </Box>
       <Typography

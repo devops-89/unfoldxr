@@ -53,7 +53,7 @@ const OutcomesSection = ({ data }: Props) => {
             >
               <Image
                 src={data.image}
-                alt="Industry Outcomes"
+                alt={`${data.titleLines.join(" ")} illustration`}
                 fill
                 style={{
                   objectFit: "fill",

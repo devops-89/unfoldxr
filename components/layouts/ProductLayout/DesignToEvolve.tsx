@@ -234,7 +234,7 @@ const DesignToEvolve = () => {
           >
             <Image
               src={data.img}
-              alt="Platform preview"
+              alt="Preview of the UnfoldXR platform interface on a tablet"
               style={{
                 width: "100%",
                 height: "auto",

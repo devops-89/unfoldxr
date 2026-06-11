@@ -54,7 +54,7 @@ const PlaceholderSection = () => {
             >
               <Image
                 src={data.image}
-                alt=""
+                alt="Mobile device displaying the AVA interface"
                 style={{
                   width: "100%",
                   height: "auto",

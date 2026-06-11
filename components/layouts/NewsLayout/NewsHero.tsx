@@ -42,7 +42,7 @@ const NewsHero = ({image, title, subtitle, titleMaxWidth, objectPosition="center
       >
         <Image
           src={image}
-          alt=""
+          alt={title}
           fill
           priority
           style={{
