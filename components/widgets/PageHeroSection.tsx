@@ -51,24 +51,24 @@ const PageHeroSection = ({
       }}
     >
       {/* Background Image */}
-    <Box
-  sx={{
-    position: "absolute",
-    inset: 0,
-    zIndex: 0,
-  }}
-  >
-  <Image
-    src={image}
-    alt={title}
-    fill
-    style={{
-      objectFit: "cover",
-      objectPosition: objectPosition,
-    }}
-    priority
-  />
-  </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+        }}
+      >
+        <Image
+          src={image}
+          alt={title}
+          fill
+          style={{
+            objectFit: "cover",
+            objectPosition: objectPosition,
+          }}
+          priority
+        />
+      </Box>
 
       {/* Dark Overlay */}
       <Box
@@ -165,7 +165,7 @@ const PageHeroSection = ({
               width: { xs: "100%", md: "50%" },
             }}
           >
-           {description}
+            {description}
           </Typography>
         )}
 
@@ -202,21 +202,21 @@ const PageHeroSection = ({
                   "&:hover": { bgcolor: COLORS.PRIMARY_HOVER },
                   overflow: "hidden",
                   "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  top: 0,
-                  left: "-75%",
-                  width: "50%",
-                  height: "100%",
-                  background:
-                    "linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent)",
-                  transform: "skewX(-20deg)",
-                },
-              
-                "&:hover::after": {
-                  left: "125%",
-                  transition: "left 0.6s ease",
-                },
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: "-75%",
+                    width: "50%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent)",
+                    transform: "skewX(-20deg)",
+                  },
+
+                  "&:hover::after": {
+                    left: "125%",
+                    transition: "left 0.6s ease",
+                  },
                 }}
               >
                 {primaryBtn.label}
