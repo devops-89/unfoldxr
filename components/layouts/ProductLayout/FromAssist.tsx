@@ -7,8 +7,92 @@ import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import React, { useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
+
+const buttonVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1, y: 0, 
+    transition: { duration: 0.6, ease: "easeOut", delay: 0.8 }, 
+  },
+};
 
 const FromAssist = () => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+  const renderVerticalBlindsText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length; 
+    let globalIndex = 0; 
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (distanceFromEdge * 0.04), 
+              ease: "easeOut",
+            }}
+            sx={{
+              display: "inline-block",
+              transformOrigin: "center", 
+            }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (spaceDist * 0.04),
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
   const data = homePage.productPage.fromAssist;
   const { openModal } = useDemoModal();
 
@@ -48,6 +132,7 @@ const FromAssist = () => {
 
           <Box sx={{ position: "relative", zIndex: 1 }}>
             <Typography
+              ref={headingRef}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -61,15 +146,15 @@ const FromAssist = () => {
             >
               {data.title.includes("From assistance") ? (
                 <>
-                  From assistance to intelligence. From
+                  {renderVerticalBlindsText("From assistance to intelligence. From")}
                   <Box
                     component="br"
                     sx={{ display: { xs: "none", lg: "block" } }}
                   />
-                  field support to enterprise control.
+                  {renderVerticalBlindsText("field support to enterprise control.")}
                 </>
               ) : (
-                data.title
+                renderVerticalBlindsText(data.title)
               )}
             </Typography>
 
@@ -97,6 +182,10 @@ const FromAssist = () => {
               }}
             >
               <Button
+                component={motion.button}
+                variants={buttonVariants}
+                initial="hidden"
+                animate={isHeadingInView ? "visible" : "hidden"}
                 onClick={() => openModal("product_assist")}
                 sx={{
                   bgcolor: COLORS.PRIMARY_GREEN,

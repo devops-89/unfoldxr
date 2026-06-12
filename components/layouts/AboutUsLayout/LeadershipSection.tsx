@@ -1,16 +1,109 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box, Container, Grid, Typography, Stack, alpha } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
+import { motion, useInView, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const LeadershipSection = () => {
   const { leadershipSection: data } = aboutPage;
 
+  const sectionRef = useRef(null);
+  const isSectionInView = useInView(sectionRef, { once: false, margin: "-100px" });
+
+  const renderVerticalBlindsText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length; 
+    let globalIndex = 0; 
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isSectionInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (distanceFromEdge * 0.04), 
+              ease: "easeOut",
+            }}
+            sx={{
+              display: "inline-block",
+              transformOrigin: "center", 
+            }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isSectionInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (spaceDist * 0.04),
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
+
   return (
     <Container
+      ref={sectionRef}
       maxWidth={false}
       sx={{
         width: { xs: "90%", md: "90%", lg: "83%" },
@@ -30,10 +123,16 @@ const LeadershipSection = () => {
           lineHeight: "52px",
         }}
       >
-        {data.title}
+        {renderVerticalBlindsText(data.title)}
       </Typography>
 
-      <Stack spacing={12}>
+      <Stack 
+        spacing={12}
+        component={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isSectionInView ? "visible" : "hidden"}
+      >
         {data.members.map((member, idx) => {
           const isEven = idx % 2 === 0;
 
@@ -44,6 +143,8 @@ const LeadershipSection = () => {
               spacing={{ xs: 4, md: 8 }}
               alignItems="flex-start"
               direction={isEven ? "row-reverse" : "row"}
+              component={motion.div}
+              variants={cardVariants}
             >
               <Grid
                 size={{ xs: 12, md: 4 }}

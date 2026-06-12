@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import IntegrationInstructionsRoundedIcon from "@mui/icons-material/IntegrationInstructionsRounded";
 import AccountTreeRoundedIcon from "@mui/icons-material/AccountTreeRounded";
@@ -8,6 +8,23 @@ import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
+import { motion, useInView, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   integration: <IntegrationInstructionsRoundedIcon sx={{ fontSize: 24 }} />,
@@ -18,6 +35,81 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 };
 
 const EnterpriseReady = () => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+  const cardsRef = useRef(null);
+  const isCardsInView = useInView(cardsRef, { once: false, amount: 0.2 });
+
+  const renderSpotlightText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length;
+    const center = totalLength / 2;
+    let globalIndex = 0;
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromCenter = Math.abs(currentIndex - center);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: distanceFromCenter * 0.025, 
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block" }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.abs(spaceIndex - center);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: spaceDist * 0.025,
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
   const data = homePage.productPage.enterpriseReady;
 
   return (
@@ -31,10 +123,6 @@ const EnterpriseReady = () => {
         alignItems: "center",
         position: "relative",
         overflow: "hidden",
-        "@keyframes fadeInUp": {
-          "0%": { opacity: 0, transform: "translateY(20px)" },
-          "100%": { opacity: 1, transform: "translateY(0)" },
-        },
       }}
     >
       {/* Background Image with Premium Blending */}
@@ -80,14 +168,18 @@ const EnterpriseReady = () => {
           zIndex: 2,
         }}
       >
-        <Grid container justifyContent="flex-end">
-          <Grid
-            size={{ xs: 12, md: 7.5, lg: 7 }}
-            sx={{
-              animation: "fadeInUp 0.8s ease-out forwards",
-            }}
-          >
+        <Grid 
+          container 
+          justifyContent="flex-end"
+          ref={cardsRef}
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isCardsInView ? "visible" : "hidden"}
+        >
+          <Grid size={{ xs: 12, md: 7.5, lg: 7 }}>
             <Typography
+              ref={headingRef}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -99,7 +191,7 @@ const EnterpriseReady = () => {
             >
               {data.title.split(".").map((text, i) => (
                 <React.Fragment key={i}>
-                  {text}
+                  {renderSpotlightText(text)}
                   {i < data.title.split(".").length - 1 && (
                     <Box
                       component="br"
@@ -115,12 +207,8 @@ const EnterpriseReady = () => {
                 <Grid
                   key={point.title}
                   size={{ xs: 12, sm: 6 }}
-                  sx={{
-                    animation: `fadeInUp 0.6s ease-out forwards ${
-                      0.2 + index * 0.08
-                    }s`,
-                    opacity: 0,
-                  }}
+                  component={motion.div}
+                  variants={cardVariants}
                 >
                   <Box
                     sx={{

@@ -1,20 +1,53 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Button, Typography } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { din } from "@/utils/fonts";
 import { NewsItem } from "@/components/layouts/NewsLayout/data";
+import { motion, useInView, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const buttonVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1, y: 0, 
+    transition: { duration: 0.6, ease: "easeOut", delay: 0.8 }, 
+  },
+};
 
 interface FeaturedNewsCardProps {
   news: NewsItem;
 }
 
 const FeaturedNewsCard = ({ news }: FeaturedNewsCardProps) => {
+  const cardRef = useRef(null);
+  const isCardInView = useInView(cardRef, { once: false, amount: 0.1 });
+
   return (
     <Box
+      ref={cardRef}
+      component={motion.div}
+      variants={containerVariants}
+      initial="hidden"
+      animate={isCardInView ? "visible" : "hidden"}
       sx={{
         position: "absolute",
         bottom: { xs: "4%", md: "8%" },
@@ -31,6 +64,8 @@ const FeaturedNewsCard = ({ news }: FeaturedNewsCardProps) => {
     >
       {/* LEFT CONTENT */}
       <Box
+        component={motion.div}
+        variants={cardVariants}
         sx={{
           flex: 1,
           display: "flex",
@@ -84,6 +119,8 @@ const FeaturedNewsCard = ({ news }: FeaturedNewsCardProps) => {
           }}
         >
           <Button
+            component={motion.button}
+            variants={buttonVariants}
             sx={{
               backgroundColor: COLORS.PRIMARY_GREEN,
               color: COLORS.BLACK,
@@ -105,6 +142,8 @@ const FeaturedNewsCard = ({ news }: FeaturedNewsCardProps) => {
 
       {/* RIGHT IMAGE */}
       <Box
+        component={motion.div}
+        variants={cardVariants}
         sx={{
           display: "flex",
           alignItems: "center",

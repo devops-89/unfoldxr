@@ -1,18 +1,118 @@
 "use client";
+import React, { useRef } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import ContainedButton from "@/components/widgets/ContainedButton";
 import { useDemoModal } from "@/components/context/DemoModalContext";
+import { motion, useInView, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const buttonVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1, y: 0, 
+    transition: { duration: 0.6, ease: "easeOut", delay: 0.8 }, 
+  },
+};
 
 const CareersSection = () => {
   const { careersSection: data } = aboutPage;
 
   const { openModal } = useDemoModal();
 
+  const sectionRef = useRef(null);
+  const isSectionInView = useInView(sectionRef, { once: false, margin: "-100px" });
+
+  const renderSpotlightText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length;
+    const center = totalLength / 2;
+    let globalIndex = 0;
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromCenter = Math.abs(currentIndex - center);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isSectionInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: distanceFromCenter * 0.025, 
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block" }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.abs(spaceIndex - center);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isSectionInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: spaceDist * 0.025,
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
+
   return (
     <Box
+      ref={sectionRef}
       sx={{ bgcolor: COLORS.BLACK, color: COLORS.WHITE, py: { xs: 8, md: 10 } }}
     >
       <Container
@@ -29,10 +129,18 @@ const CareersSection = () => {
             lineHeight: "52px",
           }}
         >
-          {data.title}
+          {renderSpotlightText(data.title)}
         </Typography>
 
+        <Box
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isSectionInView ? "visible" : "hidden"}
+        >
         <Typography
+          component={motion.p}
+          variants={cardVariants}
           sx={{
             fontSize: { xs: 18, md: 18 },
             lineHeight: "28px",
@@ -47,7 +155,7 @@ const CareersSection = () => {
 
         <Grid container spacing={3} justifyContent="center">
           {data.values.map((text, i) => (
-            <Grid key={i} size={{ xs: 12, md: 5.5 }} sx={{ display: "flex" }}>
+            <Grid key={i} size={{ xs: 12, md: 5.5 }} sx={{ display: "flex" }} component={motion.div} variants={cardVariants}>
               <Box
                 sx={{
                   bgcolor: COLORS.CARD_BG_DARK,
@@ -90,6 +198,8 @@ const CareersSection = () => {
         </Grid>
 
         <Typography
+          component={motion.p}
+          variants={cardVariants}
           sx={{
             mt: 4,
             mb: 4,
@@ -101,19 +211,27 @@ const CareersSection = () => {
         >
           {data.bottomText}
         </Typography>
+        </Box>
 
-        <ContainedButton
-          sx={{
-            px: { xs: 2.5, md: 4 },
-            py: 1.2,
-            fontSize: { xs: 14, md: 16 },
-            fontWeight: 500,
-            lineHeight: "30px",
-          }}
-          onClick={() => openModal("career")}
+        <motion.div
+          variants={buttonVariants}
+          initial="hidden"
+          animate={isSectionInView ? "visible" : "hidden"}
+          style={{ display: 'inline-block' }}
         >
-          Write to us to explore open roles
-        </ContainedButton>
+          <ContainedButton
+            sx={{
+              px: { xs: 2.5, md: 4 },
+              py: 1.2,
+              fontSize: { xs: 14, md: 16 },
+              fontWeight: 500,
+              lineHeight: "30px",
+            }}
+            onClick={() => openModal("career")}
+          >
+            Write to us to explore open roles
+          </ContainedButton>
+        </motion.div>
       </Container>
     </Box>
   );

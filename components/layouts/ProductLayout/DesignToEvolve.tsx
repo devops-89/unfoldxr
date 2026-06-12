@@ -1,14 +1,106 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { din, helvetica } from "@/utils/fonts";
 import { homePage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import VerticalStepper from "@/components/widgets/VerticalStepper";
 import Image from "next/image";
+import { motion, useInView, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const DesignToEvolve = () => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+  const cardsRef = useRef(null);
+  const isCardsInView = useInView(cardsRef, { once: false, amount: 0.2 });
+
+  const renderSpotlightText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length;
+    const center = totalLength / 2;
+    let globalIndex = 0;
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromCenter = Math.abs(currentIndex - center);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: distanceFromCenter * 0.025, 
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block" }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.abs(spaceIndex - center);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: spaceDist * 0.025,
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
   const data = homePage.productPage.designToEvolve;
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -28,6 +120,7 @@ const DesignToEvolve = () => {
         }}
       >
         <Typography
+          ref={headingRef}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -39,38 +132,49 @@ const DesignToEvolve = () => {
         >
           {data.title.includes("evolve") ? (
             <>
-              {data.title.split("evolve")[0]}
+              {renderSpotlightText(data.title.split("evolve")[0])}
               <Box
                 component="br"
                 sx={{ display: { xs: "none", md: "block" } }}
               />
-              evolve
-              {data.title.split("evolve")[1]}
+              {renderSpotlightText("evolve" + data.title.split("evolve")[1])}
             </>
           ) : (
-            data.title
+            renderSpotlightText(data.title)
           )}
         </Typography>
-        <Typography
-          sx={{
-            mt: 3,
-            fontFamily: helvetica.style.fontFamily,
-            fontSize: { xs: 16, md: 16, lg: 18 },
-            lineHeight: { xs: "28px", md: "30px" },
-            letterSpacing: "0.52px",
-            color: COLORS.TEXT_GRAY,
-            maxWidth: 1000,
-          }}
-        >
-          {data.description}
-        </Typography>
 
-        {/* Menu and Description split */}
-        <Grid
-          container
-          spacing={{ xs: 4, md: 4 }}
-          sx={{ mt: { xs: 6, md: 6 } }}
+        <Box
+          ref={cardsRef}
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isCardsInView ? "visible" : "hidden"}
         >
+          <Typography
+            component={motion.p}
+            variants={cardVariants}
+            sx={{
+              mt: 3,
+              fontFamily: helvetica.style.fontFamily,
+              fontSize: { xs: 16, md: 16, lg: 18 },
+              lineHeight: { xs: "28px", md: "30px" },
+              letterSpacing: "0.52px",
+              color: COLORS.TEXT_GRAY,
+              maxWidth: 1000,
+            }}
+          >
+            {data.description}
+          </Typography>
+
+          {/* Menu and Description split */}
+          <Grid
+            container
+            spacing={{ xs: 4, md: 4 }}
+            sx={{ mt: { xs: 6, md: 6 } }}
+            component={motion.div}
+            variants={cardVariants}
+          >
           {/* Left Menu Column */}
           <Grid size={{ xs: 12, md: 4 }}>
             <Box
@@ -245,6 +349,7 @@ const DesignToEvolve = () => {
         </Box>
       </Box>
     </Box>
+  </Box>
   );
 };
 

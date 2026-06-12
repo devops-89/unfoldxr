@@ -1,14 +1,110 @@
+"use client";
 import { din, helvetica } from "@/utils/fonts";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { COLORS } from "@/utils/enum";
 import { IndustryData } from "./data";
+import React, { useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
 
 interface Props {
   data: IndustryData["useCases"];
 }
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 const UseCasesSection = ({ data }: Props) => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+  const cardsRef = useRef(null);
+  const isCardsInView = useInView(cardsRef, { once: false, amount: 0.2 });
+
+  const renderVerticalBlindsText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length; 
+    let globalIndex = 0; 
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (distanceFromEdge * 0.04), 
+              ease: "easeOut",
+            }}
+            sx={{
+              display: "inline-block",
+              transformOrigin: "center", 
+            }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.2 + (spaceDist * 0.04),
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
   const getMarginLeft = (index: number) => {
     const margins = [0, 8, 4, 0];
     return { md: margins[index] || 0 };
@@ -50,6 +146,7 @@ const UseCasesSection = ({ data }: Props) => {
           {/* Left Side: Headline and Button */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Typography
+              ref={headingRef}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontSize: { xs: 28, md: 34, lg: 36 },
@@ -61,16 +158,26 @@ const UseCasesSection = ({ data }: Props) => {
                 mb: 4,
               }}
             >
-              {data.title}
+              {renderVerticalBlindsText(data.title)}
             </Typography>
           </Grid>
 
           {/* Right Side: Staggered Pills */}
           <Grid size={{ xs: 12, md: 7 }}>
-            <Stack spacing={3} alignItems="stretch">
+            <Stack 
+              spacing={3} 
+              alignItems="stretch"
+              ref={cardsRef}
+              component={motion.div}
+              variants={containerVariants}
+              initial="hidden"
+              animate={isCardsInView ? "visible" : "hidden"}
+            >
               {data.items.map((label, i) => (
                 <Box
                   key={label}
+                  component={motion.div}
+                  variants={cardVariants}
                   sx={{
                     border: "1px solid #E0E0E0",
                     borderRadius: "100px",

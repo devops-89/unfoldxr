@@ -1,9 +1,27 @@
-import React from 'react'
+"use client";
+import React, { useRef } from 'react'
 import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/enum'
 import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
+import { motion, useInView, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 // import { NewsItem } from '../NewsLayout/data'
 // import FeaturedNewsCard from './FeaturedNewsCard'
 
@@ -18,8 +36,82 @@ interface NewsHeroProps {
 }
 
 const NewsHero = ({image, title, subtitle, titleMaxWidth, objectPosition="center", overlayOpacity}: NewsHeroProps) => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+
+  const renderSpotlightText = (text: string) => {
+    if (!text) return null;
+    
+    const words = text.split(" ");
+    const totalLength = text.length;
+    const center = totalLength / 2;
+    let globalIndex = 0;
+
+    return words.map((word, wordIndex) => {
+      const hasSpace = wordIndex !== words.length - 1;
+
+      const letters = word.split("").map((char, charIndex) => {
+        const currentIndex = globalIndex++;
+        const distanceFromCenter = Math.abs(currentIndex - center);
+
+        return (
+          <Box
+            key={charIndex}
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: distanceFromCenter * 0.025, 
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block" }}
+          >
+            {char}
+          </Box>
+        );
+      });
+
+      let spaceElement = null;
+      if (hasSpace) {
+        const spaceIndex = globalIndex++;
+        const spaceDist = Math.abs(spaceIndex - center);
+        spaceElement = (
+          <Box
+            component={motion.span}
+            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
+            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+            transition={{
+              duration: 0.4,
+              delay: spaceDist * 0.025,
+              ease: "easeOut",
+            }}
+            sx={{ display: "inline-block", whiteSpace: "pre" }}
+          >
+            {" "}
+          </Box>
+        );
+      }
+
+      return (
+        <Box
+          key={wordIndex}
+          component="span"
+          sx={{
+            display: "inline-block",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {letters}
+          {spaceElement}
+        </Box>
+      );
+    });
+  };
+
   return (
     <Box
+      ref={headingRef}
       sx={{
         position: "relative",
         minHeight: { xs: "60vh", md: "60vh" },
@@ -64,19 +156,23 @@ const NewsHero = ({image, title, subtitle, titleMaxWidth, objectPosition="center
         }}
       />
       <Box
-              sx={{
-                position: "relative",
-                zIndex: 2,
-                width: { xs: "100%", md: "80%" },
-                boxSizing: "border-box",
-                mx: "auto",
-                pt: { xs: 12, md: 18 },
-                pb: { xs: 8, md: 12 },
-                pl: { xs: 0, md: 2 },
-                px: { xs: 3, md: 0 },
-              }}
-            >
-          <Typography
+        component={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isHeadingInView ? "visible" : "hidden"}
+        sx={{
+          position: "relative",
+          zIndex: 2,
+          width: { xs: "100%", md: "80%" },
+          boxSizing: "border-box",
+          mx: "auto",
+          pt: { xs: 12, md: 18 },
+          pb: { xs: 8, md: 12 },
+          pl: { xs: 0, md: 2 },
+          px: { xs: 3, md: 0 },
+        }}
+      >
+        <Typography
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -88,10 +184,12 @@ const NewsHero = ({image, title, subtitle, titleMaxWidth, objectPosition="center
                 width: { xs: "100%", lg: "70%" },
               }}
           >
-          {title}
+            {renderSpotlightText(title)}
         </Typography>
         {subtitle && (
           <Typography
+            component={motion.p}
+            variants={cardVariants}
             sx={{
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 20, md: 28, lg: 18 },
