@@ -4,16 +4,36 @@ import { helvetica, inter, din } from "@/utils/fonts";
 import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 
 interface Props {
   data: UseCaseData["businessResults"];
 }
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }, 
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)", 
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 const BusinessResultsSection = ({ data }: Props) => {
 
   // Hook setup to watch scroll tracking for the heading
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
+  // Hook setup for the cards section animation
+  const cardsRef = useRef(null);
+  const isCardsInView = useInView(cardsRef, { once: false, amount: 0.2 });
 
   // The seal-proof Word-Wrapped Vertical Blinds helper function
   const renderVerticalBlindsText = (text: string) => {
@@ -116,6 +136,11 @@ const BusinessResultsSection = ({ data }: Props) => {
         </Typography>
 
         <Box
+          ref={cardsRef}
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isCardsInView ? "visible" : "hidden"}
           sx={{
             display: "grid",
             gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
@@ -126,6 +151,9 @@ const BusinessResultsSection = ({ data }: Props) => {
           {data.items.map((item, index) => (
               <Box
                 key={index}
+                component={motion.div}
+                variants={cardVariants}
+                whileHover={{ y: -5 }}
                 sx={{
                   bgcolor: COLORS.CHARCOAL,
                   color: COLORS.WHITE,
@@ -135,8 +163,6 @@ const BusinessResultsSection = ({ data }: Props) => {
                   width: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  transition: "transform 0.3s ease",
-                  "&:hover": { transform: "translateY(-5px)" },
                 }}
               >
                 <Typography

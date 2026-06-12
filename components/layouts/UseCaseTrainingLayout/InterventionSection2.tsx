@@ -383,7 +383,14 @@ const InterventionSection2 = ({ data }: Props) => {
 
         {data.cards && data.cards.length > 0 && (
           <Box sx={{ mt: { xs: 8, md: 5 }, mb: 4, position: "relative" }}>
-            <Grid container spacing={{ xs: 6, md: 4 }}>
+            <Grid 
+              component={motion.div}
+              container 
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, margin: "-50px" }}
+              spacing={{ xs: 6, md: 4 }}>
               {data.cards.map((card, index) => (
                 <Grid
                   key={index}
@@ -393,6 +400,8 @@ const InterventionSection2 = ({ data }: Props) => {
                   }}
                 >
                   <Box
+                    component={motion.div}
+                    variants={blurInVariant}
                     sx={{
 
                       width: "100%",
@@ -493,6 +502,14 @@ const InterventionSection2 = ({ data }: Props) => {
           }}
         >
           <Box
+            component={motion.div}
+            initial="hidden"
+            whileInView="visible"
+            variants={blurInVariant}
+            viewport={{ once: false, margin: "-50px" }}
+            sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+          >
+          <Box
             sx={{
               position: "relative",
               width: "100%",
@@ -509,6 +526,7 @@ const InterventionSection2 = ({ data }: Props) => {
               fill
               style={{ objectFit: "contain" }}
             />
+          </Box>
           </Box>
         </Box>
       </Box>
