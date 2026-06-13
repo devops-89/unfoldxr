@@ -11,12 +11,14 @@ html, body {
   box-sizing: inherit;
 }
 
+/*
 @media (pointer: fine) {
   body, html {
     cursor: none !important;
   }
 
-a, button, input, select, option, [role="button"], [role="menuitem"], [role="option"], [role="listbox"], .clickable-card {
+  a, button, input, select, option, [role="button"], [role="menuitem"], [role="option"], [role="listbox"], .clickable-card {
     cursor: none !important;
   }
 }
+*/

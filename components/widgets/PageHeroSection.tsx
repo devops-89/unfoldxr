@@ -6,7 +6,21 @@ import { COLORS } from "@/utils/enum";
 import { useDemoModal } from "../context/DemoModalContext";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import DecryptedText from "@/utils/decrypted-text";
+import { motion, Variants } from "framer-motion";
+
+const revealWipeVariant: Variants = {
+  hidden: {
+    clipPath: "inset(0% 100% 0% 0%)",
+  },
+  visible: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    transition: {
+      duration: 1.2,
+      // Framing Motion implementation of power3.inOut [0.645, 0.045, 0.355, 1.000]
+      ease: [0.645, 0.045, 0.355, 1.0],
+    },
+  },
+};
 
 interface ButtonConfig {
   label: string;
@@ -96,6 +110,11 @@ const PageHeroSection = ({
       >
         {titleOutlined && (
           <Typography
+            component={motion.h1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={revealWipeVariant}
             sx={{
               fontFamily: din.style.fontFamily,
               fontSize: { xs: 26, md: 50, lg: 36 },
@@ -113,6 +132,11 @@ const PageHeroSection = ({
         )}
 
         <Typography
+          component={motion.h1}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={revealWipeVariant}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -124,15 +148,7 @@ const PageHeroSection = ({
             width: { xs: "100%", lg: "70%" },
           }}
         >
-          <DecryptedText
-            text={title}
-            animateOn="view"
-            sequential
-            revealDirection="start"
-            speed={30}
-            className="revealed"
-            encryptedClassName="encrypted"
-          />
+          {title}
         </Typography>
 
         {subtitle && (

@@ -1,11 +1,24 @@
 "use client";
 import React from 'react'
 import { Box, Typography } from '@mui/material'
-import DecryptedText from '@/utils/decrypted-text'
+import { motion, Variants } from 'framer-motion'
 import { COLORS } from '@/utils/enum'
 import { din } from '@/utils/fonts'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
+
+const revealWipeVariant: Variants = {
+  hidden: {
+    clipPath: "inset(0% 100% 0% 0%)",
+  },
+  visible: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    transition: {
+      duration: 1.2,
+      ease: [0.645, 0.045, 0.355, 1.0],
+    },
+  },
+};
 // import { NewsItem } from '../NewsLayout/data'
 // import FeaturedNewsCard from './FeaturedNewsCard'
 
@@ -79,6 +92,11 @@ const NewsHero = ({ image, title, subtitle, titleMaxWidth, objectPosition = "cen
         }}
       >
         <Typography
+          component={motion.h1}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={revealWipeVariant}
           sx={{
             fontFamily: din.style.fontFamily,
             fontWeight: 900,
@@ -90,15 +108,7 @@ const NewsHero = ({ image, title, subtitle, titleMaxWidth, objectPosition = "cen
             width: { xs: "100%", lg: "70%" },
           }}
         >
-          <DecryptedText
-            text={title}
-            animateOn="view"
-            sequential
-            revealDirection="start"
-            speed={70}
-            className="revealed"
-            encryptedClassName="encrypted"
-          />
+          {title}
         </Typography>
         {subtitle && (
           <Typography
