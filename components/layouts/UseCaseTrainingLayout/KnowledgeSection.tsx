@@ -7,28 +7,28 @@ import { motion, Variants } from "framer-motion";
 
 // VARIANTS 
 const blurUpVariant: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
-  visible: { 
-    opacity: 1, y: 0, filter: "blur(0px)", 
-    transition: { duration: 0.8, ease: "easeOut" } 
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)",
+    transition: { duration: 0.8, ease: "easeOut" }
   }
 };
 
 const blurInVariant: Variants = {
   hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
-  visible: { 
+  visible: {
     opacity: 1, filter: "blur(0px)",
-    y: 0, 
-    transition: { duration: 0.8, ease: "easeOut" } 
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
   }
 };
 
 const footerVariant: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    filter: "blur(0px)", 
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
     transition: { duration: 0.8, ease: "easeOut", delay: 0.6 } // Waits 0.6s before firing!
   }
 };
@@ -90,17 +90,17 @@ const KnowledgeSection = ({ data }: Props) => {
 
             {/* Right Side: Items (Paragraphs) */}
             <Grid size={{ xs: 12, md: 7 }}>
-              <Box 
+              <Box
                 component={motion.div}
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, margin: "-50px" }}
-                sx={{ 
-                  display: "flex", 
-                  flexDirection: "column", 
-                  gap: 4 
-                  }}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 4
+                }}
               >
                 {data.items.map((item, index) => (
                   <Typography
@@ -123,10 +123,10 @@ const KnowledgeSection = ({ data }: Props) => {
           {/* Footer Text outside grid to align with total width */}
           {data.footerText && (
             <Typography
-              component={motion.p} 
-              variants={footerVariant}  
-              initial="hidden"   
-              whileInView="visible" 
+              component={motion.p}
+              variants={footerVariant}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: false, margin: "-50px" }}
               sx={{
                 mt: { xs: 4, md: 6 },
@@ -183,17 +183,17 @@ const KnowledgeSection = ({ data }: Props) => {
 
           {/* Right Side: Bullet Points */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Box 
+            <Box
               component={motion.div}
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, margin: "-50px" }}
-              sx={{ 
-                display: "flex", 
-                flexDirection: "column", 
-                gap: 3 
-                }}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 3
+              }}
             >
               {data.items.map((item, index) => (
                 <Box

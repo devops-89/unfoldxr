@@ -19,36 +19,39 @@ export default async function BlogDetailPage({ params }: Props) {
 
   if (!blog) return notFound();
 
-   return (
-     <Box 
-            sx={{ 
-                maxWidth: "100%", 
-                mx: "auto",
-                backgroundColor: COLORS.BLACK,
-                minHeight: "100vh",
-                color: COLORS.WHITE,
-                }}
-        >
-          <Box
-            sx={{
-                position: "relative",
-                width: "100%",
-                aspectRatio: { xs: "16/9", md: "16/9", lg: "unset" },
-                height: { xs: "auto", md: "70vh", lg: "100vh" },
-                display: "flex",
-                alignItems: "center",
-                color: COLORS.WHITE,
-                overflow: "hidden",
-               }}
-          >
-            <Image
-              src={blog.image}
-              alt={blog.title}
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
-            
+  return (
+    <Box
+      sx={{
+        maxWidth: "100%",
+        mx: "auto",
+        backgroundColor: COLORS.BLACK,
+        minHeight: "100vh",
+        color: COLORS.WHITE,
+        pt: { xs: 12, md: 15 }, // Prevent being cut by the sticky navbar
+      }}
+    >
+      <Box
+        sx={{
+          position: "relative",
+          width: { xs: "95%", md: "60%" },
+          mx: "auto",
+          aspectRatio: "16/9",
+          height: "auto",
+          display: "flex",
+          alignItems: "center",
+          color: COLORS.WHITE,
+          overflow: "hidden",
+          borderRadius: { xs: 4, md: "24px" },
+        }}
+      >
+        <Image
+          src={blog.image}
+          alt={blog.title}
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+        />
+
         {/*     <Box
               sx={{
                 position: "absolute",
@@ -86,100 +89,100 @@ export default async function BlogDetailPage({ params }: Props) {
               </Typography>
             </Box>
               */}
-          </Box>
-      
-    
-          <Box
+      </Box>
+
+
+      <Box
+        sx={{
+          width: { xs: "95%", md: "90%", lg: "84%" },
+          mx: "auto",
+          pt: { xs: 4, md: 6 },
+          pb: 8,
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Link href="/resources/blogs" style={{ textDecoration: "none" }}>
+            <Chip
+              label="← Back to Blogs"
+              clickable
+              sx={{
+                borderRadius: "999px",
+                fontWeight: 600,
+                fontFamily: helvetica.style.fontFamily,
+                backgroundColor: "rgba(255,255,255,0.1)",
+                color: COLORS.WHITE,
+                "&:hover": { backgroundColor: "rgba(255,255,255,0.2)" }
+              }}
+            />
+          </Link>
+          <Typography
             sx={{
-              width: { xs: "95%", md: "90%", lg: "84%" },
-              mx: "auto",
-              pt: {xs: 4, md: 6 },
-              pb: 8,
+              color: "#aaa",
+              fontFamily: helvetica.style.fontFamily,
             }}
           >
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <Link href="/resources/blogs" style={{ textDecoration: "none" }}>
-              <Chip
-                label="← Back to Blogs"
-                clickable
-                sx={{
-                  borderRadius: "999px",
-                  fontWeight: 600,
-                  fontFamily: helvetica.style.fontFamily,
-                  backgroundColor: "rgba(255,255,255,0.1)", 
-                  color: COLORS.WHITE,
-                  "&:hover": { backgroundColor: "rgba(255,255,255,0.2)" }
-                }}
-              />
-            </Link>
-            <Typography 
-                sx={{ 
-                     color: "#aaa",
-                     fontFamily: helvetica.style.fontFamily,
-                   }}
-            >
-              {blog.date} • {blog.readTime}
-            </Typography>
-          </Box>
-
-          <Box sx={{ mt: 5, mb: 4 }}>
-            <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", mb: 2 }} />
-            <Typography 
-              sx={{ 
-                color: "#cccccc", 
-                fontStyle: "italic",
-                fontFamily: helvetica.style.fontFamily,
-                fontSize: "1.05rem"
-              }}
-            >
-              By {blog.author}
-            </Typography>
-            <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", mt: 2 }} />
-          </Box>
-    
-          <Typography 
-            component="div"
-            sx={{ 
-                mt: 4, 
-                fontFamily: helvetica.style.fontFamily,
-                lineHeight: { xs: 1.7, md: 1.8 }, 
-                fontSize: { xs: "1.05rem", md: "1.15rem", lg: "1.2rem" },
-                
-                // Base text color: Soft light gray (easier to read than pure white)
-                color: "#e0e0e0", 
-
-                // Highlighted content & headings in PRIMARY GREEN
-                '& h3': { mt: 5, mb: 2, fontSize: { xs: '1.5rem', md: '1.8rem' }, fontWeight: 'bold', fontFamily: din.style.fontFamily, color: COLORS.PRIMARY_GREEN },
-                '& h4': { mt: 4, mb: 1.5, fontSize: { xs: '1.2rem', md: '1.4rem' }, fontWeight: 'bold', color: COLORS.PRIMARY_GREEN },
-                '& strong': { fontWeight: 700, color: COLORS.PRIMARY_GREEN }, // Makes bolded text green!
-                
-                // Lists & Links formatting
-                '& p': { mb: 3 },
-                '& ul': { paddingLeft: '24px', marginBottom: '24px', listStyleType: 'disc' },
-                '& li': { marginBottom: '12px', display: 'list-item' },
-                '& a': { color: COLORS.PRIMARY_GREEN, textDecoration: 'none', '&:hover': { textDecoration: 'underline' }} 
-                }}
-          >
-            <ReactMarkDown
-              components={{
-                a: ({ node, ...props }) => {
-                  const isWebLink = props.href?.startsWith('http');
-                  return (
-                    <a 
-                      {...props} 
-                      target={isWebLink ? '_blank' : undefined}
-                      rel={isWebLink ? 'noopener noreferrer' : undefined}
-                    />
-                  );
-                }
-              }}
-            >
-              {blog.content}
-            </ReactMarkDown>
+            {blog.date} • {blog.readTime}
           </Typography>
-          </Box>
-    
         </Box>
+
+        <Box sx={{ mt: 5, mb: 4 }}>
+          <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", mb: 2 }} />
+          <Typography
+            sx={{
+              color: "#cccccc",
+              fontStyle: "italic",
+              fontFamily: helvetica.style.fontFamily,
+              fontSize: "1.05rem"
+            }}
+          >
+            By {blog.author}
+          </Typography>
+          <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", mt: 2 }} />
+        </Box>
+
+        <Typography
+          component="div"
+          sx={{
+            mt: 4,
+            fontFamily: helvetica.style.fontFamily,
+            lineHeight: { xs: 1.7, md: 1.8 },
+            fontSize: { xs: "1.05rem", md: "1.15rem", lg: "1.2rem" },
+
+            // Base text color: Soft light gray (easier to read than pure white)
+            color: "#e0e0e0",
+
+            // Highlighted content & headings in PRIMARY GREEN
+            '& h3': { mt: 5, mb: 2, fontSize: { xs: '1.5rem', md: '1.8rem' }, fontWeight: 'bold', fontFamily: din.style.fontFamily, color: COLORS.PRIMARY_GREEN },
+            '& h4': { mt: 4, mb: 1.5, fontSize: { xs: '1.2rem', md: '1.4rem' }, fontWeight: 'bold', color: COLORS.PRIMARY_GREEN },
+            '& strong': { fontWeight: 700, color: COLORS.PRIMARY_GREEN }, // Makes bolded text green!
+
+            // Lists & Links formatting
+            '& p': { mb: 3 },
+            '& ul': { paddingLeft: '24px', marginBottom: '24px', listStyleType: 'disc' },
+            '& li': { marginBottom: '12px', display: 'list-item' },
+            '& a': { color: COLORS.PRIMARY_GREEN, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }
+          }}
+        >
+          <ReactMarkDown
+            components={{
+              a: ({ node, ...props }) => {
+                const isWebLink = props.href?.startsWith('http');
+                return (
+                  <a
+                    {...props}
+                    target={isWebLink ? '_blank' : undefined}
+                    rel={isWebLink ? 'noopener noreferrer' : undefined}
+                  />
+                );
+              }
+            }}
+          >
+            {blog.content}
+          </ReactMarkDown>
+        </Typography>
+      </Box>
+
+    </Box>
   );
 
 }

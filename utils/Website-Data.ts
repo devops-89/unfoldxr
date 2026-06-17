@@ -459,12 +459,14 @@ export const aboutPage = {
       {
         name: "ANKUSH JAGGA",
         role: "CEO & CO-FOUNDER",
+        linkedin: "#",
         image: ankushImg,
         bio: "Ankush Jagga is a visionary entrepreneur on a mission to bring AI to the world's 2.8 billion deskless workers. As CEO & Co-founder of UnfoldXR, he is reimagining the future of work, creating human-first AI tools that empower, enhance, and amplify human capability. With 23+ years of enterprise tech experience, Ankush is a results-driven leader who turns bold ideas into measurable impact.\n\nAt Tenneo, he scaled a 4-million-user platform, led a strategic rebrand, executed a merger with a US tech conglomerate, expanded global operations, and delivered a 5x return to shareholders in just 3 years. A serial entrepreneur, he co-founded Hush, a food-tech venture, and exited successfully in 2021. He has also played founding roles across sectors, including Dhyan Chand Field Hockey Society (a grassroots sports non-profit), Smart School Smart Parents (a digital K12 platform), and Catchafilm.com (an online movie ticketing portal).\n\nRecognized as ET Business Leader 2023 and a 40 Under 40 entrepreneur, Ankush builds with long-term vision and a strong belief in human-first AI. At UnfoldXR, his bold vision is simple: unlock human potential at scale, make AI accessible.",
       },
       {
         name: "RITESH GANGNANI",
         role: "CO-FOUNDER & HEAD ARCHITECT",
+        linkedin: "#",
         image: riteshImg,
         bio: "Ritesh Gangnani is the Co-founder & Head Architect at UnfoldXR, where he leads the AI and technology strategy powering next-generation smart glasses for the deskless workforce. Deep expertise in AI, ML, and computer vision, Ritesh has a track record of building production-grade AI systems from the ground up. As Head of AI at Segmind, he helped shape a leading generative AI platform — contributing to open-source breakthroughs like Segmoe (mixture of diffusion experts) and building scalable AI infrastructure used by thousands of developers worldwide.\n\nHe is also the founder of Pixl Studio, an AI-powered creative studio for image generation, video, and virtual try-on. His expertise spans computer vision, deep learning, generative AI, and edge deployment with published research and a Master's degree from South Asian University grounding his work in both theory and application.\n\nAt UnfoldXR, Ritesh is architecting the AI backbone that brings hands-free intelligence to frontline workers through smart glasses — turning complex AI into seamless, human-first experiences at the edge. At UnfoldXR, he builds with one belief: the best AI is the one that works for you, not the other way around.",
       },

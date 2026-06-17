@@ -5,20 +5,21 @@ import { din, helvetica } from "@/utils/fonts";
 import { aboutPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 import { motion, useInView, Variants } from "framer-motion";
-
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 }, 
+    transition: {},
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 20 },
   visible: {
-    opacity: 1, y: 0, filter: "blur(0px)", 
+    opacity: 1, y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
@@ -28,78 +29,6 @@ const LeadershipSection = () => {
 
   const sectionRef = useRef(null);
   const isSectionInView = useInView(sectionRef, { once: false, margin: "-100px" });
-
-  const renderVerticalBlindsText = (text: string) => {
-    if (!text) return null;
-    
-    const words = text.split(" ");
-    const totalLength = text.length; 
-    let globalIndex = 0; 
-
-    return words.map((word, wordIndex) => {
-      const hasSpace = wordIndex !== words.length - 1;
-
-      const letters = word.split("").map((char, charIndex) => {
-        const currentIndex = globalIndex++;
-        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
-
-        return (
-          <Box
-            key={charIndex}
-            component={motion.span}
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isSectionInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: 0.2 + (distanceFromEdge * 0.04), 
-              ease: "easeOut",
-            }}
-            sx={{
-              display: "inline-block",
-              transformOrigin: "center", 
-            }}
-          >
-            {char}
-          </Box>
-        );
-      });
-
-      let spaceElement = null;
-      if (hasSpace) {
-        const spaceIndex = globalIndex++;
-        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
-        spaceElement = (
-          <Box
-            component={motion.span}
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isSectionInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: 0.2 + (spaceDist * 0.04),
-              ease: "easeOut",
-            }}
-            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
-          >
-            {" "}
-          </Box>
-        );
-      }
-
-      return (
-        <Box
-          key={wordIndex}
-          component="span"
-          sx={{
-            display: "inline-block",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {letters}
-          {spaceElement}
-        </Box>
-      );
-    });
-  };
 
   return (
     <Container
@@ -123,10 +52,10 @@ const LeadershipSection = () => {
           lineHeight: "52px",
         }}
       >
-        {renderVerticalBlindsText(data.title)}
+        <ScrollRevealText text={data.title} />
       </Typography>
 
-      <Stack 
+      <Stack
         spacing={12}
         component={motion.div}
         variants={containerVariants}
@@ -192,19 +121,38 @@ const LeadershipSection = () => {
                     mt: { xs: 3, md: 0 },
                   }}
                 >
-                  <Typography
-                    sx={{
-                      fontSize: { xs: 26, md: 36 },
-                      fontWeight: 900,
-                      textTransform: "uppercase",
-                      fontFamily: din.style.fontFamily,
-                      color: COLORS.BLACK,
-                      lineHeight: 1.1,
-                      mb: 1,
-                    }}
-                  >
-                    {member.name}
-                  </Typography>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1 }}>
+                    <Typography
+                      sx={{
+                        fontSize: { xs: 26, md: 36 },
+                        fontWeight: 900,
+                        textTransform: "uppercase",
+                        fontFamily: din.style.fontFamily,
+                        color: COLORS.BLACK,
+                        lineHeight: 1.1,
+                      }}
+                    >
+                      {member.name}
+                    </Typography>
+                    {member.linkedin && (
+                      <Box
+                        component="a"
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          color: COLORS.BLACK,
+                          transition: "0.2s",
+                          borderRadius: "0%",
+                          overflow: "hidden",
+                        }}
+                      >
+                        <LinkedInIcon sx={{ fontSize: 36 }} />
+                      </Box>
+                    )}
+                  </Box>
                   <Typography
                     sx={{
                       fontSize: { xs: 18, md: 20 },

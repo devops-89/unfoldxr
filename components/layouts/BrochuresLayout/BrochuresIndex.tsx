@@ -5,43 +5,14 @@ import { brochuresData } from "./data";
 import FinalCTASection from "./FinalCTASection";
 import { din } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
-import BrochuresTabs, {
-  Category,
-} from "@/components/layouts/BrochuresLayout/BrochuresTab";
 import BrochureGrid from "@/components/layouts/BrochuresLayout/BrochuresGrid";
 import {
-  brochureTabData,
-  slugCategoryMap,
+  allBrochuresData,
 } from "./data";
 
-interface Props {
-  categorySlug: string;
-}
-
-export default function BrochursPage({
-  categorySlug,
-}: Props) {
-
-  const tabs: Category[] = [
-    "Infographic",
-    "Events & Webinar",
-    "Brochure",
-    "eBook",
-    "Report",
-  ];
-
-  const normalizedSlug =
-  categorySlug.trim().toLowerCase();
-
-  const activeCategory =
-    slugCategoryMap[
-      normalizedSlug as keyof typeof slugCategoryMap
-    ];
+export default function BrochursPage() {
   
-  const items =
-    activeCategory
-      ? brochureTabData[activeCategory]
-      : [];
+  const items = allBrochuresData;
   
   return (
     <Box>
@@ -58,12 +29,6 @@ export default function BrochursPage({
           margin: "0 auto",
         }}
       >
-        {/* TABS */}
-        <BrochuresTabs
-          tabs={tabs}
-          activeTabSlug={categorySlug}
-        />
-
         {/* GRID */}
         <Box
           sx={{
@@ -96,7 +61,7 @@ export default function BrochursPage({
                 },
               }}
             >
-              No {activeCategory} found
+              No items found
             </Box>
           )}
         </Box>

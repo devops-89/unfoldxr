@@ -7,79 +7,83 @@ import { helvetica } from "@/utils/fonts";
 export default function CaseStudyCard({ item }: { item: CaseStudyItem }) {
 
   const shortTitle = item.title.split(" ").slice(0, 5).join(" ");
-  const shortSummary = item.content.split(" ").slice(0, 19).join(" ");
+  const shortSummary = item.content.split(" ").slice(0, 25).join(" ");
 
   return (
-    <Link 
-      href={`/casestudies/${item.slug}`} 
-      style={{ 
-        color: "black", 
-        textDecoration: "none" 
-        }}
+    <Link
+      href={`/casestudies/${item.slug}`}
+      style={{
+        color: "black",
+        textDecoration: "none"
+      }}
     >
-    <Card 
-        sx={{ 
-          borderRadius: 0, 
+      <Card
+        sx={{
+          borderRadius: 0,
           overflow: "hidden",
-          transition: "all 0.3s ease", 
+          transition: "all 0.3s ease",
           "&:hover": {
-          transform: "translateY(-6px)",
-          }, 
-          }}
-    >
-      
-      {/* Image wrapper */}
-      <Box sx={{ position: "relative", width: "100%", height: 180 }}>
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          style={{ objectFit: "cover" }}
-        />
-      </Box>
+            transform: "translateY(-6px)",
+          },
+        }}
+      >
 
-      <CardContent>
-        <Typography 
-          fontWeight={700}
-          sx={{fontFamily: helvetica.style.fontFamily}}
-        >{shortTitle}...
-        </Typography>
+        {/* Image wrapper */}
+        <Box sx={{ position: "relative", width: "100%", height: 180 }}>
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </Box>
 
-        <Typography 
-          variant="body2" 
-          color="text.secondary"
-          sx={{fontFamily: helvetica.style.fontFamily}}
-        >
-          {shortSummary}...
-        </Typography>
+        <CardContent>
+          <Typography
+            fontWeight={700}
+            sx={{ fontFamily: helvetica.style.fontFamily }}
+          >{shortTitle}...
+          </Typography>
 
-        <Box mt={2} display="flex" justifyContent="space-between">
-          <Box>
-            <Typography 
-              variant="caption"
-              sx={{fontFamily: helvetica.style.fontFamily}}
-            >{item.date}
-            </Typography>
-            {item.author && (
-              <Typography 
-                variant="caption" 
-                display="block"
-                sx={{fontFamily: helvetica.style.fontFamily}}
-              >
-                By "{item.author}"
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              fontFamily: helvetica.style.fontFamily,
+              fontSize: "0.825rem",
+              mt: 0.5
+            }}
+          >
+            {shortSummary}...
+          </Typography>
+
+          <Box mt={2} display="flex" justifyContent="space-between">
+            <Box>
+              <Typography
+                variant="caption"
+                sx={{ fontFamily: helvetica.style.fontFamily }}
+              >{item.date}
               </Typography>
+              {item.author && (
+                <Typography
+                  variant="caption"
+                  display="block"
+                  sx={{ fontFamily: helvetica.style.fontFamily }}
+                >
+                  By "{item.author}"
+                </Typography>
+              )}
+            </Box>
+
+            {item.readTime && (
+              <Typography
+                variant="caption"
+                sx={{ fontFamily: helvetica.style.fontFamily }}
+              >{item.readTime}</Typography>
             )}
           </Box>
-
-          {item.readTime && (
-            <Typography 
-              variant="caption"
-              sx={{fontFamily: helvetica.style.fontFamily}}
-            >{item.readTime}</Typography>
-          )}
-        </Box>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
     </Link>
   );
 }

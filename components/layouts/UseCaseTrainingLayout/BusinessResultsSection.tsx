@@ -5,6 +5,7 @@ import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import React, { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 
 interface Props {
   data: UseCaseData["businessResults"];
@@ -19,7 +20,7 @@ const containerVariants: Variants = {
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1, y: 0, filter: "blur(0px)", 
     transition: { duration: 0.6, ease: "easeOut" },
@@ -36,6 +37,7 @@ const BusinessResultsSection = ({ data }: Props) => {
   const isCardsInView = useInView(cardsRef, { once: false, amount: 0.2 });
 
   // The seal-proof Word-Wrapped Vertical Blinds helper function
+  /*
   const renderVerticalBlindsText = (text: string) => {
     if (!text) return null;
     
@@ -110,6 +112,7 @@ const BusinessResultsSection = ({ data }: Props) => {
       );
     });
   };
+  */
 
   return (
     <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
@@ -132,7 +135,8 @@ const BusinessResultsSection = ({ data }: Props) => {
             maxWidth: 900,
           }}
         >
-          {renderVerticalBlindsText("Business Results You Can Measure")}
+          {/* {renderVerticalBlindsText("Business Results You Can Measure")} */}
+          <ScrollRevealText text="Business Results You Can Measure" />
         </Typography>
 
         <Box

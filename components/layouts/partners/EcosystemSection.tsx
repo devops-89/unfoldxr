@@ -4,20 +4,21 @@ import { partnersPage } from "@/utils/Website-Data";
 import { COLORS } from "@/utils/enum";
 import React, { useState, useRef } from "react";
 import { din, helvetica } from "@/utils/fonts";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 import { motion, useInView, Variants } from "framer-motion";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 }, 
+    transition: { }, 
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 20 },
   visible: {
-    opacity: 1, y: 0, filter: "blur(0px)", 
+    opacity: 1, y: 0, 
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
@@ -28,78 +29,6 @@ const EcosystemSection = () => {
 
   const sectionRef = useRef(null);
   const isSectionInView = useInView(sectionRef, { once: false, margin: "-100px" });
-
-  const renderVerticalBlindsText = (text: string) => {
-    if (!text) return null;
-    
-    const words = text.split(" ");
-    const totalLength = text.length; 
-    let globalIndex = 0; 
-
-    return words.map((word, wordIndex) => {
-      const hasSpace = wordIndex !== words.length - 1;
-
-      const letters = word.split("").map((char, charIndex) => {
-        const currentIndex = globalIndex++;
-        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
-
-        return (
-          <Box
-            key={charIndex}
-            component={motion.span}
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isSectionInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: 0.2 + (distanceFromEdge * 0.04), 
-              ease: "easeOut",
-            }}
-            sx={{
-              display: "inline-block",
-              transformOrigin: "center", 
-            }}
-          >
-            {char}
-          </Box>
-        );
-      });
-
-      let spaceElement = null;
-      if (hasSpace) {
-        const spaceIndex = globalIndex++;
-        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
-        spaceElement = (
-          <Box
-            component={motion.span}
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isSectionInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: 0.2 + (spaceDist * 0.04),
-              ease: "easeOut",
-            }}
-            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
-          >
-            {" "}
-          </Box>
-        );
-      }
-
-      return (
-        <Box
-          key={wordIndex}
-          component="span"
-          sx={{
-            display: "inline-block",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {letters}
-          {spaceElement}
-        </Box>
-      );
-    });
-  };
 
   return (
     <Box
@@ -140,7 +69,7 @@ const EcosystemSection = () => {
               fontFamily: din.style.fontFamily,
             }}
           >
-            {renderVerticalBlindsText(partnersPage.ecosystemSystem.heading)}
+            <ScrollRevealText text={partnersPage.ecosystemSystem.heading} />
           </Typography>
 
           <Grid container spacing={6}>

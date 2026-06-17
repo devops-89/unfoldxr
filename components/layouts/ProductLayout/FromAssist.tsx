@@ -13,86 +13,14 @@ import { motion, useInView, Variants } from "framer-motion";
 const buttonVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
-    opacity: 1, y: 0, 
-    transition: { duration: 0.6, ease: "easeOut", delay: 0.8 }, 
+    opacity: 1, y: 0,
+    transition: { duration: 0.6, ease: "easeOut", delay: 0.8 },
   },
 };
 
 const FromAssist = () => {
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
-
-  const renderVerticalBlindsText = (text: string) => {
-    if (!text) return null;
-    
-    const words = text.split(" ");
-    const totalLength = text.length; 
-    let globalIndex = 0; 
-
-    return words.map((word, wordIndex) => {
-      const hasSpace = wordIndex !== words.length - 1;
-
-      const letters = word.split("").map((char, charIndex) => {
-        const currentIndex = globalIndex++;
-        const distanceFromEdge = Math.min(currentIndex, totalLength - 1 - currentIndex);
-
-        return (
-          <Box
-            key={charIndex}
-            component={motion.span}
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: 0.2 + (distanceFromEdge * 0.04), 
-              ease: "easeOut",
-            }}
-            sx={{
-              display: "inline-block",
-              transformOrigin: "center", 
-            }}
-          >
-            {char}
-          </Box>
-        );
-      });
-
-      let spaceElement = null;
-      if (hasSpace) {
-        const spaceIndex = globalIndex++;
-        const spaceDist = Math.min(spaceIndex, totalLength - 1 - spaceIndex);
-        spaceElement = (
-          <Box
-            component={motion.span}
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isHeadingInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: 0.2 + (spaceDist * 0.04),
-              ease: "easeOut",
-            }}
-            sx={{ display: "inline-block", transformOrigin: "center", whiteSpace: "pre" }}
-          >
-            {" "}
-          </Box>
-        );
-      }
-
-      return (
-        <Box
-          key={wordIndex}
-          component="span"
-          sx={{
-            display: "inline-block",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {letters}
-          {spaceElement}
-        </Box>
-      );
-    });
-  };
   const data = homePage.productPage.fromAssist;
   const { openModal } = useDemoModal();
 
@@ -133,6 +61,10 @@ const FromAssist = () => {
           <Box sx={{ position: "relative", zIndex: 1 }}>
             <Typography
               ref={headingRef}
+              component={motion.h2}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 900,
@@ -146,15 +78,15 @@ const FromAssist = () => {
             >
               {data.title.includes("From assistance") ? (
                 <>
-                  {renderVerticalBlindsText("From assistance to intelligence. From")}
+                  From assistance to intelligence. From
                   <Box
                     component="br"
                     sx={{ display: { xs: "none", lg: "block" } }}
                   />
-                  {renderVerticalBlindsText("field support to enterprise control.")}
+                  field support to enterprise control.
                 </>
               ) : (
-                renderVerticalBlindsText(data.title)
+                data.title
               )}
             </Typography>
 

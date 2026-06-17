@@ -7,7 +7,7 @@ import { helvetica } from "@/utils/fonts";
 export default function NewsCard({ item }: { item: NewsItem }) {
 
   const shortTitle = item.title.split(" ").slice(0, 5).join(" ");
-  const shortSummary = item.content.split(" ").slice(0, 19).join(" ");
+  const shortSummary = item.content.split(" ").slice(0, 25).join(" ");
 
   return (
     <Link
@@ -64,7 +64,9 @@ export default function NewsCard({ item }: { item: NewsItem }) {
               variant="body2"
               color="text.secondary"
               sx={{
-                fontFamily: helvetica.style.fontFamily
+                fontFamily: helvetica.style.fontFamily,
+                fontSize: "0.825rem",
+                mt: 0.5
               }}
             >
               {shortSummary}...

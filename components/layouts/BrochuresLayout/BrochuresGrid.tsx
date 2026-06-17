@@ -11,14 +11,14 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 }, 
+    transition: {},
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 20 },
   visible: {
-    opacity: 1, y: 0, filter: "blur(0px)", 
+    opacity: 1, y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
@@ -49,7 +49,7 @@ const BrochureGrid = ({
           lg: "1fr 1fr 1fr 1fr",
         },
         gap: "24px",
-        mt: 5,
+        mt: 12,
       }}
     >
       {items.map((item) => (

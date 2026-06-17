@@ -26,18 +26,21 @@ export default async function NewsDetailPage({ params }: Props) {
             backgroundColor: COLORS.BLACK,
             minHeight: "100vh",
             color: COLORS.WHITE,
+            pt: { xs: 12, md: 15 }, // Prevent being cut by the sticky navbar
             }}
     >
       <Box
         sx={{
             position: "relative",
-            width: "100%",
-            aspectRatio: { xs: "16/9", md: "16/9", lg: "unset" },
-            height: { xs: "auto", md: "70vh", lg: "100vh" },
+            width: { xs: "95%", md: "60%" },
+            mx: "auto",
+            aspectRatio: "16/9",
+            height: "auto",
             display: "flex",
             alignItems: "center",
             color: COLORS.WHITE,
             overflow: "hidden",
+            borderRadius: { xs: 4, md: "24px" },
            }}
       >
         <Image

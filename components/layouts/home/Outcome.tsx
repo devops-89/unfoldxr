@@ -6,47 +6,12 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import OutcomeCard from "./components/Outcome-Card";
 import ContainedButton from "@/components/widgets/ContainedButton";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 
 const Outcome = () => {
   const { scrollYProgress } = useScroll();
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-
-  // Single ref to trigger both texts at the exact same time
-  const textRef = useRef(null);
-  const isInView = useInView(textRef, { once: false, margin: "-100px" });
-
-  // Helper function to recreate GSAP's "SplitText" and center stagger
-  const renderSpotlightText = (text: string) => {
-    const chars = text.split("");
-    const center = chars.length / 2;
-
-    return chars.map((char, index) => {
-      // Calculates distance from center to stagger outward
-      const distanceFromCenter = Math.abs(index - center);
-
-      return (
-        <Box
-          key={index}
-          component={motion.span}
-          initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
-          animate={isInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
-          transition={{
-            duration: 0.4,
-            delay: distanceFromCenter * 0.05,
-            ease: "easeOut",
-          }}
-          sx={{ 
-            display: "inline-block", 
-            // Ensures space characters don't collapse
-            whiteSpace: char === " " ? "pre" : "normal" 
-          }}
-        >
-          {char}
-        </Box>
-      );
-    });
-  };
 
   return (
     <Box
@@ -68,7 +33,7 @@ const Outcome = () => {
         }}
       >
         <Box sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}>
-          <Box ref={textRef}>
+          <Box>
           {/* Heading */}
           <Typography
             sx={{
@@ -81,7 +46,7 @@ const Outcome = () => {
               lineHeight: { xs: "38px", md: "52px" },
             }}
           >
-            {renderSpotlightText(homePage.outcome.heading)}
+            <ScrollRevealText text={homePage.outcome.heading} />
           </Typography>
 
           {/* Subheading */}
@@ -98,7 +63,7 @@ const Outcome = () => {
               opacity: 0.8,
             }}
           >
-            {renderSpotlightText(homePage.outcome.subHeading)}
+            <ScrollRevealText text={homePage.outcome.subHeading} />
           </Typography>
           </Box>
 

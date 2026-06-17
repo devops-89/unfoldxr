@@ -9,6 +9,7 @@ import { COLORS } from "@/utils/enum";
 import VerticalStepper from "@/components/widgets/VerticalStepper";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 import { motion, useInView } from "framer-motion";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 
 interface Props {
   data: UseCaseData["capabilities"];
@@ -20,11 +21,12 @@ const CapabilitiesSection = ({ data }: Props) => {
 
   const { openModal } = useDemoModal();
 
-  // 👇 ADDED: Visibility observer for the heading spotlight trigger
+  // ADDED: Visibility observer for the heading spotlight trigger
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
 
   // Word-Wrapped Spotlight Reveal Function
+  /*
   const renderSpotlightText = (text: string) => {
     if (!text) return null;
     
@@ -98,6 +100,7 @@ const CapabilitiesSection = ({ data }: Props) => {
       );
     });
   };
+  */
 
   if (isGrid) {
     return (
@@ -176,7 +179,8 @@ const CapabilitiesSection = ({ data }: Props) => {
               maxWidth: 1000,
             }}
           >
-            {renderSpotlightText(data.title)}
+            {/* {renderSpotlightText(data.title)} */}
+            <ScrollRevealText text={data.title} />
           </Typography>
 
           <Box
@@ -344,7 +348,8 @@ const CapabilitiesSection = ({ data }: Props) => {
             maxWidth: 900,
           }}
         >
-          {renderSpotlightText(data.title)}
+          {/* {renderSpotlightText(data.title)} */}
+          <ScrollRevealText text={data.title} />
         </Typography>
 
         <Grid container spacing={{ xs: 5, md: 0 }}>

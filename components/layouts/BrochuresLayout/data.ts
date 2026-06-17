@@ -35,48 +35,10 @@ export interface BrochureItem {
   slug?: string;
   image: string | StaticImageData;
   pdf?: string;
+  category: BrochureCategory;
 }
 
-export const brochureTabs: BrochureCategory[] = [
-  "Infographic",
-  "Events & Webinar",
-  "Brochure",
-  "eBook",
-  "Report",
+export const allBrochuresData: BrochureItem[] = [
+  { id: 1, title: "Card 1", image: AiIsRewriting, slug: "ai-is-rewritting", pdf: "/ResourcePdf/infographicsPdf/AI-IS-REWRITING.pdf", category: "Infographic" },
+  { id: 2, title: "Card 2", image: EightyofTheWorkforce, slug: "80%-of-workforce", pdf: "/ResourcePdf/infographicsPdf/Eighty-percent-of-the-Workforce-Still.pdf", category: "Infographic" },
 ];
-
-export const categorySlugMap = {
-  "Infographic": "infographic",
-  "Events & Webinar": "events-webinar",
-  "Brochure": "brochure",
-  "eBook": "ebook",
-  "Report": "report",
-};
-
-export const slugCategoryMap = {
-  "infographic": "Infographic",
-  "events-webinar": "Events & Webinar",
-  "brochure": "Brochure",
-  "ebook": "eBook",
-  "report": "Report",
-} as const;
-
-
-export const brochureTabData: Record<
-  BrochureCategory,
-  BrochureItem[]
-> = {
-
-  "Infographic": [
-    { id: 1, title: "Card 1", image: AiIsRewriting, slug: "ai-is-rewritting", pdf: "/ResourcePdf/infographicsPdf/AI-IS-REWRITING.pdf" },
-    { id: 2, title: "Card 2", image: EightyofTheWorkforce, slug: "80%-of-workforce", pdf: "/ResourcePdf/infographicsPdf/Eighty-percent-of-the-Workforce-Still.pdf" },
-  ],
-
-  "Events & Webinar": [],
-
-  "Brochure": [],
-
-  "eBook": [],
-
-  "Report": [],
-};

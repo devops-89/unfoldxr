@@ -7,6 +7,7 @@ import StylizedDivider from "@/components/widgets/StylizedDivider";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 
 interface Props {
   data: UseCaseData["deviceDeployment"];
@@ -14,7 +15,7 @@ interface Props {
 
 // Variants for individual images (Blur to clear + slide up)
 const blurInVariant: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     y: 0,
@@ -42,6 +43,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
 
   // ADD HELPER FUNCTION
   // The Word-Wrapped Vertical Blinds helper function
+  /*
   const renderVerticalBlindsText = (text: string) => {
     if (!text) return null;
 
@@ -117,6 +119,7 @@ const DeviceDeploymentSection = ({ data }: Props) => {
     );
   });
   };
+  */
 
   return (
     <Box sx={{ bgcolor: COLORS.WHITE, py: { xs: 8, md: 10 } }}>
@@ -138,7 +141,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
             mb: { xs: 6, md: 6 },
           }}
         >
-          {renderVerticalBlindsText(data.title)}
+          {/* {renderVerticalBlindsText(data.title)} */}
+          <ScrollRevealText text={data.title} />
         </Typography>
 
         <Grid 

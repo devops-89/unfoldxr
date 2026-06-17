@@ -27,7 +27,7 @@ const revealWipeVariant: Variants = {
 
 // Blur, opacity, and y-axis animation for description paragraphs
 const blurInVariant: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     y: 0,

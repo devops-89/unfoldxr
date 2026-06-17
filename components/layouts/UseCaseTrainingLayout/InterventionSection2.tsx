@@ -7,10 +7,11 @@ import { UseCaseData } from "./data";
 import { COLORS } from "@/utils/enum";
 import Image from "next/image";
 import { motion, useInView, Variants } from "framer-motion";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 
 // VARIANTS FOR THE RIGHT SIDE TEXT
 const blurInVariant: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     y: 0,
@@ -45,6 +46,7 @@ const InterventionSection2 = ({ data }: Props) => {
   const isHeadingInView = useInView(headingRef, { once: false, margin: "-100px" });
 
   // Word-Wrapper Logic
+  /*
   const renderVerticalBlindsText = (text: string) => {
     if (!text) return null;
 
@@ -120,6 +122,7 @@ const InterventionSection2 = ({ data }: Props) => {
       );
     });
   };
+  */
 
   // if (isSideBySide) {
   //   return (
@@ -315,7 +318,8 @@ const InterventionSection2 = ({ data }: Props) => {
                 letterSpacing: "-0.5px",
               }}
             >
-              {renderVerticalBlindsText(data.title)}
+              {/* {renderVerticalBlindsText(data.title)} */}
+              <ScrollRevealText text={data.title} />
             </Typography>
           </Grid>
 

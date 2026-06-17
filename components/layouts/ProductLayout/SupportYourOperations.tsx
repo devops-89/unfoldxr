@@ -8,20 +8,21 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import EastIcon from "@mui/icons-material/East";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 import Image from "next/image";
+import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 import { motion, useInView, Variants } from "framer-motion";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 }, 
+    transition: { }, 
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 20 },
   visible: {
-    opacity: 1, y: 0, filter: "blur(0px)", 
+    opacity: 1, y: 0, 
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
@@ -33,75 +34,6 @@ const SupportYourOperations = () => {
   const cardsRef = useRef(null);
   const isCardsInView = useInView(cardsRef, { once: false, amount: 0.2 });
 
-  const renderSpotlightText = (text: string) => {
-    if (!text) return null;
-    
-    const words = text.split(" ");
-    const totalLength = text.length;
-    const center = totalLength / 2;
-    let globalIndex = 0;
-
-    return words.map((word, wordIndex) => {
-      const hasSpace = wordIndex !== words.length - 1;
-
-      const letters = word.split("").map((char, charIndex) => {
-        const currentIndex = globalIndex++;
-        const distanceFromCenter = Math.abs(currentIndex - center);
-
-        return (
-          <Box
-            key={charIndex}
-            component={motion.span}
-            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
-            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
-            transition={{
-              duration: 0.4,
-              delay: distanceFromCenter * 0.025, 
-              ease: "easeOut",
-            }}
-            sx={{ display: "inline-block" }}
-          >
-            {char}
-          </Box>
-        );
-      });
-
-      let spaceElement = null;
-      if (hasSpace) {
-        const spaceIndex = globalIndex++;
-        const spaceDist = Math.abs(spaceIndex - center);
-        spaceElement = (
-          <Box
-            component={motion.span}
-            initial={{ opacity: 0.1, scale: 0.8, filter: "blur(4px)" }}
-            animate={isHeadingInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
-            transition={{
-              duration: 0.4,
-              delay: spaceDist * 0.025,
-              ease: "easeOut",
-            }}
-            sx={{ display: "inline-block", whiteSpace: "pre" }}
-          >
-            {" "}
-          </Box>
-        );
-      }
-
-      return (
-        <Box
-          key={wordIndex}
-          component="span"
-          sx={{
-            display: "inline-block",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {letters}
-          {spaceElement}
-        </Box>
-      );
-    });
-  };
   const data = homePage.productPage.supportOperations;
   const { openModal } = useDemoModal();
 
@@ -151,7 +83,7 @@ const SupportYourOperations = () => {
               textAlign: "left",
             }}
           >
-            {renderSpotlightText(data.lifecycle.title)}
+            <ScrollRevealText text={data.lifecycle.title} />
           </Typography>
           <Box
             sx={{

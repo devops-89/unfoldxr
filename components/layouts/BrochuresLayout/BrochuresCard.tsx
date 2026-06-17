@@ -3,9 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { COLORS } from "@/utils/enum";
-
+import { helvetica } from "@/utils/fonts";
 import { Box } from "@mui/material";
-
 import { BrochureItem } from "@/components/layouts/BrochuresLayout/data";
 
 interface BrochureCardProps {
@@ -40,6 +39,23 @@ const CardImage = ({
         objectFit: "cover",
       }}
     />
+    <Box
+      sx={{
+        position: "absolute",
+        top: 12,
+        right: 12,
+        backgroundColor: COLORS.PRIMARY_GREEN,
+        fontFamily: helvetica.style.fontFamily,
+        color: COLORS.BLACK,
+        padding: "4px 16px",
+        borderRadius: "999px",
+        fontSize: "12px",
+        fontWeight: 600,
+        zIndex: 10,
+      }}
+    >
+      {item.category}
+    </Box>
   </Box>
 );
 
