@@ -43,14 +43,15 @@ const CardImage = ({
       sx={{
         position: "absolute",
         top: 12,
-        right: 12,
+        left: 12,
         backgroundColor: COLORS.PRIMARY_GREEN,
         fontFamily: helvetica.style.fontFamily,
         color: COLORS.BLACK,
-        padding: "4px 16px",
+        padding: "4px 10px",
         borderRadius: "999px",
-        fontSize: "12px",
-        fontWeight: 600,
+        fontSize: "10px",
+        fontWeight: 550,
+        letterSpacing: "0.5px",
         zIndex: 10,
       }}
     >
