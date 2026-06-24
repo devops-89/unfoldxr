@@ -49,7 +49,7 @@ const BrochureGrid = ({
           lg: "1fr 1fr 1fr 1fr",
         },
         gap: "24px",
-        mt: 12,
+        mt: { xs: 3, sm: 3, md: 3, lg: 3 },
       }}
     >
       {items.map((item) => (

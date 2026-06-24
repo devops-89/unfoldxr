@@ -60,18 +60,19 @@ const CareersSection = () => {
             lineHeight: "52px",
           }}
         >
-          <ScrollRevealText text={data.title} />
+          {/* <ScrollRevealText text={data.title} /> */}
+          {data.title}
         </Typography>
 
         <Box
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isSectionInView ? "visible" : "hidden"}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isSectionInView ? "visible" : "hidden"}
         >
         <Typography
-          component={motion.p}
-          variants={cardVariants}
+          // component={motion.p}
+          // variants={cardVariants}
           sx={{
             fontSize: { xs: 18, md: 18 },
             lineHeight: "28px",
@@ -86,7 +87,7 @@ const CareersSection = () => {
 
         <Grid container spacing={3} justifyContent="center">
           {data.values.map((text, i) => (
-            <Grid key={i} size={{ xs: 12, md: 5.5 }} sx={{ display: "flex" }} component={motion.div} variants={cardVariants}>
+            <Grid key={i} size={{ xs: 12, md: 5.5 }} sx={{ display: "flex" }} /* component={motion.div} variants={cardVariants} */ >
               <Box
                 sx={{
                   bgcolor: COLORS.CARD_BG_DARK,
@@ -129,8 +130,8 @@ const CareersSection = () => {
         </Grid>
 
         <Typography
-          component={motion.p}
-          variants={cardVariants}
+          // component={motion.p}
+          // variants={cardVariants}
           sx={{
             mt: 4,
             mb: 4,
@@ -145,9 +146,9 @@ const CareersSection = () => {
         </Box>
 
         <motion.div
-          variants={buttonVariants}
-          initial="hidden"
-          animate={isSectionInView ? "visible" : "hidden"}
+          // variants={buttonVariants}
+          // initial="hidden"
+          // animate={isSectionInView ? "visible" : "hidden"}
           style={{ display: 'inline-block' }}
         >
           <ContainedButton

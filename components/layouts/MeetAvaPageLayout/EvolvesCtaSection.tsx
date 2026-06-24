@@ -67,11 +67,11 @@ const EvolvesCtaSection = () => {
             }}
           >
             <Typography
-              ref={headingRef}
-              component={motion.h2}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              // ref={headingRef}
+              // component={motion.h2}
+              // initial={{ opacity: 0, y: 20 }}
+              // animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
+              // transition={{ duration: 0.6, ease: "easeOut" }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontWeight: 700,
@@ -89,10 +89,10 @@ const EvolvesCtaSection = () => {
             </Typography>
 
             <Button
-              component={motion.button}
-              variants={buttonVariants}
-              initial="hidden"
-              animate={isHeadingInView ? "visible" : "hidden"}
+              // component={motion.button}
+              // variants={buttonVariants}
+              // initial="hidden"
+              // animate={isHeadingInView ? "visible" : "hidden"}
               onClick={() => openModal("meet_ava_cta")}
               sx={{
                 mt: 4,

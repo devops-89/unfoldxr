@@ -67,11 +67,11 @@ const MeetAva = () => {
           container 
           spacing={{ xs: 6, md: 8 }} 
           alignItems="flex-start"
-          ref={cardsRef}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isCardsInView ? "visible" : "hidden"}
+          // ref={cardsRef}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isCardsInView ? "visible" : "hidden"}
         >
           <Grid size={{ xs: 12, md: 6.5 }}>
             <Typography
@@ -86,11 +86,12 @@ const MeetAva = () => {
                 whiteSpace: "pre-line",
               }}
             >
-              <ScrollRevealText text={data.title} />
+              {/* <ScrollRevealText text={data.title} /> */}
+              {data.title}
             </Typography>
             <Typography
-              component={motion.p}
-              variants={cardVariants}
+              // component={motion.p}
+              // variants={cardVariants}
               sx={{
                 mt: 4,
                 fontFamily: helvetica.style.fontFamily,
@@ -111,10 +112,10 @@ const MeetAva = () => {
             </Typography>
             <Box sx={{ mt: 6 }}>
               <Button
-                component={motion.a}
-                variants={buttonVariants}
-                initial="hidden"
-                animate={isHeadingInView ? "visible" : "hidden"}
+                // component={motion.a}
+                // variants={buttonVariants}
+                // initial="hidden"
+                // animate={isHeadingInView ? "visible" : "hidden"}
                 href={data.ctaLink}
                 sx={{
                   bgcolor: COLORS.PRIMARY_GREEN,
@@ -144,8 +145,8 @@ const MeetAva = () => {
               justifyContent: { xs: "center", md: "flex-end" },
               position: "relative",
             }}
-            component={motion.div}
-            variants={cardVariants}
+            // component={motion.div}
+            // variants={cardVariants}
           >
             <Box
               sx={{

@@ -11,6 +11,7 @@ import { FUTURE_WORK_CARD_DATA } from "@/utils/constant";
 import { useDemoModal } from "@/components/context/DemoModalContext";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
+import { Opacity } from "@mui/icons-material";
 
 
 const FutureWork = () => {
@@ -65,16 +66,16 @@ const FutureWork = () => {
       >
         <Grid container spacing={{ xs: 4, md: 10 }} sx={{ p: 0, m: 0 }}>
           {/* LEFT SECTION */}
-          <Grid 
-              size={{ xs: 12, md: 6 }}
-              ref={leftRef}
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            ref={leftRef}
           >
             <Typography
               component={motion.div}
-              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: false, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              // initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              // whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              // viewport={{ once: false, margin: "-100px" }}
+              // transition={{ duration: 0.7, ease: "easeOut" }}
               sx={{
                 fontFamily: din.style.fontFamily,
                 fontSize: { xs: 20, md: 36 },
@@ -89,10 +90,10 @@ const FutureWork = () => {
 
             <Typography
               component={motion.div}
-              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: false, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              // initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              // whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              // viewport={{ once: false, margin: "-100px" }}
+              // transition={{ duration: 0.7, ease: "easeOut" }}
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 12, md: 18 },
@@ -108,10 +109,10 @@ const FutureWork = () => {
 
             <Typography
               component={motion.div}
-              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: false, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              // initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              // whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              // viewport={{ once: false, margin: "-100px" }}
+              // transition={{ duration: 0.7, ease: "easeOut" }}
               sx={{
                 fontSize: { xs: 12, md: 18 },
                 fontWeight: 700,
@@ -126,10 +127,10 @@ const FutureWork = () => {
 
             <Typography
               component={motion.div}
-              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: false, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              // initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              // whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              // viewport={{ once: false, margin: "-100px" }}
+              // transition={{ duration: 0.7, ease: "easeOut" }}
               sx={{
                 fontSize: { xs: 28, md: 36 },
                 fontWeight: 900,
@@ -140,7 +141,7 @@ const FutureWork = () => {
                 mt: 4,
               }}
             >
-              {homePage.future_work.leftSection.endHeading}   
+              {homePage.future_work.leftSection.endHeading}
             </Typography>
             <Link href="/Product">
               <ContainedButton
@@ -178,42 +179,42 @@ const FutureWork = () => {
 
           {/* RIGHT SECTION - INTERACTIVE STEPPER */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Stack 
-                spacing={4} 
-                sx={{ width: "100%" }}
-                component={motion.div}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, margin: "-100px" }}
-                variants={{
-                  hidden: {},
-                  visible: {
-                    transition: {
-                    },
+            <Stack
+              spacing={4}
+              sx={{ width: "100%" }}
+              component={motion.div}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, margin: "-100px" }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
                   },
-                }}
+                },
+              }}
             >
               {FUTURE_WORK_CARD_DATA.map((val, i) => (
                 <Box
                   key={i}
-                  component={motion.div}
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.6, ease: "easeOut" },
-                    },
-                  }}
+                //  component={motion.div}
+                //  variants={{
+                //    hidden: { opacity: 0, y: 50 },
+                //    visible: {
+                //      opacity: 1,
+                //      y: 0,
+                //      transition: { duration: 0.6, ease: "easeOut" },
+                //    },
+                //  }}
                 >
-                <FutureWorkCard
-                  label={val.label}
-                  value={val.value}
-                  description={val.description}
-                  isActive={expandedSteps.includes(i)}
-                  onClick={() => handleToggle(i)}
-                  key={i}
-                />
+                  <FutureWorkCard
+                    label={val.label}
+                    value={val.value}
+                    description={val.description}
+                    isActive={expandedSteps.includes(i)}
+                    onClick={() => handleToggle(i)}
+                    key={i}
+                  />
                 </Box>
               ))}
             </Stack>

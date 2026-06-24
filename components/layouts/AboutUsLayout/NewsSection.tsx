@@ -77,18 +77,19 @@ const Section = () => {
                 lineHeight: "52px",
               }}
             >
-              <ScrollRevealText text={data.title} />
+              {/* <ScrollRevealText text={data.title} /> */}
+              {data.title}
             </Typography>
             <Box
-              component={motion.div}
-              variants={containerVariants}
-              initial="hidden"
-              animate={isSectionInView ? "visible" : "hidden"}
+              // component={motion.div}
+              // variants={containerVariants}
+              // initial="hidden"
+              // animate={isSectionInView ? "visible" : "hidden"}
               sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
             >
             <Typography
-              component={motion.p}
-              variants={cardVariants}
+              // component={motion.p}
+              // variants={cardVariants}
               sx={{
                 fontSize: { xs: 18, md: 18 },
                 fontFamily: helvetica.style.fontFamily,
@@ -101,9 +102,9 @@ const Section = () => {
               {data.description}
             </Typography>
             <motion.div
-              variants={buttonVariants}
-              initial="hidden"
-              animate={isSectionInView ? "visible" : "hidden"}
+              // variants={buttonVariants}
+              // initial="hidden"
+              // animate={isSectionInView ? "visible" : "hidden"}
               style={{ display: 'inline-block' }}
             >
               <ContainedButton

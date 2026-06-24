@@ -52,15 +52,16 @@ const LeadershipSection = () => {
           lineHeight: "52px",
         }}
       >
-        <ScrollRevealText text={data.title} />
+        {/* <ScrollRevealText text={data.title} /> */}
+        {data.title}
       </Typography>
 
       <Stack
         spacing={12}
-        component={motion.div}
-        variants={containerVariants}
-        initial="hidden"
-        animate={isSectionInView ? "visible" : "hidden"}
+        // component={motion.div}
+        // variants={containerVariants}
+        // initial="hidden"
+        // animate={isSectionInView ? "visible" : "hidden"}
       >
         {data.members.map((member, idx) => {
           const isEven = idx % 2 === 0;
@@ -72,8 +73,8 @@ const LeadershipSection = () => {
               spacing={{ xs: 4, md: 8 }}
               alignItems="flex-start"
               direction={isEven ? "row-reverse" : "row"}
-              component={motion.div}
-              variants={cardVariants}
+              // component={motion.div}
+              // variants={cardVariants}
             >
               <Grid
                 size={{ xs: 12, md: 4 }}

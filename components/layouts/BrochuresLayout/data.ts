@@ -9,7 +9,7 @@ import AiIsRewriting from "@/images/resources/infographicImages/AI-IS-REWRITING.
 import EightyofTheWorkforce from "@/images/resources/infographicImages/Eighty-of-the-workforce.jpg";
 
 export interface BrochuresData {
-    finalCTAsection: { 
+  finalCTAsection: {
     title: string;
     subtitle: string;
   };

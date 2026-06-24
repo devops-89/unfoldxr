@@ -67,22 +67,23 @@ const AboutIntroSection = () => {
                   color: COLORS.BLACK,
                 }}
               >
-                <ScrollRevealText text={aboutPage.introSection.heading} />
+                {/* <ScrollRevealText text={aboutPage.introSection.heading} /> */}
+                {aboutPage.introSection.heading}
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 7 }}>
               <Stack 
                 spacing={4}
-                component={motion.div}
-                variants={containerVariants}
-                initial="hidden"
-                animate={isSectionInView ? "visible" : "hidden"}
+                // component={motion.div}
+                // variants={containerVariants}
+                // initial="hidden"
+                // animate={isSectionInView ? "visible" : "hidden"}
               >
                 {aboutPage.introSection.paragraphs.map((text, idx) => (
                   <Typography
                     key={idx}
-                    component={motion.p}
-                    variants={cardVariants}
+                    // component={motion.p}
+                    // variants={cardVariants}
                     sx={{
                       fontSize: { xs: 18, md: 18, lg: 18 },
                       lineHeight: "28px",
@@ -96,8 +97,8 @@ const AboutIntroSection = () => {
                   </Typography>
                 ))}
                 <Typography
-                  component={motion.p}
-                  variants={cardVariants}
+                  // component={motion.p}
+                  // variants={cardVariants}
                   sx={{
                     fontSize: { xs: 24, md: 18, lg: 18 },
                     lineHeight: "28px",

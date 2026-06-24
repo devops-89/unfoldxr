@@ -64,19 +64,20 @@ const ClientBusinessSection = () => {
                   textAlign: { xs: "center", md: "left" },
                 }}
               >
-                <ScrollRevealText text={partnersPage.clientBusinessSection.title} />
+                {/* <ScrollRevealText text={partnersPage.clientBusinessSection.title} /> */}
+                {partnersPage.clientBusinessSection.title}
               </Typography>
 
               <Stack 
                 spacing={4}
-                component={motion.div}
-                variants={containerVariants}
-                initial="hidden"
-                animate={isSectionInView ? "visible" : "hidden"}
+                // component={motion.div}
+                // variants={containerVariants}
+                // initial="hidden"
+                // animate={isSectionInView ? "visible" : "hidden"}
               >
                 {partnersPage.clientBusinessSection.client_business_card_data.map(
                   (item) => (
-                    <Box key={item.id} component={motion.div} variants={cardVariants}>
+                    <Box key={item.id} /* component={motion.div} variants={cardVariants} */ >
                       <ClientBusinessCard {...item} />
                     </Box>
                   ),

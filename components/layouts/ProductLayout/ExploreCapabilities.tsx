@@ -60,20 +60,21 @@ const ExploreCapabilities = () => {
             mb: { xs: 6, md: 6 },
           }}
         >
-          <ScrollRevealText text={data.title} />
+          {/* <ScrollRevealText text={data.title} /> */}
+          {data.title}
         </Typography>
 
         <Grid 
           container 
           spacing={{ xs: 4, md: 0 }}
-          ref={cardsRef}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isCardsInView ? "visible" : "hidden"}
+          // ref={cardsRef}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isCardsInView ? "visible" : "hidden"}
         >
           {/* Left Side: Capabilities Menu + Stepper Column */}
-          <Grid size={{ xs: 12, md: 6 }} component={motion.div} variants={cardVariants}>
+          <Grid size={{ xs: 12, md: 6 }} /* component={motion.div} variants={cardVariants} */>
             <Box
               sx={{
                 display: "flex",
@@ -272,8 +273,8 @@ const ExploreCapabilities = () => {
           <Grid
             size={{ xs: 12, md: 6 }}
             sx={{ display: { xs: "none", md: "block" } }}
-            component={motion.div} 
-            variants={cardVariants}
+            // component={motion.div} 
+            // variants={cardVariants}
           >
             <Box
               sx={{

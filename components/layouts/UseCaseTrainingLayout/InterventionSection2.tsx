@@ -319,18 +319,19 @@ const InterventionSection2 = ({ data }: Props) => {
               }}
             >
               {/* {renderVerticalBlindsText(data.title)} */}
-              <ScrollRevealText text={data.title} />
+              {/* <ScrollRevealText text={data.title} /> */}
+              {data.title}
             </Typography>
           </Grid>
 
           {/* Right Side: Description */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Box
-              component={motion.div}
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, margin: "-50px" }}
+              // component={motion.div}
+              // variants={staggerContainer}
+              // initial="hidden"
+              // whileInView="visible"
+              // viewport={{ once: false, margin: "-50px" }}
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -338,8 +339,8 @@ const InterventionSection2 = ({ data }: Props) => {
               }}
             >
               <Typography
-                component={motion.p}
-                variants={blurInVariant}
+                // component={motion.p}
+                // variants={blurInVariant}
                 sx={{
                   fontFamily: helvetica.style.fontFamily,
                   fontSize: { xs: 16, md: 18 },
@@ -352,8 +353,8 @@ const InterventionSection2 = ({ data }: Props) => {
               </Typography>
               {data.description2 && (
                 <Typography
-                  component={motion.p}
-                  variants={blurInVariant}
+                  // component={motion.p}
+                  // variants={blurInVariant}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
@@ -367,8 +368,8 @@ const InterventionSection2 = ({ data }: Props) => {
               )}
               {data.description3 && (
                 <Typography
-                  component={motion.p}
-                  variants={blurInVariant}
+                  // component={motion.p}
+                  // variants={blurInVariant}
                   sx={{
                     fontFamily: helvetica.style.fontFamily,
                     fontSize: { xs: 16, md: 18 },
@@ -388,12 +389,12 @@ const InterventionSection2 = ({ data }: Props) => {
         {data.cards && data.cards.length > 0 && (
           <Box sx={{ mt: { xs: 8, md: 5 }, mb: 4, position: "relative" }}>
             <Grid 
-              component={motion.div}
+              // component={motion.div}
               container 
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, margin: "-50px" }}
+              // variants={staggerContainer}
+              // initial="hidden"
+              // whileInView="visible"
+              // viewport={{ once: false, margin: "-50px" }}
               spacing={{ xs: 6, md: 4 }}>
               {data.cards.map((card, index) => (
                 <Grid
@@ -404,8 +405,8 @@ const InterventionSection2 = ({ data }: Props) => {
                   }}
                 >
                   <Box
-                    component={motion.div}
-                    variants={blurInVariant}
+                    // component={motion.div}
+                    // variants={blurInVariant}
                     sx={{
 
                       width: "100%",
@@ -506,11 +507,11 @@ const InterventionSection2 = ({ data }: Props) => {
           }}
         >
           <Box
-            component={motion.div}
-            initial="hidden"
-            whileInView="visible"
-            variants={blurInVariant}
-            viewport={{ once: false, margin: "-50px" }}
+            // component={motion.div}
+            // initial="hidden"
+            // whileInView="visible"
+            // variants={blurInVariant}
+            // viewport={{ once: false, margin: "-50px" }}
             sx={{ width: "100%", display: "flex", justifyContent: "center" }}
           >
           <Box

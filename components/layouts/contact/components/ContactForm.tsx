@@ -59,6 +59,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
   });
 
   const [phone, setPhone] = useState("");
+  const [isPhoneFocused, setIsPhoneFocused] = useState(false);
 
   const phoneNumberChangeHandler = (value: string) => {
     setPhone(value);
@@ -114,7 +115,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
       </Grid> */}
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={1.5}>
-          <Grid size={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <TextField
               id="name"
               label="Name*"
@@ -145,7 +146,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
               value={formik.values.name}
             />
           </Grid>
-          <Grid size={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
               id="organisation"
               label="Organisation*"
@@ -181,7 +182,7 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
               value={formik.values.organisation}
             />
           </Grid>
-          <Grid size={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
               id="designation"
               label="Designation*"
@@ -216,9 +217,10 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
               value={formik.values.designation}
             />
           </Grid>
-          <Grid size={6}>
+          {/*<Grid size={6}>
             <MuiTelInput
               defaultCountry="IN"
+              }}
               slotProps={{
                 inputLabel: {
                   sx: {
@@ -246,8 +248,54 @@ const ContactForm: React.FC<Props> = ({ formData, note }) => {
               }
               value={phone}
             />
+          </Grid>*/}
+          <Grid size={{ xs: 12, sm: 6 }}>
+            <MuiTelInput
+              defaultCountry="IN"
+              forceCallingCode={true}
+              onFocus={() => setIsPhoneFocused(true)}
+              onBlur={(e) => {
+                setIsPhoneFocused(false);
+                formik.handleBlur(e);
+              }}
+              sx={{
+                borderRadius: "8px",
+                fontSize: 14,
+                "& fieldset": { borderColor: "transparent" },
+                "&:hover fieldset": { borderColor: "transparent" },
+                "&.Mui-focused fieldset": { borderColor: "#ccc" },
+                "& .MuiInputBase-root": { backgroundColor: "#FFFFFF" },
+                "& .MuiInputLabel-root": {
+                  fontWeight: 700,
+                  fontSize: 13,
+                  color: "#666",
+                  "& .MuiFormLabel-asterisk": { color: "red" },
+
+                  transition: "transform 200ms cubic-bezier(0.0, 0, 0.2, 1), color 200ms cubic-bezier(0.0, 0, 0.2, 1)",
+                  transformOrigin: "top left",
+
+                  transform: (!phone && !isPhoneFocused)
+                    ? "translate(100px, 19px) scale(1) !important"
+                    : "translate(14px, -6px) scale(0.75) !important",
+                },
+
+                "& .MuiInputLabel-shrink": {
+                  transform: (phone || isPhoneFocused)
+                    ? "translate(14px, -6px) scale(0.75) !important"
+                    : "translate(100px, 19px) scale(1) !important",
+                }
+              }}
+              fullWidth
+              label="Contact No *"
+              onChange={phoneNumberChangeHandler}
+              helperText={formik.touched.contactNo && formik.errors.contactNo}
+              error={
+                formik.touched.contactNo && Boolean(formik.errors.contactNo)
+              }
+              value={phone}
+            />
           </Grid>
-          <Grid size={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
               id="email"
               label="Email*"

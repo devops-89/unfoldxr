@@ -69,17 +69,18 @@ const EcosystemSection = () => {
               fontFamily: din.style.fontFamily,
             }}
           >
-            <ScrollRevealText text={partnersPage.ecosystemSystem.heading} />
+            {/* <ScrollRevealText text={partnersPage.ecosystemSystem.heading} /> */}
+            {partnersPage.ecosystemSystem.heading}
           </Typography>
 
           <Grid container spacing={6}>
             {/* LEFT */}
             <Grid size={{ xs: 12, md: 5 }}>
               <Box
-                component={motion.div}
-                variants={containerVariants}
-                initial="hidden"
-                animate={isSectionInView ? "visible" : "hidden"}
+                // component={motion.div}
+                // variants={containerVariants}
+                // initial="hidden"
+                // animate={isSectionInView ? "visible" : "hidden"}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -89,8 +90,8 @@ const EcosystemSection = () => {
                 {data.map((item, i) => (
                   <Box
                     key={i}
-                    component={motion.div}
-                    variants={cardVariants}
+                    // component={motion.div}
+                    // variants={cardVariants}
                     sx={{
                       display: "flex",
                       flexDirection: { xs: "column", md: "row" },
@@ -283,11 +284,11 @@ const EcosystemSection = () => {
                     fontWeight: 500,
                     maxWidth: { xs: "100%", md: "500px" },
                     mx: { xs: "auto", md: 0 },
-                    animation: "fadeIn 0.5s ease-in-out",
-                    "@keyframes fadeIn": {
-                      from: { opacity: 0, transform: "translateY(10px)" },
-                      to: { opacity: 1, transform: "translateY(0)" },
-                    },
+                    // animation: "fadeIn 0.5s ease-in-out",
+                    // "@keyframes fadeIn": {
+                    //   from: { opacity: 0, transform: "translateY(10px)" },
+                    //   to: { opacity: 1, transform: "translateY(0)" },
+                    // },
                   }}
                 >
                   {data[activeTab].description}

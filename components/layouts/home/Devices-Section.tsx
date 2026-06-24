@@ -27,11 +27,11 @@ const DevicesSection = () => {
         }}
       >
         <Box 
-          component={motion.div}
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          // component={motion.div}
+          // initial={{ opacity: 0, y: 60 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // viewport={{ once: false, margin: "-100px" }}
+          // transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{ px: { xs: 2, sm: 4, md: 8, xl: 10 } }}
         >
           <Typography
@@ -45,43 +45,44 @@ const DevicesSection = () => {
               lineHeight: { xs: "35px", md: "52px" },
             }}
           >
-            <ScrollRevealText text={homePage.devicesSection.heading} />
+            {/* <ScrollRevealText text={homePage.devicesSection.heading} /> */}
+            {homePage.devicesSection.heading}
           </Typography>
 
           {/* 2x2 Grid */}
           <Grid 
               container
-              component={motion.div}
+              // component={motion.div}
               spacing={{ xs: 2, md: 2 }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.15,
-                    delayChildren: 0.4,
-                  },
-                },
-              }}
+              // initial="hidden"
+              // whileInView="visible"
+              // viewport={{ once: false }}
+              // variants={{
+              //   hidden: {},
+              //   visible: {
+              //     transition: {
+              //       staggerChildren: 0.15,
+              //       delayChildren: 0.4,
+              //     },
+              //   },
+              // }}
           >
             {homePage.devicesSection.data.map((val, i) => (
               <Grid 
                   key={i} 
                   size={{ xs: 12, md: val.gridSize }}
-                  component={motion.div}
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: {
-                        duration: 0.6,
-                        ease: "easeOut",
-                      },
-                    },
-                  }}
+                  // component={motion.div}
+                  // variants={{
+                  //   hidden: { opacity: 0, y: 50 },
+                  //   visible: {
+                  //     opacity: 1,
+                  //     y: 0,
+                  //     transition: {
+                  //       duration: 0.6,
+                  //       ease: "easeOut",
+                  //     },
+                  //   },
+                  // }}
               >
                 <DevicesCard
                   bgImg={val.bgImg}

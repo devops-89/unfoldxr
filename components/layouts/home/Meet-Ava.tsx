@@ -30,7 +30,7 @@ const Meetava = () => {
             {/* LEFT: Heading + description + CTA */}
             <Grid size={{ xs: 12, md: 7 }} ref={ref}>
               <Stack spacing={3}>
-                <motion.div
+                {/* <motion.div
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
                   variants={{
@@ -38,7 +38,7 @@ const Meetava = () => {
                     visible: { opacity: 1, y: 0, filter: "blur(0px)" },
                   }}
                   transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                >
+                > */}
                 <Typography
                   sx={{
                     fontSize: { xs: 28, md: 36 },
@@ -51,9 +51,9 @@ const Meetava = () => {
                 >
                   {homePage.meetAva.heading}
                 </Typography>
-                </motion.div>
+                {/* </motion.div> */}
 
-                <motion.div
+                {/* <motion.div
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
                   variants={{
@@ -63,9 +63,10 @@ const Meetava = () => {
                       },
                     },
                   }}
-                >
+                > */}
                 <Stack spacing={2}>
-                  {homePage.meetAva.leftSection.description.map((val, i) => (
+                  {homePage.meetAva.leftSection.description.map((val, i) => {
+                    /*
                     <motion.div
                       key={i}
                       variants={{
@@ -74,30 +75,35 @@ const Meetava = () => {
                       }}
                       transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                     >
-                    <Typography
-                      key={i}
-                      sx={{
-                        fontFamily: helvetica.style.fontFamily,
-                        fontSize: { xs: 14, md: 18 },
-                        fontWeight: 400,
-                        lineHeight: { xs: "26px", md: "28px" },
-                        color: "#000",
-                        textAlign: { xs: "center", md: "justify" },
-                        letterSpacing: "0.52px",
-                      }}
-                    >
-                      {val.label}
-                    </Typography>
+                    */
+                    return (
+                      <Typography
+                        key={i}
+                        sx={{
+                          fontFamily: helvetica.style.fontFamily,
+                          fontSize: { xs: 14, md: 18 },
+                          fontWeight: 400,
+                          lineHeight: { xs: "26px", md: "28px" },
+                          color: "#000",
+                          textAlign: { xs: "center", md: "justify" },
+                          letterSpacing: "0.52px",
+                        }}
+                      >
+                        {val.label}
+                      </Typography>
+                    );
+                    /*
                     </motion.div>
-                  ))}
+                    */
+                  })}
                 </Stack>
-                </motion.div>
+                {/* </motion.div> */}
                 
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                >
+                > */}
                 <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
                   <Link href="/meet-ava" style={{ textDecoration: "none" }}>
                     <ContainedButton
@@ -132,7 +138,7 @@ const Meetava = () => {
                     </ContainedButton>
                   </Link>
                 </Box>
-                </motion.div>
+                {/* </motion.div> */}
               </Stack>
             </Grid>
 

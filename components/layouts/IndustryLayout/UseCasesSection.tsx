@@ -88,7 +88,8 @@ const UseCasesSection = ({ data }: Props) => {
                 mb: 4,
               }}
             >
-              <ScrollRevealText text={data.title} />
+              {/* <ScrollRevealText text={data.title} /> */}
+              {data.title}
             </Typography>
           </Grid>
 
@@ -97,17 +98,17 @@ const UseCasesSection = ({ data }: Props) => {
             <Stack 
               spacing={3} 
               alignItems="stretch"
-              ref={cardsRef}
-              component={motion.div}
-              variants={containerVariants}
-              initial="hidden"
-              animate={isCardsInView ? "visible" : "hidden"}
+              // ref={cardsRef}
+              // component={motion.div}
+              // variants={containerVariants}
+              // initial="hidden"
+              // animate={isCardsInView ? "visible" : "hidden"}
             >
               {data.items.map((label, i) => (
                 <Box
                   key={label}
-                  component={motion.div}
-                  variants={cardVariants}
+                  // component={motion.div}
+                  // variants={cardVariants}
                   sx={{
                     border: "1px solid #E0E0E0",
                     borderRadius: "100px",

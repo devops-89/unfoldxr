@@ -142,17 +142,18 @@ const DeviceDeploymentSection = ({ data }: Props) => {
           }}
         >
           {/* {renderVerticalBlindsText(data.title)} */}
-          <ScrollRevealText text={data.title} />
+          {/* <ScrollRevealText text={data.title} /> */}
+          {data.title}
         </Typography>
 
         <Grid 
           container 
           spacing={2.5}
-          component={motion.div}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-          variants={staggerContainer}
+          // component={motion.div}
+          // initial="hidden"
+          // whileInView="visible"
+          // viewport={{ once: false, amount: 0.2 }}
+          // variants={staggerContainer}
         >
           {/* Top Row: Device A and B */}
           <Grid 
@@ -160,8 +161,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               xs: 12, 
               md: 7 
               }} 
-            component={motion.div} 
-            variants={blurInVariant}
+            // component={motion.div} 
+            // variants={blurInVariant}
           >
             <Box
               sx={{
@@ -226,8 +227,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
               xs: 12, 
               md: 5 
               }}
-            component={motion.div} 
-            variants={blurInVariant}
+            // component={motion.div} 
+            // variants={blurInVariant}
           >
             <Box
               sx={{
@@ -292,8 +293,8 @@ const DeviceDeploymentSection = ({ data }: Props) => {
             size={{ 
               xs: 12 
               }}
-            component={motion.div} 
-            variants={blurInVariant}
+            // component={motion.div} 
+            // variants={blurInVariant}
           >
             <Box
               sx={{

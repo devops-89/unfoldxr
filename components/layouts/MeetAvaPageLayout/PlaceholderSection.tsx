@@ -48,11 +48,11 @@ const PlaceholderSection = () => {
           container 
           spacing={4} 
           alignItems="center"
-          ref={cardsRef}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isCardsInView ? "visible" : "hidden"}
+          // ref={cardsRef}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isCardsInView ? "visible" : "hidden"}
         >
           <Grid size={{ xs: 12, md: 7 }}>
             <Typography
@@ -66,11 +66,12 @@ const PlaceholderSection = () => {
                 mb: 2,
               }}
             >
-              <ScrollRevealText text={data.heading} />
+              {/* <ScrollRevealText text={data.heading} /> */}
+              {data.heading}
             </Typography>
             <Typography
-              component={motion.p}
-              variants={cardVariants}
+              // component={motion.p}
+              // variants={cardVariants}
               sx={{
                 fontFamily: helvetica.style.fontFamily,
                 fontSize: { xs: 16, md: 18, lg: 18 },
@@ -85,8 +86,8 @@ const PlaceholderSection = () => {
           <Grid 
             size={{ xs: 12, md: 5 }} 
             sx={{ textAlign: { xs: "center", md: "right" } }}
-            component={motion.div}
-            variants={cardVariants}
+            // component={motion.div}
+            // variants={cardVariants}
           >
             <Box
               sx={{

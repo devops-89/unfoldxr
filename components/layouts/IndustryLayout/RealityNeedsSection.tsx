@@ -62,23 +62,24 @@ const RealityNeedsSection = ({ data }: Props) => {
             mb: 4,
           }}
         >
-          <ScrollRevealText text={data.title} />
+          {/* <ScrollRevealText text={data.title} /> */}
+          {data.title}
         </Typography>
 
         <Grid 
           container 
           columnSpacing={6} 
           rowSpacing={{ xs: 6, md: 6 }}
-          ref={cardsRef}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isCardsInView ? "visible" : "hidden"}
+          // ref={cardsRef}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isCardsInView ? "visible" : "hidden"}
         >
           <Grid size={{ xs: 12, md: 4, lg: 6 }}>
             <Box
-              component={motion.div}
-              variants={cardVariants}
+              // component={motion.div}
+              // variants={cardVariants}
               sx={{
                 bgcolor: COLORS.CARD_BG_DARK,
                 color: COLORS.WHITE,
@@ -126,8 +127,8 @@ const RealityNeedsSection = ({ data }: Props) => {
           </Grid>
           <Grid size={{ xs: 12, md: 4, lg: 6 }}>
             <Box
-              component={motion.div}
-              variants={cardVariants}
+              // component={motion.div}
+              // variants={cardVariants}
               sx={{
                 bgcolor: COLORS.CARD_BG_DARK,
                 color: COLORS.WHITE,
@@ -178,11 +179,11 @@ const RealityNeedsSection = ({ data }: Props) => {
         </Grid>
 
         <Typography
-          component={motion.p}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.2 }}
+          // component={motion.p}
+          // initial={{ opacity: 0, y: 20 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.6, ease: "easeOut" }}
+          // viewport={{ once: false, amount: 0.2 }}
           sx={{
             textAlign: "center",
             fontFamily: helvetica.style.fontFamily,

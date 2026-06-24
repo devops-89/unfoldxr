@@ -58,18 +58,19 @@ const AvaSupportSection = () => {
             mb: 2,
           }}
         >
-          <ScrollRevealText text={data.heading} />
+          {/* <ScrollRevealText text={data.heading} /> */}
+          {data.heading}
         </Typography>
         <Box
-          ref={cardsRef}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isCardsInView ? "visible" : "hidden"}
+          // ref={cardsRef}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isCardsInView ? "visible" : "hidden"}
         >
           <Typography
-            component={motion.p}
-            variants={cardVariants}
+            // component={motion.p}
+            // variants={cardVariants}
             sx={{
               fontFamily: helvetica.style.fontFamily,
               fontSize: { xs: 16, md: 18, lg: 18 },
@@ -82,7 +83,7 @@ const AvaSupportSection = () => {
             {data.description}
           </Typography>
 
-          <Grid container spacing={{ xs: 3, md: 0 }} component={motion.div} variants={cardVariants}>
+          <Grid container spacing={{ xs: 3, md: 0 }} /* component={motion.div} variants={cardVariants} */ >
           {/* Left: Menu & Stepper combined for perfect height sync */}
           <Grid size={{ xs: 12, md: 5.5 }}>
             <Box

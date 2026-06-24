@@ -61,18 +61,19 @@ const MetricsSection = () => {
                 lineHeight: { xs: 1.1, md: "52px" },
               }}
             >
-              <ScrollRevealText text={partnersPage.metricsSection.heading} />
+              {/* <ScrollRevealText text={partnersPage.metricsSection.heading} /> */}
+              {partnersPage.metricsSection.heading}
             </Typography>
 
             <Box
-              component={motion.div}
-              variants={containerVariants}
-              initial="hidden"
-              animate={isSectionInView ? "visible" : "hidden"}
+              // component={motion.div}
+              // variants={containerVariants}
+              // initial="hidden"
+              // animate={isSectionInView ? "visible" : "hidden"}
             >
             <Typography
-              component={motion.p}
-              variants={cardVariants}
+              // component={motion.p}
+              // variants={cardVariants}
               sx={{
                 mt: 2,
                 fontSize: { xs: 18, md: 18 },
@@ -92,14 +93,14 @@ const MetricsSection = () => {
             <Grid 
               container 
               spacing={{ xs: 5, md: 5 }}
-              component={motion.div}
-              variants={containerVariants}
-              initial="hidden"
-              animate={isSectionInView ? "visible" : "hidden"}
+              // component={motion.div}
+              // variants={containerVariants}
+              // initial="hidden"
+              // animate={isSectionInView ? "visible" : "hidden"}
             >
               {partnersPage.metricsSection.metrics_card_data.map(
                 (card, index) => (
-                  <Grid size={{ ...card.gridSize }} key={index} component={motion.div} variants={cardVariants}>
+                  <Grid size={{ ...card.gridSize }} key={index} /* component={motion.div} variants={cardVariants} */ >
                     <MetricCard
                       title={card.title}
                       description={card.description}

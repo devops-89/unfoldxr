@@ -16,15 +16,15 @@ export default function NewsHeader({
 }: NewsHeaderProps) {
 
   return (
-    <Box 
-    display="flex" 
-         justifyContent="flex-start" 
-         alignItems={{ xs: "flex-start", md: "center" }}
-         flexDirection={{ xs: "column", md: "row" }}
-         gap={{ xs: 2, md: 0 }}
-         mb={5}
+    <Box
+      display="flex"
+      justifyContent="flex-start"
+      alignItems={{ xs: "flex-start", md: "center" }}
+      flexDirection={{ xs: "column", md: "row" }}
+      gap={{ xs: 2, md: 0 }}
+      mb={5}
     >
-    {/*  <Typography 
+      {/*  <Typography 
         variant="h4" 
         fontWeight={900}
         sx={{fontFamily: din.style.fontFamily}}
@@ -51,11 +51,11 @@ export default function NewsHeader({
           }}
           slotProps={{
             input: {
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
             },
           }}
         />

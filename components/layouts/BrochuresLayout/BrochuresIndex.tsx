@@ -1,9 +1,10 @@
 "use client";
 
-import { Box, Container } from "@mui/material";
+import { useState, useMemo } from "react";
+import { Box, Container, Button, Divider } from "@mui/material";
 import { brochuresData } from "./data";
 import FinalCTASection from "./FinalCTASection";
-import { din } from "@/utils/fonts";
+import { din, helvetica } from "@/utils/fonts";
 import { COLORS } from "@/utils/enum";
 import BrochureGrid from "@/components/layouts/BrochuresLayout/BrochuresGrid";
 import {
@@ -11,9 +12,23 @@ import {
 } from "./data";
 
 export default function BrochursPage() {
-  
-  const items = allBrochuresData;
-  
+  const [activeTab, setActiveTab] = useState("All");
+
+  // Dynamically extract categories from data to make it future-proof for API integrations,
+  // while ensuring the specific categories mentioned are included in the correct order.
+  const categories = useMemo(() => {
+    const predefined = ["Infographic", "Events & Webinar", "Brochure", "eBook", "Report"];
+    const dataCategories = allBrochuresData.map((item) => item.category);
+    // Merge predefined with any new categories from future API data
+    const uniqueCategories = Array.from(new Set([...predefined, ...dataCategories]));
+    return ["All", ...uniqueCategories];
+  }, []);
+
+  const filteredItems = useMemo(() => {
+    if (activeTab === "All") return allBrochuresData;
+    return allBrochuresData.filter((item) => item.category === activeTab);
+  }, [activeTab]);
+
   return (
     <Box>
       <Container
@@ -29,6 +44,43 @@ export default function BrochursPage() {
           margin: "0 auto",
         }}
       >
+        {/* TABS SECTION */}
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 2,
+            mt: { xs: 6, sm: 6, md: 8, lg: 8 },
+            mb: 2,
+            justifyContent: "left",
+          }}
+        >
+          {categories.map((category) => (
+            <Button
+              key={category}
+              onClick={() => setActiveTab(category)}
+              sx={{
+                borderRadius: "999px",
+                textTransform: "none",
+                fontFamily: helvetica.style.fontFamily,
+                fontWeight: 550,
+                fontSize: { xs: "12px", sm: "14px" },
+                padding: "4px 10px",
+                backgroundColor: activeTab === category ? COLORS.PRIMARY_GREEN : "transparent",
+                color: activeTab === category ? COLORS.BLACK : COLORS.TEXT_MUTED,
+                //border: `1px solid ${activeTab === category ? COLORS.PRIMARY_GREEN : COLORS.TEXT_MUTED}`,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: activeTab === category ? COLORS.PRIMARY_GREEN : "rgba(0,0,0,0.05)",
+                },
+              }}
+            >
+              {category}
+            </Button>
+          ))}
+        </Box>
+        <Divider sx={{ mb: 4 }} />
+
         {/* GRID */}
         <Box
           sx={{
@@ -39,18 +91,18 @@ export default function BrochursPage() {
               lg: "600px",
             },
             display: "flex",
-            alignItems: items.length === 0 ? "center" : "flex-start",
+            alignItems: filteredItems.length === 0 ? "center" : "flex-start",
             justifyContent: "center",
           }}
         >
-          {items.length > 0 ? (
+          {filteredItems.length > 0 ? (
             <Box width="100%">
-              <BrochureGrid items={items} />
+              <BrochureGrid items={filteredItems} />
             </Box>
           ) : (
             <Box
               sx={{
-                fontFamily: din.style.fontFamily, 
+                fontFamily: din.style.fontFamily,
                 textAlign: "center",
                 color: COLORS.TEXT_MUTED,
                 fontSize: {

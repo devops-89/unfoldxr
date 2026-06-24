@@ -136,15 +136,16 @@ const BusinessResultsSection = ({ data }: Props) => {
           }}
         >
           {/* {renderVerticalBlindsText("Business Results You Can Measure")} */}
-          <ScrollRevealText text="Business Results You Can Measure" />
+          {/* <ScrollRevealText text="Business Results You Can Measure" /> */}
+          Business Results You Can Measure
         </Typography>
 
         <Box
-          ref={cardsRef}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isCardsInView ? "visible" : "hidden"}
+          // ref={cardsRef}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isCardsInView ? "visible" : "hidden"}
           sx={{
             display: "grid",
             gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
@@ -155,9 +156,9 @@ const BusinessResultsSection = ({ data }: Props) => {
           {data.items.map((item, index) => (
               <Box
                 key={index}
-                component={motion.div}
-                variants={cardVariants}
-                whileHover={{ y: -5 }}
+                // component={motion.div}
+                // variants={cardVariants}
+                // whileHover={{ y: -5 }}
                 sx={{
                   bgcolor: COLORS.CHARCOAL,
                   color: COLORS.WHITE,

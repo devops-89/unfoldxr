@@ -64,28 +64,33 @@ const DesignToEvolve = () => {
         >
           {data.title.includes("evolve") ? (
             <>
-              <ScrollRevealText text={data.title.split("evolve")[0]} />
+              {/* <ScrollRevealText text={data.title.split("evolve")[0]} /> */}
+              {data.title.split("evolve")[0]}
               <Box
                 component="br"
                 sx={{ display: { xs: "none", md: "block" } }}
               />
-              <ScrollRevealText text={"evolve" + data.title.split("evolve")[1]} />
+              {/* <ScrollRevealText text={"evolve" + data.title.split("evolve")[1]} /> */}
+              {"evolve" + data.title.split("evolve")[1]}
             </>
           ) : (
-            <ScrollRevealText text={data.title} />
+            <>
+              {/* <ScrollRevealText text={data.title} /> */}
+              {data.title}
+            </>
           )}
         </Typography>
 
         <Box
-          ref={cardsRef}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isCardsInView ? "visible" : "hidden"}
+          // ref={cardsRef}
+          // component={motion.div}
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate={isCardsInView ? "visible" : "hidden"}
         >
           <Typography
-            component={motion.p}
-            variants={cardVariants}
+            // component={motion.p}
+            // variants={cardVariants}
             sx={{
               mt: 3,
               fontFamily: helvetica.style.fontFamily,
@@ -104,8 +109,8 @@ const DesignToEvolve = () => {
             container
             spacing={{ xs: 4, md: 4 }}
             sx={{ mt: { xs: 6, md: 6 } }}
-            component={motion.div}
-            variants={cardVariants}
+            // component={motion.div}
+            // variants={cardVariants}
           >
           {/* Left Menu Column */}
           <Grid size={{ xs: 12, md: 4 }}>
