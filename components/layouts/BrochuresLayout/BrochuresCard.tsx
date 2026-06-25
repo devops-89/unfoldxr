@@ -52,7 +52,7 @@ const CardImage = ({
         fontSize: "9px",
         fontWeight: 550,
         letterSpacing: "0.5px",
-        zIndex: 10,
+        zIndex: 5,
       }}
     >
       {item.category}
