@@ -14,7 +14,6 @@ import {
 
 export default function BrochursPage() {
   const [activeTab, setActiveTab] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
   const categories = useMemo(() => {
     const predefined = ["Infographic", "Events & Webinar", "Brochure", "eBook", "Report"];
     const dataCategories = allBrochuresData.map((item) => item.category);
@@ -27,14 +26,8 @@ export default function BrochursPage() {
     if (activeTab !== "All") {
       items = items.filter((item) => item.category === activeTab);
     }
-    if (searchQuery.trim() !== "") {
-      const lowerQuery = searchQuery.toLowerCase();
-      items = items.filter((item) =>
-        item.category.toLowerCase().includes(lowerQuery)
-      );
-    }
     return items;
-  }, [activeTab, searchQuery]);
+  }, [activeTab]);
 
   return (
     <Box>
@@ -54,8 +47,6 @@ export default function BrochursPage() {
         <BrochureSearchBar
           activeTab={activeTab}
           setActiveTab={setActiveTab}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
           categories={categories}
         />
         <Divider sx={{ mb: 4 }} />
