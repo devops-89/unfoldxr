@@ -7,7 +7,7 @@ import { COLORS } from "@/utils/enum";
 import Image from "next/image";
 import ScrollRevealText from "@/components/widgets/ScrollRevealText";
 import { motion, useInView, Variants } from "framer-motion";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import linkedinIcon from "@/images/social_icons/linkedin.svg";
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -58,10 +58,10 @@ const LeadershipSection = () => {
 
       <Stack
         spacing={12}
-        // component={motion.div}
-        // variants={containerVariants}
-        // initial="hidden"
-        // animate={isSectionInView ? "visible" : "hidden"}
+      // component={motion.div}
+      // variants={containerVariants}
+      // initial="hidden"
+      // animate={isSectionInView ? "visible" : "hidden"}
       >
         {data.members.map((member, idx) => {
           const isEven = idx % 2 === 0;
@@ -73,8 +73,8 @@ const LeadershipSection = () => {
               spacing={{ xs: 4, md: 8 }}
               alignItems="flex-start"
               direction={isEven ? "row-reverse" : "row"}
-              // component={motion.div}
-              // variants={cardVariants}
+            // component={motion.div}
+            // variants={cardVariants}
             >
               <Grid
                 size={{ xs: 12, md: 4 }}
@@ -122,44 +122,25 @@ const LeadershipSection = () => {
                     mt: { xs: 3, md: 0 },
                   }}
                 >
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1 }}>
-                    <Typography
-                      sx={{
-                        fontSize: { xs: 26, md: 36 },
-                        fontWeight: 900,
-                        textTransform: "uppercase",
-                        fontFamily: din.style.fontFamily,
-                        color: COLORS.BLACK,
-                        lineHeight: 1.1,
-                      }}
-                    >
-                      {member.name}
-                    </Typography>
-                    {member.linkedin && (
-                      <Box
-                        component="a"
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          color: COLORS.BLACK,
-                          transition: "0.2s",
-                          borderRadius: "0%",
-                          overflow: "hidden",
-                        }}
-                      >
-                        <LinkedInIcon sx={{ fontSize: 36 }} />
-                      </Box>
-                    )}
-                  </Box>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: 26, md: 36 },
+                      fontWeight: 900,
+                      textTransform: "uppercase",
+                      fontFamily: din.style.fontFamily,
+                      color: COLORS.BLACK,
+                      lineHeight: 1.1,
+                      mb: 0.8,
+                    }}
+                  >
+                    {member.name}
+                  </Typography>
                   <Typography
                     sx={{
                       fontSize: { xs: 18, md: 20 },
                       fontWeight: 600,
                       textTransform: "uppercase",
-                      mb: 4,
+                      mb: member.linkedin ? 0.8 : 4,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.PRIMARY_GREEN,
                       lineHeight: 1.3,
@@ -167,6 +148,35 @@ const LeadershipSection = () => {
                   >
                     {member.role}
                   </Typography>
+                  {member.linkedin && (
+                    <Box
+                      component="a"
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#2a66bc",
+                        transition: "0.2s",
+                        mb: 4,
+                        "&:hover": {
+                          opacity: 0.7,
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: 28,
+                          height: 28,
+                          bgcolor: "#2a66bc",
+                          mask: `url(${linkedinIcon.src}) no-repeat center / contain`,
+                          WebkitMask: `url(${linkedinIcon.src}) no-repeat center / contain`,
+                        }}
+                      />
+                    </Box>
+                  )}
                   <Typography
                     sx={{
                       fontSize: { xs: 16, md: 18 },

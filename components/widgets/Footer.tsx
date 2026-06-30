@@ -84,7 +84,13 @@ export default function Footer() {
                 >
                   {isSingleLink ? (
                     <Link
-                      href={column.links[0].url}
+                      href={column.title.toLowerCase().includes("demo") ? "#" : column.links[0].url}
+                      onClick={(e) => {
+                        if (column.title.toLowerCase().includes("demo")) {
+                          e.preventDefault();
+                          openModal("footer");
+                        }
+                      }}
                       style={{
                         textDecoration: "none",
                         display: "block",
@@ -116,20 +122,19 @@ export default function Footer() {
                       {column.links.map((link, idx) => (
                         <Box
                           key={idx}
-                          onClick={(e) => {
-                            if (link.label.toLowerCase().includes("demo")) {
-                              e.preventDefault();
-                              openModal("footer");
-                            }
-                          }}
-                          sx={{ display: "block", cursor: "pointer" }}
+                          sx={{ display: "block" }}
                         >
                           <Link
-                            href={link.url}
+                            href={link.label.toLowerCase().includes("demo") ? "#" : link.url}
+                            onClick={(e) => {
+                              if (link.label.toLowerCase().includes("demo")) {
+                                e.preventDefault();
+                                openModal("footer");
+                              }
+                            }}
                             style={{
                               textDecoration: "none",
                               display: "block",
-                              pointerEvents: link.label === "Book a Demo" ? "none" : "auto",
                             }}
                           >
                             <Typography

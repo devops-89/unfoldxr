@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 import NewsHero from "@/images/news-img/HeroNew.jpeg";
+import NewsHeroBanner from "@/images/news-img/NewsHeroBanner2.png";
 import NewsCardImg from "@/images/news-img/CardsImages/news1.jpeg";
 import NewsCardImg2 from "@/images/news-img/CardsImages/news2.jpeg";
 import NewsCardImg3 from "@/images/news-img/CardsImages/news3.jpeg";
@@ -15,7 +16,7 @@ export interface NewsData {
     title: string;
     description: string;
   };
-    finalCTAsection: { 
+  finalCTAsection: {
     title: string;
     subtitle: string;
   };
@@ -34,10 +35,10 @@ export type NewsItem = {
 
 export const newsData: NewsData = {
   hero: {
-    image: NewsHero,
+    image: NewsHeroBanner,
     title: "The Next Shift",
     subtitle: "Ideas, innovations, and updates shaping frontline work",
-    overlayOpacity: 0.7,
+    overlayOpacity: 0.6,
   },
   newsSection: {
     title: "Stay Updated with Our Latest News",
@@ -216,13 +217,13 @@ By enabling workers to access operational intelligence in real time, UnfoldXR he
 
 At the heart of the company's vision is the **1 Million Productivity Leap** — an ambition to empower millions of frontline professionals worldwide to perform complex work more efficiently, safely, and confidently through AI-enabled operational intelligence.`,
   }),
-//  createNewsItem({
-//    id: 4,
-//    title: "How ERP Systems Improve Operational Efficiency",
-//    image: NewsCardImg4,
-//    date: "May 20th 2020",
-//    author: "Author Name",
-//    readTime: "5 min reading",
-//    content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-//  }),
+  //  createNewsItem({
+  //    id: 4,
+  //    title: "How ERP Systems Improve Operational Efficiency",
+  //    image: NewsCardImg4,
+  //    date: "May 20th 2020",
+  //    author: "Author Name",
+  //    readTime: "5 min reading",
+  //    content: "It is a long established fact that a reader will be distracted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
+  //  }),
 ];

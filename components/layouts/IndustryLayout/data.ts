@@ -61,6 +61,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform for automotive manufacturing and service that combines real-time intelligence, guided execution, and scalable expertise for complex, high-precision operations.",
       image: HeroAutomotive,
+      overlayOpacity: 0
     },
     realityNeeds: {
       title:
@@ -174,7 +175,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to maintenance, inspection, and turnaround operations across refineries and processing plants.",
       image: HeroOilGas,
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.6,
     },
     realityNeeds: {
       title:
@@ -287,7 +288,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform for manufacturing that combines real-time intelligence, guided execution, and scalable expertise for high-precision, safety-critical operations.",
       image: HeroManufacturing,
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.6,
     },
     realityNeeds: {
       title: "We understand manufacturing and what it takes to run it well",
@@ -394,7 +395,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time knowledge, and operational intelligence to warehouse, logistics, and store teams — across locations, shifts, and supply chains.",
       image: HeroRetail,
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.6,
     },
     realityNeeds: {
       title:
@@ -508,7 +509,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to vessel maintenance, inspections, and offshore operations across sea, port, and shore.",
       image: HeroMarine,
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.6,
     },
     realityNeeds: {
       title:
@@ -618,7 +619,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided inspections, real-time intelligence, and structured documentation to insurance assessments, compliance checks, and risk evaluations.",
       image: HeroInsurance,
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.6,
     },
     realityNeeds: {
       title:
@@ -730,7 +731,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform for aviation that brings real-time guidance, expert collaboration, and operational intelligence to aircraft maintenance, inspection, and ground operations.",
       image: HeroAviation,
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.6,
     },
     realityNeeds: {
       title:
@@ -843,7 +844,7 @@ export const industriesData: Record<string, IndustryData> = {
       description:
         "UnfoldXR is an AI-powered augmented reality platform that brings guided execution, real-time intelligence, and scalable expertise to modern healthcare operations.",
       image: HeroHealthcare,
-      overlayOpacity: 0.8,
+      overlayOpacity: 0.6,
     },
     realityNeeds: {
       title:
