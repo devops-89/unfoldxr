@@ -134,13 +134,41 @@ const LeadershipSection = () => {
                     }}
                   >
                     {member.name}
+                    {member.linkedin && (
+                      <Box
+                        component="a"
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          display: "inline-flex",
+                          verticalAlign: "super",
+                          ml: 1,
+                          color: "rgba(0, 0, 0, 0.35)",
+                          transition: "color 0.2s ease-in-out",
+                          "&:hover": {
+                            color: "#0a66c2", // classic LinkedIn blue
+                          },
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: "0.55em",
+                            height: "0.55em",
+                            bgcolor: "currentColor",
+                            mask: `url(${linkedinIcon.src}) no-repeat center / contain`,
+                            WebkitMask: `url(${linkedinIcon.src}) no-repeat center / contain`,
+                          }}
+                        />
+                      </Box>
+                    )}
                   </Typography>
                   <Typography
                     sx={{
                       fontSize: { xs: 18, md: 20 },
                       fontWeight: 600,
                       textTransform: "uppercase",
-                      mb: member.linkedin ? 0.8 : 4,
+                      mb: 4,
                       fontFamily: helvetica.style.fontFamily,
                       color: COLORS.PRIMARY_GREEN,
                       lineHeight: 1.3,
@@ -148,35 +176,6 @@ const LeadershipSection = () => {
                   >
                     {member.role}
                   </Typography>
-                  {member.linkedin && (
-                    <Box
-                      component="a"
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "#2a66bc",
-                        transition: "0.2s",
-                        mb: 4,
-                        "&:hover": {
-                          opacity: 0.7,
-                        },
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: 28,
-                          height: 28,
-                          bgcolor: "#2a66bc",
-                          mask: `url(${linkedinIcon.src}) no-repeat center / contain`,
-                          WebkitMask: `url(${linkedinIcon.src}) no-repeat center / contain`,
-                        }}
-                      />
-                    </Box>
-                  )}
                   <Typography
                     sx={{
                       fontSize: { xs: 16, md: 18 },
