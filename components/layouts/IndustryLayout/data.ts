@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
 import HeroAutomotive from "@/images/Industries/hero.png";
-import HeroOilGas from "@/images/Industries/OilGas/HeroSection.png";
+import HeroOilGas from "@/images/Industries/OilGas/Oil-and-gas-Hero-Section.png";
 import HeroManufacturing from "@/images/Industries/Manufacturing/heroSection.jpg";
-import HeroRetail from "@/images/Industries/Retail/HeroSection2.png";
-import HeroMarine from "@/images/Industries/Marine/HeroSection.png";
+import HeroRetail from "@/images/Industries/Retail/RetailHeroSection.jpg";
+import HeroMarine from "@/images/Industries/Marine/Marine-HeroSection.jpg";
 import HeroInsurance from "@/images/Industries/Insurance/insurance-industry2.png";
 import HeroAviation from "@/images/Industries/Aviation/HeroSection.png";
 import HeroHealthcare from "@/images/Industries/Healthcare/HeroSection2.png";

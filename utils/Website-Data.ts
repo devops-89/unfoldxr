@@ -28,7 +28,7 @@ import automotiveOutcomes from "@/images/Industries/Driving.jpeg";
 import automotiveIcon from "@/images/Industries/Icon.svg";
 import { INDUSTRY_PAGE_PROPS } from "./types";
 import enterPriseready from "@/images/Product/Enterprise2.png";
-import PlatformHero from "@/images/Product/Hero-section2.png";
+import PlatformHero from "@/images/Product/Product-HeroSection.jpg";
 import SupportYourOperations from "@/images/Product/SupportYourOperations.png";
 import DesignToEvolveTabImage from "@/images/Product/TabImage.png";
 import MeetAva from "@/images/Product/MeetAva.png";

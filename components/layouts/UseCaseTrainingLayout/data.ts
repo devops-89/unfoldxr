@@ -1,14 +1,14 @@
 import mobile from "@/public/images/usecase/mockup.jpeg";
 import { StaticImageData } from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import HeroSectionTraining from "@/images/usecase/HeroSection.png";
+import HeroSectionTraining from "@/images/usecase/TrainingNewHero.jpg";
 import TabImageTraining from "@/images/usecase/TabImage.png";
 import TabImageInspection from "@/images/Product/TabImage.png";
 import TabImageRepair from "@/images/usecase/Repair/Repair.png";
 import TabImageField from "@/images/usecase/FieldInspection/field.png";
-import HeroSectionInspection from "@/images/usecase/Inspection/Hero-section.png";
+import HeroSectionInspection from "@/images/usecase/Inspection/inspection-HeroSection.png";
 import HeroSectionRepair from "@/images/usecase/Maintenance/heroSectionv2.png";
-import HeroSectionFieldService from "@/images/usecase/FieldInspection/HeroSection.jpeg";
+import HeroSectionFieldService from "@/images/usecase/FieldInspection/Field-and-ServiceHeroSection.jpg";
 import MockUp from "@/images/usecase/mockup.jpeg";
 import FromSimple from "@/images/usecase/FromSimple.png";
 import Scale from "@/images/usecase/scale3.png";
@@ -80,6 +80,7 @@ export const useCasesData: Record<string, UseCaseData> = {
       description:
         "UnfoldXR brings AI and augmented reality–powered intelligence into learning and capability building and makes it available right at the moment of work.",
       image: HeroSectionTraining,
+      overlayOpacity: 0.7,
     },
     knowledge: {
       title: "WITH UNFOLDXR, TURN EXPERTISE INTO SCALABLE KNOWLEDGE",
