@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import HeroAutomotive from "@/images/Industries/hero.png";
-import HeroOilGas from "@/images/Industries/OilGas/Oil-and-gas-Hero-Section.png";
+import HeroOilGas from "@/images/Industries/OilGas/Oil-gas-HeroSectionNew.png";
 import HeroManufacturing from "@/images/Industries/Manufacturing/heroSection.jpg";
 import HeroRetail from "@/images/Industries/Retail/RetailHeroSection.jpg";
 import HeroMarine from "@/images/Industries/Marine/Marine-HeroSection.jpg";
