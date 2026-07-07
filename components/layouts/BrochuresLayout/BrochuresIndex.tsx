@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { Box, Container, Button, Divider, Typography } from "@mui/material";
 import BrochureSearchBar from "./BrochureSearchBar";
+import BrochuresTabs from "./BrochuresTabs";
 import { brochuresData } from "./data";
 import FinalCTASection from "./FinalCTASection";
 import { din, helvetica } from "@/utils/fonts";
@@ -15,7 +16,7 @@ import {
 export default function BrochursPage() {
   const [activeTab, setActiveTab] = useState("All");
   const categories = useMemo(() => {
-    const predefined = ["Infographic", "Events & Webinar", "Brochure", "eBook", "Report"];
+    const predefined = ["Infographic", "eBook", "Enterprise", "Playbooks"];
     const dataCategories = allBrochuresData.map((item) => item.category);
     const uniqueCategories = Array.from(new Set([...predefined, ...dataCategories]));
     return ["All", ...uniqueCategories];
@@ -44,7 +45,14 @@ export default function BrochursPage() {
           margin: "0 auto",
         }}
       >
+        {/* 
         <BrochureSearchBar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          categories={categories}
+        />
+        */}
+        <BrochuresTabs
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           categories={categories}

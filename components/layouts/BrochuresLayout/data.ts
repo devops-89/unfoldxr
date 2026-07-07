@@ -36,9 +36,31 @@ export interface BrochureItem {
   image: string | StaticImageData;
   pdf?: string;
   category: BrochureCategory;
+  description?: string;
+  date?: string;
+  readTime?: string;
 }
 
 export const allBrochuresData: BrochureItem[] = [
-  { id: 1, title: "Card 1", image: AiIsRewriting, slug: "ai-is-rewritting", pdf: "/ResourcePdf/infographicsPdf/AI-IS-REWRITING.pdf", category: "Infographic" },
-  { id: 2, title: "Card 2", image: EightyofTheWorkforce, slug: "80%-of-workforce", pdf: "/ResourcePdf/infographicsPdf/Eighty-percent-of-the-Workforce-Still.pdf", category: "Infographic" },
+  {
+    id: 1, title: "AI is Rewritnig Digital Transfromation at the Frontline",
+    image: AiIsRewriting,
+    slug: "ai-is-rewritting",
+    pdf: "/ResourcePdf/infographicsPdf/AI-IS-REWRITING.pdf",
+    category: "Infographic",
+    description: "Discover how AI is rewriting the rules of the game in modern business landscapes and transforming industries across the globe.",
+    date: "July 7, 2026",
+    readTime: "3 min read"
+  },
+  {
+    id: 2,
+    title: "80% of the workforce still works withoout Real-time Intelligence",
+    image: EightyofTheWorkforce,
+    slug: "80%-of-workforce",
+    pdf: "/ResourcePdf/infographicsPdf/Eighty-percent-of-the-Workforce-Still.pdf",
+    category: "Infographic",
+    description: "Learn why 80% of the workforce still relies on outdated methodologies and how transitioning to newer systems can improve overall efficiency.",
+    date: "July 6, 2026",
+    readTime: "3 min read"
+  },
 ];
