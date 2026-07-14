@@ -18,7 +18,7 @@ const HeroSection = () => {
         minHeight: { xs: "auto", md: "100vh" },
         display: "flex",
         alignItems: "center",
-        pt: { xs: 8, md: 4 },
+        pt: { xs: 15, md: 4 },
         pb: 0,
         position: "relative",
         overflow: "hidden",

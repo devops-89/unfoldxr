@@ -202,21 +202,21 @@ const EnterpriseReady2 = () => {
         <Grid
           container
           alignItems={"center"}
-          spacing={10}
+          spacing={{ xs: 6, md: 10 }}
           ref={cardsRef}
           component={motion.div}
           variants={containerVariants}
           initial="hidden"
           animate={isCardsInView ? "visible" : "hidden"}
         >
-          <Grid size={6} component={motion.div} variants={cardVariants}>
+          <Grid size={{ xs: 12, md: 6 }} component={motion.div} variants={cardVariants} sx={{ display: 'flex', justifyContent: 'center' }}>
             <Image
               src={data.img}
               alt="Diagram of enterprise ready system integrations"
-              style={{ width: "400px", height: "auto" }}
+              style={{ width: "100%", maxWidth: "400px", height: "auto" }}
             />
           </Grid>
-          <Grid size={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography
               ref={headingRef}
               sx={{

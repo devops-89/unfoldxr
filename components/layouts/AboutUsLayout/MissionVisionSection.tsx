@@ -19,14 +19,14 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { }, 
+    transition: {},
   },
 };
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
-    opacity: 1, y: 0, 
+    opacity: 1, y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
@@ -34,10 +34,10 @@ const MissionVisionSection = () => {
   const { missionVisionSection: data } = aboutPage;
 
   const sectionRef = useRef(null);
-  const isSectionInView = useInView(sectionRef, { once: false, margin: "-100px" });
+  const isSectionInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const cardsRef = useRef(null);
-  const isCardsInView = useInView(cardsRef, { once: false, margin: "-100px" });
+  const isCardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 
   return (
     <Box
@@ -82,47 +82,47 @@ const MissionVisionSection = () => {
           initial="hidden"
           animate={isSectionInView ? "visible" : "hidden"}
         >
-        <Typography
-          component={motion.p}
-          variants={cardVariants}
-          sx={{
-            mt: 1,
-            maxWidth: 920,
-            fontSize: { xs: 20, md: 18, lg: 18 },
-            lineHeight: { xs: 1.25, md: "28px" },
-            fontFamily: helvetica.style.fontFamily,
-            fontWeight: 400,
-          }}
-        >
-          {data.subHeading}
-        </Typography>
-        <Box
-          component={motion.div}
-          variants={cardVariants}
-          sx={{
-            mt: 4,
-            bgcolor: COLORS.CARD_BG_DARK,
-            borderRadius: "20px",
-            p: { xs: 3, md: 3 },
-            maxWidth: 1661,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
           <Typography
+            component={motion.p}
+            variants={cardVariants}
             sx={{
-              fontSize: { xs: 18, md: 18, lg: 18 },
-              lineHeight: { xs: 1.45, md: "28px" },
+              mt: 1,
+              maxWidth: 920,
+              fontSize: { xs: 20, md: 18, lg: 18 },
+              lineHeight: { xs: 1.25, md: "28px" },
               fontFamily: helvetica.style.fontFamily,
-              color: COLORS.TEXT_GREY,
-              textAlign: "justify",
               fontWeight: 400,
             }}
           >
-            {data.description}
+            {data.subHeading}
           </Typography>
-        </Box>
+          <Box
+            component={motion.div}
+            variants={cardVariants}
+            sx={{
+              mt: 4,
+              bgcolor: COLORS.CARD_BG_DARK,
+              borderRadius: "20px",
+              p: { xs: 3, md: 3 },
+              maxWidth: 1661,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: 18, md: 18, lg: 18 },
+                lineHeight: { xs: 1.45, md: "28px" },
+                fontFamily: helvetica.style.fontFamily,
+                color: COLORS.TEXT_GREY,
+                textAlign: "justify",
+                fontWeight: 400,
+              }}
+            >
+              {data.description}
+            </Typography>
+          </Box>
         </Box>
         <Typography
           ref={cardsRef}

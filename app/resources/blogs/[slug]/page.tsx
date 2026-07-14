@@ -125,7 +125,22 @@ export default async function BlogDetailPage({ params }: Props) {
           </Typography>
         </Box>
 
-        <Box sx={{ mt: 5, mb: 4 }}>
+        <Typography
+          component="h1"
+          sx={{
+            color: COLORS.PRIMARY_GREEN,
+            fontFamily: din.style.fontFamily,
+            fontWeight: 900,
+            textTransform: "uppercase",
+            fontSize: { xs: 26, md: 50, lg: 42 },
+            lineHeight: { xs: "35px", md: "42px", lg: "50px" },
+            mt: 3,
+          }}
+        >
+          {blog.title}
+        </Typography>
+
+        <Box sx={{ mt: 3, mb: 4 }}>
           <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", mb: 2 }} />
           <Typography
             sx={{

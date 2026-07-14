@@ -123,6 +123,7 @@ const LeadershipSection = () => {
                   }}
                 >
                   <Typography
+                    component="div"
                     sx={{
                       fontSize: { xs: 26, md: 36 },
                       fontWeight: 900,
@@ -152,7 +153,9 @@ const LeadershipSection = () => {
                         }}
                       >
                         <Box
+                          component="span"
                           sx={{
+                            display: "inline-block",
                             width: "0.55em",
                             height: "0.55em",
                             bgcolor: "currentColor",
