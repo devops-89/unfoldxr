@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import NewsHero from "@/images/news-img/HeroNew.jpeg";
-import NewsHeroBanner from "@/images/news-img/NewsHeroSection3.png";
+import NewsHeroBanner from "@/images/news-img/NewsHeroSection4.webp";
 import NewsCardImg from "@/images/news-img/CardsImages/news1.jpeg";
 import NewsCardImg2 from "@/images/news-img/CardsImages/news2.jpeg";
 import NewsCardImg3 from "@/images/news-img/CardsImages/news3.jpeg";
