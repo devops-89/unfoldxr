@@ -14,7 +14,7 @@ import {
   alpha,
 } from "@mui/material";
 import React, { useState } from "react";
-import logo from "@/images/logo/logo.png";
+import logo from "@/images/logo/UnFoldXR_Logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { HEADER_LINKS } from "@/utils/constant";
@@ -89,6 +89,7 @@ const Header = () => {
                 <Image
                   src={logo}
                   alt="UnfoldXR logo"
+                  priority
                   style={{ width: "100%", height: "auto" }}
                 />
               </Box>

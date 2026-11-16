@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { COLORS } from "@/utils/enum";
 import { FOOTER_COLUMNS, SOCIAL_LINKS } from "@/utils/constant";
-import logoWhite from "@/images/logo/logo_white.png";
+import logoWhite from "@/images/logo/UnFoldXR_Logo_White.png";
 import linkedin from "@/images/social_icons/linkedin.svg";
 import youtube from "@/images/social_icons/youtube.svg";
 import facebook from "@/images/social_icons/facebook.svg";
