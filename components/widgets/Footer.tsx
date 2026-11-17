@@ -19,13 +19,10 @@ import youtube from "@/images/social_icons/youtube.svg";
 import facebook from "@/images/social_icons/facebook.svg";
 import x from "@/images/social_icons/twitter.svg";
 import instagram from "@/images/social_icons/insta.svg";
-import { usePathname } from "next/navigation";
 import { useDemoModal } from "../context/DemoModalContext";
 
 export default function Footer() {
   const { openModal } = useDemoModal();
-  const pathname = usePathname();
-  const isHome = pathname === "/" || pathname === "/Home";
 
   const socialIcons = [
     {
@@ -264,7 +261,7 @@ export default function Footer() {
                 alignItems={{ xs: "center", md: "flex-end" }}
                 sx={{ textAlign: { xs: "center", md: "right" } }}
               >
-                {isHome ? (
+                <Link href="/" style={{ display: "block", textDecoration: "none", cursor: "pointer" }}>
                   <Box
                     sx={{
                       height: { xs: 32, md: 30 },
@@ -276,29 +273,13 @@ export default function Footer() {
                       src={logoWhite}
                       alt="UnfoldXR"
                       fill
-                      style={{ objectFit: "contain" }}
+                      priority
                       unoptimized
+                      loading="eager"
+                      style={{ objectFit: "contain" }}
                     />
                   </Box>
-                ) : (
-                  <Link href="/" style={{ display: "block", textDecoration: "none", cursor: "pointer" }}>
-                    <Box
-                      sx={{
-                        height: { xs: 32, md: 30 },
-                        width: { xs: "200px", sm: "250px", md: "250px" },
-                        position: "relative",
-                      }}
-                    >
-                      <Image
-                        src={logoWhite}
-                        alt="UnfoldXR"
-                        fill
-                        style={{ objectFit: "contain" }}
-                        unoptimized
-                      />
-                    </Box>
-                  </Link>
-                )}
+                </Link>
                 <Typography
                   component="a"
                   href="mailto:info@unfoldxr.com"

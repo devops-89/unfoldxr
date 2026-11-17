@@ -90,6 +90,8 @@ const Header = () => {
                   src={logo}
                   alt="UnfoldXR logo"
                   priority
+                  unoptimized
+                  loading="eager"
                   style={{ width: "100%", height: "auto" }}
                 />
               </Box>
@@ -297,6 +299,9 @@ const Header = () => {
               <Image
                 src={logo}
                 alt="UnfoldXR logo"
+                priority
+                unoptimized
+                loading="eager"
                 style={{ width: 140, height: "auto" }}
               />
             </Link>
